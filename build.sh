@@ -1,4 +1,5 @@
 shopt -s expand_aliases
+set -e
 
 if [ "$CI" = true ]; then
     alias pandoc='docker run -i --rm -v "$(pwd)/:/work" -w /work dalibo/pandocker:latest-buster-full'
