@@ -24,17 +24,15 @@ jobs:
         with:
           fetch-depth: 0
       - name: Lint Code Base
-        uses: github/super-linter@v4
+        uses: github/super-linter/slim@v4
         env:
           VALIDATE_ALL_CODEBASE: true
           VALIDATE_MARKDOWN: true
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MARKDOWN_CONFIG_FILE: .markdown-lint.yml
   build:
     name: Build website
     runs-on: ubuntu-latest
-    needs: lint
     steps:
       - uses: actions/checkout@v3
         with:
@@ -55,7 +53,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: [build, lint]
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v3
