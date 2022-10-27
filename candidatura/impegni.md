@@ -36,4 +36,4 @@ Riepilogo del costi relativi al prospetto orario
 | Totale         | 665 |                 | 13505 |
 
 # 4. Promessa consegna
-Il gruppo stima di consegnare il prodotto finito entro il 30/04/2023 con un preventivo di €.
+Il gruppo stima di consegnare il prodotto finito entro il 30/04/2023 con un preventivo di 13505€.
