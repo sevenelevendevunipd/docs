@@ -43,11 +43,11 @@ jobs:
       - name: Generate Directory Listings
         uses: jayanta525/github-pages-directory-listing@v2.0.0
         with:
-          FOLDER: out
+          FOLDER: docs
       - uses: actions/upload-artifact@v3
         with:
           name: docs_site
-          path: ./out
+          path: ./docs
   deploy:
     name: Deploy to Pages
     environment:
