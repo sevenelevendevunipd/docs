@@ -28,14 +28,14 @@ toc-own-page: true
   * Vitagliano Davide
   * Zanellato Augusto
 * Partecipanti esterni:
-  * Luca Boldrin (InfoCert SpA)
-  * Gianluca Markos (InfoCert SpA)
-  * Davide Porro (InfoCert SpA)
-  * Alessandro Visintin (InfoCert SpA)
+  * Boldrin Luca (InfoCert SpA)
+  * Markos Gianluca (InfoCert SpA)
+  * Porro Davide (InfoCert SpA)
+  * Visintin Alessandro (InfoCert SpA)
 
 # Ordine del Giorno
 
-Sono stati trattati i seguenti argomenti da trattare con l'azienda proponente
+Sono stati definiti i seguenti argomenti da trattare con l'azienda proponente
 
 * Disponibilità degli standard menzionati nel capitolato
 * Eventuali tecnologie consigliate
