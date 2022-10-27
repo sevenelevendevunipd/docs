@@ -7,7 +7,7 @@ lang: "en"
 titlepage: true
 pdfa: true
 responsabile: "Mattia Brunello"
-redattori: ["Enrik Rucaj", "Andrea Auletta", "Augusto Zanellato"]
+redattori: ["Andrea Auletta", "Enrik Rucaj", "Augusto Zanellato"]
 verificatori: ["Antonio Stan", "Nicola Cecchetto", "Davide Vitagliano"]
 abstract: "Questo documento riporta le motivazioni della scelta del capitolato."
 docusage: "Esterno"
