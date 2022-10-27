@@ -12,14 +12,14 @@ Riepilogo della disribuzione oraria rendicontata:
 
 | Nome              | Responsabile | Amministratore | Analista | Progettista | Programmatore | Verificatore | Totale |
 | ----------------- | ------------ | -------------- | -------- | ----------- | ------------- | ------------ | ------ |
-| Auletta Andrea    |              |                |          |             |               |              | 95     |
-| Brunello Mattia   |              |                |          |             |               |              | 95     |
-| Cecchetto Nicola  |              |                |          |             |               |              | 95     |
-| Rucaj Enrik       |              |                |          |             |               |              | 95     |
-| Stan Antonio      |              |                |          |             |               |              | 95     |
-| Vitagliano Davide |              |                |          |             |               |              | 95     |
-| Zanellato Augusto |              |                |          |             |               |              | 95     |
-| Totale            |              |                |          |             |               |              | 665    |
+| Auletta Andrea    | 8            | 10             | 11       | 21          | 20            | 25           | 95     |
+| Brunello Mattia   | 9            | 8              | 13       | 20          | 22            | 23           | 95     |
+| Cecchetto Nicola  | 8            | 9              | 13       | 20          | 20            | 25           | 95     |
+| Rucaj Enrik       | 7            | 11             | 14       | 21          | 22            | 20           | 95     |
+| Stan Antonio      | 8            | 11             | 14       | 22          | 20            | 20           | 95     |
+| Vitagliano Davide | 9            | 7              | 14       | 21          | 21            | 23           | 95     |
+| Zanellato Augusto | 9            | 10             | 10       | 19          | 26            | 21           | 95     |
+| Totale            | 58           | 66             | 89       | 144         | 151           | 157          | 665    |
 
 # 3. Preventivo costi
 ## 3.1 Prospetto economico rendicontato
@@ -27,13 +27,13 @@ Riepilogo del costi relativi al prospetto orario
 
 | Ruolo          | Ore | Compenso orario | Costo |
 | -------------- | --- | --------------- | ----- |
-| Responsabile   |     | 30              |       |
-| Amministratore |     | 20              |       |
-| Analista       |     | 25              |       |
-| Progettista    |     | 25              |       |
-| Programmatore  |     | 15              |       |
-| Verificatore   |     | 15              |       |
-| Totale         | 665 |                 |       |
+| Responsabile   | 58  | 30              | 1740  |
+| Amministratore | 66  | 20              | 1320  |
+| Analista       | 89  | 25              | 2225  |
+| Progettista    | 144 | 25              | 3600  |
+| Programmatore  | 151 | 15              | 2265  |
+| Verificatore   | 157 | 15              | 2355  |
+| Totale         | 665 |                 | 13505 |
 
 # 4. Promessa consegna
 Il gruppo stima di consegnare il prodotto finito entro il 30/04/2023 con un preventivo di €.
