@@ -22,7 +22,7 @@ tables: true
 
 Dopo un attento studio dei vari capitolati proposti in classe (vedasi "studio capitolati"), il gruppo ha deciso di lavorare sul capitolato C5 - SmartLog.
 
-Di sotto seguono le motivazioni principali di tale scelta:
+Seguono le motivazioni principali di tale scelta:
 
 * Il progetto risulta interessante sotto il punto di vista dell’analisi dei dati, quindi l’applicazione di metodi statistici.
 * Il gruppo è propenso all’acquisizione di conoscenze sulle nuove tecnologie da utilizzare per lo sviluppo del progetto (Python, altro).
