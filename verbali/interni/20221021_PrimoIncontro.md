@@ -11,9 +11,9 @@ redattori: ["Antonio Stan", "Augusto Zanellato"]
 verificatori: ["Andrea Auletta", "Nicola Cecchetto", "Enrik Rucaj", "Davide Vitagliano"]
 ...
 
-# Informazioni
+# Informazioni sul Documento
 
-* Data: 23/10/2022
+* Data: 21/10/2022
 * Ora: 14:00
 * Durata: 2 ore
 * Luogo: Sede Universitaria
