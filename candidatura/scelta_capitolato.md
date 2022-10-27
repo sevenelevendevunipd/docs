@@ -31,7 +31,8 @@ Di sotto seguono le motivazioni principali di tale scelta:
 * Il capitolato è stato spiegato in maniera completa, con eventuali dubbi risolti durante il meeting.
 
 ## Resoconto verbali esplorativi
-
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
 \begin{center}
     \begin{longtable}[h]{p{0.15\textwidth}|p{0.1\textwidth}|p{0.6\textwidth}}
         \textbf{Data} & \textbf{Azienda} & \textbf{Resoconto} \\
@@ -41,3 +42,4 @@ Di sotto seguono le motivazioni principali di tale scelta:
         \href{https://sevenelevendevunipd.github.io/docs/verbali/esterni/20221027\_CallSocomec.pdf}{27/10/2022} & \href{https://sevenelevendevunipd.github.io/docs/verbali/esterni/20221027\_CallSocomec.pdf}{Socomec} & L'azienda ha chiarito vari dubbi riguardanti la parte viewer dell'applicazione e sul salvataggio dei log. Inoltre ha disposto vari consigli decisamente utili per il futuro. \\
     \end{longtable}
 \end{center}
+<!-- markdownlint-restore -->
