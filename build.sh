@@ -5,8 +5,6 @@ if [ "$CI" = true ]; then
     alias pandoc='docker run -i --rm -v "$(pwd)/:/work" -w /work dalibo/pandocker:latest-buster-full'
 fi
 
-pandoc --version
-mkdir -p _site
 # Compile markdown
 for S in `find . -name "*.md" -not -path "./template*"`
 do
