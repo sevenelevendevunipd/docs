@@ -82,6 +82,6 @@ jobs:
       - name: Zip docs
         run: zip -r --exclude='*index.html' docs.zip .
       - name: Create release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: Release.txt
+        run: gh release create $GITHUB_REF_NAME docs.zip --generate-notes
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
