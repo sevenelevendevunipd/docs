@@ -3,7 +3,7 @@ title: "Verbale Interno del 21/10/2022"
 author: [Seven Eleven Dev]
 date: "21/10/2022"
 hidedate: true
-lang: "en"
+lang: "it"
 titlepage: true
 pdfa: true
 responsabile: "Mattia Brunello"

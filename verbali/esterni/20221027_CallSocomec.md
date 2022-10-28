@@ -3,7 +3,7 @@ title: "Verbale Esterno del 27/10/2022"
 author: [Seven Eleven Dev]
 date: "27/10/2022"
 hidedate: true
-lang: "en"
+lang: "it"
 titlepage: true
 pdfa: true
 responsabile: "Mattia Brunello"

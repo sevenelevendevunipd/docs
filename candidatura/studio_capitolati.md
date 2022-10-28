@@ -3,7 +3,7 @@ title: "Studio Capitolati"
 author: [Seven Eleven Dev]
 date: "27/10/2022"
 hidedate: false
-lang: "en"
+lang: "it"
 titlepage: true
 pdfa: true
 responsabile: "Mattia Brunello"
