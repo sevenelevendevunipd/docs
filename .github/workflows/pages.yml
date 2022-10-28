@@ -82,6 +82,6 @@ jobs:
       - name: Zip docs
         run: zip -r --exclude='*index.html' docs.zip .
       - name: Create release
-        run: gh release create $GITHUB_REF_NAME docs.zip --generate-notes
+        run: gh release create $GITHUB_REF_NAME -t $GITHUB_REF_NAME docs.zip -R sevenelevendevunipd/docs
         env:
           GITHUB_TOKEN: ${{ github.token }}
