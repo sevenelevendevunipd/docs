@@ -8,7 +8,7 @@ titlepage: true
 pdfa: true
 responsabile: "Mattia Brunello"
 redattori: ["Andrea Auletta", "Augusto Zanellato"]
-verificatori: ["Antonio Stan", "Nicola Cecchetto", "Enrik Rucaj", "Davide Vitagliano"]
+verificatori: ["Nicola Cecchetto", "Enrik Rucaj", "Antonio Stan", "Davide Vitagliano"]
 abstract: "Vengono riportati gli argomenti discussi con l'azienda InfoCert SpA durante l'incontro del 26/10/2022"
 docusage: "Esterno"
 toc: true

@@ -8,7 +8,7 @@ titlepage: true
 pdfa: true
 responsabile: "Mattia Brunello"
 redattori: ["Davide Vitagliano"]
-verificatori: ["Antonio Stan", "Nicola Cecchetto", "Enrik Rucaj", "Andrea Auletta", "Augusto Zanellato"]
+verificatori: ["Andrea Auletta", "Nicola Cecchetto", "Enrik Rucaj", "Antonio Stan", "Augusto Zanellato"]
 abstract: "Vengono riportate la promessa di consegna, il preventivo dei costi il totale di ore produttive previste per componente del gruppo"
 docusage: "Esterno"
 toc: true
