@@ -8,7 +8,7 @@ titlepage: true
 pdfa: true
 responsabile: "Mattia Brunello"
 redattori: ["Nicola Cecchetto", "Enrik Rucaj"]
-verificatori: ["Antonio Stan", "Andrea Auletta", "Davide Vitagliano", "Augusto Zanellato"]
+verificatori: ["Andrea Auletta", "Antonio Stan", "Davide Vitagliano", "Augusto Zanellato"]
 abstract: "Vengono riportati gli argomenti discussi con l'azienda Socomec durante l'incontro del 27/10/2022"
 docusage: "Esterno"
 toc: true
