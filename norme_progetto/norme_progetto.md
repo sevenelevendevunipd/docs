@@ -114,3 +114,9 @@ I verbali possono essere interni o esterni:
 ### Altri documenti
 
 #### Registro delle modifiche
+
+## Repository
+
+### Scopo
+
+### Nomenclatura dei commit e dei branch
