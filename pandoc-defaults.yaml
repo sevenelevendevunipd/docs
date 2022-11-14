@@ -1,3 +1,5 @@
+filters:
+  - pandoc-plantuml
 from: markdown
 listings: true
 pdf-engine: xelatex

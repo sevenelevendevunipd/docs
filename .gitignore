@@ -417,3 +417,5 @@ docs/
 # Gradle
 .idea/**/gradle.xml
 .idea/**/libraries
+
+plantuml-images/
