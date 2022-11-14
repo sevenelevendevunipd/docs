@@ -1,18 +1,12 @@
 ---
 title: "Impegni"
-author: [Seven Eleven Dev]
 date: "27/10/2022"
-hidedate: false
-lang: "it"
-titlepage: true
-pdfa: true
 responsabile: "Mattia Brunello"
 redattori: ["Davide Vitagliano"]
 verificatori: ["Andrea Auletta", "Nicola Cecchetto", "Enrik Rucaj", "Antonio Stan", "Augusto Zanellato"]
 abstract: "Vengono riportate la promessa di consegna, il preventivo dei costi il totale di ore produttive previste per componente del gruppo"
 docusage: "Esterno"
 toc: true
-toc-own-page: true
 ...
 
 # Introduzione

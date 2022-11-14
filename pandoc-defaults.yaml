@@ -1,0 +1,4 @@
+from: markdown
+listings: true
+pdf-engine: xelatex
+template: template/eisvogel.tex

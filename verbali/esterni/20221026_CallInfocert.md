@@ -1,18 +1,13 @@
 ---
 title: "Verbale Esterno del 26/10/2022"
-author: [Seven Eleven Dev]
 date: "26/10/2022"
 hidedate: true
-lang: "it"
-titlepage: true
-pdfa: true
 responsabile: "Mattia Brunello"
 redattori: ["Andrea Auletta", "Augusto Zanellato"]
 verificatori: ["Nicola Cecchetto", "Enrik Rucaj", "Antonio Stan", "Davide Vitagliano"]
 abstract: "Vengono riportati gli argomenti discussi con l'azienda InfoCert SpA durante l'incontro del 26/10/2022"
 docusage: "Esterno"
 toc: true
-toc-own-page: true
 ...
 
 # Informazioni sul Documento

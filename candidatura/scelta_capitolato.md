@@ -1,19 +1,12 @@
 ---
 title: "Scelta del capitolato"
-author: [Seven Eleven Dev]
 date: "27/10/2022"
-hidedate: false
-lang: "it"
-titlepage: true
-pdfa: true
 responsabile: "Mattia Brunello"
 redattori: ["Andrea Auletta", "Enrik Rucaj", "Augusto Zanellato"]
 verificatori: ["Nicola Cecchetto", "Antonio Stan", "Davide Vitagliano"]
 abstract: "Questo documento riporta le motivazioni della scelta del capitolato."
 docusage: "Esterno"
 toc: true
-toc-own-page: true
-tables: true
 ...
 
 # Scelta del capitolato

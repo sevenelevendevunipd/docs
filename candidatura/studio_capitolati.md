@@ -1,18 +1,12 @@
 ---
 title: "Studio Capitolati"
-author: [Seven Eleven Dev]
 date: "27/10/2022"
-hidedate: false
-lang: "it"
-titlepage: true
-pdfa: true
 responsabile: "Mattia Brunello"
 redattori: ["Enrik Rucaj", "Antonio Stan"]
 verificatori: ["Andrea Auletta", "Nicola Cecchetto", "Davide Vitagliano", "Augusto Zanellato"]
 abstract: "Vengono riportate le valutazioni sui capitolati proposti riguardo a complessità e requisiti che hanno portato alla scelta del progetto."
 docusage: "Esterno"
 toc: true
-toc-own-page: true
 ...
 
 # Introduzione

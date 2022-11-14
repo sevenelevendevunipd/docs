@@ -1,0 +1,10 @@
+author: [Seven Eleven Dev]
+docusage: Interno
+hidedate: false
+lang: "it"
+pdfa: true
+plantuml-format: svg
+tables: true
+titlepage: true
+toc: false
+toc-own-page: true

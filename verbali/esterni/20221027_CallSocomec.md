@@ -1,18 +1,13 @@
 ---
 title: "Verbale Esterno del 27/10/2022"
-author: [Seven Eleven Dev]
 date: "27/10/2022"
 hidedate: true
-lang: "it"
-titlepage: true
-pdfa: true
 responsabile: "Mattia Brunello"
 redattori: ["Nicola Cecchetto", "Enrik Rucaj"]
 verificatori: ["Andrea Auletta", "Antonio Stan", "Davide Vitagliano", "Augusto Zanellato"]
 abstract: "Vengono riportati gli argomenti discussi con l'azienda Socomec durante l'incontro del 27/10/2022"
 docusage: "Esterno"
 toc: true
-toc-own-page: true
 ...
 
 # Informazioni sul Documento
