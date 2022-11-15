@@ -3,7 +3,7 @@ docusage: Interno
 hidedate: false
 lang: "it"
 numbersections: true
-pdfa: true
+pdfa: true # lel non funziona davvero, per farlo andare va usato ConTeXt come pdf engine (ma 0 sbatti di impararlo/rifare il template)
 plantuml-format: svg
 tables: true
 titlepage: true
