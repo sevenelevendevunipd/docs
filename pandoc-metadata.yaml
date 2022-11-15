@@ -2,6 +2,7 @@ author: [Seven Eleven Dev]
 docusage: Interno
 hidedate: false
 lang: "it"
+numbersections: true
 pdfa: true
 plantuml-format: svg
 tables: true
