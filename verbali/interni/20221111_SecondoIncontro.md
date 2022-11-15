@@ -16,7 +16,7 @@ toc: true
 toc-own-page: true
 ...
 
-# Informazioni sul Documento 
+# Informazioni sul Documento
 
 * Data: 11/11/2022
 * Ora: 15:00
@@ -24,15 +24,15 @@ toc-own-page: true
 * Luogo: Sede Universitaria
 * Partecipanti:
 
-    * Auletta Andrea
-    * Brunello Mattia
-    * Cecchetto Nicola
-    * Rucaj Enrik
-    * Stan Antonio
-    * Vitagliano Davide
-    * Zanellato Augusto
+  * Auletta Andrea
+  * Brunello Mattia
+  * Cecchetto Nicola
+  * Rucaj Enrik
+  * Stan Antonio
+  * Vitagliano Davide
+  * Zanellato Augusto
 
-# Ordine del giorno 
+# Ordine del giorno
 
 Sono stati trattati i seguenti argomenti:
 
@@ -40,28 +40,27 @@ Sono stati trattati i seguenti argomenti:
 * Norme di progetto;
 * Lezioni rovesciate.
 
-# Riassunto dei contenuti 
+# Riassunto dei contenuti
 
 ## Seminario su GitHub
 
 Date le necessità è stato fatto un seminario su GitHub dai membri più esperti del gruppo.
 Sono stati spiegati i diversi comandi che vengono ritenuti essenziali per l'utilizzo.
 
-# Norme di progetto 
+# Norme di progetto
 
 E`stata iniziata la stesura delle norme di progetto e sono stati scritti i seguenti punti:
 
 * Introduzione:
 
-    * Scopo del documento; 
-    * Scopo del capitolato;
-    * Riferimenti.
+  * Scopo del documento;
+  * Scopo del capitolato;
+  * Riferimenti.
 
 * Processi di supporto:
 
-    * Documentazione;
+  * Documentazione;
 
 # Lezioni rovesciate
 
 Il gruppo ha scelto l'argomento da trattare e successivamente da esporre durante le lezioni rovesciate: **Metodi e strumenti per l'organizzazione dello sviluppo software**.
-
