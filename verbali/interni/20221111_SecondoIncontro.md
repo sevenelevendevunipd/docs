@@ -9,9 +9,9 @@ pdfa: true
 responsabile: "Augusto Zanellato"
 redattori: "Andrea Auletta"
 verificatori: ["Mattia Brunello", "Antonio Stan", "Nicola Cecchetto", "Enrik Rucaj", "Davide Vitagliano"]
-abstract: "verbale"
+abstract: "Verbale"
 docusage: "Interno"
-versione: 0.0.1
+versione: 1.0.0
 toc: true
 toc-own-page: true
 ...
