@@ -2,6 +2,8 @@ shopt -s expand_aliases
 set -e
 
 if [ "$CI" = true ]; then
+    echo "Running in CI, using pandocker image..."
+    alias touch='sudo touch'
     alias pandoc='docker run -i --rm -v "$(pwd)/:/work" -w /work ghcr.io/sevenelevendevunipd/pandocker:buster-full-add_italian'
 fi
 
@@ -13,6 +15,7 @@ do
   mkdir -p $DESTDIR
   echo "Building $S..."
   pandoc  -d pandoc-defaults.yaml --metadata-file pandoc-metadata.yaml $S -o $DESTNAME
+  touch -amd "$(date -R -r $S)" $DESTNAME
 done
 
 # Copy everything else
