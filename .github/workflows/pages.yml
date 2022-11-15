@@ -37,6 +37,10 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: 'recursive'
+      - name: Restore mtime
+        run: |
+          sudo apt install git-restore-mtime
+          git restore-mtime
       - name: Build with Pandoc
         run: ./build.sh
       - name: Generate Directory Listings
