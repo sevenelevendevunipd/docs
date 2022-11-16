@@ -1,7 +1,6 @@
 ---
 title: "Verbale Interno del 11/11/2022"
 date: "11/11/2022"
-hidedate: true
 responsabile: "Augusto Zanellato"
 redattori: "Andrea Auletta"
 verificatori: ["Mattia Brunello", "Antonio Stan", "Nicola Cecchetto", "Enrik Rucaj", "Davide Vitagliano"]
