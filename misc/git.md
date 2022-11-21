@@ -59,7 +59,7 @@ git branch -D nomeBranch  # Elimina un branch dal repository locale E DA QUELLO 
 ## Interazione con repository remoto
 
 ```bash
-git fetch  # Scarica dal remote tutte le modifiche e i nuovi branch, ma senza applicare.
+git fetch  # Scarica dal remote tutte le modifiche e i nuovi branch, ma senza applicare.
 git pull  # Come fetch, ma applica le modifiche al branch corrente se ce ne sono.
 git clone git@github.com:user/repo.git  # Scarica un repository da GitHub
 git push --set-upstream origin nomeBranch  # Fa il primo push del branch corrente sul remote
