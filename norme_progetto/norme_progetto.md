@@ -72,7 +72,7 @@ Questa sezione contiene le norme usate per la stesura del documento *Analisi dei
 
 #### Requisiti
 
-Ogni requisito è identificato da un codice alfanumerico. Esistono: 
+Ogni requisito è identificato da un codice alfanumerico. Esistono:
 
 * Requisiti funzionali, identificati con **RF**;
 * Requisiti di qualità, identificati con **RQ**;
