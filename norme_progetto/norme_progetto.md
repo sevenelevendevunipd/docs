@@ -16,9 +16,10 @@ toc-own-page: true
 ...
 
 <!--
-| Versione | Data       | Descrizione                  |
-|----------|------------|------------------------------|
-| 0.0.1    | 03/11/2022 | Stesura della documentazione |
+| Versione | Data       | Descrizione                                            |
+|----------|------------|--------------------------------------------------------|
+| 0.0.2    | 22/11/2022 | Aggiunta sezioni "Analisi dei requisiti" e "Requisiti" |
+| 0.0.1    | 03/11/2022 | Stesura della documentazione                           |
 -->
 
 # Introduzione
@@ -56,6 +57,33 @@ Il documento **"Glossario"** contiene tutte le terminologie e definizioni specif
 # Processi primari
 
 ## Fornitura
+
+<!-- TODO: Capire fornitura-->
+
+## Sviluppo
+
+### Analisi dei requisiti
+
+#### Scopo
+
+Questa sezione contiene le norme usate per la stesura del documento *Analisi dei requisiti*. Nello specifico, contiene la spiegazione dei codici usati per identificare i requisiti.
+
+<!-- TO DO: Aggiungere ovviamente i codici per i casi d'uso quando verranno fatti -->
+
+#### Requisiti
+
+Ogni requisito è identificato da un codice alfanumerico. Esistono: 
+* Requisiti funzionali, identificati con **RF**;
+* Requisiti di qualità, identificati con **RQ**;
+* Requisiti di vincoli, identificati con **RV**.
+
+<!-- TO DO: decidere se ha senso mettere requisiti sistemi operativi e prestazionali -->
+
+Il progetto si occupa di due applicazioni distinte, e quindi si aggiunge all'inizio del codice **V** se è un requisito per SmartLogViewer, oppure **S** se è un requisito per SmartLogStatistics. Questo non vale per i requisiti di qualità, in quanto si riferiscono ad entrambe le applicazioni.
+
+Ogni requisito ha alla fine del codice un numero puntato.
+
+<!-- TO DO: decidere se ha senso tenere separati requisiti di vincoli -->
 
 # Processi di supporto
 
