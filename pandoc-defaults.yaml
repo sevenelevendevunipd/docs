@@ -1,6 +1,6 @@
 filters:
   - pandoc-plantuml
+  - pandoc-glossary
 from: markdown
 listings: true
-pdf-engine: xelatex
 template: template/eisvogel.tex
