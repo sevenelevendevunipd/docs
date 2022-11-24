@@ -53,32 +53,57 @@ Questa sezione descrive i casi d'uso individuati dal gruppo, riferendosi alle fu
 
 L'applicazione dovrà essere utilizzata dagli operatori interni all'azienda.
 Vengono identificati i seguenti attori:
+
 * l'operatore;
 * l'applicazione SmartLogViewer;
 * l'applicazione SmartLogStatistics.
 
 ## SmartLogViewer
 
-* UC1 - Caricamento file di log:
+* VUC1 - Caricamento file di log:
   * Scenario: l'utente vuole caricare un file di log nell'applicazione SmartLogViewer;
   * Attori: Operatore;
   * Precondizioni: l'applicazione è operativa e funzionante;
   * Postcondizioni: il file di log viene caricato correttamente nell'applicazione.
   <!-- inserire diagrammi -->
 
-* UC2 - Visualizzazione tabellare:
+* VUC2 - Visualizzazione tabellare:
   * Scenario: l'utente sceglie di visualizzare il file di log in forma tabellare;
   * Attori: Operatore, SmartLogViewer;
-  * Precondizioni: è stato caricato un file di log nell'applicazione [UC1];
+  * Precondizioni: è stato caricato un file di log nell'applicazione [VUC1];
   * Postcondizioni: viene visualizzata la tabella.
 
-* UC3 - Visualizzazione grafica:
+* VUC3 - Visualizzazione grafica:
   * Scenario: l'utente sceglie di visualizzare il file di log in forma grafica;
   * Attori: SmartLogViewer;
-  * Precondizioni: è stato caricato un file di log nell'applicazione [UC1];
+  * Precondizioni: è stato caricato un file di log nell'applicazione [VUC1];
   * PostCondizioni: viene visualizzato il grafico.
 
 ## SmartLogStatistics
+
+* SUC1 - Caricamento file di log:
+  * Scenario: l'utente vuole caricare uno o più file di log nell'applicazione SmartLogStatistics;
+  * Attori: Operatore;
+  * Precondizioni: l'applicazione è operativa e funzionante;
+  * Postcondizioni: i file di log vengono caricati correttamente nell'applicazione.
+
+* SUC2 - Selezione dei log da analizzare:
+  * Scenario: l'utente sceglie di filtrare i log da analizzare per data e ora;
+  * Attori: Operatore, SmartLogStatistics;
+  * Precondizioni: è stato caricato almeno un file di log nell'applicazione [SUC1];
+  * Postcondizioni: i log vengono filtrati.
+
+* SUC3 - Visualizzazione tabellare:
+  * Scenario: l'utente sceglie di visualizzare i log in forma tabellare;
+  * Attori: SmartLogStatistics;
+  * Precondizioni: sono stati filtrati i log da visualizzare [SUC2];
+  * PostCondizioni: viene visualizzata la tabella.
+
+* SUC4 - Visualizzazione grafica:
+  * Scenario: l'utente sceglie di visualizzare i log in forma grafica;
+  * Attori: SmartLogStatistics;
+  * Precondizioni: sono stati filtrati i log da visualizzare [SUC2];
+  * PostCondizioni: viene visualizzato il grafico.
 
 # Requisiti
 
