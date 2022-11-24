@@ -67,6 +67,7 @@ Vengono identificati i seguenti attori:
 ## SmartLogViewer
 
 * VUC1 - Caricamento file di log:
+
 ```{ .plantuml caption="VUC1"}
 left to right direction
 :Operatore: as o
@@ -74,13 +75,14 @@ usecase VUC1 as "VUC1
 Carica log"
 o--VUC1
 ```
+
   * Scenario: l'utente vuole caricare un file di log nell'applicazione SmartLogViewer;
   * Attori: Operatore;
   * Precondizioni: l'applicazione è operativa e funzionante;
   * Postcondizioni: il file di log viene caricato correttamente nell'applicazione.
 
-  <!-- inserire diagrammi -->
 * VUC2 - Visualizzazione tabellare:
+
 ```{ .plantuml caption="VUC2"}
 left to right direction
 :Operatore: as o
@@ -168,7 +170,7 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
 
 * SRF1 - L'utente deve poter selezionare i log da analizzare per range di data/ora (min, max, all);
 * SRF2 - L'utente deve potere visualizzare le seguenti statistiche come tabella:  <!-- Da sistemare alla prossima
-  versione perché risulta ambigua la spiegazione ->
+  versione perché risulta ambigua la spiegazione -->
   * SRF2.1 - Intervallo Temporale;
   * SRF2.2 - Numero di storici analizzati;
   * SRF2.3 - Media Numero di eventi per log;
@@ -210,5 +212,3 @@ da sviluppare viene eseguito su browser.
 ## Requisiti prestazionali
 
 L'azienda non ha posto requisiti prestazionali per le applicazioni.
-
----
