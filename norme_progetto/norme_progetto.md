@@ -42,10 +42,6 @@ Al giorno d'oggi vista l'espansione e l'aumento del numero delle apparecchiature
 * poter analizzare, trovare e risolvere eventuali problemi.
 * poter estrarre informazioni statistiche da un insieme di file di log.
 
-## Glossario
-
-Il documento **"Glossario"** contiene tutte le terminologie e definizioni specifiche del dominio di progetto.  
-
 ## Riferimenti
 
 ### Riferimenti normativi
@@ -104,7 +100,7 @@ Il processo di build dei documenti è controllato da una pipeline di {a:cicd} ch
 
 #### Template
 
-Il template usato per i documenti è una versione modificata di [eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template), le modifiche apportate riguardano principalmente lo stile della prima pagina e il supporto alla generazione semi-automatica del registro delle versione e del glossario.
+Il template usato per i documenti è una versione modificata di [eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template), le modifiche apportate riguardano principalmente lo stile della prima pagina e il supporto alla generazione semi-automatica del registro delle versioni e del glossario.
 
 #### Prima pagina
 
@@ -141,7 +137,10 @@ Ogni pagina è composta da tre parti:
 
 #### Glossario
 
-Il glossario è generato automaticamente da un [filtro Pandoc](https://github.com/sevenelevendevunipd/pandoc_glossary_filter) che usa le definizioni presenti in un file {g:yaml}. È inoltre presente un glossario separato per gli acronimi.
+Il documento [Glossario](https://sevenelevendevunipd.github.io/docs/glossario.pdf) contiene tutte le terminologie e definizioni specifiche del dominio di progetto.
+È generato automaticamente da un [filtro Pandoc](https://github.com/sevenelevendevunipd/pandoc_glossary_filter) che usa le definizioni presenti in un file {g:yaml}. È inoltre presente un glossario separato per gli acronimi generato allo stesso modo.
+Ogni documento ha inoltre, per facilitarne la lettura, in appendice un estratto del glossario contenente solo i termini usati all'interno del documento stesso.
+Ogni occorrenza in un documento di un termine nel glossario è indicata con una *G* al pedice (ad esempio così$_G$). Le occorrenze di acronimi sono invece indicate con una *A* al pedice (così$_A$).
 
 ### Verbali
 
