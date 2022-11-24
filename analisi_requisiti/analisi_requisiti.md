@@ -2,8 +2,8 @@
 title: "Analisi dei requisiti"
 date: "15/11/2022"
 responsabile: "Nicola Cecchetto"
-redattori: ["Andrea Auletta", "Davide Vitagliano"]
-verificatori: ["Mattia Brunello", "Enrik Rucaj", "Antonio Stan", "Augusto Zanellato"]
+redattori: ["Andrea Auletta", "Mattia Brunello", "Davide Vitagliano"]
+verificatori: ["Enrik Rucaj", "Antonio Stan", "Augusto Zanellato"]
 versioni:
 0.0.1:
 autore: Andrea Auletta
@@ -56,27 +56,55 @@ Vengono identificati i seguenti attori:
 
 * l'operatore;
 * l'applicazione SmartLogViewer;
-* l'applicazione SmartLogStatistics.
+* l'applicazione SmartLogStatistics
+
+```{ .plantuml caption="Attori"}
+:Utente:<|--:Operatore:
+:SmartLogViewer:
+:SmartLogViewer:
+```
 
 ## SmartLogViewer
 
 * VUC1 - Caricamento file di log:
+```{ .plantuml caption="VUC1"}
+left to right direction
+:Operatore: as o
+usecase VUC1 as "VUC1
+Carica log"
+o--VUC1
+```
   * Scenario: l'utente vuole caricare un file di log nell'applicazione SmartLogViewer;
   * Attori: Operatore;
   * Precondizioni: l'applicazione è operativa e funzionante;
   * Postcondizioni: il file di log viene caricato correttamente nell'applicazione.
-  <!-- inserire diagrammi -->
 
+  <!-- inserire diagrammi -->
 * VUC2 - Visualizzazione tabellare:
+```{ .plantuml caption="VUC2"}
+left to right direction
+:Operatore: as o
+:SmartLogViewer: as v
+package SmartLogViewer{
+usecase VUC2 as "VUC2
+Visualizza tabella"
+usecase VUC2.1 as "VUC2.1
+colora celle"
+VUC2.1.>VUC2 : <<include>>
+o--VUC2
+VUC2--v
+}
+```
+
   * Scenario: l'utente sceglie di visualizzare il file di log in forma tabellare;
   * Attori: Operatore, SmartLogViewer;
   * Precondizioni: è stato caricato un file di log nell'applicazione [VUC1];
   * Postcondizioni: viene visualizzata la tabella.
-
 * VUC3 - Visualizzazione grafica:
+
   * Scenario: l'utente sceglie di visualizzare il file di log in forma grafica;
-  * Attori: SmartLogViewer;
-  * Precondizioni: è stato caricato un file di log nell'applicazione [VUC1];
+  * Attori: Operatore, SmartLogStatistics;
+  * Precondizioni: è stato caricato un file di log nell'applicazione [UC1];
   * PostCondizioni: viene visualizzato il grafico.
 
 ## SmartLogStatistics
@@ -107,7 +135,7 @@ Vengono identificati i seguenti attori:
 
 # Requisiti
 
-Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti delle applicazioni "SmartLogViewer" e 
+Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti delle applicazioni "SmartLogViewer" e
 "SmartLogStatistics".
 
 ## Requisiti funzionali - SmartLogViewer
@@ -116,20 +144,20 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
 
 * VRF1 - L'utente deve poter caricare nell'applicazione un singolo file di log (.csv) presente localmente;
 * VRF2 - Deve essere presente una visualizzazione in forma tabellare con le seguenti funzionalità:
-    * VRF2.1 - L'applicazione colora degli eventi in base a:
-        * VRF2.1.1 - Codice di identificazione (code);
-        * VRF2.1.2 - Livello di nidificazione (Unit/SubUnit); <!-- TODO capire cosa dovrebbe essere -->
-    * VRF2.2 - Funzioni di filtro e ordinamento sulle colonne in modo simile agli spreadsheet;
-    * VRF2.3 - Funzione di ricerca eventi;
-    * VRF2.4 - Funzione di raggruppamento e visualizzazione per Data/Ora:
-      dato un intervallo di tempo vengono visualizzati tutti gli eventi presenti in quel lasso di tempo;
+  * VRF2.1 - L'applicazione colora degli eventi in base a:
+    * VRF2.1.1 - Codice di identificazione (code);
+    * VRF2.1.2 - Livello di nidificazione (Unit/SubUnit); <!-- TODO capire cosa dovrebbe essere -->
+  * VRF2.2 - Funzioni di filtro e ordinamento sulle colonne in modo simile agli spreadsheet;
+  * VRF2.3 - Funzione di ricerca eventi;
+  * VRF2.4 - Funzione di raggruppamento e visualizzazione per Data/Ora:
+    dato un intervallo di tempo vengono visualizzati tutti gli eventi presenti in quel lasso di tempo;
 * VRF3 - Deve essere presente una visualizzazione in forma grafica con le seguenti caratteristiche:
-    * VRF3.1 - L’asse X rappresenta il tempo;
-    * VRF3.2 - L’asse Y contiene l’insieme degli eventi;
-    * VRF3.3 - Un rettangolo “pieno” che si sviluppa sull'asse x indica il periodo di tempo in cui l’evento (indicato
-      sull'asse y) è ATTIVO;
-    * VRF3.4 - Deve essere possibile selezione l’intervallo di tempo desiderato, con funzioni di select/zoom/span/altro;
-    * VRF3.5 - Deve essere possibile filtrare gli eventi in base alle colonne ( Code, Unit/subUnit. etc);
+  * VRF3.1 - L’asse X rappresenta il tempo;
+  * VRF3.2 - L’asse Y contiene l’insieme degli eventi;
+  * VRF3.3 - Un rettangolo “pieno” che si sviluppa sull'asse x indica il periodo di tempo in cui l’evento (indicato
+    sull'asse y) è ATTIVO;
+  * VRF3.4 - Deve essere possibile selezione l’intervallo di tempo desiderato, con funzioni di select/zoom/span/altro;
+  * VRF3.5 - Deve essere possibile filtrare gli eventi in base alle colonne ( Code, Unit/subUnit. etc);
 * VRF4 - Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un log, con la relativa
   etichettatura;
   (che identifica in forma mnemonica la sequenza. i.e. Sequenza di accensione, di spegnimento).
@@ -141,21 +169,21 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
 * SRF1 - L'utente deve poter selezionare i log da analizzare per range di data/ora (min, max, all);
 * SRF2 - L'utente deve potere visualizzare le seguenti statistiche come tabella:  <!-- Da sistemare alla prossima
   versione perché risulta ambigua la spiegazione ->
-    * SRF2.1 - Intervallo Temporale;
-    * SRF2.2 - Numero di storici analizzati;
-    * SRF2.3 - Media Numero di eventi per log;
-    * SRF2.4 - Max Numero di eventi per log;
-    * SRF2.5 - Deviazione Standard Numero di eventi per log;
-    * SRF2.6 - Lista degli eventi raggruppata per frequenza di occorrenza (0-1) con possibilità di filtraggio e
-      ordinamento per:
-        * SRF2.6.1 - Unit/subUnit;
-        * SRF2.6.2 - Data e Ora;
-        * SRF2.6.3 - Versione firmware;
+  * SRF2.1 - Intervallo Temporale;
+  * SRF2.2 - Numero di storici analizzati;
+  * SRF2.3 - Media Numero di eventi per log;
+  * SRF2.4 - Max Numero di eventi per log;
+  * SRF2.5 - Deviazione Standard Numero di eventi per log;
+  * SRF2.6 - Lista degli eventi raggruppata per frequenza di occorrenza (0-1) con possibilità di filtraggio e
+    ordinamento per:
+    * SRF2.6.1 - Unit/subUnit;
+    * SRF2.6.2 - Data e Ora;
+    * SRF2.6.3 - Versione firmware;
 * SRF3 - L'utente deve poter visualizzare sotto forma di grafico:
-    * SRF3.1 - Il numero totale di occorrenze (0->1) rispetto al tempo per singolo evento (velocità).
-      Con la possibilità di selezionare/filtrare gli eventi per Code, Unit/subUnit (cumulativo vs tempo)
-    * SRF3.2 - Il numero di occorrenze normalizzato per numero di storici rispetto alle versioni firmware, con la
-      possibilità di selezionare gli eventi e la lista dei firmware
+  * SRF3.1 - Il numero totale di occorrenze (0->1) rispetto al tempo per singolo evento (velocità).
+    Con la possibilità di selezionare/filtrare gli eventi per Code, Unit/subUnit (cumulativo vs tempo)
+  * SRF3.2 - Il numero di occorrenze normalizzato per numero di storici rispetto alle versioni firmware, con la
+    possibilità di selezionare gli eventi e la lista dei firmware
 
 ## Requisiti qualitativi
 
@@ -182,3 +210,5 @@ da sviluppare viene eseguito su browser.
 ## Requisiti prestazionali
 
 L'azienda non ha posto requisiti prestazionali per le applicazioni.
+
+---
