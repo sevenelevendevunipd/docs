@@ -1,0 +1,3 @@
+cicd: !!python/object:pandoc_glossary_filter.data.AcronymEntry
+  long: 'Continuous Integration/Continuous Delivery'
+  name: 'CI/CD'

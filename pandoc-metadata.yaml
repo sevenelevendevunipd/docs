@@ -2,6 +2,7 @@ author: [Seven Eleven Dev]
 docusage: Interno
 hidedate: false
 lang: "it"
+links-as-notes: true
 numbersections: true
 pdfa: true # lel non funziona davvero, per farlo andare va usato ConTeXt come pdf engine (ma 0 sbatti di impararlo/rifare il template)
 plantuml-format: svg

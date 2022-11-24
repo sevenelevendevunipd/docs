@@ -1,26 +1,30 @@
 ---
 title: "Norme di progetto"
-author: [Seven Eleven Dev]
 date: "03/11/2022"
-lang: "en"
-titlepage: true
-pdfa: true
 responsabile: "Augusto Zanellato"
 redattori: "Andrea Auletta"
 verificatori: ["Mattia Brunello", "Antonio Stan", "Nicola Cecchetto", "Enrik Rucaj", "Davide Vitagliano"]
 abstract: "Vengono definite le prime norme di progetto."
 docusage: "Interno"
-versione: 0.0.1
 toc: true
-toc-own-page: true
+versioni:
+  v0.0.1:
+    autore: Mattia Brunello
+    data: 10/11/2022
+    cambiamenti: Prima stesura
+  v0.0.2:
+    autore: Andrea Auletta
+    data: 18/11/2022
+    cambiamenti: Aggiunto paragrafo riguardante il repository
+  v0.0.3:
+    autore: Nicola Cecchetto
+    data: 20/11/2022
+    cambiamenti: Aggiunta sezione analisi dei requisiti
+  v0.0.4:
+    autore: Augusto Zanellato
+    data: 24/11/2022
+    cambiamenti: Aggiunta sezione riguardante workflow documenti
 ...
-
-<!--
-| Versione | Data       | Descrizione                                            |
-|----------|------------|--------------------------------------------------------|
-| 0.0.2    | 22/11/2022 | Aggiunta sezioni "Analisi dei requisiti" e "Requisiti" |
-| 0.0.1    | 03/11/2022 | Stesura della documentazione                           |
--->
 
 # Introduzione
 
@@ -31,7 +35,7 @@ Il documento verrà aggiornato con costanza durante tutte le fasi del progetto.
 
 ## Scopo del capitolato
 
-### **C5 - SmartLog**
+### C5 - SmartLog
 
 Al giorno d'oggi vista l'espansione e l'aumento del numero delle apparecchiature per il supporto all'energia elettrica nelle infrastrutture critiche, la gestione di esse sta diventando sempre più complessa e richiede una continua analisi per l'ottimizzazione dei consumi e rivelazione degli errori. Per questo motivo i dispositvi Socomec riescono a registrare e salvare su un file di log tutti gli eventi che accadono, in modo da:
 
@@ -46,13 +50,9 @@ Il documento **"Glossario"** contiene tutte le terminologie e definizioni specif
 
 ### Riferimenti normativi
 
-* Regolamento del progetto didattico:
+* [Regolamento del progetto didattico](https://www.math.unipd.it/~tullio/IS-1/2022/Dispense/PD02.pdf)
 
-<https://www.math.unipd.it/~tullio/IS-1/2022/Dispense/PD02.pdf>
-
-* Capitolato d'appalto C5 - SmartLog:
-
-<https://www.math.unipd.it/~tullio/IS-1/2022/Progetto/C5.pdf>
+* [Capitolato d'appalto C5 - SmartLog](https://www.math.unipd.it/~tullio/IS-1/2022/Progetto/C5.pdf)
 
 # Processi primari
 
@@ -96,9 +96,15 @@ Questa sezione contiene le norme per la scrittura dei documenti (e la loro strut
 
 ### Sviluppo e design
 
+La documentazione è scritta usando il *linguaggio di markup* **Markdown** nella versione supportata da [Pandoc](https://pandoc.org/). Per facilitare la stesura dei documenti sono stati sviluppati dei filtri per Pandoc che permettono l'*embedding* nei documenti di diagrammi [PlantUML](https://plantuml.com/) e che si occupano della generazione automatica del glossario in appendice ai documenti.
+
+Il processo di build dei documenti è controllato da una pipeline di {a:cicd} che controlla che i sorgenti Markdown seguando delle linee guida di stile e formattazione usando [MarkdownLint](https://github.com/DavidAnson/markdownlint), li compila in {g:pdfa} usando Pandoc e pdfLaTeX e carica i pdf risultanti sia sul [sito del gruppo](https://sevenelevendevunipd.github.com/docs/) che come artefatto della {a:cicd}.
+
 <!-- TO DO: Definire nomenclatura documenti -->
 
 #### Template
+
+Il template usato per i documenti è una versione modificata di [eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template), le modifiche apportate riguardano principalmente lo stile della prima pagina e il supporto alla generazione semi-automatica del registro delle versione e del glossario.
 
 #### Prima pagina
 
@@ -132,6 +138,10 @@ Ogni pagina è composta da tre parti:
 #### Indice
 
 <!--  ??? -->
+
+#### Glossario
+
+Il glossario è generato automaticamente da un [filtro Pandoc](https://github.com/sevenelevendevunipd/pandoc_glossary_filter) che usa le definizioni presenti in un file {g:yaml}. È inoltre presente un glossario separato per gli acronimi.
 
 ### Verbali
 

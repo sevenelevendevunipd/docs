@@ -1,0 +1,12 @@
+pdfa: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Subset dello standard PDF ottimizzato per l'archiviazione di lungo
+    periodo dei documenti
+  name: PDF/A
+  plural: null
+yaml: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Formato di serializzazione dati sviluppato per essere di facile 
+    lettura "umana" (a differenza di altri formati come XML). 
+    È un superset di JSON. Viene utilizzato dalla pipeline documentale per la 
+    configurazione di pandoc e per la gestione del glossario e degli acronimi
+  name: YAML
+  plural: null
