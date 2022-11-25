@@ -82,6 +82,29 @@ Visto che il progetto si occupa di due applicazioni distinte, ai codici dei requ
 
 Ogni requisito ha alla fine del codice un numero puntato.
 
+#### Casi d'uso
+
+I casi d'uso descrivono l'interazione del sistema con le entità esterne (al sistema) che la usano (ad esempio l'utente/operatore). Sono utili ad esprimere varie sequenze di azioni che hanno in comune uno scopo finale.
+
+Per i casi d'uso vengono specificati:
+
+* Attori
+* Use Case dell'applicazione SmartLogViewer (VUC)
+  * Scenario
+  * Attore primario
+  * Precondizioni
+  * Postcondizioni
+* Use Case dell'applicazione SmartLogStatistics (SUC)
+  * Scenario
+  * Attore primario
+  * Precondizioni
+  * Postcondizioni
+
+Ad ogni caso d'uso vengono associate due tipologie di etichette:
+> [VUC] o [SUC] rimandano al caso d'uso padre da cui derivano.
+
+> (VRF) o (SRF) rimandano ai requisiti funzionali che i casi d'uso cercando di descrivere.
+
 # Processi di supporto
 
 ## Documentazione
@@ -163,15 +186,21 @@ Il registro viene visualizzato sotto forma di tabella avente tre colonne:
 
 La versione del documento è definita da tre numeri "x.y.z" dove:
 
-* **z** (patch): viene incrementato ogni qual volta ci sia stata una modifica poco consistente
+* **x** (major): viene incrementato a seconda della rifinitura del documento (es: dopo aver steso una prima intera versione grezza)
 * **y** (minor): viene incrementato quando avviene una modifica che non comporta un cambiamento eccessivo. (es: aggiunta di paragrafi)
-* **z** (major): viene incrementato a seconda della rifinitura del documento (es: dopo aver steso una prima intera versione grezza)
+* **z** (patch): viene incrementato ogni qual volta ci sia stata una modifica poco consistente
 
 ## Repository
 
-Per organizzare al meglio il lavoro, all'interno dell'organizzazione GitHub, abbiamo creato 1<!-- sistemare quando avremo un numero di repo finito --> repository:
+Per organizzare al meglio il lavoro, all'interno dell'organizzazione **GitHub**, abbiamo creato 1<!-- sistemare quando avremo un numero di repo finito --> repository:
 
-* SevenElevenUnipd/docs per i documenti.
+* SevenElevenUnipd/**docs** per i documenti; quelli indispensabili saranno:
+  * **verbali**: documenti di incontri interni svolti dal gruppo ed esterni svolti con i proponenti e commitenti del progetto.
+  * **norme_progetto**: in cui viene aggiornato questo file, aggiungendo di volta in volta norme più adatte per il workflow del gruppo.
+  * **piano_progetto**: documento di analisi sui rischi attesi e della suddivisione del lavoro totale in molteplici periodi successivi.
+  * **piano_qualifica**: documento inerente alla misurazione del raggiungimento degli obiettivi predisposti e delle iniziative di auto-miglioramento.
+  * **analisi_requisiti**: documento che fissa i requisiti (espliciti ed impliciti) concordati con il proponente, che il gruppo si impegna a soddisfare.
+  * **glossario**: documento che specifica ogni termine specializzato nel dominio di progetto.
 
 ### Nomenclatura dei commit e dei branch
 
@@ -180,3 +209,23 @@ I branch vengono nominati in questo modo:  **SL-n-nome_branch** <!-- accentrato 
 * SL: SmartLog;
 * n: numero auto incrementale;
 * Tutte le lettere di nome_branch devono essere minuscole e se si neccessita di separare delle parole deve essere utilizzato '_'.
+
+## Project Managment
+
+### Scopo
+
+La gestione del progetto avviene tramite **YouTrack**.
+Questo permette di:
+
+* suddividere il lavoro totale in unità da assegnare al singolo individuo.
+* impostare delle milestone e baseline da poterle confrontare in futuro.
+* avere una visione più semplice dello stato di avanzamento delle attività.
+* impostare le ore di lavoro di ogni persona del gruppo per poter analizzare il passo di avanzamento rispetto alle tempistiche prestabilite.
+
+### Guidelines
+
+Ogni componente del gruppo una volta finito un'attività, prima di iniziarne una nuova dovrebbe:
+
+* diventare assegnatario della nuova attività che ha itenzione di svolgere.
+* spostare lo stato di avanzamento dell'attività che sta svolgendo.
+* specificare le ore di lavoro ogni volta che si occupa di quella attività.
