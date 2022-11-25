@@ -24,6 +24,10 @@ versioni:
     autore: Augusto Zanellato
     data: 24/11/2022
     cambiamenti: Aggiunta sezione riguardante workflow documenti
+  v0.0.5:
+    autore: Andrea Auletta
+    data: 25/11/2022
+    cambiamenti: Modificati paragrafi registro delle modifiche repository, Requisiti
 ...
 
 # Introduzione
