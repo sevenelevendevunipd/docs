@@ -74,13 +74,9 @@ Ogni requisito è identificato da un codice alfanumerico. Esistono:
 * Requisiti di qualità, identificati con **RQ**;
 * Requisiti di vincoli, identificati con **RV**.
 
-<!-- TO DO: decidere se ha senso mettere requisiti sistemi operativi e prestazionali -->
-
-Il progetto si occupa di due applicazioni distinte, e quindi si aggiunge all'inizio del codice **V** se è un requisito per SmartLogViewer, oppure **S** se è un requisito per SmartLogStatistics. Questo non vale per i requisiti di qualità, in quanto si riferiscono ad entrambe le applicazioni.
+Visto che il progetto si occupa di due applicazioni distinte, ai codici dei requisiti funzionali si aggiunge all'inizio **V** se è un requisito per SmartLogViewer, oppure **S** se è un requisito per SmartLogStatistics.
 
 Ogni requisito ha alla fine del codice un numero puntato.
-
-<!-- TO DO: decidere se ha senso tenere separati requisiti di vincoli -->
 
 # Processi di supporto
 
@@ -153,8 +149,30 @@ I verbali possono essere interni o esterni:
 
 #### Registro delle modifiche
 
+Il registro delle modifiche viene inserito nei documenti che non sono verbali per tenere conto delle modifiche e delle revisioni effettuate sul documento
+
+Il registro viene visualizzato sotto forma di tabella avente tre colonne:
+
+* Autore: chi ha effettuato le modifica o la revisione;
+* Data: data di modifica o revisione;
+* Cambiamenti: descrizione della modifica effettuata.
+
+La versione del documento è definita da tre numeri "x.y.z" dove:
+
+* **z** (patch): viene incrementato ogni qual volta ci sia stata una modifica poco consistente
+* **y** (minor): viene incrementato quando avviene una modifica che non comporta un cambiamento eccessivo. (es: aggiunta di paragrafi)
+* **z** (major): viene incrementato a seconda della rifinitura del documento (es: dopo aver steso una prima intera versione grezza)
+
 ## Repository
 
-### Scopo
+Per organizzare al meglio il lavoro, all'interno dell'organizzazione GitHub, abbiamo creato 1<!-- sistemare quando avremo un numero di repo finito --> repository:
+
+* SevenElevenUnipd/docs per i documenti.
 
 ### Nomenclatura dei commit e dei branch
+
+I branch vengono nominati in questo modo:  **SL-n-nome_branch** <!-- accentrato sotto?-->
+
+* SL: SmartLog;
+* n: numero auto incrementale;
+* Tutte le lettere di nome_branch devono essere minuscole e se si neccessita di separare delle parole deve essere utilizzato '_'.
