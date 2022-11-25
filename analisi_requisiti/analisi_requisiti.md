@@ -57,94 +57,107 @@ Questa sezione descrive i casi d'uso individuati dal gruppo, riferendosi alle fu
 
 L'applicazione dovrà essere utilizzata dagli operatori interni all'azienda.
 Vengono identificati i seguenti attori:
-
 * l'utente;
-
-```{ .plantuml caption="Attori"}
-:Utente:<|--:utente:
-:SmartLogViewer:
-:SmartLogViewer:
-```
 
 ## SmartLogViewer
 
-* VUC1 - Caricamento file di log (VRF1):
+### VUC1 - Caricamento file di log (VRF1):
 
-  ```{ .plantuml caption="VUC1"}
-  left to right direction
-  :utente: as o
-  usecase VUC1 as "VUC1
-  Carica log"
-  o--VUC1
-  ```
+```{ .plantuml caption="VUC1"}
+left to right direction
+:utente: as o
+usecase VUC1 as "VUC1
+Carica log"
+o--VUC1
+```
 
-  * Scenario: l'utente vuole caricare un file di log nell'applicazione SmartLogViewer;
-  * Attore: utente;
-  * Precondizioni: l'applicazione è operativa e funzionante;
-  * Postcondizioni: il file di log viene caricato correttamente nell'applicazione.
+* Scenario: l'utente vuole caricare un file di log nell'applicazione SmartLogViewer;
+* Attore: utente;
+* Precondizioni: l'applicazione è operativa e funzionante;
+* Postcondizioni: il file di log viene caricato correttamente nell'applicazione.
 
-* VUC2 - Visualizzazione tabellare (VRF2):
+<!-- ROTTO TUTTO MODIFICARE USE CASE (TABELLA E GRAFICO PRESENTI CONTEMPORANEAMENTE) -->
 
-  ```{ .plantuml caption="VUC2"}
-  left to right direction
-  :utente: as o
-  :SmartLogViewer: as v
-  package SmartLogViewer{
-  usecase VUC2 as "VUC2
-  Visualizza tabella"
-  usecase VUC2.1 as "VUC2.1
-  colora celle"
-  VUC2.1.>VUC2 : <<include>>
-  o--VUC2
-  VUC2--v
-  }
-  ```
+### VUC2 - Visualizzazione tabellare (VRF2):
 
-  * Scenario: l'utente sceglie di visualizzare il file di log in forma tabellare;
-  * Attore: utente;
-  * Precondizioni: è stato caricato un file di log nell'applicazione [VUC1];
-  * Postcondizioni: viene visualizzata la tabella.
-
-* VUC3 - Ordinamento e filtri (VRF2.2):
-
-  * Scenario: l'utente applica dei filtri o decide un ordinamento in base alle colonne della tabella;
-  * Attore: utente;
-  * Precondizioni: è visualizzata la tabella con i dati [VUC2];
-  * Postcondizioni: viene visualizzata la tabella con i filtri applicati.
-
-* VUC4 - Ricerca eventi (VRF2.3):
-  * Scenario: l'utente ricerca tramite keyword un evento;
-  * Attore: utente;
-  * Precondizioni: è visualizzata la tabella con i dati [VUC2];
-  * Postcondizioni: viene visualizzate le righe con l'evento ricercato
+```{ .plantuml caption="VUC2"}
+left to right direction
+:utente: as o
+usecase VUC2 as "VUC2
+Visualizza tabella
+--
+colora celle in base a Code e Unit/SubUnit"
+o--VUC2
+```
   
-* VUC5 - Raggruppamento e visualizzazione per data/ora (VRF2.4):
-  * Scenario: L'utente ricerca eventi dato un periodo con inizio e fine
-  * Attore: utente;
-  * Precondizioni: è visualizzata la tabella con i dati [VUC2];
-  * Postcondizioni: vengono visualizzate le righe della tabella aventi data/ora appartenti all'intervello selezionato
+* Scenario: l'utente sceglie di visualizzare il file di log in forma tabellare;
+* Attore: utente;
+* Precondizioni: è stato caricato un file di log nell'applicazione [VUC1];
+* Postcondizioni: viene visualizzata la tabella con i dati colorati correttamente.
 
-* VUC6 - Visualizzazione grafica (VRF3):
+### VUC3 - Modifica visualizzazione tabella (VRF2.2, VRF2.3, VRF2.4)
 
-  * Scenario: l'utente sceglie di visualizzare il file di log in forma grafica;
-  * Attore: utente;
-  * Precondizioni: è stato caricato un file di log nell'applicazione [VUC1];
-  * PostCondizioni: viene visualizzato il grafico.
+```{.plantuml caption="VUC3"}
+left to right direction
+:utente: as o
+package "SmartLogViewer Tabella"{
+usecase VUC2.2 as "VUC2.2
+Ordinamento e filtri"
+usecase VUC2.3 as "VUC2.3
+Ricerca eventi"
+usecase VUC2.4 as "VUC2.4
+Raggruppamento e visualizzazione per data/ora"
+}
+o--VUC2.2
+o--VUC2.3
+o--VUC2.4
+ ```
 
-* VUC7 - Selezione dell'intervallo di tempo su grafico (VRF3.4)
+* Scenari: 
+  1. l'utente applica dei filtri o decide un ordinamento in base alle colonne della tabella; 
+  2. l'utente ricerca tramite keyword un evento; 
+  3. l'utente ricerca eventi dato un periodo con inizio e fine;
+* Attore: utente;
+* Precondizioni: è visualizzata la tabella con i dati [VUC2];
+* Postcondizioni: è visualizzata la tabella con i dati modificati;
+
+### VUC4 - Visualizzazione grafica (VRF3):
+
+```{ .plantuml caption="VUC4"}
+left to right direction
+:utente: as o
+usecase VUC4 as "VUC4
+Visualizza grafico"
+o--VUC4
+```
+
+* Scenario: l'utente sceglie di visualizzare il file di log in forma grafica;
+* Attore: utente;
+* Precondizioni: è stato caricato un file di log nell'applicazione [VUC1];
+* PostCondizioni: viene visualizzato il grafico.
+
+### VUC5 - Modifica visualizzazione grafico (VRF3.4, VRF3.5)
+
+<!--TODO completare-->
+
+* Scenari:
+  1. l'utente seleziona l'intervallo temporale di eventi da visualizzare;
+  2. l'utente filtra;
+
+### VUC5 - Selezione dell'intervallo di tempo su grafico (VRF3.4)
   
   * Scenario: l'utente vuole selezionare un intervallo di tempo tramite funzioni;
   * Attore: utente;
   * Precondizioni: è visualizzato il grafico [VUC6];
   * PostCondizioni: viene visualizzato il grafico filtrato secondo le date fornite.
 
-* VUC8 - Filtraggio degli eventi (VRF3.5):
+### VUC6 - Filtraggio degli eventi (VRF3.5):
   * Scenario: l'utente vuole filtrare degli eventi sul grafico;
   * Attore: utente;
   * Precondizioni: è visualizzato il grafico [VUC6];
   * PostCondizioni: viene visualizzato il grafico con gli eventi filtrati.
 
-* VUC9 (VRF4) <!-- da sistemare dopo la chiamata-->
+### VUC7 (VRF4) <!-- da sistemare dopo la chiamata-->
 
 ## SmartLogStatistics
 
