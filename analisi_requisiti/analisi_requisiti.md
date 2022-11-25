@@ -57,11 +57,12 @@ Questa sezione descrive i casi d'uso individuati dal gruppo, riferendosi alle fu
 
 L'applicazione dovrà essere utilizzata dagli operatori interni all'azienda.
 Vengono identificati i seguenti attori:
+
 * l'utente;
 
 ## SmartLogViewer
 
-### VUC1 - Caricamento file di log (VRF1):
+### VUC1 - Caricamento file di log (VRF1)
 
 ```{ .plantuml caption="VUC1"}
 left to right direction
@@ -78,7 +79,7 @@ o--VUC1
 
 <!-- ROTTO TUTTO MODIFICARE USE CASE (TABELLA E GRAFICO PRESENTI CONTEMPORANEAMENTE) -->
 
-### VUC2 - Visualizzazione tabellare (VRF2):
+### VUC2 - Visualizzazione tabellare (VRF2)
 
 ```{ .plantuml caption="VUC2"}
 left to right direction
@@ -89,7 +90,7 @@ Visualizza tabella
 colora celle in base a Code e Unit/SubUnit"
 o--VUC2
 ```
-  
+
 * Scenario: l'utente sceglie di visualizzare il file di log in forma tabellare;
 * Attore: utente;
 * Precondizioni: è stato caricato un file di log nell'applicazione [VUC1];
@@ -113,15 +114,15 @@ o--VUC2.3
 o--VUC2.4
  ```
 
-* Scenari: 
-  1. l'utente applica dei filtri o decide un ordinamento in base alle colonne della tabella; 
-  2. l'utente ricerca tramite keyword un evento; 
+* Scenari:
+  1. l'utente applica dei filtri o decide un ordinamento in base alle colonne della tabella;
+  2. l'utente ricerca tramite keyword un evento;
   3. l'utente ricerca eventi dato un periodo con inizio e fine;
 * Attore: utente;
 * Precondizioni: è visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: è visualizzata la tabella con i dati modificati;
 
-### VUC4 - Visualizzazione grafica (VRF3):
+### VUC4 - Visualizzazione grafica (VRF3)
 
 ```{ .plantuml caption="VUC4"}
 left to right direction
@@ -145,60 +146,66 @@ o--VUC4
   2. l'utente filtra;
 
 ### VUC5 - Selezione dell'intervallo di tempo su grafico (VRF3.4)
-  
-  * Scenario: l'utente vuole selezionare un intervallo di tempo tramite funzioni;
-  * Attore: utente;
-  * Precondizioni: è visualizzato il grafico [VUC6];
-  * PostCondizioni: viene visualizzato il grafico filtrato secondo le date fornite.
 
-### VUC6 - Filtraggio degli eventi (VRF3.5):
-  * Scenario: l'utente vuole filtrare degli eventi sul grafico;
-  * Attore: utente;
-  * Precondizioni: è visualizzato il grafico [VUC6];
-  * PostCondizioni: viene visualizzato il grafico con gli eventi filtrati.
+* Scenario: l'utente vuole selezionare un intervallo di tempo tramite funzioni;
+* Attore: utente;
+* Precondizioni: è visualizzato il grafico [VUC6];
+* PostCondizioni: viene visualizzato il grafico filtrato secondo le date fornite.
+
+### VUC6 - Filtraggio degli eventi (VRF3.5)
+
+* Scenario: l'utente vuole filtrare degli eventi sul grafico;
+* Attore: utente;
+* Precondizioni: è visualizzato il grafico [VUC6];
+* PostCondizioni: viene visualizzato il grafico con gli eventi filtrati.
 
 ### VUC7 (VRF4) <!-- da sistemare dopo la chiamata-->
 
 ## SmartLogStatistics
 
-* SUC1 - Selezione dei log per range di data/ora (SRF1):
+### SUC1 - Selezione dei log per range di data/ora (SRF1)
 
-  * Scenario: l'utente sceglie i log da prendere in considerazione per i grafici mediante range di data/ora (min, max, all);
-  * Attore: utente;
-  * Precondizioni: l'applicazione è operativa e funzionante;
-  * PostCondizioni: i log vengono caricati correttamente nell'applicazione.
+* Scenario: l'utente sceglie i log da prendere in considerazione per i grafici mediante range di data/ora (min, max, all);
+* Attore: utente;
+* Precondizioni: l'applicazione è operativa e funzionante;
+* PostCondizioni: i log vengono caricati correttamente nell'applicazione.
 
-* SUC2 - Visualizzazione tabellare (SRF2):
-  * Scenario: l'utente sceglie di visualizzare i log in forma tabellare;
-  * Attori: utente;
-  * Precondizioni: sono stati filtrati i log da visualizzare [SUC1];
-  * PostCondizioni: viene visualizzata la tabella.
+### SUC2 - Visualizzazione tabellare (SRF2)
 
-* SUC3 - Visualizzazione lista (SRF2.6) <!-- da finire -->
+* Scenario: l'utente sceglie di visualizzare i log in forma tabellare;
+* Attori: utente;
+* Precondizioni: sono stati filtrati i log da visualizzare [SUC1];
+* PostCondizioni: viene visualizzata la tabella.
 
-* SUC4 - Visualizzazione grafica - totale di occorrenze rispetto al tempo(SRF3):
-  * Scenario: l'utente sceglie di visualizzare i log in forma grafica;
-  * Attori: utente;
-  * Precondizioni: sono stati filtrati i log da visualizzare [SUC1];
-  * PostCondizioni: viene visualizzato il grafico.
+### SUC3 - Visualizzazione lista (SRF2.6) <!-- da finire -->
 
-* SUC5 - Filtraggio eventi per code, unit, subunit (SRF3.1.1)
-  * Scenario: l'utente filtra gli eventi per code, unit, subunit;
-  * Attore: utente;
-  * Precondizioni: viene visualizzato il grafico [SUC4];
-  * PostCondizioni: viene visualizzato il grafico con i log filtrati.
+### SUC4 - Visualizzazione grafica - totale di occorrenze rispetto al tempo(SRF3)
 
-* SUC6 - Visualizzazione grafica - Numero di occorrenze rispetto alle versione firmware
-  * Scenario: l'utente sceglie di visualizzare i log in forma grafica;
-  * Attore: utente;
-  * Precondizioni: sono stati filtrati i log da visualizzare [SUC1];
-  * PostCondizioni: viene visualizzato il grafico.
+* Scenario: l'utente sceglie di visualizzare i log in forma grafica;
+* Attori: utente;
+* Precondizioni: sono stati filtrati i log da visualizzare [SUC1];
+* PostCondizioni: viene visualizzato il grafico.
 
-* SUC7 - Selezione degli eventi e la lista dei firmware
-  * Scenario: l'utente vuole selezionare degli eventi e/o la lista dei firmaware;
-  * Attore: utente;
-  * Precondizioni: viene visualizzato il grafico [SUC6];
-  * PostCondizioni: viene visualizzato il grafico con i log selezionati.
+### SUC5 - Filtraggio eventi per code, unit, subunit (SRF3.1.1)
+
+* Scenario: l'utente filtra gli eventi per code, unit, subunit;
+* Attore: utente;
+* Precondizioni: viene visualizzato il grafico [SUC4];
+* PostCondizioni: viene visualizzato il grafico con i log filtrati.
+
+### SUC6 - Visualizzazione grafica - Numero di occorrenze rispetto alla versione firmware
+
+* Scenario: l'utente sceglie di visualizzare i log in forma grafica;
+* Attore: utente;
+* Precondizioni: sono stati filtrati i log da visualizzare [SUC1];
+* PostCondizioni: viene visualizzato il grafico.
+
+### SUC7 - Selezione degli eventi e la lista dei firmware
+
+* Scenario: l'utente vuole selezionare degli eventi e/o la lista dei firmaware;
+* Attore: utente;
+* Precondizioni: viene visualizzato il grafico [SUC6];
+* PostCondizioni: viene visualizzato il grafico con i log selezionati.
 
 # Requisiti
 
