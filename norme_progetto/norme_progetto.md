@@ -101,9 +101,9 @@ Per i casi d'uso vengono specificati:
   * Postcondizioni
 
 Ad ogni caso d'uso vengono associate due tipologie di etichette:
-> [VUC] o [SUC] rimandano al caso d'uso padre da cui derivano.
 
-> (VRF) o (SRF) rimandano ai requisiti funzionali che i casi d'uso cercando di descrivere.
+* [VUC] o [SUC] rimandano al caso d'uso padre da cui derivano.
+* (VRF) o (SRF) rimandano ai requisiti funzionali che i casi d'uso cercando di descrivere.
 
 # Processi di supporto
 
