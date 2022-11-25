@@ -169,8 +169,7 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
 ### Capitolato
 
 * SRF1 - L'utente deve poter selezionare i log da analizzare per range di data/ora (min, max, all);
-* SRF2 - L'utente deve potere visualizzare le seguenti statistiche come tabella:  <!-- Da sistemare alla prossima
-  versione perché risulta ambigua la spiegazione -->
+* SRF2 - L'utente deve potere visualizzare le seguenti statistiche come tabella:  <!-- Da sistemare alla prossima versione perché risulta ambigua la spiegazione -->
   * SRF2.1 - Intervallo Temporale;
   * SRF2.2 - Numero di storici analizzati;
   * SRF2.3 - Media Numero di eventi per log;
