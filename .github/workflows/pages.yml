@@ -59,6 +59,8 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: docs_site
+      - name: Fix vercel directories not 302ing to slashed path
+        run: find . -name "index.html" -exec sed -i -e 's|href="\([a-zA-Z_]*\)"|href="\1/"|g' {} \;
       - name: Deploy to Vercel Action
         uses: BetaHuhn/deploy-to-vercel-action@v1
         with:
