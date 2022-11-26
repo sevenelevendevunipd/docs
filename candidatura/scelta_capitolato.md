@@ -30,9 +30,9 @@ Seguono le motivazioni principali di tale scelta:
     \begin{longtable}[h]{p{0.15\textwidth}|p{0.1\textwidth}|p{0.6\textwidth}}
         \textbf{Data} & \textbf{Azienda} & \textbf{Resoconto} \\
         \hline
-        \href{https://sevenelevendevunipd.github.io/docs/verbali/esterni/20221026\_CallInfocert.pdf}{26/10/2022} & \href{https://sevenelevendevunipd.github.io/docs/verbali/esterni/20221026\_CallInfocert.pdf}{InfoCert} & L'azienda ha chiarito dubbi sulla disponibilità degli standard da implementare, sulle tipologie di test richiesti e sulle tecnlogie consigliate. L'azienda si è mostrata inoltre molto disponibile nel supporto allo svolgimento del progetto.\\
+        \href{https://sevenelevendevunipd.github.io/docs/verbali/esterni/20221026\_CallInfocert.pdf}{26/10/2022} & InfoCert & L'azienda ha chiarito dubbi sulla disponibilità degli standard da implementare, sulle tipologie di test richiesti e sulle tecnlogie consigliate. L'azienda si è mostrata inoltre molto disponibile nel supporto allo svolgimento del progetto.\\
         \hline
-        \href{https://sevenelevendevunipd.github.io/docs/verbali/esterni/20221027\_CallSocomec.pdf}{27/10/2022} & \href{https://sevenelevendevunipd.github.io/docs/verbali/esterni/20221027\_CallSocomec.pdf}{Socomec} & L'azienda ha chiarito vari dubbi riguardanti la parte viewer dell'applicazione e sul salvataggio dei log. Inoltre ha disposto vari consigli decisamente utili per il futuro. \\
+        \href{https://sevenelevendevunipd.github.io/docs/verbali/esterni/20221027\_CallSocomec.pdf}{27/10/2022} & Socomec & L'azienda ha chiarito vari dubbi riguardanti la parte viewer dell'applicazione e sul salvataggio dei log. Inoltre ha disposto vari consigli decisamente utili per il futuro. \\
     \end{longtable}
 \end{center}
 <!-- markdownlint-restore -->
