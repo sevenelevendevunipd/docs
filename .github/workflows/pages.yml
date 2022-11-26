@@ -2,6 +2,7 @@ name: Build documents with Pandoc and upload to GitHub Pages
 
 on:
   push:
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -9,10 +10,6 @@ permissions:
   pages: write
   id-token: write
   statuses: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
 
 jobs:
   lint:
@@ -50,9 +47,29 @@ jobs:
         with:
           name: docs_site
           path: ./docs
+  deploy_pr:
+    name: Deploy PR to Vercel
+    needs: [build, lint]
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: docs_site
+      - name: Deploy to Vercel Action
+        uses: BetaHuhn/deploy-to-vercel-action@v1
+        with:
+          GITHUB_TOKEN: ${{ github.token }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
   deploy:
     name: Deploy to Pages
     if: github.ref == 'refs/heads/master'
+    concurrency:
+      group: "pages"
+      cancel-in-progress: true
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
