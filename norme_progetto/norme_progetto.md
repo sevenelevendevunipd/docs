@@ -28,6 +28,10 @@ versioni:
     autore: Andrea Auletta
     data: 25/11/2022
     cambiamenti: Modificati paragrafi registro delle modifiche repository, Requisiti
+  v0.0.6:
+    autore: Enrik Rucaj
+    data: 25/11/2022
+    cambiamenti: Aggiunta sezione YouTrack, Casi d'uso (per analisi dei requisiti) e modificata sezione Repository
 ...
 
 # Introduzione
