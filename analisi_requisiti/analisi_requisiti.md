@@ -21,6 +21,10 @@ cambiamenti: Stesura parziale Use Cases per SmartLogViewer
 autore: Andrea Auletta
 data: 25/11/2022
 cambiamenti: Completata prima stesura dei casi d'uso
+0.3.1:
+autore: Mattia Brunello
+data: 26/11/2022
+cambiamenti: Typo fix e riorganizzazione del documento
 ...
 
 # Introduzione
@@ -45,9 +49,85 @@ Il progetto prevede di sviluppare due applicazioni:
 Alcuni termini potrebbero non risultare consoni al linguaggio usuale quindi questi ultimi vengono inseriti nel
 documento *Glossario* assieme alle loro definizioni.
 
-## Rifermenti
+## Riferimenti
 
 <!-- riferimenti al capitolato e alle slide-->
+
+# Requisiti
+
+Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti delle applicazioni "SmartLogViewer" e
+"SmartLogStatistics".
+
+## Requisiti funzionali - SmartLogViewer
+
+### Capitolato
+
+* VRF1 - L'utente deve poter caricare nell'applicazione un singolo file di log (.csv) presente localmente;
+* VRF2 - Deve essere presente una visualizzazione in forma tabellare con le seguenti funzionalità:
+  * VRF2.1 - L'applicazione colora degli eventi in base a:
+    * VRF2.1.1 - Codice di identificazione (code);
+    * VRF2.1.2 - Livello di nidificazione (Unit/SubUnit); <!-- TODO capire cosa dovrebbe essere -->
+  * VRF2.2 - Funzioni di filtro e ordinamento sulle colonne in modo simile agli spreadsheet;
+  * VRF2.3 - Funzione di ricerca eventi;
+  * VRF2.4 - Funzione di raggruppamento e visualizzazione per Data/Ora:
+    dato un intervallo di tempo vengono visualizzati tutti gli eventi presenti in quel lasso di tempo;
+* VRF3 - Deve essere presente una visualizzazione in forma grafica con le seguenti caratteristiche:
+  * VRF3.1 - L’asse X rappresenta il tempo;
+  * VRF3.2 - L’asse Y contiene l’insieme degli eventi;
+  * VRF3.3 - Un rettangolo “pieno” che si sviluppa sull'asse x indica il periodo di tempo in cui l’evento (indicato
+    sull'asse y) è ATTIVO;
+  * VRF3.4 - Deve essere possibile selezione l’intervallo di tempo desiderato, con funzioni di select/zoom/span/altro;
+  * VRF3.5 - Deve essere possibile filtrare gli eventi in base alle colonne ( Code, Unit/subUnit. etc);
+* VRF4 - Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un log, con la relativa
+  etichettatura; (che identifica in forma mnemonica la sequenza. i.e. Sequenza di accensione, di spegnimento).
+
+## Requisiti funzionali - SmartLogStatistics
+
+### Capitolato
+
+* SRF1 - L'utente deve poter selezionare i log da analizzare per range di data/ora (min, max, all);
+* SRF2 - L'utente deve potere visualizzare le seguenti statistiche come tabella:  <!-- Da sistemare alla prossima versione perché risulta ambigua la spiegazione -->
+  * SRF2.1 - Intervallo Temporale;
+  * SRF2.2 - Numero di storici analizzati;
+  * SRF2.3 - Media Numero di eventi per log;
+  * SRF2.4 - Max Numero di eventi per log;
+  * SRF2.5 - Deviazione Standard Numero di eventi per log;
+  * SRF2.6 - Lista degli eventi raggruppata per frequenza di occorrenza (0-1) con possibilità di filtraggio e
+    ordinamento per:
+    * SRF2.6.1 - Unit/subUnit;
+    * SRF2.6.2 - Data e Ora;
+    * SRF2.6.3 - Versione firmware;
+* SRF3 - L'utente deve poter visualizzare sotto forma di grafico:
+  * SRF3.1 - Il numero totale di occorrenze (0->1) rispetto al tempo per singolo evento (velocità).
+    * SRF3.1.1 - ci deve essere la possibilità di selezionare/filtrare gli eventi per Code, Unit/subUnit (cumulativo vs tempo)
+  * SRF3.2 - Il numero di occorrenze normalizzato per numero di storici rispetto alle versioni firmware
+    * SRF3.2.1 ci deve essere la  possibilità di selezionare gli eventi e la lista dei firmware
+
+## Requisiti qualitativi
+
+### Capitolato
+
+* RQ1 - Il prodotto deve essere sviluppato seguendo le regole descritte nel documento *norme_progetto*;
+* RQ2 - Deve essere fornita la documentazione minima richiesta anche dal corso di "Ingegneria del Software";
+* RQ3 - Deve essere fornita una guida per sviluppatori;
+* RQ4 - Viene richiesto l'utilizzo di un repository pubblico (GitHub).
+
+Decisioni interne:
+
+## Requisiti di vincoli
+
+### Capitolato
+
+* RV1 - L'interfaccia di visualizzazione deve essere di tipo Web
+
+## Requisiti sistemi operativi
+
+Non è stato individuato nessun requisito di vincolo riguardante i sistemi operativi da supportare poiché l’applicativo
+da sviluppare viene eseguito su browser.
+
+## Requisiti prestazionali
+
+L'azienda non ha posto requisiti prestazionali per le applicazioni.
 
 # Casi d'uso
 
@@ -58,7 +138,7 @@ Questa sezione descrive i casi d'uso individuati dal gruppo, riferendosi alle fu
 L'applicazione dovrà essere utilizzata dagli operatori interni all'azienda.
 Vengono identificati i seguenti attori:
 
-* l'utente;
+* L'utente;
 
 ## SmartLogViewer
 
@@ -115,9 +195,10 @@ o--VUC2.4
  ```
 
 * Scenari:
-  1. l'utente applica dei filtri o decide un ordinamento in base alle colonne della tabella;
-  2. l'utente ricerca tramite keyword un evento;
-  3. l'utente ricerca eventi dato un periodo con inizio e fine;
+  1. L'utente applica dei filtri o decide un ordinamento in base alle colonne della tabella;
+  2. L'utente applica dei filtri o decide un ordinamento in base alle colonne della tabella;
+  3. L'utente ricerca tramite keyword un evento;
+  4. L'utente ricerca eventi dato un periodo con inizio e fine;
 * Attore: utente;
 * Precondizioni: è visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: è visualizzata la tabella con i dati modificati;
@@ -206,79 +287,3 @@ o--VUC4
 * Attore: utente;
 * Precondizioni: viene visualizzato il grafico [SUC6];
 * PostCondizioni: viene visualizzato il grafico con i log selezionati.
-
-# Requisiti
-
-Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti delle applicazioni "SmartLogViewer" e
-"SmartLogStatistics".
-
-## Requisiti funzionali - SmartLogViewer
-
-### Capitolato
-
-* VRF1 - L'utente deve poter caricare nell'applicazione un singolo file di log (.csv) presente localmente;
-* VRF2 - Deve essere presente una visualizzazione in forma tabellare con le seguenti funzionalità:
-  * VRF2.1 - L'applicazione colora degli eventi in base a:
-    * VRF2.1.1 - Codice di identificazione (code);
-    * VRF2.1.2 - Livello di nidificazione (Unit/SubUnit); <!-- TODO capire cosa dovrebbe essere -->
-  * VRF2.2 - Funzioni di filtro e ordinamento sulle colonne in modo simile agli spreadsheet;
-  * VRF2.3 - Funzione di ricerca eventi;
-  * VRF2.4 - Funzione di raggruppamento e visualizzazione per Data/Ora:
-    dato un intervallo di tempo vengono visualizzati tutti gli eventi presenti in quel lasso di tempo;
-* VRF3 - Deve essere presente una visualizzazione in forma grafica con le seguenti caratteristiche:
-  * VRF3.1 - L’asse X rappresenta il tempo;
-  * VRF3.2 - L’asse Y contiene l’insieme degli eventi;
-  * VRF3.3 - Un rettangolo “pieno” che si sviluppa sull'asse x indica il periodo di tempo in cui l’evento (indicato
-    sull'asse y) è ATTIVO;
-  * VRF3.4 - Deve essere possibile selezione l’intervallo di tempo desiderato, con funzioni di select/zoom/span/altro;
-  * VRF3.5 - Deve essere possibile filtrare gli eventi in base alle colonne ( Code, Unit/subUnit. etc);
-* VRF4 - Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un log, con la relativa
-  etichettatura; (che identifica in forma mnemonica la sequenza. i.e. Sequenza di accensione, di spegnimento).
-
-## Requisiti funzionali - SmartLogStatistics
-
-### Capitolato
-
-* SRF1 - L'utente deve poter selezionare i log da analizzare per range di data/ora (min, max, all);
-* SRF2 - L'utente deve potere visualizzare le seguenti statistiche come tabella:  <!-- Da sistemare alla prossima versione perché risulta ambigua la spiegazione -->
-  * SRF2.1 - Intervallo Temporale;
-  * SRF2.2 - Numero di storici analizzati;
-  * SRF2.3 - Media Numero di eventi per log;
-  * SRF2.4 - Max Numero di eventi per log;
-  * SRF2.5 - Deviazione Standard Numero di eventi per log;
-  * SRF2.6 - Lista degli eventi raggruppata per frequenza di occorrenza (0-1) con possibilità di filtraggio e
-    ordinamento per:
-    * SRF2.6.1 - Unit/subUnit;
-    * SRF2.6.2 - Data e Ora;
-    * SRF2.6.3 - Versione firmware;
-* SRF3 - L'utente deve poter visualizzare sotto forma di grafico:
-  * SRF3.1 - Il numero totale di occorrenze (0->1) rispetto al tempo per singolo evento (velocità).
-    * SRF3.1.1 - ci deve essere la possibilità di selezionare/filtrare gli eventi per Code, Unit/subUnit (cumulativo vs tempo)
-  * SRF3.2 - Il numero di occorrenze normalizzato per numero di storici rispetto alle versioni firmware
-    * SRF3.2.1 ci deve essere la  possibilità di selezionare gli eventi e la lista dei firmware
-
-## Requisiti qualitativi
-
-### Capitolato
-
-* RQ1 - Il prodotto deve essere sviluppato seguendo le regole descritte nel documento *norme_progetto*;
-* RQ2 - Deve essere fornita la documentazione minima richiesta anche dal corso di "Ingegneria del Software";
-* RQ3 - Deve essere fornita una guida per sviluppatori;
-* RQ4 - Viene richiesto l'utilizzo di un repository pubblico (GitHub).
-
-Decisioni interne:
-
-## Requisiti di vincoli
-
-### Capitolato
-
-* RV1 - L'interfaccia di visualizzazione deve essere di tipo Web
-
-## Requisiti sistemi operativi
-
-Non è stato individuato nessun requisito di vincolo riguardante i sistemi operativi da supportare poiché l’applicativo
-da sviluppare viene eseguito su browser.
-
-## Requisiti prestazionali
-
-L'azienda non ha posto requisiti prestazionali per le applicazioni.
