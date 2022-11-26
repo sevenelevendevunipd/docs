@@ -10,6 +10,7 @@ permissions:
   pages: write
   id-token: write
   statuses: write
+  deployments: write
 
 jobs:
   lint:
