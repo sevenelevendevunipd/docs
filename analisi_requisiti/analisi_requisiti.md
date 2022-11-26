@@ -5,26 +5,31 @@ responsabile: "Nicola Cecchetto"
 redattori: ["Andrea Auletta", "Mattia Brunello", "Davide Vitagliano"]
 verificatori: ["Enrik Rucaj", "Antonio Stan", "Augusto Zanellato"]
 versioni:
-0.0.1:
-autore: Andrea Auletta
-data: 15/11/2022
-cambiamenti: Prima stesura
-0.1.0:
-autore: Andrea Auletta
-data: 16/11/2022
-cambiamenti: Stesura requisiti espliciti del capitolato
-0.2.0:
-autore: Davide Vitagliano
-data: 24/11/2022
-cambiamenti: Stesura parziale Use Cases per SmartLogViewer
-0.3.0:
-autore: Andrea Auletta
-data: 25/11/2022
-cambiamenti: Completata prima stesura dei casi d'uso
-0.3.1:
-autore: Mattia Brunello
-data: 26/11/2022
-cambiamenti: Typo fix e riorganizzazione del documento
+  0.0.1:
+    autore: Andrea Auletta
+    data: 15/11/2022
+    cambiamenti: Prima stesura
+  0.1.0:
+    autore: Andrea Auletta
+    data: 16/11/2022
+    cambiamenti: Stesura requisiti espliciti del capitolato
+  0.2.0:
+    autore: Davide Vitagliano
+    data: 24/11/2022
+    cambiamenti: Stesura parziale Use Cases per SmartLogViewer
+  0.3.0:
+    autore: Andrea Auletta
+    data: 25/11/2022
+    cambiamenti: Completata prima stesura dei casi d'uso
+  0.3.1:
+    autore: Mattia Brunello
+    data: 26/11/2022
+    cambiamenti: Typo fix e riorganizzazione del documento
+  0.3.2:
+    autore: Mattia Brunello
+    data: 26/11/2022
+    cambiamenti: Aggiunti graifci dei casi d'uso
+
 ...
 
 # Introduzione
@@ -101,7 +106,7 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
   * SRF3.1 - Il numero totale di occorrenze (0->1) rispetto al tempo per singolo evento (velocità).
     * SRF3.1.1 - ci deve essere la possibilità di selezionare/filtrare gli eventi per Code, Unit/subUnit (cumulativo vs tempo)
   * SRF3.2 - Il numero di occorrenze normalizzato per numero di storici rispetto alle versioni firmware
-    * SRF3.2.1 ci deve essere la  possibilità di selezionare gli eventi e la lista dei firmware
+    * SRF3.2.1 ci deve essere la possibilità di selezionare gli eventi e la lista dei firmware
 
 ## Requisiti qualitativi
 
@@ -147,8 +152,10 @@ Vengono identificati i seguenti attori:
 ```{ .plantuml caption="VUC1"}
 left to right direction
 :utente: as o
+package "SmartLogViewer"{
 usecase VUC1 as "VUC1
 Carica log"
+}
 o--VUC1
 ```
 
@@ -164,10 +171,13 @@ o--VUC1
 ```{ .plantuml caption="VUC2"}
 left to right direction
 :utente: as o
+package "SmartLogViewer"{
 usecase VUC2 as "VUC2
-Visualizza tabella
---
-colora celle in base a Code e Unit/SubUnit"
+Visualizza tabella"
+
+' colora celle in base a Code e Unit/SubUnit'
+' è l'applicazione che lo fa'
+}
 o--VUC2
 ```
 
@@ -182,23 +192,22 @@ o--VUC2
 left to right direction
 :utente: as o
 package "SmartLogViewer Tabella"{
-usecase VUC2.2 as "VUC2.2
+usecase VUC3.1 as "VUC3.1
 Ordinamento e filtri"
-usecase VUC2.3 as "VUC2.3
-Ricerca eventi"
-usecase VUC2.4 as "VUC2.4
+usecase VUC3.2 as "VUC3.2
+Ricerca eventi tramite keyword"
+usecase VUC3.3 as "VUC3.3
 Raggruppamento e visualizzazione per data/ora"
 }
-o--VUC2.2
-o--VUC2.3
-o--VUC2.4
+o--VUC3.1
+o--VUC3.2
+o--VUC3.3
  ```
 
 * Scenari:
   1. L'utente applica dei filtri o decide un ordinamento in base alle colonne della tabella;
-  2. L'utente applica dei filtri o decide un ordinamento in base alle colonne della tabella;
-  3. L'utente ricerca tramite keyword un evento;
-  4. L'utente ricerca eventi dato un periodo con inizio e fine;
+  2. L'utente ricerca tramite keyword un evento;
+  3. L'utente ricerca eventi dato un periodo con inizio e fine;
 * Attore: utente;
 * Precondizioni: è visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: è visualizzata la tabella con i dati modificati;
@@ -208,8 +217,10 @@ o--VUC2.4
 ```{ .plantuml caption="VUC4"}
 left to right direction
 :utente: as o
+package "SmartLogViewer"{
 usecase VUC4 as "VUC4
 Visualizza grafico"
+}
 o--VUC4
 ```
 
@@ -218,26 +229,38 @@ o--VUC4
 * Precondizioni: è stato caricato un file di log nell'applicazione [VUC1];
 * PostCondizioni: viene visualizzato il grafico.
 
-### VUC5 - Modifica visualizzazione grafico (VRF3.4, VRF3.5)
-
-<!--TODO completare-->
-
-* Scenari:
-  1. l'utente seleziona l'intervallo temporale di eventi da visualizzare;
-  2. l'utente filtra;
-
 ### VUC5 - Selezione dell'intervallo di tempo su grafico (VRF3.4)
+  
+```{.plantuml caption="VUC5"}
+left to right direction
+:utente: as o
+package "SmartLogViewer Grafico"{
+usecase VUC5 as "VUC5
+Selezione intervallo di tempo"
+}
+o--VUC5
+```
 
 * Scenario: l'utente vuole selezionare un intervallo di tempo tramite funzioni;
 * Attore: utente;
-* Precondizioni: è visualizzato il grafico [VUC6];
+* Precondizioni: è visualizzato il grafico [VUC4];
 * PostCondizioni: viene visualizzato il grafico filtrato secondo le date fornite.
 
 ### VUC6 - Filtraggio degli eventi (VRF3.5)
 
+```{.plantuml caption="VUC6"}
+left to right direction
+:utente: as o
+package "SmartLogViewer Grafico"{
+usecase VUC6 as "VUC6
+Selezione filtri"
+}
+o--VUC6
+```
+
 * Scenario: l'utente vuole filtrare degli eventi sul grafico;
 * Attore: utente;
-* Precondizioni: è visualizzato il grafico [VUC6];
+* Precondizioni: è visualizzato il grafico [VUC4];
 * PostCondizioni: viene visualizzato il grafico con gli eventi filtrati.
 
 ### VUC7 (VRF4) <!-- da sistemare dopo la chiamata-->
@@ -245,6 +268,16 @@ o--VUC4
 ## SmartLogStatistics
 
 ### SUC1 - Selezione dei log per range di data/ora (SRF1)
+  
+```{ .plantuml caption="SUC1"}
+left to right direction
+:utente: as o
+package "SmartLogStatistics"{
+usecase SUC1 as "SUC1
+Selezione range di tempo"
+}
+o--SUC1
+```
 
 * Scenario: l'utente sceglie i log da prendere in considerazione per i grafici mediante range di data/ora (min, max, all);
 * Attore: utente;
@@ -252,38 +285,138 @@ o--VUC4
 * PostCondizioni: i log vengono caricati correttamente nell'applicazione.
 
 ### SUC2 - Visualizzazione tabellare (SRF2)
+  
+```{ .plantuml caption="SUC2"}
+left to right direction
+:utente: as o
+package "SmartLogStatistics"{
+usecase SUC2 as "SUC2
+Visualizza tabella"
+}
+o--SUC2
+```
 
 * Scenario: l'utente sceglie di visualizzare i log in forma tabellare;
 * Attori: utente;
 * Precondizioni: sono stati filtrati i log da visualizzare [SUC1];
 * PostCondizioni: viene visualizzata la tabella.
 
-### SUC3 - Visualizzazione lista (SRF2.6) <!-- da finire -->
+### SUC3 - Visualizzazione lista filtrata per Unit/Subunit (SRF2.6.1) <!-- da finire -->
 
-### SUC4 - Visualizzazione grafica - totale di occorrenze rispetto al tempo(SRF3)
+```{ .plantuml caption="SUC3"}
+left to right direction
+:utente: as o
+package "SmartLogStatistics Tabella"{
+usecase SUC3 as "SUC3
+Visualizza lista filtrata per Unit/Subunit"
+}
+o--SUC3
+```
+
+* Scenario: L'utente sceglie di visualizzare la lista filtrando per unit/subunit;
+* Attori: utente;
+* Precondizioni: viene visualizzata la lista degli eventi per frequenza di occorenza;
+* Postcondizioni: viene visualizzata la lista filtrata.
+
+### SUC4 - Visualizzazione lista filtrata per data e ora (SRF2.6.2)
+
+```{ .plantuml caption="SUC4"}
+left to right direction
+:utente: as o
+package "SmartLogStatistics Tabella"{
+usecase SUC4 as "SUC4
+Visualizza lista filtrata per data e ora"
+}
+o--SUC4
+```
+
+*Scenario: L'utente sceglie di visualizzare la lista filtrando per data e ora;
+*Attori: utente;
+*Precondizioni: viene visualizzata la lista degli eventi per frequenza di occorenza;
+*Postcondizioni: viene visualizzata la lista filtrata.
+
+### SUC5 - Visualizzazione lista filtrata per versione firmware (SRF2.6.3)
+
+```{ .plantuml caption="SUC5"}
+left to right direction
+:utente: as o
+package "SmartLogStatistics Tabella"{
+usecase SUC5 as "SUC5
+Visualizza lista filtrata per versione firmware"
+}
+o--SUC5
+```
+
+*Scenario: L'utente sceglie di visualizzare la lista filtrando per versione firmware;
+*Attori: utente;
+*Precondizioni: viene visualizzata la lista degli eventi per frequenza di occorenza;
+*Postcondizioni: viene visualizzata la lista filtrata.
+
+### SUC6 - Visualizzazione grafica - totale di occorrenze rispetto al tempo(SRF3)
+  
+```{ .plantuml caption="SUC6"}
+left to right direction
+:utente: as o
+package "SmartLogStatistics"{
+usecase SUC6 as "SUC6
+Visualizza grafico"
+}
+o--SUC6
+```
 
 * Scenario: l'utente sceglie di visualizzare i log in forma grafica;
 * Attori: utente;
 * Precondizioni: sono stati filtrati i log da visualizzare [SUC1];
 * PostCondizioni: viene visualizzato il grafico.
 
-### SUC5 - Filtraggio eventi per code, unit, subunit (SRF3.1.1)
+### SUC7 - Filtraggio eventi per code, unit, subunit (SRF3.1.1)
+
+```{ .plantuml caption="SUC7"}
+left to right direction
+:utente: as o
+package "SmartLogStatistics Grafico"{
+usecase SUC7 as "SUC7
+Filtraggio eventi per code, unit, subunit"
+}
+o--SUC7
+```
 
 * Scenario: l'utente filtra gli eventi per code, unit, subunit;
 * Attore: utente;
 * Precondizioni: viene visualizzato il grafico [SUC4];
 * PostCondizioni: viene visualizzato il grafico con i log filtrati.
 
-### SUC6 - Visualizzazione grafica - Numero di occorrenze rispetto alla versione firmware
+### SUC8 - Visualizzazione grafica - Numero di occorrenze rispetto alla versione firmware (SRF3.2)
+  
+```{ .plantuml caption="SUC8"}
+left to right direction
+:utente: as o
+package "SmartLogStatistics Grafico"{
+usecase SUC8 as "SUC8
+Visualizza grafico con numero di occorrenze
+rispetto alla versione firmware"
+}
+o--SUC8
+```
 
-* Scenario: l'utente sceglie di visualizzare i log in forma grafica;
+* Scenario: l'utente sceglie di visualizzare il numero di occorrenze rispetto alla versione firmware;
 * Attore: utente;
 * Precondizioni: sono stati filtrati i log da visualizzare [SUC1];
-* PostCondizioni: viene visualizzato il grafico.
+* PostCondizioni: viene visualizzato il grafico con numero di occorrenze rispetto alla versione firmware.
 
-### SUC7 - Selezione degli eventi e la lista dei firmware
+### SUC9 - Selezione degli eventi e la lista dei firmware (SRF3.2.1)
 
-* Scenario: l'utente vuole selezionare degli eventi e/o la lista dei firmaware;
+```{ .plantuml caption="SUC9"}
+left to right direction
+:utente: as o
+package "SmartLogStatistics Grafico"{
+usecase SUC9 as "SUC9
+Selezione degli eventi e la lista dei firmware"
+}
+o--SUC9
+```
+
+* Scenario: l'utente vuole selezionare degli eventi e la lista dei firmaware;
 * Attore: utente;
-* Precondizioni: viene visualizzato il grafico [SUC6];
-* PostCondizioni: viene visualizzato il grafico con i log selezionati.
+* Precondizioni: viene visualizzato il grafico con numero di occorrenze rispetto alla versione firmware [SUC8];
+* PostCondizioni: viene visualizzato il grafico con i filtri applicati.
