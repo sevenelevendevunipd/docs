@@ -24,11 +24,11 @@ versioni:
   0.3.1:
     autore: Mattia Brunello
     data: 26/11/2022
-    cambiamenti: Typo fix e riorganizzazione del documento
+    cambiamenti: Aggiunti graifci dei casi d'uso e riorganizzazione del documento
   0.3.2:
-    autore: Mattia Brunello
-    data: 26/11/2022
-    cambiamenti: Aggiunti graifci dei casi d'uso
+    autore: Davide Vitagliano
+    data: 01/12/2022
+    cambiamenti: revisione degli errori
 
 ...
 
@@ -38,7 +38,7 @@ versioni:
 
 Lo scopo di questo documento è quello d'illustrare i casi d'uso e i requisiti fondamentali dal gruppo durante l'analisi
 riguardanti il capitolato proposto dall'azienda Socomec.
-La formulazione segue le regole esposte nel documento *Norme di progetto*
+La formulazione segue le regole esposte nel documento *Norme di progetto*.
 
 ## Scopo del prodotto
 
@@ -103,27 +103,26 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
     * SRF2.6.2 - Data e Ora;
     * SRF2.6.3 - Versione firmware;
 * SRF3 - L'utente deve poter visualizzare sotto forma di grafico:
-  * SRF3.1 - Il numero totale di occorrenze (0->1) rispetto al tempo per singolo evento (velocità).
-    * SRF3.1.1 - ci deve essere la possibilità di selezionare/filtrare gli eventi per Code, Unit/subUnit (cumulativo vs tempo)
-  * SRF3.2 - Il numero di occorrenze normalizzato per numero di storici rispetto alle versioni firmware
-    * SRF3.2.1 ci deve essere la possibilità di selezionare gli eventi e la lista dei firmware
+  * SRF3.1 - Il numero totale di occorrenze (0-1) rispetto al tempo per singolo evento (velocità):
+    * SRF3.1.1 - ci deve essere la possibilità di selezionare/filtrare gli eventi per Code, Unit/subUnit (cumulativo vs tempo);
+  * SRF3.2 - Il numero di occorrenze normalizzato per numero di storici rispetto alle versioni firmware:
+    * SRF3.2.1 ci deve essere la possibilità di selezionare gli eventi e la lista dei firmware.
 
 ## Requisiti qualitativi
 
 ### Capitolato
 
-* RQ1 - Il prodotto deve essere sviluppato seguendo le regole descritte nel documento *norme_progetto*;
+* RQ1 - Il prodotto deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto*;
 * RQ2 - Deve essere fornita la documentazione minima richiesta anche dal corso di "Ingegneria del Software";
 * RQ3 - Deve essere fornita una guida per sviluppatori;
 * RQ4 - Viene richiesto l'utilizzo di un repository pubblico (GitHub).
-
-Decisioni interne:
 
 ## Requisiti di vincoli
 
 ### Capitolato
 
-* RV1 - L'interfaccia di visualizzazione deve essere di tipo Web
+* RV1 - L'interfaccia di visualizzazione deve essere di tipo Web.
+* RV2 - È desiderabile l'utilizzo di Python per la parte di analisi dei dati.
 
 ## Requisiti sistemi operativi
 
@@ -136,14 +135,12 @@ L'azienda non ha posto requisiti prestazionali per le applicazioni.
 
 # Casi d'uso
 
-Questa sezione descrive i casi d'uso individuati dal gruppo, riferendosi alle funzionalità del prodotto.
-
 ## Attori
 
 L'applicazione dovrà essere utilizzata dagli operatori interni all'azienda.
 Vengono identificati i seguenti attori:
 
-* L'utente;
+* L'utente.
 
 ## SmartLogViewer
 
@@ -164,7 +161,7 @@ o--VUC1
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: il file di log viene caricato correttamente nell'applicazione.
 
-<!-- ROTTO TUTTO MODIFICARE USE CASE (TABELLA E GRAFICO PRESENTI CONTEMPORANEAMENTE) -->
+<!--TODO ROTTO TUTTO MODIFICARE USE CASE (TABELLA E GRAFICO PRESENTI CONTEMPORANEAMENTE) VUC2 e VUC4-->
 
 ### VUC2 - Visualizzazione tabellare (VRF2)
 
@@ -202,7 +199,7 @@ Raggruppamento e visualizzazione per data/ora"
 o--VUC3.1
 o--VUC3.2
 o--VUC3.3
- ```
+```
 
 * Scenari:
   1. L'utente applica dei filtri o decide un ordinamento in base alle colonne della tabella;
@@ -210,7 +207,7 @@ o--VUC3.3
   3. L'utente ricerca eventi dato un periodo con inizio e fine;
 * Attore: utente;
 * Precondizioni: è visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: è visualizzata la tabella con i dati modificati;
+* Postcondizioni: è visualizzata la tabella con i dati selezionati;
 
 ### VUC4 - Visualizzazione grafica (VRF3)
 
@@ -227,10 +224,10 @@ o--VUC4
 * Scenario: l'utente sceglie di visualizzare il file di log in forma grafica;
 * Attore: utente;
 * Precondizioni: è stato caricato un file di log nell'applicazione [VUC1];
-* PostCondizioni: viene visualizzato il grafico.
+* Postcondizioni: viene visualizzato il grafico.
 
 ### VUC5 - Selezione dell'intervallo di tempo su grafico (VRF3.4)
-  
+
 ```{.plantuml caption="VUC5"}
 left to right direction
 :utente: as o
@@ -241,10 +238,10 @@ Selezione intervallo di tempo"
 o--VUC5
 ```
 
-* Scenario: l'utente vuole selezionare un intervallo di tempo tramite funzioni;
+* Scenario: l'utente vuole selezionare un intervallo di tempo tramite funzioni apposite;
 * Attore: utente;
 * Precondizioni: è visualizzato il grafico [VUC4];
-* PostCondizioni: viene visualizzato il grafico filtrato secondo le date fornite.
+* Postcondizioni: viene visualizzato il grafico filtrato secondo le date fornite.
 
 ### VUC6 - Filtraggio degli eventi (VRF3.5)
 
@@ -261,14 +258,14 @@ o--VUC6
 * Scenario: l'utente vuole filtrare degli eventi sul grafico;
 * Attore: utente;
 * Precondizioni: è visualizzato il grafico [VUC4];
-* PostCondizioni: viene visualizzato il grafico con gli eventi filtrati.
+* Postcondizioni: viene visualizzato il grafico con gli eventi filtrati.
 
-### VUC7 (VRF4) <!-- da sistemare dopo la chiamata-->
+<!--TODO use case VRF4-->
 
 ## SmartLogStatistics
 
 ### SUC1 - Selezione dei log per range di data/ora (SRF1)
-  
+
 ```{ .plantuml caption="SUC1"}
 left to right direction
 :utente: as o
@@ -279,13 +276,15 @@ Selezione range di tempo"
 o--SUC1
 ```
 
-* Scenario: l'utente sceglie i log da prendere in considerazione per i grafici mediante range di data/ora (min, max, all);
+* Scenario: l'utente sceglie i file di log da visualizzare per range di data/ora (min, max, all);
 * Attore: utente;
 * Precondizioni: l'applicazione è operativa e funzionante;
-* PostCondizioni: i log vengono caricati correttamente nell'applicazione.
+* Postcondizioni: i log vengono caricati correttamente nell'applicazione.
+
+<!--TODO ROTTO TUTTO MODIFICARE USE CASE (TABELLA E GRAFICO PRESENTI CONTEMPORANEAMENTE) SUC2 e SUC6-->
 
 ### SUC2 - Visualizzazione tabellare (SRF2)
-  
+
 ```{ .plantuml caption="SUC2"}
 left to right direction
 :utente: as o
@@ -299,9 +298,9 @@ o--SUC2
 * Scenario: l'utente sceglie di visualizzare i log in forma tabellare;
 * Attori: utente;
 * Precondizioni: sono stati filtrati i log da visualizzare [SUC1];
-* PostCondizioni: viene visualizzata la tabella.
+* Postcondizioni: viene visualizzata la tabella.
 
-### SUC3 - Visualizzazione lista filtrata per Unit/Subunit (SRF2.6.1) <!-- da finire -->
+### SUC3 - Visualizzazione lista filtrata per Unit/Subunit (SRF2.6.1)
 
 ```{ .plantuml caption="SUC3"}
 left to right direction
@@ -313,10 +312,10 @@ Visualizza lista filtrata per Unit/Subunit"
 o--SUC3
 ```
 
-* Scenario: L'utente sceglie di visualizzare la lista filtrando per unit/subunit;
+* Scenario: L'utente vuole filtrare per unit/subunit la lista di eventi da visualizzare;
 * Attori: utente;
-* Precondizioni: viene visualizzata la lista degli eventi per frequenza di occorenza;
-* Postcondizioni: viene visualizzata la lista filtrata.
+* Precondizioni: viene visualizzata la lista degli eventi per frequenza di occorrenza;
+* Postcondizioni: viene visualizzata la lista degli eventi filtrata.
 
 ### SUC4 - Visualizzazione lista filtrata per data e ora (SRF2.6.2)
 
@@ -330,10 +329,10 @@ Visualizza lista filtrata per data e ora"
 o--SUC4
 ```
 
-*Scenario: L'utente sceglie di visualizzare la lista filtrando per data e ora;
-*Attori: utente;
-*Precondizioni: viene visualizzata la lista degli eventi per frequenza di occorenza;
-*Postcondizioni: viene visualizzata la lista filtrata.
+* Scenario: L'utente vuole visualizzare la lista di eventi filtrando per data/ora;
+* Attori: utente;
+* Precondizioni: viene visualizzata la lista degli eventi per frequenza di occorrenza;
+* Postcondizioni: viene visualizzata la lista filtrata.
 
 ### SUC5 - Visualizzazione lista filtrata per versione firmware (SRF2.6.3)
 
@@ -347,13 +346,13 @@ Visualizza lista filtrata per versione firmware"
 o--SUC5
 ```
 
-*Scenario: L'utente sceglie di visualizzare la lista filtrando per versione firmware;
-*Attori: utente;
-*Precondizioni: viene visualizzata la lista degli eventi per frequenza di occorenza;
-*Postcondizioni: viene visualizzata la lista filtrata.
+* Scenario: L'utente vuole visualizzare la lista di eventi filtrando per versione firmware;
+* Attori: utente;
+* Precondizioni: viene visualizzata la lista degli eventi per frequenza di occorrenza;
+* Postcondizioni: viene visualizzata la lista filtrata.
 
 ### SUC6 - Visualizzazione grafica - totale di occorrenze rispetto al tempo(SRF3)
-  
+
 ```{ .plantuml caption="SUC6"}
 left to right direction
 :utente: as o
@@ -367,7 +366,7 @@ o--SUC6
 * Scenario: l'utente sceglie di visualizzare i log in forma grafica;
 * Attori: utente;
 * Precondizioni: sono stati filtrati i log da visualizzare [SUC1];
-* PostCondizioni: viene visualizzato il grafico.
+* Postcondizioni: viene visualizzato il grafico.
 
 ### SUC7 - Filtraggio eventi per code, unit, subunit (SRF3.1.1)
 
@@ -381,13 +380,13 @@ Filtraggio eventi per code, unit, subunit"
 o--SUC7
 ```
 
-* Scenario: l'utente filtra gli eventi per code, unit, subunit;
+* Scenario: l'utente vuole filtrare gli eventi per code, unit, subunit;
 * Attore: utente;
 * Precondizioni: viene visualizzato il grafico [SUC4];
-* PostCondizioni: viene visualizzato il grafico con i log filtrati.
+* Postcondizioni: viene visualizzato il grafico con i log filtrati.
 
 ### SUC8 - Visualizzazione grafica - Numero di occorrenze rispetto alla versione firmware (SRF3.2)
-  
+
 ```{ .plantuml caption="SUC8"}
 left to right direction
 :utente: as o
@@ -399,10 +398,10 @@ rispetto alla versione firmware"
 o--SUC8
 ```
 
-* Scenario: l'utente sceglie di visualizzare il numero di occorrenze rispetto alla versione firmware;
+* Scenario: l'utente vuole visualizzare il numero di occorrenze rispetto alla versione firmware;
 * Attore: utente;
 * Precondizioni: sono stati filtrati i log da visualizzare [SUC1];
-* PostCondizioni: viene visualizzato il grafico con numero di occorrenze rispetto alla versione firmware.
+* Postcondizioni: viene visualizzato il grafico con numero di occorrenze rispetto alla versione firmware.
 
 ### SUC9 - Selezione degli eventi e la lista dei firmware (SRF3.2.1)
 
@@ -416,7 +415,7 @@ Selezione degli eventi e la lista dei firmware"
 o--SUC9
 ```
 
-* Scenario: l'utente vuole selezionare degli eventi e la lista dei firmaware;
+* Scenario: l'utente vuole selezionare degli eventi e la lista dei firmware;
 * Attore: utente;
 * Precondizioni: viene visualizzato il grafico con numero di occorrenze rispetto alla versione firmware [SUC8];
-* PostCondizioni: viene visualizzato il grafico con i filtri applicati.
+* Postcondizioni: viene visualizzato il grafico con i filtri applicati.
