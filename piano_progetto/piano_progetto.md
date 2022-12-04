@@ -2,8 +2,8 @@
 title: "Piano di Progetto"
 date: "22/11/2022"
 responsabile: "Augusto Zanellato"
-redattori: "Davide Vitagliano"
-verificatori: ["Andrea Auletta", "Nicola Cecchetto", "Enrik Rucaj", "Antonio Stan"]
+redattori: ["Davide Vitagliano", "Enrik Rucaj"]
+verificatori: ["Andrea Auletta", "Nicola Cecchetto", "Antonio Stan"]
 versioni:
   0.0.1:
     autore: Davide Vitagliano
@@ -13,7 +13,10 @@ versioni:
     autore: Davide Vitagliano
     data: 04/12/2022
     cambiamenti: Aggiunto paragrafo di Analisi dei Rischi
-
+  0.2.0:
+    autore: Enrik Rucaj
+    data: 04/12/2022
+    cambiamenti: Aggiunto Metodo di Sviluppo e Pianificazione
 ...
 
 # Introduzione
@@ -137,16 +140,56 @@ del progetto e il modo in cui devono venire mitigati.
 
 # Modello di Sviluppo
 
-Il gruppo ha deciso di lavorare adottando un approccio agile integrando il **modello Kanban** con alcuni elementi del
-**modello Scrum**.
-<!-- aggiungere altro -->
-I requisiti vengono classificati in base alla loro criticità. In questo modo, quelli più importanti vengono trattati
-prima, aumentandone chiarezza e facilità di soddisfazione. I requisiti meno importanti, invece, vengono soddisfatti in
-seguito, così da essere inseriti in un sistema già stabilizzato.
+Il gruppo ha deciso di lavorare adottando un approccio agile integrando il **modello Kanban** con alcuni elementi del **modello Scrum**.
+
+Per avere un'idea chiara dell'avanzamento nel progetto, ogni requisito prima di essere svolto viene inserito all'interno di una backlog, ciascuno con un suo grado di importanza (in base alle loro criticità).
+I requisiti più importanti vengono svolti per primi mentre quelli con minor criticità vengono svolti in seguito, in modo tale da facilitare la loro integrazione in un sistema già stabilizzato.
+
 Il metodo di lavoro sarà quindi il seguente:
 
-<!-- aggiungere altro -->
+* In ogni "sprint" vengono prelevati dei requisiti dai backlog in base alla loro importanza e la disponibilità temporale dei componenti del team.
+* Nello stesso "sprint" vengono prefissati gli obiettivi da raggiungere entro una certa data, cercando di prevedere in anticipo i possibili rischi che potrebbero accadere;
+* Il responsabile assegna un obiettivo a uno o più redattori.
+* I verificatori controlleranno il lavoro svolto dai redattori e comunicheranno eventuali mancanze o errori;
+* Al termine del periodo dello sprint, il gruppo insieme analizzerà il lavoro svolto per capire l'avanzamento del progetto ed adattarsi a eventuali modifiche per risolvere i problemi riscontrati.
 
-* In ogni "sprint" vengono prefissati degli obiettivi da raggiungere entro una certa data;
-* I verificatori controlleranno il lavoro svolto dagli altri membri del gruppo e comunicheranno eventuali mancanze o
-  errori;
+# Pianificazione
+
+Tenendo in considerazione le scadenze prefissate per ogni revisione e la durata di ogni sprint di 14 giorni si è deciso di suddividere lo sviluppo del progetto nelle seguenti sottosezioni:
+
+* Requirements and Technology Baseline (RTB) composta da 8 sprint:
+  * Analisi dei requisiti composta da 3 sprint.
+  * Progettazione Technology Baseline composta da 3 sprint.
+  * Proof of Concept composta da 2 sprint.
+* Product Baseline (PB):
+  <!--Aggiungere roba in futuro-->
+* Customer Acceptance (CA):
+  <!--Aggiungere roba in futuro-->
+
+*Nota: Le sottosezioni sopra citate indicano i requisiti critici importanti per il corretto sviluppo del progetto. Durante quei sprint possono essere svolti anche requisiti meno importanti presenti nel backlog.*
+
+## Analisi dei requisiti
+
+**Periodo:**
+
+* INIZIO 07 Novembre 2022 - Dopo assegnazione del capitolato e un periodo di autoformazione del gruppo.
+* FINE 18 Dicembre 2022 - Inizio periodo di progettazione di Technology Baseline.
+
+**Ruoli coinvolti:** Responsabile - Amministratore - Analista - Verificatore
+
+Le attività da svolgere durante questo periodo sono:
+
+* **Norme di Progetto:** L’obiettivo del documento è quello di impostare delle norme per poter lavorare in maniera uniforme all'interno del gruppo. L'*amministratore* di un certo documento, dopo essersi concordato con il *responsabile*, emana le norme. I *verificatori* in seguito si impegnerano nel controllo della correttezza di tali documenti.
+* **Glossario:** Documento che specifica ogni termine specializzato nel dominio di progetto. I *verificatori* concordandosi direttamente con il *responsabile* aggiungerano termini per evitare possibili fraintendimenti con i commitenti.
+* **Piano di Progetto:** L'obiettivo del documento è quello di stabilire il corretto avanzamento del progetto tramite possibili analisi sui rischi e di poter quindi rientrare nei costi/margini del preventivo fatto. Il *responsabile* è l'unico individuo del gruppo che si occupa del corretto svolgimento di questa attività.
+* **Piano di Qualifica:** Il documento serve a stabilire metodi svolti dal gruppo per poter constatare il giusto raggiungimento degli obiettivi predisposti. L'*amministratore* emana le procedure di gestione di qualità e il *verificatore* esegue tali procedure sui documenti di loro competenza.
+* **Analisi dei Requisiti:** L'obiettivo del documento è quello di fissare i requisiti (espliciti ed impliciti) concordati con il proponente. L'*analista* è colui che identifica questi requisiti.
+
+### Preventivo
+
+<!--Inserire tabella degli orari per ruolo di ciascuna persona del gruppo-->
+<!--Inserire tabella costo totale (€) dei ruoli-->
+<!--Inserire grafico a torta di ore per ruolo-->
+<!--Inserire grafico a torta di costo per ruolo-->
+
+# Consuntivo di periodo
