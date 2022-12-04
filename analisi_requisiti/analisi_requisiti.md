@@ -2,8 +2,8 @@
 title: "Analisi dei requisiti"
 date: "15/11/2022"
 responsabile: "Nicola Cecchetto"
-redattori: ["Andrea Auletta", "Mattia Brunello", "Davide Vitagliano"]
-verificatori: ["Enrik Rucaj", "Antonio Stan", "Augusto Zanellato"]
+redattori: ["Andrea Auletta", "Mattia Brunello", "Davide Vitagliano","Enrik Rucaj"]
+verificatori: ["Antonio Stan", "Augusto Zanellato"]
 versioni:
   0.0.1:
     autore: Andrea Auletta
@@ -29,6 +29,10 @@ versioni:
     autore: Davide Vitagliano
     data: 01/12/2022
     cambiamenti: revisione degli errori
+  0.3.3:
+    autore: Enrik Rucaj
+    data: 04/12/2022
+    cambiamenti: aggiunti requisiti impliciti e opzionali
 
 ...
 
@@ -65,15 +69,13 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
 
 ## Requisiti funzionali - SmartLogViewer
 
-### Capitolato
-
 * VRF1 - L'utente deve poter caricare nell'applicazione un singolo file di log (.csv) presente localmente;
 * VRF2 - Deve essere presente una visualizzazione in forma tabellare con le seguenti funzionalità:
   * VRF2.1 - L'applicazione colora degli eventi in base a:
     * VRF2.1.1 - Codice di identificazione (code);
     * VRF2.1.2 - Livello di nidificazione (Unit/SubUnit); <!-- TODO capire cosa dovrebbe essere -->
   * VRF2.2 - Funzioni di filtro e ordinamento sulle colonne in modo simile agli spreadsheet;
-  * VRF2.3 - Funzione di ricerca eventi;
+  * VRF2.3 - Funzione di ricerca per codice eventi;
   * VRF2.4 - Funzione di raggruppamento e visualizzazione per Data/Ora:
     dato un intervallo di tempo vengono visualizzati tutti gli eventi presenti in quel lasso di tempo;
 * VRF3 - Deve essere presente una visualizzazione in forma grafica con le seguenti caratteristiche:
@@ -82,15 +84,14 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
   * VRF3.3 - Un rettangolo “pieno” che si sviluppa sull'asse x indica il periodo di tempo in cui l’evento (indicato
     sull'asse y) è ATTIVO;
   * VRF3.4 - Deve essere possibile selezione l’intervallo di tempo desiderato, con funzioni di select/zoom/span/altro;
-  * VRF3.5 - Deve essere possibile filtrare gli eventi in base alle colonne ( Code, Unit/subUnit. etc);
+  * VRF3.5 - Deve essere possibile filtrare gli eventi in base alle colonne ( Code, Unit/subUnit, etc);
 * VRF4 - Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un log, con la relativa
   etichettatura; (che identifica in forma mnemonica la sequenza. i.e. Sequenza di accensione, di spegnimento).
 
 ## Requisiti funzionali - SmartLogStatistics
 
-### Capitolato
-
 * SRF1 - L'utente deve poter selezionare i log da analizzare per range di data/ora (min, max, all);
+  * SRF1.1 - L'utente deve poter aggiungere/togliere altri file di log a quelli già selezionati precedentemente;
 * SRF2 - L'utente deve potere visualizzare le seguenti statistiche come tabella:  <!-- Da sistemare alla prossima versione perché risulta ambigua la spiegazione -->
   * SRF2.1 - Intervallo Temporale;
   * SRF2.2 - Numero di storici analizzati;
@@ -108,9 +109,17 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
   * SRF3.2 - Il numero di occorrenze normalizzato per numero di storici rispetto alle versioni firmware:
     * SRF3.2.1 ci deve essere la possibilità di selezionare gli eventi e la lista dei firmware.
 
-## Requisiti qualitativi
+## Requisiti opzionali
 
-### Capitolato
+* RO1 - L'utente deve poter fare l'esportazione del file che deve visualizzare tabelle e sue varianti grafiche;
+* RO2 - L'utente deve poter eliminare tutti i filtri applicati precedentemente;
+* VRO1 - L'utente può modificare il colore degli eventi a piacere;
+* VRO2 - L'utente può visualizzare altri tipi di grafici;
+* VRO3 - L'utente deve poter ricercare sequenze più o meno note con relativa etichettatura;
+* SRO1 - L'utente deve poter visualizzare un grafico matrice di correlazione che mostri l'indice di correlazione tra coppie di eventi;
+  * SRO1.1 - Dovrà essere possibile selezionare gli eventi per code e unit/subunit;
+
+## Requisiti qualitativi
 
 * RQ1 - Il prodotto deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto*;
 * RQ2 - Deve essere fornita la documentazione minima richiesta anche dal corso di "Ingegneria del Software";
@@ -118,8 +127,6 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
 * RQ4 - Viene richiesto l'utilizzo di un repository pubblico (GitHub).
 
 ## Requisiti di vincoli
-
-### Capitolato
 
 * RV1 - L'interfaccia di visualizzazione deve essere di tipo Web.
 * RV2 - È desiderabile l'utilizzo di Python per la parte di analisi dei dati.
@@ -140,7 +147,16 @@ L'azienda non ha posto requisiti prestazionali per le applicazioni.
 L'applicazione dovrà essere utilizzata dagli operatori interni all'azienda.
 Vengono identificati i seguenti attori:
 
-* L'utente.
+* L'utente;
+* SmartLogViewer;
+* SmartLogStatistics.
+
+```{ .plantuml caption="Attori"}
+:Utente:
+actor :Applicazione: as a
+a <|-- :SmartLogViewer:
+a <|-- :SmartLogStatistics:
+```
 
 ## SmartLogViewer
 
@@ -149,15 +165,17 @@ Vengono identificati i seguenti attori:
 ```{ .plantuml caption="VUC1"}
 left to right direction
 :utente: as o
+:SmartLogViewer: as v
 package "SmartLogViewer"{
 usecase VUC1 as "VUC1
 Carica log"
 }
 o--VUC1
+VUC1--v
 ```
 
 * Scenario: l'utente vuole caricare un file di log nell'applicazione SmartLogViewer;
-* Attore: utente;
+* Attore: utente, SmartLogViewer;
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: il file di log viene caricato correttamente nell'applicazione.
 
@@ -171,7 +189,6 @@ left to right direction
 package "SmartLogViewer"{
 usecase VUC2 as "VUC2
 Visualizza tabella"
-
 ' colora celle in base a Code e Unit/SubUnit'
 ' è l'applicazione che lo fa'
 }
@@ -269,15 +286,17 @@ o--VUC6
 ```{ .plantuml caption="SUC1"}
 left to right direction
 :utente: as o
+:SmartLogStatistics: as s
 package "SmartLogStatistics"{
 usecase SUC1 as "SUC1
 Selezione range di tempo"
 }
 o--SUC1
+SUC1--s
 ```
 
 * Scenario: l'utente sceglie i file di log da visualizzare per range di data/ora (min, max, all);
-* Attore: utente;
+* Attore: utente, SmartLogStatistics;
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: i log vengono caricati correttamente nell'applicazione.
 
