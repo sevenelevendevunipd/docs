@@ -281,7 +281,7 @@ o--VUC6
 
 ## SmartLogStatistics
 
-### SUC1 - Selezione dei log per range di data/ora (SRF1)
+### SUC1 - Selezione dei log per range di data/ora (SRF1, SRF1.1)
 
 ```{ .plantuml caption="SUC1"}
 left to right direction
@@ -295,7 +295,9 @@ o--SUC1
 SUC1--s
 ```
 
-* Scenario: l'utente sceglie i file di log da visualizzare per range di data/ora (min, max, all);
+* Scenario:
+  1. l'utente sceglie i file di log da visualizzare per range di data/ora (min, max, all);
+  2. l'utente aggiunge o toglie log da visualizzare a quelli già presenti;
 * Attore: utente, SmartLogStatistics;
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: i log vengono caricati correttamente nell'applicazione.
@@ -438,3 +440,49 @@ o--SUC9
 * Attore: utente;
 * Precondizioni: viene visualizzato il grafico con numero di occorrenze rispetto alla versione firmware [SUC8];
 * Postcondizioni: viene visualizzato il grafico con i filtri applicati.
+
+## Opzionali
+
+### OUC1 - Esportazione file che visualizza tabelle e varianti grafiche (RO1)
+
+* Scenario: l'utente esporta un file dove verranno visualizzate le tabelle e le sue varianti grafiche;
+* Attore: utente, SmartLogViewer, SmartLogStatistics;
+* Precondizioni: è stato caricato un file di log nell'applicazione [VUC1] o [SUC1];
+* Postcondizioni: viene esportato il file con la tabella e le eventuali forme grafiche.
+
+### OUC2 - L'utente vuole eliminare i filtri applicati in precedenza (RO2)
+
+* Scenario: l'utente elimina i filtri applicati precedentemente;
+* Attore: utente;
+* Precondizioni: vengono applicati i filtri o le selezioni; [VUC3] [VUC5] [VUC6] [SUC3] [SUC4] [SUC5] [SUC7] [SUC9]
+* Postcondizioni: i filtri vengono ripristinati.
+
+### OUC3 - L'utente vuole modificare il colore degli eventi a piacere (VRO1)
+
+* Scenario: l'utente seleziona il nuovo colore per l'evento scelto;
+* Attore: utente;
+* Precondizione: è stato caricato un file di log nell'applicazione [VUC1];
+* Postcondizione: viene modificato il colore dell'evento.
+
+### OUC4 - L'utente può visualizzare altri tipi di grafico (VRO2)
+
+* Scenario: l'utente visualizza altri tipi di grafico rispetto a quelli presenti di base;
+* Attore: utente;
+* Precondizione: è stato caricato un file di log nell'applicazione [VUC1];
+* Postcondizione: vengono visualizzati i nuovi grafici.
+
+### OUC5 - L'utente ricerca sequenze più o meno note con relativa etichettatura (VRO3)
+
+* Scenario: l'utente vuole ricercare sequenze più o meno note con relativa etichettatura;
+* Attore: utente;
+* Precondizione: è stato caricato un file di log nell'applicazione [VUC1];
+* Postcondizione: vengono visualizzate le sequenze.
+
+### OUC6 - L'utente visualizza un grafico matrice di correlazione che mostra l'indice di correlazione fra coppie di eventi
+
+* Scenario:
+  1. L'utente vuole visualizzare un grafico matrice di correlazione;
+  2. L'utente vuole selezionare gli eventi per code e unit/subunit;
+* Attore: utente;
+* Precondizione: è stato caricato un file di log nell'applicazione [SUC1];
+* Postcondizione: viene visualizzato il grafico matrice di correlazione con possibilità di filtrare gli eventi per code e unit/subunit.
