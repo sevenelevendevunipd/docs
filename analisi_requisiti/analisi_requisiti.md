@@ -32,12 +32,15 @@ versioni:
   0.4.0:
     autore: Enrik Rucaj
     data: 04/12/2022
-    cambiamenti: aggiunti requisiti impliciti e opzionali
+    cambiamenti: Aggiunti requisiti impliciti e opzionali
   0.5.0:
     autore: Davide Vitagliano
     data: 06/12/2022
-    cambiamenti: aggiunti e riscritti use cases
-
+    cambiamenti: Aggiunti e riscritti use cases
+  0.5.1:
+    autore: Augusto Zanellato
+    data: 07/12/2022
+    cambiamenti: Verifica e correzione errori minori
 ...
 
 # Introduzione
@@ -60,7 +63,9 @@ Il progetto prevede di sviluppare due applicazioni:
 ## Glossario
 
 Alcuni termini potrebbero non risultare consoni al linguaggio usuale quindi questi ultimi vengono inseriti nel
-documento *Glossario* assieme alle loro definizioni.
+documento *Glossario*[^1] assieme alle loro definizioni.
+
+[^1]: Il glossario è in corso di stesura e risulta non completo al momento.
 
 ## Riferimenti
 
@@ -112,7 +117,7 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
     * SRF3.1.1 - ci deve essere la possibilità di selezionare/filtrare gli eventi per Code, Unit/subUnit (cumulativo
       vs tempo);
   * SRF3.2 - Il numero di occorrenze normalizzato per numero di storici rispetto alle versioni firmware:
-    * SRF3.2.1 ci deve essere la possibilità di selezionare gli eventi e la lista dei firmware.
+    * SRF3.2.1 - ci deve essere la possibilità di selezionare gli eventi e la lista dei firmware.
 
 ## Requisiti opzionali
 
