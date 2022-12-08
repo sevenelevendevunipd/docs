@@ -41,6 +41,10 @@ versioni:
     autore: Augusto Zanellato
     data: 07/12/2022
     cambiamenti: Verifica e correzione errori minori
+  0.6.0:
+    autore: Nicola Cecchetto
+    data: 08/12/2022
+    cambiamenti: Revisione post-conferenza con azienda
 ...
 
 # Introduzione
@@ -82,7 +86,7 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
 * VRF2 - Deve essere presente una visualizzazione in forma tabellare con le seguenti funzionalità:
   * VRF2.1 - L'applicazione colora degli eventi in base a:
     * VRF2.1.1 - Codice di identificazione (code);
-    * VRF2.1.2 - Livello di nidificazione (Unit/SubUnit, sono presenti 16 tipi di unit e 16 livelli di nidificazione con le subUnit):
+    * VRF2.1.2 - Livello di nidificazione (16 Unit/16 livelli per SubUnit):
   * VRF2.2 - Funzioni di filtro e ordinamento sulle colonne in modo simile agli spreadsheet;
   * VRF2.3 - Funzione di ricerca per codice eventi;
   * VRF2.4 - Funzione di raggruppamento e visualizzazione per Data/Ora: dato un intervallo di tempo vengono
@@ -95,14 +99,14 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
   * VRF3.4 - Deve essere possibile selezione l’intervallo di tempo desiderato, con funzioni di select/zoom/span;
   * VRF3.5 - Deve essere possibile filtrare gli eventi in base alle colonne ( Code, Unit/subUnit, etc);
 * VRF4 - Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un log, con la relativa
-  etichettatura; (che identifica in forma mnemonica la sequenza. i.e. Sequenza eventi di accensione).
+  etichettatura (gli eventi devono essere ordinati ma non obbligatoriamente consecutivi l'uno all'altro).
 
 ## Requisiti funzionali - SmartLogStatistics
 
 * SRF1 - L'utente deve poter selezionare i log da analizzare per range di data/ora (min, max, all);
   * SRF1.1 - L'utente deve poter aggiungere/togliere altri file di log a quelli già selezionati precedentemente;
-* SRF2 - L'utente deve potere visualizzare le seguenti statistiche come tabella:
-  * SRF2.1 - Intervallo Temporale;
+* SRF2 - L'utente deve potere visualizzare le seguenti statistiche in un prospetto:
+  * SRF2.1 - Intervallo Temporale (data più vecchia - data più recente);
   * SRF2.2 - Numero di storici analizzati;
   * SRF2.3 - Media Numero di eventi per log;
   * SRF2.4 - Max Numero di eventi per log;
@@ -124,7 +128,7 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
 * RO1 - L'utente deve poter esportare un file che visualizza tabelle e sue varianti grafiche;
 * RO2 - L'utente deve poter eliminare simultaneamente tutti i filtri applicati precedentemente;
 * VRO1 - L'utente deve poter visualizzare altri tipi di grafici;
-* VRO2 - L'utente deve poter ricercare sequenze più o meno note con relativa etichettatura;
+* VRO2 - L'utente deve poter ricercare sequenze più o meno note con relativa etichettatura dato un limite di tempo (gli eventi ricercati possono essere anche in ordine sparso ma devono avere una correlazione);
 * SRO1 - L'utente deve poter visualizzare un grafico matrice di correlazione che mostri l'indice di correlazione tra
   coppie di eventi;
   * SRO1.1 - Dovrà essere possibile selezionare gli eventi per code e unit/subunit.
@@ -143,8 +147,7 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
 
 ## Requisiti sistemi operativi
 
-Non è stato individuato nessun requisito di vincolo riguardante i sistemi operativi da supportare poiché l’applicativo
-da sviluppare viene eseguito su browser.
+Sono entrambe applicazioni web basate su un modello client-server. <!-- trovare un modo sensato per dire sta roba-->
 
 ## Requisiti prestazionali
 
@@ -168,65 +171,9 @@ a <|-- :SmartLogViewer:
 a <|-- :SmartLogStatistics:
 ```
 
-## UC1 - Caricamento dei file di log
-
-```{ .plantuml caption="UC1"}
-left to right direction
-:utente: as o
-package  "SmartLog"{
-usecase UC1 as "UC1
-Caricamento file di log"
-}
-o--UC1
-```
-
-* Scenario: l'utente vuole caricare uno o più file di log nell'applicazione;
-* Attore: utente;
-* Precondizioni: l'applicazione è operativa e funzionante;
-* Postcondizioni: i file di log vengono caricati correttamente.
-
-## UC2 - Selezione dell'applicazione
-
-```{ .plantuml caption="UC2"}
-left to right direction
-:utente: as o
-package "SmartLog"{
-usecase UC2.1 as "UC2.1
-Selezione SmartLogViewer"
-usecase UC2.2 as "UC2.2
-Selezione SmartLogStatistics"
-}
-o--UC2.1
-o--UC2.2
-```
-
-* Scenario:
-  1. l'utente vuole selezionare l'applicazione SmartLogViewer [UC2.1];
-  2. l'utente vuole selezionare l'applicazione SmartLogStatistics [UC2.2];
-* Attore: utente;
-* Precondizioni: è stato caricato nell'applicazione almeno un file di log [UC1];
-* Postcondizioni: l'applicazione scelta viene selezionata correttamente ed è possibile scegliere tra i file di log
-  caricati.
-
-### UC2.1 - Selezione di SmartLogViewer
-
-* Scenario: l'utente vuole selezionare l'applicazione SmartLogViewer;
-* Attore: utente;
-* Precondizioni: è stato caricato nell'applicazione almeno un file di log [UC1];
-* Postcondizioni: l'applicazione SmartLogViewer viene caricata correttamente ed è possibile scegliere un solo file di
-  log.
-
-### UC2.2 - Selezione di SmartLogStatistics
-
-* Scenario: l'utente vuole selezionare l'applicazione SmartLogStatistics;
-* Attore: utente;
-* Precondizioni: è stato caricato nell'applicazione almeno un file di log [UC1];
-* Postcondizioni: l'applicazione SmartLogStatistics viene caricata correttamente ed è possibile scegliere uno o più file
-  di log.
-
 ## SmartLogViewer
 
-### VUC1 - Selezione file di log (VRF1)
+### VUC1 - Caricamento file di log (VRF1)
 
 ```{ .plantuml caption="VUC1"}
 left to right direction
@@ -240,9 +187,9 @@ o--VUC1
 VUC1--v
 ```
 
-* Scenario: l'utente seleziona un file di log da visualizzare nell'applicazione SmartLogViewer;
+* Scenario: l'utente carica un file di log da visualizzare nell'applicazione SmartLogViewer;
 * Attore: utente, SmartLogViewer;
-* Precondizioni: l'applicazione è operativa e funzionante [UC1];
+* Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: i dati del file di log vengono caricati correttamente nell'applicazione SmartLogViewer.
 
 ### VUC2 - Inizializzazione della tabella e del grafico (VRF2, VRF3)
@@ -370,14 +317,14 @@ o--VUC4
 
 ## SmartLogStatistics
 
-### SUC1 - Selezione dei log per range di data/ora (SRF1, SRF1.1)
+### SUC1 - Caricamento dei log per range di data/ora (SRF1, SRF1.1)
 
 ```{ .plantuml caption="SUC1"}
 :utente: as o
 :SmartLogStatistics: as s
 package "SmartLogStatistics"{
 usecase SUC1 as "SUC1
-Selezione log per range data/ora"
+Caricamento log per range data/ora"
 usecase SUC1.1 as"SUC1.1
 Aggiunta log"
 usecase SUC1.2 as"SUC1.2
@@ -390,13 +337,13 @@ SUC1 <.. SUC1.2 : <<extends>>
 ```
 
 * Scenario:
-  1. l'utente seleziona i file di log da visualizzare nell'applicazione SmartLogLogistics per range di data/ora;
+  1. l'utente carica i file di log da visualizzare nell'applicazione SmartLogLogistics per range di data/ora;
   2. l'utente aggiunge o toglie log da visualizzare a quelli già presenti;
 * Attore: utente, SmartLogStatistics;
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: i log vengono caricati correttamente nell'applicazione SmartLogStatistics.
 
-### SUC2 - Inizializzazione delle tabelle e dei grafici (SRF2, SRF3)
+### SUC2 - Inizializzazione del prospetto e dei grafici (SRF2, SRF3)
 
 ```{ .plantuml caption="SUC2"}
 left to right direction
@@ -407,7 +354,7 @@ Inizializzazione"
 usecase SUC2.2 as "SUC2.2
 Visualizzazione grafico"
 usecase SUC2.1 as "SUC2.1
-Visualizzazione tabella"
+Visualizzazione prospetto"
 }
 s--SUC2
 SUC2 ..> SUC2.1 : <<include>>
@@ -415,18 +362,18 @@ SUC2 ..> SUC2.2 : <<include>>
 ```
 
 * Scenario:
-  1. l'applicazione SmartLogStatistics visualizza le tabelle relative ai dati dei file di log caricati [SUC2.1];
+  1. l'applicazione SmartLogStatistics visualizza il prospetto relativo ai dati dei file di log caricati [SUC2.1];
   2. l'applicazione SmartLogStatistics visualizza i grafici relativi ai dati dei file di log caricati [SUC2.2];
 * Attore: SmartLogStatistics;
 * Precondizioni: è stato caricato almeno un file di log nell'applicazione [SUC1];
 * Postcondizioni: vengono inizializzati correttamente i dati dei file di log.
 
-#### SUC2.1 - Visualizzazione della tabella
+#### SUC2.1 - Visualizzazione del prospetto
 
-* Scenario: l'applicazione SmartLogStatistics visualizza la tabella relativa ai dati dei file di log caricati;
+* Scenario: l'applicazione SmartLogStatistics visualizza il prospetto relativa ai dati dei file di log caricati;
 * Attore: SmartLogStatistics;
 * Precondizioni: è stato caricato almeno un file di log nell'applicazione [SUC1];
-* Postcondizioni: viene visualizzata correttamente la tabella con i dati dei file di log.
+* Postcondizioni: viene visualizzata correttamente il prospetto con i dati dei file di log.
 
 #### SUC2.2 - Visualizzazione del grafico
 
@@ -435,12 +382,12 @@ SUC2 ..> SUC2.2 : <<include>>
 * Precondizioni: è stato caricato almeno un file di log nell'applicazione [SUC1];
 * Postcondizioni: viene visualizzato correttamente il grafico con i dati dei file di log.
 
-### SUC3 - Modifica visualizzazione della tabella (SRF2.6, SRF3.1.1)
+### SUC3 - Modifica visualizzazione del prospetto (SRF2.6, SRF3.1.1)
 
 ```{ .plantuml caption="SUC3"}
 left to right direction
 :utente: as o
-package "SmartLogStatistics Tabella"{
+package "SmartLogStatistics Prospetto"{
 usecase SUC3.1 as "SUC3.1
 Filtro"
 usecase SUC3.1.3 as "SUC3.1.3
@@ -469,8 +416,8 @@ SUC3.2<|--SUC3.2.3
 ```
 
 * Scenari:
-  1. l'utente applica dei filtri in base al valore nelle celle della tabella [SUC3.1];
-  2. l'utente applica un ordinamento in base a una colonna della tabella [SUC3.2];
+  1. l'utente applica dei filtri in base al valori presenti nella tabella del prospetto [SUC3.1];
+  2. l'utente applica un ordinamento in base ai valori presenti nella tabella del prospetto [SUC3.2];
 * Attore: utente;
 * Precondizioni: è stata visualizzata la tabella con i dati [SUC2];
 * Postcondizioni: viene visualizzata la tabella con i dati selezionati;
