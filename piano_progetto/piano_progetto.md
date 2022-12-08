@@ -17,6 +17,10 @@ versioni:
     autore: Enrik Rucaj
     data: 04/12/2022
     cambiamenti: Aggiunto Metodo di Sviluppo e Pianificazione
+  0.2.1:
+    autore: Enrik Rucaj
+    data: 08/12/2022
+    cambiamenti: Aggiunto Preventivo per il periodo di Analisi dei Requisiti
 ...
 
 # Introduzione
@@ -161,12 +165,20 @@ Tenendo in considerazione le scadenze prefissate per ogni revisione e la durata 
   * Analisi dei requisiti composta da 3 sprint.
   * Progettazione Technology Baseline composta da 3 sprint.
   * Proof of Concept composta da 2 sprint.
-* Product Baseline (PB):
+* Product Baseline (PB) composta da 3 sprint:
   <!--Aggiungere roba in futuro-->
-* Customer Acceptance (CA):
+* Customer Acceptance (CA) composta da 2 sprint:
   <!--Aggiungere roba in futuro-->
 
-*Nota: Le sottosezioni sopra citate indicano i requisiti critici importanti per il corretto sviluppo del progetto. Durante quei sprint possono essere svolti anche requisiti meno importanti presenti nel backlog.*
+*Nota: Le sottosezioni sopra citate indicano i requisiti critici importanti per il corretto sviluppo del progetto. Durante i specifici sprint possono essere svolti anche requisiti meno importanti presenti nel backlog.*
+
+**Suddivisione ruoli:**
+
+In un sprint ogni componente del gruppo deve assumere un solo ruolo in modo da concentrarsi a pieno alle sue responsabilità.
+
+Ad ogni nuovo sprint i ruoli precedentemente fissati possono essere cambiati. Un'eccezione alla regola riccade sul ruolo del *responsabile*, il quale essendo una figura altamente importante per la stabilità del gruppo e del progetto si preferisce mantenere la stessa persone che ricopre quel ruolo per un'istante di tempo maggiore rispetto al solito.
+
+Uno stesso ruolo può essere ricoperto contemporaneamente da più persone a eccezione del ruolo di *responsabile*.
 
 ## Analisi dei requisiti
 
@@ -187,9 +199,45 @@ Le attività da svolgere durante questo periodo sono:
 
 ### Preventivo
 
-<!--Inserire tabella degli orari per ruolo di ciascuna persona del gruppo-->
-<!--Inserire tabella costo totale (€) dei ruoli-->
-<!--Inserire grafico a torta di ore per ruolo-->
-<!--Inserire grafico a torta di costo per ruolo-->
+Nel periodo di Analisi dei Requisiti, ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
+
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:| :-----: |:------:|:-----------:|:------------:|:-------:|:----------:|
+| Auletta Andrea    | -        | 6       | 9      | -           | -            | 7       | 22         |
+| Brunello Mattia   | 9        | 4       | 10     | -           | -            | 8       | 31         |
+| Cecchetto Nicola  | -        | -       | 11     | -           | -            | 7       | 18         |
+| Rucaj Enrik       | -        | 9       | 12     | -           | -            | 7       | 28         |
+| Stan Antonio      | -        | -       | 11     | -           | -            | 7       | 18         |
+| Vitagliano Davide | -        | 7       | 12     | -           | -            | 6       | 25         |
+| Zanellato Augusto | 9        | 4       | 10     | -           | -            | 9       | 32         |
+| **Totale**        | **18**   | **30**  | **75** | **-**       | **-**        | **51**  | **174**    |
+
+<!--NOTA PER IL FUTURO, IMPORTANTE:
+     - Anotnio avrà 3 ore di analista nella fase di "progettazione di dettaglio e codifica per i requisiti opzionali"
+     - Enrik avrà 2 ore di analista nella fase di "progettazione di dettaglio e codifica per i requisiti obbligatori"
+     - Andrea avrà 2 ore di analista nella fase di "codifica proof of concept"
+     - Nicola avrà 2 ore di analista nella fase di "codifica proof of concept"
+     - Davide avrà 2 ore di analista nella fase di "Progettazione Technology Baseline"
+     - Mattia avrà 3 ore di analista nella fase di "Progettazione Technology Baseline"-->
+
+In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
+
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- |:-------:|:---------:|
+| Responsabile   | 18      | 540       |
+| Amministratore | 30      | 600       |
+| Analista       | 75      | 1875      |
+| Progettista    | -       | -         |
+| Programmatore  | -       | -         |
+| Verificatore   | 51      | 765       |
+| **Totale**     | **174** | **3780**  |
+
+Quadro dei costi da affrontare:
+
+![image info](./images/PreventivoCosti_AnalisiRequisiti.svg)
+
+## Progettazione Technology Baseline
+
+<!--Sto aspettando che il proff ne parli prima di iniziare a scrivere.-->
 
 # Consuntivo di periodo
