@@ -82,7 +82,7 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
 * VRF2 - Deve essere presente una visualizzazione in forma tabellare con le seguenti funzionalità:
   * VRF2.1 - L'applicazione colora degli eventi in base a:
     * VRF2.1.1 - Codice di identificazione (code);
-    * VRF2.1.2 - Livello di nidificazione (Unit/SubUnit);
+    * VRF2.1.2 - Livello di nidificazione (Unit/SubUnit, sono presenti 16 tipi di unit e 16 livelli di nidificazione con le subUnit):
   * VRF2.2 - Funzioni di filtro e ordinamento sulle colonne in modo simile agli spreadsheet;
   * VRF2.3 - Funzione di ricerca per codice eventi;
   * VRF2.4 - Funzione di raggruppamento e visualizzazione per Data/Ora: dato un intervallo di tempo vengono
@@ -92,7 +92,7 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
   * VRF3.2 - L’asse Y contiene l’insieme degli eventi;
   * VRF3.3 - Un rettangolo “pieno” che si sviluppa sull'asse x indica il periodo di tempo in cui l’evento (indicato
     sull'asse y) è ATTIVO;
-  * VRF3.4 - Deve essere possibile selezione l’intervallo di tempo desiderato, con funzioni di select/zoom/span/altro;
+  * VRF3.4 - Deve essere possibile selezione l’intervallo di tempo desiderato, con funzioni di select/zoom/span;
   * VRF3.5 - Deve essere possibile filtrare gli eventi in base alle colonne ( Code, Unit/subUnit, etc);
 * VRF4 - Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un log, con la relativa
   etichettatura; (che identifica in forma mnemonica la sequenza. i.e. Sequenza eventi di accensione).
