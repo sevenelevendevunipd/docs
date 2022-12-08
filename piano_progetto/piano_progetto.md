@@ -234,7 +234,17 @@ In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 
 Quadro dei costi da affrontare:
 
-![image info](./images/PreventivoCosti_AnalisiRequisiti.svg)
+```{.plotly_python}
+import plotly.graph_objects as go
+
+labels = ['Responsabile','Amministratore','Analista','Verificatore']
+text = ['18h', '30h', '75h', '51h']
+values = [540, 600, 1875, 765]
+
+fig = go.Figure(data=[go.Pie(labels=labels, values=values, text=text)])
+fig.update_traces(textposition='inside', textinfo='percent+value+label+text', showlegend=False, insidetextorientation="horizontal")
+
+```
 
 ## Progettazione Technology Baseline
 
