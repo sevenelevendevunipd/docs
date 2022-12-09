@@ -21,10 +21,6 @@ versioni:
 Questo documento ha lo scopo di descrivere il piano di qualifica del progetto, ovvero le attività che verranno svolte per garantire la qualità del prodotto finale e del processo di sviluppo. Esso deve implementare degli standard che permettano di garantire la qualità del prodotto e del processo di sviluppo, tramite misurazioni e controlli periodici dei risultati ottenuti.
 Vengono descritti i processi di qualifica, le metriche utilizzate e le procedure di verifica e validazione.
 
-## Scopo del capitolato
-
-Il capitolato ha la scopo di realizzare due applicazioni per permettere la visualizzazione e analisi di dati provenienti dai sensori dei dispositivi Socomec, committente del capitolato. La prima applicazione deve permettere la visualizzazione tabellare e grafica di un singolo file di log, mentre la seconda deve permettere la visualizzazione aggregata di più file di log e la loro analisi e statistiche.
-
 ## Glossario
 
 Alcuni termini utilizzati nel documento potrebbero generare incomprensione per il loro significato. Tali termini vengono segnalati con una G maiuscola finale a pedice della parola, e sono elencati nel glossario.
