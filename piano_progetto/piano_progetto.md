@@ -21,26 +21,20 @@ versioni:
     autore: Enrik Rucaj
     data: 08/12/2022
     cambiamenti: Aggiunto Preventivo per il periodo di Analisi dei Requisiti
+  0.2.2:
+    autore: Andrea Auletta
+    data: 09/12/2022
+    cambiamenti: revisione del contenuto e piccole modifiche
 ...
 
 # Introduzione
 
 ## Scopo del documento
 
-Il fine del seguente documento è quello di fornire un prospetto riguardante la pianificazione e le modalità attraverso
-cui verrà sviluppato il progetto. All’interno vengono inoltre riportate le problematiche che il gruppo potrebbe
+Lo scopo del seguente documento è quello di fornire informazioni riguardanti la pianificazione e le modalità attraverso
+cui verrà sviluppato il progetto. All’interno vengono inoltre riportate i rischi che il gruppo potrebbe
 incontrare lungo tutto il periodo. Al termine sono presenti i preventivi e consuntivi di periodo.
 La formulazione segue le regole esposte dal documento *Norme di progetto*
-
-## Scopo del prodotto
-
-Il progetto prevede di sviluppare due applicazioni:
-
-* SmartLogViewer: Permette la visualizzazione di un singolo file di log evidenziandone alcune caratteristiche e fornendo
-  dei grafici sull’andamento di alcuni valori;
-* SmartLogStatistics: Permette la visualizzazione aggregata di una serie di
-  file di log mostrando oltre ai dati visibili su SmartLogViewer anche delle statistiche come ad esempio la correlazione
-  di alcuni eventi mediante l’uso di grafici;
 
 ## Glossario
 
@@ -53,8 +47,7 @@ documento *Glossario* assieme alle loro definizioni.
 
 ## Scadenze
 
-La pianificazione presentata in questo documento si basa sulle scadenze che il gruppo Seven Eleven si impegna a
-rispettare, esse sono riassunte nella seguente tabella.
+Di seguito viene riportata la tabella con le scadenze che il gruppo Seven Eleven si impegna a rispettare:
 
 | **Revisione**                        | **Acronimo** | **Data**   |
 | ------------------------------------ |:------------:|:----------:|
@@ -64,8 +57,7 @@ rispettare, esse sono riassunte nella seguente tabella.
 
 # Analisi dei Rischi
 
-Questa sezione presenta un’analisi approfondita dei possibili rischi in cui si potrebbe incorrere durante l’avanzamento
-del progetto e il modo in cui devono venire mitigati.
+Questa sezione elenca i possibili rischi in cui si potrebbe incorrere durante l’avanzamento del progetto e il modo in cui devono venire mitigati.
 
 ## Identificazione Rischi
 
@@ -100,12 +92,12 @@ del progetto e il modo in cui devono venire mitigati.
 
 #### RI1 - Inesperienza del gruppo
 
-* Descrizione: Poca esperienza in un rapporto di lavoro cliente-fornitore;
+* Descrizione: Poca esperienza in un rapporto di lavoro fra cliente e fornitore;
 * Identificazione: Il **responsabile** dovrà prestare attenzione alle difficoltà dei membri del gruppo.
 
 #### RI2 - Rapporti interni
 
-* Descrizione: Esistenza di un conflitto di opinione tra i membri del gruppo che non trova a un punto d'intesa;
+* Descrizione: Esistenza di un conflitto di opinione tra i membri del gruppo che non trova un punto d'intesa;
 * Identificazione: Il **responsabile** sarà incaricato di gestire il gruppo.
 
 ### Rischi dei Requisiti
@@ -114,7 +106,7 @@ del progetto e il modo in cui devono venire mitigati.
 
 * Descrizione: Difficoltà nella comprensione dei requisiti che può portare a un grave rallentamento nell'avanzamento
   del progetto;
-* Identificazione: L'azienda proponente dovrà comunicare al gruppo la bontà del lavoro svolto.
+* Identificazione: L'azienda proponente dovrà comunicare al gruppo l'adeguatezza del lavoro svolto.
 
 #### RR2 - Modifica dei requisiti
 
