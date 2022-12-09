@@ -45,7 +45,7 @@ Il documento verrà aggiornato con costanza durante tutte le fasi del progetto.
 
 ### C5 - SmartLog
 
-Al giorno d'oggi vista l'espansione e l'aumento del numero delle apparecchiature per il supporto all'energia elettrica nelle infrastrutture critiche, la gestione di esse sta diventando sempre più complessa e richiede una continua analisi per l'ottimizzazione dei consumi e rivelazione degli errori. Per questo motivo i dispositvi Socomec riescono a registrare e salvare su un file di log tutti gli eventi che accadono, in modo da:
+Al giorno d'oggi vista l'espansione e l'aumento del numero delle apparecchiature per il supporto all'energia elettrica nelle infrastrutture critiche, la gestione di esse sta diventando sempre più complessa e richiede una continua analisi per l'ottimizzazione dei consumi e rivelazione degli errori. Per questo motivo i dispositivi Socomec riescono a registrare e salvare su un file di log tutti gli eventi che accadono, in modo da:
 
 * poter analizzare, trovare e risolvere eventuali problemi.
 * poter estrarre informazioni statistiche da un insieme di file di log.
@@ -121,7 +121,7 @@ Questa sezione contiene le norme per la scrittura dei documenti (e la loro strut
 
 La documentazione è scritta usando il *linguaggio di markup* **Markdown** nella versione supportata da [Pandoc](https://pandoc.org/). Per facilitare la stesura dei documenti sono stati sviluppati dei filtri per Pandoc che permettono l'*embedding* nei documenti di diagrammi [PlantUML](https://plantuml.com/) e che si occupano della generazione automatica del glossario in appendice ai documenti.
 
-Il processo di build dei documenti è controllato da una pipeline di {a:cicd} che controlla che i sorgenti Markdown seguando delle linee guida di stile e formattazione usando [MarkdownLint](https://github.com/DavidAnson/markdownlint), li compila in {g:pdfa} usando Pandoc e pdfLaTeX e carica i pdf risultanti sia sul [sito del gruppo](https://sevenelevendevunipd.github.com/docs/) che come artefatto della {a:cicd}.
+Il processo di build dei documenti è controllato da una pipeline di {a:cicd} che controlla che i sorgenti Markdown seguendo delle linee guida di stile e formattazione usando [MarkdownLint](https://github.com/DavidAnson/markdownlint), li compila in {g:pdfa} usando Pandoc e pdfLaTeX e carica i pdf risultanti sia sul [sito del gruppo](https://sevenelevendevunipd.github.com/docs/) che come artefatto della {a:cicd}.
 
 <!-- TO DO: Definire nomenclatura documenti -->
 
@@ -199,7 +199,7 @@ La versione del documento è definita da tre numeri "x.y.z" dove:
 Per organizzare al meglio il lavoro, all'interno dell'organizzazione **GitHub**, abbiamo creato 1<!-- sistemare quando avremo un numero di repo finito --> repository:
 
 * SevenElevenUnipd/**docs** per i documenti; quelli indispensabili saranno:
-  * **verbali**: documenti di incontri interni svolti dal gruppo ed esterni svolti con i proponenti e commitenti del progetto.
+  * **verbali**: documenti di incontri interni svolti dal gruppo ed esterni svolti con i proponenti e committenti del progetto.
   * **norme_progetto**: in cui viene aggiornato questo file, aggiungendo di volta in volta norme più adatte per il workflow del gruppo.
   * **piano_progetto**: documento di analisi sui rischi attesi e della suddivisione del lavoro totale in molteplici periodi successivi.
   * **piano_qualifica**: documento inerente alla misurazione del raggiungimento degli obiettivi predisposti e delle iniziative di auto-miglioramento.
@@ -212,9 +212,9 @@ I branch vengono nominati in questo modo:  **SL-n-nome_branch** <!-- accentrato 
 
 * SL: SmartLog;
 * n: numero auto incrementale;
-* Tutte le lettere di nome_branch devono essere minuscole e se si neccessita di separare delle parole deve essere utilizzato '_'.
+* Tutte le lettere di nome_branch devono essere minuscole e se si necessita di separare delle parole deve essere utilizzato '_'.
 
-## Project Managment
+## Project Management
 
 ### Scopo
 
@@ -230,6 +230,6 @@ Questo permette di:
 
 Ogni componente del gruppo una volta finito un'attività, prima di iniziarne una nuova dovrebbe:
 
-* diventare assegnatario della nuova attività che ha itenzione di svolgere.
+* diventare assegnatario della nuova attività che ha intenzione di svolgere.
 * spostare lo stato di avanzamento dell'attività che sta svolgendo.
 * specificare le ore di lavoro ogni volta che si occupa di quella attività.
