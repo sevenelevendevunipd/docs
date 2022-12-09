@@ -8,14 +8,10 @@ abstract: "Vengono definito il piano di qualifica"
 docusage: "Esterno"
 toc: true
 versioni:
-  v0.0.1:
+    v0.0.1:
     autore: Mattia Brunello
     data: 06/12/2022
-    cambiamenti: Inizio prima stesura
-    v0.0.2:
-    autore: Mattia Brunello
-    data: 06/12/2022
-    cambiamenti: Creazione struttura del docuento
+    cambiamenti: Creazione struttura del documento
 ...
 
 # Introduzione
@@ -27,13 +23,24 @@ Vengono descritti i processi di qualifica, le metriche utilizzate e le procedure
 
 ## Scopo del capitolato
 
+Il capitolato ha la scopo di realizzare due applicazioni per permettere la visualizzazione e analisi di dati provenienti dai sensori dei dispositivi Socomec, committente del capitolato. La prima applicazione deve permettere la visualizzazione tabellare e grafica di un singolo file di log, mentre la seconda deve permettere la visualizzazione aggregata di più file di log e la loro analisi e statistiche.
+
 ## Glossario
+
+Alcuni termini utilizzati nel documento potrebbero generare incomprensione per il loro significato. Tali termini vengono segnalati con una G maiuscola finale a pedice della parola, e sono elencati nel glossario.
 
 ## Riferimenti
 
 ### Riferimenti normativi
 
+* Norme di progetto
+* [Regolamento didattico](https://www.math.unipd.it/~tullio/IS-1/2021/Dispense/PD2.pdf)
+   <!-- [https://www.math.unipd.it/~tullio/IS-1/2021/Dispense/PD2.pdf](https://www.math.unipd.it/~tullio/IS-1/2021/Dispense/PD2.pdf) -->
+
 ### Riferimenti informativi
+
+* Analisi dei requisiti
+* [Capitolato C5 - SmartLog](https://www.math.unipd.it/~tullio/IS-1/2022/Progetto/C5.pdf)
 
 # Qualità di processo
 
