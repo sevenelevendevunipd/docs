@@ -252,7 +252,7 @@ Quest'ultimo risulterà positivo quando la spesa effettiva è minore del prevent
 
 Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
-| **Nome**          | **Resp** | **Amm** | **An**    **Progett** | **Programm** | **Ver** | **Totale** |
+| **Nome**          | **Resp** | **Amm** | **An**  | **Progett** | **Programm** | **Ver** | **Totale** |
 | ----------------- |:--------:| :-----: |:-------:|:-----------:|:------------:|:-------:|:----------:|
 | Auletta Andrea    | -        | 5 (-1)  | 9 (+1)  | -           | -            | 7       | 22         |
 | Brunello Mattia   | 9        | 4       | 10      | -           | -            | 7 (-1)  | 28 (-1)    |
