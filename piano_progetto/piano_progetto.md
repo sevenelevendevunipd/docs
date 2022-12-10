@@ -243,3 +243,51 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 <!--Sto aspettando che il proff ne parli prima di iniziare a scrivere.-->
 
 # Consuntivo di periodo
+
+In questa sezione vengono esposti i costi e gli orari effettivi sostenuti dal gruppo Seven Eleven.
+Infine viene presentato un bilancio tra il consutivo e il preventivo di un determinato periodo (viene riportato a fianco dei nuovi valori).
+Quest'ultimo risulterà positivo quando la spesa effettiva è minore del preventivo e viceversa sarà negativo quando la spesa supererà i costi preventivati.
+
+## Analisi dei requisiti
+
+Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
+
+| **Nome**          | **Resp** | **Amm** | **An**    **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:| :-----: |:-------:|:-----------:|:------------:|:-------:|:----------:|
+| Auletta Andrea    | -        | 5 (-1)  | 9 (+1)  | -           | -            | 7       | 22         |
+| Brunello Mattia   | 9        | 4       | 10      | -           | -            | 7 (-1)  | 28 (-1)    |
+| Cecchetto Nicola  | -        | -       | 11      | -           | -            | 6 (-1)  | 17 (-1)    |
+| Rucaj Enrik       | -        | 9       | 11 (-1) | -           | -            | 7       | 27 (-1)    |
+| Stan Antonio      | -        | -       | 11      | -           | -            | 7       | 18         |
+| Vitagliano Davide | -        | 8 (+1)  | 12      | -           | -            | 6       | 26 (+1)    |
+| Zanellato Augusto | 10 (+1)  | 4       | 10      | -           | -            | 7 (-2)  | 31 (-1)    |
+| **Totale**        | **19**   | **30**  | **75**  | **-**       | **-**        | **47**  | **171**    |
+
+Di seguito vengono riportate le variaizioni dei costi:
+
+| **Ruolo**      | **Ore** | **Costo**      |
+| -------------- |:-------:|:--------------:|
+| Responsabile   | 19 (+1) | 570  (+30,00)  |
+| Amministratore | 30      | 600            |
+| Analista       | 75      | 1875           |
+| Progettista    | -       | -              |
+| Programmatore  | -       | -              |
+| Verificatore   | 47 (-4) | 705  (-60,00)  |
+| **Totale**     | **171** | **3750**       |
+
+## Motivazioni delle variazioni
+
+* **Responsabile +1**: Problema iniziale riguardante la suddivisione del lavoro;
+* **Amministratore +0**: -
+* **Analista +0**: -  
+* **Verificatore -4**: Avendo da verificare documentazione il lavoro è risultato più rapido di quanto previsto.  
+
+## Considerazioni
+
+### Bilancio finale
+
+| **Ore** | **Costo**  |
+| **-3**  | **-30,00** |
+
+Il bilancio è positivo rispetto a quanto preventivato per questo periodo e tutti gli obiettivi sono stati raggiunti con leggero anticipo rispetto a quanto previsto.
+Il bilancio finale non risulta essere scostato in maniera significativo dalle previsioni effettuate dal gruppo quinidi non è ritenuta necessaria la ripianificazione del prossimo periodo.
