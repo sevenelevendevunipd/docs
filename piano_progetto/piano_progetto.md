@@ -287,6 +287,7 @@ Di seguito vengono riportate le variaizioni dei costi:
 ### Bilancio finale
 
 | **Ore** | **Costo**  |
+|:-------:|:----------:|
 | **-3**  | **-30,00** |
 
 Il bilancio è positivo rispetto a quanto preventivato per questo periodo e tutti gli obiettivi sono stati raggiunti con leggero anticipo rispetto a quanto previsto.
