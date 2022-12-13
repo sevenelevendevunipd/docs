@@ -25,6 +25,10 @@ versioni:
     autore: Andrea Auletta
     data: 09/12/2022
     cambiamenti: revisione del contenuto e piccole modifiche
+  0.2.3
+    autore: Enrik Rucaj
+    data: 13/12/2022
+    cambiamenti: Aggiunto previsione di inizio-fine periodo di ogni assignment
 ...
 
 # Introduzione
@@ -158,9 +162,13 @@ Tenendo in considerazione le scadenze prefissate per ogni revisione e la durata 
   * Progettazione Technology Baseline composta da 3 sprint.
   * Proof of Concept composta da 2 sprint.
 * Product Baseline (PB) composta da 3 sprint:
-  <!--Aggiungere roba in futuro-->
+  <!--Sto tirando ad indovinare, correggere in futuro nel caso sia sbaglaito-->
+  * Progettazione di dettaglio dei Requisiti Obbligatori
+  * Codifica dei Requisiti Obbligatori
 * Customer Acceptance (CA) composta da 2 sprint:
-  <!--Aggiungere roba in futuro-->
+  <!--Sto tirando ad indovinare, correggere in futuro nel caso sia sbaglaito-->
+  * Progettazione di dettaglio e Codifica dei Requisiti Opzionali <!--Due in uno dato che i requisiti opzionali sono veramente pochi-->
+  * Test, Collaudo e Validazione finale
 
 *Nota: Le sottosezioni sopra citate indicano i requisiti critici importanti per il corretto sviluppo del progetto. Durante i specifici sprint possono essere svolti anche requisiti meno importanti presenti nel backlog.*
 
@@ -240,7 +248,274 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 
 ## Progettazione Technology Baseline
 
-<!--Sto aspettando che il proff ne parli prima di iniziare a scrivere.-->
+**Periodo:**
+
+* INIZIO 19 Dicembre 2022 - Fine periodo dell'analisi dei requisiti
+* FINE 29 Gennaio 2023 - Inizio periodo di "Proof of Concept"
+
+**Ruoli coinvolti:**
+
+Le attività da svolgere durante questo periodo sono:
+
+<!--Inserire elenco di attività-->
+
+### Preventivo
+
+Nel periodo di Progettazione Technology Baseline, ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
+
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:| :-----: |:------:|:-----------:|:------------:|:-------:|:----------:|
+| Auletta Andrea    | -        | -       | -      | -           | -            | -       | -          |
+| Brunello Mattia   | -        | -       | -      | -           | -            | -       | -          |
+| Cecchetto Nicola  | -        | -       | -      | -           | -            | -       | -          |
+| Rucaj Enrik       | -        | -       | -      | -           | -            | -       | -          |
+| Stan Antonio      | -        | -       | -      | -           | -            | -       | -          |
+| Vitagliano Davide | -        | -       | -      | -           | -            | -       | -          |
+| Zanellato Augusto | -        | -       | -      | -           | -            | -       | -          |
+| **Totale**        | **-**    | **-**   | **-**  | **-**       | **-**        | **-**   | **-**      |
+
+In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
+
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- |:-------:|:---------:|
+| Responsabile   | -       | -         |
+| Amministratore | -       | -         |
+| Analista       | -       | -         |
+| Progettista    | -       | -         |
+| Programmatore  | -       | -         |
+| Verificatore   | -       | -         |
+| **Totale**     | **-**   | **-**     |
+
+Quadro dei costi da affrontare:
+
+<!--Inserire grafico a torta-->
+
+## Proof of Concept
+
+**Periodo:**
+
+* INIZIO 30 Gennaio 2023 - Fine periodo di progettazione di Technology Baseline
+* FINE 26 Febbraio 2023 - Inizio periodo di progettazione di dettaglio dei Requisiti Obbligatori
+
+*Nota: Dopo la fine del Proof of Concept c'è un margine di 2 giorni (26 e 27 Febbraio) prima della revisione di RTB.*
+
+**Ruoli coinvolti:**
+
+Le attività da svolgere durante questo periodo sono:
+
+<!--Inserire elenco di attività-->
+
+### Preventivo
+
+Nel periodo di Proof of Concept, ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
+
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:| :-----: |:------:|:-----------:|:------------:|:-------:|:----------:|
+| Auletta Andrea    | -        | -       | -      | -           | -            | -       | -          |
+| Brunello Mattia   | -        | -       | -      | -           | -            | -       | -          |
+| Cecchetto Nicola  | -        | -       | -      | -           | -            | -       | -          |
+| Rucaj Enrik       | -        | -       | -      | -           | -            | -       | -          |
+| Stan Antonio      | -        | -       | -      | -           | -            | -       | -          |
+| Vitagliano Davide | -        | -       | -      | -           | -            | -       | -          |
+| Zanellato Augusto | -        | -       | -      | -           | -            | -       | -          |
+| **Totale**        | **-**    | **-**   | **-**  | **-**       | **-**        | **-**   | **-**      |
+
+In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
+
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- |:-------:|:---------:|
+| Responsabile   | -       | -         |
+| Amministratore | -       | -         |
+| Analista       | -       | -         |
+| Progettista    | -       | -         |
+| Programmatore  | -       | -         |
+| Verificatore   | -       | -         |
+| **Totale**     | **-**   | **-**     |
+
+Quadro dei costi da affrontare:
+
+<!--Inserire grafico a torta-->
+
+## Progettazione di dettaglio dei Requisiti Obbligatori
+
+**Periodo:**
+
+* INIZIO 01 Marzo 2023 - Fine periodo di "Proof of Concept"
+* FINE 26 Marzo 2023 - Inizio periodo di codifica dei Requisiti Obbligatori
+
+**Ruoli coinvolti:**
+
+Le attività da svolgere durante questo periodo sono:
+
+<!--Inserire elenco di attività-->
+
+### Preventivo
+
+Nel periodo di Progettazione di dettaglio dei Requisiti Obbligatori, ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
+
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:| :-----: |:------:|:-----------:|:------------:|:-------:|:----------:|
+| Auletta Andrea    | -        | -       | -      | -           | -            | -       | -          |
+| Brunello Mattia   | -        | -       | -      | -           | -            | -       | -          |
+| Cecchetto Nicola  | -        | -       | -      | -           | -            | -       | -          |
+| Rucaj Enrik       | -        | -       | -      | -           | -            | -       | -          |
+| Stan Antonio      | -        | -       | -      | -           | -            | -       | -          |
+| Vitagliano Davide | -        | -       | -      | -           | -            | -       | -          |
+| Zanellato Augusto | -        | -       | -      | -           | -            | -       | -          |
+| **Totale**        | **-**    | **-**   | **-**  | **-**       | **-**        | **-**   | **-**      |
+
+In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
+
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- |:-------:|:---------:|
+| Responsabile   | -       | -         |
+| Amministratore | -       | -         |
+| Analista       | -       | -         |
+| Progettista    | -       | -         |
+| Programmatore  | -       | -         |
+| Verificatore   | -       | -         |
+| **Totale**     | **-**   | **-**     |
+
+Quadro dei costi da affrontare:
+
+<!--Inserire grafico a torta-->
+
+## Codifica dei Requisiti Obbligatori
+
+**Periodo:**
+
+* INIZIO 27 Marzo 2023 - Fine periodo di progettazione di dettaglio dei Requisiti Obbligatori
+* FINE 07 Aprile 2023 - Inizio periodo di progettazione e codifica di dettaglio dei Requisiti Opzionali
+
+*Nota: Dopo la fine della codifica dei Requisiti Obbligatori c'è un margine di 2 giorni (07 e 08 Aprile) prima della revisione di PB.*
+
+**Ruoli coinvolti:**
+
+Le attività da svolgere durante questo periodo sono:
+
+<!--Inserire elenco di attività-->
+
+### Preventivo
+
+Nel periodo di Codifica dei Requisiti Obbligatori, ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
+
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:| :-----: |:------:|:-----------:|:------------:|:-------:|:----------:|
+| Auletta Andrea    | -        | -       | -      | -           | -            | -       | -          |
+| Brunello Mattia   | -        | -       | -      | -           | -            | -       | -          |
+| Cecchetto Nicola  | -        | -       | -      | -           | -            | -       | -          |
+| Rucaj Enrik       | -        | -       | -      | -           | -            | -       | -          |
+| Stan Antonio      | -        | -       | -      | -           | -            | -       | -          |
+| Vitagliano Davide | -        | -       | -      | -           | -            | -       | -          |
+| Zanellato Augusto | -        | -       | -      | -           | -            | -       | -          |
+| **Totale**        | **-**    | **-**   | **-**  | **-**       | **-**        | **-**   | **-**      |
+
+In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
+
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- |:-------:|:---------:|
+| Responsabile   | -       | -         |
+| Amministratore | -       | -         |
+| Analista       | -       | -         |
+| Progettista    | -       | -         |
+| Programmatore  | -       | -         |
+| Verificatore   | -       | -         |
+| **Totale**     | **-**   | **-**     |
+
+Quadro dei costi da affrontare:
+
+<!--Inserire grafico a torta-->
+
+## Progettazione di dettaglio e Codifica dei Requisiti Opzionali
+
+**Importante:** Dato che nel nostro caso (dopo aver fatto l'analisi dei requisiti) è risultato che i requisiti opzionali fossero veramente pochi, è stato scelto di mettere insieme in un unico periodo la parte di progettazione e di codifica.
+
+**Periodo:**
+
+* INIZIO 10 Aprile 2023 - Fine periodo di codifica dei Requisiti Obbligatori
+* FINE 23 Aprile 2023 - Inizio periodo di Test, Collaudo e Validazione finale
+
+**Ruoli coinvolti:**
+
+Le attività da svolgere durante questo periodo sono:
+
+<!--Inserire elenco di attività-->
+
+### Preventivo
+
+Nel periodo di Progettazione di dettaglio e Codifica dei Requisiti Opzionali, ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
+
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:| :-----: |:------:|:-----------:|:------------:|:-------:|:----------:|
+| Auletta Andrea    | -        | -       | -      | -           | -            | -       | -          |
+| Brunello Mattia   | -        | -       | -      | -           | -            | -       | -          |
+| Cecchetto Nicola  | -        | -       | -      | -           | -            | -       | -          |
+| Rucaj Enrik       | -        | -       | -      | -           | -            | -       | -          |
+| Stan Antonio      | -        | -       | -      | -           | -            | -       | -          |
+| Vitagliano Davide | -        | -       | -      | -           | -            | -       | -          |
+| Zanellato Augusto | -        | -       | -      | -           | -            | -       | -          |
+| **Totale**        | **-**    | **-**   | **-**  | **-**       | **-**        | **-**   | **-**      |
+
+In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
+
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- |:-------:|:---------:|
+| Responsabile   | -       | -         |
+| Amministratore | -       | -         |
+| Analista       | -       | -         |
+| Progettista    | -       | -         |
+| Programmatore  | -       | -         |
+| Verificatore   | -       | -         |
+| **Totale**     | **-**   | **-**     |
+
+Quadro dei costi da affrontare:
+
+<!--Inserire grafico a torta-->
+
+## Test, Collaudo e Validazione finale
+
+**Periodo:**
+<!--Abbiamo il problema che si tratta di mezzo sprint (1 settimana al posto di 2).-->
+
+* INIZIO 24 Aprile 2023 - Fine periodo di progettazione e codificadei Requisiti Opzionali
+* FINE 30 Aprile 2023 - Revisione di Customer Acceptance (CA)
+
+**Ruoli coinvolti:**
+
+Le attività da svolgere durante questo periodo sono:
+
+<!--Inserire elenco di attività-->
+
+### Preventivo
+
+Nel periodo di "Test, Collaudo e Validazione finale", ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
+
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:| :-----: |:------:|:-----------:|:------------:|:-------:|:----------:|
+| Auletta Andrea    | -        | -       | -      | -           | -            | -       | -          |
+| Brunello Mattia   | -        | -       | -      | -           | -            | -       | -          |
+| Cecchetto Nicola  | -        | -       | -      | -           | -            | -       | -          |
+| Rucaj Enrik       | -        | -       | -      | -           | -            | -       | -          |
+| Stan Antonio      | -        | -       | -      | -           | -            | -       | -          |
+| Vitagliano Davide | -        | -       | -      | -           | -            | -       | -          |
+| Zanellato Augusto | -        | -       | -      | -           | -            | -       | -          |
+| **Totale**        | **-**    | **-**   | **-**  | **-**       | **-**        | **-**   | **-**      |
+
+In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
+
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- |:-------:|:---------:|
+| Responsabile   | -       | -         |
+| Amministratore | -       | -         |
+| Analista       | -       | -         |
+| Progettista    | -       | -         |
+| Programmatore  | -       | -         |
+| Verificatore   | -       | -         |
+| **Totale**     | **-**   | **-**     |
+
+Quadro dei costi da affrontare:
+
+<!--Inserire grafico a torta-->
 
 # Consuntivo di periodo
 
@@ -275,20 +550,218 @@ Di seguito vengono riportate le variaizioni dei costi:
 | Verificatore   | 47 (-4) | 705  (-60,00)  |
 | **Totale**     | **171** | **3750**       |
 
-## Motivazioni delle variazioni
+### Motivazioni delle variazioni
 
 * **Responsabile +1**: Problema iniziale riguardante la suddivisione del lavoro;
 * **Amministratore +0**: -
 * **Analista +0**: -  
 * **Verificatore -4**: Avendo da verificare documentazione il lavoro è risultato più rapido di quanto previsto.  
 
-## Considerazioni
+### Considerazioni
 
-### Bilancio finale
+#### Bilancio finale
 
 | **Ore** | **Costo**  |
 |:-------:|:----------:|
 | **-3**  | **-30,00** |
 
 Il bilancio è positivo rispetto a quanto preventivato per questo periodo e tutti gli obiettivi sono stati raggiunti con leggero anticipo rispetto a quanto previsto.
-Il bilancio finale non risulta essere scostato in maniera significativo dalle previsioni effettuate dal gruppo quinidi non è ritenuta necessaria la ripianificazione del prossimo periodo.
+Il bilancio finale non risulta essere scostato in maniera significativa dalle previsioni effettuate dal gruppo quinidi non è ritenuta necessaria la ripianificazione del prossimo periodo.
+
+## Progettazione Technology Baseline
+
+Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
+
+| **Nome**          | **Resp** | **Amm** | **An**  | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:| :-----: |:-------:|:-----------:|:------------:|:-------:|:----------:|
+| Auletta Andrea    | -        | -       | -       | -           | -            | -       | -          |
+| Brunello Mattia   | -        | -       | -       | -           | -            | -       | -          |
+| Cecchetto Nicola  | -        | -       | -       | -           | -            | -       | -          |
+| Rucaj Enrik       | -        | -       | -       | -           | -            | -       | -          |
+| Stan Antonio      | -        | -       | -       | -           | -            | -       | -          |
+| Vitagliano Davide | -        | -       | -       | -           | -            | -       | -          |
+| Zanellato Augusto | -        | -       | -       | -           | -            | -       | -          |
+| **Totale**        | **-**    | **-**   | **-**   | **-**       | **-**        | **-**   | **-**      |
+
+Di seguito vengono riportate le variaizioni dei costi:
+
+| **Ruolo**      | **Ore** | **Costo**      |
+| -------------- |:-------:|:--------------:|
+| Responsabile   | -       | -              |
+| Amministratore | -       | -              |
+| Analista       | -       | -              |
+| Progettista    | -       | -              |
+| Programmatore  | -       | -              |
+| Verificatore   | -       | -              |
+| **Totale**     | **-**   | **-**          |
+
+### Motivazioni delle variazioni
+
+### Considerazioni
+
+#### Bilancio finale
+
+## Proof of Concept
+
+Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
+
+| **Nome**          | **Resp** | **Amm** | **An**  | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:| :-----: |:-------:|:-----------:|:------------:|:-------:|:----------:|
+| Auletta Andrea    | -        | -       | -       | -           | -            | -       | -          |
+| Brunello Mattia   | -        | -       | -       | -           | -            | -       | -          |
+| Cecchetto Nicola  | -        | -       | -       | -           | -            | -       | -          |
+| Rucaj Enrik       | -        | -       | -       | -           | -            | -       | -          |
+| Stan Antonio      | -        | -       | -       | -           | -            | -       | -          |
+| Vitagliano Davide | -        | -       | -       | -           | -            | -       | -          |
+| Zanellato Augusto | -        | -       | -       | -           | -            | -       | -          |
+| **Totale**        | **-**    | **-**   | **-**   | **-**       | **-**        | **-**   | **-**      |
+
+Di seguito vengono riportate le variaizioni dei costi:
+
+| **Ruolo**      | **Ore** | **Costo**      |
+| -------------- |:-------:|:--------------:|
+| Responsabile   | -       | -              |
+| Amministratore | -       | -              |
+| Analista       | -       | -              |
+| Progettista    | -       | -              |
+| Programmatore  | -       | -              |
+| Verificatore   | -       | -              |
+| **Totale**     | **-**   | **-**          |
+
+### Motivazioni delle variazioni
+
+### Considerazioni
+
+#### Bilancio finale
+
+## Progettazione di dettaglio dei Requisiti Obbligatori
+
+Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
+
+| **Nome**          | **Resp** | **Amm** | **An**  | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:| :-----: |:-------:|:-----------:|:------------:|:-------:|:----------:|
+| Auletta Andrea    | -        | -       | -       | -           | -            | -       | -          |
+| Brunello Mattia   | -        | -       | -       | -           | -            | -       | -          |
+| Cecchetto Nicola  | -        | -       | -       | -           | -            | -       | -          |
+| Rucaj Enrik       | -        | -       | -       | -           | -            | -       | -          |
+| Stan Antonio      | -        | -       | -       | -           | -            | -       | -          |
+| Vitagliano Davide | -        | -       | -       | -           | -            | -       | -          |
+| Zanellato Augusto | -        | -       | -       | -           | -            | -       | -          |
+| **Totale**        | **-**    | **-**   | **-**   | **-**       | **-**        | **-**   | **-**      |
+
+Di seguito vengono riportate le variaizioni dei costi:
+
+| **Ruolo**      | **Ore** | **Costo**      |
+| -------------- |:-------:|:--------------:|
+| Responsabile   | -       | -              |
+| Amministratore | -       | -              |
+| Analista       | -       | -              |
+| Progettista    | -       | -              |
+| Programmatore  | -       | -              |
+| Verificatore   | -       | -              |
+| **Totale**     | **-**   | **-**          |
+
+### Motivazioni delle variazioni
+
+### Considerazioni
+
+#### Bilancio finale
+
+## Codifica dei Requisiti Obbligatori
+
+Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
+
+| **Nome**          | **Resp** | **Amm** | **An**  | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:| :-----: |:-------:|:-----------:|:------------:|:-------:|:----------:|
+| Auletta Andrea    | -        | -       | -       | -           | -            | -       | -          |
+| Brunello Mattia   | -        | -       | -       | -           | -            | -       | -          |
+| Cecchetto Nicola  | -        | -       | -       | -           | -            | -       | -          |
+| Rucaj Enrik       | -        | -       | -       | -           | -            | -       | -          |
+| Stan Antonio      | -        | -       | -       | -           | -            | -       | -          |
+| Vitagliano Davide | -        | -       | -       | -           | -            | -       | -          |
+| Zanellato Augusto | -        | -       | -       | -           | -            | -       | -          |
+| **Totale**        | **-**    | **-**   | **-**   | **-**       | **-**        | **-**   | **-**      |
+
+Di seguito vengono riportate le variaizioni dei costi:
+
+| **Ruolo**      | **Ore** | **Costo**      |
+| -------------- |:-------:|:--------------:|
+| Responsabile   | -       | -              |
+| Amministratore | -       | -              |
+| Analista       | -       | -              |
+| Progettista    | -       | -              |
+| Programmatore  | -       | -              |
+| Verificatore   | -       | -              |
+| **Totale**     | **-**   | **-**          |
+
+### Motivazioni delle variazioni
+
+### Considerazioni
+
+#### Bilancio finale
+
+## Progettazione di dettaglio e Codifica dei Requisiti Opzionali
+
+Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
+
+| **Nome**          | **Resp** | **Amm** | **An**  | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:| :-----: |:-------:|:-----------:|:------------:|:-------:|:----------:|
+| Auletta Andrea    | -        | -       | -       | -           | -            | -       | -          |
+| Brunello Mattia   | -        | -       | -       | -           | -            | -       | -          |
+| Cecchetto Nicola  | -        | -       | -       | -           | -            | -       | -          |
+| Rucaj Enrik       | -        | -       | -       | -           | -            | -       | -          |
+| Stan Antonio      | -        | -       | -       | -           | -            | -       | -          |
+| Vitagliano Davide | -        | -       | -       | -           | -            | -       | -          |
+| Zanellato Augusto | -        | -       | -       | -           | -            | -       | -          |
+| **Totale**        | **-**    | **-**   | **-**   | **-**       | **-**        | **-**   | **-**      |
+
+Di seguito vengono riportate le variaizioni dei costi:
+
+| **Ruolo**      | **Ore** | **Costo**      |
+| -------------- |:-------:|:--------------:|
+| Responsabile   | -       | -              |
+| Amministratore | -       | -              |
+| Analista       | -       | -              |
+| Progettista    | -       | -              |
+| Programmatore  | -       | -              |
+| Verificatore   | -       | -              |
+| **Totale**     | **-**   | **-**          |
+
+### Motivazioni delle variazioni
+
+### Considerazioni
+
+#### Bilancio finale
+
+## Test, Collaudo e Validazione finale
+
+Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
+
+| **Nome**          | **Resp** | **Amm** | **An**  | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:| :-----: |:-------:|:-----------:|:------------:|:-------:|:----------:|
+| Auletta Andrea    | -        | -       | -       | -           | -            | -       | -          |
+| Brunello Mattia   | -        | -       | -       | -           | -            | -       | -          |
+| Cecchetto Nicola  | -        | -       | -       | -           | -            | -       | -          |
+| Rucaj Enrik       | -        | -       | -       | -           | -            | -       | -          |
+| Stan Antonio      | -        | -       | -       | -           | -            | -       | -          |
+| Vitagliano Davide | -        | -       | -       | -           | -            | -       | -          |
+| Zanellato Augusto | -        | -       | -       | -           | -            | -       | -          |
+| **Totale**        | **-**    | **-**   | **-**   | **-**       | **-**        | **-**   | **-**      |
+
+Di seguito vengono riportate le variaizioni dei costi:
+
+| **Ruolo**      | **Ore** | **Costo**      |
+| -------------- |:-------:|:--------------:|
+| Responsabile   | -       | -              |
+| Amministratore | -       | -              |
+| Analista       | -       | -              |
+| Progettista    | -       | -              |
+| Programmatore  | -       | -              |
+| Verificatore   | -       | -              |
+| **Totale**     | **-**   | **-**          |
+
+### Motivazioni delle variazioni
+
+### Considerazioni
+
+#### Bilancio finale
