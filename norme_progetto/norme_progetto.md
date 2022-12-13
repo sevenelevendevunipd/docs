@@ -72,7 +72,7 @@ Per il processo di fornitura verranno elencati tutti gli strumenti e i documenti
 
 ### Strumenti
 
-L'unico strumento utilizzato dal team è *YouTrack* utilizzato per creare grafici di Gantt e per gestire le issues (*Vedasi la parte di Project Managment in Processi di Supporto*).
+L'unico strumento utilizzato (per la fornitura) dal team è *YouTrack*. Utilizzato sia per creare grafici di Gantt che per gestire le issues (*Vedasi la parte di Project Managment in Processi di Supporto*).
 
 ### Documenti
 
@@ -84,7 +84,7 @@ I documenti redatti in questa fase sono due: *Piano di Qualifica* e *Piano di Pr
 
 #### Piano di Progetto
 
-Il piano di progetto viene redatto unicamente dal responsabile del progetto, in quanto è l'unico che abbia il compito di stabilire delle tempistiche e accertare il corretto avanzamento del progetto nelll'intero periodo di sviluppo.
+Il piano di progetto viene redatto unicamente dal responsabile del progetto, in quanto è l'unico che abbia il compito di stabilire delle tempistiche e accertare il corretto avanzamento del progetto nell'intero periodo di sviluppo.
 Il documento sarà composto dalle seguenti parti:
 
 * *Analisi dei Rischi* = suddivisa da una parte in cui i rischi vengono identificati e dall'altra in cui vengono mitigati. I rischi da identificare vengono suddivisi in:
