@@ -25,7 +25,7 @@ versioni:
     autore: Andrea Auletta
     data: 09/12/2022
     cambiamenti: revisione del contenuto e piccole modifiche
-  0.2.3
+  0.2.3:
     autore: Enrik Rucaj
     data: 13/12/2022
     cambiamenti: Aggiunto previsione di inizio-fine periodo di ogni assignment
