@@ -32,6 +32,10 @@ versioni:
     autore: Enrik Rucaj
     data: 25/11/2022
     cambiamenti: Aggiunta sezione YouTrack, Casi d'uso (per analisi dei requisiti) e modificata sezione Repository
+  v0.0.7:
+    autore: Enrik Rucaj
+    data: 25/11/2022
+    cambiamenti: Aggiunto Piano di Progetto e Strumenti (in Fornitura)
 ...
 
 # Introduzione
@@ -62,7 +66,41 @@ Al giorno d'oggi vista l'espansione e l'aumento del numero delle apparecchiature
 
 ## Fornitura
 
-<!-- TODO: Capire fornitura-->
+### Scopo
+
+Per il processo di fornitura verranno elencati tutti gli strumenti e i documenti necessari per lo svolgimento del progetto.
+
+### Strumenti
+
+L'unico strumento utilizzato dal team è *YouTrack* utilizzato per creare grafici di Gantt e per gestire le issues (*Vedasi la parte di Project Managment in Processi di Supporto*).
+
+### Documenti
+
+I documenti redatti in questa fase sono due: *Piano di Qualifica* e *Piano di Progetto*
+
+#### Piano di Qualifica
+
+<!--TO DO: Aggiungere la descrizione del piano di qualifica-->
+
+#### Piano di Progetto
+
+Il piano di progetto viene redatto unicamente dal responsabile del progetto, in quanto è l'unico che abbia il compito di stabilire delle tempistiche e accertare il corretto avanzamento del progetto nelll'intero periodo di sviluppo.
+Il documento sarà composto dalle seguenti parti:
+
+* *Analisi dei Rischi* = suddivisa da una parte in cui i rischi vengono identificati e dall'altra in cui vengono mitigati. I rischi da identificare vengono suddivisi in:
+  * Rischi tecnologici
+  * Rischi organizzativi
+  * Rischi dei requisiti
+* *Modello di Sviluppo*
+* *Pianificazione* = raggrupata per varie fasi in cui vi è indicato:
+  * Il periodo in cui viene svolto
+  * I ruoli coinvolti
+  * Le attività da svolgere
+  * Il preventivo fatto
+* *Consuntivo di periodo* = raggrupata per varie fasi in cui vi è indicato:
+  * Il consuntivo
+  * Le motivazioni delle variazioni (se ci sono)
+  * Considerazioni
 
 ## Sviluppo
 
