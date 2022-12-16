@@ -48,7 +48,7 @@ versioni:
   0.6.1:
     autore: Mattia Brunello
     data: 16/12/2022
-    cambiamenti: Divisone UC3.4 in UC3.4.1, UC3.4.2 e UC3.4.3
+    cambiamenti: Divisone UC3.4 in UC3.4.1, UC3.4.2 e UC3.4.3. Aggiunti OUC3 e OUC4
 ...
 
 # Introduzione
@@ -590,3 +590,37 @@ OUC2--s
 * Attore: utente;
 * Precondizioni: vengono applicati i filtri o le selezioni; [VUC3] [VUC4] [SUC3] [SUC4]
 * Postcondizioni: i filtri vengono ripristinati.
+
+### OUC3 - Ricerca sequenze di eventi non ordinati (VR02)
+  
+  ```{ .plantuml caption="OUC3"}
+  left to right direction
+  :utente: as o
+  package "SmartLogViewer"{
+  usecase OUC3 as "OUC3
+  Ricerca sequenze"
+  }
+  o--OUC3
+  ```
+
+* Scenario: l'utente ricerca una sequenza di eventi non ordinati;
+* Attore: utente;
+* Precondizioni: viene visualizzata la tabella [VUC1];
+* Postcondizioni: vengono evidenziate le tuple con gli eventi con codice corrispondente ai parametri di ricerca.
+
+### OUC4 - Selezione eventi per matrice di correlazione (SR01.1)
+  
+  ```{ .plantuml caption="OUC4"}
+  left to right direction
+  :utente: as o
+  package "SmartLogStatistics"{
+  usecase OUC4 as "OUC4
+  Selezione eventi per code e unit/subUnit"
+  }
+  o--OUC4
+  ```
+
+* Scenario: l'utente seleziona gli eventi per la matrice di correlazione;
+* Attore: utente;
+* Precondizioni: è stata visualizzata la matrice di correlazione[SR01];
+* Postcondizioni: viene aggiornata la matrice con gli eventi selezionati.
