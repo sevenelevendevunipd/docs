@@ -45,6 +45,10 @@ versioni:
     autore: Nicola Cecchetto
     data: 08/12/2022
     cambiamenti: Revisione post-conferenza con azienda
+  0.6.1:
+    autore: Mattia Brunello
+    data: 16/12/2022
+    cambiamenti: Divisone UC3.4 in UC3.4.1, UC3.4.2 e UC3.4.3
 ...
 
 # Introduzione
@@ -96,10 +100,12 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
   * VRF3.2 - L’asse Y contiene l’insieme degli eventi;
   * VRF3.3 - Un rettangolo “pieno” che si sviluppa sull'asse x indica il periodo di tempo in cui l’evento (indicato
     sull'asse y) è ATTIVO;
-  * VRF3.4 - Deve essere possibile selezione l’intervallo di tempo desiderato, con funzioni di select/zoom/span;
+  * VRF3.4 - Deve essere possibile selezione con le seguenti funzioni:
+    * VRF3.4.1 - Select: selezione di un intervallo di tempo;
+    * VRF3.4.2 - Zoom: zoom in/out;
+    * VRF3.4.3 - Span: scroll orizzontale;
   * VRF3.5 - Deve essere possibile filtrare gli eventi in base alle colonne ( Code, Unit/subUnit, etc);
-* VRF4 - Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un log, con la relativa
-  etichettatura (gli eventi devono essere ordinati ma non obbligatoriamente consecutivi l'uno all'altro).
+* VRF4 - Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un log, con la relativa etichettatura (gli eventi devono essere ordinati ma non obbligatoriamente consecutivi l'uno all'altro).
 
 ## Requisiti funzionali - SmartLogStatistics
 
@@ -129,8 +135,7 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
 * RO2 - L'utente deve poter eliminare simultaneamente tutti i filtri applicati precedentemente;
 * VRO1 - L'utente deve poter visualizzare altri tipi di grafici;
 * VRO2 - L'utente deve poter ricercare sequenze più o meno note con relativa etichettatura dato un limite di tempo (gli eventi ricercati possono essere anche in ordine sparso ma devono avere una correlazione);
-* SRO1 - L'utente deve poter visualizzare un grafico matrice di correlazione che mostri l'indice di correlazione tra
-  coppie di eventi;
+* SRO1 - L'utente deve poter visualizzare un grafico matrice di correlazione che mostri l'indice di correlazione tra coppie di eventi;
   * SRO1.1 - Dovrà essere possibile selezionare gli eventi per code e unit/subunit.
 
 ## Requisiti qualitativi
@@ -249,6 +254,13 @@ usecase VUC3.3 as "VUC3.3
 Ricerca sequenza eventi"
 usecase VUC3.4 as "VUC3.4
 Raggruppamento per data/ora"
+
+usecase VUC3.4.1 as "VUC3.4.1
+Selezione intervallo temporale"
+usecase VUC3.4.2 as "VUC3.4.2
+Zoom intervallo temporale"
+usecase VUC3.4.3 as "VUC3.4.3
+Scroll orizzontale"
 }
 o--VUC3.1
 o--VUC3.2
@@ -256,6 +268,9 @@ o--VUC3.3
 o--VUC3.4
 VUC3.1 ..> VUC3.1.1 : <<include>>
 VUC3.1 ..> VUC3.1.2 : <<include>>
+VUC3.4 ..> VUC3.4.1 : <<include>>
+VUC3.4 ..> VUC3.4.2 : <<include>>
+VUC3.4 ..> VUC3.4.3 : <<include>>
 ```
 
 * Scenari:
@@ -298,6 +313,27 @@ VUC3.1 ..> VUC3.1.2 : <<include>>
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzata la tabella con gli eventi con data/ora corrispondente ai parametri di ricerca.
 
+##### VUC3.4.1 - Selezione dell'intervallo temporale (VRF3.4.1)
+
+* Scenario: l'utente vuole visualizzare il grafico in un intervallo temporale;
+* Attore: utente;
+* Precondizioni: è stato visualizzato il grafico [VUC1];
+* Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali selezionati.
+
+##### VUC3.4.2 - Zoom dell'intervallo temporale (VRF3.4.2)
+
+* Scenario: l'utente vuole visualizzare il grafico in un intervallo temporale più ristretto o più ampio;
+* Attore: utente;
+* Precondizioni: è stato visualizzato il grafico [VUC1];
+* Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali modificati.
+
+##### VUC3.4.3 - Scroll orizzontale (VRF3.4.3)
+
+* Scenario: l'utente vuole visualizzare il grafico in un intervallo temporale successivo o precedente;
+* Attore: utente;
+* Precondizioni: è stato visualizzato il grafico [VUC1];
+* Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali modificati.
+
 ### VUC4 - Selezione dell'intervallo temporale sul grafico (VRF3.4)
 
 ```{ .plantuml caption="VUC4"}
@@ -314,6 +350,23 @@ o--VUC4
 * Attore: utente;
 * Precondizioni: è stato visualizzato il grafico [VUC2];
 * Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali selezionati.
+
+### VUC5 - Ricerca eventi ordinati (VRF4)
+
+```{ .plantuml caption="VUC5"}
+left to right direction
+:utente: as o
+package "SmartLogViewer Tabella"{
+usecase VUC5 as "VUC5
+Ricerca eventi ordinati"
+}
+o--VUC5
+```
+
+* Scenario: l'utente vuole cercare una sequenza di eventi ordinati ma non necessariamente consecutivi;
+* Attore: utente;
+* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
+* Postcondizioni: vengono evidenziati la tuple con gli eventi con codice corrispondente ai parametri di ricerca.
 
 ## SmartLogStatistics
 
