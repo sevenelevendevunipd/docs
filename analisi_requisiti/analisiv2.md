@@ -176,15 +176,37 @@ left to right direction
 :utente: as o
 package "SmartLogViewer"{
 usecase VUC1 as "VUC1
-Selezione log"
+Caricamento file"
+usecase VUC1.1 as "VUC1.1
+File di log"
+usecase VUC1.2 as "VUC1.2
+File non compatibile"
 }
 o--VUC1
+VUC1 ..> VUC1.1 : <<include>>
+VUC1 ..> VUC1.2 : <<include>>
 ```
 
-* Scenario: l'utente carica un file di log da visualizzare nell'applicazione SmartLogViewer;
+* Scenario:
+  1. l'utente carica un file di log compatibile da visualizzare nell'applicazione SmartLogViewer;
+  2. l'utente carica un file non compatibile nell'applicazione SmartLogViewer;
 * Attore: utente;
 * Precondizioni: l'applicazione è operativa e funzionante;
-* Postcondizioni: i dati del file di log vengono caricati correttamente nell'applicazione SmartLogViewer e vengono visualizzati tabella e grafico.
+* Postcondizioni: il file appena caricato viene processato correttamente dall'applicazione.
+
+#### VUC1.1 File di log compatibile
+
+* Scenario: l'utente carica un file di log compatibile da visualizzare nell'applicazione SmartLogViewer;
+* Attore: utente;
+* Precondizioni: l'applicazione è operativa e funzionante;
+* Postcondizioni: i dati del file appena caricato vengono visualizzati correttamente nell'applicazione.
+
+#### VUC1.2 File non compatibile
+
+* Scenario: l'utente carica un file non compatibile nell'applicazione SmartLogViewer;
+* Attore: utente;
+* Precondizioni: l'applicazione è operativa e funzionante;
+* Postcondizioni: l'applicazione non accetta il file caricato.
 
 ### VUC2 - Modifica visualizzazione della tabella (VRF2.2, VRF2.3, VRF2.4, VRF4)
 
@@ -353,11 +375,27 @@ SUC1 <.. SUC1.2 : <<extends>>
 ```
 
 * Scenario:
-  1. l'utente carica i file di log da visualizzare nell'applicazione SmartLogLogistics per range di data/ora;
+  1. l'utente carica i file da visualizzare nell'applicazione SmartLogLogistics per range di data/ora;
+     1. l'utente carica un file di log compatibile;
+     2. l'utente carica un file non compatibile;
   2. l'utente aggiunge o toglie log da visualizzare a quelli già presenti;
 * Attore: utente;
 * Precondizioni: l'applicazione è operativa e funzionante;
-* Postcondizioni: i log vengono caricati correttamente nell'applicazione SmartLogStatistics e vengono visualizzati prospetto e grafici.
+* Postcondizioni: i log vengono caricati correttamente nell'applicazione SmartLogStatistics.
+
+#### SUC1.1.1 File di log compatibile
+
+* Scenario: l'utente carica un file di log compatibile da visualizzare nell'applicazione SmartLogStatistics;
+* Attore: utente;
+* Precondizioni: l'applicazione è operativa e funzionante;
+* Postcondizioni: il file è pronto per essere selezionato per la visualizzione.
+
+#### SUC1.1.2 File non compatibile
+
+* Scenario: l'utente carica un file non compatibile nell'applicazione SmartLogStatistics;
+* Attore: utente;
+* Precondizioni: l'applicazione è operativa e funzionante;
+* Postcondizioni: l'applicazione non accetta il file caricato.
 
 ### SUC2 - Modifica visualizzazione del prospetto (SRF2.6, SRF3.1.1)
 

@@ -186,16 +186,38 @@ left to right direction
 :SmartLogViewer: as v
 package "SmartLogViewer"{
 usecase VUC1 as "VUC1
-Selezione log"
+Caricamento file"
+usecase VUC1.1 as "VUC1.1
+File di log"
+usecase VUC1.2 as "VUC1.2
+File non compatibile"
 }
 o--VUC1
 VUC1--v
+VUC1 ..> VUC1.1 : <<include>>
+VUC1 ..> VUC1.2 : <<include>>
 ```
 
-* Scenario: l'utente carica un file di log da visualizzare nell'applicazione SmartLogViewer;
+* Scenario:
+  1. l'utente carica un file di log compatibile da visualizzare nell'applicazione SmartLogViewer;
+  2. l'utente carica un file non compatibile nell'applicazione SmartLogViewer;
 * Attore: utente, SmartLogViewer;
 * Precondizioni: l'applicazione è operativa e funzionante;
-* Postcondizioni: i dati del file di log vengono caricati correttamente nell'applicazione SmartLogViewer.
+* Postcondizioni: il file appena caricato viene processato correttamente dall'applicazione.
+
+#### VUC1.1 File di log compatibile
+
+* Scenario: l'utente carica un file di log compatibile da visualizzare nell'applicazione SmartLogViewer;
+* Attore: utente, SmartLogViewer;
+* Precondizioni: l'applicazione è operativa e funzionante;
+* Postcondizioni: i dati del file appena caricato vengono visualizzati correttamente nell'applicazione.
+
+#### VUC1.2 File non compatibile
+
+* Scenario: l'utente carica un file non compatibile nell'applicazione SmartLogViewer;
+* Attore: utente, SmartLogViewer;
+* Precondizioni: l'applicazione è operativa e funzionante;
+* Postcondizioni: l'applicazione non accetta il file caricato.
 
 ### VUC2 - Inizializzazione della tabella e del grafico (VRF2, VRF3)
 
@@ -219,21 +241,21 @@ VUC2 ..> VUC2.2 : <<include>>
   1. l'applicazione SmartLogViewer visualizza la tabella relativa ai dati del file di log caricato [VUC2.1];
   2. l'applicazione SmartLogViewer visualizza il grafico relativo ai dati del file di log caricato [VUC2.2];
 * Attore: SmartLogViewer;
-* Precondizioni: è stato caricato un file di log nell'applicazione [VUC1];
+* Precondizioni: è stato caricato un file di log nell'applicazione [VUC1.1];
 * Postcondizioni: vengono inizializzati correttamente i dati del file di log.
 
 #### VUC2.1 Visualizzazione della tabella
 
 * Scenario: l'applicazione SmartLogViewer visualizza la tabella relativa ai dati del file di log caricato;
 * Attore: SmartLogViewer;
-* Precondizioni: è stato caricato un file di log nell'applicazione [VUC1];
+* Precondizioni: è stato caricato un file di log nell'applicazione [VUC1.1];
 * Postcondizioni: viene visualizzata correttamente la tabella con i dati del file di log.
 
 #### VUC2.2 Visualizzazione del grafico
 
 * Scenario: l'applicazione SmartLogViewer visualizza il grafico relativo ai dati del file di log caricato;
 * Attore: SmartLogViewer;
-* Precondizioni: è stato caricato un file di log nell'applicazione [VUC1];
+* Precondizioni: è stato caricato un file di log nell'applicazione [VUC1.1];
 * Postcondizioni: viene visualizzato correttamente il grafico con i dati del file di log.
 
 ### VUC3 - Modifica visualizzazione della tabella (VRF2.2, VRF2.3, VRF2.4, VRF4)
@@ -254,7 +276,10 @@ usecase VUC3.3 as "VUC3.3
 Ricerca sequenza eventi"
 usecase VUC3.4 as "VUC3.4
 Raggruppamento per data/ora"
-
+usecase VUC3.3.1 as "VUC3.3.1
+Tutti gli eventi sono trovati"
+usecase VUC3.3.2 as "VUC3.3.2
+Almeno un evento non trovato"
 usecase VUC3.4.1 as "VUC3.4.1
 Selezione intervallo temporale"
 usecase VUC3.4.2 as "VUC3.4.2
@@ -268,6 +293,8 @@ o--VUC3.3
 o--VUC3.4
 VUC3.1 ..> VUC3.1.1 : <<include>>
 VUC3.1 ..> VUC3.1.2 : <<include>>
+VUC3.3 ..> VUC3.3.1 : <<include>>
+VUC3.3 ..> VUC3.3.2 : <<include>>
 VUC3.4 ..> VUC3.4.1 : <<include>>
 VUC3.4 ..> VUC3.4.2 : <<include>>
 VUC3.4 ..> VUC3.4.3 : <<include>>
@@ -301,10 +328,26 @@ VUC3.4 ..> VUC3.4.3 : <<include>>
 
 #### VUC3.3 - Ricerca tramite sequenza di codice evento
 
+* Scenari:
+  1. l'utente ricerca tuple tramite una sequenza di codici evento;
+  2. almeno uno degli eventi ricercati dall'utente non è presente nel file di log;
+* Attore: utente;
+* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
+* Postcondizioni: viene visualizzata la tabella con gli eventi con codice corrispondente ai parametri di ricerca.
+
+##### VUC3.3.1 Tutti gli eventi sono stati trovati
+
 * Scenari: l'utente ricerca tuple tramite una sequenza di codici evento;
 * Attore: utente;
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzata la tabella con gli eventi con codice corrispondente ai parametri di ricerca.
+
+##### VUC3.3.2 Almeno un evento non è stato trovato
+
+* Scenari: almeno uno degli eventi ricercati dall'utente non è presente nel file di log;
+* Attore: utente;
+* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
+* Postcondizioni: viene comunicato all'utente quali eventi non sono presenti nel file di log.
 
 #### VUC3.4 - Ricerca tramite data/ora
 
@@ -390,11 +433,27 @@ SUC1 <.. SUC1.2 : <<extends>>
 ```
 
 * Scenario:
-  1. l'utente carica i file di log da visualizzare nell'applicazione SmartLogLogistics per range di data/ora;
+  1. l'utente carica i file da visualizzare nell'applicazione SmartLogLogistics per range di data/ora;
+     1. l'utente carica un file di log compatibile;
+     2. l'utente carica un file non compatibile;
   2. l'utente aggiunge o toglie log da visualizzare a quelli già presenti;
 * Attore: utente, SmartLogStatistics;
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: i log vengono caricati correttamente nell'applicazione SmartLogStatistics.
+
+#### SUC1.1.1 File di log compatibile
+
+* Scenario: l'utente carica un file di log compatibile da visualizzare nell'applicazione SmartLogStatistics;
+* Attore: utente, SmartLogStatistics;
+* Precondizioni: l'applicazione è operativa e funzionante;
+* Postcondizioni: il file è pronto per essere selezionato per la visualizzione.
+
+#### SUC1.1.2 File non compatibile
+
+* Scenario: l'utente carica un file non compatibile nell'applicazione SmartLogStatistics;
+* Attore: utente, SmartLogStatistics;
+* Precondizioni: l'applicazione è operativa e funzionante;
+* Postcondizioni: l'applicazione non accetta il file caricato.
 
 ### SUC2 - Inizializzazione del prospetto e dei grafici (SRF2, SRF3)
 
