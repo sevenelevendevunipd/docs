@@ -5,58 +5,58 @@ responsabile: "Nicola Cecchetto"
 redattori: ["Andrea Auletta", "Mattia Brunello", "Davide Vitagliano","Enrik Rucaj"]
 verificatori: ["Antonio Stan", "Augusto Zanellato"]
 versioni:
-  0.0.1:
-    autore: Andrea Auletta
-    data: 15/11/2022
-    cambiamenti: Prima stesura
-  0.1.0:
-    autore: Andrea Auletta
-    data: 16/11/2022
-    cambiamenti: Stesura requisiti espliciti del capitolato
-  0.2.0:
-    autore: Davide Vitagliano
-    data: 24/11/2022
-    cambiamenti: Stesura parziale Use Cases per SmartLogViewer
-  0.3.0:
-    autore: Andrea Auletta
-    data: 25/11/2022
-    cambiamenti: Completata prima stesura dei casi d'uso
-  0.3.1:
-    autore: Mattia Brunello
-    data: 26/11/2022
-    cambiamenti: Aggiunti grafici dei casi d'uso e riorganizzazione del documento
-  0.3.2:
-    autore: Davide Vitagliano
-    data: 01/12/2022
-    cambiamenti: Revisione degli errori
-  0.4.0:
-    autore: Enrik Rucaj
-    data: 04/12/2022
-    cambiamenti: Aggiunti requisiti impliciti e opzionali
-  0.5.0:
-    autore: Davide Vitagliano
-    data: 06/12/2022
-    cambiamenti: Aggiunti e riscritti use cases
-  0.5.1:
-    autore: Augusto Zanellato
-    data: 07/12/2022
-    cambiamenti: Verifica e correzione errori minori
-  0.6.0:
-    autore: Nicola Cecchetto
-    data: 08/12/2022
-    cambiamenti: Revisione post-conferenza con azienda
-  0.6.1:
-    autore: Mattia Brunello
-    data: 16/12/2022
-    cambiamenti: Divisone UC3.4 in UC3.4.1, UC3.4.2 e UC3.4.3. Aggiunti OUC3 e OUC4
-  0.6.2:
-    autore: Nicola Cecchetto
-    data: 18/12/2022
-    cambiamenti: Aggiunta casi d'errore
-  0.6.3:
-    autore: Davide Vitagliano
-    data: 19/12/2022
-    cambiamenti: Revisione degli errori e identificazione corretta attori
+0.0.1:
+autore: Andrea Auletta
+data: 15/11/2022
+cambiamenti: Prima stesura
+0.1.0:
+autore: Andrea Auletta
+data: 16/11/2022
+cambiamenti: Stesura requisiti espliciti del capitolato
+0.2.0:
+autore: Davide Vitagliano
+data: 24/11/2022
+cambiamenti: Stesura parziale Use Cases per SmartLogViewer
+0.3.0:
+autore: Andrea Auletta
+data: 25/11/2022
+cambiamenti: Completata prima stesura dei casi d'uso
+0.3.1:
+autore: Mattia Brunello
+data: 26/11/2022
+cambiamenti: Aggiunti grafici dei casi d'uso e riorganizzazione del documento
+0.3.2:
+autore: Davide Vitagliano
+data: 01/12/2022
+cambiamenti: Revisione degli errori
+0.4.0:
+autore: Enrik Rucaj
+data: 04/12/2022
+cambiamenti: Aggiunti requisiti impliciti e opzionali
+0.5.0:
+autore: Davide Vitagliano
+data: 06/12/2022
+cambiamenti: Aggiunti e riscritti use cases
+0.5.1:
+autore: Augusto Zanellato
+data: 07/12/2022
+cambiamenti: Verifica e correzione errori minori
+0.6.0:
+autore: Nicola Cecchetto
+data: 08/12/2022
+cambiamenti: Revisione post-conferenza con azienda
+0.6.1:
+autore: Mattia Brunello
+data: 16/12/2022
+cambiamenti: Divisone UC3.4 in UC3.4.1, UC3.4.2 e UC3.4.3. Aggiunti OUC3 e OUC4
+0.6.2:
+autore: Nicola Cecchetto
+data: 18/12/2022
+cambiamenti: Aggiunta casi d'errore
+0.6.3:
+autore: Davide Vitagliano
+data: 19/12/2022
+cambiamenti: Revisione degli errori e identificazione corretta attori
 ...
 
 # Introduzione
@@ -735,7 +735,7 @@ OUC3<|--OUC3.2
 * Postcondizioni: vengono notificati all'utente quali eventi non sono stati trovati.
 
 ### OUC4 - Selezione eventi per matrice di correlazione (SR01.1)
-  
+
 ```{ .plantuml caption="OUC4"}
 left to right direction
 :Impiegato: as i
