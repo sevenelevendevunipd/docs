@@ -49,6 +49,10 @@ versioni:
     autore: Mattia Brunello
     data: 16/12/2022
     cambiamenti: Divisone UC3.4 in UC3.4.1, UC3.4.2 e UC3.4.3. Aggiunti OUC3 e OUC4
+  0.6.2:
+    autore: Nicola Cecchetto
+    data: 18/12/2022
+    cambiamenti: Aggiunta casi d'errore
 ...
 
 # Introduzione
@@ -276,12 +280,12 @@ usecase VUC3.3 as "VUC3.3
 Ricerca sequenza eventi"
 usecase VUC3.4 as "VUC3.4
 Raggruppamento per data/ora"
-usecase VUC3.3.1 as "VUC3.3.1
-Tutti gli eventi sono trovati"
-usecase VUC3.3.2 as "VUC3.3.2
-Almeno un evento non trovato"
 usecase VUC3.4.1 as "VUC3.4.1
 Selezione intervallo temporale"
+usecase VUC3.4.1.1 as "VUC3.4.1.1
+Intervallo temporale corretto"
+usecase VUC3.4.1.2 as "VUC3.4.1.2
+Intervallo temporale non corretto"
 usecase VUC3.4.2 as "VUC3.4.2
 Zoom intervallo temporale"
 usecase VUC3.4.3 as "VUC3.4.3
@@ -293,9 +297,9 @@ o--VUC3.3
 o--VUC3.4
 VUC3.1 ..> VUC3.1.1 : <<include>>
 VUC3.1 ..> VUC3.1.2 : <<include>>
-VUC3.3 ..> VUC3.3.1 : <<include>>
-VUC3.3 ..> VUC3.3.2 : <<include>>
 VUC3.4 ..> VUC3.4.1 : <<include>>
+VUC3.4.1 ..> VUC3.4.1.1 : <<include>>
+VUC3.4.1 ..> VUC3.4.1.2 : <<include>>
 VUC3.4 ..> VUC3.4.2 : <<include>>
 VUC3.4 ..> VUC3.4.3 : <<include>>
 ```
@@ -328,26 +332,10 @@ VUC3.4 ..> VUC3.4.3 : <<include>>
 
 #### VUC3.3 - Ricerca tramite sequenza di codice evento
 
-* Scenari:
-  1. l'utente ricerca tuple tramite una sequenza di codici evento;
-  2. almeno uno degli eventi ricercati dall'utente non è presente nel file di log;
-* Attore: utente;
-* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene visualizzata la tabella con gli eventi con codice corrispondente ai parametri di ricerca.
-
-##### VUC3.3.1 Tutti gli eventi sono stati trovati
-
 * Scenari: l'utente ricerca tuple tramite una sequenza di codici evento;
 * Attore: utente;
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzata la tabella con gli eventi con codice corrispondente ai parametri di ricerca.
-
-##### VUC3.3.2 Almeno un evento non è stato trovato
-
-* Scenari: almeno uno degli eventi ricercati dall'utente non è presente nel file di log;
-* Attore: utente;
-* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene comunicato all'utente quali eventi non sono presenti nel file di log.
 
 #### VUC3.4 - Ricerca tramite data/ora
 
@@ -358,58 +346,79 @@ VUC3.4 ..> VUC3.4.3 : <<include>>
 
 ##### VUC3.4.1 - Selezione dell'intervallo temporale (VRF3.4.1)
 
+* Scenari:
+  1. l'utente vuole visualizzare il grafico in un intervallo temporale;
+  2. l'intervallo temporale fornito dall'utente non è valido (data di inizio posteriore alla data di fine)
+* Attore: utente;
+* Precondizioni: è stato visualizzato il grafico [VUC2];
+* Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali selezionati.
+
+###### VUC3.4.1.1 Intervallo temporale corretto
+
 * Scenario: l'utente vuole visualizzare il grafico in un intervallo temporale;
 * Attore: utente;
-* Precondizioni: è stato visualizzato il grafico [VUC1];
+* Precondizioni: è stato visualizzato il grafico [VUC2];
 * Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali selezionati.
+
+###### VUC3.4.1.2 Intervallo temporale non corretto
+
+* Scenario: l'intervallo temporale fornito dall'utente non è valido (data di inizio antecedente alla data di fine);
+* Attore: utente;
+* Precondizioni: è stato visualizzato il grafico [VUC2];
+* Postcondizioni: viene notificato all'utente che le date fornite non sono valide.
 
 ##### VUC3.4.2 - Zoom dell'intervallo temporale (VRF3.4.2)
 
 * Scenario: l'utente vuole visualizzare il grafico in un intervallo temporale più ristretto o più ampio;
 * Attore: utente;
-* Precondizioni: è stato visualizzato il grafico [VUC1];
+* Precondizioni: è stato visualizzato il grafico [VUC2];
 * Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali modificati.
 
 ##### VUC3.4.3 - Scroll orizzontale (VRF3.4.3)
 
 * Scenario: l'utente vuole visualizzare il grafico in un intervallo temporale successivo o precedente;
 * Attore: utente;
-* Precondizioni: è stato visualizzato il grafico [VUC1];
+* Precondizioni: è stato visualizzato il grafico [VUC2];
 * Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali modificati.
 
-### VUC4 - Selezione dell'intervallo temporale sul grafico (VRF3.4)
+### VUC4 - Ricerca eventi ordinati (VRF4)
 
 ```{ .plantuml caption="VUC4"}
 left to right direction
 :utente: as o
-package "SmartLogViewer Grafico"{
+package "SmartLogViewer Tabella"{
 usecase VUC4 as "VUC4
-Selezione intervallo temporale sul grafico"
+Ricerca eventi ordinati"
+usecase VUC4.1 as "VUC4.1
+Trovati tutti gli eventi"
+usecase VUC4.2 as "VUC4.2
+Almeno un evento non trovato"
 }
 o--VUC4
+VUC4 ..> VUC4.1 : <<include>>
+VUC4 ..> VUC4.2 : <<include>>
 ```
 
-* Scenario: l'utente vuole visualizzare il grafico in un intervallo temporale scelto tramite funzioni apposite;
-* Attore: utente;
-* Precondizioni: è stato visualizzato il grafico [VUC2];
-* Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali selezionati.
-
-### VUC5 - Ricerca eventi ordinati (VRF4)
-
-```{ .plantuml caption="VUC5"}
-left to right direction
-:utente: as o
-package "SmartLogViewer Tabella"{
-usecase VUC5 as "VUC5
-Ricerca eventi ordinati"
-}
-o--VUC5
-```
-
-* Scenario: l'utente vuole cercare una sequenza di eventi ordinati ma non necessariamente consecutivi;
+* Scenario:
+  1. l'utente vuole cercare una sequenza di eventi ordinati ma non necessariamente consecutivi;
+  2. almeno uno degli eventi ricercati dall'utente non è presente nel file di log;
 * Attore: utente;
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: vengono evidenziati la tuple con gli eventi con codice corrispondente ai parametri di ricerca.
+
+#### VUC4.1 Tutti gli eventi sono stati trovati
+
+* Scenari: l'utente vuole cercare una sequenza di eventi ordinati ma non necessariamente consecutivi;
+* Attore: utente;
+* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
+* Postcondizioni: viene visualizzata la tabella con gli eventi con codice corrispondente ai parametri di ricerca.
+
+#### VUC4.2 Almeno un evento non è stato trovato
+
+* Scenari: almeno uno degli eventi ricercati dall'utente non è presente nel file di log;
+* Attore: utente;
+* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
+* Postcondizioni: viene comunicato all'utente quali eventi non sono presenti nel file di log.
 
 ## SmartLogStatistics
 
@@ -433,7 +442,7 @@ SUC1 <.. SUC1.2 : <<extends>>
 ```
 
 * Scenario:
-  1. l'utente carica i file da visualizzare nell'applicazione SmartLogLogistics per range di data/ora;
+  1. l'utente carica i file da visualizzare nell'applicazione SmartLogStatistics per range di data/ora;
      1. l'utente carica un file di log compatibile;
      2. l'utente carica un file non compatibile;
   2. l'utente aggiunge o toglie log da visualizzare a quelli già presenti;
@@ -454,6 +463,13 @@ SUC1 <.. SUC1.2 : <<extends>>
 * Attore: utente, SmartLogStatistics;
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: l'applicazione non accetta il file caricato.
+
+#### SUC1.2 Aggiunta o rimozione log da visualizzare
+
+* Scenario: l'utente aggiunge o toglie log da visualizzare a quelli già presenti;
+* Attore: utente, SmartLogStatistics;
+* Precondizioni: l'applicazione è operativa e funzionante;
+* Postcondizioni: i log vengono caricati correttamente nell'applicazione SmartLogStatistics.
 
 ### SUC2 - Inizializzazione del prospetto e dei grafici (SRF2, SRF3)
 
@@ -504,10 +520,14 @@ usecase SUC3.1 as "SUC3.1
 Filtro"
 usecase SUC3.1.3 as "SUC3.1.3
 Filtro su versione firmware"
-usecase SUC3.1.2 as "SUC3.1.2
-Filtro su unit/subUnit"
 usecase SUC3.1.1 as "SUC3.1.1
+Filtro su unit/subUnit"
+usecase SUC3.1.2 as "SUC3.1.2
 Filtro su data/ora"
+usecase SUC3.1.2.1 as "SUC3.1.2.1
+Intervallo temporale corretto"
+usecase SUC3.1.2.2 as "SUC3.1.2.2
+Intervallo temporale scorretto"
 usecase SUC3.2 as "SUC3.2
 Ordinamento"
 usecase SUC3.2.3 as "SUC3.2.3
@@ -521,6 +541,8 @@ o--SUC3.1
 o--SUC3.2
 SUC3.1<|--SUC3.1.1
 SUC3.1<|--SUC3.1.2
+SUC3.1.2<|--SUC3.1.2.1
+SUC3.1.2<|--SUC3.1.2.2
 SUC3.1<|--SUC3.1.3
 SUC3.2<|--SUC3.2.1
 SUC3.2<|--SUC3.2.2
@@ -540,6 +562,43 @@ SUC3.2<|--SUC3.2.3
   1. l'utente filtra per unit/subUnit la tabella di eventi da visualizzare;
   2. l'utente filtra per data/ora la tabella di eventi da visualizzare;
   3. l'utente filtra per versione del firmware la tabella di eventi da visualizzare;
+* Attori: utente;
+* Precondizioni: è stata visualizzata la tabella con i dati [SUC2];
+* Postcondizioni: viene visualizzata la tabella degli eventi filtrata.
+
+##### SUC3.1.1 Filtra per unit/subunit
+
+* Scenario: l'utente filtra per unit/subUnit la tabella di eventi da visualizzare;
+* Attori: utente;
+* Precondizioni: è stata visualizzata la tabella con i dati [SUC2];
+* Postcondizioni: viene visualizzata la tabella degli eventi filtrata.
+
+##### SUC3.1.2 Filtra per data/ora
+
+* Scenario:
+  1. l'utente filtra per data/ora la tabella di eventi da visualizzare;
+  2. l'intervallo temporale fornito dall'utente non è valido (data inizio posteriore a data fine);
+* Attori: utente;
+* Precondizioni: è stata visualizzata la tabella con i dati [SUC2];
+* Postcondizioni: viene visualizzata la tabella degli eventi filtrata.
+
+###### SUC3.1.2.1 Intervallo temporale corretto
+
+* Scenario: l'utente filtra per data/ora la tabella di eventi da visualizzare;
+* Attori: utente;
+* Precondizioni: è stata visualizzata la tabella con i dati [SUC2];
+* Postcondizioni: viene visualizzata la tabella degli eventi filtrata.
+
+###### SUC3.1.2.2 Intervallo temporale non corretto
+
+* Scenario: l'intervallo temporale fornito dall'utente non è valido (data inizio posteriore a data fine);
+* Attori: utente;
+* Precondizioni: è stata visualizzata la tabella con i dati [SUC2];
+* Postcondizioni: viene notificato all'utente che le date inserite non sono corrette.
+
+##### SUC3.1.3 Filtra per versione firmware
+
+* Scenario: l'utente filtra per versione del firmware la tabella di eventi da visualizzare;
 * Attori: utente;
 * Precondizioni: è stata visualizzata la tabella con i dati [SUC2];
 * Postcondizioni: viene visualizzata la tabella degli eventi filtrata.
@@ -658,14 +717,36 @@ OUC2--s
   package "SmartLogViewer"{
   usecase OUC3 as "OUC3
   Ricerca sequenze"
+  usecase OUC3.1 as "OUC3.1
+  Trovati tutti gli eventi"
+  usecase OUC3.2 as "OUC3.2
+  Almeno un evento non trovato"
   }
   o--OUC3
+  SUC3<|--SUC3.1
+  SUC3<|--SUC3.2
   ```
+
+* Scenario:
+  1. l'utente ricerca una sequenza di eventi non ordinati;
+  2. l'utente inserisce almeno un evento non presente nel log;
+* Attore: utente;
+* Precondizioni: viene visualizzata la tabella [VUC1];
+* Postcondizioni: vengono evidenziate le tuple con gli eventi con codice corrispondente ai parametri di ricerca.
+
+#### OUC3.1 Tutti gli eventi sono presenti
 
 * Scenario: l'utente ricerca una sequenza di eventi non ordinati;
 * Attore: utente;
 * Precondizioni: viene visualizzata la tabella [VUC1];
 * Postcondizioni: vengono evidenziate le tuple con gli eventi con codice corrispondente ai parametri di ricerca.
+
+#### OUC3.2 Almeno un evento non presente
+
+* Scenario: almeno un evento indicato dall'utente non è stato trovato all'interno del log;
+* Attore: utente;
+* Precondizioni: viene visualizzata la tabella [VUC1];
+* Postcondizioni: vengono notificati all'utente quali eventi non sono stati trovati.
 
 ### OUC4 - Selezione eventi per matrice di correlazione (SR01.1)
   
