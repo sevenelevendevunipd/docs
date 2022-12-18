@@ -175,7 +175,7 @@ L'azienda non ha posto requisiti prestazionali per le applicazioni.
 
 ## Attori
 
-Le applicazioni dovrà essere utilizzata dagli utenti interni all'azienda: SmartLogViewer viene utilizzata principalmente
+Le applicazioni dovranno essere utilizzate dagli utenti interni all'azienda: SmartLogViewer viene utilizzata principalmente
 dai tecnici, mentre SmartLogStatistics da altri impiegati. <!--non ricordo il termine usato da loro-->
 In aggiunta, è presente un database dei log accessibile agli impiegati.
 Vengono identificati i seguenti attori:
