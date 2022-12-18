@@ -458,10 +458,8 @@ d-left-SUC1
 
 #### SUC1.1 - Aggiunta o rimozione log da visualizzare
 
-* Scenari:
-  1. l'utente aggiunge log da visualizzare a quelli già presenti (SUC1.1.1);
-  2. l'utente toglie log da visualizzare a quelli già presenti (SUC1.1.2);
-* Attore: impiegato, databaseLog;
+* Scenario: l'utente carica un file di log compatibile da visualizzare nell'applicazione SmartLogStatistics;
+* Attore: utente, SmartLogStatistics;
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: i log vengono caricati correttamente nell'applicazione SmartLogStatistics.
 
