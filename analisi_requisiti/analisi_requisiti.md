@@ -626,7 +626,7 @@ SUC3.3 <|-- SUC3.3.2
 
 ```{ .plantuml caption="SUC4"}
 left to right direction
-:utente: as o
+:Analista: as o
 package "SmartLogStatistics Grafico"{
 usecase SUC4.1 as "SUC4.1
 Filtro"
