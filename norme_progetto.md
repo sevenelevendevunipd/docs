@@ -36,6 +36,10 @@ versioni:
     autore: Enrik Rucaj
     data: 25/11/2022
     cambiamenti: Aggiunto Piano di Progetto e Strumenti (in Fornitura)
+  v0.0.8:
+    autore: Andrea Auletta
+    data: 23/12/2022
+    cambiamenti: Aggiornati vari paragrafi e aggiunto il capitolo "Processi organizzativi"
 ...
 
 # Introduzione
@@ -80,7 +84,9 @@ I documenti redatti in questa fase sono due: *Piano di Qualifica* e *Piano di Pr
 
 #### Piano di Qualifica
 
-<!--TO DO: Aggiungere la descrizione del piano di qualifica-->
+Il piano di qualifica viene redatto dal verificatore, in quanto dovrà accertarsi del funzionamento del prodotto e quindi dei vari test da effettuare.
+Il documento sarà composto dalle seguenti parti:
+<!-- portare avanti quando facciamo il piano di qualifica-->
 
 #### Piano di Progetto
 
@@ -110,15 +116,17 @@ Il documento sarà composto dalle seguenti parti:
 
 Questa sezione contiene le norme usate per la stesura del documento *Analisi dei requisiti*. Nello specifico, contiene la spiegazione dei codici usati per identificare i requisiti.
 
-<!-- TO DO: Aggiungere ovviamente i codici per i casi d'uso quando verranno fatti -->
-
 #### Requisiti
 
 Ogni requisito è identificato da un codice alfanumerico. Esistono:
 
 * Requisiti funzionali, identificati con **RF**;
 * Requisiti di qualità, identificati con **RQ**;
-* Requisiti di vincoli, identificati con **RV**.
+* Requisiti di vincoli, identificati con **RV**;
+* Requisiti opzionali, identificati con **RO**;
+* Requisiti qualitativi, identificati con **RV**;
+* Requisiti sistemi operativi, identificati con **RSO**;
+* Requisiti prestazionali, identificati con **VRP**.
 
 Visto che il progetto si occupa di due applicazioni distinte, ai codici dei requisiti funzionali si aggiunge all'inizio **V** se è un requisito per SmartLogViewer, oppure **S** se è un requisito per SmartLogStatistics.
 
@@ -131,21 +139,26 @@ I casi d'uso descrivono l'interazione del sistema con le entità esterne (al sis
 Per i casi d'uso vengono specificati:
 
 * Attori
-* Use Case dell'applicazione SmartLogViewer (VUC)
-  * Scenario
-  * Attore primario
-  * Precondizioni
-  * Postcondizioni
-* Use Case dell'applicazione SmartLogStatistics (SUC)
-  * Scenario
-  * Attore primario
-  * Precondizioni
-  * Postcondizioni
+
+* Use Case:
+  * SmartLogViewer, identificati con **VUC**;
+  * SmartLogStatistics, identificati con **SUC**;
+  * Opzionali, identificati con **OUC**;
+  * Gli identificatori vengono poi seguiti dal numero del caso d'uso.
+
+* Ogni Use Case prevede i seguenti punti:  
+  * Scenario;
+  * Attore;
+  * Precondizioni;
+  * Postcondizioni.
+
+Nella specifica degli scenari è possibile averne più di uno e vengono rappresentati tramite un elenco puntato.
+Ogni caso d'uso è provvisto del proprio grafico del caso d'uso.
 
 Ad ogni caso d'uso vengono associate due tipologie di etichette:
 
-* [VUC] o [SUC] rimandano al caso d'uso padre da cui derivano.
-* (VRF) o (SRF) rimandano ai requisiti funzionali che i casi d'uso cercando di descrivere.
+* [VUC], [SUC] o [OUC] rimandano al caso d'uso padre da cui derivano.
+* (VRF), (SRF) o (RO) rimandano ai requisiti funzionali che i casi d'uso cercando di descrivere.
 
 # Processi di supporto
 
@@ -182,7 +195,6 @@ La struttura della prima pagina di ogni documento è la seguente (dall'alto vers
 
 * Sommario.
 
-<!--  Data emanazione e versioning nella tabella sotto?  -->
 #### Struttura delle pagine
 
 Ogni pagina è composta da tre parti:
@@ -195,10 +207,6 @@ Ogni pagina è composta da tre parti:
 
 * **Piè di pagina**:
   * In basso a destra è presente il numero della pagina.
-
-#### Indice
-
-<!--  ??? -->
 
 #### Glossario
 
@@ -214,23 +222,30 @@ I verbali possono essere interni o esterni:
 * Interni: riguardano gli incontri tra i componenti del gruppo;
 * Esterni: riguardano gli incontri tra i componenti del gruppo insieme a proponenti e/o committenti.
 
+Vengono rinominati con la data del giornio in cui è stato effettuata la riunione (AAAAMMGG.pdf).
+
 ### Altri documenti
 
-#### Registro delle modifiche
+#### Registro delle versioni
 
-Il registro delle modifiche viene inserito nei documenti che non sono verbali per tenere conto delle modifiche e delle revisioni effettuate sul documento
+Il registro delle versioni viene inserito nei documenti che non sono verbali per tenere conto delle modifiche e delle revisioni effettuate sul documento.
 
-Il registro viene visualizzato sotto forma di tabella avente tre colonne:
+Il registro viene visualizzato sotto forma di tabella avente quattro colonne:
 
-* Autore: chi ha effettuato le modifica o la revisione;
+* Versione: a versione del documento è definita da tre numeri "x.y.z" dove:
+  * **x** (major): viene incrementato a seconda della rifinitura del documento (es: dopo aver steso una prima intera versione grezza);
+  * **y** (minor): viene incrementato quando avviene una modifica che non comporta un cambiamento eccessivo. (es: aggiunta di paragrafi);
+  * **z** (patch): viene incrementato ogni qual volta ci sia stata una modifica poco consistente.
 * Data: data di modifica o revisione;
+* Autore: chi ha effettuato le modifica o la revisione;
 * Cambiamenti: descrizione della modifica effettuata.
 
-La versione del documento è definita da tre numeri "x.y.z" dove:
+#### Indice
 
-* **x** (major): viene incrementato a seconda della rifinitura del documento (es: dopo aver steso una prima intera versione grezza)
-* **y** (minor): viene incrementato quando avviene una modifica che non comporta un cambiamento eccessivo. (es: aggiunta di paragrafi)
-* **z** (patch): viene incrementato ogni qual volta ci sia stata una modifica poco consistente
+In ogni documento al di fuori dei verbali interni è provvisto di un indice:
+
+* In grassetto vengono visualizzati i titoli dei capitoli;
+* Indatati sotto i titoli dei capitoli ci sono i titoli dei vari paragrafi che lo compongono.
 
 ## Repository
 
@@ -266,8 +281,23 @@ Questo permette di:
 
 ### Guidelines
 
-Ogni componente del gruppo una volta finito un'attività, prima di iniziarne una nuova dovrebbe:
+Ogni componente del gruppo una volta finito un'attività, prima di iniziarne una nuova deve:
 
 * diventare assegnatario della nuova attività che ha intenzione di svolgere.
 * spostare lo stato di avanzamento dell'attività che sta svolgendo.
 * specificare le ore di lavoro ogni volta che si occupa di quella attività.
+
+# Processi organizzativi
+
+## Comunicazione
+
+* Per le comunicazioni interne sono stati creati:
+  * Un gruppo Telegram per scambio di informazioni veloci;
+  * Un server Discord per riunioni interne nel caso in cui non fosse possibile trovarsi di persona.
+* Per le comuncazioni esterne con l'azienda:
+  * Gli incontri vengono fissati tramite mail (anche lo scambio asincrono di informazioni avviene tramite mail);
+  * Le video conferenze vengono effettuate tramite Teams.
+
+## Rotazione dei ruoli
+
+I ruoli verranno cambiati con una cadenza periodica in modo tale che ogni membro del gruppo possa ricoprire ogni tipo di ruolo in maniera equa e cercando di rispettare le tempistiche previste.
