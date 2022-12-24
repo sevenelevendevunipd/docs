@@ -2,16 +2,21 @@
 title: "Piano di qualifica"
 date: "06/12/2022"
 responsabile: "Davide Vitagliano"
-redattori: "Mattia Brunello"
-verificatori: ["Andrea Auletta", "Antonio Stan", "Nicola Cecchetto", "Enrik Rucaj", "Augusto Zanellato"]
+redattori: ["Mattia Brunello", "Andrea Auletta"]
+verificatori: ["Antonio Stan", "Nicola Cecchetto", "Enrik Rucaj", "Augusto Zanellato"]
 abstract: "Vengono definito il piano di qualifica"
 docusage: "Esterno"
 toc: true
 versioni:
-    v0.0.1:
+  v0.0.1:
     autore: Mattia Brunello
     data: 06/12/2022
     cambiamenti: Creazione struttura del documento
+  v0.0.2:
+    autore: Andrea Auletta
+    data: 24/12/2022
+    cambiamenti: Inseriti gli obiettivi da raggiungere
+
 ...
 
 # Introduzione
@@ -40,6 +45,17 @@ Alcuni termini utilizzati nel documento potrebbero generare incomprensione per i
 
 # Qualità di processo
 
+## Obiettivi
+
+* **Processi primari**:
+  * Fornitura: vengono prese le decisioni riguardo alle risorse e alle necessità del cliente;
+  * Sviluppo: sviluppo del prodotto software;
+* **Processi di supporto**:
+  * Verifica: controllo del rispetto dei requisiti;
+  * Gestione della qualità: controllo del prodotto rispetto agli standard definiti;
+* **Processi organizzativi**:
+  * Gestione organizzativa: modalità di coordinamento del gruppo;
+
 ## Metriche utilizzate
 
 ### Processi primari
@@ -49,6 +65,20 @@ Alcuni termini utilizzati nel documento potrebbero generare incomprensione per i
 ## Processi organizzativi
 
 # Qualità del prodotto
+
+## Obiettivi
+
+### Documentazione
+
+* I documenti devono essere leggibili e quindi comprensibili agli utenti;
+* I documenti non devono avere errori grammaticali;
+* Nei documenti i paragrafi devono essere posizionati nei capitoli giusti.
+
+### Software
+
+* Il software deve risolvere tutte le casistiche presentate nell'*Analisi dei requisiti*;
+* Le applicazioni dovranno essere intuitive nell'utilizzo in modo tale da rendere l'esperienza dell'utente più semplice;
+* Il codice dovrà essere verificato per confermare la corretta implementazione di tutti i requisiti individuati.
 
 ## Metriche utilizzate
 
