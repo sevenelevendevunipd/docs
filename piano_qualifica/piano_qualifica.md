@@ -74,6 +74,23 @@ Alcuni termini utilizzati nel documento potrebbero generare incomprensione per i
 * I documenti non devono avere errori grammaticali;
 * Nei documenti i paragrafi devono essere posizionati nei capitoli giusti.
 
+### Indice di Gulpease
+
+## ${89+}\frac{ 300  *(numerodellefrasi) - 10*(numero delle lettere) }{numero delle parole}$
+
+Prodotti coinvolti:
+
+| **Prodotto**      | **Valore Ottimale** | **Valore Accettabile**   |
+| ----------------- |:-------------------:|:------------------------:|
+| Documenti interni | >40                 |  >60                     |
+| Documenti esterni | >40                 |  >60                     |
+
+### Note
+
+Si tiene conto che un indice di 40 `e leggibile a una persona in possesso di
+un diploma superiore (come tutti i nostri stakeholders).
+Il valore ottimale risulta più alto nei documenti esterni data la neccesità di mantenere un linguaggio formale e consono rispetto alle circostanze lavorative.
+
 ### Software
 
 * Il software deve risolvere tutte le casistiche presentate nell'*Analisi dei requisiti*;
