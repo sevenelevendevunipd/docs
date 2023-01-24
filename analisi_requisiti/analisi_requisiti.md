@@ -68,8 +68,6 @@ versioni:
     cambiamenti: Aggiornamento post-conferenza con azienda
 ...
 
-<!--LEGGERE I COMMENTI DI VUC2 E SUC2 (SE NON CI SONO ELIMINAMI)-->
-
 # Introduzione
 
 ## Scopo del documento
@@ -195,13 +193,11 @@ Vengono identificati i seguenti attori:
 
 * Il tecnico;
 * L'analista;
-* Il database dei log.
 
 ```{ .plantuml caption="Attori"}
 :Utente: as u
 u <|-- :Tecnico:
 u <|-- :Analista:
-:DatabaseLog:
 ```
 
 ## SmartLogViewer
@@ -211,17 +207,17 @@ left to right direction
 :Tecnico: as t
 package "SmartLogViewer"{
 usecase VUC1 as "VUC1
-Caricamento file"
+Caricamento File"
 usecase VUC1.1 as "VUC1.1
-File non compatibile"
+File non Compatibile"
 usecase VUC2 as "VUC2
 Visualizzazione Tabella"
 usecase VUC3 as "VUC3
 Modifica Visualizzazione Tabella"
 usecase VUC4 as "VUC4
-Ricerca eventi ordinati"
+Ricerca Eventi Ordinati"
 usecase VUC4.1 as "VUC4.1
-Sequenza di eventi non trovata"
+Sequenza di Eventi non Trovata"
 usecase VUC5 as "VUC5
 Visualizzazione Grafico"
 usecase VUC6 as "VUC6
@@ -239,7 +235,7 @@ VUC1 <.. VUC1.1 : <<extend>>
 
 ### VUC1 - Caricamento file di log (VRF1)
 
-* Scenario: l'utente carica un file di log da visualizzare nell'applicazione SmartLogViewer;
+* Scenario: l'utente vuole caricare un file di log da visualizzare nell'applicazione SmartLogViewer;
 * Attore: tecnico;
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: il file appena caricato viene processato correttamente dall'applicazione.
@@ -253,110 +249,206 @@ VUC1 <.. VUC1.1 : <<extend>>
 
 ### VUC2 - Visualizzazione Tabella
 
+```{ .plantuml caption="VUC2"}
+left to right direction
+:Tecnico: as z
+package "VUC2 Visualizzazione Tabella"{
+usecase VUC2.1 as "VUC2.1
+Visualizzazione Singolo Elemento"
+}
+z--VUC2.1
+```
+
 * Scenario: l'utente vuole visualizzare i dati del log in una tabella;
 * Attore: tecnico;
 * Precondizioni: è stato caricato correttamente un file di log [VUC1];
 * Postcondizioni: viene visualizzata la tabella con i dati;
 
-### VUC3 - Modifica visualizzazione della tabella (VRF2.2, VRF2.3, VRF2.4)
+#### VUC2.1 - Visualizzazione Singolo Elemento
+
+```{ .plantuml caption="VUC2.1"}
+left to right direction
+:Tecnico: as y
+package "VUC2.1 Visualizzazione Singolo Elemento"{
+usecase VUC2.1.1 as "VUC2.1.1
+Visualizzazione Data/Ora"
+usecase VUC2.1.2 as "VUC2.1.2
+Visualizzazione Codice Evento"
+usecase VUC2.1.3 as "VUC2.1.3
+Visualizzazione Unit/Subunit"
+usecase VUC2.1.4 as "VUC2.1.4
+Visualizzazione Firmware"
+usecase VUC2.1.5 as "VUC2.1.5
+Visualizzazione Descrizione"
+usecase VUC2.1.6 as "VUC2.1.6
+Visualizzazione Stato (ON/OFF)"
+}
+y--VUC2.1.1
+y--VUC2.1.2
+y--VUC2.1.3
+y--VUC2.1.4
+y--VUC2.1.5
+y--VUC2.1.6
+```
+
+* Scenario: l'utente vuole visualizzare i dati di una singola riga del log;
+* Attore: tecnico;
+* Precondizioni: è stato caricato correttamente un file di log [VUC1];
+* Postcondizioni: viene visualizzata riga con i dati;
+
+##### VUC2.1.1 - Visualizzazione Data/Ora
+
+* Scenario: l'utente vuole visualizzare la data e l'ora di una riga del log;
+* Attore: tecnico;
+* Precondizioni: è stato caricato correttamente un file di log [VUC1];
+* Postcondizioni: vengono visualizzati data e ora della riga del log;
+
+##### VUC2.1.2 - Visualizzazione Codice Evento
+
+* Scenario: l'utente vuole visualizzare il codice evento di una riga del log;
+* Attore: tecnico;
+* Precondizioni: è stato caricato correttamente un file di log [VUC1];
+* Postcondizioni: viene visualizzato il codice evento della riga del log;
+
+##### VUC2.1.3 - Visualizzazione Unit/Subunit
+
+* Scenario: l'utente vuole visualizzare la Unit e la Subunit di una riga del log;
+* Attore: tecnico;
+* Precondizioni: è stato caricato correttamente un file di log [VUC1];
+* Postcondizioni: vengono visualizzati Unit e Subunit della riga del log;
+
+##### VUC2.1.4 - Visualizzazione Firmware
+
+* Scenario: l'utente vuole visualizzare il firmware di una riga del log;
+* Attore: tecnico;
+* Precondizioni: è stato caricato correttamente un file di log [VUC1];
+* Postcondizioni: viene visualizzato il fimware della riga del log;
+
+##### VUC2.1.5 - Visualizzazione Descrizione
+
+* Scenario: l'utente vuole visualizzare la descrizione di una riga del log;
+* Attore: tecnico;
+* Precondizioni: è stato caricato correttamente un file di log [VUC1];
+* Postcondizioni: viene visualizzata la descrizione della riga del log;
+
+##### VUC2.1.6 - Visualizzazione Stato
+
+* Scenario: l'utente vuole visualizzare lo stato di una riga del log;
+* Attore: tecnico;
+* Precondizioni: è stato caricato correttamente un file di log [VUC1];
+* Postcondizioni: viene visualizzato lo stato della riga del log;
+
+### VUC3 - Modifica Visualizzazione della Tabella (VRF2.2, VRF2.3, VRF2.4)
 
 ```{ .plantuml caption="VUC3 Modifica visualizzazione tabella"}
 left to right direction
-:Tecnico: as d
+:Tecnico: as c
 package "VUC3 Modifica Visualizzazione Tabella"{
 usecase VUC3.1 as "VUC3.1
 Aggiunta Filtro"
 usecase VUC3.2 as "VUC3.2
-Rimozione Filtro"
-usecase VUC3.3 as "VUC3.3
 Ordinamento per Colonna"
-usecase VUC3.4 as "VUC3.4
+usecase VUC3.3 as "VUC3.3
 Ricerca Evento"
-usecase VUC3.4.1 as "VUC3.4.1
+usecase VUC3.3.1 as "VUC3.3.1
 Evento non Trovato"
-usecase VUC3.5 as "VUC3.5
-Ricerca Eventi per Intervallo Temporale"
-usecase VUC3.5.1 as "VUC3.5.1
-Intervallo non Corretto"
 }
 c--VUC3.1
 c--VUC3.2
 c--VUC3.3
-c--VUC3.4
-VUC3.4 <.. VUC3.4.1 : <<extend>>
-c--VUC3.5
-VUC3.5 <.. VUC3.5.1 : <<extend>>
+VUC3.3 <.. VUC3.3.1 : <<extend>>
 ```
 
-* Scenari:
-  1. l'utente vuole applicare un filtro in base al valore nelle celle della tabella [VUC3.1];
-  2. l'utente vuole rimuovere un filtro precedentemente applicato [VUC3.2];
-  3. l'utente vuole applicare un ordinamento in base a una colonna della tabella [VUC3.3];
-  4. l'utente vuole ricercare le tuple con un codice evento [VUC3.4];
-  5. l'utente ricerca tuple con data/ora contenuta in un lasso di tempo selezionato [VUC3.5];
+* Scenari: l'utente vuole modificare la visualizzazione dei dati in tabella;
 * Attore: tecnico;
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene visualizzata la tabella con i dati selezionati.
+* Postcondizioni: viene visualizzata la tabella aggiornata.
 
 #### VUC3.1 - Aggiunta filtro
 
-* Scenario: l'utente vuole applicare un filtro in base al valore nelle celle della tabella;
+```{ .plantuml caption="VUC3.1"}
+left to right direction
+:Tecnico: as r
+package "VUC3.1 Aggiunta Filtro"{
+usecase VUC3.1.1 as "VUC3.1.1
+Per Intervallo Temporale"
+usecase VUC3.1.1.1 as "VUC3.1.1.1
+Intervallo Non Corretto"
+usecase VUC3.1.2 as "VUC3.1.2
+Per Unit/Subunit"
+usecase VUC3.1.3 as "VUC3.1.3
+Per Firmware"
+}
+r-- VUC3.1.1
+VUC3.1.1 <.. VUC3.1.1.1 : <<extend>>
+r-- VUC3.1.2
+r-- VUC3.1.3
+```
+
+* Scenari: l'utente vuole applicare un filtro alle righe della tabella;
 * Attore: tecnico;
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzata la tabella con i dati filtrati.
 
-#### VUC3.2 - Rimozione filtro
+##### VUC3.1.1 - Per Intervallo Temporale
 
-* Scenario: l'utente vuole rimuovere un filtro precedentemente applicato;
+* Scenari: l'utente vuole applicare un intervallo temporale ai dati visualizzati in tabella;
 * Attore: tecnico;
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene visualizzata la tabella con i dati filtrati.
+* Postcondizioni: viene visualizzata la tabella con i dati che rispettano l'intervallo temporale.
 
-#### VUC3.3 - Ordinamento per colonna
-
-* Scenario: l'utente vuole applicare un ordinamento in base a una colonna della tabella;
-* Attore: tecnico;
-* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene visualizzata la tabella con i dati ordinati.
-
-#### VUC3.4 - Ricerca tramite codice evento
-
-* Scenario: l'utente vuole ricercare le tuple con un codice evento;
-* Attore: tecnico;
-* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene visualizzata la tabella con gli eventi con codice corrispondente ai parametri di ricerca.
-
-#### VUC3.4.1 - Evento non trovato
-
-* Scenario: l'utente vuole ricercare le tuple con un codice evento che non fa parte dei dati;
-* Attore: tecnico;
-* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene visualizzato un messaggio di errore (evento non trovato).
-
-#### VUC3.5 - Ricerca tramite Intervallo Temporale
-
-* Scenario: l'utente vuole visualizzare tutti gli eventi presenti in un intervallo temporale;
-* Attore: tecnico;
-* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene visualizzata la tabella con gli eventi nell'intervallo selezionato.
-
-#### VUC3.5.1 - Intervallo non corretto
+##### VUC3.1.1.1 - Intervallo Non Corretto
 
 * Scenario: l'intervallo temporale fornito dall'utente non è valido (data d'inizio posteriore alla data di fine);
 * Attore: tecnico;
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzato un messaggio d'errore (intervallo non corretto).
 
-### VUC4 - Ricerca eventi ordinati (VRF4)
+##### VUC3.1.2 - Per Unit/Subunit
+
+* Scenari: l'utente vuole visualizzare solo le righe di una particolare Unit/Subunit;
+* Attore: tecnico;
+* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
+* Postcondizioni: viene visualizzata la tabella con i dati della Unit/Subunit selezionata.
+
+##### VUC3.1.3 - Per Firmware
+
+* Scenari: l'utente vuole visualizzare solo le righe di un particolare firmware;
+* Attore: tecnico;
+* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
+* Postcondizioni: viene visualizzata la tabella con i dati del firmware selezionato.
+
+#### VUC3.2 - Ordinamento per Colonna
+
+* Scenario: l'utente vuole applicare un ordinamento in base a una colonna della tabella;
+* Attore: tecnico;
+* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
+* Postcondizioni: viene visualizzata la tabella con i dati ordinati.
+
+#### VUC3.3 - Ricerca tramite Codice Evento
+
+* Scenario: l'utente vuole ricercare le tuple con un codice evento;
+* Attore: tecnico;
+* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
+* Postcondizioni: viene visualizzata la tabella con gli eventi con codice corrispondente ai parametri di ricerca.
+
+#### VUC3.3.1 - Evento non Trovato
+
+* Scenario: l'utente vuole ricercare le tuple con un codice evento che non fa parte dei dati;
+* Attore: tecnico;
+* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
+* Postcondizioni: viene visualizzato un messaggio di errore (evento non trovato).
+
+### VUC4 - Ricerca Eventi Ordinati (VRF4)
 
 * Scenario: l'utente vuole cercare una sequenza di eventi ordinati ma non necessariamente consecutivi;
 * Attore: tecnico;
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: vengono evidenziate le tuple con codice corrispondente ai parametri di ricerca.
 
-### VUC4.1 Sequenza di eventi non trovata
+### VUC4.1 Sequenza di Eventi non Trovata
 
-* Scenario: almeno uno degli eventi ricercati dall'utente non è presente nel file di log;
+* Scenario: almeno uno degli eventi ricercati dall'utente non è presente nel file di log e quindi l'intera sequenza di eventi non può essere trovata;
 * Attore: tecnico;
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene comunicato all'utente che la sequenza richiesta non è presente nel file di log.
@@ -370,9 +462,9 @@ VUC3.5 <.. VUC3.5.1 : <<extend>>
 
 ### VUC6 Modifica visualizzazione dei grafici (VRF3.4.2, VRF3.4.3)
 
-```{ .plantuml caption="VUC6 Modifica Visualizzazione Grafico"}
+```{ .plantuml caption="VUC6"}
 left to right direction
-:Tecnico: as c
+:Tecnico: as d
 package "VUC6 Modifica Visualizzazione Grafico"{
 usecase VUC6.1 as "VUC6.1
 Zoom"
@@ -384,49 +476,41 @@ usecase VUC6.3.1 as "VUC6.3.1
 Intervallo non Corretto"
 usecase VUC6.4 as "VUC6.4
 Aggiunta Filtro"
-usecase VUC6.5 as "VUC6.5
-Rimozione Filtro"
 }
 d--VUC6.1
 d--VUC6.2
 d--VUC6.3
 VUC6.3 <.. VUC6.3.1 : <<extend>>
 d--VUC6.4
-d--VUC6.5
 ```
 
-* Scenari:
-  1. l'utente vuole eseguire lo zoom sul grafico [VUC6.1];
-  2. l'utente vuole lo scroll orizzontale sul grafico [VUC6.2];
-  3. l'utente vuole selezionare l'intervallo di tempo da visualizzare sul grafico [VUC6.3];
-  4. l'utente vuole applicare un filtro agli eventi visualizzati sul grafico [VUC6.4];
-  5. l'utente vuole rimuovere un filtro precedentemente applicato [VUC6.5];
+* Scenario: l'utente vuole modificare la visualizzazione del grafico;
 * Attore: tecnico;
 * Precondizioni: è stato visualizzato il grafico [VUC5];
 * Postcondizioni: viene visualizzato il grafico modificato.
 
-#### VUC6.1 - Zoom dell'intervallo temporale (VRF3.4.2)
+#### VUC6.1 - Zoom dell'Intervallo Temporale (VRF3.4.2)
 
 * Scenario: l'utente vuole visualizzare il grafico in un sottointervallo temporale più ristretto o più ampio;
 * Attore: tecnico;
 * Precondizioni: è stato visualizzato il grafico [VUC5];
 * Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali modificati.
 
-#### VUC6.2 - Scroll orizzontale (VRF3.4.3)
+#### VUC6.2 - Scroll Orizzontale (VRF3.4.3)
 
 * Scenario: l'utente vuole visualizzare il grafico in un sottointervallo temporale successivo o precedente (a quello selezionato);
 * Attore: tecnico;
 * Precondizioni: è stato visualizzato il grafico [VUC5];
 * Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali modificati.
 
-#### VUC6.3 - Selezione intervallo temporale
+#### VUC6.3 - Selezione Intervallo Temporale
 
 * Scenario: l'utente vuole visualizzare il grafico in un intervallo selezionato;
 * Attore: tecnico;
 * Precondizioni: è stato visualizzato il grafico [VUC5];
 * Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali modificati.
 
-#### VUC6.3.1 - Intervallo non corretto
+#### VUC6.3.1 - Intervallo non Corretto
 
 * Scenario: l'intervallo temporale fornito dall'utente non è valido (data d'inizio posteriore alla data di fine);
 * Attore: tecnico;
@@ -435,86 +519,228 @@ d--VUC6.5
 
 #### VUC6.4 - Aggiunta filtro
 
+```{ .plantuml caption="VUC6.4"}
+left to right direction
+:Tecnico: as e
+package "VUC6.4 Aggiunta Filtro"{
+usecase VUC6.4.1 as "VUC6.4.1
+Per Unit/Subunit"
+usecase VUC6.4.2 as "VUC6.4.2
+Per Firmware"
+}
+e-- VUC6.4.1
+e-- VUC6.4.2
+```
+
 * Scenario: l'utente vuole applicare un filtro agli eventi visualizzati nel grafico;
 * Attore: tecnico;
 * Precondizioni: è stata visualizzato il grafico con i dati [VUC5];
 * Postcondizioni: viene visualizzato il grafico modificato.
 
-#### VUC6.5 - Rimozione filtro
+##### VUC6.4.1 - Per Unit/Subunit
 
-* Scenario: l'utente vuole rimuovere un filtro precedentemente applicato;
+* Scenari: l'utente vuole visualizzare solo gli eventi di una particolare Unit/Subunit;
 * Attore: tecnico;
-* Precondizioni: è stata visualizzato il grafico con i dati [VUC5];
-* Postcondizioni: viene visualizzato il grafico modificato.
+* Precondizioni: è stata visualizzata il grafico con i dati [VUC5];
+* Postcondizioni: viene visualizzato il grafico con gli eventi della Unit/Subunit selezionata.
+
+##### VUC6.4.2 - Per Firmware
+
+* Scenari: l'utente vuole visualizzare solo gli eventi di un particolare firmware;
+* Attore: tecnico;
+* Precondizioni: è stata visualizzata il grafico con i dati [VUC5];
+* Postcondizioni: viene visualizzato il grafico con i dati del firmware selezionato.
 
 ## SmartLogStatistics
 
-### SUC1 - Caricamento dei log per range di data/ora (SRF1, SRF1.1)
-
-```{ .plantuml caption="SUC1"}
-:Analista: as i
-:DatabaseLog: as d
+```{ .plantuml caption="SmartLogStatistics"}
+left to right direction
+:Analista: as t
 package "SmartLogStatistics"{
 usecase SUC1 as "SUC1
-Caricamento log per range data/ora"
-usecase SUC1.1 as"SUC1.1
-Intervallo di tempo corretto"
-usecase SUC1.2 as"SUC1.2
-Intervallo di tempo non corretto"
+Caricamento Log per Intervallo Temporale"
+usecase SUC1.1 as "SUC1.1
+Intervallo non Corretto"
+usecase SUC2 as "SUC2
+Visualizzazione Prospetto"
+usecase SUC3 as "SUC3
+Modifica Visualizzazione Lista"
+usecase SUC4 as "SUC4
+Visualizzazione Grafico"
+usecase SUC5 as "SUC5
+Modifica Visualizzazione Grafico"
 }
-i-right-SUC1
-SUC1 <|-- SUC1.1
-SUC1 <|-- SUC1.2
-d-left-SUC1
+SUC1 <.. SUC1.1 : <<extend>>
+t--SUC1
+t--SUC2
+t--SUC3
+t--SUC4
+t--SUC5
 ```
 
-* Scenari: l'utente sceglie i file da visualizzare nell'applicazione SmartLogStatistics per range di data/ora;
-* Attore: analista, databaseLog;
+### SUC1 - Caricamento dei Log per Intervallo Temporale (SRF1, SRF1.1)
+
+* Scenario: l'utente sceglie l'intervallo temporale iniziale per raccogliere i dati dai file di log;
+* Attore: analista;
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: i log vengono caricati correttamente nell'applicazione SmartLogStatistics.
 
-#### SUC1.1 - Intervallo temporale corretto
-
-* Scenari: l'utente sceglie correttamente i file da visualizzare nell'applicazione SmartLogStatistics per range di data/ora;
-* Attore: analista, databaseLog;
-* Precondizioni: l'applicazione è operativa e funzionante;
-* Postcondizioni: i log vengono caricati correttamente nell'applicazione SmartLogStatistic.
-
-#### SUC1.2 - Intervallo temporale non corretto
+### SUC1.1 - Intervallo non Corretto
 
 * Scenari: l'intervallo temporale fornito dall'utente non è valido (data d'inizio antecedente alla data di fine);
-* Attore: analista, databaseLog;
+* Attore: analista;
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: viene notificato all'utente che le date fornite non sono valide.
 
-### SUC2 - Modifica visualizzazione del prospetto (SRF2.6, SRF3.1.1)
+### SUC2 - Visualizzazione Prospetto
 
 ```{ .plantuml caption="SUC2"}
 left to right direction
-:Analista: as t
-package "SmartLogStatistic Tabella"{
+:Analista: as f
+package "SUC2 Visualizzazione Prospetto"{
 usecase SUC2.1 as "SUC2.1
-Filtro"
-usecase SUC2.1.2 as "SUC2.1.2
-Rimozione filtro"
-usecase SUC2.1.1 as "SUC2.1.1
-Aggiunta filtro"
+Visualizzazione Intervallo Temporale"
 usecase SUC2.2 as "SUC2.2
-Ordinamento"
+Visualizzazione Numero di Log Analizzati"
 usecase SUC2.3 as "SUC2.3
-Raggruppamento per data/ora"
-usecase SUC2.3.2 as "SUC2.3.2
-Intervallo temporale non corretto"
-usecase SUC2.3.1 as "SUC2.3.1
-Intervallo temporale corretto"
+Visualizzazione Media Numero Eventi tra i Log"
+usecase SUC2.4 as "SUC2.4
+Visualizzazione Massimo Numero Eventi tra i Log"
+usecase SUC2.5 as "SUC2.5
+Visualizzazione Deviazione Standard Numero Eventi tra i Log"
+usecase SUC2.6 as "SUC2.6
+Visualizzazione Lista di Occorrenze Eventi"
 }
-t--SUC2.1
-t--SUC2.2
-t--SUC2.3
-SUC2.1 ..> SUC2.1.1 : <<include>>
-SUC2.1 ..> SUC2.1.2 : <<include>>
-SUC2.3 <|-- SUC2.3.1
-SUC2.3 <|-- SUC2.3.2
+f--SUC2.1
+f--SUC2.2
+f--SUC2.3
+f--SUC2.4
+f--SUC2.5
+f--SUC2.6
+```
+
+* Scenario: l'utente vuole visualizzare un prospetto contenente dei dati relativi all'insieme di file di log analizzati.
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: viene visualizzato il prospetto.
+
+#### SUC2.1 - Visualizzazione Intervallo Temporale
+
+* Scenario: l'utente vuole visualizzare l'intervallo temporale selezionato.
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: viene visualizzato l'intervallo temporale.
+
+#### SUC2.2 - Visualizzazione Numero di Log Analizzati
+
+* Scenario: l'utente vuole visualizzare il numero totale di log analizzati.
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: viene visualizzato il numero totale di log analizzati.
+
+#### SUC2.3 - Visualizzazione Media Numero Eventi tra i Log
+
+* Scenario: l'utente vuole visualizzare il numero medio di eventi tra i log.
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: viene visualizzato il numero medio di eventi.
+
+#### SUC2.4 - Visualizzazione Massimo Numero Eventi tra i Log
+
+* Scenario: l'utente vuole visualizzare il numero massimo di eventi tra i log.
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: viene visualizzato il numero massimo di eventi.
+
+#### SUC2.5 - Visualizzazione Deviazione Standard Numero Eventi tra i Log
+
+* Scenario: l'utente vuole visualizzare la deviazione standard del numero di eventi tra i log.
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: viene visualizzato la deviazione standar del numero di eventi.
+
+#### SUC2.6 - Visualizzazione Lista di Occorrenze Eventi
+
+```{ .plantuml caption="SUC2.6"}
+left to right direction
+:Analista: as a
+package "SUC2.6 Visualizzazione Lista di Occorrenze Eventi"{
+usecase SUC2.6.1 as "SUC2.6.1
+Visualizzazione Singolo Elemento della Lista"
+}
+a--SUC2.6.1
+```
+
+* Scenario: l'utente vuole visualizzare una lista di tutti gli eventi con le occorrenze.
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: viene visualizzato la lista di occorrenze eventi.
+
+##### SUC2.6.1 - Visualizzazione Singolo Elemento della Lista
+
+```{ .plantuml caption="SUC2.6.1"}
+left to right direction
+:Analista: as b
+package "SUC2.6.1 Visualizzazione Singolo Elemento della Lista"{
+usecase SUC2.6.1.1 as "SUC2.6.1.1
+Visualizzazione Codice Evento"
+usecase SUC2.6.1.2 as "SUC2.6.1.2
+Visualizzazione Numero Occorrenze"
+}
+b--SUC2.6.1.1
+b--SUC2.6.1.2
+```
+
+* Scenario: l'utente vuole visualizzare un singolo elemento della lista di occorrenze eventi;
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: viene visualizzato l'elemento della lista di occorrenze eventi.
+
+###### SUC2.6.1.1 - Visualizzazione Codice Evento
+
+* Scenario: l'utente vuole visualizzare il codice dell'evento;
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: viene visualizzato il codice dell'evento.
+
+###### SUC2.6.2.2 - Visualizzazione Numero Occorrenze
+
+* Scenario: l'utente vuole visualizzare quante volte l'evento è avvenuto nei log;
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: viene visualizzato il numero di occorrenze dell'evento.
+
+### SUC3 - Modifica Visualizzazione Lista (SRF2.6, SRF3.1.1) <!-- DA QUI IN POI NON E' CORRETTO (bisogna capire che cosa fare con i filtri e l'ordinamento) -->
+
+```{ .plantuml caption="SUC2"}
+left to right direction
+:Analista: as c
+package "SUC3 Modifica visualizzazione Lista"{
+usecase SUC3.1 as "SUC3.1
+Aggiunta filtro"
+usecase SUC3.1.3 as "SUC3.1.3
+per versione firmware"
+usecase SUC3.1.2 as "SUC3.1.2
+per intervallo temporale"
+usecase SUC3.1.2.1 as "SUC3.1.2.1
+intervallo non corretto"
+usecase SUC3.1.1 as "SUC3.1.1
+Per unit/subunit"
+usecase SUC3.2 as "SUC3.2
+Ordinamento"
+usecase SUC3.2.1 as "SUC3.2.1
+Per Codice Evento"
+usecase SUC3.2.2 as "SUC3.2.2
+Per Numero Occorrenze"
+}
+c--SUC3.1
+c--SUC3.2
+SUC3.1<|-- SUC3.1.1
+SUC3.1<|-- SUC3.1.2
+SUC3.1.2 <.. SUC3.1.2.1 : <<extend>>
+SUC3.1<|-- SUC3.1.3
+SUC3.2<|-- SUC3.2.1
+SUC3.2<|-- SUC3.2.2
 ```
 
 * Scenari:
