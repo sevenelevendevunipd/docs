@@ -38,7 +38,7 @@ versioni:
 Lo scopo del seguente documento è quello di fornire informazioni riguardanti la pianificazione e le modalità attraverso
 cui verrà sviluppato il progetto. All’interno vengono inoltre riportate i rischi che il gruppo potrebbe
 incontrare lungo tutto il periodo. Al termine sono presenti i preventivi e consuntivi di periodo.
-La formulazione segue le regole esposte dal documento *Norme di progetto*
+La formulazione segue le regole esposte dal documento *Norme di progetto*.
 
 ## Glossario
 
@@ -53,11 +53,11 @@ documento *Glossario* assieme alle loro definizioni.
 
 Di seguito viene riportata la tabella con le scadenze che il gruppo Seven Eleven si impegna a rispettare:
 
-| **Revisione**                        | **Acronimo** | **Data**   |
-| ------------------------------------ |:------------:|:----------:|
-| Requirements and Technology Baseline | RTB          | 28/02/2023 |
-| Product Baseline                     | PB           | 09/04/2023 |
-| Customer Acceptance                  | CA           | 30/04/2023 |
+| **Revisione**                        | **Acronimo** |  **Data**  |
+| ------------------------------------ | :----------: | :--------: |
+| Requirements and Technology Baseline |     RTB      | 28/02/2023 |
+| Product Baseline                     |      PB      | 09/04/2023 |
+| Customer Acceptance                  |      CA      | 30/04/2023 |
 
 # Analisi dei Rischi
 
@@ -69,59 +69,58 @@ Questa sezione elenca i possibili rischi in cui si potrebbe incorrere durante l�
 
 #### RT1 - Inesperienza tecnologica
 
-* Descrizione: Difficoltà di utilizzo di tecnologie sconosciute ai membri del gruppo;
-* Identificazione: i membri del gruppo, in particolare il **responsabile**, dovranno identificare le tecnologie
-  sconosciute.
+* Descrizione: difficoltà di utilizzo di tecnologie sconosciute ai membri del gruppo;
+* Identificazione: i membri del gruppo, in particolare il **responsabile**, dovranno identificare le tecnologie sconosciute.
 
 ### Rischi Organizzativi
 
 #### RO1 - Impegni personali
 
-* Descrizione: Esistenza d'impegni in conflitto con le tempistiche degli incontri o delle scadenze del lavoro;
-* Identificazione: I membri del gruppo dovranno comunicare con adeguato anticipo i suddetti impegni.
+* Descrizione: esistenza d'impegni in conflitto con le tempistiche degli incontri o delle scadenze del lavoro;
+* Identificazione: i membri del gruppo dovranno comunicare con adeguato anticipo i suddetti impegni.
 
 #### RO2 - Distribuzione disomogenea
 
-* Descrizione: Esistenza di una disparità del carico di lavoro che può portare a rallentamenti;
-* Identificazione: Ogni membro del gruppo dovrà dichiarare la suddetta disparità se riterrà che superi le proprie
+* Descrizione: esistenza di una disparità del carico di lavoro che può portare a rallentamenti;
+* Identificazione: ogni membro del gruppo dovrà dichiarare la suddetta disparità se riterrà che superi le proprie
   capacità.
 
 #### RO3 - Costo delle attività
 
-* Descrizione: Esistenza di una stima errata dei costi di un'attività, dovuta all'inesperienza del gruppo;
-* Identificazione: Ogni membro del gruppo dovrà comunicare al **responsabile** le discrepanze riscontrare rispetto alla
+* Descrizione: esistenza di una stima errata dei costi di un'attività, dovuta all'inesperienza del gruppo;
+* Identificazione: ogni membro del gruppo dovrà comunicare al **responsabile** le discrepanze riscontrare rispetto alla
   pianificazione dei costi.
 
 ### Rischi Interpersonali
 
 #### RI1 - Inesperienza del gruppo
 
-* Descrizione: Poca esperienza in un rapporto di lavoro fra cliente e fornitore;
-* Identificazione: Il **responsabile** dovrà prestare attenzione alle difficoltà dei membri del gruppo.
+* Descrizione: poca esperienza in un rapporto di lavoro fra cliente e fornitore;
+* Identificazione: il **responsabile** dovrà prestare attenzione alle difficoltà dei membri del gruppo.
 
 #### RI2 - Rapporti interni
 
-* Descrizione: Esistenza di un conflitto di opinione tra i membri del gruppo che non trova un punto d'intesa;
-* Identificazione: Il **responsabile** sarà incaricato di gestire il gruppo.
+* Descrizione: esistenza di un conflitto di opinione tra i membri del gruppo che non trova un punto d'intesa;
+* Identificazione: il **responsabile** sarà incaricato di gestire il gruppo.
 
 ### Rischi dei Requisiti
 
 #### RR1 - Incomprensione dei requisiti
 
-* Descrizione: Difficoltà nella comprensione dei requisiti che può portare a un grave rallentamento nell'avanzamento
+* Descrizione: difficoltà nella comprensione dei requisiti che può portare a un grave rallentamento nell'avanzamento
   del progetto;
-* Identificazione: L'azienda proponente dovrà comunicare al gruppo l'adeguatezza del lavoro svolto.
+* Identificazione: l'azienda proponente dovrà comunicare al gruppo l'adeguatezza del lavoro svolto.
 
 #### RR2 - Modifica dei requisiti
 
-* Descrizione: L'azienda proponente o il gruppo decide di modificare alcuni dei requisiti iniziali, portando a una
+* Descrizione: l'azienda proponente o il gruppo decide di modificare alcuni dei requisiti iniziali, portando a una
   modifica della visione di progetto;
-* Identificazione: L'azienda o il gruppo dovranno comunicare la volontà del cambiamento all'altra parte.
+* Identificazione: l'azienda o il gruppo dovranno comunicare la volontà del cambiamento all'altra parte.
 
 #### RR3 - Proponente poco presente
 
-* Descrizione: I contatti con l'azienda risultano essere poco frequenti o poco utili;
-* Identificazione: L'azienda dovrà comunicare con adeguato anticipo le disponibilità d'incontro.
+* Descrizione: i contatti con l'azienda risultano essere poco frequenti o poco utili;
+* Identificazione: l'azienda dovrà comunicare con adeguato anticipo le disponibilità d'incontro.
 
 ## Mitigazione Rischi
 
@@ -202,15 +201,15 @@ Le attività da svolgere durante questo periodo sono:
 Nel periodo di Analisi dei Requisiti, ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- |:--------:| :-----: |:------:|:-----------:|:------------:|:-------:|:----------:|
-| Auletta Andrea    | -        | 6       | 9      | -           | -            | 7       | 22         |
-| Brunello Mattia   | 9        | 4       | 10     | -           | -            | 8       | 31         |
-| Cecchetto Nicola  | -        | -       | 11     | -           | -            | 7       | 18         |
-| Rucaj Enrik       | -        | 9       | 12     | -           | -            | 7       | 28         |
-| Stan Antonio      | -        | -       | 11     | -           | -            | 7       | 18         |
-| Vitagliano Davide | -        | 7       | 12     | -           | -            | 6       | 25         |
-| Zanellato Augusto | 9        | 4       | 10     | -           | -            | 9       | 32         |
-| **Totale**        | **18**   | **30**  | **75** | **-**       | **-**        | **51**  | **174**    |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
+| Auletta Andrea    |    -     |    6    |   9    |      -      |      -       |    7    |     22     |
+| Brunello Mattia   |    9     |    4    |   10   |      -      |      -       |    8    |     31     |
+| Cecchetto Nicola  |    -     |    -    |   11   |      -      |      -       |    7    |     18     |
+| Rucaj Enrik       |    -     |    9    |   12   |      -      |      -       |    7    |     28     |
+| Stan Antonio      |    -     |    -    |   11   |      -      |      -       |    7    |     18     |
+| Vitagliano Davide |    -     |    7    |   12   |      -      |      -       |    6    |     25     |
+| Zanellato Augusto |    9     |    4    |   10   |      -      |      -       |    9    |     32     |
+| **Totale**        |  **18**  | **30**  | **75** |    **-**    |    **-**     | **51**  |  **174**   |
 
 <!--NOTA PER IL FUTURO, IMPORTANTE:
      - Anotnio avrà 3 ore di analista nella fase di "progettazione di dettaglio e codifica per i requisiti opzionali"
@@ -223,13 +222,13 @@ Nel periodo di Analisi dei Requisiti, ciascun componente rivestirà i ruoli seco
 In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 
 | **Ruolo**      | **Ore** | **Costo** |
-| -------------- |:-------:|:---------:|
-| Responsabile   | 18      | 540       |
-| Amministratore | 30      | 600       |
-| Analista       | 75      | 1875      |
-| Progettista    | -       | -         |
-| Programmatore  | -       | -         |
-| Verificatore   | 51      | 765       |
+| -------------- | :-----: | :-------: |
+| Responsabile   |   18    |    540    |
+| Amministratore |   30    |    600    |
+| Analista       |   75    |   1875    |
+| Progettista    |    -    |     -     |
+| Programmatore  |    -    |     -     |
+| Verificatore   |   51    |    765    |
 | **Totale**     | **174** | **3780**  |
 
 Quadro dei costi da affrontare:
@@ -253,38 +252,41 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 * INIZIO 19 Dicembre 2022 - Fine periodo dell'analisi dei requisiti
 * FINE 29 Gennaio 2023 - Inizio periodo di "Proof of Concept"
 
-**Ruoli coinvolti:**
+**Ruoli coinvolti:** amministratore, analista, progettista, programmatore, verificatore.
 
 Le attività da svolgere durante questo periodo sono:
 
-<!--Inserire elenco di attività-->
+* **Technology Baseline**: definizione delle tecnologie da utilizzare per la realizzazione del progetto, verificate tramite la codifica di un Proof of Concept.
+* **Modifiche ai documenti**: aggionamento dei documenti precedentemente avviati.
 
 ### Preventivo
 
 Nel periodo di Progettazione Technology Baseline, ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- |:--------:| :-----: |:------:|:-----------:|:------------:|:-------:|:----------:|
-| Auletta Andrea    | -        | -       | -      | -           | -            | -       | -          |
-| Brunello Mattia   | -        | -       | -      | -           | -            | -       | -          |
-| Cecchetto Nicola  | -        | -       | -      | -           | -            | -       | -          |
-| Rucaj Enrik       | -        | -       | -      | -           | -            | -       | -          |
-| Stan Antonio      | -        | -       | -      | -           | -            | -       | -          |
-| Vitagliano Davide | -        | -       | -      | -           | -            | -       | -          |
-| Zanellato Augusto | -        | -       | -      | -           | -            | -       | -          |
-| **Totale**        | **-**    | **-**   | **-**  | **-**       | **-**        | **-**   | **-**      |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
+| Auletta Andrea    |    -     |    -    |   3    |      5      |      -       |    3    |     11     |
+| Brunello Mattia   |    -     |    -    |   3    |      4      |      -       |    4    |     11     |
+| Cecchetto Nicola  |    7     |    -    |   -    |      4      |      -       |    -    |     11     |
+| Rucaj Enrik       |    -     |    -    |   -    |      5      |      -       |    2    |     11     |
+| Stan Antonio      |    -     |    3    |   -    |      3      |      -       |    4    |     10     |
+| Vitagliano Davide |    -     |    -    |   2    |      4      |      -       |    4    |     12     |
+| Zanellato Augusto |    -     |    4    |   -    |      3      |      -       |    3    |     10     |
+| **Totale**        |  **7**   |  **7**  | **8**  |   **28**    |    **-**     | **20**  |   **76**   |
+
+
 
 In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 
 | **Ruolo**      | **Ore** | **Costo** |
-| -------------- |:-------:|:---------:|
-| Responsabile   | -       | -         |
-| Amministratore | -       | -         |
-| Analista       | -       | -         |
-| Progettista    | -       | -         |
-| Programmatore  | -       | -         |
-| Verificatore   | -       | -         |
-| **Totale**     | **-**   | **-**     |
+| -------------- | :-----: | :-------: |
+| Responsabile   |    7    |    210    |
+| Amministratore |    7    |    140    |
+| Analista       |    8    |    200    |
+| Progettista    |   28    |    700    |
+| Programmatore  |    -    |     -     |
+| Verificatore   |   20    |    300    |
+| **Totale**     | **76**  | **1550**  |
 
 Quadro dei costi da affrontare:
 
@@ -299,38 +301,43 @@ Quadro dei costi da affrontare:
 
 *Nota: Dopo la fine del Proof of Concept c'è un margine di 2 giorni (26 e 27 Febbraio) prima della revisione di RTB.*
 
-**Ruoli coinvolti:**
+**Ruoli coinvolti:** progettista, programmatore, verificatore.
 
 Le attività da svolgere durante questo periodo sono:
 
-<!--Inserire elenco di attività-->
+* **Codifica Proof of Concept**: codifica del Proof of Concept, verificato tramite la realizzazione di un prototipo funzionante con implementazione di alcune funzionalità di base.
+* **Modifiche ai documenti**: aggionamento dei documenti precedentemente avviati.
 
 ### Preventivo
 
 Nel periodo di Proof of Concept, ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- |:--------:| :-----: |:------:|:-----------:|:------------:|:-------:|:----------:|
-| Auletta Andrea    | -        | -       | -      | -           | -            | -       | -          |
-| Brunello Mattia   | -        | -       | -      | -           | -            | -       | -          |
-| Cecchetto Nicola  | -        | -       | -      | -           | -            | -       | -          |
-| Rucaj Enrik       | -        | -       | -      | -           | -            | -       | -          |
-| Stan Antonio      | -        | -       | -      | -           | -            | -       | -          |
-| Vitagliano Davide | -        | -       | -      | -           | -            | -       | -          |
-| Zanellato Augusto | -        | -       | -      | -           | -            | -       | -          |
-| **Totale**        | **-**    | **-**   | **-**  | **-**       | **-**        | **-**   | **-**      |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
+| Auletta Andrea    |    -     |    -    |   2    |      6      |      6       |    4    |     18     |
+| Brunello Mattia   |    -     |    -    |   -    |      5      |      5       |    5    |     15     |
+| Cecchetto Nicola  |    -     |    -    |   2    |      5      |      6       |    3    |     18     |
+| Rucaj Enrik       |    -     |    2    |   -    |      7      |      4       |    2    |     15     |
+| Stan Antonio      |    -     |    3    |   -    |      6      |      2       |    4    |     15     |
+| Vitagliano Davide |    -     |    -    |   -    |      5      |      6       |    3    |     14     |
+| Zanellato Augusto |    8     |    -    |   -    |      5      |      7       |    -    |     19     |
+| **Totale**        |  **8**   |  **6**  | **4**  |   **38**    |    **35**    | **21**  |  **109**   |
 
+<!--NOTA PER IL FUTURO, IMPORTANTE:
+     - Anotnio avrà 3 ore di analista nella fase di "progettazione di dettaglio e codifica per i requisiti opzionali"
+     - Enrik avrà 2 ore di analista nella fase di "progettazione di dettaglio e codifica per i requisiti obbligatori"
+ -->
 In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 
 | **Ruolo**      | **Ore** | **Costo** |
-| -------------- |:-------:|:---------:|
-| Responsabile   | -       | -         |
-| Amministratore | -       | -         |
-| Analista       | -       | -         |
-| Progettista    | -       | -         |
-| Programmatore  | -       | -         |
-| Verificatore   | -       | -         |
-| **Totale**     | **-**   | **-**     |
+| -------------- | :-----: | :-------: |
+| Responsabile   |    -    |     -     |
+| Amministratore |    -    |     -     |
+| Analista       |    -    |     -     |
+| Progettista    |    -    |     -     |
+| Programmatore  |    -    |     -     |
+| Verificatore   |    -    |     -     |
+| **Totale**     |  **-**  |   **-**   |
 
 Quadro dei costi da affrontare:
 
@@ -354,27 +361,27 @@ Le attività da svolgere durante questo periodo sono:
 Nel periodo di Progettazione di dettaglio dei Requisiti Obbligatori, ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- |:--------:| :-----: |:------:|:-----------:|:------------:|:-------:|:----------:|
-| Auletta Andrea    | -        | -       | -      | -           | -            | -       | -          |
-| Brunello Mattia   | -        | -       | -      | -           | -            | -       | -          |
-| Cecchetto Nicola  | -        | -       | -      | -           | -            | -       | -          |
-| Rucaj Enrik       | -        | -       | -      | -           | -            | -       | -          |
-| Stan Antonio      | -        | -       | -      | -           | -            | -       | -          |
-| Vitagliano Davide | -        | -       | -      | -           | -            | -       | -          |
-| Zanellato Augusto | -        | -       | -      | -           | -            | -       | -          |
-| **Totale**        | **-**    | **-**   | **-**  | **-**       | **-**        | **-**   | **-**      |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
+| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Rucaj Enrik       |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
 In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 
 | **Ruolo**      | **Ore** | **Costo** |
-| -------------- |:-------:|:---------:|
-| Responsabile   | -       | -         |
-| Amministratore | -       | -         |
-| Analista       | -       | -         |
-| Progettista    | -       | -         |
-| Programmatore  | -       | -         |
-| Verificatore   | -       | -         |
-| **Totale**     | **-**   | **-**     |
+| -------------- | :-----: | :-------: |
+| Responsabile   |    -    |     -     |
+| Amministratore |    -    |     -     |
+| Analista       |    -    |     -     |
+| Progettista    |    -    |     -     |
+| Programmatore  |    -    |     -     |
+| Verificatore   |    -    |     -     |
+| **Totale**     |  **-**  |   **-**   |
 
 Quadro dei costi da affrontare:
 
@@ -400,27 +407,27 @@ Le attività da svolgere durante questo periodo sono:
 Nel periodo di Codifica dei Requisiti Obbligatori, ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- |:--------:| :-----: |:------:|:-----------:|:------------:|:-------:|:----------:|
-| Auletta Andrea    | -        | -       | -      | -           | -            | -       | -          |
-| Brunello Mattia   | -        | -       | -      | -           | -            | -       | -          |
-| Cecchetto Nicola  | -        | -       | -      | -           | -            | -       | -          |
-| Rucaj Enrik       | -        | -       | -      | -           | -            | -       | -          |
-| Stan Antonio      | -        | -       | -      | -           | -            | -       | -          |
-| Vitagliano Davide | -        | -       | -      | -           | -            | -       | -          |
-| Zanellato Augusto | -        | -       | -      | -           | -            | -       | -          |
-| **Totale**        | **-**    | **-**   | **-**  | **-**       | **-**        | **-**   | **-**      |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
+| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Rucaj Enrik       |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
 In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 
 | **Ruolo**      | **Ore** | **Costo** |
-| -------------- |:-------:|:---------:|
-| Responsabile   | -       | -         |
-| Amministratore | -       | -         |
-| Analista       | -       | -         |
-| Progettista    | -       | -         |
-| Programmatore  | -       | -         |
-| Verificatore   | -       | -         |
-| **Totale**     | **-**   | **-**     |
+| -------------- | :-----: | :-------: |
+| Responsabile   |    -    |     -     |
+| Amministratore |    -    |     -     |
+| Analista       |    -    |     -     |
+| Progettista    |    -    |     -     |
+| Programmatore  |    -    |     -     |
+| Verificatore   |    -    |     -     |
+| **Totale**     |  **-**  |   **-**   |
 
 Quadro dei costi da affrontare:
 
@@ -446,27 +453,27 @@ Le attività da svolgere durante questo periodo sono:
 Nel periodo di Progettazione di dettaglio e Codifica dei Requisiti Opzionali, ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- |:--------:| :-----: |:------:|:-----------:|:------------:|:-------:|:----------:|
-| Auletta Andrea    | -        | -       | -      | -           | -            | -       | -          |
-| Brunello Mattia   | -        | -       | -      | -           | -            | -       | -          |
-| Cecchetto Nicola  | -        | -       | -      | -           | -            | -       | -          |
-| Rucaj Enrik       | -        | -       | -      | -           | -            | -       | -          |
-| Stan Antonio      | -        | -       | -      | -           | -            | -       | -          |
-| Vitagliano Davide | -        | -       | -      | -           | -            | -       | -          |
-| Zanellato Augusto | -        | -       | -      | -           | -            | -       | -          |
-| **Totale**        | **-**    | **-**   | **-**  | **-**       | **-**        | **-**   | **-**      |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
+| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Rucaj Enrik       |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
 In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 
 | **Ruolo**      | **Ore** | **Costo** |
-| -------------- |:-------:|:---------:|
-| Responsabile   | -       | -         |
-| Amministratore | -       | -         |
-| Analista       | -       | -         |
-| Progettista    | -       | -         |
-| Programmatore  | -       | -         |
-| Verificatore   | -       | -         |
-| **Totale**     | **-**   | **-**     |
+| -------------- | :-----: | :-------: |
+| Responsabile   |    -    |     -     |
+| Amministratore |    -    |     -     |
+| Analista       |    -    |     -     |
+| Progettista    |    -    |     -     |
+| Programmatore  |    -    |     -     |
+| Verificatore   |    -    |     -     |
+| **Totale**     |  **-**  |   **-**   |
 
 Quadro dei costi da affrontare:
 
@@ -491,27 +498,27 @@ Le attività da svolgere durante questo periodo sono:
 Nel periodo di "Test, Collaudo e Validazione finale", ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- |:--------:| :-----: |:------:|:-----------:|:------------:|:-------:|:----------:|
-| Auletta Andrea    | -        | -       | -      | -           | -            | -       | -          |
-| Brunello Mattia   | -        | -       | -      | -           | -            | -       | -          |
-| Cecchetto Nicola  | -        | -       | -      | -           | -            | -       | -          |
-| Rucaj Enrik       | -        | -       | -      | -           | -            | -       | -          |
-| Stan Antonio      | -        | -       | -      | -           | -            | -       | -          |
-| Vitagliano Davide | -        | -       | -      | -           | -            | -       | -          |
-| Zanellato Augusto | -        | -       | -      | -           | -            | -       | -          |
-| **Totale**        | **-**    | **-**   | **-**  | **-**       | **-**        | **-**   | **-**      |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
+| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Rucaj Enrik       |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
 In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 
 | **Ruolo**      | **Ore** | **Costo** |
-| -------------- |:-------:|:---------:|
-| Responsabile   | -       | -         |
-| Amministratore | -       | -         |
-| Analista       | -       | -         |
-| Progettista    | -       | -         |
-| Programmatore  | -       | -         |
-| Verificatore   | -       | -         |
-| **Totale**     | **-**   | **-**     |
+| -------------- | :-----: | :-------: |
+| Responsabile   |    -    |     -     |
+| Amministratore |    -    |     -     |
+| Analista       |    -    |     -     |
+| Progettista    |    -    |     -     |
+| Programmatore  |    -    |     -     |
+| Verificatore   |    -    |     -     |
+| **Totale**     |  **-**  |   **-**   |
 
 Quadro dei costi da affrontare:
 
@@ -528,27 +535,27 @@ Quest'ultimo risulterà positivo quando la spesa effettiva è minore del prevent
 Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
 | **Nome**          | **Resp** | **Amm** | **An**  | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- |:--------:| :-----: |:-------:|:-----------:|:------------:|:-------:|:----------:|
-| Auletta Andrea    | -        | 5 (-1)  | 9 (+1)  | -           | -            | 7       | 22         |
-| Brunello Mattia   | 9        | 4       | 10      | -           | -            | 7 (-1)  | 28 (-1)    |
-| Cecchetto Nicola  | -        | -       | 11      | -           | -            | 6 (-1)  | 17 (-1)    |
-| Rucaj Enrik       | -        | 9       | 11 (-1) | -           | -            | 7       | 27 (-1)    |
-| Stan Antonio      | -        | -       | 11      | -           | -            | 7       | 18         |
-| Vitagliano Davide | -        | 8 (+1)  | 12      | -           | -            | 6       | 26 (+1)    |
-| Zanellato Augusto | 10 (+1)  | 4       | 10      | -           | -            | 7 (-2)  | 31 (-1)    |
-| **Totale**        | **19**   | **30**  | **75**  | **-**       | **-**        | **47**  | **171**    |
+| ----------------- | :------: | :-----: | :-----: | :---------: | :----------: | :-----: | :--------: |
+| Auletta Andrea    |    -     | 5 (-1)  | 9 (+1)  |      -      |      -       |    7    |     22     |
+| Brunello Mattia   |    9     |    4    |   10    |      -      |      -       | 7 (-1)  |  28 (-1)   |
+| Cecchetto Nicola  |    -     |    -    |   11    |      -      |      -       | 6 (-1)  |  17 (-1)   |
+| Rucaj Enrik       |    -     |    9    | 11 (-1) |      -      |      -       |    7    |  27 (-1)   |
+| Stan Antonio      |    -     |    -    |   11    |      -      |      -       |    7    |     18     |
+| Vitagliano Davide |    -     | 8 (+1)  |   12    |      -      |      -       |    6    |  26 (+1)   |
+| Zanellato Augusto | 10 (+1)  |    4    |   10    |      -      |      -       | 7 (-2)  |  31 (-1)   |
+| **Totale**        |  **19**  | **30**  | **75**  |    **-**    |    **-**     | **47**  |  **171**   |
 
 Di seguito vengono riportate le variaizioni dei costi:
 
-| **Ruolo**      | **Ore** | **Costo**      |
-| -------------- |:-------:|:--------------:|
-| Responsabile   | 19 (+1) | 570  (+30,00)  |
-| Amministratore | 30      | 600            |
-| Analista       | 75      | 1875           |
-| Progettista    | -       | -              |
-| Programmatore  | -       | -              |
-| Verificatore   | 47 (-4) | 705  (-60,00)  |
-| **Totale**     | **171** | **3750**       |
+| **Ruolo**      | **Ore** |   **Costo**   |
+| -------------- | :-----: | :-----------: |
+| Responsabile   | 19 (+1) | 570  (+30,00) |
+| Amministratore |   30    |      600      |
+| Analista       |   75    |     1875      |
+| Progettista    |    -    |       -       |
+| Programmatore  |    -    |       -       |
+| Verificatore   | 47 (-4) | 705  (-60,00) |
+| **Totale**     | **171** |   **3750**    |
 
 ### Motivazioni delle variazioni
 
@@ -562,7 +569,7 @@ Di seguito vengono riportate le variaizioni dei costi:
 #### Bilancio finale
 
 | **Ore** | **Costo**  |
-|:-------:|:----------:|
+| :-----: | :--------: |
 | **-3**  | **-30,00** |
 
 Il bilancio è positivo rispetto a quanto preventivato per questo periodo e tutti gli obiettivi sono stati raggiunti con leggero anticipo rispetto a quanto previsto.
@@ -572,28 +579,28 @@ Il bilancio finale non risulta essere scostato in maniera significativa dalle pr
 
 Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
-| **Nome**          | **Resp** | **Amm** | **An**  | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- |:--------:| :-----: |:-------:|:-----------:|:------------:|:-------:|:----------:|
-| Auletta Andrea    | -        | -       | -       | -           | -            | -       | -          |
-| Brunello Mattia   | -        | -       | -       | -           | -            | -       | -          |
-| Cecchetto Nicola  | -        | -       | -       | -           | -            | -       | -          |
-| Rucaj Enrik       | -        | -       | -       | -           | -            | -       | -          |
-| Stan Antonio      | -        | -       | -       | -           | -            | -       | -          |
-| Vitagliano Davide | -        | -       | -       | -           | -            | -       | -          |
-| Zanellato Augusto | -        | -       | -       | -           | -            | -       | -          |
-| **Totale**        | **-**    | **-**   | **-**   | **-**       | **-**        | **-**   | **-**      |
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
+| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Rucaj Enrik       |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
 Di seguito vengono riportate le variaizioni dei costi:
 
-| **Ruolo**      | **Ore** | **Costo**      |
-| -------------- |:-------:|:--------------:|
-| Responsabile   | -       | -              |
-| Amministratore | -       | -              |
-| Analista       | -       | -              |
-| Progettista    | -       | -              |
-| Programmatore  | -       | -              |
-| Verificatore   | -       | -              |
-| **Totale**     | **-**   | **-**          |
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- | :-----: | :-------: |
+| Responsabile   |    -    |     -     |
+| Amministratore |    -    |     -     |
+| Analista       |    -    |     -     |
+| Progettista    |    -    |     -     |
+| Programmatore  |    -    |     -     |
+| Verificatore   |    -    |     -     |
+| **Totale**     |  **-**  |   **-**   |
 
 ### Motivazioni delle variazioni
 
@@ -605,28 +612,28 @@ Di seguito vengono riportate le variaizioni dei costi:
 
 Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
-| **Nome**          | **Resp** | **Amm** | **An**  | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- |:--------:| :-----: |:-------:|:-----------:|:------------:|:-------:|:----------:|
-| Auletta Andrea    | -        | -       | -       | -           | -            | -       | -          |
-| Brunello Mattia   | -        | -       | -       | -           | -            | -       | -          |
-| Cecchetto Nicola  | -        | -       | -       | -           | -            | -       | -          |
-| Rucaj Enrik       | -        | -       | -       | -           | -            | -       | -          |
-| Stan Antonio      | -        | -       | -       | -           | -            | -       | -          |
-| Vitagliano Davide | -        | -       | -       | -           | -            | -       | -          |
-| Zanellato Augusto | -        | -       | -       | -           | -            | -       | -          |
-| **Totale**        | **-**    | **-**   | **-**   | **-**       | **-**        | **-**   | **-**      |
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
+| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Rucaj Enrik       |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
 Di seguito vengono riportate le variaizioni dei costi:
 
-| **Ruolo**      | **Ore** | **Costo**      |
-| -------------- |:-------:|:--------------:|
-| Responsabile   | -       | -              |
-| Amministratore | -       | -              |
-| Analista       | -       | -              |
-| Progettista    | -       | -              |
-| Programmatore  | -       | -              |
-| Verificatore   | -       | -              |
-| **Totale**     | **-**   | **-**          |
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- | :-----: | :-------: |
+| Responsabile   |    -    |     -     |
+| Amministratore |    -    |     -     |
+| Analista       |    -    |     -     |
+| Progettista    |    -    |     -     |
+| Programmatore  |    -    |     -     |
+| Verificatore   |    -    |     -     |
+| **Totale**     |  **-**  |   **-**   |
 
 ### Motivazioni delle variazioni
 
@@ -638,28 +645,28 @@ Di seguito vengono riportate le variaizioni dei costi:
 
 Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
-| **Nome**          | **Resp** | **Amm** | **An**  | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- |:--------:| :-----: |:-------:|:-----------:|:------------:|:-------:|:----------:|
-| Auletta Andrea    | -        | -       | -       | -           | -            | -       | -          |
-| Brunello Mattia   | -        | -       | -       | -           | -            | -       | -          |
-| Cecchetto Nicola  | -        | -       | -       | -           | -            | -       | -          |
-| Rucaj Enrik       | -        | -       | -       | -           | -            | -       | -          |
-| Stan Antonio      | -        | -       | -       | -           | -            | -       | -          |
-| Vitagliano Davide | -        | -       | -       | -           | -            | -       | -          |
-| Zanellato Augusto | -        | -       | -       | -           | -            | -       | -          |
-| **Totale**        | **-**    | **-**   | **-**   | **-**       | **-**        | **-**   | **-**      |
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
+| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Rucaj Enrik       |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
 Di seguito vengono riportate le variaizioni dei costi:
 
-| **Ruolo**      | **Ore** | **Costo**      |
-| -------------- |:-------:|:--------------:|
-| Responsabile   | -       | -              |
-| Amministratore | -       | -              |
-| Analista       | -       | -              |
-| Progettista    | -       | -              |
-| Programmatore  | -       | -              |
-| Verificatore   | -       | -              |
-| **Totale**     | **-**   | **-**          |
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- | :-----: | :-------: |
+| Responsabile   |    -    |     -     |
+| Amministratore |    -    |     -     |
+| Analista       |    -    |     -     |
+| Progettista    |    -    |     -     |
+| Programmatore  |    -    |     -     |
+| Verificatore   |    -    |     -     |
+| **Totale**     |  **-**  |   **-**   |
 
 ### Motivazioni delle variazioni
 
@@ -671,28 +678,28 @@ Di seguito vengono riportate le variaizioni dei costi:
 
 Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
-| **Nome**          | **Resp** | **Amm** | **An**  | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- |:--------:| :-----: |:-------:|:-----------:|:------------:|:-------:|:----------:|
-| Auletta Andrea    | -        | -       | -       | -           | -            | -       | -          |
-| Brunello Mattia   | -        | -       | -       | -           | -            | -       | -          |
-| Cecchetto Nicola  | -        | -       | -       | -           | -            | -       | -          |
-| Rucaj Enrik       | -        | -       | -       | -           | -            | -       | -          |
-| Stan Antonio      | -        | -       | -       | -           | -            | -       | -          |
-| Vitagliano Davide | -        | -       | -       | -           | -            | -       | -          |
-| Zanellato Augusto | -        | -       | -       | -           | -            | -       | -          |
-| **Totale**        | **-**    | **-**   | **-**   | **-**       | **-**        | **-**   | **-**      |
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
+| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Rucaj Enrik       |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
 Di seguito vengono riportate le variaizioni dei costi:
 
-| **Ruolo**      | **Ore** | **Costo**      |
-| -------------- |:-------:|:--------------:|
-| Responsabile   | -       | -              |
-| Amministratore | -       | -              |
-| Analista       | -       | -              |
-| Progettista    | -       | -              |
-| Programmatore  | -       | -              |
-| Verificatore   | -       | -              |
-| **Totale**     | **-**   | **-**          |
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- | :-----: | :-------: |
+| Responsabile   |    -    |     -     |
+| Amministratore |    -    |     -     |
+| Analista       |    -    |     -     |
+| Progettista    |    -    |     -     |
+| Programmatore  |    -    |     -     |
+| Verificatore   |    -    |     -     |
+| **Totale**     |  **-**  |   **-**   |
 
 ### Motivazioni delle variazioni
 
@@ -704,28 +711,28 @@ Di seguito vengono riportate le variaizioni dei costi:
 
 Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
-| **Nome**          | **Resp** | **Amm** | **An**  | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- |:--------:| :-----: |:-------:|:-----------:|:------------:|:-------:|:----------:|
-| Auletta Andrea    | -        | -       | -       | -           | -            | -       | -          |
-| Brunello Mattia   | -        | -       | -       | -           | -            | -       | -          |
-| Cecchetto Nicola  | -        | -       | -       | -           | -            | -       | -          |
-| Rucaj Enrik       | -        | -       | -       | -           | -            | -       | -          |
-| Stan Antonio      | -        | -       | -       | -           | -            | -       | -          |
-| Vitagliano Davide | -        | -       | -       | -           | -            | -       | -          |
-| Zanellato Augusto | -        | -       | -       | -           | -            | -       | -          |
-| **Totale**        | **-**    | **-**   | **-**   | **-**       | **-**        | **-**   | **-**      |
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
+| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Rucaj Enrik       |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
 Di seguito vengono riportate le variaizioni dei costi:
 
-| **Ruolo**      | **Ore** | **Costo**      |
-| -------------- |:-------:|:--------------:|
-| Responsabile   | -       | -              |
-| Amministratore | -       | -              |
-| Analista       | -       | -              |
-| Progettista    | -       | -              |
-| Programmatore  | -       | -              |
-| Verificatore   | -       | -              |
-| **Totale**     | **-**   | **-**          |
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- | :-----: | :-------: |
+| Responsabile   |    -    |     -     |
+| Amministratore |    -    |     -     |
+| Analista       |    -    |     -     |
+| Progettista    |    -    |     -     |
+| Programmatore  |    -    |     -     |
+| Verificatore   |    -    |     -     |
+| **Totale**     |  **-**  |   **-**   |
 
 ### Motivazioni delle variazioni
 
@@ -737,28 +744,28 @@ Di seguito vengono riportate le variaizioni dei costi:
 
 Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
-| **Nome**          | **Resp** | **Amm** | **An**  | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- |:--------:| :-----: |:-------:|:-----------:|:------------:|:-------:|:----------:|
-| Auletta Andrea    | -        | -       | -       | -           | -            | -       | -          |
-| Brunello Mattia   | -        | -       | -       | -           | -            | -       | -          |
-| Cecchetto Nicola  | -        | -       | -       | -           | -            | -       | -          |
-| Rucaj Enrik       | -        | -       | -       | -           | -            | -       | -          |
-| Stan Antonio      | -        | -       | -       | -           | -            | -       | -          |
-| Vitagliano Davide | -        | -       | -       | -           | -            | -       | -          |
-| Zanellato Augusto | -        | -       | -       | -           | -            | -       | -          |
-| **Totale**        | **-**    | **-**   | **-**   | **-**       | **-**        | **-**   | **-**      |
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
+| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Rucaj Enrik       |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
 Di seguito vengono riportate le variaizioni dei costi:
 
-| **Ruolo**      | **Ore** | **Costo**      |
-| -------------- |:-------:|:--------------:|
-| Responsabile   | -       | -              |
-| Amministratore | -       | -              |
-| Analista       | -       | -              |
-| Progettista    | -       | -              |
-| Programmatore  | -       | -              |
-| Verificatore   | -       | -              |
-| **Totale**     | **-**   | **-**          |
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- | :-----: | :-------: |
+| Responsabile   |    -    |     -     |
+| Amministratore |    -    |     -     |
+| Analista       |    -    |     -     |
+| Progettista    |    -    |     -     |
+| Programmatore  |    -    |     -     |
+| Verificatore   |    -    |     -     |
+| **Totale**     |  **-**  |   **-**   |
 
 ### Motivazioni delle variazioni
 
