@@ -66,6 +66,10 @@ versioni:
     autore: Andrea Auletta
     data: 20/12/2022
     cambiamenti: Aggiornamento post-conferenza con azienda
+  0.7.0:
+    autore: Nicola Cecchetto
+    data: 31/01/2023
+    cambiamenti: Aggiornamento post-esercitazioni del prof. Cardin
 ...
 
 # Introduzione
@@ -566,9 +570,13 @@ Visualizzazione Prospetto"
 usecase SUC3 as "SUC3
 Modifica Visualizzazione Lista"
 usecase SUC4 as "SUC4
-Visualizzazione Grafico"
+Visualizzazione Grafico Tempo/Occorrenze"
 usecase SUC5 as "SUC5
-Modifica Visualizzazione Grafico"
+Visualizzazione Grafico Firmware/Occorrenze"
+usecase SUC6 as "SUC6
+Filtro Grafico Tempo/Occorrenze"
+usecase SUC7 as "SUC7
+Filtro Grafico Firmware/Occorrenze"
 }
 SUC1 <.. SUC1.1 : <<extend>>
 t--SUC1
@@ -576,6 +584,8 @@ t--SUC2
 t--SUC3
 t--SUC4
 t--SUC5
+t--SUC6
+t--SUC7
 ```
 
 ### SUC1 - Caricamento dei Log per Intervallo Temporale (SRF1, SRF1.1)
@@ -710,136 +720,168 @@ b--SUC2.6.1.2
 * Precondizioni: sono stati caricati dei file di log [SUC1];
 * Postcondizioni: viene visualizzato il numero di occorrenze dell'evento.
 
-### SUC3 - Modifica Visualizzazione Lista (SRF2.6, SRF3.1.1) <!-- DA QUI IN POI NON E' CORRETTO (bisogna capire che cosa fare con i filtri e l'ordinamento) -->
+### SUC3 - Modifica Visualizzazione Lista (SRF2.6, SRF3.1.1)
 
-```{ .plantuml caption="SUC2"}
+```{ .plantuml caption="SUC3"}
 left to right direction
 :Analista: as c
 package "SUC3 Modifica visualizzazione Lista"{
 usecase SUC3.1 as "SUC3.1
 Aggiunta filtro"
-usecase SUC3.1.3 as "SUC3.1.3
-per versione firmware"
-usecase SUC3.1.2 as "SUC3.1.2
-per intervallo temporale"
-usecase SUC3.1.2.1 as "SUC3.1.2.1
-intervallo non corretto"
-usecase SUC3.1.1 as "SUC3.1.1
-Per unit/subunit"
 usecase SUC3.2 as "SUC3.2
 Ordinamento"
-usecase SUC3.2.1 as "SUC3.2.1
-Per Codice Evento"
-usecase SUC3.2.2 as "SUC3.2.2
-Per Numero Occorrenze"
 }
 c--SUC3.1
 c--SUC3.2
-SUC3.1<|-- SUC3.1.1
-SUC3.1<|-- SUC3.1.2
-SUC3.1.2 <.. SUC3.1.2.1 : <<extend>>
-SUC3.1<|-- SUC3.1.3
-SUC3.2<|-- SUC3.2.1
-SUC3.2<|-- SUC3.2.2
 ```
 
-* Scenari:
-  1. l'utente applica dei filtri in base ai valori presenti nella tabella del prospetto [SUC2.1];
-  2. l'utente applica un ordinamento in base ai valori presenti nella tabella del prospetto [SUC2.2];
+* Scenario: l'utente vuole modificare la visualizzazione dei dati all'interno della lista di occorrenza eventi;
 * Attore: analista;
-* Precondizioni: è stata visualizzata la tabella con i dati [SUC2];
-* Postcondizioni: viene visualizzata la tabella con i dati selezionati;
+* Precondizioni: è stata visualizzata la lista di occorenza eventi [SUC2.6];
+* Postcondizioni: la visualizzazione della lista di occorrenza eventi viene modificata.
 
-#### SUC2.1 - Visualizzazione tabella filtrata
+#### SUC3.1 - Aggiunta Filtro
 
-* Scenari:
-  1. l'utente aggiunge dei filtri in base al valore nelle celle della tabella (SUC2.1.1);
-  2. l'utente rimuove dei filtri in base al valore nelle celle della tabella (SUC2.1.2);
-* Attori: analista;
-* Precondizioni: è stata visualizzata la tabella con i dati [SUC2];
-* Postcondizioni: viene visualizzata la tabella degli eventi filtrati.
-
-#### SUC2.2 - Ordinamento per colonna
-
-* Scenari: l'utente applica un ordinamento in base a una colonna della tabella;
-* Attori: analista;
-* Precondizioni: è stata visualizzata la tabella con i dati [SUC2];
-* Postcondizioni: viene visualizzata la tabella degli eventi ordinati.
-
-#### SUC2.3 - Raggruppamento tramite data/ora
-
-* Scenari:
-  1. l'utente vuole visualizzare il grafico in un intervallo temporale  [SUC2.3.1];
-  2. l'intervallo temporale fornito dall'utente non è valido (data d'inizio posteriore alla data di fine) [SUC2.3.2];
-* Attore: tecnico;
-* Precondizioni: è stata visualizzata la tabella con i dati [SUC2];
-* Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali selezionati o una notifica per l'utente.
-
-##### SUC2.3.1 Intervallo temporale corretto
-
-* Scenari: l'utente filtra per data/ora la tabella di eventi da visualizzare;
-* Attori: analista;
-* Precondizioni: è stata visualizzata la tabella con i dati [SUC2];
-* Postcondizioni: viene visualizzata la tabella degli eventi filtrata.
-
-##### SUC2.3.2 Intervallo temporale non corretto
-
-* Scenari: l'intervallo temporale fornito dall'utente non è valido (data inizio posteriore a data fine);
-* Attori: analista;
-* Precondizioni: è stata visualizzata la tabella con i dati [SUC2];
-* Postcondizioni: viene notificato all'utente che le date inserite non sono corrette.
-
-### SUC3 - Modifica visualizzazione grafica (SRF3.1.1, SRF3.2.1)
-
-```{ .plantuml caption="SUC3"}
+```{ .plantuml caption="SUC3.1"}
 left to right direction
-:Analista: as o
-package "SmartLogStatistics Grafico"{
-usecase SUC3.1 as "SUC3.1
-Filtro"
-usecase SUC3.1.2 as "SUC3.1.2
-Filtro codice"
+:Analista: as y
+package "SUC3.1 Aggiunta Filtro"{
 usecase SUC3.1.1 as "SUC3.1.1
-Filtro unit/subUnit"
-usecase SUC3.2 as "SUC3.2
-Selezione eventi e firmware"
-usecase SUC3.2.2 as "SUC3.2.2
-Selezione lista firmware"
-usecase SUC3.2.1 as "SUC3.2.1
-Selezione eventi"
+Per unit/subunit"
+usecase SUC3.1.2 as "SUC3.1.2
+Per Intervallo Temporale"
+usecase SUC3.1.2.1 as "SUC3.1.2.1
+Intervallo non Corretto"
+usecase SUC3.1.3 as "SUC3.1.3
+Per Versione Firmware"
 }
-o--SUC3.1
-o--SUC3.2
-SUC3.1<|--SUC3.1.1
-SUC3.1<|--SUC3.1.2
-SUC3.2 ..> SUC3.2.1 : <<include>>
-SUC3.2 ..> SUC3.2.2 : <<include>>
+y--SUC3.1.1
+y--SUC3.1.2
+y--SUC3.1.3
+SUC3.1.2 <.. SUC3.1.2.1 : <<extend>>
 ```
 
-* Scenari:
-  1. l'utente applica dei filtri in base al valore nelle celle della tabella [SUC3.1];
-  2. l'utente seleziona gli eventi e la lista firmware da visualizzare [SUC3.2];
+* Scenario: l'utente vuole aggiungere un filtro ai dati presentati nella lista di occorenza eventi;
 * Attore: analista;
-* Precondizioni: è stato visualizzato il grafico con numero di occorrenze rispetto alla versione firmware [SUC2];
-* Postcondizioni: viene visualizzato il grafico con i filtri applicati.
+* Precondizioni: è stata visualizzata la lista di occorenza eventi [SUC2.6];
+* Postcondizioni: la lista di occorenza eventi mostra i dati opportunamente filtrati.
 
-#### SUC3.1 - Visualizzazione grafico filtrato
+##### SUC3.1.1 - Filtra per Unit/Subunit
 
-* Scenari:
-  1. l'utente filtra per codice la tabella di eventi da visualizzare (SUC3.1.1);
-  2. l'utente filtra per unit/subUnit la tabella di eventi da visualizzare (SUC3.1.2);
-* Attori: analista;
-* Precondizioni: è stato visualizzato il grafico con numero di occorrenze rispetto alla versione firmware [SUC2];
-* Postcondizioni: viene visualizzata il grafico degli eventi filtrato.
+* Scenario: l'utente vuole filtrare i dati della lista di occorrenza eventi in base alla unit/subunit;
+* Attore: analista;
+* Precondizioni: è stata visualizzata la lista di occorenza eventi [SUC2.6];
+* Postcondizioni: la lista di occorrenza eventi mostra i dati filtrati secondo la unit/subunit.
 
-#### SUC3.2 - Visualizzazione grafico filtrato
+##### SUC3.1.2 - Filtra per Intervallo Temporale
 
-* Scenari:
-  1. l'utente seleziona gli eventi da visualizzare (SUC3.2.1);
-  2. l'utente seleziona la lista di firmware da visualizzare (SUC3.2.2);
-* Attori: analista;
-* Precondizioni: è stato visualizzato il grafico con numero di occorrenze rispetto alla versione firmware [SUC2];
-* Postcondizioni: viene visualizzata il grafico con solo gli eventi e i firmware selezionati.
+* Scenario: l'utente vuole filtrare i dati della lista di occorrenza eventi secondo un intervallo temporale;
+* Attore: analista;
+* Precondizioni: è stata visualizzata la lista di occorrenza eventi [SUC2.6];
+* Postcondizioni: la lista di occorrenza eventi mostra i dati tenendo conto del nuovo intervallo temporale.
+
+##### SUC3.1.2.1 - Intervallo Temporale non Corretto
+
+* Scenario: l'intervallo selezionato dall'utente non è valido;
+* Attore: analista;
+* Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
+* Postcondizioni: viene mostrato un messaggio di errore.
+
+##### SUC3.1.3 - Per Versione Firmware
+
+* Scenario: l'utente vuole filtrare i dati della lista di occorrenza eventi;
+* Attore: analista;
+* Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
+* Postcondizioni: la lista di occorrenza eventi mostra i dati filtrati per versione firmware;
+
+#### SUC3.2 - Ordinamento per Colonna
+
+* Scenario: l'utente vuole modificare l'ordine dei dati presentati nella lista di occorrenza eventi secondo l'ordine di una colonna;
+* Attore: analista;
+* Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
+* Postcondizioni: la lista di occorrenza eventi mostra i dati della lista ordinati secondo la colonna scelta.
+  
+### SUC4 - Visualizzazione Grafico Tempo/Occorrenze
+
+* Scenario: l'utente vuole visualizzare un grafico che mette in relazione il tempo con il numero di occorrenze degli eventi in esame;
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: viene mostrato a schermo il grafico che mette in relazione il tempo (asse x) con il numero di occorrenze degli eventi in esame (asse y).
+
+### SUC5 - Visualizzazione Grafico Firmware/Occorrenze
+
+* Scenario: l'utente vuole visualizzare un grafico che mette in relazione le versioni firmware con il numero di occorrenze degli eventi in esame;
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: viene mostrato a schermo il grafico che mette in relazione le versioni firmware (asse x) con il numero di occorrenze degli eventi in esame (asse y).
+
+### SUC6 - Filtro Grafico Tempo/Occorrenze
+
+```{ .plantuml caption="SUC6"}
+left to right direction
+:Analista: as u
+package "SUC6 Filtro Grafico Tempo/Occorrenze"{
+usecase SUC6.1 as "SUC6.1
+Per Codice Evento"
+usecase SUC6.2 as "SUC6.2
+Per Unit/Subunit"
+}
+u--SUC6.1
+u--SUC6.2
+```
+
+* Scenario: l'utente vuole modificare la visualizzazione del grafico tempo/occorrenze applicando dei filtri ai dati;
+* Attore: analista;
+* Precondizioni: è stato visualizzato il grafico tempo/occorrenze [SUC4];
+* Postcondizioni: vengono applicati i filtri selezionati.
+
+#### SUC6.1 - Filtro per Codice Evento
+
+* Scenario: l'utente vuole filtrare il grafico tempo/occorrenze selezionando quali eventi visualizzare;
+* Attore: analista;
+* Precondizioni: è stato visualizzato il grafico tempo/occorrenze [SUC4];
+* Postcondizioni: il grafico viene aggiornato tenendo conto degli eventi da visualizzare.
+
+#### SUC6.2 - Filtro per Unit/Subunit
+
+* Scenario: l'utente vuole filtrare il grafico tempo/occorrenze selezionando quali unit/subunit considerare;
+* Attore: analista;
+* Precondizioni: è stato visualizzato il grafico tempo/occorrenze [SUC4];
+* Postcondizioni: il grafico viene aggiornato tenendo conto delle unit/subunit selezionate.
+
+### SUC7 - Filtro Grafico Firmware/Occorrenze
+
+```{ .plantuml caption="SUC7"}
+left to right direction
+:Analista: as u
+package "SUC7 Filtro Grafico Firmware/Occorrenze"{
+usecase SUC7.1 as "SUC7.1
+Per Codice Evento"
+usecase SUC7.2 as "SUC7.2
+Per Firmware"
+}
+u--SUC7.1
+u--SUC7.2
+```
+
+* Scenario: l'utente vuole modificare la visualizzazione del grafico firmware/occorrenze applicando dei filtri ai dati;
+* Attore: analista;
+* Precondizioni: è stato visualizzato il grafico firmware/occorrenze [SUC5];
+* Postcondizioni: vengono applicati i filtri selezionati.
+
+#### SUC7.1 - Filtro per Codice Evento
+
+* Scenario: l'utente vuole filtrare il grafico firmware/occorrenze selezionando quali eventi visualizzare;
+* Attore: analista;
+* Precondizioni: è stato visualizzato il grafico firmware/occorrenze [SUC5];
+* Postcondizioni: il grafico viene aggiornato tenendo conto degli eventi da visualizzare.
+
+#### SUC7.2 - Filtro per Firmware
+
+* Scenario: l'utente vuole filtrare il grafico firmware/occorrenze selezionando quali firmware considerare;
+* Attore: analista;
+* Precondizioni: è stato visualizzato il grafico firmware/occorrenze [SUC5];
+* Postcondizioni: il grafico viene aggiornato tenendo conto dei firmware selezionati.
 
 ## Opzionali
 
@@ -855,10 +897,10 @@ Esportazione file"
 :Analista:--OUC1
 ```
 
-* Scenari: l'utente esporta un file dove verranno visualizzate le tabelle e le sue varianti grafiche;
+* Scenari: l'utente esporta un file dove verranno visualizzati i grafici;
 * Attore: tecnico, analista;
 * Precondizioni: è stato selezionato almeno un file di log nell'applicazione [VUC1] o [SUC1];
-* Postcondizioni: viene esportato il file con la tabella e le forme grafiche.
+* Postcondizioni: viene esportato il file con i grafici.
 
 ### OUC2 - L'utente vuole eliminare i filtri applicati in precedenza (RO2)
 
@@ -885,36 +927,14 @@ left to right direction
 package "SmartLogViewer"{
 usecase OUC3 as "OUC3
 Ricerca sequenza di eventi"
-usecase OUC3.1 as "OUC3.1
-Trovati tutti gli eventi"
-usecase OUC3.2 as "OUC3.2
-Almeno un evento non trovato"
 }
 i--OUC3
-OUC3<|--OUC3.1
-OUC3<|--OUC3.2
 ```
 
-* Scenari:
-  1. l'utente ricerca una sequenza di eventi non ordinati o parziali [OUC3.1];
-  2. l'utente inserisce almeno un evento non presente nel log [OUC3.2];
+* Scenari: l'utente vuole cercare una sequenza di eventi non necessariamente ordinata;
 * Attore: tecnico;
-* Precondizioni: viene visualizzata la tabella [VUC1];
+* Precondizioni: viene visualizzata la tabella [VUC2];
 * Postcondizioni: vengono evidenziate le tuple con gli eventi con codice corrispondente ai parametri di ricerca o una notifica per l'utente.
-
-#### OUC3.1 Tutti gli eventi sono presenti
-
-* Scenari: l'utente ricerca una sequenza di eventi non ordinati;
-* Attore: tecnico;
-* Precondizioni: viene visualizzata la tabella [VUC1];
-* Postcondizioni: vengono evidenziate le tuple con gli eventi con codice corrispondente ai parametri di ricerca.
-
-#### OUC3.2 Almeno un evento non presente
-
-* Scenari: almeno un evento indicato dall'utente non è stato trovato all'interno del log;
-* Attore: tecnico;
-* Precondizioni: viene visualizzata la tabella [VUC1];
-* Postcondizioni: vengono notificati all'utente quali eventi non sono stati trovati.
 
 ### OUC4 - Visualizzazione della matrice di correlazione (SR01.1)
 
