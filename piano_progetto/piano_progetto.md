@@ -270,13 +270,13 @@ Nel periodo di Progettazione Technology Baseline, ciascun componente rivestirà 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
 | Auletta Andrea    |    -     |    -    |   3    |      5      |      -       |    3    |     11     |
-| Brunello Mattia   |    -     |    -    |   3    |      4      |      -       |    4    |     11     |
+| Brunello Mattia   |    -     |    -    |   3    |      4      |      -       |    3    |     10     |
 | Cecchetto Nicola  |    7     |    -    |   -    |      4      |      -       |    -    |     11     |
-| Rucaj Enrik       |    -     |    -    |   -    |      5      |      -       |    2    |     11     |
-| Stan Antonio      |    -     |    3    |   -    |      3      |      -       |    4    |     10     |
-| Vitagliano Davide |    -     |    -    |   2    |      4      |      -       |    4    |     12     |
-| Zanellato Augusto |    -     |    4    |   -    |      3      |      -       |    3    |     10     |
-| **Totale**        |  **7**   |  **7**  | **8**  |   **28**    |    **-**     | **20**  |   **76**   |
+| Rucaj Enrik       |    -     |    -    |   -    |      5      |      -       |    4    |     9      |
+| Stan Antonio      |    -     |    3    |   -    |      3      |      -       |    3    |     9      |
+| Vitagliano Davide |    -     |    -    |   2    |      4      |      -       |    4    |     10     |
+| Zanellato Augusto |    -     |    4    |   -    |      4      |      -       |    3    |     11     |
+| **Totale**        |  **7**   |  **7**  | **8**  |   **29**    |    **-**     | **20**  |   **71**   |
 
 In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 
@@ -285,14 +285,24 @@ In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 | Responsabile   |    7    |    210    |
 | Amministratore |    7    |    140    |
 | Analista       |    8    |    200    |
-| Progettista    |   28    |    700    |
+| Progettista    |   29    |    725    |
 | Programmatore  |    -    |     -     |
 | Verificatore   |   20    |    300    |
-| **Totale**     | **76**  | **1550**  |
+| **Totale**     | **71**  | **1575**  |
 
 Quadro dei costi da affrontare:
 
-<!--Inserire grafico a torta-->
+```{.plotly_python}
+import plotly.graph_objects as go
+
+labels = ['Responsabile','Amministratore','Analista', 'Progettista' ,'Verificatore']
+text = ['7h', '7h', '8h', '29h', '20h']
+values = [210, 140, 200, 700, 300]
+
+fig = go.Figure(data=[go.Pie(labels=labels, values=values, text=text)])
+fig.update_traces(textposition='inside', textinfo='percent+value+label+text', showlegend=False, insidetextorientation="horizontal")
+
+```
 
 ## Proof of Concept
 
@@ -339,7 +349,17 @@ In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 
 Quadro dei costi da affrontare:
 
-<!--Inserire grafico a torta-->
+```{.plotly_python}
+import plotly.graph_objects as go
+
+labels = ['Responsabile','Amministratore','Analista', 'Progettista' , 'Programmatore', 'Verificatore']
+  text = ['8h', '5h', '7h', '39h', '45', '21']
+values = [240, 100, 175, 975, 675, 315]
+
+fig = go.Figure(data=[go.Pie(labels=labels, values=values, text=text)])
+fig.update_traces(textposition='inside', textinfo='percent+value+label+text', showlegend=False, insidetextorientation="horizontal")
+
+```
 
 ## Progettazione di dettaglio dei Requisiti Obbligatori
 
@@ -582,34 +602,42 @@ Il bilancio finale non risulta essere scostato in maniera significativa dalle pr
 
 Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
-| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
-| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Rucaj Enrik       |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver**  | **Totale** |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----:  | :--------: |
+| Auletta Andrea    |    -     |    -    |   3    |      5      |      -       |   2(-1)  |    10(-1)  |
+| Brunello Mattia   |    -     |    -    |   3    |      4      |      -       |    3     |    11      |
+| Cecchetto Nicola  |    6(-1) |    -    |   -    |      4      |      -       |    -     |    10(-1)  |
+| Rucaj Enrik       |    -     |    -    |   -    |      4(-1)  |      -       |    4     |     8(-1)  |
+| Stan Antonio      |    -     |    3    |   -    |      3      |      -       |    3     |     9      |
+| Vitagliano Davide |    -     |    -    |   2    |      4      |      -       |   3(-1)  |     9(-1)  |
+| Zanellato Augusto |    -     |   3(-1) |   -    |      4      |      -       |    3     |    10(-1)  |
+| **Totale**        | **6(-1)**|**5(-1)**| **8**  | **28(-1)**  |    **-**     |**18(-2)**| **64(-5)** |
 
 Di seguito vengono riportate le variaizioni dei costi:
 
-| **Ruolo**      | **Ore** | **Costo** |
-| -------------- | :-----: | :-------: |
-| Responsabile   |    -    |     -     |
-| Amministratore |    -    |     -     |
-| Analista       |    -    |     -     |
-| Progettista    |    -    |     -     |
-| Programmatore  |    -    |     -     |
-| Verificatore   |    -    |     -     |
-| **Totale**     |  **-**  |   **-**   |
+| **Ruolo**      | **Ore**   | **Costo**     |
+| -------------- | :-------: | :-----------: |
+| Responsabile   |  6(-1)    |  180(-30)     |
+| Amministratore |  5(-1)    |  120(-20)     |
+| Analista       |    8      |    200        |
+| Progettista    | 28(-1)    |  700(-25)     |
+| Programmatore  |    -      |     -         |
+| Verificatore   |  18(-2)   |  270(-30)     |
+| **Totale**     |**64(-5)** |**1470(-105)** |
 
 ### Motivazioni delle variazioni
+
+Per l'inizio della sessione si è deciso di privilegiare lo studio individuale e quindi c'è stata una riduzione del numero delle ore per cercare di rimanere nei tempi prestabiliti.
 
 ### Considerazioni
 
 #### Bilancio finale
+
+| **Ore** | **Costo**  |
+| :-----: | :--------: |
+| **-5**  |**-105,00** |
+
+Il bilancio è positivo rispetto a quanto preventivato per questo periodo, anche se c'è stato un numero ridotto di ore siamo comunque riusciti a raggiungere gli obiettivi prestabiliti e quindi non è necessario ripianificare il prossimo periodo.
 
 ## Proof of Concept
 
