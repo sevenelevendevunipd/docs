@@ -33,6 +33,10 @@ versioni:
     autore: Mattia Brunello
     data: 07/02/2023
     cambiamenti: Compilati preventivi PTB e PoC
+  0.2.5:
+    autore: Andrea Auletta
+    data: 07/02/2023
+    cambiamenti: Aggiunti grafici a torta PTB e PoC, Compilati consuntibi RTB
 ...
 
 # Introduzione
@@ -353,7 +357,7 @@ Quadro dei costi da affrontare:
 import plotly.graph_objects as go
 
 labels = ['Responsabile','Amministratore','Analista', 'Progettista' , 'Programmatore', 'Verificatore']
-  text = ['8h', '5h', '7h', '39h', '45', '21']
+  text = ['8h', '5h', '7h', '39h', '45h', '21h']
 values = [240, 100, 175, 975, 675, 315]
 
 fig = go.Figure(data=[go.Pie(labels=labels, values=values, text=text)])
