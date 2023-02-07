@@ -29,6 +29,10 @@ versioni:
     autore: Enrik Rucaj
     data: 13/12/2022
     cambiamenti: Aggiunto previsione di inizio-fine periodo di ogni assignment
+  0.2.4:
+    autore: Mattia Brunello
+    data: 07/02/2023
+    cambiamenti: Compilati preventivi PTB e PoC
 ...
 
 # Introduzione
@@ -274,8 +278,6 @@ Nel periodo di Progettazione Technology Baseline, ciascun componente rivestirà 
 | Zanellato Augusto |    -     |    4    |   -    |      3      |      -       |    3    |     10     |
 | **Totale**        |  **7**   |  **7**  | **8**  |   **28**    |    **-**     | **20**  |   **76**   |
 
-
-
 In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 
 | **Ruolo**      | **Ore** | **Costo** |
@@ -314,30 +316,26 @@ Nel periodo di Proof of Concept, ciascun componente rivestirà i ruoli secondo l
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
-| Auletta Andrea    |    -     |    -    |   2    |      6      |      6       |    4    |     18     |
-| Brunello Mattia   |    -     |    -    |   -    |      5      |      5       |    5    |     15     |
-| Cecchetto Nicola  |    -     |    -    |   2    |      5      |      6       |    3    |     18     |
-| Rucaj Enrik       |    -     |    2    |   -    |      7      |      4       |    2    |     15     |
-| Stan Antonio      |    -     |    3    |   -    |      6      |      2       |    4    |     15     |
-| Vitagliano Davide |    -     |    -    |   -    |      5      |      6       |    3    |     14     |
-| Zanellato Augusto |    8     |    -    |   -    |      5      |      7       |    -    |     19     |
-| **Totale**        |  **8**   |  **6**  | **4**  |   **38**    |    **35**    | **21**  |  **109**   |
+| Auletta Andrea    |    -     |    -    |   4    |      6      |      6       |    4    |     20     |
+| Brunello Mattia   |    -     |    -    |   -    |      5      |      7       |    5    |     17     |
+| Cecchetto Nicola  |    -     |    2    |   3    |      5      |      8       |    3    |     21     |
+| Rucaj Enrik       |    8     |    -    |   -    |      4      |      6       |    -    |     18     |
+| Stan Antonio      |    -     |    3    |   -    |      6      |      4       |    4    |     17     |
+| Vitagliano Davide |    -     |    -    |   -    |      5      |      6       |    5    |     16     |
+| Zanellato Augusto |    -     |    -    |   -    |      8      |      8       |    -    |     16     |
+| **Totale**        |  **8**   |  **5**  | **7**  |   **39**    |    **45**    | **21**  |  **125**   |
 
-<!--NOTA PER IL FUTURO, IMPORTANTE:
-     - Anotnio avrà 3 ore di analista nella fase di "progettazione di dettaglio e codifica per i requisiti opzionali"
-     - Enrik avrà 2 ore di analista nella fase di "progettazione di dettaglio e codifica per i requisiti obbligatori"
- -->
 In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 
 | **Ruolo**      | **Ore** | **Costo** |
 | -------------- | :-----: | :-------: |
-| Responsabile   |    -    |     -     |
-| Amministratore |    -    |     -     |
-| Analista       |    -    |     -     |
-| Progettista    |    -    |     -     |
-| Programmatore  |    -    |     -     |
-| Verificatore   |    -    |     -     |
-| **Totale**     |  **-**  |   **-**   |
+| Responsabile   |    8    |    240    |
+| Amministratore |    5    |    100    |
+| Analista       |    7    |    175    |
+| Progettista    |   39    |    975    |
+| Programmatore  |   45    |    675    |
+| Verificatore   |   21    |    315    |
+| **Totale**     | **125** | **2480**  |
 
 Quadro dei costi da affrontare:
 
@@ -370,6 +368,11 @@ Nel periodo di Progettazione di dettaglio dei Requisiti Obbligatori, ciascun com
 | Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
 | Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
 | **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
+
+<!--NOTA PER IL FUTURO, IMPORTANTE:
+     - Anotnio avrà 3 ore di analista nella fase di "progettazione di dettaglio e codifica per i requisiti opzionali"
+     - Enrik avrà 2 ore di analista nella fase di "progettazione di dettaglio e codifica per i requisiti obbligatori"
+ -->
 
 In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 
