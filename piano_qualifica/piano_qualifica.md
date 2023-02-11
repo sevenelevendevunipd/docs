@@ -56,34 +56,21 @@ Alcuni termini utilizzati nel documento potrebbero generare incomprensione per i
 * **QPS_1: Preventivo costo attuale (PCA)** = Somma dei costi di ogni periodo calcolato nel preventivo iniziale a partire dall'inizio del progetto fino a un determinato periodo.
 * **QPS_2: Costo attuale (CA)** = Il costo effettivo calcolato a partire dall'inizio del progetto fino a un determinato periodo.
 * **QPS_3: Stima costo a finire (SCF)** = Il costo che servirà a portare a termine il progetto a partire da un determinato periodo.
-
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$SCF=Budget-PCA$
-
+                                           $SCF=Budget-PCA$
 * **QPS_4: Stima costo totale (SCT)** = Revisione del budget totale che servirà per portare a compimento il progetto.
-
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$SCT=SCF+CA$
-
+                                           $SCT=SCF+CA$
 * **QPS_5: Rapporto costo (RC)** = Percentuale del rapporto tra il costo attuale (CA) e quello calcolato nel preventivo a partire dall'inizio del progetto fino a un determinato periodo. *In caso di risultato negativo si rischia di andare fuori budget*.
-
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$RC=(1-\frac{CA}{PCA})*100$
-
+                                           $RC=(1-\frac{CA}{PCA})*100$
 * **QPS_6: Preventivo periodo temporale attuale (PPTA)** = Somma delle ore svolte in ogni periodo calcolate nel preventivo iniziale a partire dall'inizio del progetto fino a un determinato periodo.
 * **QPS_7: Periodo temporale attuale (PTA)** = Le ore effettive svolte a partire dall'inizio del progetto fino a un determinato periodo.
 * **QPS_8: Stima lasso temporale a finire (SLTF)** = Il lasso di tempo che servirà a portare a termine il progetto a partire da un determinato periodo.
-
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$SLTF=Tempo di sviluppo totale-PPTA$
-
+                                  $SLTF=Tempo di sviluppo totale-PPTA$
 * **QPS_9: Stima tempo di sviluppo totale (STST)** = Revisione del lasso temporale totale che servirà per sviluppare interamente il progetto.
-
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$STST=SLTF+PTA$
-
+                                           $STST=SLTF+PTA$
 * **QPS_10: Rapporto periodo temporale (RPT)** = Percentuale del rapporto tra il periodo temporale attuale (PTA) e quello calcolato nel preventivo a partire dall'inizio del progetto fino a un determinato periodo. *In caso di risultato negativo si rischia di andare fuori budget*.
-
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$RPT=(1-\frac{PTA}{PPTA})*100$
-
+                                           $RPT=(1-\frac{PTA}{PPTA})*100$
 * **QPS_11: Metriche soddisfate (MS)** = Percentuale delle metriche di qualità (sia di processo che di prodotto) soddisfate in un determinato periodo.
-
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$Metriche soddisfate=\frac{Numero di metriche soddisfate}{Numero di metriche totali}*100$
+                       $Metriche soddisfate=\frac{Numero di metriche soddisfate}{Numero di metriche totali}*100$
 
 ### Tabella metriche - Valori accetabili e ottimali
 
