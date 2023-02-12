@@ -113,7 +113,7 @@ per misurare il raggiungimento degli obiettivi di qualità del prodotto.
 
  Indice che riporta il grado di leggibilità di un testo redatto in lingua italiana . La formula addottata è la seguente:
 
-   GULP= ${89+}\frac{ 300  *(numerodellefrasi) - 10*(numero delle lettere) }{numero delle parole}$
+GULP= ${89+}\frac{ 300  *(numerodellefrasi) - 10*(numero delle lettere) }{numero delle parole}$
 
 L'indice così calcolato può assumere valori tra 0 e 100:
 
@@ -188,6 +188,12 @@ I browser presi in considerazione sono:
 
 Misura la complessità strutturale del codice. Viene calcolato il numero di percorsi di codice diversi nel flusso del programma.
 
+Complessità ciclomatica = E - N + 2P
+
+* E => Il n. dei bordi del grafico
+* N => Il numero di nodi del grafico
+* P => Il no dei componenti collegati
+
 ### **QPD_8: Profondità di ereditarietà**
 
 Indica il numero di classi diverse che ereditano tra loro, fino alla classe di base.
@@ -217,8 +223,8 @@ Strumenti utilizzati:
 | QPD_4             |        Copertura requisiti desiderabili     |        $\geq$ 90%      |         100%        |
 | QPD_5             |           Copertura requisiti opzionali     |       $\geq$ 80%       |         100%        |
 | QPD_6             |          Versioni browser supportate        |        $\geq$ 80%      |         100%        |
-| QPD_7             |             Complessità ciclomatica         |                        |                     |
-| QPD_8             |           Profondità di ereditarietà        |                        |                     |
+| QPD_7             |             Complessità ciclomatica         |        $\leq$ 2        |          1          |
+| QPD_8             |           Profondità di ereditarietà        |        $\leq$ 3        |          2          |
 | QPD_9             |           Righe di codice eseguibile        |           100%         |         100%        |
 | QPD_10            |               Branch Coverage               |       $\geq$ 80%       |         95%         |
 <!--# Specifica dei test
