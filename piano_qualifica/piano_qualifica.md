@@ -204,7 +204,7 @@ Indica il numero approssimativo di righe di codice eseguibili o operazioni.
 
 ### **QPD_10 Branch Coverage**
 
-Indica che ciascun porzione di codice sia stato eseguito almeno una volta. Per branch si intende uno dei possibili path di codice che seguono una condizione decisionale.
+Indica che ciascun branch di codice sia stato eseguito almeno una volta. Per branch si intende uno dei possibili path di codice che seguono una condizione decisionale.
 
 |    **Prodotto**   | **Valore accetabile**   | **Valore ottimale** |
 | ----------------- |  :-------------------:  | :-----------------: |
@@ -218,8 +218,8 @@ Strumenti utilizzati:
 
 |    **Codice**     |                  **Nome**                   | **Valore accetabile**  | **Valore ottimale** |
 | ----------------- | :-----------------------------------------: | :-------------------:  | :-----------------: |
-| QPD_2             |               Errori ortografici            |           0            |        0            |
-| QPD_3             |        Copertura requisiti obbligatori      |        100%            |         100%        |
+| QPD_2             |               Errori ortografici            |           0            |           0         |
+| QPD_3             |        Copertura requisiti obbligatori      |          100%          |         100%        |
 | QPD_4             |        Copertura requisiti desiderabili     |        $\geq$ 90%      |         100%        |
 | QPD_5             |           Copertura requisiti opzionali     |       $\geq$ 80%       |         100%        |
 | QPD_6             |          Versioni browser supportate        |        $\geq$ 80%      |         100%        |
