@@ -210,7 +210,7 @@ Strumenti utilizzati:
 | ----------------- | :-----------------------------------------: | :-------------------:  | :-----------------: |
 | QPD_2             |               Errori ortografici            |           0            |           0         |
 | QPD_3             |        Copertura requisiti obbligatori      |          100%          |         100%        |
-| QPD_4             |           Copertura requisiti opzionali     |       $\geq$ 80%       |         100%        |
+| QPD_4             |           Copertura requisiti opzionali     |       $\geq$ 20%       |         100%        |
 | QPD_5             |          Versioni browser supportate        |        $\geq$ 80%      |         100%        |
 | QPD_6             |             Complessità ciclomatica         |        $\leq$ 2        |          1          |
 | QPD_7             |           Profondità di ereditarietà        |        $\leq$ 3        |        $\leq$ 2     |
