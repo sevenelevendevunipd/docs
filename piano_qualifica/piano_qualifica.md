@@ -213,7 +213,7 @@ Strumenti utilizzati:
 | QPD_4             |           Copertura requisiti opzionali     |       $\geq$ 80%       |         100%        |
 | QPD_5             |          Versioni browser supportate        |        $\geq$ 80%      |         100%        |
 | QPD_6             |             Complessità ciclomatica         |        $\leq$ 2        |          1          |
-| QPD_7             |           Profondità di ereditarietà        |        $\leq$ 3        |          2          |
+| QPD_7             |           Profondità di ereditarietà        |        $\leq$ 3        |        $\leq$ 2     |
 | QPD_8             |           Righe di codice eseguibile        |    $\leq$ 1000 righe   | $\leq$ 500 righe    |
 | QPD_9             |               Branch Coverage               |       $\geq$ 80%       |         95%         |
 <!--# Specifica dei test
