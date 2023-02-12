@@ -176,7 +176,7 @@ I browser presi in considerazione sono:
   
 ### **QPD_6: Complessità ciclomatica**
 
-Misura la complessità strutturale del codice. Viene calcolato il numero di percorsi di codice diversi nel flusso del programma.
+Misura la complessità strutturale del codice. Viene calcolato il numero di blocchi di codice annidati nel flusso del programma.
 
 Complessità ciclomatica = E - N + 2P
 
@@ -190,7 +190,7 @@ Indica il numero di classi diverse che ereditano tra loro, fino alla classe di b
 
 ### **QPD_8: Righe di codice eseguibile**
 
-Indica il numero approssimativo di righe di codice eseguibili o operazioni.
+Indica il numero approssimativo di righe di codice eseguibili.
 
 ### **QPD_9 Branch Coverage**
 
