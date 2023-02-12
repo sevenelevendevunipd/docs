@@ -151,7 +151,7 @@ per misurare il raggiungimento degli obiettivi di qualità del prodotto.
 
  Indice che riporta il grado di leggibilità di un testo redatto in lingua italiana . La formula addottata è la seguente:
 
-$$GULP= {89+}\frac{ 300  *(numerodellefrasi) - 10*(numero delle lettere) }{numero delle parole}$$
+$$GULP= {89+}\frac{ 300  *(n_{frasi}) - 10*(n_{lettere}) }{n_{parole}}$$
 
 L'indice così calcolato può assumere valori tra 0 e 100:
 
