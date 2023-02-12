@@ -98,23 +98,6 @@ $$Metriche soddisfate=\frac{Numero di metriche soddisfate}{Numero di metri
 * I documenti non devono avere errori grammaticali;
 * Nei documenti i paragrafi devono essere posizionati nei capitoli giusti.
 
-### Indice di Gulpease
-
-## ${89+}\frac{ 300  *(numerodellefrasi) - 10*(numero delle lettere) }{numero delle parole}$
-
-Prodotti coinvolti:
-
-| **Prodotto**      | **Valore Ottimale** | **Valore Accettabile**   |
-| ----------------- |:-------------------:|:------------------------:|
-| Documenti interni | >40                 |  >60                     |
-| Documenti esterni | >40                 |  >60                     |
-
-### Note
-
-Si tiene conto che un indice di 40 `e leggibile a una persona in possesso di
-un diploma superiore (come tutti i nostri stakeholders).
-Il valore ottimale risulta più alto nei documenti esterni data la neccesità di mantenere un linguaggio formale e consono rispetto alle circostanze lavorative.
-
 ### Software
 
 * Il software deve risolvere tutte le casistiche presentate nell'*Analisi dei requisiti*;
@@ -123,6 +106,119 @@ Il valore ottimale risulta più alto nei documenti esterni data la neccesità di
 
 ## Metriche utilizzate
 
+La presente sezione espone le metriche selezionate dal gruppo SevenEleven
+per misurare il raggiungimento degli obiettivi di qualità del prodotto.
+
+### QPD_1: Indice di Gulpease  
+
+ Indice che riporta il grado di leggibilità di un testo redatto in lingua italiana . La formula addottata è la seguente:
+
+ GULP=  ${89+}\frac{ 300  *(numerodellefrasi) - 10*(numero delle lettere) }{numero delle parole}$
+
+L'indice così calcolato può assumere valori tra 0 e 100:
+
+* GULP < 80: indica una leggibilità difficile per utente con licenza elementare;
+
+* GULP < 60: indica una leggibilità difficile per un utente con licenza elementare;
+
+* GULP < 40: indica una leggibilità difficile con licenza superiore;
+
+| **Documentazione** |   **Valore accetabile**  | **Valore ottimale** |
+| -----------------  | :-------------------:    | :-----------------: |
+| Interna            |             $>$ 40       |    $>$ 60           |
+| Esterna            |             $>$ 60       |    $>$ 80           |
+
+### QPD_2: Errori ortografici
+
+Indica l'insieme di errori grammaticali presenti nella documentazione interna ed esterna.
+
+### QPD_3: Copertura requisiti obbligatori
+
+Indice che misura in ogni istante la percentuale di requisiti obbligatori soddisfatti. La formula adottata è la seguente:
+
+CROB= $\frac{ ROBC }{ROB}{*100}$
+
+dove:
+
+* ROBC: indica il numero di requisiti obbligatori coperti dall'implementazione;
+
+* ROB: indica il numero complessivo di requisiti obbligatori.
+
+### QPD_4: Copertura requisiti desiderabili
+
+Indice che misura in ogni istante la percentuale di requisiti desiderabili soddisfatti. La formula adottata è la seguente:
+
+CRD= $\frac{ RDC }{RD}{*100}$
+
+dove:
+
+* RDC: indica il numero di requisiti desiderabili coperti dall'implementazione;
+* RD: indica il numero complessivo di requisiti opzionali.
+
+### QPD_5: Copertura requisiti opzionali
+
+Indice che misura in ogni istante la percentuale di requisiti opzionali soddisfatti. La formula adottata è la seguente:
+
+CROP= $\frac{ ROPC }{ROP}{*100}$
+
+dove:
+
+* ROPC: indica il numero di requisiti opzionali accettati coperti dall'implementazione.;
+* ROP: indica il numero complessivo di requisiti opzionali accettati.
+  
+### QPD_6: Versioni browser supportate
+
+Percentuale di versioni di browser supportate dal prodotto. Calcolabile con la seguente formula:
+
+BS= $\frac{ Bsup }{Btot}{*100}$
+
+dove:
+
+* Bsup indica il numero di browser in cui il prodotto può essere eseguito;
+* Btot indica il numero complessivo di browser presi in considerazione.
+
+I browser presi in considerazione sono:
+
+* Chrome;
+* Firefox;
+* Microsoft Edge;
+* Safari;
+
+### QPD_7: Complessità ciclomatica
+
+Misura la complessità strutturale del codice. Viene calcolato il numero di percorsi di codice diversi nel flusso del programma.
+
+### QPD_8: Profondità di ereditarietà
+
+Indica il numero di classi diverse che ereditano tra loro, fino alla classe di base.
+
+### QPD_9: Righe di codice eseguibile
+
+Indica il numero approssimativo di righe di codice eseguibili o operazioni.
+
+### QPD_10 Branch Coverage
+
+Indica che ciascun porzione di codice sia stato eseguito almeno una volta. Per branch si intende uno dei possibili path di codice che seguono una condizione decisionale.
+
+
+|    **Prodotto**   | **Valore accetabile**   | **Valore ottimale** |
+| ----------------- |  :-------------------:  | :-----------------: |
+| Software          |        $>$ 80%          |    $>$    95%       |
+
+Strumenti utilizzati:
+
+* Python
+
+|    **Codice**     |                  **Nome**                   | **Valore accetabile**  | **Valore ottimale** |
+| ----------------- | :-----------------------------------------: | :-------------------:  | :-----------------: |
+| QPD_3             |        Copertura requisiti obbligatori      |        100%            |         100%        |
+| QPD_4             |        Copertura requisiti desiderabili     |        $\geq$ 90%      |         100%        |
+| QPD_5             |           Copertura requisiti opzionali     |       $\geq$ 80%       |         100%        |
+| QPD_6             |          Versioni browser supportate        |        $\geq$ 80%      |         100%        |
+| QPD_7             |             Complessità ciclomatica         |                        |                     |
+| QPD_8             |           Profondità di ereditarietà        |                        |                     |
+| QPD_9             |           Righe di codice eseguibile        |           100%         |         100%        |
+| QPD_10            |               Branch Coverage               |       $\geq$ 80%       |         100%        |
 <!--# Specifica dei test
 
 ## Test di accettazione
