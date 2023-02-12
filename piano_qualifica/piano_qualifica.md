@@ -109,7 +109,7 @@ $$Metriche soddisfate=\frac{Numero di metriche soddisfate}{Numero di metri
 La presente sezione espone le metriche selezionate dal gruppo SevenEleven
 per misurare il raggiungimento degli obiettivi di qualità del prodotto.
 
-### **QPD_1: Indice di Gulpease**
+### **QPD_1: Indice di Gulpease (IG)**
 
  Indice che riporta il grado di leggibilità di un testo redatto in lingua italiana . La formula addottata è la seguente:
 
@@ -128,34 +128,23 @@ L'indice così calcolato può assumere valori tra 0 e 100:
 | Interna            |             $>$ 40       |    $>$ 60           |
 | Esterna            |             $>$ 60       |    $>$ 80           |
 
-### **QPD_2: Errori ortografici**
+### **QPD_2: Errori ortografici (EO)**
 
 Indica l'insieme di errori grammaticali presenti nella documentazione interna ed esterna.
 
-### **QPD_3: Copertura requisiti obbligatori**
+### **QPD_3: Copertura requisiti obbligatori (CRO)**
 
 Indice che misura in ogni istante la percentuale di requisiti obbligatori soddisfatti. La formula adottata è la seguente:
 
-$$CROB= \frac{ ROBC }{ROB}{*100}$$
+$$CRO= \frac{ ROI }{RO}{*100}$$
 
 dove:
 
-* ROBC: indica il numero di requisiti obbligatori coperti dall'implementazione;
+* ROI: indica il numero di requisiti obbligatori coperti dall'implementazione;
 
-* ROB: indica il numero complessivo di requisiti obbligatori.
+* RO: indica il numero complessivo di requisiti obbligatori.
 
-### **QPD_4: Copertura requisiti desiderabili**
-
-Indice che misura in ogni istante la percentuale di requisiti desiderabili soddisfatti. La formula adottata è la seguente:
-
-$$CRD= \frac{ RDC }{RD}{*100}$$
-
-dove:
-
-* RDC: indica il numero di requisiti desiderabili coperti dall'implementazione;
-* RD: indica il numero complessivo di requisiti opzionali.
-
-### **QPD_5: Copertura requisiti opzionali**
+### **QPD_4: Copertura requisiti opzionali**
 
 Indice che misura in ogni istante la percentuale di requisiti opzionali soddisfatti. La formula adottata è la seguente:
 
@@ -166,7 +155,7 @@ dove:
 * ROPC: indica il numero di requisiti opzionali accettati coperti dall'implementazione.;
 * ROP: indica il numero complessivo di requisiti opzionali accettati.
   
-### **QPD_6: Versioni browser supportate**
+### **QPD_5: Versioni browser supportate**
 
 Percentuale di versioni di browser supportate dal prodotto. Calcolabile con la seguente formula:
 
@@ -184,7 +173,7 @@ I browser presi in considerazione sono:
 * Microsoft Edge;
 * Safari;
 
-### **QPD_7: Complessità ciclomatica**
+### **QPD_6: Complessità ciclomatica**
 
 Misura la complessità strutturale del codice. Viene calcolato il numero di percorsi di codice diversi nel flusso del programma.
 
@@ -194,15 +183,15 @@ Complessità ciclomatica = E - N + 2P
 * N => Il numero di nodi del grafico
 * P => Il no dei componenti collegati
 
-### **QPD_8: Profondità di ereditarietà**
+### **QPD_7: Profondità di ereditarietà**
 
 Indica il numero di classi diverse che ereditano tra loro, fino alla classe di base.
 
-### **QPD_9: Righe di codice eseguibile**
+### **QPD_8: Righe di codice eseguibile**
 
 Indica il numero approssimativo di righe di codice eseguibili o operazioni.
 
-### **QPD_10 Branch Coverage**
+### **QPD_9 Branch Coverage**
 
 Indica che ciascun branch di codice sia stato eseguito almeno una volta. Per branch si intende uno dei possibili path di codice che seguono una condizione decisionale.
 
@@ -220,13 +209,12 @@ Strumenti utilizzati:
 | ----------------- | :-----------------------------------------: | :-------------------:  | :-----------------: |
 | QPD_2             |               Errori ortografici            |           0            |           0         |
 | QPD_3             |        Copertura requisiti obbligatori      |          100%          |         100%        |
-| QPD_4             |        Copertura requisiti desiderabili     |        $\geq$ 90%      |         100%        |
-| QPD_5             |           Copertura requisiti opzionali     |       $\geq$ 80%       |         100%        |
-| QPD_6             |          Versioni browser supportate        |        $\geq$ 80%      |         100%        |
-| QPD_7             |             Complessità ciclomatica         |        $\leq$ 2        |          1          |
-| QPD_8             |           Profondità di ereditarietà        |        $\leq$ 3        |          2          |
-| QPD_9             |           Righe di codice eseguibile        |           100%         |         100%        |
-| QPD_10            |               Branch Coverage               |       $\geq$ 80%       |         95%         |
+| QPD_4             |           Copertura requisiti opzionali     |       $\geq$ 80%       |         100%        |
+| QPD_5             |          Versioni browser supportate        |        $\geq$ 80%      |         100%        |
+| QPD_6             |             Complessità ciclomatica         |        $\leq$ 2        |          1          |
+| QPD_7             |           Profondità di ereditarietà        |        $\leq$ 3        |          2          |
+| QPD_8             |           Righe di codice eseguibile        |           100%         |         100%        |
+| QPD_9             |               Branch Coverage               |       $\geq$ 80%       |         95%         |
 <!--# Specifica dei test
 
 ## Test di accettazione
