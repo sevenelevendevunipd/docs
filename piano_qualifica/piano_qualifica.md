@@ -113,7 +113,7 @@ per misurare il raggiungimento degli obiettivi di qualità del prodotto.
 
  Indice che riporta il grado di leggibilità di un testo redatto in lingua italiana . La formula addottata è la seguente:
 
-GULP= ${89+}\frac{ 300  *(numerodellefrasi) - 10*(numero delle lettere) }{numero delle parole}$
+GULP= ${89+}\frac{ 300  *(num_{frasi}) - 10*(num_{lettere}) }{num_{parole}}$
 
 L'indice così calcolato può assumere valori tra 0 e 100:
 
@@ -144,7 +144,7 @@ dove:
 
 * RO: indica il numero complessivo di requisiti obbligatori.
 
-### **QPD_4: Copertura requisiti opzionali(CRO)**
+### **QPD_4: Copertura requisiti opzionali (CRO)**
 
 Indice che misura in ogni istante la percentuale di requisiti opzionali soddisfatti. La formula adottata è la seguente:
 
@@ -155,7 +155,7 @@ dove:
 * ROPC: indica il numero di requisiti opzionali accettati coperti dall'implementazione.;
 * ROP: indica il numero complessivo di requisiti opzionali accettati.
   
-### **QPD_5: Versioni browser supportate(VB)**
+### **QPD_5: Versioni browser supportate (VB)**
 
 Percentuale di versioni di browser supportate dal prodotto. Calcolabile con la seguente formula:
 
@@ -174,7 +174,7 @@ I browser presi in considerazione sono:
 * Safari;
 * Opera;
   
-### **QPD_6: Complessità ciclomatica(CC)**
+### **QPD_6: Complessità ciclomatica (CC)**
 
 Misura la complessità strutturale del codice. Viene calcolato il numero di blocchi di codice annidati nel flusso del programma.
 
@@ -184,11 +184,11 @@ Complessità ciclomatica = E - N + 2P
 * N => Il numero di nodi del grafico
 * P => Il no dei componenti collegati
 
-### **QPD_7: Profondità di ereditarietà(PE)**
+### **QPD_7: Profondità di ereditarietà (PE)**
 
 Indica il numero di classi diverse che ereditano tra loro, fino alla classe di base.
 
-### **QPD_8: Righe di codice eseguibile(RCE)**
+### **QPD_8: Righe di codice eseguibile (RCE)**
 
 Indica il numero approssimativo di righe di codice eseguibili.
 
