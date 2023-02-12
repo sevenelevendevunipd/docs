@@ -119,7 +119,7 @@ L'indice così calcolato può assumere valori tra 0 e 100:
 
 * GULP < 80: indica una leggibilità difficile per utente con licenza elementare;
 
-* GULP < 60: indica una leggibilità difficile per un utente con licenza elementare;
+* GULP < 60: indica una leggibilità difficile per un utente con licenza media;
 
 * GULP < 40: indica una leggibilità difficile con licenza superiore;
 
