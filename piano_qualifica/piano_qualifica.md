@@ -2,9 +2,9 @@
 title: "Piano di qualifica"
 date: "06/12/2022"
 responsabile: "Davide Vitagliano"
-redattori: ["Mattia Brunello", "Andrea Auletta"]
-verificatori: ["Antonio Stan", "Nicola Cecchetto", "Enrik Rucaj", "Augusto Zanellato"]
-abstract: "Vengono definito il piano di qualifica"
+redattori: ["Enrik Rucaj", "Antonio Stan"]
+verificatori: ["Andrea Auletta", "Nicola Cecchetto", "Mattia Brunello", "Augusto Zanellato"]
+abstract: "Viene definito il piano di qualifica"
 docusage: "Esterno"
 toc: true
 versioni:
@@ -16,6 +16,10 @@ versioni:
     autore: Andrea Auletta
     data: 24/12/2022
     cambiamenti: Inseriti gli obiettivi da raggiungere
+  v0.0.3:
+    autore: Enrik Rucaj
+    data: 12/01/2022
+    cambiamenti: Inserite le metriche per la qualita' di processo
 
 ...
 
@@ -47,22 +51,42 @@ Alcuni termini utilizzati nel documento potrebbero generare incomprensione per i
 
 ## Obiettivi
 
-* **Processi primari**:
-  * Fornitura: vengono prese le decisioni riguardo alle risorse e alle necessità del cliente;
-  * Sviluppo: sviluppo del prodotto software;
-* **Processi di supporto**:
-  * Verifica: controllo del rispetto dei requisiti;
-  * Gestione della qualità: controllo del prodotto rispetto agli standard definiti;
-* **Processi organizzativi**:
-  * Gestione organizzativa: modalità di coordinamento del gruppo;
-
 ## Metriche utilizzate
 
-### Processi primari
+* **QPS_1: Preventivo costo attuale (PCA)** = Somma dei costi di ogni periodo calcolato nel preventivo iniziale a partire dall'inizio del progetto fino a un determinato periodo.
+* **QPS_2: Costo attuale (CA)** = Il costo effettivo calcolato a partire dall'inizio del progetto fino a un determinato periodo.
+* **QPS_3: Stima costo a finire (SCF)** = Il costo che servirà a portare a termine il progetto a partire da un determinato periodo.
+$$SCF=Budget-PCA$$
+* **QPS_4: Stima costo totale (SCT)** = Revisione del budget totale che servirà per portare a compimento il progetto.
+$$SCT=SCF+CA$$
+* **QPS_5: Rapporto costo (RC)** = Percentuale del rapporto tra il costo attuale (CA) e quello calcolato nel preventivo a partire dall'inizio del progetto fino a un determinato periodo. *In caso di risultato negativo si rischia di andare fuori budget*.
+$$RC=(1-\frac{CA}{PCA})*100$$
+* **QPS_6: Preventivo periodo temporale attuale (PPTA)** = Somma delle ore svolte in ogni periodo calcolate nel preventivo iniziale a partire dall'inizio del progetto fino a un determinato periodo.
+* **QPS_7: Periodo temporale attuale (PTA)** = Le ore effettive svolte a partire dall'inizio del progetto fino a un determinato periodo.
+* **QPS_8: Stima lasso temporale a finire (SLTF)** = Il lasso di tempo che servirà a portare a termine il progetto a partire da un determinato periodo.
+$$SLTF=Tempo di sviluppo totale-PPTA$$
+* **QPS_9: Stima tempo di sviluppo totale (STST)** = Revisione del lasso temporale totale che servirà per sviluppare interamente il progetto.
+$$STST=SLTF+PTA$$
+* **QPS_10: Rapporto periodo temporale (RPT)** = Percentuale del rapporto tra il periodo temporale attuale (PTA) e quello calcolato nel preventivo a partire dall'inizio del progetto fino a un determinato periodo. *In caso di risultato negativo si rischia di andare fuori budget*.
+$$RPT=(1-\frac{PTA}{PPTA})*100$$
+* **QPS_11: Metriche soddisfate (MS)** = Percentuale delle metriche di qualità (sia di processo che di prodotto) soddisfate in un determinato periodo.
+$$Metriche soddisfate=\frac{Numero di metriche soddisfate}{Numero di metriche totali}*100$$
 
-### Processi di supporto
+### Tabella metriche - Valori accetabili e ottimali
 
-## Processi organizzativi
+|    **Codice**     |                  **Nome**                   | **Valore accetabile**  | **Valore ottimale** |
+| ----------------- | :-----------------------------------------: | :-------------------:  | :-----------------: |
+| QPS_1             |        Preventivo costo attuale (PCA)       |        $>$ 0           |    $\leq$ Budget    |
+| QPS_2             |              Costo attuale (CA)             |        $>$ 0           |     $\leq$ PCA      |
+| QPS_3             |          Stima costo a finire (SCF)         |       $\geq$           |    $\leq$ Budget    |
+| QPS_4             |           Stima costo totale (SCT)          |  $\leq$ Budget + 5%    |     $=$ Budget      |
+| QPS_5             |              Rapporto costo (RC)            |     $\geq$ -20%        |     $\geq$ 0%       |
+| QPS_6             | Preventivo periodo temporale attuale (PPTA) |         $>$ 0          |  $\leq$ Ore Totali  |
+| QPS_7             |        Periodo temporale attuale (PTA)      |         $>$ 0          |     $\leq$ PPTA     |
+| QPS_8             |     Stima lasso temporale a finire (SLTF)   |       $\geq$ 0         |  $\leq$ Ore Total   |
+| QPS_9             |     Stima tempo di sviluppo totale (STST)   | $\leq$ Ore Totali + 5% |    $=$ Ore Totali   |
+| QPS_10            |        Rapporto periodo temporale (RPT)     |     $\geq$ -20%        |     $\geq$ 0%       |
+| QPS_11            |            Metriche soddisfate (MS)         |      $\geq$ 80%        |      $=$ 100%       |
 
 # Qualità del prodotto
 
@@ -99,7 +123,7 @@ Il valore ottimale risulta più alto nei documenti esterni data la neccesità di
 
 ## Metriche utilizzate
 
-# Specifica dei test
+<!--# Specifica dei test
 
 ## Test di accettazione
 
@@ -108,3 +132,4 @@ Il valore ottimale risulta più alto nei documenti esterni data la neccesità di
 ## Test di integrazione
 
 ## Test di unità
+-->
