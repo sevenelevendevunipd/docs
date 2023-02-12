@@ -208,7 +208,7 @@ Strumenti utilizzati:
 
 |    **Codice**     |                  **Nome**                   | **Valore accetabile**  | **Valore ottimale** |
 | ----------------- | :-----------------------------------------: | :-------------------:  | :-----------------: |
-| QPD_2             |               Errori ortografici            |           0            |           0         |
+| QPD_2             |               Errori ortografici            |           8%           |           0         |
 | QPD_3             |        Copertura requisiti obbligatori      |          100%          |         100%        |
 | QPD_4             |           Copertura requisiti opzionali     |       $\geq$ 20%       |         100%        |
 | QPD_5             |          Versioni browser supportate        |        $\geq$ 80%      |         100%        |
