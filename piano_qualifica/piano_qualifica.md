@@ -132,7 +132,7 @@ L'indice così calcolato può assumere valori tra 0 e 100:
 
 Indica l'insieme di errori grammaticali presenti nella documentazione interna ed esterna.
 
-### **QPD_3: Copertura requisiti obbligatori (CRO)**
+### **QPD_3: Copertura requisiti obbligatori (CR)**
 
 Indice che misura in ogni istante la percentuale di requisiti obbligatori soddisfatti. La formula adottata è la seguente:
 
@@ -144,7 +144,7 @@ dove:
 
 * RO: indica il numero complessivo di requisiti obbligatori.
 
-### **QPD_4: Copertura requisiti opzionali**
+### **QPD_4: Copertura requisiti opzionali(CRO)**
 
 Indice che misura in ogni istante la percentuale di requisiti opzionali soddisfatti. La formula adottata è la seguente:
 
@@ -155,7 +155,7 @@ dove:
 * ROPC: indica il numero di requisiti opzionali accettati coperti dall'implementazione.;
 * ROP: indica il numero complessivo di requisiti opzionali accettati.
   
-### **QPD_5: Versioni browser supportate**
+### **QPD_5: Versioni browser supportate(VB)**
 
 Percentuale di versioni di browser supportate dal prodotto. Calcolabile con la seguente formula:
 
@@ -174,7 +174,7 @@ I browser presi in considerazione sono:
 * Safari;
 * Opera;
   
-### **QPD_6: Complessità ciclomatica**
+### **QPD_6: Complessità ciclomatica(CC)**
 
 Misura la complessità strutturale del codice. Viene calcolato il numero di blocchi di codice annidati nel flusso del programma.
 
@@ -184,17 +184,17 @@ Complessità ciclomatica = E - N + 2P
 * N => Il numero di nodi del grafico
 * P => Il no dei componenti collegati
 
-### **QPD_7: Profondità di ereditarietà**
+### **QPD_7: Profondità di ereditarietà(PE)**
 
 Indica il numero di classi diverse che ereditano tra loro, fino alla classe di base.
 
-### **QPD_8: Righe di codice eseguibile**
+### **QPD_8: Righe di codice eseguibile(RCE)**
 
 Indica il numero approssimativo di righe di codice eseguibili.
 
-### **QPD_9 Branch Coverage**
+### **QPD_9 Branch Coverage(BC)**
 
-Indica che ciascun branch di codice sia stato eseguito almeno una volta. Per branch si intende uno dei possibili path di codice che seguono una condizione decisionale.
+Indica che ciascun branch di codice sia stato eseguito almeno una volta. <!--Per branch si intende uno dei possibili path di codice che seguono una condizione decisionale* metterlo nel glossario(?) -->
 
 |    **Prodotto**   | **Valore accetabile**   | **Valore ottimale** |
 | ----------------- |  :-------------------:  | :-----------------: |
