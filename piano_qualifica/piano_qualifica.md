@@ -172,7 +172,8 @@ I browser presi in considerazione sono:
 * Firefox;
 * Microsoft Edge;
 * Safari;
-
+* Opera;
+  
 ### **QPD_6: Complessità ciclomatica**
 
 Misura la complessità strutturale del codice. Viene calcolato il numero di percorsi di codice diversi nel flusso del programma.
