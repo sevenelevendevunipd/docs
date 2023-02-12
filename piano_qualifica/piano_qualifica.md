@@ -20,6 +20,10 @@ versioni:
     autore: Enrik Rucaj
     data: 12/01/2022
     cambiamenti: Inserite le metriche per la qualita' di processo
+  v0.0.3:
+    autore: Antonio Stan
+    data: 16/01/2022
+    cambiamenti: Inserite le metriche per la qualita' di prodotto
 
 ...
 
@@ -53,23 +57,55 @@ Alcuni termini utilizzati nel documento potrebbero generare incomprensione per i
 
 ## Metriche utilizzate
 
-* **QPS_1: Preventivo costo attuale (PCA)** = Somma dei costi di ogni periodo calcolato nel preventivo iniziale a partire dall'inizio del progetto fino a un determinato periodo.
-* **QPS_2: Costo attuale (CA)** = Il costo effettivo calcolato a partire dall'inizio del progetto fino a un determinato periodo.
-* **QPS_3: Stima costo a finire (SCF)** = Il costo che servirà a portare a termine il progetto a partire da un determinato periodo.
+### **QPS_1: Preventivo costo attuale (PCA)**
+
+Somma dei costi di ogni periodo calcolato nel preventivo iniziale a partire dall'inizio del progetto fino a un determinato periodo.
+
+### **QPS_2: Costo attuale (CA)**
+
+Il costo effettivo calcolato a partire dall'inizio del progetto fino a un determinato periodo.
+
+### **QPS_3: Stima costo a finire (SCF)**
+
+Il costo che servirà a portare a termine il progetto a partire da un determinato periodo.
 $$SCF=Budget-PCA$$
-* **QPS_4: Stima costo totale (SCT)** = Revisione del budget totale che servirà per portare a compimento il progetto.
+
+### **QPS_4: Stima costo totale (SCT)**
+
+Revisione del budget totale che servirà per portare a compimento il progetto.
 $$SCT=SCF+CA$$
-* **QPS_5: Rapporto costo (RC)** = Percentuale del rapporto tra il costo attuale (CA) e quello calcolato nel preventivo a partire dall'inizio del progetto fino a un determinato periodo. *In caso di risultato negativo si rischia di andare fuori budget*.
+
+### **QPS_5: Rapporto costo (RC)**
+
+Percentuale del rapporto tra il costo attuale (CA) e quello calcolato nel preventivo a partire dall'inizio del progetto fino a un determinato periodo. *In caso di risultato negativo si rischia di andare fuori budget*.
 $$RC=(1-\frac{CA}{PCA})*100$$
-* **QPS_6: Preventivo periodo temporale attuale (PPTA)** = Somma delle ore svolte in ogni periodo calcolate nel preventivo iniziale a partire dall'inizio del progetto fino a un determinato periodo.
-* **QPS_7: Periodo temporale attuale (PTA)** = Le ore effettive svolte a partire dall'inizio del progetto fino a un determinato periodo.
-* **QPS_8: Stima lasso temporale a finire (SLTF)** = Il lasso di tempo che servirà a portare a termine il progetto a partire da un determinato periodo.
+
+### **QPS_6: Preventivo periodo temporale attuale (PPTA)**
+
+Somma delle ore svolte in ogni periodo calcolate nel preventivo iniziale a partire dall'inizio del progetto fino a un determinato periodo.
+
+### **QPS_7: Periodo temporale attuale (PTA)**
+
+Le ore effettive svolte a partire dall'inizio del progetto fino a un determinato periodo.
+
+### **QPS_8: Stima lasso temporale a finire (SLTF)**
+
+Il lasso di tempo che servirà a portare a termine il progetto a partire da un determinato periodo.
 $$SLTF=Tempo di sviluppo totale-PPTA$$
-* **QPS_9: Stima tempo di sviluppo totale (STST)** = Revisione del lasso temporale totale che servirà per sviluppare interamente il progetto.
+
+### **QPS_9: Stima tempo di sviluppo totale (STST)**
+
+Revisione del lasso temporale totale che servirà per sviluppare interamente il progetto.
 $$STST=SLTF+PTA$$
-* **QPS_10: Rapporto periodo temporale (RPT)** = Percentuale del rapporto tra il periodo temporale attuale (PTA) e quello calcolato nel preventivo a partire dall'inizio del progetto fino a un determinato periodo. *In caso di risultato negativo si rischia di andare fuori budget*.
+
+### **QPS_10: Rapporto periodo temporale (RPT)**
+
+Percentuale del rapporto tra il periodo temporale attuale (PTA) e quello calcolato nel preventivo a partire dall'inizio del progetto fino a un determinato periodo. *In caso di risultato negativo si rischia di andare fuori budget*.
 $$RPT=(1-\frac{PTA}{PPTA})*100$$
-* **QPS_11: Metriche soddisfate (MS)** = Percentuale delle metriche di qualità (sia di processo che di prodotto) soddisfate in un determinato periodo.
+
+### **QPS_11: Metriche soddisfate (MS)**
+
+Percentuale delle metriche di qualità (sia di processo che di prodotto) soddisfate in un determinato periodo.
 $$Metriche soddisfate=\frac{Numero di metriche soddisfate}{Numero di metriche totali}*100$$
 
 ### Tabella metriche - Valori accetabili e ottimali
@@ -113,7 +149,7 @@ per misurare il raggiungimento degli obiettivi di qualità del prodotto.
 
  Indice che riporta il grado di leggibilità di un testo redatto in lingua italiana . La formula addottata è la seguente:
 
-GULP= ${89+}\frac{ 300  *(num_{frasi}) - 10*(num_{lettere}) }{num_{parole}}$
+$$GULP= {89+}\frac{ 300  *(numerodellefrasi) - 10*(numero delle lettere) }{numero delle parole}$$
 
 L'indice così calcolato può assumere valori tra 0 e 100:
 
@@ -132,7 +168,7 @@ L'indice così calcolato può assumere valori tra 0 e 100:
 
 Indica l'insieme di errori grammaticali presenti nella documentazione interna ed esterna.
 
-### **QPD_3: Copertura requisiti obbligatori (CR)**
+### **QPD_3: Copertura requisiti obbligatori (CRO)**
 
 Indice che misura in ogni istante la percentuale di requisiti obbligatori soddisfatti. La formula adottata è la seguente:
 
@@ -144,7 +180,7 @@ dove:
 
 * RO: indica il numero complessivo di requisiti obbligatori.
 
-### **QPD_4: Copertura requisiti opzionali (CRO)**
+### **QPD_4: Copertura requisiti opzionali (CROP)**
 
 Indice che misura in ogni istante la percentuale di requisiti opzionali soddisfatti. La formula adottata è la seguente:
 
@@ -155,11 +191,11 @@ dove:
 * ROPC: indica il numero di requisiti opzionali accettati coperti dall'implementazione.;
 * ROP: indica il numero complessivo di requisiti opzionali accettati.
   
-### **QPD_5: Versioni browser supportate (VB)**
+### **QPD_5: Versioni browser supportate (VBS)**
 
 Percentuale di versioni di browser supportate dal prodotto. Calcolabile con la seguente formula:
 
-$$BS= \frac{ Bsup }{Btot}{*100}$$
+$$VBS= \frac{ Bsup }{Btot}{*100}$$
 
 dove:
 
@@ -186,13 +222,13 @@ Complessità ciclomatica = E - N + 2P
 
 ### **QPD_7: Profondità di ereditarietà (PE)**
 
-Indica il numero di classi diverse che ereditano tra loro, fino alla classe di base.
+Indica il numero di classi diverse che ereditano tra loro, fino alla classe base.
 
 ### **QPD_8: Righe di codice eseguibile (RCE)**
 
 Indica il numero approssimativo di righe di codice eseguibili.
 
-### **QPD_9 Branch Coverage(BC)**
+### **QPD_9 Branch Coverage (BC)**
 
 Indica che ciascun branch di codice sia stato eseguito almeno una volta. <!--Per branch si intende uno dei possibili path di codice che seguono una condizione decisionale* metterlo nel glossario(?) -->
 
@@ -204,18 +240,18 @@ Strumenti utilizzati:
 
 * Python
 
-## **Valori ideali per le metriche**
+### Tabella metriche - Valori accetabili e ottimali
 
 |    **Codice**     |                  **Nome**                   | **Valore accetabile**  | **Valore ottimale** |
 | ----------------- | :-----------------------------------------: | :-------------------:  | :-----------------: |
-| QPD_2             |               Errori ortografici            |           8%           |           0         |
-| QPD_3             |        Copertura requisiti obbligatori      |          100%          |         100%        |
-| QPD_4             |           Copertura requisiti opzionali     |       $\geq$ 20%       |         100%        |
-| QPD_5             |          Versioni browser supportate        |        $\geq$ 80%      |         100%        |
-| QPD_6             |             Complessità ciclomatica         |        $\leq$ 2        |          1          |
-| QPD_7             |           Profondità di ereditarietà        |        $\leq$ 3        |        $\leq$ 2     |
-| QPD_8             |           Righe di codice eseguibile        |    $\leq$ 1000 righe   | $\leq$ 500 righe    |
-| QPD_9             |               Branch Coverage               |       $\geq$ 80%       |         95%         |
+| QPD_2             |               Errori ortografici (EO)       |       $\leq$ 8%        |           0         |
+| QPD_3             |     Copertura requisiti obbligatori (CRO)   |          100%          |         100%        |
+| QPD_4             |      Copertura requisiti opzionali (CROP)   |       $\geq$ 20%       |         100%        |
+| QPD_5             |        Versioni browser supportate (VBS)    |        $\geq$ 80%      |         100%        |
+| QPD_6             |             Complessità ciclomatica (CC)    |        $\leq$ 2        |          1          |
+| QPD_7             |           Profondità di ereditarietà (PE)   |        $\leq$ 3        |        $\leq$ 2     |
+| QPD_8             |           Righe di codice eseguibile (RCE)  |    $\leq$ 1000 righe   | $\leq$ 500 righe    |
+| QPD_9             |               Branch Coverage (BC)          |       $\geq$ 80%       |         95%         |
 <!--# Specifica dei test
 
 ## Test di accettazione
