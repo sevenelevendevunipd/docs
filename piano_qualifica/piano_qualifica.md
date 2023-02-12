@@ -109,11 +109,11 @@ $$Metriche soddisfate=\frac{Numero di metriche soddisfate}{Numero di metri
 La presente sezione espone le metriche selezionate dal gruppo SevenEleven
 per misurare il raggiungimento degli obiettivi di qualità del prodotto.
 
-### QPD_1: Indice di Gulpease  
+### **QPD_1: Indice di Gulpease**
 
  Indice che riporta il grado di leggibilità di un testo redatto in lingua italiana . La formula addottata è la seguente:
 
- GULP=  ${89+}\frac{ 300  *(numerodellefrasi) - 10*(numero delle lettere) }{numero delle parole}$
+   GULP= ${89+}\frac{ 300  *(numerodellefrasi) - 10*(numero delle lettere) }{numero delle parole}$
 
 L'indice così calcolato può assumere valori tra 0 e 100:
 
@@ -125,18 +125,18 @@ L'indice così calcolato può assumere valori tra 0 e 100:
 
 | **Documentazione** |   **Valore accetabile**  | **Valore ottimale** |
 | -----------------  | :-------------------:    | :-----------------: |
-| Interna            |             $>$ 40       |    $>$ 60           |
+| Interna            |             $>$ 40       |    $>$ 60           | 
 | Esterna            |             $>$ 60       |    $>$ 80           |
 
-### QPD_2: Errori ortografici
+### **QPD_2: Errori ortografici**
 
 Indica l'insieme di errori grammaticali presenti nella documentazione interna ed esterna.
 
-### QPD_3: Copertura requisiti obbligatori
+### **QPD_3: Copertura requisiti obbligatori**
 
 Indice che misura in ogni istante la percentuale di requisiti obbligatori soddisfatti. La formula adottata è la seguente:
 
-CROB= $\frac{ ROBC }{ROB}{*100}$
+$$CROB= \frac{ ROBC }{ROB}{*100}$$
 
 dove:
 
@@ -144,7 +144,7 @@ dove:
 
 * ROB: indica il numero complessivo di requisiti obbligatori.
 
-### QPD_4: Copertura requisiti desiderabili
+### **QPD_4: Copertura requisiti desiderabili**
 
 Indice che misura in ogni istante la percentuale di requisiti desiderabili soddisfatti. La formula adottata è la seguente:
 
@@ -155,7 +155,7 @@ dove:
 * RDC: indica il numero di requisiti desiderabili coperti dall'implementazione;
 * RD: indica il numero complessivo di requisiti opzionali.
 
-### QPD_5: Copertura requisiti opzionali
+### **QPD_5: Copertura requisiti opzionali**
 
 Indice che misura in ogni istante la percentuale di requisiti opzionali soddisfatti. La formula adottata è la seguente:
 
@@ -166,7 +166,7 @@ dove:
 * ROPC: indica il numero di requisiti opzionali accettati coperti dall'implementazione.;
 * ROP: indica il numero complessivo di requisiti opzionali accettati.
   
-### QPD_6: Versioni browser supportate
+### **QPD_6: Versioni browser supportate**
 
 Percentuale di versioni di browser supportate dal prodotto. Calcolabile con la seguente formula:
 
@@ -184,19 +184,19 @@ I browser presi in considerazione sono:
 * Microsoft Edge;
 * Safari;
 
-### QPD_7: Complessità ciclomatica
+### **QPD_7: Complessità ciclomatica**
 
 Misura la complessità strutturale del codice. Viene calcolato il numero di percorsi di codice diversi nel flusso del programma.
 
-### QPD_8: Profondità di ereditarietà
+### **QPD_8: Profondità di ereditarietà**
 
 Indica il numero di classi diverse che ereditano tra loro, fino alla classe di base.
 
-### QPD_9: Righe di codice eseguibile
+### **QPD_9: Righe di codice eseguibile**
 
 Indica il numero approssimativo di righe di codice eseguibili o operazioni.
 
-### QPD_10 Branch Coverage
+### **QPD_10 Branch Coverage**
 
 Indica che ciascun porzione di codice sia stato eseguito almeno una volta. Per branch si intende uno dei possibili path di codice che seguono una condizione decisionale.
 
@@ -209,8 +209,11 @@ Strumenti utilizzati:
 
 * Python
 
+## **Valori ideali per le metriche**
+
 |    **Codice**     |                  **Nome**                   | **Valore accetabile**  | **Valore ottimale** |
 | ----------------- | :-----------------------------------------: | :-------------------:  | :-----------------: |
+| QPD_2             |               Errori ortografici            |           0            |        0            |
 | QPD_3             |        Copertura requisiti obbligatori      |        100%            |         100%        |
 | QPD_4             |        Copertura requisiti desiderabili     |        $\geq$ 90%      |         100%        |
 | QPD_5             |           Copertura requisiti opzionali     |       $\geq$ 80%       |         100%        |
@@ -218,7 +221,7 @@ Strumenti utilizzati:
 | QPD_7             |             Complessità ciclomatica         |                        |                     |
 | QPD_8             |           Profondità di ereditarietà        |                        |                     |
 | QPD_9             |           Righe di codice eseguibile        |           100%         |         100%        |
-| QPD_10            |               Branch Coverage               |       $\geq$ 80%       |         100%        |
+| QPD_10            |               Branch Coverage               |       $\geq$ 80%       |         95%         |
 <!--# Specifica dei test
 
 ## Test di accettazione
@@ -227,5 +230,5 @@ Strumenti utilizzati:
 
 ## Test di integrazione
 
-## Test di unità
+## Test di unit
 -->
