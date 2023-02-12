@@ -125,7 +125,7 @@ L'indice così calcolato può assumere valori tra 0 e 100:
 
 | **Documentazione** |   **Valore accetabile**  | **Valore ottimale** |
 | -----------------  | :-------------------:    | :-----------------: |
-| Interna            |             $>$ 40       |    $>$ 60           | 
+| Interna            |             $>$ 40       |    $>$ 60           |
 | Esterna            |             $>$ 60       |    $>$ 80           |
 
 ### **QPD_2: Errori ortografici**
@@ -148,7 +148,7 @@ dove:
 
 Indice che misura in ogni istante la percentuale di requisiti desiderabili soddisfatti. La formula adottata è la seguente:
 
-CRD= $\frac{ RDC }{RD}{*100}$
+$$CRD= \frac{ RDC }{RD}{*100}$$
 
 dove:
 
@@ -159,7 +159,7 @@ dove:
 
 Indice che misura in ogni istante la percentuale di requisiti opzionali soddisfatti. La formula adottata è la seguente:
 
-CROP= $\frac{ ROPC }{ROP}{*100}$
+$$CROP= \frac{ ROPC }{ROP}{*100}$$
 
 dove:
 
@@ -170,7 +170,7 @@ dove:
 
 Percentuale di versioni di browser supportate dal prodotto. Calcolabile con la seguente formula:
 
-BS= $\frac{ Bsup }{Btot}{*100}$
+$$BS= \frac{ Bsup }{Btot}{*100}$$
 
 dove:
 
@@ -199,7 +199,6 @@ Indica il numero approssimativo di righe di codice eseguibili o operazioni.
 ### **QPD_10 Branch Coverage**
 
 Indica che ciascun porzione di codice sia stato eseguito almeno una volta. Per branch si intende uno dei possibili path di codice che seguono una condizione decisionale.
-
 
 |    **Prodotto**   | **Valore accetabile**   | **Valore ottimale** |
 | ----------------- |  :-------------------:  | :-----------------: |
