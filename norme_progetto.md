@@ -40,6 +40,10 @@ versioni:
     autore: Andrea Auletta
     data: 23/12/2022
     cambiamenti: Aggiornati vari paragrafi e aggiunto il capitolo "Processi organizzativi"
+  v0.0.9:
+    autore: Andrea Auletta
+    data: 14/02/2023
+    cambiamenti: Aggiunte le norme per il tracciamento dei requisiti
 ...
 
 # Introduzione
@@ -116,22 +120,6 @@ Il documento sarà composto dalle seguenti parti:
 
 Questa sezione contiene le norme usate per la stesura del documento *Analisi dei requisiti*. Nello specifico, contiene la spiegazione dei codici usati per identificare i requisiti.
 
-#### Requisiti
-
-Ogni requisito è identificato da un codice alfanumerico. Esistono:
-
-* Requisiti funzionali, identificati con **RF**;
-* Requisiti di qualità, identificati con **RQ**;
-* Requisiti di vincoli, identificati con **RV**;
-* Requisiti opzionali, identificati con **RO**;
-* Requisiti qualitativi, identificati con **RV**;
-* Requisiti sistemi operativi, identificati con **RSO**;
-* Requisiti prestazionali, identificati con **VRP**.
-
-Visto che il progetto si occupa di due applicazioni distinte, ai codici dei requisiti funzionali si aggiunge all'inizio **V** se è un requisito per SmartLogViewer, oppure **S** se è un requisito per SmartLogStatistics.
-
-Ogni requisito ha alla fine del codice un numero puntato.
-
 #### Casi d'uso
 
 I casi d'uso descrivono l'interazione del sistema con le entità esterne (al sistema) che la usano (ad esempio l'utente/operatore). Sono utili ad esprimere varie sequenze di azioni che hanno in comune uno scopo finale.
@@ -159,6 +147,31 @@ Ad ogni caso d'uso vengono associate due tipologie di etichette:
 
 * [VUC], [SUC] o [OUC] rimandano al caso d'uso padre da cui derivano.
 * (VRF), (SRF) o (RO) rimandano ai requisiti funzionali che i casi d'uso cercando di descrivere.
+
+#### Requisiti
+
+Ogni requisito è identificato da un codice alfanumerico. Esistono:
+
+* Requisiti funzionali, identificati con **RF**;
+* Requisiti di qualità, identificati con **RQ**;
+* Requisiti di vincoli, identificati con **RV**;
+* Requisiti opzionali, identificati con **RO**;
+* Requisiti qualitativi, identificati con **RV**;
+* Requisiti sistemi operativi, identificati con **RSO**;
+* Requisiti prestazionali, identificati con **VRP**.
+
+Visto che il progetto si occupa di due applicazioni distinte, ai codici dei requisiti funzionali si aggiunge all'inizio **V** se è un requisito per SmartLogViewer, oppure **S** se è un requisito per SmartLogStatistics.
+
+Ogni requisito ha alla fine del codice un numero puntato.
+
+#### Tracciamento dei requisiti
+
+I requisiti vengono tracciati mediante una tabella di quattro colonne:
+
+* Requisito: sigla del requisito;
+* Descrizione: breve descrizione del requisito;
+* Classificazione: importanza attribuita al requisito(obbligatorio, opzionale, desiderabile);
+* Fonte: da dove viene tratto il requisito.
 
 # Processi di supporto
 
