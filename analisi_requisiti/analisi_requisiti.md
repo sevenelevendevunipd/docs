@@ -101,7 +101,7 @@ documento *Glossario*[^1] assieme alle loro definizioni.
 * [Slide sull'analisi dei requisiti tratte dalle lezioni del professor T. Vardanega](https://www.math.unipd.it/~tullio/IS-1/2022/Dispense/T06.pdf)
 * [Slide sugli Use Case tratte dalle lezioni del professor R. Cardin](https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf)
 
-# Requisiti
+<!--# Requisiti
 
 Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti delle applicazioni "SmartLogViewer" e "SmartLogStatistics".
 
@@ -126,8 +126,7 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
 * VRF3 - Deve essere presente una visualizzazione in forma grafica con le seguenti caratteristiche:
   * VRF3.1 - L’asse X rappresenta il tempo;
   * VRF3.2 - L’asse Y contiene l’insieme degli eventi;
-  * VRF3.3 - Un rettangolo “pieno” che si sviluppa sull'asse x indica il periodo di tempo in cui l’evento (indicato
-    sull'asse y) è ATTIVO;
+  * VRF3.3 - Un rettangolo “pieno” che si sviluppa sull'asse x indica il periodo di tempo in cui l’evento (indicato sull'asse y) è ATTIVO;
   * VRF3.4 - Deve essere possibile cambiare l'intervallo temporale del grafico con le seguenti funzioni:
     * VRF3.4.1 - Select: selezione degli estremi temporali;
     * VRF3.4.2 - Zoom: zoom in/out;
@@ -195,11 +194,11 @@ Entrambe le applicazioni non hanno bisogno di essere eseguite su un sistema oper
 
 * VRSO1 - L'applicazione web SmartLogViewer viene eseguita solo lato client;
 * SRSO1 - L'applicazione web SmartLogStatistics è basata su un modello client-server.
-<!-- trovare un modo sensato per dire sta roba-->
 
 ## Requisiti prestazionali
 
 * VRP1 - I tempi computazionali non devono essere eccessivi per entrambe le applicazioni.
+-->
 
 # Casi d'uso
 
@@ -301,6 +300,8 @@ usecase VUC2.1.5 as "VUC2.1.5
 Visualizzazione Descrizione"
 usecase VUC2.1.6 as "VUC2.1.6
 Visualizzazione Stato (ON/OFF)"
+usecase VUC2.1.7 as "VUC2.1.7
+Visualizzazione Colore Evento"
 }
 y--VUC2.1.1
 y--VUC2.1.2
@@ -308,6 +309,7 @@ y--VUC2.1.3
 y--VUC2.1.4
 y--VUC2.1.5
 y--VUC2.1.6
+y--VUC2.1.7
 ```
 
 * Scenario: l'utente vuole visualizzare i dati di una singola riga del log;
@@ -356,6 +358,13 @@ y--VUC2.1.6
 * Attore: tecnico;
 * Precondizioni: è stato caricato correttamente un file di log [VUC1];
 * Postcondizioni: viene visualizzato lo stato della riga del log;
+
+##### VUC2.1.7 - Visualizzazione Stato (VRF2.7.1)
+
+* Scenario: l'utente vuole visualizzare il colore associato all'evento di una riga del log;
+* Attore: tecnico;
+* Precondizioni: è stato caricato correttamente un file di log [VUC1];
+* Postcondizioni: viene visualizzato il colore associato all'evento della riga del log;
 
 ### VUC3 - Modifica Visualizzazione della Tabella (VRF2.7)
 
@@ -474,10 +483,47 @@ r-- VUC3.1.3
 
 ### VUC5 - Visualizzazione Grafico (VRF3)
 
-* Scenario: l'utente vuole visualizzare gli eventi del log in un grafico;
+```{ .plantuml caption="VUC5"}
+left to right direction
+:Tecnico: as i
+package "VUC5"{
+usecase VUC5.1 as "VUC5.1
+Visualizza tempo sull'asse x"
+usecase VUC5.2 as "VUC5.2
+Visualizza eventi sull'asse y"
+usecase VUC5.3 as "VUC5.3
+Visualizza rettangolo pieno quando l'evento è attivo"
+}
+i--VUC5.1
+i--VUC5.2
+i--VUC5.3
+```
+
+* Scenario: l'utente vuole visualizzare un grafico "timeline" che mostra sull'asse x il tempo e sull'asse y tutti gli eventi del log. Ogni evento ha associato un rettangolo sviluppato sull'asse x che viene riempito quando l'evento è attivo;
 * Attore: tecnico;
 * Precondizioni: è stato caricato correttamente un file di log [VUC1];
-* Postcondizioni: viene visualizzata il grafico;
+* Postcondizioni: viene visualizzato il grafico sopra descritto;
+
+#### VUC5.1 - Visualizza Tempo sull'asse x
+
+* Scenario: l'utente vuole visualizzare sull'asse x del grafico "timeline" il tempo;
+* Attore: tecnico;
+* Precondizioni: è stato caricato correttamente un file di log [VUC1];
+* Postcondizioni: viene visualizzato il grafico con il tempo sull'asse x;
+
+#### VUC5.2 - Visualizza Eventi sull'asse x
+
+* Scenario: l'utente vuole visualizzare sull'asse y del grafico "timeline" tutti gli eventi;
+* Attore: tecnico;
+* Precondizioni: è stato caricato correttamente un file di log [VUC1];
+* Postcondizioni: viene visualizzato il grafico con gli eventi sull'asse y;
+
+#### VUC5.3 - Visualizza rettangolo pieno quando l'evento è attivo
+
+* Scenario: l'utente vuole visualizzare un rettangolo pieno quando un evento è attivo;
+* Attore: tecnico;
+* Precondizioni: è stato caricato correttamente un file di log [VUC1];
+* Postcondizioni: ogni volta che un evento è attivo il rettangolo viene riempito;
 
 ### VUC6 Modifica visualizzazione dei grafici (VRF3.4, VRF3.5)
 
@@ -828,17 +874,91 @@ SUC3.1.2 <.. SUC3.1.2.1 : <<extend>>
   
 ### SUC4 - Visualizzazione Grafico Tempo/Occorrenze (SRF3.1)
 
-* Scenario: l'utente vuole visualizzare un grafico che mette in relazione il tempo con il numero di occorrenze degli eventi in esame;
+```{ .plantuml caption="SUC4"}
+left to right direction
+:Tecnico: as i
+package "SUC4"{
+usecase VUC4.1 as "VUC4.1
+Visualizza tempo sull'asse x"
+usecase VUC4.2 as "VUC4.2
+Visualizza numero di occorrenze sull'asse y"
+usecase VUC4.3 as "VUC4.3
+Visualizza una linea per ogni evento"
+}
+i--VUC4.1
+i--VUC4.2
+i--VUC4.3
+```
+
+* Scenario: l'utente vuole visualizzare un grafico a linee che mette in relazione il tempo con il numero di occorrenze degli eventi in esame;
 * Attore: analista;
 * Precondizioni: sono stati caricati dei file di log [SUC1];
 * Postcondizioni: viene mostrato a schermo il grafico che mette in relazione il tempo (asse x) con il numero di occorrenze degli eventi in esame (asse y).
 
+#### SUC4.1 - Visualizzazione tempo sull'asse x
+
+* Scenario: l'utente vuole visualizzare il tempo sull'asse x;
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: il grafico mostra sull'asse x il tempo.
+
+#### SUC4.2 - Visualizzazione tempo sull'asse y
+
+* Scenario: l'utente vuole visualizzare il numero di occorrenze degli eventi sull'asse y;
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: il grafico mostra sull'asse y il numero di occorrenze degli eventi.
+
+#### SUC4.3 - Visualizza una linea per ogni evento
+
+* Scenario: l'utente vuole visualizzare una linea per ogni evento presente nel log;
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: il grafico mostra una linea per ogni evento.
+
 ### SUC5 - Visualizzazione Grafico Firmware/Occorrenze (SRF3.2)
 
-* Scenario: l'utente vuole visualizzare un grafico che mette in relazione le versioni firmware con il numero di occorrenze degli eventi in esame;
+```{ .plantuml caption="SUC5"}
+left to right direction
+:Tecnico: as i
+package "SUC5"{
+usecase VUC5.1 as "VUC5.1
+Visualizza firmware sull'asse x"
+usecase VUC4.2 as "VUC4.2
+Visualizza numero di occorrenze sull'asse y"
+usecase VUC4.3 as "VUC4.3
+Visualizza una barra per ogni versione firmware"
+}
+i--VUC5.1
+i--VUC5.2
+i--VUC5.3
+```
+
+* Scenario: l'utente vuole visualizzare un grafico a barre che mette in relazione le versioni firmware con il numero di occorrenze degli eventi in esame;
 * Attore: analista;
 * Precondizioni: sono stati caricati dei file di log [SUC1];
 * Postcondizioni: viene mostrato a schermo il grafico che mette in relazione le versioni firmware (asse x) con il numero di occorrenze degli eventi in esame (asse y).
+
+#### SUC5.1 - Visualizzazione firmware sull'asse x
+
+* Scenario: l'utente vuole visualizzare tutti i firmware sull'asse x;
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: il grafico mostra sull'asse x i firmware.
+
+#### SUC5.2 - Visualizzazione tempo sull'asse y
+
+* Scenario: l'utente vuole visualizzare il numero di occorrenze degli eventi sull'asse y;
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: il grafico mostra sull'asse y il numero di occorrenze degli eventi.
+
+#### SUC5.3 - Visualizza una barra per ogni firmware
+
+* Scenario: l'utente vuole visualizzare una barra per ogni firmware presente nel log;
+* Attore: analista;
+* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Postcondizioni: il grafico mostra una barra per ogni firmware.
 
 ### SUC6 - Filtro Grafico Tempo/Occorrenze (SRF3.1.1)
 
@@ -978,7 +1098,23 @@ i--OUC4
 * Precondizioni: è stato caricato almeno un file di log nell'applicazione[SUC1];
 * Postcondizioni: viene visualizzata la matrice di correlazione.
 
-## Tracciamento Caso d'Uso - Requisito
+# Requisiti
+
+## Funzionali (SmartLogViewer)
+
+| **Requisito** | **Classificazione** | **Descrizione** | **Fonti** |
+
+## Funzionali (SmartLogStatistics)
+
+## Qualità
+
+## Vincolo
+
+## Sistemi Operativi
+
+## Prestazionali
+
+# Tracciamento Caso d'Uso - Requisito
 
 | **Caso d'Uso** | **Requisito** |
 | ---------------| ------------- |
@@ -990,6 +1126,7 @@ i--OUC4
 | VUC2.1.4 | VRF2.4 |
 | VUC2.1.5 | VRF2.5 |
 | VUC2.1.6 | VRF2.6 |
+| VUC2.1.7 | VRF2.7.1 |
 | VUC3 | VRF2.7 |
 | VUC3.1 | VRF2.7.2 |
 | VUC3.1.1 | VRF2.7.2.1 |
