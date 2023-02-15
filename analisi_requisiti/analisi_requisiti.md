@@ -115,26 +115,26 @@ Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti del
   * VRF2.4 - Versione Firmware;
   * VRF2.5 - Descrizione;
   * VRF2.6 - Stato (1 per ON, 0 per OFF);
-  * VRF2.7 - La tabella deve avere le seguenti funzionalità:
-    * VRF2.7.1 - L'applicazione colora degli eventi in base al codice di identificazione (code);
-    * VRF2.7.2 - Funzioni di filtro per:
-      * VRF2.7.2.1 - intervallo temporale;
-      * VRF2.7.2.2 - unit/subunit;
-      * VRF2.7.2.3 - versione firmware;
-    * VRF2.7.3 - Funzione di ordinamento sulle colonne in modo simile agli spreadsheet;
-    * VRF2.7.4 - Funzione di ricerca per codice eventi;
-* VRF3 - Deve essere presente una visualizzazione in forma grafica con le seguenti caratteristiche:
-  * VRF3.1 - L’asse X rappresenta il tempo;
-  * VRF3.2 - L’asse Y contiene l’insieme degli eventi;
-  * VRF3.3 - Un rettangolo “pieno” che si sviluppa sull'asse x indica il periodo di tempo in cui l’evento (indicato sull'asse y) è ATTIVO;
-  * VRF3.4 - Deve essere possibile cambiare l'intervallo temporale del grafico con le seguenti funzioni:
-    * VRF3.4.1 - Select: selezione degli estremi temporali;
-    * VRF3.4.2 - Zoom: zoom in/out;
-    * VRF3.4.3 - Span: scroll orizzontale;
-  * VRF3.5 - Deve essere possibile filtrare gli eventi in base a:
-    * VRF3.5.1 Codice evento;
-    * VRF3.5.2 Unit/subUnit;
-* VRF4 - Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un log, con la relativa
+
+  * VRF2.7 - L'applicazione colora degli eventi in base al codice di identificazione (code);
+    * VRF3 - Funzioni di filtro per:
+      * VRF3.1 - intervallo temporale;
+      * VRF3.2 - unit/subunit;
+      * VRF3.3 - versione firmware;
+    * VRF4 - Funzione di ordinamento sulle colonne in modo simile agli spreadsheet;
+    * VRF5 - Funzione di ricerca per codice eventi;
+* VRF6 - Deve essere presente una visualizzazione in forma grafica con le seguenti caratteristiche:
+  * VRF6.1 - L’asse X rappresenta il tempo;
+  * VRF6.2 - L’asse Y contiene l’insieme degli eventi;
+  * VRF6.3 - Un rettangolo “pieno” che si sviluppa sull'asse x indica il periodo di tempo in cui l’evento (indicato sull'asse y) è ATTIVO;
+  * VRF6.4 - Deve essere possibile cambiare l'intervallo temporale del grafico con le seguenti funzioni:
+    * VRF6.4.1 - Select: selezione degli estremi temporali;
+    * VRF6.4.2 - Zoom: zoom in/out;
+    * VRF6.4.3 - Span: scroll orizzontale;
+  * VRF6.5 - Deve essere possibile filtrare gli eventi in base a:
+    * VRF6.5.1 Codice evento;
+    * VRF6.5.2 Unit/subUnit;
+* VRF7 - Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un log, con la relativa
   etichettatura (gli eventi devono essere ordinati ma non obbligatoriamente consecutivi l'uno all'altro).
 
 ## Requisiti funzionali - SmartLogStatistics
@@ -251,7 +251,7 @@ t--VUC1
 VUC1 <.. VUC1.1 : <<extend>>
 ```
 
-### VUC1 - Caricamento file di log (VRF1)
+### VUC1 - Caricamento file di log
 
 * Scenario: l'utente vuole caricare un file di log da visualizzare nell'applicazione SmartLogViewer;
 * Attore: tecnico;
@@ -265,7 +265,7 @@ VUC1 <.. VUC1.1 : <<extend>>
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: l'applicazione non accetta il file caricato.
 
-### VUC2 - Visualizzazione Tabella (VRF2)
+### VUC2 - Visualizzazione Tabella
 
 ```{ .plantuml caption="VUC2"}
 left to right direction
@@ -317,56 +317,56 @@ y--VUC2.1.7
 * Precondizioni: è stato caricato correttamente un file di log [VUC1];
 * Postcondizioni: viene visualizzata riga con i dati;
 
-##### VUC2.1.1 - Visualizzazione Data/Ora (VRF2.1)
+##### VUC2.1.1 - Visualizzazione Data/Ora
 
 * Scenario: l'utente vuole visualizzare la data e l'ora di una riga del log;
 * Attore: tecnico;
 * Precondizioni: è stato caricato correttamente un file di log [VUC1];
 * Postcondizioni: vengono visualizzati data e ora della riga del log;
 
-##### VUC2.1.2 - Visualizzazione Codice Evento (VRF2.2)
+##### VUC2.1.2 - Visualizzazione Codice Evento
 
 * Scenario: l'utente vuole visualizzare il codice evento di una riga del log;
 * Attore: tecnico;
 * Precondizioni: è stato caricato correttamente un file di log [VUC1];
 * Postcondizioni: viene visualizzato il codice evento della riga del log;
 
-##### VUC2.1.3 - Visualizzazione Unit/Subunit (VRF2.3)
+##### VUC2.1.3 - Visualizzazione Unit/Subunit
 
 * Scenario: l'utente vuole visualizzare la Unit e la Subunit di una riga del log;
 * Attore: tecnico;
 * Precondizioni: è stato caricato correttamente un file di log [VUC1];
 * Postcondizioni: vengono visualizzati Unit e Subunit della riga del log;
 
-##### VUC2.1.4 - Visualizzazione Firmware (VRF2.4)
+##### VUC2.1.4 - Visualizzazione Firmware
 
 * Scenario: l'utente vuole visualizzare il firmware di una riga del log;
 * Attore: tecnico;
 * Precondizioni: è stato caricato correttamente un file di log [VUC1];
 * Postcondizioni: viene visualizzato il fimware della riga del log;
 
-##### VUC2.1.5 - Visualizzazione Descrizione (VRF2.5)
+##### VUC2.1.5 - Visualizzazione Descrizione
 
 * Scenario: l'utente vuole visualizzare la descrizione di una riga del log;
 * Attore: tecnico;
 * Precondizioni: è stato caricato correttamente un file di log [VUC1];
 * Postcondizioni: viene visualizzata la descrizione della riga del log;
 
-##### VUC2.1.6 - Visualizzazione Stato (VRF2.6)
+##### VUC2.1.6 - Visualizzazione Stato
 
 * Scenario: l'utente vuole visualizzare lo stato di una riga del log;
 * Attore: tecnico;
 * Precondizioni: è stato caricato correttamente un file di log [VUC1];
 * Postcondizioni: viene visualizzato lo stato della riga del log;
 
-##### VUC2.1.7 - Visualizzazione Stato (VRF2.7.1)
+##### VUC2.1.7 - Visualizzazione colore
 
 * Scenario: l'utente vuole visualizzare il colore associato all'evento di una riga del log;
 * Attore: tecnico;
 * Precondizioni: è stato caricato correttamente un file di log [VUC1];
 * Postcondizioni: viene visualizzato il colore associato all'evento della riga del log;
 
-### VUC3 - Modifica Visualizzazione della Tabella (VRF2.7)
+### VUC3 - Modifica Visualizzazione della Tabella
 
 ```{ .plantuml caption="VUC3 Modifica visualizzazione tabella"}
 left to right direction
@@ -376,15 +376,9 @@ usecase VUC3.1 as "VUC3.1
 Aggiunta Filtro"
 usecase VUC3.2 as "VUC3.2
 Ordinamento per Colonna"
-usecase VUC3.3 as "VUC3.3
-Ricerca Evento"
-usecase VUC3.3.1 as "VUC3.3.1
-Evento non Trovato"
 }
 c--VUC3.1
 c--VUC3.2
-c--VUC3.3
-VUC3.3 <.. VUC3.3.1 : <<extend>>
 ```
 
 * Scenari: l'utente vuole modificare la visualizzazione dei dati in tabella;
@@ -392,7 +386,7 @@ VUC3.3 <.. VUC3.3.1 : <<extend>>
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzata la tabella aggiornata.
 
-#### VUC3.1 - Aggiunta filtro (VRF2.7.2)
+#### VUC3.1 - Aggiunta filtro
 
 ```{ .plantuml caption="VUC3.1"}
 left to right direction
@@ -406,11 +400,14 @@ usecase VUC3.1.2 as "VUC3.1.2
 Per Unit/Subunit"
 usecase VUC3.1.3 as "VUC3.1.3
 Per Firmware"
+usecase VUC3.1.4 as "VUC3.1.4
+Per Codice evento"
 }
 r-- VUC3.1.1
 VUC3.1.1 <.. VUC3.1.1.1 : <<extend>>
 r-- VUC3.1.2
 r-- VUC3.1.3
+r-- VUC3.1.4
 ```
 
 * Scenari: l'utente vuole applicare un filtro alle righe della tabella;
@@ -418,7 +415,7 @@ r-- VUC3.1.3
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzata la tabella con i dati filtrati.
 
-##### VUC3.1.1 - Per Intervallo Temporale (VRF2.7.2.1)
+##### VUC3.1.1 - Per Intervallo Temporale
 
 * Scenari: l'utente vuole applicare un intervallo temporale ai dati visualizzati in tabella;
 * Attore: tecnico;
@@ -432,42 +429,35 @@ r-- VUC3.1.3
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzato un messaggio d'errore (intervallo non corretto).
 
-##### VUC3.1.2 - Per Unit/Subunit (VRF2.7.2.2)
+##### VUC3.1.2 - Per Unit/Subunit
 
 * Scenari: l'utente vuole visualizzare solo le righe di una particolare Unit/Subunit;
 * Attore: tecnico;
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzata la tabella con i dati della Unit/Subunit selezionata.
 
-##### VUC3.1.3 - Per Firmware (VRF2.7.2.3)
+##### VUC3.1.3 - Per Firmware
 
 * Scenari: l'utente vuole visualizzare solo le righe di un particolare firmware;
 * Attore: tecnico;
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzata la tabella con i dati del firmware selezionato.
 
-#### VUC3.2 - Ordinamento per Colonna (VRF2.7.3)
+##### VUC3.1.4 - Per codice evento
+
+* Scenari: l'utente vuole visualizzare le righe che hanno un certo codice evento;
+* Attore: tecnico;
+* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
+* Postcondizioni: viene visualizzata la tabella con i dati del codice evento selezionato.
+
+#### VUC3.2 - Ordinamento per Colonna
 
 * Scenario: l'utente vuole applicare un ordinamento in base a una colonna della tabella;
 * Attore: tecnico;
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzata la tabella con i dati ordinati.
 
-#### VUC3.3 - Ricerca tramite Codice Evento (VRF2.7.4)
-
-* Scenario: l'utente vuole ricercare le tuple con un codice evento;
-* Attore: tecnico;
-* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene visualizzata la tabella con gli eventi con codice corrispondente ai parametri di ricerca.
-
-#### VUC3.3.1 - Evento non Trovato
-
-* Scenario: l'utente vuole ricercare le tuple con un codice evento che non fa parte dei dati;
-* Attore: tecnico;
-* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene visualizzato un messaggio di errore (evento non trovato).
-
-### VUC4 - Ricerca Eventi Ordinati (VRF4)
+### VUC4 - Ricerca Eventi Ordinati
 
 * Scenario: l'utente vuole cercare una sequenza di eventi ordinati ma non necessariamente consecutivi;
 * Attore: tecnico;
@@ -481,7 +471,7 @@ r-- VUC3.1.3
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene comunicato all'utente che la sequenza richiesta non è presente nel file di log.
 
-### VUC5 - Visualizzazione Grafico (VRF3)
+### VUC5 - Visualizzazione Grafico
 
 ```{ .plantuml caption="VUC5"}
 left to right direction
@@ -525,7 +515,7 @@ i--VUC5.3
 * Precondizioni: è stato caricato correttamente un file di log [VUC1];
 * Postcondizioni: ogni volta che un evento è attivo il rettangolo viene riempito;
 
-### VUC6 Modifica visualizzazione dei grafici (VRF3.4, VRF3.5)
+### VUC6 Modifica visualizzazione dei grafici
 
 ```{ .plantuml caption="VUC6"}
 left to right direction
@@ -554,21 +544,21 @@ d--VUC6.4
 * Precondizioni: è stato visualizzato il grafico [VUC5];
 * Postcondizioni: viene visualizzato il grafico modificato.
 
-#### VUC6.1 - Zoom dell'Intervallo Temporale (VRF3.4.2)
+#### VUC6.1 - Zoom dell'Intervallo Temporale
 
 * Scenario: l'utente vuole visualizzare il grafico in un sottointervallo temporale più ristretto o più ampio;
 * Attore: tecnico;
 * Precondizioni: è stato visualizzato il grafico [VUC5];
 * Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali modificati.
 
-#### VUC6.2 - Scroll Orizzontale (VRF3.4.3)
+#### VUC6.2 - Scroll Orizzontale
 
 * Scenario: l'utente vuole visualizzare il grafico in un sottointervallo temporale successivo o precedente (a quello selezionato);
 * Attore: tecnico;
 * Precondizioni: è stato visualizzato il grafico [VUC5];
 * Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali modificati.
 
-#### VUC6.3 - Selezione Intervallo Temporale (VRF3.4.1)
+#### VUC6.3 - Selezione Intervallo Temporale
 
 * Scenario: l'utente vuole visualizzare il grafico in un intervallo selezionato;
 * Attore: tecnico;
@@ -582,7 +572,7 @@ d--VUC6.4
 * Precondizioni: è stata visualizzato il grafico con i dati [VUC5];
 * Postcondizioni: viene visualizzato un messaggio d'errore (intervallo non corretto).
 
-#### VUC6.4 - Aggiunta filtro (VRF3.5)
+#### VUC6.4 - Aggiunta filtro
 
 ```{ .plantuml caption="VUC6.4"}
 left to right direction
@@ -602,19 +592,26 @@ e-- VUC6.4.2
 * Precondizioni: è stata visualizzato il grafico con i dati [VUC5];
 * Postcondizioni: viene visualizzato il grafico modificato.
 
-##### VUC6.4.1 - Per Unit/Subunit (VRF3.5.1)
+##### VUC6.4.1 - Per Unit/Subunit
 
 * Scenari: l'utente vuole visualizzare solo gli eventi di una particolare Unit/Subunit;
 * Attore: tecnico;
 * Precondizioni: è stata visualizzata il grafico con i dati [VUC5];
 * Postcondizioni: viene visualizzato il grafico con gli eventi della Unit/Subunit selezionata.
 
-##### VUC6.4.2 - Per Firmware (VRF3.5.2)
+##### VUC6.4.2 - Per Firmware
 
 * Scenari: l'utente vuole visualizzare solo gli eventi di un particolare firmware;
 * Attore: tecnico;
 * Precondizioni: è stata visualizzata il grafico con i dati [VUC5];
 * Postcondizioni: viene visualizzato il grafico con i dati del firmware selezionato.
+
+##### VUC6.4.3 - Per Codice evento
+
+* Scenari: l'utente vuole visualizzare solo gli eventi di un Codice evento specificato;
+* Attore: tecnico;
+* Precondizioni: è stata visualizzata il grafico con i dati [VUC5];
+* Postcondizioni: viene visualizzato il grafico con i dati del codice evento selezionato.
 
 ## SmartLogStatistics
 
@@ -1102,7 +1099,30 @@ i--OUC4
 
 ## Funzionali (SmartLogViewer)
 
-| **Requisito** | **Classificazione** | **Descrizione** | **Fonti** |
+| **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
+|---------------| ----------------| ------------------- | --------- |
+| VRF1 | L'utente deve poter caricare nell'applicazione un singolo file di log (.csv) presente localmente | Obbligatorio | Capitolato - VUC1 |
+| VRF2 | Deve essere presente una visualizzazione in forma tabellare | Obbligatorio | Capitolato - VUC2 |
+| VRF2.1 | La tabella di VRF2 deve avere una colonna con intestazione "Data/ora" | Obbligatorio | VUC2.1.1 |
+| VRF2.2 | La tabella di VRF2 deve avere una colonna con intestazione "Codice evento" | Obbligatorio | VUC2.1.2 |
+| VRF2.3 | La tabella di VRF2 deve avere una colonna con intestazione "Unit/subunit" | Obbligatorio | VUC2.1.3 |
+| VRF2.4 | La tabella di VRF2 deve avere una colonna con intestazione "Versione Firmware" | Obbligatorio | VUC2.1.4 |
+| VRF2.5 | La tabella di VRF2 deve avere una colonna con intestazione "Descizione" | Obbligatorio | VUC2.1.5 |
+| VRF2.6 | La tabella di VRF2 deve avere una colonna con intestazione "Stato" (1 per ON, 0 per OFF) | Obbligatorio | VUC2.1.6 |
+| VRF2.7 | L'applicazione colora ogni riga in base al codice evento | Obbligatorio | Capitolato - VUC2.1.7 |
+| VRF3 | Deve essere presente una funzione per ordinamento colonne della tabella simile a spreadsheet | Obbligatorio | Capitolato - VUC3.2 |
+| VRF4 | Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un log, con la relativa etichettatura (gli eventi devono essere ordinati ma non obbligatoriamente consecutivi l'uno all'altro) | Obbligatorio | Capitolato - VUC4 |
+| VRF5 | Deve essere presente un grafico "timeline" per mostrare le attivazioni degli eventi | Obbligatorio | Capitolato - VUC4 |
+| VRF5.1 | L'asse x del grafico rappresenta il tempo | Obbligatorio | Capitolato - VUC5.1 |
+| VRF5.2 | L'asse y del grafico contiene l'insieme degli eventi | Obbligatorio | Capitolato - VUC5.2 |
+| VRF5.3 | Un rettangolo “pieno” che si sviluppa sull'asse x indica il periodo di tempo in cui l’evento (indicato sull'asse y) è ATTIVO | Obbligatorio | Capitolato - VUC5.3 |
+| VRF6 | Si deve poter effettuare lo "zoom" in/out sul grafico| Obbligatorio | Capitolato - VUC6.1 |
+| VRF7 | Si deve poter effettuare lo "span" (scroll orizzontale) sul grafico | Obbligatorio | Capitolato - VUC6.2 |
+| VRF8 | Devono essere presenti funzioni di filtro per modificare la visualizzazione della tabella e del grafico | Obbligatorio | Capitolato - VUC3.1 - VUC6 |
+| VRF8.1 | Filtro per intervallo temporale (select) | Obbligatorio | Capitolato - VUC3.1.1 - VUC6.3 |
+| VRF8.2 | Filtro per unit/subunit | Obbligatorio | Capitolato - VUC3.1.2 - VUC6.4.1 |
+| VRF8.3 | Filtro per versione firmware | Obbligatorio | Capitolato - VUC3.1.3 - VUC6.4.2 |
+| VRF8.4 | Filtro per codice evento | Obbligatorio | Capitolato - VUC3.1.4 - VUC6.4.3 |
 
 ## Funzionali (SmartLogStatistics)
 
