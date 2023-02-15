@@ -143,11 +143,6 @@ Per i casi d'uso vengono specificati:
 Nella specifica degli scenari è possibile averne più di uno e vengono rappresentati tramite un elenco puntato.
 Ogni caso d'uso è provvisto del proprio grafico del caso d'uso.
 
-Ad ogni caso d'uso vengono associate due tipologie di etichette:
-
-* [VUC], [SUC] o [OUC] rimandano al caso d'uso padre da cui derivano.
-* (VRF), (SRF) o (RO) rimandano ai requisiti funzionali che i casi d'uso cercando di descrivere.
-
 #### Tracciamento dei requisiti
 
 I requisiti vengono tracciati mediante una tabella di quattro colonne:
