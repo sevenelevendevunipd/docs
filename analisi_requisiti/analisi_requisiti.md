@@ -70,6 +70,14 @@ versioni:
     autore: Nicola Cecchetto
     data: 31/01/2023
     cambiamenti: Aggiornamento post-esercitazioni del prof. Cardin
+  0.7.1:
+    autore: Nicola Cecchetto
+    data: 14/02/2023
+    cambiamenti: Aggiornamento post conferenza con il professor Cardin
+  0.7.2:
+    autore: Andrea Auletta
+    data: 15/02/2023
+    cambiamenti: Aggiunta tabelle di tracciamento
 ...
 
 # Introduzione
@@ -100,105 +108,6 @@ documento *Glossario*[^1] assieme alle loro definizioni.
 
 * [Slide sull'analisi dei requisiti tratte dalle lezioni del professor T. Vardanega](https://www.math.unipd.it/~tullio/IS-1/2022/Dispense/T06.pdf)
 * [Slide sugli Use Case tratte dalle lezioni del professor R. Cardin](https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf)
-
-<!--# Requisiti
-
-Questa parte del documento ha lo scopo d'illustrare i vari tipi di requisiti delle applicazioni "SmartLogViewer" e "SmartLogStatistics".
-
-## Requisiti funzionali - SmartLogViewer
-
-* VRF1 - L'utente deve poter caricare nell'applicazione un singolo file di log (.csv) presente localmente;
-* VRF2 - Deve essere presente una visualizzazione in forma tabellare con le seguenti colonne:
-  * VRF2.1 - Data/ora;
-  * VRF2.2 - Codice Evento;
-  * VRF2.3 - Unit/subunit;
-  * VRF2.4 - Versione Firmware;
-  * VRF2.5 - Descrizione;
-  * VRF2.6 - Stato (1 per ON, 0 per OFF);
-
-  * VRF2.7 - L'applicazione colora degli eventi in base al codice di identificazione (code);
-    * VRF3 - Funzioni di filtro per:
-      * VRF3.1 - intervallo temporale;
-      * VRF3.2 - unit/subunit;
-      * VRF3.3 - versione firmware;
-    * VRF4 - Funzione di ordinamento sulle colonne in modo simile agli spreadsheet;
-    * VRF5 - Funzione di ricerca per codice eventi;
-* VRF6 - Deve essere presente una visualizzazione in forma grafica con le seguenti caratteristiche:
-  * VRF6.1 - L’asse X rappresenta il tempo;
-  * VRF6.2 - L’asse Y contiene l’insieme degli eventi;
-  * VRF6.3 - Un rettangolo “pieno” che si sviluppa sull'asse x indica il periodo di tempo in cui l’evento (indicato sull'asse y) è ATTIVO;
-  * VRF6.4 - Deve essere possibile cambiare l'intervallo temporale del grafico con le seguenti funzioni:
-    * VRF6.4.1 - Select: selezione degli estremi temporali;
-    * VRF6.4.2 - Zoom: zoom in/out;
-    * VRF6.4.3 - Span: scroll orizzontale;
-  * VRF6.5 - Deve essere possibile filtrare gli eventi in base a:
-    * VRF6.5.1 Codice evento;
-    * VRF6.5.2 Unit/subUnit;
-* VRF7 - Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un log, con la relativa
-  etichettatura (gli eventi devono essere ordinati ma non obbligatoriamente consecutivi l'uno all'altro).
-
-## Requisiti funzionali - SmartLogStatistics
-
-* SRF1 - L'utente deve poter selezionare i log da analizzare per range di data/ora (min, max, all);
-* SRF2 - L'utente deve potere visualizzare le seguenti statistiche in un prospetto:
-  * SRF2.1 - Intervallo Temporale (data più vecchia - data più recente);
-  * SRF2.2 - Numero di log analizzati;
-  * SRF2.3 - Media Numero di eventi tra i log;
-  * SRF2.4 - Max Numero di eventi tra i log;
-  * SRF2.5 - Deviazione Standard Numero di eventi tra i log;
-  * SRF2.6 - Lista degli eventi raggruppata per frequenza di occorrenza (0-1) che visualizza per ogni evento:
-    * SRF2.6.1 - Codice evento;
-    * SRF2.6.2 - Numero di volte che l'evento è passato dallo stato 0 allo stato 1;
-    * SRF2.6.3 - Versione Firmware;
-  * SRF2.7 - La lista deve poter essere ordinata per i suoi tre campi;
-  * SRF2.8 - Deve esserci la possibilità di filtrare i dati per:
-    * SRF2.8.1 - Unit/subUnit;
-    * SRF2.8.2 - Data/Ora;
-    * SRF2.8.3 - Versione firmware;
-* SRF3 - L'utente deve poter visualizzare sotto forma di grafico:
-  * SRF3.1 - Il numero totale di occorrenze (0-1) rispetto al tempo per singolo evento:
-    * SRF3.1.1 - ci deve essere la possibilità di selezionare/filtrare gli eventi per:
-      * SRF3.1.1.1 codice;
-      * SRF3.1.1.2 Unit/subUnit;
-  * SRF3.2 - Il numero di occorrenze rispetto alle versioni firmware per singolo evento:
-    * SRF3.2.1 - ci deve essere la possibilità di selezionare:
-      * SRF3.2.1.1 gli eventi;
-      * SRF3.2.1.2 i firmware.
-
-## Requisiti opzionali
-
-* RO1 - L'utente deve poter esportare un file che visualizza i grafici;
-* RO2 - L'utente deve poter eliminare simultaneamente tutti i filtri applicati precedentemente;
-* VRO1 - L'utente deve poter visualizzare altri tipi di grafici;
-* VRO2 - L'utente deve poter ricercare sequenze più o meno note con relativa etichettatura dato un limite di tempo
-  (gli eventi ricercati possono essere anche in ordine sparso ma devono avere una correlazione);
-* VR03 - Implementare la colorazione per livello di nidificazione (16 Unit/16 livelli per SubUnit);
-* SRO1 - L'utente deve poter visualizzare un grafico matrice di correlazione che mostri l'indice di correlazione tra
-  coppie di eventi;
-
-## Requisiti qualitativi
-
-* RQ1 - Il prodotto deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto*;
-* RQ2 - Deve essere fornita la documentazione minima richiesta anche dal corso di "Ingegneria del Software";
-* RQ3 - Deve essere fornita una guida per sviluppatori;
-* RQ4 - Viene richiesto l'utilizzo di un repository pubblico (GitHub).
-
-## Requisiti di vincoli
-
-* RV1 - L'interfaccia di visualizzazione deve essere di tipo Web;
-* RV2 - È desiderabile l'utilizzo di Python per la parte di analisi dei dati.
-
-## Requisiti sistemi operativi
-
-Entrambe le applicazioni non hanno bisogno di essere eseguite su un sistema operativo specifico.
-
-* VRSO1 - L'applicazione web SmartLogViewer viene eseguita solo lato client;
-* SRSO1 - L'applicazione web SmartLogStatistics è basata su un modello client-server.
-
-## Requisiti prestazionali
-
-* VRP1 - I tempi computazionali non devono essere eccessivi per entrambe le applicazioni.
--->
 
 # Casi d'uso
 
@@ -646,7 +555,7 @@ t--SUC6
 t--SUC7
 ```
 
-### SUC1 - Caricamento dei Log per Intervallo Temporale (SRF1)
+### SUC1 - Caricamento dei Log per Intervallo Temporale
 
 * Scenario: l'utente sceglie l'intervallo temporale iniziale per raccogliere i dati dai file di log;
 * Attore: analista;
@@ -660,7 +569,7 @@ t--SUC7
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: viene notificato all'utente che le date fornite non sono valide.
 
-### SUC2 - Visualizzazione Prospetto (SRF2)
+### SUC2 - Visualizzazione Prospetto
 
 ```{ .plantuml caption="SUC2"}
 left to right direction
@@ -692,42 +601,42 @@ f--SUC2.6
 * Precondizioni: sono stati caricati dei file di log [SUC1];
 * Postcondizioni: viene visualizzato il prospetto.
 
-#### SUC2.1 - Visualizzazione Intervallo Temporale (SRF2.1)
+#### SUC2.1 - Visualizzazione Intervallo Temporale
 
 * Scenario: l'utente vuole visualizzare l'intervallo temporale selezionato.
 * Attore: analista;
 * Precondizioni: sono stati caricati dei file di log [SUC1];
 * Postcondizioni: viene visualizzato l'intervallo temporale.
 
-#### SUC2.2 - Visualizzazione Numero di Log Analizzati (SRF2.2)
+#### SUC2.2 - Visualizzazione Numero di Log Analizzati
 
 * Scenario: l'utente vuole visualizzare il numero totale di log analizzati.
 * Attore: analista;
 * Precondizioni: sono stati caricati dei file di log [SUC1];
 * Postcondizioni: viene visualizzato il numero totale di log analizzati.
 
-#### SUC2.3 - Visualizzazione Media Numero Eventi tra i Log (SRF2.3)
+#### SUC2.3 - Visualizzazione Media Numero Eventi tra i Log
 
 * Scenario: l'utente vuole visualizzare il numero medio di eventi tra i log.
 * Attore: analista;
 * Precondizioni: sono stati caricati dei file di log [SUC1];
 * Postcondizioni: viene visualizzato il numero medio di eventi.
 
-#### SUC2.4 - Visualizzazione Massimo Numero Eventi tra i Log (SRF2.4)
+#### SUC2.4 - Visualizzazione Massimo Numero Eventi tra i Log
 
 * Scenario: l'utente vuole visualizzare il numero massimo di eventi tra i log.
 * Attore: analista;
 * Precondizioni: sono stati caricati dei file di log [SUC1];
 * Postcondizioni: viene visualizzato il numero massimo di eventi.
 
-#### SUC2.5 - Visualizzazione Deviazione Standard Numero Eventi tra i Log (SRF2.5)
+#### SUC2.5 - Visualizzazione Deviazione Standard Numero Eventi tra i Log
 
 * Scenario: l'utente vuole visualizzare la deviazione standard del numero di eventi tra i log.
 * Attore: analista;
 * Precondizioni: sono stati caricati dei file di log [SUC1];
 * Postcondizioni: viene visualizzato la deviazione standar del numero di eventi.
 
-#### SUC2.6 - Visualizzazione Lista di Occorrenze Eventi (SRF2.6)
+#### SUC2.6 - Visualizzazione Lista di Occorrenze Eventi
 
 ```{ .plantuml caption="SUC2.6"}
 left to right direction
@@ -767,28 +676,28 @@ b--SUC2.6.1.3
 * Precondizioni: sono stati caricati dei file di log [SUC1];
 * Postcondizioni: viene visualizzato l'elemento della lista di occorrenze eventi.
 
-###### SUC2.6.1.1 - Visualizzazione Codice Evento (SRF2.6.1)
+###### SUC2.6.1.1 - Visualizzazione Codice Evento
 
 * Scenario: l'utente vuole visualizzare il codice dell'evento;
 * Attore: analista;
 * Precondizioni: sono stati caricati dei file di log [SUC1];
 * Postcondizioni: viene visualizzato il codice dell'evento.
 
-###### SUC2.6.1.2 - Visualizzazione Numero Occorrenze (SRF2.6.2)
+###### SUC2.6.1.2 - Visualizzazione Numero Occorrenze
 
 * Scenario: l'utente vuole visualizzare quante volte l'evento è avvenuto nei log;
 * Attore: analista;
 * Precondizioni: sono stati caricati dei file di log [SUC1];
 * Postcondizioni: viene visualizzato il numero di occorrenze dell'evento.
 
-###### SUC2.6.1.3 - Visualizzazione Versione Firmware (SRF2.6.3)
+###### SUC2.6.1.3 - Visualizzazione Versione Firmware
 
 * Scenario: l'utente vuole visualizzare la versione firmware relativa all'evento;
 * Attore: analista;
 * Precondizioni: sono stati caricati dei file di log [SUC1];
 * Postcondizioni: viene visualizzato la versione firmware dell'evento.
 
-### SUC3 - Modifica Visualizzazione Lista (SRF2.7, SRF2.8)
+### SUC3 - Modifica Visualizzazione Lista
 
 ```{ .plantuml caption="SUC3"}
 left to right direction
@@ -808,7 +717,7 @@ c--SUC3.2
 * Precondizioni: è stata visualizzata la lista di occorenza eventi [SUC2.6];
 * Postcondizioni: la visualizzazione della lista di occorrenza eventi viene modificata.
 
-#### SUC3.1 - Aggiunta Filtro (SRF2.8)
+#### SUC3.1 - Aggiunta Filtro
 
 ```{ .plantuml caption="SUC3.1"}
 left to right direction
@@ -834,14 +743,14 @@ SUC3.1.2 <.. SUC3.1.2.1 : <<extend>>
 * Precondizioni: è stata visualizzata la lista di occorenza eventi [SUC2.6];
 * Postcondizioni: la lista di occorenza eventi mostra i dati opportunamente filtrati.
 
-##### SUC3.1.1 - Filtra per Unit/Subunit (SRF2.8.1)
+##### SUC3.1.1 - Filtra per Unit/Subunit
 
 * Scenario: l'utente vuole filtrare i dati della lista di occorrenza eventi in base alla unit/subunit;
 * Attore: analista;
 * Precondizioni: è stata visualizzata la lista di occorenza eventi [SUC2.6];
 * Postcondizioni: la lista di occorrenza eventi mostra i dati filtrati secondo la unit/subunit.
 
-##### SUC3.1.2 - Filtra per Intervallo Temporale (SRF2.8.2)
+##### SUC3.1.2 - Filtra per Intervallo Temporale
 
 * Scenario: l'utente vuole filtrare i dati della lista di occorrenza eventi secondo un intervallo temporale;
 * Attore: analista;
@@ -855,21 +764,21 @@ SUC3.1.2 <.. SUC3.1.2.1 : <<extend>>
 * Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
 * Postcondizioni: viene mostrato un messaggio di errore.
 
-##### SUC3.1.3 - Per Versione Firmware (SRF2.8.3)
+##### SUC3.1.3 - Per Versione Firmware
 
 * Scenario: l'utente vuole filtrare i dati della lista di occorrenza eventi;
 * Attore: analista;
 * Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
 * Postcondizioni: la lista di occorrenza eventi mostra i dati filtrati per versione firmware;
 
-#### SUC3.2 - Ordinamento per Colonna (SRF2.7)
+#### SUC3.2 - Ordinamento per Colonna
 
 * Scenario: l'utente vuole modificare l'ordine dei dati presentati nella lista di occorrenza eventi secondo l'ordine di una colonna;
 * Attore: analista;
 * Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
 * Postcondizioni: la lista di occorrenza eventi mostra i dati della lista ordinati secondo la colonna scelta.
   
-### SUC4 - Visualizzazione Grafico Tempo/Occorrenze (SRF3.1)
+### SUC4 - Visualizzazione Grafico Tempo/Occorrenze
 
 ```{ .plantuml caption="SUC4"}
 left to right direction
@@ -899,7 +808,7 @@ i--VUC4.3
 * Precondizioni: sono stati caricati dei file di log [SUC1];
 * Postcondizioni: il grafico mostra sull'asse x il tempo.
 
-#### SUC4.2 - Visualizzazione tempo sull'asse y
+#### SUC4.2 - Visualizzazione numero occorrenze sull'asse y
 
 * Scenario: l'utente vuole visualizzare il numero di occorrenze degli eventi sull'asse y;
 * Attore: analista;
@@ -913,7 +822,7 @@ i--VUC4.3
 * Precondizioni: sono stati caricati dei file di log [SUC1];
 * Postcondizioni: il grafico mostra una linea per ogni evento.
 
-### SUC5 - Visualizzazione Grafico Firmware/Occorrenze (SRF3.2)
+### SUC5 - Visualizzazione Grafico Firmware/Occorrenze
 
 ```{ .plantuml caption="SUC5"}
 left to right direction
@@ -957,7 +866,7 @@ i--VUC5.3
 * Precondizioni: sono stati caricati dei file di log [SUC1];
 * Postcondizioni: il grafico mostra una barra per ogni firmware.
 
-### SUC6 - Filtro Grafico Tempo/Occorrenze (SRF3.1.1)
+### SUC6 - Filtro Grafico Tempo/Occorrenze
 
 ```{ .plantuml caption="SUC6"}
 left to right direction
@@ -977,21 +886,21 @@ u--SUC6.2
 * Precondizioni: è stato visualizzato il grafico tempo/occorrenze [SUC4];
 * Postcondizioni: vengono applicati i filtri selezionati.
 
-#### SUC6.1 - Filtro per Codice Evento (SRF3.1.1.1)
+#### SUC6.1 - Filtro per Codice Event
 
 * Scenario: l'utente vuole filtrare il grafico tempo/occorrenze selezionando quali eventi visualizzare;
 * Attore: analista;
 * Precondizioni: è stato visualizzato il grafico tempo/occorrenze [SUC4];
 * Postcondizioni: il grafico viene aggiornato tenendo conto degli eventi da visualizzare.
 
-#### SUC6.2 - Filtro per Unit/Subunit (SRF3.1.1.2)
+#### SUC6.2 - Filtro per Unit/Subunit
 
 * Scenario: l'utente vuole filtrare il grafico tempo/occorrenze selezionando quali unit/subunit considerare;
 * Attore: analista;
 * Precondizioni: è stato visualizzato il grafico tempo/occorrenze [SUC4];
 * Postcondizioni: il grafico viene aggiornato tenendo conto delle unit/subunit selezionate.
 
-### SUC7 - Filtro Grafico Firmware/Occorrenze (SRF3.2.1)
+### SUC7 - Filtro Grafico Firmware/Occorrenze
 
 ```{ .plantuml caption="SUC7"}
 left to right direction
@@ -1011,14 +920,14 @@ u--SUC7.2
 * Precondizioni: è stato visualizzato il grafico firmware/occorrenze [SUC5];
 * Postcondizioni: vengono applicati i filtri selezionati.
 
-#### SUC7.1 - Filtro per Codice Evento (SRF3.2.1.1)
+#### SUC7.1 - Filtro per Codice Evento
 
 * Scenario: l'utente vuole filtrare il grafico firmware/occorrenze selezionando quali eventi visualizzare;
 * Attore: analista;
 * Precondizioni: è stato visualizzato il grafico firmware/occorrenze [SUC5];
 * Postcondizioni: il grafico viene aggiornato tenendo conto degli eventi da visualizzare.
 
-#### SUC7.2 - Filtro per Firmware (SRF3.2.1.2)
+#### SUC7.2 - Filtro per Firmware
 
 * Scenario: l'utente vuole filtrare il grafico firmware/occorrenze selezionando quali firmware considerare;
 * Attore: analista;
@@ -1027,7 +936,7 @@ u--SUC7.2
 
 ## Opzionali
 
-### OUC1 - Esportazione file che visualizza tabelle e varianti grafiche (RO1)
+### OUC1 - Esportazione file che visualizza tabelle e varianti grafiche
 
 ```{ .plantuml caption="OUC1"}
 left to right direction
@@ -1044,7 +953,7 @@ Esportazione file"
 * Precondizioni: è stato selezionato almeno un file di log nell'applicazione [VUC1] o [SUC1];
 * Postcondizioni: viene esportato il file con i grafici.
 
-### OUC2 - L'utente vuole eliminare i filtri applicati in precedenza (RO2)
+### OUC2 - L'utente vuole eliminare i filtri applicati in precedenza
 
 ```{ .plantuml caption="OUC2"}
 left to right direction
@@ -1061,7 +970,7 @@ Ripristino filtri"
 * Precondizioni: vengono applicati i filtri o le selezioni; [VUC2] [VUC3] [SUC2] [SUC3]
 * Postcondizioni: i filtri vengono ripristinati.
 
-### OUC3 - Ricerca sequenze di eventi non ordinati o parziali (VRO2)
+### OUC3 - Ricerca sequenze di eventi non ordinati o parziali
 
 ```{ .plantuml caption="OUC3"}
 left to right direction
@@ -1078,7 +987,7 @@ i--OUC3
 * Precondizioni: viene visualizzata la tabella [VUC2];
 * Postcondizioni: vengono evidenziate le tuple con gli eventi con codice corrispondente ai parametri di ricerca o una notifica per l'utente.
 
-### OUC4 - Visualizzazione della matrice di correlazione (SRO1)
+### OUC4 - Visualizzazione della matrice di correlazione
 
 ```{ .plantuml caption="OUC4"}
 left to right direction
@@ -1123,74 +1032,83 @@ i--OUC4
 | VRF8.2 | Filtro per unit/subunit | Obbligatorio | Capitolato - VUC3.1.2 - VUC6.4.1 |
 | VRF8.3 | Filtro per versione firmware | Obbligatorio | Capitolato - VUC3.1.3 - VUC6.4.2 |
 | VRF8.4 | Filtro per codice evento | Obbligatorio | Capitolato - VUC3.1.4 - VUC6.4.3 |
+| VRO1 | L'utente deve poter visualizzare altri tipi di grafici | Opzionale | Capitolato |
+| VRO2 | L'utente deve poter ricercare sequenze più o meno note con relativa etichettatura dato un limite di tempo | Desiderabile | Capitolato - OUC3 |
+| VRO3 | Implementare la colorazione per livello di nidificazione (16 Unit/16 livelli per SubUnit) | Desiderabile | Capitolato |
+| VRO4 | L'utente deve poter esportare i file che visualizza i grafici | Opzionale | Discussione interna - OUC1 |
+| VRO5 | L'utente deve poter eliminare tutti i filtri applicati | Opzionale | Discussione interna - OUC2 |
 
 ## Funzionali (SmartLogStatistics)
 
+| **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
+|---------------| ----------------| ------------------- | --------- |
+| SRF1 | L'utente deve poter selezionare i log da analizzare per range di data/ora (min, max, all) | Obbligatorio | Capitolato - SUC1 |
+| SRF2 | L'utente visualizza un prospetto con i da analizzare | Obbligatorio | Capitolato - SUC2 |
+| SRF2.1 | Nel prospetto compare l'intervallo temporale | Obbligatorio | Capitolato - SUC2.1 |
+| SRF2.2 | Nel prospetto compare il numero di log analizzati | Obbligatorio | Capitolato - SUC2.2 |
+| SRF2.3 | Nel prospetto compare la media numero di eventi tra i log | Obbligatorio | Capitolato - SUC2.3 |
+| SRF2.4 | Nel prospetto compare il massimo numero di eventi tra i log | Obbligatorio | Capitolato - SUC2.4 |
+| SRF2.5 | Nel prospetto compare la deviazione standard numero di eventi fra i log | Obbligatorio | Capitolato - SUC2.5 |
+| SRF2.6 | Nel prospetto compare la lista degli eventi raggrupati per frequenza di occorrenza (0-1) | Obbligatorio | Capitolato - SUC2.6 |
+| SRF2.6.1 | Nella lista viene visualizzato il codice evento | Obbligatorio | Capitolato - SUC2.6.1.1 |
+| SRF2.6.2 | Nella lista viene visualizzato il numero di volte che l'evento è passato dallo stato 0 allo stato 1 | Obbligatorio | Capitolato - SUC2.6.1.2 |
+| SRF2.6.3 | Nella lista viene visualizzata la versione firmware | Obbligatorio | Capitolato - SUC2.6.1.3 |
+| SRF3 | Ci deve essere la possibilità di ordinare le righe della lista in base ai suoi campi | Obbligatorio | Capitolato - SUC3.2 |
+| SRF3.1 | Ordinamento della lista per codice evento | Obbligatorio | Capitolato - SUC3.2.1 |
+| SRF3.2 | Ordinamento della lista per numero occorrenze | Obbligatorio | Capitolato - SUC3.2.2 |
+| SRF3.3 | Ordinamento della lista per firmware | Obbligatorio | Capitolato - SUC3.2.3 |
+| SRF4 | Ci devono essere delle funzioni di filtraggio | Obbligatorio | Capitolato - SUC3.1 |
+| SRF4.1 | Filtro per unit/subunit | Obbligatorio | Capitolato - SUC3.1.1 |
+| SRF4.2 | Filtro per intervallo temporale | Obbligatorio | Capitolato - SUC3.1.2 |
+| SRF4.3 | Filtro per versione firmware | Obbligatorio | Capitolato - SUC3.1.3 |
+| SRF5 | Visualizzazione grafico "tempo/occorrenze" | Obbligatorio | Capitolato - SUC4 |
+| SRF5.1 | L'asse x del grafico rappresenta il tempo | Obbligatorio | Capitolato - SUC4.1 |
+| SRF5.2 | L'asse y del grafico rappresenta le occorrenze | Obbligatorio | Capitolato - SUC4.2 |
+| SRF5.3 | Viene visualizzata una linea per ogni evento presente nel log | Obbligatorio | Capitolato - SUC4.3 |
+| SRF6 | Visualizzazione del grafico "firmware/occorrenze" | Obbligatorio | Capitolato - SUC5 |
+| SRF6.1 | L'asse x del grafico visualizza i firmware | Obbligatorio | Capitolato - SUC5.1 |
+| SRF6.2 | L'asse y del grafico rappresenta le occorrenze | Obbligatorio | Capitolato - SUC5.2 |
+| SRF6.3 | Viene visualizzata una barra per ogni firmware | Obbligatorio | Capitolato - SUC 5.3 |
+| SRF7 | Funzionalità di filtro per il grafico "tempo/occorrenze" | Obbligatorio | Capitolato - SUC6 |
+| SRF7.1 | Filtro per codice evento | Obbligatorio | Capitolato - SUC6.1 |
+| SRF7.2 | Filtro per unit/subunit | Obbligatorio | Capitolato - SUC6.2 |
+| SRF8 | Funzionalità di filtro per il grafico "firmware/occorrenze" | Obbligatorio | Capitolato - SUC7 |
+| SRF8.1 | Filtro per codice evento | Obbligatorio | Capitolato - SUC7.1 |
+| SRF8.2 | Filtro per firmware | Obbligatorio | Capitolato - SUC7.2 |
+| SRO1 | L'utente deve poter visualizzare un grafico matrice di correlazione che mostri l'indice di correlazione tra coppie di eventi | Desiderabile | Capitolato OUC4 |
+| SRO2 | L'utente deve poter esportare i file che visualizza i grafici | Opzionale | Discussione interna - OUC1 |
+| SRO3 | L'utente deve poter eliminare tutti i filtri applicati | Opzionale | Discussione interna - OUC2 |
+
 ## Qualità
+
+| **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
+|---------------| ----------------| ------------------- | --------- |
+| VRQ1 | SmartLogViewer deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto* | Obbligatorio | Capitolato |
+| VRQ2 | Deve essere fornita una guida per sviluppatori di SmartLogViewer | Obbligatoio | Capitolato |
+| SRQ1 | SmartLogStatistics deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto* | Obbligatorio | Capitolato |
+| SRQ2 | Deve essere fornita una guida per sviluppatori di SmartLogStatistics | Obbligatoio | Capitolato |
+| RQ1 | Deve essere fornita la documentazione minima richiesta anche dal corso di "Ingegneria del Software" | Obbligatorio | Capitolato |
+| RQ2 | Viene richiesto l'utilizzo di un repository pubblico (GitHub) | Obbligatorio | Capitolato |
 
 ## Vincolo
 
+| **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
+|---------------| ----------------| ------------------- | --------- |
+| VRV1 | L'interfaccia di visualizzazione di SmartLogViewer deve essere di tipo web | Obbligatorio | Capitolato |
+| VRV2 | Richiesto Python per la parte di analisi dei dati | Desiderabile | Capitolato |
+| SRV1 | L'interfaccia di visualizzazione di SmartLogStatistics deve essere di tipo web | Obbligatorio | Capitolato |
+| SRV2 | Richiesto Python per la parte di analisi dei dati | Desiderabile | Capitolato |
+
 ## Sistemi Operativi
+
+Entrambe le applicazioni non hanno bisogno di essere eseguite su un sistema operativo specifico.
+
+| **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
+|---------------| ----------------| ------------------- | --------- |
 
 ## Prestazionali
 
-# Tracciamento Caso d'Uso - Requisito
-
-| **Caso d'Uso** | **Requisito** |
-| ---------------| ------------- |
-| VUC1 | VRF1 |
-| VUC2 | VRF2 |
-| VUC2.1.1 | VRF2.1 |
-| VUC2.1.2 | VRF2.2 |
-| VUC2.1.3 | VRF2.3 |
-| VUC2.1.4 | VRF2.4 |
-| VUC2.1.5 | VRF2.5 |
-| VUC2.1.6 | VRF2.6 |
-| VUC2.1.7 | VRF2.7.1 |
-| VUC3 | VRF2.7 |
-| VUC3.1 | VRF2.7.2 |
-| VUC3.1.1 | VRF2.7.2.1 |
-| VUC3.1.2 | VRF2.7.2.2 |
-| VUC3.1.3 | VRF2.7.2.3 |
-| VUC3.2 | VRF2.7.3 |
-| VUC3.3 | VRF2.7.4 |
-| VUC4 | VRF4 |
-| VUC5 | VRF3 |
-| VUC6 | VRF3.4 |
-| VUC6 | VRF3.5 |
-| VUC6.1 | VRF3.4.2 |
-| VUC6.2 | VRF3.4.3 |
-| VUC6.3 | VRF3.4.1 |
-| VUC6.4 | VRF3.5 |
-| VUC6.4.1 | VRF3.5.1 |
-| VUC6.4.2 | VRF2.5.2 |
-| SUC1 | SRF1 |
-| SUC2 | SRF2 |
-| SUC2.1 | SRF2.1 |
-| SUC2.2 | SRF2.2 |
-| SUC2.3 | SRF2.3 |
-| SUC2.4 | SRF2.4 |
-| SUC2.5 | SRF2.5 |
-| SUC2.6 | SRF2.6 |
-| SUC2.6.1.1 | SRF2.6.1 |
-| SUC2.6.1.2 | SRF2.6.2 |
-| SUC2.6.1.3 | SRF2.6.3 |
-| SUC3 | SRF2.7 |
-| SUC3 | SRF2.8 |
-| SUC3.1 | SRF2.8 |
-| SUC3.1.1 | SRF2.8.1 |
-| SUC3.1.2 | SRF2.8.2 |
-| SUC3.1.3 | SRF2.8.3 |
-| SUC3.2 | SRF2.7 |
-| SUC4 | SRF3.1 |
-| SUC5 | SRF3.2 |
-| SUC6 | SRF3.1.1 |
-| SUC6.1 | SRF3.1.1.1 |
-| SUC6.2 | SRF3.1.1.2 |
-| SUC7 | SRF3.2.1 |
-| SUC7.1 | SRF3.2.1.1 |
-| SUC7.2 | SRF.3.2.1.2 |
-| OUC1 | RO1 |
-| OUC2 | RO2 |
-| OUC3 | VRO2 |
-| OUC4 | SRO1 |
+| **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
+|---------------| ----------------| ------------------- | --------- |
+| VRP1 | I tempi computazionali non devono essere eccessivi | Obbligatorio | Discussione con azienda |  
+| SRP1 | I tempi computazionali non devono essere eccessivi | Obbligatorio | Discussione con azienda |
