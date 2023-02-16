@@ -361,10 +361,57 @@ r-- VUC3.1.4
 
 #### VUC3.2 - Ordinamento per Colonna
 
+```{ .plantuml caption="VUC3.2"}
+left to right direction
+:Tecnico: as r
+package "VUC3.2 Ordinamento"{
+usecase VUC3.2.1 as "VUC3.2.1
+Per Data/Ora"
+usecase VUC3.2.2 as "VUC3.2.2
+Per Codice Evento"
+usecase VUC3.2.3 as "VUC3.2.3
+Per Unit/Subunit"
+usecase VUC3.2.4 as "VUC3.2.4
+Per Firmware"
+}
+r-- VUC3.2.1
+r-- VUC3.2.2
+r-- VUC3.2.3
+r-- VUC3.2.4
+```
+
 * Scenario: l'utente vuole applicare un ordinamento in base a una colonna della tabella;
 * Attore: tecnico;
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzata la tabella con i dati ordinati.
+
+##### VUC3.2.1 - Ordinamento per Data/Ora
+
+* Scenario: l'utente vuole ordinare le righe della tabella secondo il campo data/ora;
+* Attore: tecnico;
+* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
+* Postcondizioni: viene visualizzata la tabella ordinata secondo data/ora;
+
+##### VUC3.2.2 - Ordinamento per Codice Evento
+
+* Scenario: l'utente vuole ordinare le righe della tabella secondo il campo codice evento;
+* Attore: tecnico;
+* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
+* Postcondizioni: viene visualizzata la tabella ordinata secondo codice evento;
+
+##### VUC3.2.3 - Ordinamento per Unit/Subunit
+
+* Scenario: l'utente vuole ordinare le righe della tabella secondo il campo unit/subunit;
+* Attore: tecnico;
+* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
+* Postcondizioni: viene visualizzata la tabella ordinata secondo unit/subunit;
+
+##### VUC3.2.4 - Ordinamento per Firmware
+
+* Scenario: l'utente vuole ordinare le righe della tabella secondo il campo firmware;
+* Attore: tecnico;
+* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
+* Postcondizioni: viene visualizzata la tabella ordinata secondo firmware;
 
 ### VUC4 - Ricerca Eventi Ordinati
 
@@ -410,7 +457,7 @@ i--VUC5.3
 * Precondizioni: è stato caricato correttamente un file di log [VUC1];
 * Postcondizioni: viene visualizzato il grafico con il tempo sull'asse x;
 
-#### VUC5.2 - Visualizza Eventi sull'asse x
+#### VUC5.2 - Visualizza Eventi sull'asse y
 
 * Scenario: l'utente vuole visualizzare sull'asse y del grafico "timeline" tutti gli eventi;
 * Attore: tecnico;
@@ -491,9 +538,12 @@ usecase VUC6.4.1 as "VUC6.4.1
 Per Unit/Subunit"
 usecase VUC6.4.2 as "VUC6.4.2
 Per Firmware"
+usecase VUC6.4.3 as "VUC6.4.3
+Per Codice Evento"
 }
 e-- VUC6.4.1
 e-- VUC6.4.2
+e-- VUC6.4.3
 ```
 
 * Scenario: l'utente vuole applicare un filtro agli eventi visualizzati nel grafico;
@@ -773,10 +823,47 @@ SUC3.1.2 <.. SUC3.1.2.1 : <<extend>>
 
 #### SUC3.2 - Ordinamento per Colonna
 
+```{ .plantuml caption="SUC3.2"}
+left to right direction
+:Tecnico: as r
+package "SUC3.2 Ordinamento"{
+usecase SUC3.2.1 as "SUC3.2.1
+Per Codice Evento"
+usecase SUC3.2.2 as "SUC3.2.2
+Per Numero Occorrenze"
+usecase SUC3.2.3 as "SUC3.2.3
+Per Firmware"
+}
+r-- SUC3.2.1
+r-- SUC3.2.2
+r-- SUC3.2.3
+```
+
 * Scenario: l'utente vuole modificare l'ordine dei dati presentati nella lista di occorrenza eventi secondo l'ordine di una colonna;
 * Attore: analista;
 * Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
 * Postcondizioni: la lista di occorrenza eventi mostra i dati della lista ordinati secondo la colonna scelta.
+
+##### SUC3.2.1 - Ordinamento per Codice Evento
+
+* Scenario: l'utente vuole ordinare le righe della lista secondo il campo codice evento;
+* Attore: tecnico;
+* Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
+* Postcondizioni: viene visualizzata la lista ordinata secondo codice evento;
+
+##### SUC3.2.2 - Ordinamento per Numero Occorrenze
+
+* Scenario: l'utente vuole ordinare le righe della lista secondo il campo numero occorrenze;
+* Attore: tecnico;
+* Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
+* Postcondizioni: viene visualizzata la lista ordinata secondo il numero occorrenze;
+
+##### SUC3.2.3 - Ordinamento per Firmware
+
+* Scenario: l'utente vuole ordinare le righe della lista secondo il campo firmware;
+* Attore: tecnico;
+* Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
+* Postcondizioni: viene visualizzata la lista ordinata secondo il firmware;
   
 ### SUC4 - Visualizzazione Grafico Tempo/Occorrenze
 
@@ -827,17 +914,17 @@ i--VUC4.3
 ```{ .plantuml caption="SUC5"}
 left to right direction
 :Tecnico: as i
-package "SUC5"{
-usecase VUC5.1 as "VUC5.1
+package "SUC5 Visualizzazione Grafico Firmware/Occorrenze"{
+usecase SUC5.1 as "SUC5.1
 Visualizza firmware sull'asse x"
-usecase VUC4.2 as "VUC4.2
+usecase SUC5.2 as "SUC5.2
 Visualizza numero di occorrenze sull'asse y"
-usecase VUC4.3 as "VUC4.3
+usecase SUC5.3 as "SUC5.3
 Visualizza una barra per ogni versione firmware"
 }
-i--VUC5.1
-i--VUC5.2
-i--VUC5.3
+i--SUC5.1
+i--SUC5.2
+i--SUC5.3
 ```
 
 * Scenario: l'utente vuole visualizzare un grafico a barre che mette in relazione le versioni firmware con il numero di occorrenze degli eventi in esame;
@@ -1016,12 +1103,16 @@ i--OUC4
 | VRF2.2 | La tabella di VRF2 deve avere una colonna con intestazione "Codice evento" | Obbligatorio | VUC2.1.2 |
 | VRF2.3 | La tabella di VRF2 deve avere una colonna con intestazione "Unit/subunit" | Obbligatorio | VUC2.1.3 |
 | VRF2.4 | La tabella di VRF2 deve avere una colonna con intestazione "Versione Firmware" | Obbligatorio | VUC2.1.4 |
-| VRF2.5 | La tabella di VRF2 deve avere una colonna con intestazione "Descizione" | Obbligatorio | VUC2.1.5 |
+| VRF2.5 | La tabella di VRF2 deve avere una colonna con intestazione "Descrizione" | Obbligatorio | VUC2.1.5 |
 | VRF2.6 | La tabella di VRF2 deve avere una colonna con intestazione "Stato" (1 per ON, 0 per OFF) | Obbligatorio | VUC2.1.6 |
 | VRF2.7 | L'applicazione colora ogni riga in base al codice evento | Obbligatorio | Capitolato - VUC2.1.7 |
 | VRF3 | Deve essere presente una funzione per ordinamento colonne della tabella simile a spreadsheet | Obbligatorio | Capitolato - VUC3.2 |
+| VRF3.1 | Ordinamento per data/ora | Obbligatorio | Capitolato - VUC3.2.1 |
+| VRF3.2 | Ordinamento per codice evento | Obbligatorio | Capitolato - VUC3.2.2 |
+| VRF3.3 | Ordinamento per unit/subunit | Obbligatorio | Capitolato - VUC3.2.3 |
+| VRF3.4 | Ordinamento per firmware | Obbligatorio | Capitolato - VUC3.2.4 |
 | VRF4 | Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un log, con la relativa etichettatura (gli eventi devono essere ordinati ma non obbligatoriamente consecutivi l'uno all'altro) | Obbligatorio | Capitolato - VUC4 |
-| VRF5 | Deve essere presente un grafico "timeline" per mostrare le attivazioni degli eventi | Obbligatorio | Capitolato - VUC4 |
+| VRF5 | Deve essere presente un grafico "timeline" per mostrare le attivazioni degli eventi | Obbligatorio | Capitolato - VUC5 |
 | VRF5.1 | L'asse x del grafico rappresenta il tempo | Obbligatorio | Capitolato - VUC5.1 |
 | VRF5.2 | L'asse y del grafico contiene l'insieme degli eventi | Obbligatorio | Capitolato - VUC5.2 |
 | VRF5.3 | Un rettangolo “pieno” che si sviluppa sull'asse x indica il periodo di tempo in cui l’evento (indicato sull'asse y) è ATTIVO | Obbligatorio | Capitolato - VUC5.3 |
