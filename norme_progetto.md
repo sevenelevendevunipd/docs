@@ -227,7 +227,7 @@ I verbali possono essere interni o esterni:
 * Interni: riguardano gli incontri tra i componenti del gruppo;
 * Esterni: riguardano gli incontri tra i componenti del gruppo insieme a proponenti e/o committenti.
 
-Vengono rinominati con la data del giornio in cui è stato effettuata la riunione (AAAAMMGG.pdf).
+Vengono rinominati con la data del giorno in cui è stato effettuata la riunione (AAAAMMGG.pdf).
 
 ### Altri documenti
 
