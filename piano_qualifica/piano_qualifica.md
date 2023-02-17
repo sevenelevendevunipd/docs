@@ -55,7 +55,7 @@ Alcuni termini utilizzati nel documento potrebbero generare incomprensione per i
 
 ## Obiettivi
 
-Le metriche presenti devono permettere un analisi automigliorativa alla fine di ogni periodo *(guardare il documento Piano di Proggetto per la suddivisione dei periodi)*, per migliorare al massimo il flusso di sviluppo nel ciclo di vita del progetto.
+Le metriche presenti devono permettere un analisi automigliorativa alla fine di ogni periodo *(guardare il documento Piano di Progetto per la suddivisione dei periodi)*, per migliorare al massimo il flusso di sviluppo nel ciclo di vita del progetto.
 
 ## Metriche utilizzate
 
