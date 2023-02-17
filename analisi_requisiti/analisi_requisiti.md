@@ -1124,8 +1124,8 @@ i--OUC4
 | VRF8.3 | Filtro per versione firmware | Obbligatorio | Capitolato - VUC3.1.3 - VUC6.4.2 |
 | VRF8.4 | Filtro per codice evento | Obbligatorio | Capitolato - VUC3.1.4 - VUC6.4.3 |
 | VRO1 | L'utente deve poter visualizzare altri tipi di grafici | Opzionale | Capitolato |
-| VRO2 | L'utente deve poter ricercare sequenze più o meno note con relativa etichettatura dato un limite di tempo | Desiderabile | Capitolato - OUC3 |
-| VRO3 | Implementare la colorazione per livello di nidificazione (16 Unit/16 livelli per SubUnit) | Desiderabile | Capitolato |
+| VRO2 | L'utente deve poter ricercare sequenze più o meno note con relativa etichettatura dato un limite di tempo | Opzionale | Capitolato - OUC3 |
+| VRO3 | Implementare la colorazione per livello di nidificazione (16 Unit/16 livelli per SubUnit) | Opzionale | Capitolato |
 | VRO4 | L'utente deve poter esportare i file che visualizza i grafici | Opzionale | Discussione interna - OUC1 |
 | VRO5 | L'utente deve poter eliminare tutti i filtri applicati | Opzionale | Discussione interna - OUC2 |
 
@@ -1166,7 +1166,7 @@ i--OUC4
 | SRF8 | Funzionalità di filtro per il grafico "firmware/occorrenze" | Obbligatorio | Capitolato - SUC7 |
 | SRF8.1 | Filtro per codice evento | Obbligatorio | Capitolato - SUC7.1 |
 | SRF8.2 | Filtro per firmware | Obbligatorio | Capitolato - SUC7.2 |
-| SRO1 | L'utente deve poter visualizzare un grafico matrice di correlazione che mostri l'indice di correlazione tra coppie di eventi | Desiderabile | Capitolato OUC4 |
+| SRO1 | L'utente deve poter visualizzare un grafico matrice di correlazione che mostri l'indice di correlazione tra coppie di eventi | Opzionale | Capitolato OUC4 |
 | SRO2 | L'utente deve poter esportare i file che visualizza i grafici | Opzionale | Discussione interna - OUC1 |
 | SRO3 | L'utente deve poter eliminare tutti i filtri applicati | Opzionale | Discussione interna - OUC2 |
 
@@ -1186,9 +1186,9 @@ i--OUC4
 | **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
 |---------------| ----------------| ------------------- | --------- |
 | VRV1 | L'interfaccia di visualizzazione di SmartLogViewer deve essere di tipo web | Obbligatorio | Capitolato |
-| VRV2 | Richiesto Python per la parte di analisi dei dati | Desiderabile | Capitolato |
+| VRV2 | Richiesto Python per la parte di analisi dei dati | Obbligatorio | Capitolato |
 | SRV1 | L'interfaccia di visualizzazione di SmartLogStatistics deve essere di tipo web | Obbligatorio | Capitolato |
-| SRV2 | Richiesto Python per la parte di analisi dei dati | Desiderabile | Capitolato |
+| SRV2 | Richiesto Python per la parte di analisi dei dati | Obbligatorio | Capitolato |
 
 ## Sistemi Operativi
 
