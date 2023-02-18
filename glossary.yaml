@@ -10,3 +10,127 @@ yaml: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
     configurazione di pandoc e per la gestione del glossario e degli acronimi
   name: YAML
   plural: null
+smartlogviewer: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Applicazione oggetto di sviluppo del team, ha il compito di mostrare dati relativi ad un file di log che deve essere caricato dall'utente. L'interfaccia grafica comprende una tabella che riporta i dati del log e un grafico "timeline" per la visualizzazione degli stati degli eventi.
+  name: SmartLogViewer
+  plural: null
+smartlogstatistics: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Applicazione oggetto di sviluppo del team, ha il compito di analizzare più file di log e visualizzare statistiche tramite un prospetto e due grafici.
+  name: SmartLogStatistics
+  plural: null
+log: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: File in formato .csv che rappresenta un'insieme di eventi scatenati da dei componenti. Ogni log presenta all'inizio un'intestazione che indica le unit/subunit presenti e i loro firmware.
+  name: log
+  plural: null
+youtrack: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Software di issue tracking e project management usato dal team.
+  name: YouTrack
+  plural: null
+gantt: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Grafico che visualizza dipendenze e schedulazioni di attività.
+  name: Gantt
+  plural: null
+issue: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Unità di lavoro volta allo sviluppo di un miglioramento di un sistema software.
+  name: issue
+  plural: issues
+markdown: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Linguaggio di markup utilizzato dal team per redigere documenti che vengono poi convertiti tramite Pandoc in file PDF.
+  name: Markdown
+  plural: null
+pandoc: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Convertitore di documenti markup.
+  name: Pandoc
+  plural: null
+plantuml: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Strumento open-software per creare diagrammi UML tramite testo.
+  name: PlantUML
+  plural: null
+latex: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Linguaggio di marcatura per la preparazione di testi, basato sul programma di composizione tipografica TEX.
+  name: Latex
+  plural: null
+github: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Servizio di hosting per progetti software, implementazione dello strumento di controllo versione distribuito Git.
+  name: GitHub
+  plural: null
+git: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Strumento di controllo versione usato per coordinare il lavoro di programmatori durante lo sviluppo software.
+  name: Git
+  plural: null
+repository: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Struttura dati per la memorizzazione di informazioni su un set di file o directory, utilizzata nei sistemi di controllo versione come Git.
+  name: repository
+  plural: null
+telegram: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Applicazione di messaggistica testuale gratuita.
+  name: Telegram
+  plural: null
+discord: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Applicazione di messaggistica testuale, audio e video gratuita.
+  name: Discord
+  plural: null
+teams: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Piattaforma di teleconferenze di Microsoft.
+  name: Teams
+  plural: null
+kanban: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Metodologia agile di gestione del lavoro.
+  name: Kanban
+  plural: null
+scrum: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Framework agile di gestione del lavoro.
+  name: Scrum
+  plural: null
+backlog: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Lista di cose da fare per sviluppare e migliorare un prodotto software.
+  name: backlog
+  plural: null
+sprint: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Periodo di tempo dalla lunghezza prefissata in cui viene diviso il tempo totale di sviluppo di un prodotto software.
+  name: sprint
+  plural: null
+tecnico: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Utente che interagisce con l'applicazione SmartLogViewer
+  name: tecnico
+  plural: null
+analista: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Utente che interagisce con l'applicazione SmartLogStatistics
+  name: analista
+  plural: null
+evento: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Rappresentato da una riga del log.
+  name: evento
+  plural: eventi
+codice_evento: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Codice che identifica un evento all'interno di un log.
+  name: codice evento
+  plural: null
+unitsubunit: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Rappresentano un componente all'interno di un log, che emette degli eventi.
+  name: unit/subunit
+  plural: null
+firmware: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Versione di un componente unit/subunit. Si trova nell'intestazione di un log.
+  name: firmware
+  plural: null
+grafico_timeline: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Grafico a barre orizzontali, con asse x che rappresenta il tempo.
+  name: grafico timeline
+  plural: null
+grafico_linee: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Grafico che mette in relazione asse x e asse y con delle linee.
+  name: grafico a linee
+  plural: null
+grafico_barre: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Grafico che mette in relazione un insieme finito di elementi con un valore numerico tramite delle barre.
+  name: grafico a barre
+  plural: null
+matrice_correlazione: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Grafico che mette in relazione coppie di eventi.
+  name: matrice di correlazione
+  plural: none
+python: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Linguaggio di programmazione utilizzato dal team per effettuare molteplici operazioni.
+  name: Python
+  plural: none
