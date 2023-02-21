@@ -1198,7 +1198,6 @@ i--OUC4
 | SRV5 | SmartLogStatistics deve esser compatibile con il browser Microsoft Edge versione 110 | Obbligatorio | Discussione con azienda |
 | SRV6 | SmartLogStatistics deve esser compatibile con il browser Opera versione 95 | Obbligatorio | Discussione con azienda |
 
-
 ## Sistemi Operativi
 
 Essendo applicativi browser, entrambe le applicazioni non hanno bisogno di essere eseguite su un sistema operativo specifico.
