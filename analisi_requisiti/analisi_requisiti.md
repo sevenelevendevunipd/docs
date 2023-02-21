@@ -1187,15 +1187,21 @@ i--OUC4
 |---------------| ----------------| ------------------- | --------- |
 | VRV1 | L'interfaccia di visualizzazione di SmartLogViewer deve essere di tipo web | Obbligatorio | Capitolato |
 | VRV2 | Richiesto Python per la parte di analisi dei dati | Obbligatorio | Capitolato |
+| VRV3 | SmartLogViewer deve esser compatibile con il browser Google Chrome versione 110 | Obbligatorio | Discussione con azienda |
+| VRV4 | SmartLogViewer deve esser compatibile con il browser Firefox versione 110 | Obbligatorio | Discussione con azienda |
+| VRV5 | SmartLogViewer deve esser compatibile con il browser Microsoft Edge versione 110 | Obbligatorio | Discussione con azienda |
+| VRV6 | SmartLogViewer deve esser compatibile con il browser Opera versione 95 | Obbligatorio | Discussione con azienda |
 | SRV1 | L'interfaccia di visualizzazione di SmartLogStatistics deve essere di tipo web | Obbligatorio | Capitolato |
 | SRV2 | Richiesto Python per la parte di analisi dei dati | Obbligatorio | Capitolato |
+| SRV3 | SmartLogStatistics deve esser compatibile con il browser Google Chrome versione 110 | Obbligatorio | Discussione con azienda |
+| SRV4 | SmartLogStatistics deve esser compatibile con il browser Firefox versione 110 | Obbligatorio | Discussione con azienda |
+| SRV5 | SmartLogStatistics deve esser compatibile con il browser Microsoft Edge versione 110 | Obbligatorio | Discussione con azienda |
+| SRV6 | SmartLogStatistics deve esser compatibile con il browser Opera versione 95 | Obbligatorio | Discussione con azienda |
+
 
 ## Sistemi Operativi
 
-Entrambe le applicazioni non hanno bisogno di essere eseguite su un sistema operativo specifico.
-
-| **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
-|---------------| ----------------| ------------------- | --------- |
+Essendo applicativi browser, entrambe le applicazioni non hanno bisogno di essere eseguite su un sistema operativo specifico.
 
 ## Prestazionali
 
