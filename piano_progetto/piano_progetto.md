@@ -1,30 +1,35 @@
 ---
 title: "Piano di Progetto"
+toc: true
 date: "22/11/2022"
 responsabile: "Augusto Zanellato"
-redattori: ["Davide Vitagliano", "Enrik Rucaj"]
+redattori: ["Davide Vitagliano", "Enrik Rucaj", "Mattia Brunello"]
 verificatori: ["Andrea Auletta", "Nicola Cecchetto", "Antonio Stan"]
 versioni:
   0.0.1:
     autore: Davide Vitagliano
     data: 22/11/2022
     cambiamenti: Prima stesura e struttura
-  0.1.0:
+  0.0.2:
     autore: Davide Vitagliano
     data: 04/12/2022
     cambiamenti: Aggiunto paragrafo di Analisi dei Rischi
-  0.2.0:
-    autore: Enrik Rucaj
+  0.1.0:
+    autore: Nicola Cecchetto
     data: 04/12/2022
+    cambiamenti: verifica generale del documento
+  0.1.1:
+    autore: Enrik Rucaj
+    data: 05/12/2022
     cambiamenti: Aggiunto Metodo di Sviluppo e Pianificazione
+  0.2.0:
+    autore: Antonio Stan
+    data: 06/12/2022
+    cambiamenti: verifica generale del documento
   0.2.1:
     autore: Enrik Rucaj
     data: 08/12/2022
-    cambiamenti: Aggiunto Preventivo per il periodo di Analisi dei Requisiti
-  0.2.2:
-    autore: Andrea Auletta
-    data: 09/12/2022
-    cambiamenti: revisione del contenuto e piccole modifiche
+    cambiamenti: Aggiunti preventivi
   0.2.3:
     autore: Enrik Rucaj
     data: 13/12/2022
@@ -32,11 +37,11 @@ versioni:
   0.2.4:
     autore: Mattia Brunello
     data: 07/02/2023
-    cambiamenti: Compilati preventivi PTB e PoC
-  0.2.5:
+    cambiamenti: Aggiunti grafici a torta PTB e PoC, Compilati consuntivi RTB
+  0.3.0:
     autore: Andrea Auletta
-    data: 07/02/2023
-    cambiamenti: Aggiunti grafici a torta PTB e PoC, Compilati consuntibi RTB
+    data: 10/02/2023
+    cambiamenti: verifica generale del documento
 ...
 
 # Introduzione
@@ -181,11 +186,12 @@ Tenendo in considerazione le scadenze prefissate per ogni revisione e la durata 
 
 **Suddivisione ruoli:**
 
-In un sprint ogni componente del gruppo deve assumere un solo ruolo in modo da concentrarsi a pieno alle sue responsabilità.
+Per ogni documento i ruoli verranno assegnati secondo una divisione basata sul tempo a disposizione di ogni membro.
+Questo significa che un componente del team può assumere lo stesso ruolo su documenti diversi, ma deve essere responsabile solo di un documento.
+I responsabili cambiano all'inizio di ogni baseline.
+La stessa suddivisione verrà applicata durante la stesura dell'architettura e l'implementazione del software.
 
-Ad ogni nuovo sprint i ruoli precedentemente fissati possono essere cambiati. Un'eccezione alla regola riccade sul ruolo del *responsabile*, il quale essendo una figura altamente importante per la stabilità del gruppo e del progetto si preferisce mantenere la stessa persone che ricopre quel ruolo per un'istante di tempo maggiore rispetto al solito.
-
-Uno stesso ruolo può essere ricoperto contemporaneamente da più persone a eccezione del ruolo di *responsabile*.
+*Alla fine del progetto didattico ogni membro del team avrà assunto almeno una volta tutti i ruoli.*
 
 ## Analisi dei requisiti
 
@@ -211,12 +217,12 @@ Nel periodo di Analisi dei Requisiti, ciascun componente rivestirà i ruoli seco
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
 | Auletta Andrea    |    -     |    6    |   9    |      -      |      -       |    7    |     22     |
-| Brunello Mattia   |    9     |    4    |   10   |      -      |      -       |    8    |     31     |
-| Cecchetto Nicola  |    -     |    -    |   11   |      -      |      -       |    7    |     18     |
-| Rucaj Enrik       |    -     |    9    |   12   |      -      |      -       |    7    |     28     |
-| Stan Antonio      |    -     |    -    |   11   |      -      |      -       |    7    |     18     |
+| Brunello Mattia   |    5     |    4    |   10   |      -      |      -       |    8    |     27     |
+| Cecchetto Nicola  |    4     |    -    |   11   |      -      |      -       |    7    |     22     |
+| Rucaj Enrik       |    4     |    4    |   12   |      -      |      -       |    7    |     27     |
+| Stan Antonio      |    -     |    5    |   11   |      -      |      -       |    7    |     23     |
 | Vitagliano Davide |    -     |    7    |   12   |      -      |      -       |    6    |     25     |
-| Zanellato Augusto |    9     |    4    |   10   |      -      |      -       |    9    |     32     |
+| Zanellato Augusto |    5     |    4    |   10   |      -      |      -       |    9    |     28     |
 | **Totale**        |  **18**  | **30**  | **75** |    **-**    |    **-**     | **51**  |  **174**   |
 
 <!--NOTA PER IL FUTURO, IMPORTANTE:
@@ -274,12 +280,12 @@ Nel periodo di Progettazione Technology Baseline, ciascun componente rivestirà 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
 | Auletta Andrea    |    -     |    -    |   3    |      5      |      -       |    3    |     11     |
-| Brunello Mattia   |    -     |    -    |   3    |      4      |      -       |    3    |     10     |
-| Cecchetto Nicola  |    7     |    -    |   -    |      4      |      -       |    -    |     11     |
-| Rucaj Enrik       |    -     |    -    |   -    |      5      |      -       |    4    |     9      |
+| Brunello Mattia   |    2     |    -    |   3    |      4      |      -       |    3    |     12     |
+| Cecchetto Nicola  |    2     |    1    |   -    |      5      |      -       |    -    |     8      |
+| Rucaj Enrik       |    1     |    -    |   -    |      5      |      -       |    4    |     10     |
 | Stan Antonio      |    -     |    3    |   -    |      3      |      -       |    3    |     9      |
 | Vitagliano Davide |    -     |    -    |   2    |      4      |      -       |    4    |     10     |
-| Zanellato Augusto |    -     |    4    |   -    |      4      |      -       |    3    |     11     |
+| Zanellato Augusto |    2     |    3    |   -    |      3      |      -       |    3    |     11     |
 | **Totale**        |  **7**   |  **7**  | **8**  |   **29**    |    **-**     | **20**  |   **71**   |
 
 In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
@@ -330,13 +336,13 @@ Nel periodo di Proof of Concept, ciascun componente rivestirà i ruoli secondo l
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
-| Auletta Andrea    |    -     |    -    |   4    |      6      |      6       |    4    |     20     |
-| Brunello Mattia   |    -     |    -    |   -    |      5      |      7       |    5    |     17     |
-| Cecchetto Nicola  |    -     |    2    |   3    |      5      |      8       |    3    |     21     |
-| Rucaj Enrik       |    8     |    -    |   -    |      4      |      6       |    -    |     18     |
+| Auletta Andrea    |    -     |    -    |   4    |      6      |      4       |    4    |     18     |
+| Brunello Mattia   |    2     |    -    |   -    |      5      |      5       |    5    |     17     |
+| Cecchetto Nicola  |    2     |    2    |   3    |      5      |      8       |    3    |     23     |
+| Rucaj Enrik       |    2     |    -    |   -    |      4      |      8       |    -    |     14     |
 | Stan Antonio      |    -     |    3    |   -    |      6      |      4       |    4    |     17     |
 | Vitagliano Davide |    -     |    -    |   -    |      5      |      6       |    5    |     16     |
-| Zanellato Augusto |    -     |    -    |   -    |      8      |      8       |    -    |     16     |
+| Zanellato Augusto |    2     |    -    |   -    |      8      |      10      |    -    |     20     |
 | **Totale**        |  **8**   |  **5**  | **7**  |   **39**    |    **45**    | **21**  |  **125**   |
 
 In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
