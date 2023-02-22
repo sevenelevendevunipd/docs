@@ -1206,5 +1206,81 @@ Essendo applicativi browser, entrambe le applicazioni non hanno bisogno di esser
 
 | **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
 |---------------| ----------------| ------------------- | --------- |
-| VRP1 | I tempi computazionali non devono essere eccessivi | Obbligatorio | Discussione con azienda |  
+| VRP1 | I tempi computazionali non devono essere eccessivi | Obbligatorio | Discussione con azienda |
 | SRP1 | I tempi computazionali non devono essere eccessivi | Obbligatorio | Discussione con azienda |
+
+# Tracciamento
+
+| Fonte | Requisito |
+| ----- | --------- |
+| VUC1 | VRF1 |
+| VUC2 | VRF2 |
+| VUC2.1.1 | VRF2.1 |
+| VUC2.1.2 | VRF2.2 |
+| VUC2.1.3 | VRF2.3 |
+| VUC2.1.4 | VRF2.4 |
+| VUC2.1.5 | VRF2.5 |
+| VUC2.1.6 | VRF2.6 |
+| VUC2.1.7 | VRF2.7 |
+| VUC3.1 | VRF8 |
+| VUC3.1.1 | VRF8.1 |
+| VUC3.1.2 | VRF8.2 |
+| VUC3.1.3 | VRF8.3 |
+| VUC3.1.4 | VRF8.4 |
+| VUC3.2 | VRF3 |
+| VUC3.2.1 | VRF3.1 |
+| VUC3.2.2 | VRF3.2 |
+| VUC3.2.3 | VRF3.3 |
+| VUC3.2.4 | VRF3.4 |
+| VUC4 | VRF4 |
+| VUC5 | VRF5 |
+| VUC5.1 | VRF5.1 |
+| VUC5.2 | VRF5.2 |
+| VUC5.3 | VRF5.3 |
+| VUC6 | VRF8 |
+| VUC6.1 | VRF6 |
+| VUC6.2 | VRF7 |
+| VUC6.3 | VRF8.1 |
+| VUC6.4.1 | VRF8.2 |
+| VUC6.4.2 | VRF8.3 |
+| VUC6.4.3 | VRF8.4 |
+| SUC1 | SRF1 |
+| SUC2 | SRF2 |
+| SUC2.1 | SRF2.1 |
+| SUC2.2 | SRF2.2 |
+| SUC2.3 | SRF2.3 |
+| SUC2.4 | SRF2.4 |
+| SUC2.5 | SRF2.5 |
+| SUC2.6 | SRF2.6 |
+| SUC2.6.1.1 | SRF2.6.1 |
+| SUC2.6.1.2 | SRF2.6.2 |
+| SUC2.6.1.3 | SRF2.6.3 |
+| SUC3.1 | SRF4 |
+| SUC3.1.1 | SRF4.1 |
+| SUC3.1.2 | SRF4.2 |
+| SUC3.1.3 | SRF4.3 |
+| SUC3.2 | SRF3 |
+| SUC3.2.1 | SRF3.1 |
+| SUC3.2.2 | SRF3.2 |
+| SUC3.2.3 | SRF3.3 |
+| SUC4 | SRF5 |
+| SUC4.1 | SRF5.1 |
+| SUC4.2 | SRF5.2 |
+| SUC4.3 | SRF5.3 |
+| SUC5 | SRF6 |
+| SUC5.1 | SRF6.1 |
+| SUC5.2 | SRF6.2 |
+| SUC5.3 | SRF6.3 |
+| SUC6 | SRF7 |
+| SUC6.1 | SRF7.1 |
+| SUC6.2 | SRF7.2 |
+| SUC7 | SRF8 |
+| SUC7.1 | SRF8.1 |
+| SUC7.2 | SRF8.2 |
+| OUC1 | VRO4, SRO2 |
+| OUC2 | VRO5, SRO3 |
+| OUC3 | VRO2 |
+| OUC4 | SRO1 |
+| Capitolato |  |
+| Discussione interna | |
+| Discussione con azienda |  |
