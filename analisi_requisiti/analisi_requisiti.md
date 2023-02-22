@@ -1,8 +1,8 @@
 ---
 title: "Analisi dei requisiti"
 date: "15/11/2022"
-responsabile: "Nicola Cecchetto"
-redattori: ["Andrea Auletta", "Mattia Brunello", "Davide Vitagliano"]
+responsabile: "Mattia Brunello"
+redattori: ["Andrea Auletta", "Nicola Cecchetto", "Davide Vitagliano"]
 verificatori: ["Antonio Stan", "Augusto Zanellato", "Enrik Rucaj"]
 toc: true
 versioni:
@@ -23,15 +23,15 @@ versioni:
     data: 25/11/2022
     cambiamenti: Completata prima stesura dei casi d'uso
   0.3.1:
-    autore: Mattia Brunello
+    autore: Nicola Cecchetto
     data: 26/11/2022
     cambiamenti: Aggiunti grafici dei casi d'uso e riorganizzazione del documento
   0.3.2:
-    autore: Davide Vitagliano
+    autore: Enrik Rucaj
     data: 01/12/2022
     cambiamenti: Revisione degli errori
   0.4.0:
-    autore: Enrik Rucaj
+    autore: Davide Vitagliano
     data: 04/12/2022
     cambiamenti: Aggiunti requisiti impliciti e opzionali
   0.5.0:
@@ -45,9 +45,9 @@ versioni:
   0.6.0:
     autore: Nicola Cecchetto
     data: 08/12/2022
-    cambiamenti: Revisione post-conferenza con azienda
+    cambiamenti: Aggiornamento post-conferenza con azienda
   0.6.1:
-    autore: Mattia Brunello
+    autore: Andrea Auletta
     data: 16/12/2022
     cambiamenti: Divisone UC3.4 in UC3.4.1, UC3.4.2 e UC3.4.3. Aggiunti OUC3 e OUC4
   0.6.2:
@@ -55,7 +55,7 @@ versioni:
     data: 18/12/2022
     cambiamenti: Aggiunta casi d'errore
   0.6.3:
-    autore: Davide Vitagliano
+    autore: Antonio Stan
     data: 19/12/2022
     cambiamenti: Revisione degli errori e identificazione corretta attori
   0.6.4:
@@ -78,6 +78,14 @@ versioni:
     autore: Andrea Auletta
     data: 15/02/2023
     cambiamenti: Aggiunta tabelle di tracciamento
+  0.7.3:
+    autore: Nicola Cecchetto
+    data: 20/02/2023
+    cambiamenti: Aggiunti riferimenti al glossario
+  1.0.0:
+    autore: Mattia Brunello
+    data: 22/02/2023
+    cambiamenti: Approvazione per il rilascio
 ...
 
 # Introduzione
@@ -252,7 +260,7 @@ y--VUC2.1.7
 * Scenario: l'utente vuole visualizzare il firmware di una riga del log;
 * Attore: tecnico;
 * Precondizioni: è stato caricato correttamente un file di log [VUC1];
-* Postcondizioni: viene visualizzato il fimware della riga del log;
+* Postcondizioni: viene visualizzato il firmware della riga del log;
 
 ##### VUC2.1.5 - Visualizzazione Descrizione
 
@@ -684,7 +692,7 @@ f--SUC2.6
 * Scenario: l'utente vuole visualizzare la deviazione standard del numero di eventi tra i log.
 * Attore: analista;
 * Precondizioni: sono stati caricati dei file di log [SUC1];
-* Postcondizioni: viene visualizzato la deviazione standar del numero di eventi.
+* Postcondizioni: viene visualizzato la deviazione standard del numero di eventi.
 
 #### SUC2.6 - Visualizzazione Lista di Occorrenze Eventi
 
@@ -764,7 +772,7 @@ c--SUC3.2
 
 * Scenario: l'utente vuole modificare la visualizzazione dei dati all'interno della lista di occorrenza eventi;
 * Attore: analista;
-* Precondizioni: è stata visualizzata la lista di occorenza eventi [SUC2.6];
+* Precondizioni: è stata visualizzata la lista di occorrenza eventi [SUC2.6];
 * Postcondizioni: la visualizzazione della lista di occorrenza eventi viene modificata.
 
 #### SUC3.1 - Aggiunta Filtro
@@ -788,16 +796,16 @@ y--SUC3.1.3
 SUC3.1.2 <.. SUC3.1.2.1 : <<extend>>
 ```
 
-* Scenario: l'utente vuole aggiungere un filtro ai dati presentati nella lista di occorenza eventi;
+* Scenario: l'utente vuole aggiungere un filtro ai dati presentati nella lista di occorrenza eventi;
 * Attore: analista;
-* Precondizioni: è stata visualizzata la lista di occorenza eventi [SUC2.6];
-* Postcondizioni: la lista di occorenza eventi mostra i dati opportunamente filtrati.
+* Precondizioni: è stata visualizzata la lista di occorrenza eventi [SUC2.6];
+* Postcondizioni: la lista di occorrenza eventi mostra i dati opportunamente filtrati.
 
 ##### SUC3.1.1 - Filtra per Unit/Subunit
 
 * Scenario: l'utente vuole filtrare i dati della lista di occorrenza eventi in base alla unit/subunit;
 * Attore: analista;
-* Precondizioni: è stata visualizzata la lista di occorenza eventi [SUC2.6];
+* Precondizioni: è stata visualizzata la lista di occorrenza eventi [SUC2.6];
 * Postcondizioni: la lista di occorrenza eventi mostra i dati filtrati secondo la unit/subunit.
 
 ##### SUC3.1.2 - Filtra per Intervallo Temporale
@@ -1098,6 +1106,7 @@ i--OUC4
 | **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
 |---------------| ----------------| ------------------- | --------- |
 | VRF1 | L'utente deve poter caricare nell'applicazione un singolo file di log (.csv) presente localmente | Obbligatorio | Capitolato - VUC1 |
+| VRF1.1 | Viene visualizzato un messaggio di errore se il file caricato non è compatibile | Obbligatorio | VUC1.1 |
 | VRF2 | Deve essere presente una visualizzazione in forma tabellare | Obbligatorio | Capitolato - VUC2 |
 | VRF2.1 | La tabella di VRF2 deve avere una colonna con intestazione "Data/ora" | Obbligatorio | VUC2.1.1 |
 | VRF2.2 | La tabella di VRF2 deve avere una colonna con intestazione "Codice evento" | Obbligatorio | VUC2.1.2 |
@@ -1112,6 +1121,7 @@ i--OUC4
 | VRF3.3 | Ordinamento per unit/subunit | Obbligatorio | Capitolato - VUC3.2.3 |
 | VRF3.4 | Ordinamento per firmware | Obbligatorio | Capitolato - VUC3.2.4 |
 | VRF4 | Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un log, con la relativa etichettatura (gli eventi devono essere ordinati ma non obbligatoriamente consecutivi l'uno all'altro) | Obbligatorio | Capitolato - VUC4 |
+| VRF4.1 | Viene visualizzato un messaggio d'errore se non è presente almeno un evento inserito dall'utente per la ricerca | Obbligatorio | VUC4.1 |
 | VRF5 | Deve essere presente un grafico "timeline" per mostrare le attivazioni degli eventi | Obbligatorio | Capitolato - VUC5 |
 | VRF5.1 | L'asse x del grafico rappresenta il tempo | Obbligatorio | Capitolato - VUC5.1 |
 | VRF5.2 | L'asse y del grafico contiene l'insieme degli eventi | Obbligatorio | Capitolato - VUC5.2 |
@@ -1120,6 +1130,7 @@ i--OUC4
 | VRF7 | Si deve poter effettuare lo "span" (scroll orizzontale) sul grafico | Obbligatorio | Capitolato - VUC6.2 |
 | VRF8 | Devono essere presenti funzioni di filtro per modificare la visualizzazione della tabella e del grafico | Obbligatorio | Capitolato - VUC3.1 - VUC6 |
 | VRF8.1 | Filtro per intervallo temporale (select) | Obbligatorio | Capitolato - VUC3.1.1 - VUC6.3 |
+| VRF8.1.1 | Viene visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido | Obbligatorio | VUC3.1.1.1 - VUC6.3.1 |
 | VRF8.2 | Filtro per unit/subunit | Obbligatorio | Capitolato - VUC3.1.2 - VUC6.4.1 |
 | VRF8.3 | Filtro per versione firmware | Obbligatorio | Capitolato - VUC3.1.3 - VUC6.4.2 |
 | VRF8.4 | Filtro per codice evento | Obbligatorio | Capitolato - VUC3.1.4 - VUC6.4.3 |
@@ -1134,13 +1145,14 @@ i--OUC4
 | **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
 |---------------| ----------------| ------------------- | --------- |
 | SRF1 | L'utente deve poter selezionare i log da analizzare per range di data/ora (min, max, all) | Obbligatorio | Capitolato - SUC1 |
+| SRF1.1 | Viene visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido | Obbligatorio | SUC1.1 |
 | SRF2 | L'utente visualizza un prospetto con i da analizzare | Obbligatorio | Capitolato - SUC2 |
 | SRF2.1 | Nel prospetto compare l'intervallo temporale | Obbligatorio | Capitolato - SUC2.1 |
 | SRF2.2 | Nel prospetto compare il numero di log analizzati | Obbligatorio | Capitolato - SUC2.2 |
 | SRF2.3 | Nel prospetto compare la media numero di eventi tra i log | Obbligatorio | Capitolato - SUC2.3 |
 | SRF2.4 | Nel prospetto compare il massimo numero di eventi tra i log | Obbligatorio | Capitolato - SUC2.4 |
 | SRF2.5 | Nel prospetto compare la deviazione standard numero di eventi fra i log | Obbligatorio | Capitolato - SUC2.5 |
-| SRF2.6 | Nel prospetto compare la lista degli eventi raggrupati per frequenza di occorrenza (0-1) | Obbligatorio | Capitolato - SUC2.6 |
+| SRF2.6 | Nel prospetto compare la lista degli eventi raggruppati per frequenza di occorrenza (0-1) | Obbligatorio | Capitolato - SUC2.6 |
 | SRF2.6.1 | Nella lista viene visualizzato il codice evento | Obbligatorio | Capitolato - SUC2.6.1.1 |
 | SRF2.6.2 | Nella lista viene visualizzato il numero di volte che l'evento è passato dallo stato 0 allo stato 1 | Obbligatorio | Capitolato - SUC2.6.1.2 |
 | SRF2.6.3 | Nella lista viene visualizzata la versione firmware | Obbligatorio | Capitolato - SUC2.6.1.3 |
@@ -1151,6 +1163,7 @@ i--OUC4
 | SRF4 | Ci devono essere delle funzioni di filtraggio | Obbligatorio | Capitolato - SUC3.1 |
 | SRF4.1 | Filtro per unit/subunit | Obbligatorio | Capitolato - SUC3.1.1 |
 | SRF4.2 | Filtro per intervallo temporale | Obbligatorio | Capitolato - SUC3.1.2 |
+| SRF4.2.1 | Viene visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido | Obbligatorio | SUC3.1.2.1 |
 | SRF4.3 | Filtro per versione firmware | Obbligatorio | Capitolato - SUC3.1.3 |
 | SRF5 | Visualizzazione grafico "tempo/occorrenze" | Obbligatorio | Capitolato - SUC4 |
 | SRF5.1 | L'asse x del grafico rappresenta il tempo | Obbligatorio | Capitolato - SUC4.1 |
@@ -1175,9 +1188,9 @@ i--OUC4
 | **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
 |---------------| ----------------| ------------------- | --------- |
 | VRQ1 | SmartLogViewer deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto* | Obbligatorio | Capitolato |
-| VRQ2 | Deve essere fornita una guida per sviluppatori di SmartLogViewer | Obbligatoio | Capitolato |
+| VRQ2 | Deve essere fornita una guida per sviluppatori di SmartLogViewer | Obbligatorio | Capitolato |
 | SRQ1 | SmartLogStatistics deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto* | Obbligatorio | Capitolato |
-| SRQ2 | Deve essere fornita una guida per sviluppatori di SmartLogStatistics | Obbligatoio | Capitolato |
+| SRQ2 | Deve essere fornita una guida per sviluppatori di SmartLogStatistics | Obbligatorio | Capitolato |
 | RQ1 | Deve essere fornita la documentazione minima richiesta anche dal corso di "Ingegneria del Software" | Obbligatorio | Capitolato |
 | RQ2 | Viene richiesto l'utilizzo di un repository pubblico (GitHub) | Obbligatorio | Capitolato |
 
@@ -1204,16 +1217,13 @@ Essendo applicativi browser, entrambe le applicazioni non hanno bisogno di esser
 
 ## Prestazionali
 
-| **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
-|---------------| ----------------| ------------------- | --------- |
-| VRP1 | I tempi computazionali non devono essere eccessivi | Obbligatorio | Discussione con azienda |
-| SRP1 | I tempi computazionali non devono essere eccessivi | Obbligatorio | Discussione con azienda |
-
+L'azienda non ha posto alcun vincolo prestazionale per le due applicazioni. Per questo motivo non è stato possibile definire requisiti di prestazione.
 # Tracciamento
 
 | Fonte | Requisito |
 | ----- | --------- |
 | VUC1 | VRF1 |
+| VUC1.1 | VRF1.1 |
 | VUC2 | VRF2 |
 | VUC2.1.1 | VRF2.1 |
 | VUC2.1.2 | VRF2.2 |
@@ -1224,6 +1234,7 @@ Essendo applicativi browser, entrambe le applicazioni non hanno bisogno di esser
 | VUC2.1.7 | VRF2.7 |
 | VUC3.1 | VRF8 |
 | VUC3.1.1 | VRF8.1 |
+| VUC3.1.1.1 | VRF8.1.1 |
 | VUC3.1.2 | VRF8.2 |
 | VUC3.1.3 | VRF8.3 |
 | VUC3.1.4 | VRF8.4 |
@@ -1233,6 +1244,7 @@ Essendo applicativi browser, entrambe le applicazioni non hanno bisogno di esser
 | VUC3.2.3 | VRF3.3 |
 | VUC3.2.4 | VRF3.4 |
 | VUC4 | VRF4 |
+| VUC4.1 | VRF4.1 |
 | VUC5 | VRF5 |
 | VUC5.1 | VRF5.1 |
 | VUC5.2 | VRF5.2 |
@@ -1241,10 +1253,12 @@ Essendo applicativi browser, entrambe le applicazioni non hanno bisogno di esser
 | VUC6.1 | VRF6 |
 | VUC6.2 | VRF7 |
 | VUC6.3 | VRF8.1 |
+| VUC6.3.1 | VRF8.1.1 |
 | VUC6.4.1 | VRF8.2 |
 | VUC6.4.2 | VRF8.3 |
 | VUC6.4.3 | VRF8.4 |
 | SUC1 | SRF1 |
+| SUC1.1 | SRF1.1 |
 | SUC2 | SRF2 |
 | SUC2.1 | SRF2.1 |
 | SUC2.2 | SRF2.2 |
@@ -1258,6 +1272,7 @@ Essendo applicativi browser, entrambe le applicazioni non hanno bisogno di esser
 | SUC3.1 | SRF4 |
 | SUC3.1.1 | SRF4.1 |
 | SUC3.1.2 | SRF4.2 |
+| SUC3.1.2.1 | SRF4.2.1 |
 | SUC3.1.3 | SRF4.3 |
 | SUC3.2 | SRF3 |
 | SUC3.2.1 | SRF3.1 |
@@ -1281,6 +1296,6 @@ Essendo applicativi browser, entrambe le applicazioni non hanno bisogno di esser
 | OUC2 | VRO5, SRO3 |
 | OUC3 | VRO2 |
 | OUC4 | SRO1 |
-| Capitolato |  |
-| Discussione interna | |
-| Discussione con azienda |  |
+| Capitolato | VRF1, VRF2, VRF2.7, VRF3, VRF3.1, VRF3.2, VRF3.3, VRF3.4, VRF4, VRF5, VRF5.1, VRF5.2, VRF5.3, VRF6, VRF7, VRF8, VRF8.1, VRF8.2, VRF8.3, VRF8.4, SRF1, SRF2, SRF2.1, SRF2.2, SRF2.3, SRF2.4, SRF2.5, SRF2.6, SRF2.6.1, SRF2.6.2, SRF2.6.3, SRF3, SRF3.1, SRF3.2, SRF3.3, SRF4, SRF4.1, SRF4.2, SRF4.3, SRF5, SRF5.1, SRF5.2, SRF5.3, SRF6, SRF6.1, SRF6.2, SRF6.3, SRF7, SRF7.1, SRF7.2, SRF8, SRF8.1, SRF8.2, VRO1, VRO2, VRO3, SRO1, VRQ1, VRQ2, SRQ1, SRQ2, RQ1, RQ2, VRV1, VRV2, SRV1, SRV2 |
+| Discussione interna | VRO4, VRO5, SRO2, SRO3 |
+| Discussione con azienda | VRV3, VRV4, VRV5, VRV6, SRV3, SRV4, SRV5, SRV6 |
