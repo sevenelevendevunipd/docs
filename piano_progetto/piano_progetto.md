@@ -174,11 +174,11 @@ Tenendo in considerazione le scadenze prefissate per ogni revisione e la durata 
   * Progettazione Technology Baseline composta da 3 sprint.
   * Proof of Concept composta da 2 sprint.
 * Product Baseline (PB) composta da 3 sprint:
-  <!--Sto tirando ad indovinare, correggere in futuro nel caso sia sbaglaito-->
+  <!--Sto tirando ad indovinare, correggere in futuro nel caso sia sbagliato-->
   * Progettazione di dettaglio dei Requisiti Obbligatori
   * Codifica dei Requisiti Obbligatori
 * Customer Acceptance (CA) composta da 2 sprint:
-  <!--Sto tirando ad indovinare, correggere in futuro nel caso sia sbaglaito-->
+  <!--Sto tirando ad indovinare, correggere in futuro nel caso sia sbagliato-->
   * Progettazione di dettaglio e Codifica dei Requisiti Opzionali <!--Due in uno dato che i requisiti opzionali sono veramente pochi-->
   * Test, Collaudo e Validazione finale
 
@@ -191,7 +191,13 @@ Questo significa che un componente del team può assumere lo stesso ruolo su doc
 I responsabili cambiano all'inizio di ogni baseline.
 La stessa suddivisione verrà applicata durante la stesura dell'architettura e l'implementazione del software.
 
+<<<<<<< HEAD
 *Alla fine del progetto didattico ogni membro del team avrà assunto almeno una volta tutti i ruoli.*
+=======
+Ad ogni nuovo sprint i ruoli precedentemente fissati possono essere cambiati. Un'eccezione alla regola ricade sul ruolo del *responsabile*, il quale essendo una figura altamente importante per la stabilità del gruppo e del progetto si preferisce mantenere la stessa persone che ricopre quel ruolo per un'istante di tempo maggiore rispetto al solito.
+
+Uno stesso ruolo può essere ricoperto contemporaneamente da più persone a eccezione del ruolo di *responsabile*.
+>>>>>>> 363d5f1 ([SL-5] Fix typo)
 
 ## Analisi dei requisiti
 
@@ -204,8 +210,8 @@ La stessa suddivisione verrà applicata durante la stesura dell'architettura e l
 
 Le attività da svolgere durante questo periodo sono:
 
-* **Norme di Progetto:** L’obiettivo del documento è quello di impostare delle norme per poter lavorare in maniera uniforme all'interno del gruppo. L'*amministratore* di un certo documento, dopo essersi concordato con il *responsabile*, emana le norme. I *verificatori* in seguito si impegnerano nel controllo della correttezza di tali documenti.
-* **Glossario:** Documento che specifica ogni termine specializzato nel dominio di progetto. I *verificatori* concordandosi direttamente con il *responsabile* aggiungerano termini per evitare possibili fraintendimenti con i commitenti.
+* **Norme di Progetto:** L’obiettivo del documento è quello di impostare delle norme per poter lavorare in maniera uniforme all'interno del gruppo. L'*amministratore* di un certo documento, dopo essersi concordato con il *responsabile*, emana le norme. I *verificatori* in seguito si impegneranno nel controllo della correttezza di tali documenti.
+* **Glossario:** Documento che specifica ogni termine specializzato nel dominio di progetto. I *verificatori* concordandosi direttamente con il *responsabile* aggiungeranno termini per evitare possibili fraintendimenti con i committenti.
 * **Piano di Progetto:** L'obiettivo del documento è quello di stabilire il corretto avanzamento del progetto tramite possibili analisi sui rischi e di poter quindi rientrare nei costi/margini del preventivo fatto. Il *responsabile* è l'unico individuo del gruppo che si occupa del corretto svolgimento di questa attività.
 * **Piano di Qualifica:** Il documento serve a stabilire metodi svolti dal gruppo per poter constatare il giusto raggiungimento degli obiettivi predisposti. L'*amministratore* emana le procedure di gestione di qualità e il *verificatore* esegue tali procedure sui documenti di loro competenza.
 * **Analisi dei Requisiti:** L'obiettivo del documento è quello di fissare i requisiti (espliciti ed impliciti) concordati con il proponente. L'*analista* è colui che identifica questi requisiti.
@@ -226,7 +232,7 @@ Nel periodo di Analisi dei Requisiti, ciascun componente rivestirà i ruoli seco
 | **Totale**        |  **18**  | **30**  | **75** |    **-**    |    **-**     | **51**  |  **174**   |
 
 <!--NOTA PER IL FUTURO, IMPORTANTE:
-     - Anotnio avrà 3 ore di analista nella fase di "progettazione di dettaglio e codifica per i requisiti opzionali"
+     - Antonio avrà 3 ore di analista nella fase di "progettazione di dettaglio e codifica per i requisiti opzionali"
      - Enrik avrà 2 ore di analista nella fase di "progettazione di dettaglio e codifica per i requisiti obbligatori"
      - Andrea avrà 2 ore di analista nella fase di "codifica proof of concept"
      - Nicola avrà 2 ore di analista nella fase di "codifica proof of concept"
@@ -271,7 +277,7 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 Le attività da svolgere durante questo periodo sono:
 
 * **Technology Baseline**: definizione delle tecnologie da utilizzare per la realizzazione del progetto, verificate tramite la codifica di un Proof of Concept.
-* **Modifiche ai documenti**: aggionamento dei documenti precedentemente avviati.
+* **Modifiche ai documenti**: aggiornamento dei documenti precedentemente avviati.
 
 ### Preventivo
 
@@ -328,7 +334,7 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 Le attività da svolgere durante questo periodo sono:
 
 * **Codifica Proof of Concept**: codifica del Proof of Concept, verificato tramite la realizzazione di un prototipo funzionante con implementazione di alcune funzionalità di base.
-* **Modifiche ai documenti**: aggionamento dei documenti precedentemente avviati.
+* **Modifiche ai documenti**: aggiornamento dei documenti precedentemente avviati.
 
 ### Preventivo
 
@@ -400,7 +406,7 @@ Nel periodo di Progettazione di dettaglio dei Requisiti Obbligatori, ciascun com
 | **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
 <!--NOTA PER IL FUTURO, IMPORTANTE:
-     - Anotnio avrà 3 ore di analista nella fase di "progettazione di dettaglio e codifica per i requisiti opzionali"
+     - Antonio avrà 3 ore di analista nella fase di "progettazione di dettaglio e codifica per i requisiti opzionali"
      - Enrik avrà 2 ore di analista nella fase di "progettazione di dettaglio e codifica per i requisiti obbligatori"
  -->
 
@@ -517,7 +523,7 @@ Quadro dei costi da affrontare:
 **Periodo:**
 <!--Abbiamo il problema che si tratta di mezzo sprint (1 settimana al posto di 2).-->
 
-* INIZIO 24 Aprile 2023 - Fine periodo di progettazione e codificadei Requisiti Opzionali
+* INIZIO 24 Aprile 2023 - Fine periodo di progettazione e codifica dei Requisiti Opzionali
 * FINE 30 Aprile 2023 - Revisione di Customer Acceptance (CA)
 
 **Ruoli coinvolti:**
@@ -560,7 +566,7 @@ Quadro dei costi da affrontare:
 # Consuntivo di periodo
 
 In questa sezione vengono esposti i costi e gli orari effettivi sostenuti dal gruppo Seven Eleven.
-Infine viene presentato un bilancio tra il consutivo e il preventivo di un determinato periodo (viene riportato a fianco dei nuovi valori).
+Infine viene presentato un bilancio tra il consultivo e il preventivo di un determinato periodo (viene riportato a fianco dei nuovi valori).
 Quest'ultimo risulterà positivo quando la spesa effettiva è minore del preventivo e viceversa sarà negativo quando la spesa supererà i costi preventivati.
 
 ## Analisi dei requisiti
@@ -578,7 +584,7 @@ Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 | Zanellato Augusto | 10 (+1)  |    4    |   10    |      -      |      -       | 7 (-2)  |  31 (-1)   |
 | **Totale**        |  **19**  | **30**  | **75**  |    **-**    |    **-**     | **47**  |  **171**   |
 
-Di seguito vengono riportate le variaizioni dei costi:
+Di seguito vengono riportate le variazioni dei costi:
 
 | **Ruolo**      | **Ore** |   **Costo**   |
 | -------------- | :-----: | :-----------: |
@@ -606,7 +612,7 @@ Di seguito vengono riportate le variaizioni dei costi:
 | **-3**  | **-30,00** |
 
 Il bilancio è positivo rispetto a quanto preventivato per questo periodo e tutti gli obiettivi sono stati raggiunti con leggero anticipo rispetto a quanto previsto.
-Il bilancio finale non risulta essere scostato in maniera significativa dalle previsioni effettuate dal gruppo quinidi non è ritenuta necessaria la ripianificazione del prossimo periodo.
+Il bilancio finale non risulta essere scostato in maniera significativa dalle previsioni effettuate dal gruppo quindi non è ritenuta necessaria la ripianificazione del prossimo periodo.
 
 ## Progettazione Technology Baseline
 
@@ -623,7 +629,7 @@ Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 | Zanellato Augusto |    -     |   3(-1) |   -    |      4      |      -       |    3     |    10(-1)  |
 | **Totale**        | **6(-1)**|**5(-1)**| **8**  | **28(-1)**  |    **-**     |**18(-2)**| **64(-5)** |
 
-Di seguito vengono riportate le variaizioni dei costi:
+Di seguito vengono riportate le variazioni dei costi:
 
 | **Ruolo**      | **Ore**   | **Costo**     |
 | -------------- | :-------: | :-----------: |
@@ -664,7 +670,7 @@ Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 | Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
 | **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
-Di seguito vengono riportate le variaizioni dei costi:
+Di seguito vengono riportate le variazioni dei costi:
 
 | **Ruolo**      | **Ore** | **Costo** |
 | -------------- | :-----: | :-------: |
@@ -697,7 +703,7 @@ Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 | Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
 | **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
-Di seguito vengono riportate le variaizioni dei costi:
+Di seguito vengono riportate le variazioni dei costi:
 
 | **Ruolo**      | **Ore** | **Costo** |
 | -------------- | :-----: | :-------: |
@@ -730,7 +736,7 @@ Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 | Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
 | **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
-Di seguito vengono riportate le variaizioni dei costi:
+Di seguito vengono riportate le variazioni dei costi:
 
 | **Ruolo**      | **Ore** | **Costo** |
 | -------------- | :-----: | :-------: |
@@ -763,7 +769,7 @@ Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 | Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
 | **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
-Di seguito vengono riportate le variaizioni dei costi:
+Di seguito vengono riportate le variazioni dei costi:
 
 | **Ruolo**      | **Ore** | **Costo** |
 | -------------- | :-----: | :-------: |
@@ -796,7 +802,7 @@ Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 | Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
 | **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
-Di seguito vengono riportate le variaizioni dei costi:
+Di seguito vengono riportate le variazioni dei costi:
 
 | **Ruolo**      | **Ore** | **Costo** |
 | -------------- | :-----: | :-------: |
