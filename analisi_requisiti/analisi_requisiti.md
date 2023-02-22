@@ -17,7 +17,7 @@ versioni:
   0.2.0:
     autore: Davide Vitagliano
     data: 24/11/2022
-    cambiamenti: Stesura parziale Use Cases per SmartLogViewer
+    cambiamenti: Stesura parziale Use Cases per {g:smartlogviewer}
   0.3.0:
     autore: Andrea Auletta
     data: 25/11/2022
@@ -100,10 +100,10 @@ La formulazione segue le regole esposte nel documento *Norme di progetto*.
 
 Il progetto prevede di sviluppare due applicazioni:
 
-* SmartLogViewer: Permette la visualizzazione di un singolo file di log evidenziandone alcune caratteristiche e fornendo
+* {g:smartlogviewer}: Permette la visualizzazione di un singolo file di log evidenziandone alcune caratteristiche e fornendo
   dei grafici sull’andamento di alcuni valori;
 * SmartLogStatistics: Permette la visualizzazione aggregata di una serie di file di log mostrando oltre ai dati visibili
-  su SmartLogViewer anche delle statistiche come ad esempio la correlazione di alcuni eventi mediante l’uso di grafici.
+  su {g:smartlogviewer} anche delle statistiche come ad esempio la correlazione di alcuni eventi mediante l’uso di grafici.
 
 ## Glossario
 
@@ -121,7 +121,7 @@ documento *Glossario*[^1] assieme alle loro definizioni.
 
 ## Attori
 
-Le applicazioni dovranno essere utilizzate dagli utenti interni all'azienda: SmartLogViewer viene utilizzata principalmente
+Le applicazioni dovranno essere utilizzate dagli utenti interni all'azienda: {g:smartlogviewer} viene utilizzata principalmente
 dai tecnici, mentre SmartLogStatistics da altri impiegati. <!--non ricordo il termine usato da loro-->
 In aggiunta, è presente un database dei log accessibile agli impiegati.
 Vengono identificati i seguenti attori:
@@ -135,12 +135,12 @@ u <|-- :Tecnico:
 u <|-- :Analista:
 ```
 
-## SmartLogViewer
+## {g:smartlogviewer}
 
-```{ .plantuml caption="SmartLogViewer"}
+```{ .plantuml caption="{g:smartlogviewer}"}
 left to right direction
 :Tecnico: as t
-package "SmartLogViewer"{
+package "{g:smartlogviewer}"{
 usecase VUC1 as "VUC1
 Caricamento File"
 usecase VUC1.1 as "VUC1.1
@@ -170,14 +170,14 @@ VUC1 <.. VUC1.1 : <<extend>>
 
 ### VUC1 - Caricamento file di log
 
-* Scenario: l'utente vuole caricare un file di log da visualizzare nell'applicazione SmartLogViewer;
+* Scenario: l'utente vuole caricare un file di log da visualizzare nell'applicazione {g:smartlogviewer};
 * Attore: tecnico;
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: il file appena caricato viene processato correttamente dall'applicazione.
 
 ### VUC1.1 File non compatibile
 
-* Scenario: l'utente carica un file non compatibile nell'applicazione SmartLogViewer;
+* Scenario: l'utente carica un file non compatibile nell'applicazione {g:smartlogviewer};
 * Attore: tecnico;
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: l'applicazione non accetta il file caricato.
@@ -1035,7 +1035,7 @@ u--SUC7.2
 
 ```{ .plantuml caption="OUC1"}
 left to right direction
-package "SmartLogViewer/SmartLogStatistics"{
+package "{g:smartlogviewer}/SmartLogStatistics"{
 usecase OUC1 as "OUC1
 Esportazione file"
 }
@@ -1052,7 +1052,7 @@ Esportazione file"
 
 ```{ .plantuml caption="OUC2"}
 left to right direction
-package "SmartLogViewer/SmartLogStatistics"{
+package "{g:smartlogviewer}/SmartLogStatistics"{
 usecase OUC2 as "OUC2
 Ripristino filtri"
 }
@@ -1070,7 +1070,7 @@ Ripristino filtri"
 ```{ .plantuml caption="OUC3"}
 left to right direction
 :Tecnico: as i
-package "SmartLogViewer"{
+package "{g:smartlogviewer}"{
 usecase OUC3 as "OUC3
 Ricerca sequenza di eventi"
 }
@@ -1101,7 +1101,7 @@ i--OUC4
 
 # Requisiti
 
-## Funzionali (SmartLogViewer)
+## Funzionali ({g:smartlogviewer})
 
 | **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
 |---------------| ----------------| ------------------- | --------- |
@@ -1187,8 +1187,8 @@ i--OUC4
 
 | **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
 |---------------| ----------------| ------------------- | --------- |
-| VRQ1 | SmartLogViewer deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto* | Obbligatorio | Capitolato |
-| VRQ2 | Deve essere fornita una guida per sviluppatori di SmartLogViewer | Obbligatorio | Capitolato |
+| VRQ1 | {g:smartlogviewer} deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto* | Obbligatorio | Capitolato |
+| VRQ2 | Deve essere fornita una guida per sviluppatori di {g:smartlogviewer} | Obbligatorio | Capitolato |
 | SRQ1 | SmartLogStatistics deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto* | Obbligatorio | Capitolato |
 | SRQ2 | Deve essere fornita una guida per sviluppatori di SmartLogStatistics | Obbligatorio | Capitolato |
 | RQ1 | Deve essere fornita la documentazione minima richiesta anche dal corso di "Ingegneria del Software" | Obbligatorio | Capitolato |
@@ -1198,12 +1198,12 @@ i--OUC4
 
 | **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
 |---------------| ----------------| ------------------- | --------- |
-| VRV1 | L'interfaccia di visualizzazione di SmartLogViewer deve essere di tipo web | Obbligatorio | Capitolato |
+| VRV1 | L'interfaccia di visualizzazione di {g:smartlogviewer} deve essere di tipo web | Obbligatorio | Capitolato |
 | VRV2 | Richiesto Python per la parte di analisi dei dati | Obbligatorio | Capitolato |
-| VRV3 | SmartLogViewer deve esser compatibile con il browser Google Chrome versione 110 | Obbligatorio | Discussione con azienda |
-| VRV4 | SmartLogViewer deve esser compatibile con il browser Firefox versione 110 | Obbligatorio | Discussione con azienda |
-| VRV5 | SmartLogViewer deve esser compatibile con il browser Microsoft Edge versione 110 | Obbligatorio | Discussione con azienda |
-| VRV6 | SmartLogViewer deve esser compatibile con il browser Opera versione 95 | Obbligatorio | Discussione con azienda |
+| VRV3 | {g:smartlogviewer} deve esser compatibile con il browser Google Chrome versione 110 | Obbligatorio | Discussione con azienda |
+| VRV4 | {g:smartlogviewer} deve esser compatibile con il browser Firefox versione 110 | Obbligatorio | Discussione con azienda |
+| VRV5 | {g:smartlogviewer} deve esser compatibile con il browser Microsoft Edge versione 110 | Obbligatorio | Discussione con azienda |
+| VRV6 | {g:smartlogviewer} deve esser compatibile con il browser Opera versione 95 | Obbligatorio | Discussione con azienda |
 | SRV1 | L'interfaccia di visualizzazione di SmartLogStatistics deve essere di tipo web | Obbligatorio | Capitolato |
 | SRV2 | Richiesto Python per la parte di analisi dei dati | Obbligatorio | Capitolato |
 | SRV3 | SmartLogStatistics deve esser compatibile con il browser Google Chrome versione 110 | Obbligatorio | Discussione con azienda |
