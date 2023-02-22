@@ -10,78 +10,90 @@ versioni:
     autore: Andrea Auletta
     data: 15/11/2022
     cambiamenti: Prima stesura
-  0.1.0:
+  0.0.2:
     autore: Andrea Auletta
     data: 16/11/2022
     cambiamenti: Stesura requisiti espliciti del capitolato
-  0.2.0:
+  0.1.0:
+    autore: Antonio Stan
+    data: 17/11/2022
+    cambiamenti: Verfica generale del documento
+  0.1.1:
     autore: Davide Vitagliano
     data: 24/11/2022
-    cambiamenti: Stesura parziale Use Cases per {g:smartlogviewer}
-  0.3.0:
+    cambiamenti: Stesura parziale Use Cases per smartlogviewer
+  0.2.0:
+    autore: Augusto Zanellato
+    data: 24/11/2022
+    cambiamenti: Verfica generale del documento  
+  0.2.1:
     autore: Andrea Auletta
     data: 25/11/2022
     cambiamenti: Completata prima stesura dei casi d'uso
-  0.3.1:
+  0.2.2:
     autore: Nicola Cecchetto
     data: 26/11/2022
     cambiamenti: Aggiunti grafici dei casi d'uso e riorganizzazione del documento
-  0.3.2:
+  0.3.0:
     autore: Enrik Rucaj
-    data: 01/12/2022
-    cambiamenti: Revisione degli errori
-  0.4.0:
+    data: 02/12/2022
+    cambiamenti: Verfica generale del documento
+  0.3.1:
     autore: Davide Vitagliano
     data: 04/12/2022
     cambiamenti: Aggiunti requisiti impliciti e opzionali
-  0.5.0:
+  0.4.0:
+   autore: Antonio Stan
+   data: 05/12/2022
+   cambiamenti: Verfica generale del documento
+  0.4.1:
     autore: Davide Vitagliano
     data: 06/12/2022
     cambiamenti: Aggiunti e riscritti use cases
+  0.5.0:
+   autore: Augusto Zanellato
+   data: 08/12/2022
+   cambiamenti: Verfica generale del documento
   0.5.1:
-    autore: Augusto Zanellato
-    data: 07/12/2022
-    cambiamenti: Verifica e correzione errori minori
-  0.6.0:
     autore: Nicola Cecchetto
     data: 08/12/2022
     cambiamenti: Aggiornamento post-conferenza con azienda
-  0.6.1:
+  0.5.2:
     autore: Andrea Auletta
     data: 16/12/2022
     cambiamenti: Divisone UC3.4 in UC3.4.1, UC3.4.2 e UC3.4.3. Aggiunti OUC3 e OUC4
-  0.6.2:
+  0.5.3:
     autore: Nicola Cecchetto
     data: 18/12/2022
     cambiamenti: Aggiunta casi d'errore
-  0.6.3:
-    autore: Antonio Stan
-    data: 19/12/2022
-    cambiamenti: Revisione degli errori e identificazione corretta attori
-  0.6.4:
-    autore: Enrik Rucaj
-    data: 19/12/2022
-    cambiamenti: Revisione di tutto il documento
-  0.6.5:
+  0.5.4:
     autore: Andrea Auletta
     data: 20/12/2022
     cambiamenti: Aggiornamento post-conferenza con azienda
-  0.7.0:
+  0.6.0:
+    autore: Enrik Rucaj
+    data: 21/12/2022
+    cambiamenti: Verfica generale del documento
+  0.6.1
     autore: Nicola Cecchetto
     data: 31/01/2023
     cambiamenti: Aggiornamento post-esercitazioni del prof. Cardin
-  0.7.1:
+  0.6.2:
     autore: Nicola Cecchetto
     data: 14/02/2023
     cambiamenti: Aggiornamento post conferenza con il professor Cardin
-  0.7.2:
+  0.6.3:
     autore: Andrea Auletta
     data: 15/02/2023
     cambiamenti: Aggiunta tabelle di tracciamento
-  0.7.3:
+  0.6.4:
     autore: Nicola Cecchetto
     data: 20/02/2023
     cambiamenti: Aggiunti riferimenti al glossario
+  0.7.0:
+    autore: Antonio Stan
+    data: 21/02/2023
+    cambiamenti: Verfica generale del documento
   1.0.0:
     autore: Mattia Brunello
     data: 22/02/2023
@@ -92,17 +104,16 @@ versioni:
 
 ## Scopo del documento
 
-Lo scopo di questo documento è quello d'illustrare i casi d'uso e i requisiti fondamentali dal gruppo durante l'analisi
-riguardanti il capitolato proposto dall'azienda Socomec.
+Lo scopo di questo documento è quello d'illustrare i casi d'uso e i requisiti individuati dal gruppo durante l'analisi riguardanti il capitolato proposto dall'azienda Socomec.
 La formulazione segue le regole esposte nel documento *Norme di progetto*.
 
 ## Scopo del prodotto
 
 Il progetto prevede di sviluppare due applicazioni:
 
-* {g:smartlogviewer}: Permette la visualizzazione di un singolo file di log evidenziandone alcune caratteristiche e fornendo
+* {g:smartlogviewer}: Permette la visualizzazione di un singolo file di {g:log} evidenziandone alcune caratteristiche e fornendo
   dei grafici sull’andamento di alcuni valori;
-* SmartLogStatistics: Permette la visualizzazione aggregata di una serie di file di log mostrando oltre ai dati visibili
+* {g:smartlogstatistics}: Permette la visualizzazione aggregata di una serie di file di {g:log} mostrando oltre ai dati visibili
   su {g:smartlogviewer} anche delle statistiche come ad esempio la correlazione di alcuni eventi mediante l’uso di grafici.
 
 ## Glossario
@@ -122,11 +133,11 @@ documento *Glossario*[^1] assieme alle loro definizioni.
 ## Attori
 
 Le applicazioni dovranno essere utilizzate dagli utenti interni all'azienda: {g:smartlogviewer} viene utilizzata principalmente
-dai tecnici, mentre SmartLogStatistics da altri impiegati. <!--non ricordo il termine usato da loro-->
-In aggiunta, è presente un database dei log accessibile agli impiegati.
+dai tecnici, mentre {g:smartlogstatistics} da altri impiegati. <!--non ricordo il termine usato da loro-->
+In aggiunta, è presente un database dei {g:log} accessibile agli impiegati.
 Vengono identificati i seguenti attori:
 
-* Il tecnico;
+* Il {g:tecnico};
 * L'analista;
 
 ```{ .plantuml caption="Attori"}
@@ -135,12 +146,12 @@ u <|-- :Tecnico:
 u <|-- :Analista:
 ```
 
-## {g:smartlogviewer}
+## SmartLogViewer
 
-```{ .plantuml caption="{g:smartlogviewer}"}
+```{ .plantuml caption="smartlogviewer"}
 left to right direction
 :Tecnico: as t
-package "{g:smartlogviewer}"{
+package "smartlogviewer"{
 usecase VUC1 as "VUC1
 Caricamento File"
 usecase VUC1.1 as "VUC1.1
@@ -170,15 +181,15 @@ VUC1 <.. VUC1.1 : <<extend>>
 
 ### VUC1 - Caricamento file di log
 
-* Scenario: l'utente vuole caricare un file di log da visualizzare nell'applicazione {g:smartlogviewer};
-* Attore: tecnico;
+* Scenario: l'utente vuole caricare un file di {g:log} da visualizzare nell'applicazione {g:smartlogviewer};
+* Attore: {g:tecnico};
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: il file appena caricato viene processato correttamente dall'applicazione.
 
 ### VUC1.1 File non compatibile
 
 * Scenario: l'utente carica un file non compatibile nell'applicazione {g:smartlogviewer};
-* Attore: tecnico;
+* Attore: {g:tecnico};
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: l'applicazione non accetta il file caricato.
 
@@ -194,9 +205,9 @@ Visualizzazione Singolo Elemento"
 z--VUC2.1
 ```
 
-* Scenario: l'utente vuole visualizzare i dati del log in una tabella;
-* Attore: tecnico;
-* Precondizioni: è stato caricato correttamente un file di log [VUC1];
+* Scenario: l'utente vuole visualizzare i dati del {g:log} in una tabella;
+* Attore: {g:tecnico};
+* Precondizioni: è stato caricato correttamente un file di {g:log} [VUC1];
 * Postcondizioni: viene visualizzata la tabella con i dati;
 
 #### VUC2.1 - Visualizzazione Singolo Elemento
@@ -229,59 +240,59 @@ y--VUC2.1.6
 y--VUC2.1.7
 ```
 
-* Scenario: l'utente vuole visualizzare i dati di una singola riga del log;
-* Attore: tecnico;
-* Precondizioni: è stato caricato correttamente un file di log [VUC1];
+* Scenario: l'utente vuole visualizzare i dati di una singola riga del {g:log};
+* Attore: {g:tecnico};
+* Precondizioni: è stato caricato correttamente un file di {g:log} [VUC1];
 * Postcondizioni: viene visualizzata riga con i dati;
 
 ##### VUC2.1.1 - Visualizzazione Data/Ora
 
-* Scenario: l'utente vuole visualizzare la data e l'ora di una riga del log;
-* Attore: tecnico;
-* Precondizioni: è stato caricato correttamente un file di log [VUC1];
-* Postcondizioni: vengono visualizzati data e ora della riga del log;
+* Scenario: l'utente vuole visualizzare la data e l'ora di una riga del {g:log};
+* Attore: {g:tecnico};
+* Precondizioni: è stato caricato correttamente un file di {g:log} [VUC1];
+* Postcondizioni: vengono visualizzati data e ora della riga del {g:log};
 
 ##### VUC2.1.2 - Visualizzazione Codice Evento
 
-* Scenario: l'utente vuole visualizzare il codice evento di una riga del log;
-* Attore: tecnico;
-* Precondizioni: è stato caricato correttamente un file di log [VUC1];
-* Postcondizioni: viene visualizzato il codice evento della riga del log;
+* Scenario: l'utente vuole visualizzare il {g:codice_evento} di una riga del {g:log};
+* Attore: {g:tecnico};
+* Precondizioni: è stato caricato correttamente un file di {g:log} [VUC1];
+* Postcondizioni: viene visualizzato il {g:codice_evento} della riga del {g:log};
 
 ##### VUC2.1.3 - Visualizzazione Unit/Subunit
 
-* Scenario: l'utente vuole visualizzare la Unit e la Subunit di una riga del log;
-* Attore: tecnico;
-* Precondizioni: è stato caricato correttamente un file di log [VUC1];
-* Postcondizioni: vengono visualizzati Unit e Subunit della riga del log;
+* Scenario: l'utente vuole visualizzare la Unit e la Subunit di una riga del {g:log};
+* Attore: {g:tecnico};
+* Precondizioni: è stato caricato correttamente un file di {g:log} [VUC1];
+* Postcondizioni: vengono visualizzati Unit e Subunit della riga del {g:log};
 
 ##### VUC2.1.4 - Visualizzazione Firmware
 
-* Scenario: l'utente vuole visualizzare il firmware di una riga del log;
-* Attore: tecnico;
-* Precondizioni: è stato caricato correttamente un file di log [VUC1];
-* Postcondizioni: viene visualizzato il firmware della riga del log;
+* Scenario: l'utente vuole visualizzare il {g:firmware} di una riga del {g:log};
+* Attore: {g:tecnico};
+* Precondizioni: è stato caricato correttamente un file di {g:log} [VUC1];
+* Postcondizioni: viene visualizzato il {g:firmware} della riga del {g:log};
 
 ##### VUC2.1.5 - Visualizzazione Descrizione
 
-* Scenario: l'utente vuole visualizzare la descrizione di una riga del log;
-* Attore: tecnico;
-* Precondizioni: è stato caricato correttamente un file di log [VUC1];
-* Postcondizioni: viene visualizzata la descrizione della riga del log;
+* Scenario: l'utente vuole visualizzare la descrizione di una riga del {g:log};
+* Attore: {g:tecnico};
+* Precondizioni: è stato caricato correttamente un file di {g:log} [VUC1];
+* Postcondizioni: viene visualizzata la descrizione della riga del {g:log};
 
 ##### VUC2.1.6 - Visualizzazione Stato
 
-* Scenario: l'utente vuole visualizzare lo stato di una riga del log;
-* Attore: tecnico;
-* Precondizioni: è stato caricato correttamente un file di log [VUC1];
-* Postcondizioni: viene visualizzato lo stato della riga del log;
+* Scenario: l'utente vuole visualizzare lo stato di una riga del {g:log};
+* Attore: {g:tecnico};
+* Precondizioni: è stato caricato correttamente un file di {g:log} [VUC1];
+* Postcondizioni: viene visualizzato lo stato della riga del {g:log};
 
 ##### VUC2.1.7 - Visualizzazione colore
 
-* Scenario: l'utente vuole visualizzare il colore associato all'evento di una riga del log;
-* Attore: tecnico;
-* Precondizioni: è stato caricato correttamente un file di log [VUC1];
-* Postcondizioni: viene visualizzato il colore associato all'evento della riga del log;
+* Scenario: l'utente vuole visualizzare il colore associato all'evento di una riga del {g:log};
+* Attore: {g:tecnico};
+* Precondizioni: è stato caricato correttamente un file di {g:log} [VUC1];
+* Postcondizioni: viene visualizzato il colore associato all'evento della riga del {g:log};
 
 ### VUC3 - Modifica Visualizzazione della Tabella
 
@@ -299,7 +310,7 @@ c--VUC3.2
 ```
 
 * Scenari: l'utente vuole modificare la visualizzazione dei dati in tabella;
-* Attore: tecnico;
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzata la tabella aggiornata.
 
@@ -328,44 +339,44 @@ r-- VUC3.1.4
 ```
 
 * Scenari: l'utente vuole applicare un filtro alle righe della tabella;
-* Attore: tecnico;
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzata la tabella con i dati filtrati.
 
 ##### VUC3.1.1 - Per Intervallo Temporale
 
 * Scenari: l'utente vuole applicare un intervallo temporale ai dati visualizzati in tabella;
-* Attore: tecnico;
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzata la tabella con i dati che rispettano l'intervallo temporale.
 
 ##### VUC3.1.1.1 - Intervallo Non Corretto
 
 * Scenario: l'intervallo temporale fornito dall'utente non è valido (data d'inizio posteriore alla data di fine);
-* Attore: tecnico;
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzato un messaggio d'errore (intervallo non corretto).
 
 ##### VUC3.1.2 - Per Unit/Subunit
 
-* Scenari: l'utente vuole visualizzare solo le righe di una particolare Unit/Subunit;
-* Attore: tecnico;
+* Scenari: l'utente vuole visualizzare solo le righe di una particolare {g:unitsubunit};
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene visualizzata la tabella con i dati della Unit/Subunit selezionata.
+* Postcondizioni: viene visualizzata la tabella con i dati della {g:unitsubunit} selezionata.
 
 ##### VUC3.1.3 - Per Firmware
 
-* Scenari: l'utente vuole visualizzare solo le righe di un particolare firmware;
-* Attore: tecnico;
+* Scenari: l'utente vuole visualizzare solo le righe di un particolare {g:firmware};
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene visualizzata la tabella con i dati del firmware selezionato.
+* Postcondizioni: viene visualizzata la tabella con i dati del {g:firmware} selezionato.
 
 ##### VUC3.1.4 - Per codice evento
 
-* Scenari: l'utente vuole visualizzare le righe che hanno un certo codice evento;
-* Attore: tecnico;
+* Scenari: l'utente vuole visualizzare le righe che hanno un certo {g:codice_evento};
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene visualizzata la tabella con i dati del codice evento selezionato.
+* Postcondizioni: viene visualizzata la tabella con i dati del {g:codice_evento} selezionato.
 
 #### VUC3.2 - Ordinamento per Colonna
 
@@ -389,51 +400,51 @@ r-- VUC3.2.4
 ```
 
 * Scenario: l'utente vuole applicare un ordinamento in base a una colonna della tabella;
-* Attore: tecnico;
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzata la tabella con i dati ordinati.
 
 ##### VUC3.2.1 - Ordinamento per Data/Ora
 
 * Scenario: l'utente vuole ordinare le righe della tabella secondo il campo data/ora;
-* Attore: tecnico;
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: viene visualizzata la tabella ordinata secondo data/ora;
 
 ##### VUC3.2.2 - Ordinamento per Codice Evento
 
-* Scenario: l'utente vuole ordinare le righe della tabella secondo il campo codice evento;
-* Attore: tecnico;
+* Scenario: l'utente vuole ordinare le righe della tabella secondo il campo {g:codice_evento};
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene visualizzata la tabella ordinata secondo codice evento;
+* Postcondizioni: viene visualizzata la tabella ordinata secondo {g:codice_evento};
 
 ##### VUC3.2.3 - Ordinamento per Unit/Subunit
 
-* Scenario: l'utente vuole ordinare le righe della tabella secondo il campo unit/subunit;
-* Attore: tecnico;
+* Scenario: l'utente vuole ordinare le righe della tabella secondo il campo {g:unitsubunit};
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene visualizzata la tabella ordinata secondo unit/subunit;
+* Postcondizioni: viene visualizzata la tabella ordinata secondo {g:unitsubunit};
 
 ##### VUC3.2.4 - Ordinamento per Firmware
 
-* Scenario: l'utente vuole ordinare le righe della tabella secondo il campo firmware;
-* Attore: tecnico;
+* Scenario: l'utente vuole ordinare le righe della tabella secondo il campo {g:firmware};
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene visualizzata la tabella ordinata secondo firmware;
+* Postcondizioni: viene visualizzata la tabella ordinata secondo {g:firmware};
 
 ### VUC4 - Ricerca Eventi Ordinati
 
 * Scenario: l'utente vuole cercare una sequenza di eventi ordinati ma non necessariamente consecutivi;
-* Attore: tecnico;
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: vengono evidenziate le tuple con codice corrispondente ai parametri di ricerca.
 
 ### VUC4.1 Sequenza di Eventi non Trovata
 
-* Scenario: almeno uno degli eventi ricercati dall'utente non è presente nel file di log e quindi l'intera sequenza di eventi non può essere trovata;
-* Attore: tecnico;
+* Scenario: almeno uno degli eventi ricercati dall'utente non è presente nel file di {g:log} e quindi l'intera sequenza di eventi non può essere trovata;
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene comunicato all'utente che la sequenza richiesta non è presente nel file di log.
+* Postcondizioni: viene comunicato all'utente che la sequenza richiesta non è presente nel file di {g:log}.
 
 ### VUC5 - Visualizzazione Grafico
 
@@ -453,31 +464,31 @@ i--VUC5.2
 i--VUC5.3
 ```
 
-* Scenario: l'utente vuole visualizzare un grafico "timeline" che mostra sull'asse x il tempo e sull'asse y tutti gli eventi del log. Ogni evento ha associato un rettangolo sviluppato sull'asse x che viene riempito quando l'evento è attivo;
-* Attore: tecnico;
-* Precondizioni: è stato caricato correttamente un file di log [VUC1];
+* Scenario: l'utente vuole visualizzare un {g:grafico_timeline} che mostra sull'asse x il tempo e sull'asse y tutti gli eventi del {g:log}. Ogni  {g:evento} ha associato un rettangolo sviluppato sull'asse x che viene riempito quando l'evento è attivo;
+* Attore: {g:tecnico};
+* Precondizioni: è stato caricato correttamente un file di {g:log} [VUC1];
 * Postcondizioni: viene visualizzato il grafico sopra descritto;
 
 #### VUC5.1 - Visualizza Tempo sull'asse x
 
-* Scenario: l'utente vuole visualizzare sull'asse x del grafico "timeline" il tempo;
-* Attore: tecnico;
-* Precondizioni: è stato caricato correttamente un file di log [VUC1];
+* Scenario: l'utente vuole visualizzare sull'asse x del {g:grafico_timeline} il tempo;
+* Attore: {g:tecnico};
+* Precondizioni: è stato caricato correttamente un file di {g:log} [VUC1];
 * Postcondizioni: viene visualizzato il grafico con il tempo sull'asse x;
 
 #### VUC5.2 - Visualizza Eventi sull'asse y
 
-* Scenario: l'utente vuole visualizzare sull'asse y del grafico "timeline" tutti gli eventi;
-* Attore: tecnico;
-* Precondizioni: è stato caricato correttamente un file di log [VUC1];
+* Scenario: l'utente vuole visualizzare sull'asse y del {g:grafico_timeline} tutti gli eventi;
+* Attore: {g:tecnico};
+* Precondizioni: è stato caricato correttamente un file di {g:log} [VUC1];
 * Postcondizioni: viene visualizzato il grafico con gli eventi sull'asse y;
 
 #### VUC5.3 - Visualizza rettangolo pieno quando l'evento è attivo
 
-* Scenario: l'utente vuole visualizzare un rettangolo pieno quando un evento è attivo;
-* Attore: tecnico;
-* Precondizioni: è stato caricato correttamente un file di log [VUC1];
-* Postcondizioni: ogni volta che un evento è attivo il rettangolo viene riempito;
+* Scenario: l'utente vuole visualizzare un rettangolo pieno quando un  {g:evento} è attivo;
+* Attore: {g:tecnico};
+* Precondizioni: è stato caricato correttamente un file di {g:log} [VUC1];
+* Postcondizioni: ogni volta che un  {g:evento} è attivo il rettangolo viene riempito;
 
 ### VUC6 Modifica visualizzazione dei grafici
 
@@ -504,35 +515,35 @@ d--VUC6.4
 ```
 
 * Scenario: l'utente vuole modificare la visualizzazione del grafico;
-* Attore: tecnico;
+* Attore: {g:tecnico};
 * Precondizioni: è stato visualizzato il grafico [VUC5];
 * Postcondizioni: viene visualizzato il grafico modificato.
 
 #### VUC6.1 - Zoom dell'Intervallo Temporale
 
 * Scenario: l'utente vuole visualizzare il grafico in un sottointervallo temporale più ristretto o più ampio;
-* Attore: tecnico;
+* Attore: {g:tecnico};
 * Precondizioni: è stato visualizzato il grafico [VUC5];
 * Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali modificati.
 
 #### VUC6.2 - Scroll Orizzontale
 
 * Scenario: l'utente vuole visualizzare il grafico in un sottointervallo temporale successivo o precedente (a quello selezionato);
-* Attore: tecnico;
+* Attore: {g:tecnico};
 * Precondizioni: è stato visualizzato il grafico [VUC5];
 * Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali modificati.
 
 #### VUC6.3 - Selezione Intervallo Temporale
 
 * Scenario: l'utente vuole visualizzare il grafico in un intervallo selezionato;
-* Attore: tecnico;
+* Attore: {g:tecnico};
 * Precondizioni: è stato visualizzato il grafico [VUC5];
 * Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali modificati.
 
 #### VUC6.3.1 - Intervallo non Corretto
 
 * Scenario: l'intervallo temporale fornito dall'utente non è valido (data d'inizio posteriore alla data di fine);
-* Attore: tecnico;
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzato il grafico con i dati [VUC5];
 * Postcondizioni: viene visualizzato un messaggio d'errore (intervallo non corretto).
 
@@ -555,30 +566,30 @@ e-- VUC6.4.3
 ```
 
 * Scenario: l'utente vuole applicare un filtro agli eventi visualizzati nel grafico;
-* Attore: tecnico;
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzato il grafico con i dati [VUC5];
 * Postcondizioni: viene visualizzato il grafico modificato.
 
 ##### VUC6.4.1 - Per Unit/Subunit
 
-* Scenari: l'utente vuole visualizzare solo gli eventi di una particolare Unit/Subunit;
-* Attore: tecnico;
+* Scenari: l'utente vuole visualizzare solo gli eventi di una particolare {g:unitsubunit};
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata il grafico con i dati [VUC5];
-* Postcondizioni: viene visualizzato il grafico con gli eventi della Unit/Subunit selezionata.
+* Postcondizioni: viene visualizzato il grafico con gli eventi della {g:unitsubunit} selezionata.
 
 ##### VUC6.4.2 - Per Firmware
 
-* Scenari: l'utente vuole visualizzare solo gli eventi di un particolare firmware;
-* Attore: tecnico;
+* Scenari: l'utente vuole visualizzare solo gli eventi di un particolare {g:firmware};
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata il grafico con i dati [VUC5];
-* Postcondizioni: viene visualizzato il grafico con i dati del firmware selezionato.
+* Postcondizioni: viene visualizzato il grafico con i dati del {g:firmware} selezionato.
 
 ##### VUC6.4.3 - Per Codice evento
 
-* Scenari: l'utente vuole visualizzare solo gli eventi di un Codice evento specificato;
-* Attore: tecnico;
+* Scenari: l'utente vuole visualizzare solo gli eventi di un {g:codice_evento} specificato;
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata il grafico con i dati [VUC5];
-* Postcondizioni: viene visualizzato il grafico con i dati del codice evento selezionato.
+* Postcondizioni: viene visualizzato il grafico con i dati del {g:codice_evento} selezionato.
 
 ## SmartLogStatistics
 
@@ -615,15 +626,15 @@ t--SUC7
 
 ### SUC1 - Caricamento dei Log per Intervallo Temporale
 
-* Scenario: l'utente sceglie l'intervallo temporale iniziale per raccogliere i dati dai file di log;
-* Attore: analista;
+* Scenario: l'utente sceglie l'intervallo temporale iniziale per raccogliere i dati dai file di {g:log};
+* Attore: {g:analista};
 * Precondizioni: l'applicazione è operativa e funzionante;
-* Postcondizioni: i log vengono caricati correttamente nell'applicazione SmartLogStatistics.
+* Postcondizioni: i {g:log} vengono caricati correttamente nell'applicazione {g:smartlogstatistics}.
 
 ### SUC1.1 - Intervallo non Corretto
 
 * Scenari: l'intervallo temporale fornito dall'utente non è valido (data d'inizio antecedente alla data di fine);
-* Attore: analista;
+* Attore: {g:analista};
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: viene notificato all'utente che le date fornite non sono valide.
 
@@ -654,44 +665,44 @@ f--SUC2.5
 f--SUC2.6
 ```
 
-* Scenario: l'utente vuole visualizzare un prospetto contenente dei dati relativi all'insieme di file di log analizzati.
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Scenario: l'utente vuole visualizzare un prospetto contenente dei dati relativi all'insieme di file di {g:log} analizzati.
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
 * Postcondizioni: viene visualizzato il prospetto.
 
 #### SUC2.1 - Visualizzazione Intervallo Temporale
 
 * Scenario: l'utente vuole visualizzare l'intervallo temporale selezionato.
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
 * Postcondizioni: viene visualizzato l'intervallo temporale.
 
 #### SUC2.2 - Visualizzazione Numero di Log Analizzati
 
-* Scenario: l'utente vuole visualizzare il numero totale di log analizzati.
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
-* Postcondizioni: viene visualizzato il numero totale di log analizzati.
+* Scenario: l'utente vuole visualizzare il numero totale di {g:log} analizzati.
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
+* Postcondizioni: viene visualizzato il numero totale di {g:log} analizzati.
 
 #### SUC2.3 - Visualizzazione Media Numero Eventi tra i Log
 
-* Scenario: l'utente vuole visualizzare il numero medio di eventi tra i log.
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Scenario: l'utente vuole visualizzare il numero medio di eventi tra i {g:log}.
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
 * Postcondizioni: viene visualizzato il numero medio di eventi.
 
 #### SUC2.4 - Visualizzazione Massimo Numero Eventi tra i Log
 
-* Scenario: l'utente vuole visualizzare il numero massimo di eventi tra i log.
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Scenario: l'utente vuole visualizzare il numero massimo di eventi tra i {g:log}.
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
 * Postcondizioni: viene visualizzato il numero massimo di eventi.
 
 #### SUC2.5 - Visualizzazione Deviazione Standard Numero Eventi tra i Log
 
-* Scenario: l'utente vuole visualizzare la deviazione standard del numero di eventi tra i log.
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Scenario: l'utente vuole visualizzare la deviazione standard del numero di eventi tra i {g:log}.
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
 * Postcondizioni: viene visualizzato la deviazione standard del numero di eventi.
 
 #### SUC2.6 - Visualizzazione Lista di Occorrenze Eventi
@@ -707,8 +718,8 @@ a--SUC2.6.1
 ```
 
 * Scenario: l'utente vuole visualizzare una lista di tutti gli eventi con le occorrenze.
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
 * Postcondizioni: viene visualizzato la lista di occorrenze eventi.
 
 ##### SUC2.6.1 - Visualizzazione Singolo Elemento della Lista
@@ -730,30 +741,30 @@ b--SUC2.6.1.3
 ```
 
 * Scenario: l'utente vuole visualizzare un singolo elemento della lista di occorrenze eventi;
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
 * Postcondizioni: viene visualizzato l'elemento della lista di occorrenze eventi.
 
 ###### SUC2.6.1.1 - Visualizzazione Codice Evento
 
 * Scenario: l'utente vuole visualizzare il codice dell'evento;
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
 * Postcondizioni: viene visualizzato il codice dell'evento.
 
 ###### SUC2.6.1.2 - Visualizzazione Numero Occorrenze
 
-* Scenario: l'utente vuole visualizzare quante volte l'evento è avvenuto nei log;
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Scenario: l'utente vuole visualizzare quante volte l'evento è avvenuto nei {g:log};
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
 * Postcondizioni: viene visualizzato il numero di occorrenze dell'evento.
 
 ###### SUC2.6.1.3 - Visualizzazione Versione Firmware
 
-* Scenario: l'utente vuole visualizzare la versione firmware relativa all'evento;
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
-* Postcondizioni: viene visualizzato la versione firmware dell'evento.
+* Scenario: l'utente vuole visualizzare la versione {g:firmware} relativa all'evento;
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
+* Postcondizioni: viene visualizzato la versione {g:firmware} dell'evento.
 
 ### SUC3 - Modifica Visualizzazione Lista
 
@@ -771,7 +782,7 @@ c--SUC3.2
 ```
 
 * Scenario: l'utente vuole modificare la visualizzazione dei dati all'interno della lista di occorrenza eventi;
-* Attore: analista;
+* Attore: {g:analista};
 * Precondizioni: è stata visualizzata la lista di occorrenza eventi [SUC2.6];
 * Postcondizioni: la visualizzazione della lista di occorrenza eventi viene modificata.
 
@@ -797,37 +808,37 @@ SUC3.1.2 <.. SUC3.1.2.1 : <<extend>>
 ```
 
 * Scenario: l'utente vuole aggiungere un filtro ai dati presentati nella lista di occorrenza eventi;
-* Attore: analista;
+* Attore: {g:analista};
 * Precondizioni: è stata visualizzata la lista di occorrenza eventi [SUC2.6];
 * Postcondizioni: la lista di occorrenza eventi mostra i dati opportunamente filtrati.
 
 ##### SUC3.1.1 - Filtra per Unit/Subunit
 
-* Scenario: l'utente vuole filtrare i dati della lista di occorrenza eventi in base alla unit/subunit;
-* Attore: analista;
+* Scenario: l'utente vuole filtrare i dati della lista di occorrenza eventi in base alla {g:unitsubunit};
+* Attore: {g:analista};
 * Precondizioni: è stata visualizzata la lista di occorrenza eventi [SUC2.6];
-* Postcondizioni: la lista di occorrenza eventi mostra i dati filtrati secondo la unit/subunit.
+* Postcondizioni: la lista di occorrenza eventi mostra i dati filtrati secondo la {g:unitsubunit}.
 
 ##### SUC3.1.2 - Filtra per Intervallo Temporale
 
 * Scenario: l'utente vuole filtrare i dati della lista di occorrenza eventi secondo un intervallo temporale;
-* Attore: analista;
+* Attore: {g:analista};
 * Precondizioni: è stata visualizzata la lista di occorrenza eventi [SUC2.6];
 * Postcondizioni: la lista di occorrenza eventi mostra i dati tenendo conto del nuovo intervallo temporale.
 
 ##### SUC3.1.2.1 - Intervallo Temporale non Corretto
 
 * Scenario: l'intervallo selezionato dall'utente non è valido;
-* Attore: analista;
+* Attore: {g:analista};
 * Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
 * Postcondizioni: viene mostrato un messaggio di errore.
 
 ##### SUC3.1.3 - Per Versione Firmware
 
 * Scenario: l'utente vuole filtrare i dati della lista di occorrenza eventi;
-* Attore: analista;
+* Attore: {g:analista};
 * Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
-* Postcondizioni: la lista di occorrenza eventi mostra i dati filtrati per versione firmware;
+* Postcondizioni: la lista di occorrenza eventi mostra i dati filtrati per versione {g:firmware};
 
 #### SUC3.2 - Ordinamento per Colonna
 
@@ -848,30 +859,30 @@ r-- SUC3.2.3
 ```
 
 * Scenario: l'utente vuole modificare l'ordine dei dati presentati nella lista di occorrenza eventi secondo l'ordine di una colonna;
-* Attore: analista;
+* Attore: {g:analista};
 * Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
 * Postcondizioni: la lista di occorrenza eventi mostra i dati della lista ordinati secondo la colonna scelta.
 
 ##### SUC3.2.1 - Ordinamento per Codice Evento
 
-* Scenario: l'utente vuole ordinare le righe della lista secondo il campo codice evento;
-* Attore: tecnico;
+* Scenario: l'utente vuole ordinare le righe della lista secondo il campo {g:codice_evento};
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
-* Postcondizioni: viene visualizzata la lista ordinata secondo codice evento;
+* Postcondizioni: viene visualizzata la lista ordinata secondo {g:codice_evento};
 
 ##### SUC3.2.2 - Ordinamento per Numero Occorrenze
 
 * Scenario: l'utente vuole ordinare le righe della lista secondo il campo numero occorrenze;
-* Attore: tecnico;
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
 * Postcondizioni: viene visualizzata la lista ordinata secondo il numero occorrenze;
 
 ##### SUC3.2.3 - Ordinamento per Firmware
 
-* Scenario: l'utente vuole ordinare le righe della lista secondo il campo firmware;
-* Attore: tecnico;
+* Scenario: l'utente vuole ordinare le righe della lista secondo il campo {g:firmware};
+* Attore: {g:tecnico};
 * Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
-* Postcondizioni: viene visualizzata la lista ordinata secondo il firmware;
+* Postcondizioni: viene visualizzata la lista ordinata secondo il {g:firmware};
   
 ### SUC4 - Visualizzazione Grafico Tempo/Occorrenze
 
@@ -891,31 +902,31 @@ i--VUC4.2
 i--VUC4.3
 ```
 
-* Scenario: l'utente vuole visualizzare un grafico a linee che mette in relazione il tempo con il numero di occorrenze degli eventi in esame;
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Scenario: l'utente vuole visualizzare un {g:grafico_linee} che mette in relazione il tempo con il numero di occorrenze degli eventi in esame;
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
 * Postcondizioni: viene mostrato a schermo il grafico che mette in relazione il tempo (asse x) con il numero di occorrenze degli eventi in esame (asse y).
 
 #### SUC4.1 - Visualizzazione tempo sull'asse x
 
 * Scenario: l'utente vuole visualizzare il tempo sull'asse x;
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
 * Postcondizioni: il grafico mostra sull'asse x il tempo.
 
 #### SUC4.2 - Visualizzazione numero occorrenze sull'asse y
 
 * Scenario: l'utente vuole visualizzare il numero di occorrenze degli eventi sull'asse y;
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
 * Postcondizioni: il grafico mostra sull'asse y il numero di occorrenze degli eventi.
 
 #### SUC4.3 - Visualizza una linea per ogni evento
 
-* Scenario: l'utente vuole visualizzare una linea per ogni evento presente nel log;
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
-* Postcondizioni: il grafico mostra una linea per ogni evento.
+* Scenario: l'utente vuole visualizzare una linea per ogni  {g:evento} presente nel {g:log};
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
+* Postcondizioni: il grafico mostra una linea per ogni  {g:evento}.
 
 ### SUC5 - Visualizzazione Grafico Firmware/Occorrenze
 
@@ -935,31 +946,31 @@ i--SUC5.2
 i--SUC5.3
 ```
 
-* Scenario: l'utente vuole visualizzare un grafico a barre che mette in relazione le versioni firmware con il numero di occorrenze degli eventi in esame;
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
-* Postcondizioni: viene mostrato a schermo il grafico che mette in relazione le versioni firmware (asse x) con il numero di occorrenze degli eventi in esame (asse y).
+* Scenario: l'utente vuole visualizzare un {g:grafico_barre} che mette in relazione le versioni {g:firmware} con il numero di occorrenze degli eventi in esame;
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
+* Postcondizioni: viene mostrato a schermo il grafico che mette in relazione le versioni {g:firmware} (asse x) con il numero di occorrenze degli eventi in esame (asse y).
 
 #### SUC5.1 - Visualizzazione firmware sull'asse x
 
-* Scenario: l'utente vuole visualizzare tutti i firmware sull'asse x;
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
-* Postcondizioni: il grafico mostra sull'asse x i firmware.
+* Scenario: l'utente vuole visualizzare tutti i {g:firmware} sull'asse x;
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
+* Postcondizioni: il grafico mostra sull'asse x i {g:firmware}.
 
 #### SUC5.2 - Visualizzazione tempo sull'asse y
 
 * Scenario: l'utente vuole visualizzare il numero di occorrenze degli eventi sull'asse y;
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
 * Postcondizioni: il grafico mostra sull'asse y il numero di occorrenze degli eventi.
 
 #### SUC5.3 - Visualizza una barra per ogni firmware
 
-* Scenario: l'utente vuole visualizzare una barra per ogni firmware presente nel log;
-* Attore: analista;
-* Precondizioni: sono stati caricati dei file di log [SUC1];
-* Postcondizioni: il grafico mostra una barra per ogni firmware.
+* Scenario: l'utente vuole visualizzare una barra per ogni {g:firmware} presente nel {g:log};
+* Attore: {g:analista};
+* Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
+* Postcondizioni: il grafico mostra una barra per ogni {g:firmware}.
 
 ### SUC6 - Filtro Grafico Tempo/Occorrenze
 
@@ -977,23 +988,23 @@ u--SUC6.2
 ```
 
 * Scenario: l'utente vuole modificare la visualizzazione del grafico tempo/occorrenze applicando dei filtri ai dati;
-* Attore: analista;
+* Attore: {g:analista};
 * Precondizioni: è stato visualizzato il grafico tempo/occorrenze [SUC4];
 * Postcondizioni: vengono applicati i filtri selezionati.
 
 #### SUC6.1 - Filtro per Codice Event
 
 * Scenario: l'utente vuole filtrare il grafico tempo/occorrenze selezionando quali eventi visualizzare;
-* Attore: analista;
+* Attore: {g:analista};
 * Precondizioni: è stato visualizzato il grafico tempo/occorrenze [SUC4];
 * Postcondizioni: il grafico viene aggiornato tenendo conto degli eventi da visualizzare.
 
 #### SUC6.2 - Filtro per Unit/Subunit
 
-* Scenario: l'utente vuole filtrare il grafico tempo/occorrenze selezionando quali unit/subunit considerare;
-* Attore: analista;
+* Scenario: l'utente vuole filtrare il grafico tempo/occorrenze selezionando quali {g:unitsubunit} considerare;
+* Attore: {g:analista};
 * Precondizioni: è stato visualizzato il grafico tempo/occorrenze [SUC4];
-* Postcondizioni: il grafico viene aggiornato tenendo conto delle unit/subunit selezionate.
+* Postcondizioni: il grafico viene aggiornato tenendo conto delle {g:unitsubunit} selezionate.
 
 ### SUC7 - Filtro Grafico Firmware/Occorrenze
 
@@ -1010,24 +1021,24 @@ u--SUC7.1
 u--SUC7.2
 ```
 
-* Scenario: l'utente vuole modificare la visualizzazione del grafico firmware/occorrenze applicando dei filtri ai dati;
-* Attore: analista;
-* Precondizioni: è stato visualizzato il grafico firmware/occorrenze [SUC5];
+* Scenario: l'utente vuole modificare la visualizzazione del grafico {g:firmware}/occorrenze applicando dei filtri ai dati;
+* Attore: {g:analista};
+* Precondizioni: è stato visualizzato il grafico {g:firmware}/occorrenze [SUC5];
 * Postcondizioni: vengono applicati i filtri selezionati.
 
 #### SUC7.1 - Filtro per Codice Evento
 
 * Scenario: l'utente vuole filtrare il grafico firmware/occorrenze selezionando quali eventi visualizzare;
-* Attore: analista;
+* Attore: {g:analista};
 * Precondizioni: è stato visualizzato il grafico firmware/occorrenze [SUC5];
 * Postcondizioni: il grafico viene aggiornato tenendo conto degli eventi da visualizzare.
 
 #### SUC7.2 - Filtro per Firmware
 
-* Scenario: l'utente vuole filtrare il grafico firmware/occorrenze selezionando quali firmware considerare;
-* Attore: analista;
+* Scenario: l'utente vuole filtrare il grafico firmware/occorrenze selezionando quali {g:firmware} considerare;
+* Attore: {g:analista};
 * Precondizioni: è stato visualizzato il grafico firmware/occorrenze [SUC5];
-* Postcondizioni: il grafico viene aggiornato tenendo conto dei firmware selezionati.
+* Postcondizioni: il grafico viene aggiornato tenendo conto dei {g:firmware} selezionati.
 
 ## Opzionali
 
@@ -1035,7 +1046,7 @@ u--SUC7.2
 
 ```{ .plantuml caption="OUC1"}
 left to right direction
-package "{g:smartlogviewer}/SmartLogStatistics"{
+package "smartlogviewer/SmartLogStatistics"{
 usecase OUC1 as "OUC1
 Esportazione file"
 }
@@ -1044,15 +1055,15 @@ Esportazione file"
 ```
 
 * Scenari: l'utente esporta un file dove verranno visualizzati i grafici;
-* Attore: tecnico, analista;
-* Precondizioni: è stato selezionato almeno un file di log nell'applicazione [VUC1] o [SUC1];
+* Attore: {g:tecnico}, {g:analista};
+* Precondizioni: è stato selezionato almeno un file di {g:log} nell'applicazione [VUC1] o [SUC1];
 * Postcondizioni: viene esportato il file con i grafici.
 
 ### OUC2 - L'utente vuole eliminare i filtri applicati in precedenza
 
 ```{ .plantuml caption="OUC2"}
 left to right direction
-package "{g:smartlogviewer}/SmartLogStatistics"{
+package "smartlogviewer/SmartLogStatistics"{
 usecase OUC2 as "OUC2
 Ripristino filtri"
 }
@@ -1061,7 +1072,7 @@ Ripristino filtri"
 ```
 
 * Scenari: l'utente elimina i filtri applicati precedentemente;
-* Attore: tecnico, analista;
+* Attore: {g:tecnico}, {g:analista};
 * Precondizioni: vengono applicati i filtri o le selezioni; [VUC2] [VUC3] [SUC2] [SUC3]
 * Postcondizioni: i filtri vengono ripristinati.
 
@@ -1070,7 +1081,7 @@ Ripristino filtri"
 ```{ .plantuml caption="OUC3"}
 left to right direction
 :Tecnico: as i
-package "{g:smartlogviewer}"{
+package "smartlogviewer"{
 usecase OUC3 as "OUC3
 Ricerca sequenza di eventi"
 }
@@ -1078,7 +1089,7 @@ i--OUC3
 ```
 
 * Scenari: l'utente vuole cercare una sequenza di eventi non necessariamente ordinata;
-* Attore: tecnico;
+* Attore: {g:tecnico};
 * Precondizioni: viene visualizzata la tabella [VUC2];
 * Postcondizioni: vengono evidenziate le tuple con gli eventi con codice corrispondente ai parametri di ricerca o una notifica per l'utente.
 
@@ -1094,35 +1105,35 @@ Visualizza matrice"
 i--OUC4
 ```
 
-* Scenari: l'utente decide di visualizzare la matrice di correlazione;
-* Attore: analista;
-* Precondizioni: è stato caricato almeno un file di log nell'applicazione[SUC1];
-* Postcondizioni: viene visualizzata la matrice di correlazione.
+* Scenari: l'utente decide di visualizzare la {g:matrice_correlazione};
+* Attore: {g:analista};
+* Precondizioni: è stato caricato almeno un file di {g:log} nell'applicazione[SUC1];
+* Postcondizioni: viene visualizzata la {g:matrice_correlazione}.
 
 # Requisiti
 
-## Funzionali ({g:smartlogviewer})
+## Funzionali (SmartLogViewer)
 
 | **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
 |---------------| ----------------| ------------------- | --------- |
-| VRF1 | L'utente deve poter caricare nell'applicazione un singolo file di log (.csv) presente localmente | Obbligatorio | Capitolato - VUC1 |
+| VRF1 | L'utente deve poter caricare nell'applicazione un singolo file di {g:log} presente localmente | Obbligatorio | Capitolato - VUC1 |
 | VRF1.1 | Viene visualizzato un messaggio di errore se il file caricato non è compatibile | Obbligatorio | VUC1.1 |
 | VRF2 | Deve essere presente una visualizzazione in forma tabellare | Obbligatorio | Capitolato - VUC2 |
 | VRF2.1 | La tabella di VRF2 deve avere una colonna con intestazione "Data/ora" | Obbligatorio | VUC2.1.1 |
 | VRF2.2 | La tabella di VRF2 deve avere una colonna con intestazione "Codice evento" | Obbligatorio | VUC2.1.2 |
-| VRF2.3 | La tabella di VRF2 deve avere una colonna con intestazione "Unit/subunit" | Obbligatorio | VUC2.1.3 |
-| VRF2.4 | La tabella di VRF2 deve avere una colonna con intestazione "Versione Firmware" | Obbligatorio | VUC2.1.4 |
+| VRF2.3 | La tabella di VRF2 deve avere una colonna con intestazione "{g:unitsubunit}" | Obbligatorio | VUC2.1.3 |
+| VRF2.4 | La tabella di VRF2 deve avere una colonna con intestazione "Versione {g:firmware}" | Obbligatorio | VUC2.1.4 |
 | VRF2.5 | La tabella di VRF2 deve avere una colonna con intestazione "Descrizione" | Obbligatorio | VUC2.1.5 |
 | VRF2.6 | La tabella di VRF2 deve avere una colonna con intestazione "Stato" (1 per ON, 0 per OFF) | Obbligatorio | VUC2.1.6 |
-| VRF2.7 | L'applicazione colora ogni riga in base al codice evento | Obbligatorio | Capitolato - VUC2.1.7 |
+| VRF2.7 | L'applicazione colora ogni riga in base al {g:codice_evento} | Obbligatorio | Capitolato - VUC2.1.7 |
 | VRF3 | Deve essere presente una funzione per ordinamento colonne della tabella simile a spreadsheet | Obbligatorio | Capitolato - VUC3.2 |
 | VRF3.1 | Ordinamento per data/ora | Obbligatorio | Capitolato - VUC3.2.1 |
-| VRF3.2 | Ordinamento per codice evento | Obbligatorio | Capitolato - VUC3.2.2 |
-| VRF3.3 | Ordinamento per unit/subunit | Obbligatorio | Capitolato - VUC3.2.3 |
-| VRF3.4 | Ordinamento per firmware | Obbligatorio | Capitolato - VUC3.2.4 |
-| VRF4 | Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un log, con la relativa etichettatura (gli eventi devono essere ordinati ma non obbligatoriamente consecutivi l'uno all'altro) | Obbligatorio | Capitolato - VUC4 |
-| VRF4.1 | Viene visualizzato un messaggio d'errore se non è presente almeno un evento inserito dall'utente per la ricerca | Obbligatorio | VUC4.1 |
-| VRF5 | Deve essere presente un grafico "timeline" per mostrare le attivazioni degli eventi | Obbligatorio | Capitolato - VUC5 |
+| VRF3.2 | Ordinamento per {g:codice_evento} | Obbligatorio | Capitolato - VUC3.2.2 |
+| VRF3.3 | Ordinamento per {g:unitsubunit} | Obbligatorio | Capitolato - VUC3.2.3 |
+| VRF3.4 | Ordinamento per {g:firmware} | Obbligatorio | Capitolato - VUC3.2.4 |
+| VRF4 | Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un {g:log}, con la relativa etichettatura (gli eventi devono essere ordinati ma non obbligatoriamente consecutivi l'uno all'altro) | Obbligatorio | Capitolato - VUC4 |
+| VRF4.1 | Viene visualizzato un messaggio d'errore se non è presente almeno un  {g:evento} inserito dall'utente per la ricerca | Obbligatorio | VUC4.1 |
+| VRF5 | Deve essere presente un {g:grafico_timeline} per mostrare le attivazioni degli eventi | Obbligatorio | Capitolato - VUC5 |
 | VRF5.1 | L'asse x del grafico rappresenta il tempo | Obbligatorio | Capitolato - VUC5.1 |
 | VRF5.2 | L'asse y del grafico contiene l'insieme degli eventi | Obbligatorio | Capitolato - VUC5.2 |
 | VRF5.3 | Un rettangolo “pieno” che si sviluppa sull'asse x indica il periodo di tempo in cui l’evento (indicato sull'asse y) è ATTIVO | Obbligatorio | Capitolato - VUC5.3 |
@@ -1131,9 +1142,9 @@ i--OUC4
 | VRF8 | Devono essere presenti funzioni di filtro per modificare la visualizzazione della tabella e del grafico | Obbligatorio | Capitolato - VUC3.1 - VUC6 |
 | VRF8.1 | Filtro per intervallo temporale (select) | Obbligatorio | Capitolato - VUC3.1.1 - VUC6.3 |
 | VRF8.1.1 | Viene visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido | Obbligatorio | VUC3.1.1.1 - VUC6.3.1 |
-| VRF8.2 | Filtro per unit/subunit | Obbligatorio | Capitolato - VUC3.1.2 - VUC6.4.1 |
-| VRF8.3 | Filtro per versione firmware | Obbligatorio | Capitolato - VUC3.1.3 - VUC6.4.2 |
-| VRF8.4 | Filtro per codice evento | Obbligatorio | Capitolato - VUC3.1.4 - VUC6.4.3 |
+| VRF8.2 | Filtro per {g:unitsubunit} | Obbligatorio | Capitolato - VUC3.1.2 - VUC6.4.1 |
+| VRF8.3 | Filtro per versione {g:firmware} | Obbligatorio | Capitolato - VUC3.1.3 - VUC6.4.2 |
+| VRF8.4 | Filtro per {g:codice_evento} | Obbligatorio | Capitolato - VUC3.1.4 - VUC6.4.3 |
 | VRO1 | L'utente deve poter visualizzare altri tipi di grafici | Opzionale | Capitolato |
 | VRO2 | L'utente deve poter ricercare sequenze più o meno note con relativa etichettatura dato un limite di tempo | Opzionale | Capitolato - OUC3 |
 | VRO3 | Implementare la colorazione per livello di nidificazione (16 Unit/16 livelli per SubUnit) | Opzionale | Capitolato |
@@ -1144,42 +1155,42 @@ i--OUC4
 
 | **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
 |---------------| ----------------| ------------------- | --------- |
-| SRF1 | L'utente deve poter selezionare i log da analizzare per range di data/ora (min, max, all) | Obbligatorio | Capitolato - SUC1 |
+| SRF1 | L'utente deve poter selezionare i {g:log} da analizzare per range di data/ora (min, max, all) | Obbligatorio | Capitolato - SUC1 |
 | SRF1.1 | Viene visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido | Obbligatorio | SUC1.1 |
 | SRF2 | L'utente visualizza un prospetto con i da analizzare | Obbligatorio | Capitolato - SUC2 |
 | SRF2.1 | Nel prospetto compare l'intervallo temporale | Obbligatorio | Capitolato - SUC2.1 |
-| SRF2.2 | Nel prospetto compare il numero di log analizzati | Obbligatorio | Capitolato - SUC2.2 |
-| SRF2.3 | Nel prospetto compare la media numero di eventi tra i log | Obbligatorio | Capitolato - SUC2.3 |
-| SRF2.4 | Nel prospetto compare il massimo numero di eventi tra i log | Obbligatorio | Capitolato - SUC2.4 |
-| SRF2.5 | Nel prospetto compare la deviazione standard numero di eventi fra i log | Obbligatorio | Capitolato - SUC2.5 |
+| SRF2.2 | Nel prospetto compare il numero di {g:log} analizzati | Obbligatorio | Capitolato - SUC2.2 |
+| SRF2.3 | Nel prospetto compare la media numero di eventi tra i {g:log} | Obbligatorio | Capitolato - SUC2.3 |
+| SRF2.4 | Nel prospetto compare il massimo numero di eventi tra i {g:log} | Obbligatorio | Capitolato - SUC2.4 |
+| SRF2.5 | Nel prospetto compare la deviazione standard numero di eventi fra i {g:log} | Obbligatorio | Capitolato - SUC2.5 |
 | SRF2.6 | Nel prospetto compare la lista degli eventi raggruppati per frequenza di occorrenza (0-1) | Obbligatorio | Capitolato - SUC2.6 |
-| SRF2.6.1 | Nella lista viene visualizzato il codice evento | Obbligatorio | Capitolato - SUC2.6.1.1 |
+| SRF2.6.1 | Nella lista viene visualizzato il {g:codice_evento} | Obbligatorio | Capitolato - SUC2.6.1.1 |
 | SRF2.6.2 | Nella lista viene visualizzato il numero di volte che l'evento è passato dallo stato 0 allo stato 1 | Obbligatorio | Capitolato - SUC2.6.1.2 |
-| SRF2.6.3 | Nella lista viene visualizzata la versione firmware | Obbligatorio | Capitolato - SUC2.6.1.3 |
+| SRF2.6.3 | Nella lista viene visualizzata la versione {g:firmware} | Obbligatorio | Capitolato - SUC2.6.1.3 |
 | SRF3 | Ci deve essere la possibilità di ordinare le righe della lista in base ai suoi campi | Obbligatorio | Capitolato - SUC3.2 |
-| SRF3.1 | Ordinamento della lista per codice evento | Obbligatorio | Capitolato - SUC3.2.1 |
+| SRF3.1 | Ordinamento della lista per {g:codice_evento} | Obbligatorio | Capitolato - SUC3.2.1 |
 | SRF3.2 | Ordinamento della lista per numero occorrenze | Obbligatorio | Capitolato - SUC3.2.2 |
-| SRF3.3 | Ordinamento della lista per firmware | Obbligatorio | Capitolato - SUC3.2.3 |
+| SRF3.3 | Ordinamento della lista per {g:firmware} | Obbligatorio | Capitolato - SUC3.2.3 |
 | SRF4 | Ci devono essere delle funzioni di filtraggio | Obbligatorio | Capitolato - SUC3.1 |
-| SRF4.1 | Filtro per unit/subunit | Obbligatorio | Capitolato - SUC3.1.1 |
+| SRF4.1 | Filtro per {g:unitsubunit} | Obbligatorio | Capitolato - SUC3.1.1 |
 | SRF4.2 | Filtro per intervallo temporale | Obbligatorio | Capitolato - SUC3.1.2 |
 | SRF4.2.1 | Viene visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido | Obbligatorio | SUC3.1.2.1 |
-| SRF4.3 | Filtro per versione firmware | Obbligatorio | Capitolato - SUC3.1.3 |
+| SRF4.3 | Filtro per versione {g:firmware} | Obbligatorio | Capitolato - SUC3.1.3 |
 | SRF5 | Visualizzazione grafico "tempo/occorrenze" | Obbligatorio | Capitolato - SUC4 |
 | SRF5.1 | L'asse x del grafico rappresenta il tempo | Obbligatorio | Capitolato - SUC4.1 |
 | SRF5.2 | L'asse y del grafico rappresenta le occorrenze | Obbligatorio | Capitolato - SUC4.2 |
-| SRF5.3 | Viene visualizzata una linea per ogni evento presente nel log | Obbligatorio | Capitolato - SUC4.3 |
+| SRF5.3 | Viene visualizzata una linea per ogni  {g:evento} presente nel {g:log} | Obbligatorio | Capitolato - SUC4.3 |
 | SRF6 | Visualizzazione del grafico "firmware/occorrenze" | Obbligatorio | Capitolato - SUC5 |
-| SRF6.1 | L'asse x del grafico visualizza i firmware | Obbligatorio | Capitolato - SUC5.1 |
+| SRF6.1 | L'asse x del grafico visualizza i {g:firmware} | Obbligatorio | Capitolato - SUC5.1 |
 | SRF6.2 | L'asse y del grafico rappresenta le occorrenze | Obbligatorio | Capitolato - SUC5.2 |
-| SRF6.3 | Viene visualizzata una barra per ogni firmware | Obbligatorio | Capitolato - SUC 5.3 |
+| SRF6.3 | Viene visualizzata una barra per ogni {g:firmware} | Obbligatorio | Capitolato - SUC 5.3 |
 | SRF7 | Funzionalità di filtro per il grafico "tempo/occorrenze" | Obbligatorio | Capitolato - SUC6 |
-| SRF7.1 | Filtro per codice evento | Obbligatorio | Capitolato - SUC6.1 |
-| SRF7.2 | Filtro per unit/subunit | Obbligatorio | Capitolato - SUC6.2 |
+| SRF7.1 | Filtro per {g:codice_evento} | Obbligatorio | Capitolato - SUC6.1 |
+| SRF7.2 | Filtro per {g:unitsubunit} | Obbligatorio | Capitolato - SUC6.2 |
 | SRF8 | Funzionalità di filtro per il grafico "firmware/occorrenze" | Obbligatorio | Capitolato - SUC7 |
-| SRF8.1 | Filtro per codice evento | Obbligatorio | Capitolato - SUC7.1 |
-| SRF8.2 | Filtro per firmware | Obbligatorio | Capitolato - SUC7.2 |
-| SRO1 | L'utente deve poter visualizzare un grafico matrice di correlazione che mostri l'indice di correlazione tra coppie di eventi | Opzionale | Capitolato OUC4 |
+| SRF8.1 | Filtro per {g:codice_evento} | Obbligatorio | Capitolato - SUC7.1 |
+| SRF8.2 | Filtro per {g:firmware} | Obbligatorio | Capitolato - SUC7.2 |
+| SRO1 | L'utente deve poter visualizzare un grafico {g:matrice_correlazione} che mostri l'indice di correlazione tra coppie di eventi | Opzionale | Capitolato OUC4 |
 | SRO2 | L'utente deve poter esportare i file che visualizza i grafici | Opzionale | Discussione interna - OUC1 |
 | SRO3 | L'utente deve poter eliminare tutti i filtri applicati | Opzionale | Discussione interna - OUC2 |
 
@@ -1189,27 +1200,27 @@ i--OUC4
 |---------------| ----------------| ------------------- | --------- |
 | VRQ1 | {g:smartlogviewer} deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto* | Obbligatorio | Capitolato |
 | VRQ2 | Deve essere fornita una guida per sviluppatori di {g:smartlogviewer} | Obbligatorio | Capitolato |
-| SRQ1 | SmartLogStatistics deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto* | Obbligatorio | Capitolato |
-| SRQ2 | Deve essere fornita una guida per sviluppatori di SmartLogStatistics | Obbligatorio | Capitolato |
+| SRQ1 | {g:smartlogstatistics} deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto* | Obbligatorio | Capitolato |
+| SRQ2 | Deve essere fornita una guida per sviluppatori di {g:smartlogstatistics} | Obbligatorio | Capitolato |
 | RQ1 | Deve essere fornita la documentazione minima richiesta anche dal corso di "Ingegneria del Software" | Obbligatorio | Capitolato |
-| RQ2 | Viene richiesto l'utilizzo di un repository pubblico (GitHub) | Obbligatorio | Capitolato |
+| RQ2 | Viene richiesto l'utilizzo di un {g:repository} pubblico ({g:github}) | Obbligatorio | Capitolato |
 
 ## Vincolo
 
 | **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
 |---------------| ----------------| ------------------- | --------- |
 | VRV1 | L'interfaccia di visualizzazione di {g:smartlogviewer} deve essere di tipo web | Obbligatorio | Capitolato |
-| VRV2 | Richiesto Python per la parte di analisi dei dati | Obbligatorio | Capitolato |
+| VRV2 | Richiesto {g:python} per la parte di analisi dei dati | Obbligatorio | Capitolato |
 | VRV3 | {g:smartlogviewer} deve esser compatibile con il browser Google Chrome versione 110 | Obbligatorio | Discussione con azienda |
 | VRV4 | {g:smartlogviewer} deve esser compatibile con il browser Firefox versione 110 | Obbligatorio | Discussione con azienda |
 | VRV5 | {g:smartlogviewer} deve esser compatibile con il browser Microsoft Edge versione 110 | Obbligatorio | Discussione con azienda |
 | VRV6 | {g:smartlogviewer} deve esser compatibile con il browser Opera versione 95 | Obbligatorio | Discussione con azienda |
-| SRV1 | L'interfaccia di visualizzazione di SmartLogStatistics deve essere di tipo web | Obbligatorio | Capitolato |
-| SRV2 | Richiesto Python per la parte di analisi dei dati | Obbligatorio | Capitolato |
-| SRV3 | SmartLogStatistics deve esser compatibile con il browser Google Chrome versione 110 | Obbligatorio | Discussione con azienda |
-| SRV4 | SmartLogStatistics deve esser compatibile con il browser Firefox versione 110 | Obbligatorio | Discussione con azienda |
-| SRV5 | SmartLogStatistics deve esser compatibile con il browser Microsoft Edge versione 110 | Obbligatorio | Discussione con azienda |
-| SRV6 | SmartLogStatistics deve esser compatibile con il browser Opera versione 95 | Obbligatorio | Discussione con azienda |
+| SRV1 | L'interfaccia di visualizzazione di {g:smartlogstatistics} deve essere di tipo web | Obbligatorio | Capitolato |
+| SRV2 | Richiesto {g:python} per la parte di analisi dei dati | Obbligatorio | Capitolato |
+| SRV3 | {g:smartlogstatistics} deve esser compatibile con il browser Google Chrome versione 110 | Obbligatorio | Discussione con azienda |
+| SRV4 | {g:smartlogstatistics} deve esser compatibile con il browser Firefox versione 110 | Obbligatorio | Discussione con azienda |
+| SRV5 | {g:smartlogstatistics} deve esser compatibile con il browser Microsoft Edge versione 110 | Obbligatorio | Discussione con azienda |
+| SRV6 | {g:smartlogstatistics} deve esser compatibile con il browser Opera versione 95 | Obbligatorio | Discussione con azienda |
 
 ## Sistemi Operativi
 
