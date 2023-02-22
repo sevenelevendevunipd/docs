@@ -17,7 +17,7 @@ versioni:
   0.1.0:
     autore: Antonio Stan
     data: 17/11/2022
-    cambiamenti: Verfica generale del documento
+    cambiamenti: Verifica generale del documento
   0.1.1:
     autore: Davide Vitagliano
     data: 24/11/2022
@@ -25,7 +25,7 @@ versioni:
   0.2.0:
     autore: Augusto Zanellato
     data: 24/11/2022
-    cambiamenti: Verfica generale del documento  
+    cambiamenti: Verifica generale del documento  
   0.2.1:
     autore: Andrea Auletta
     data: 25/11/2022
@@ -37,7 +37,7 @@ versioni:
   0.3.0:
     autore: Enrik Rucaj
     data: 02/12/2022
-    cambiamenti: Verfica generale del documento
+    cambiamenti: Verifica generale del documento
   0.3.1:
     autore: Davide Vitagliano
     data: 04/12/2022
@@ -45,7 +45,7 @@ versioni:
   0.4.0:
    autore: Antonio Stan
    data: 05/12/2022
-   cambiamenti: Verfica generale del documento
+   cambiamenti: Verifica generale del documento
   0.4.1:
     autore: Davide Vitagliano
     data: 06/12/2022
@@ -53,7 +53,7 @@ versioni:
   0.5.0:
    autore: Augusto Zanellato
    data: 08/12/2022
-   cambiamenti: Verfica generale del documento
+   cambiamenti: Verifica generale del documento
   0.5.1:
     autore: Nicola Cecchetto
     data: 08/12/2022
@@ -73,8 +73,8 @@ versioni:
   0.6.0:
     autore: Enrik Rucaj
     data: 21/12/2022
-    cambiamenti: Verfica generale del documento
-  0.6.1
+    cambiamenti: Verifica generale del documento
+  0.6.1:
     autore: Nicola Cecchetto
     data: 31/01/2023
     cambiamenti: Aggiornamento post-esercitazioni del prof. Cardin
@@ -93,7 +93,7 @@ versioni:
   0.7.0:
     autore: Antonio Stan
     data: 21/02/2023
-    cambiamenti: Verfica generale del documento
+    cambiamenti: Verifica generale del documento
   1.0.0:
     autore: Mattia Brunello
     data: 22/02/2023
