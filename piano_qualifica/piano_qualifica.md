@@ -19,11 +19,11 @@ versioni:
   v0.0.3:
     autore: Enrik Rucaj
     data: 12/01/2022
-    cambiamenti: Inserite le metriche per la qualita' di processo
+    cambiamenti: Inserite le metriche per la qualità di processo
   v0.0.4:
     autore: Antonio Stan
     data: 16/01/2022
-    cambiamenti: Inserite le metriche per la qualita' di prodotto
+    cambiamenti: Inserite le metriche per la qualità di prodotto
 
 ...
 
@@ -110,9 +110,9 @@ $$RPT=(1-\frac{PTA}{PPTA})*100$$
 Percentuale delle metriche di qualità (sia di processo che di prodotto) soddisfate in un determinato periodo.
 $$Metriche soddisfate=\frac{Numero di metriche soddisfate}{Numero di metriche totali}*100$$
 
-### Tabella metriche - Valori accetabili e ottimali
+### Tabella metriche - Valori accettabili e ottimali
 
-|    **Codice**     |                  **Nome**                   | **Valore accetabile**  | **Valore ottimale** |
+|    **Codice**     |                  **Nome**                   | **Valore accettabile**  | **Valore ottimale** |
 | ----------------- | :-----------------------------------------: | :-------------------:  | :-----------------: |
 | QPS_1             |        Preventivo costo attuale (PCA)       |        $>$ 0           |    $\leq$ Budget    |
 | QPS_2             |              Costo attuale (CA)             |        $>$ 0           |     $\leq$ PCA      |
@@ -149,7 +149,7 @@ per misurare il raggiungimento degli obiettivi di qualità del prodotto.
 
 ### QPD_1: Indice di Gulpease (IG)
 
- Indice che riporta il grado di leggibilità di un testo redatto in lingua italiana . La formula addottata è la seguente:
+ Indice che riporta il grado di leggibilità di un testo redatto in lingua italiana . La formula adottata è la seguente:
 
 $$GULP= {89+}\frac{ 300  *(n_{frasi}) - 10*(n_{lettere}) }{n_{parole}}$$
 
@@ -161,7 +161,7 @@ L'indice così calcolato può assumere valori tra 0 e 100:
 
 * GULP < 40: indica una leggibilità difficile con licenza superiore;
 
-| **Documentazione** |   **Valore accetabile**  | **Valore ottimale** |
+| **Documentazione** |   **Valore accettabile**  | **Valore ottimale** |
 | -----------------  | :-------------------:    | :-----------------: |
 | Interna            |             $>$ 40       |    $>$ 60           |
 | Esterna            |             $>$ 60       |    $>$ 80           |
@@ -234,7 +234,7 @@ Indica il numero approssimativo di righe di codice eseguibili.
 
 Indica che ciascun branch di codice sia stato eseguito almeno una volta. <!--Per branch si intende uno dei possibili path di codice che seguono una condizione decisionale* metterlo nel glossario(?) -->
 
-|    **Prodotto**   | **Valore accetabile**   | **Valore ottimale** |
+|    **Prodotto**   | **Valore accettabile**   | **Valore ottimale** |
 | ----------------- |  :-------------------:  | :-----------------: |
 | Software          |        $>$ 80%          |    $>$    95%       |
 
@@ -242,9 +242,9 @@ Strumenti utilizzati:
 
 * Python
 
-### Tabella metriche - Valori accetabili e ottimali
+### Tabella metriche - Valori accettabili e ottimali
 
-|    **Codice**     |                  **Nome**                   | **Valore accetabile**  | **Valore ottimale** |
+|    **Codice**     |                  **Nome**                   | **Valore accettabile**  | **Valore ottimale** |
 | ----------------- | :-----------------------------------------: | :-------------------:  | :-----------------: |
 | QPD_2             |               Errori ortografici (EO)       |       $\leq$ 8%        |           0         |
 | QPD_3             |     Copertura requisiti obbligatori (CRO)   |          100%          |         100%        |
