@@ -1,9 +1,9 @@
 ---
 title: "Norme di progetto"
 date: "03/11/2022"
-responsabile: "Augusto Zanellato"
-redattori: "Andrea Auletta"
-verificatori: ["Mattia Brunello", "Antonio Stan", "Nicola Cecchetto", "Enrik Rucaj", "Davide Vitagliano"]
+responsabile: "Enrik Rucaj"
+redattori: ["Andrea Auletta, Davide Vitagliano, Augusto Zanellato"]
+verificatori: ["Mattia Brunello", "Antonio Stan", "Nicola Cecchetto"]
 abstract: "Vengono definite le prime norme di progetto."
 docusage: "Interno"
 toc: true
@@ -80,7 +80,7 @@ Per il processo di fornitura verranno elencati tutti gli strumenti e i documenti
 
 ### Strumenti
 
-L'unico strumento utilizzato (per la fornitura) dal team è *YouTrack*. Utilizzato sia per creare grafici di Gantt che per gestire le issues (*Vedasi la parte di Project Managment in Processi di Supporto*).
+L'unico strumento utilizzato (per la fornitura) dal team è *YouTrack*. Utilizzato sia per creare grafici di Gantt che per gestire le issues (*Vedasi la parte di Project Management in Processi di Supporto*).
 
 ### Documenti
 
@@ -102,12 +102,12 @@ Il documento sarà composto dalle seguenti parti:
   * Rischi organizzativi
   * Rischi dei requisiti
 * *Modello di Sviluppo*
-* *Pianificazione* = raggrupata per varie fasi in cui vi è indicato:
+* *Pianificazione* = raggruppata per varie fasi in cui vi è indicato:
   * Il periodo in cui viene svolto
   * I ruoli coinvolti
   * Le attività da svolgere
   * Il preventivo fatto
-* *Consuntivo di periodo* = raggrupata per varie fasi in cui vi è indicato:
+* *Consuntivo di periodo* = raggruppata per varie fasi in cui vi è indicato:
   * Il consuntivo
   * Le motivazioni delle variazioni (se ci sono)
   * Considerazioni
@@ -152,10 +152,7 @@ I requisiti vengono tracciati mediante una tabella di quattro colonne:
   * Requisiti funzionali, identificati con **RF**;
   * Requisiti di qualità, identificati con **RQ**;
   * Requisiti di vincoli, identificati con **RV**;
-  * Requisiti opzionali, identificati con **RO**;
-  * Requisiti qualitativi, identificati con **RV**;
-  * Requisiti sistemi operativi, identificati con **RSO**;
-  * Requisiti prestazionali, identificati con **VRP**.
+  * Requisiti opzionali, identificati con **RO**.
 
   Visto che il progetto si occupa di due applicazioni distinte, ai codici dei requisiti funzionali si aggiunge all'inizio **V** se è un requisito per SmartLogViewer, oppure **S** se è un requisito per SmartLogStatistics.
 
@@ -250,7 +247,7 @@ Il registro viene visualizzato sotto forma di tabella avente quattro colonne:
 In ogni documento al di fuori dei verbali interni è provvisto di un indice:
 
 * In grassetto vengono visualizzati i titoli dei capitoli;
-* Indatati sotto i titoli dei capitoli ci sono i titoli dei vari paragrafi che lo compongono.
+* Indentati sotto i titoli dei capitoli ci sono i titoli dei vari paragrafi che lo compongono.
 
 ## Repository
 
@@ -299,7 +296,7 @@ Ogni componente del gruppo una volta finito un'attività, prima di iniziarne una
 * Per le comunicazioni interne sono stati creati:
   * Un gruppo Telegram per scambio di informazioni veloci;
   * Un server Discord per riunioni interne nel caso in cui non fosse possibile trovarsi di persona.
-* Per le comuncazioni esterne con l'azienda:
+* Per le comunicazioni esterne con l'azienda:
   * Gli incontri vengono fissati tramite mail (anche lo scambio asincrono di informazioni avviene tramite mail);
   * Le video conferenze vengono effettuate tramite Teams.
 
