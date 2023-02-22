@@ -1218,6 +1218,7 @@ Essendo applicativi browser, entrambe le applicazioni non hanno bisogno di esser
 ## Prestazionali
 
 L'azienda non ha posto alcun vincolo prestazionale per le due applicazioni. Per questo motivo non è stato possibile definire requisiti di prestazione.
+
 # Tracciamento
 
 | Fonte | Requisito |
