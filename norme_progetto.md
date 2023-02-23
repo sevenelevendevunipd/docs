@@ -9,7 +9,7 @@ docusage: "Interno"
 toc: true
 versioni:
   v0.0.1:
-    autore: Mattia Brunello
+    autore: Andrea Auletta
     data: 10/11/2022
     cambiamenti: Prima stesura
   v0.0.2:
@@ -17,7 +17,7 @@ versioni:
     data: 18/11/2022
     cambiamenti: Aggiunto paragrafo riguardante il repository
   v0.0.3:
-    autore: Nicola Cecchetto
+    autore: Davide Vitagliano
     data: 20/11/2022
     cambiamenti: Aggiunta sezione analisi dei requisiti
   v0.0.4:
@@ -29,11 +29,11 @@ versioni:
     data: 25/11/2022
     cambiamenti: Modificati paragrafi registro delle modifiche repository, Requisiti
   v0.0.6:
-    autore: Enrik Rucaj
+    autore: Davide Vitagliano
     data: 25/11/2022
     cambiamenti: Aggiunta sezione YouTrack, Casi d'uso (per analisi dei requisiti) e modificata sezione Repository
   v0.0.7:
-    autore: Enrik Rucaj
+    autore: Augusto Zanellato
     data: 25/11/2022
     cambiamenti: Aggiunto Piano di Progetto e Strumenti (in Fornitura)
   v0.0.8:
@@ -44,6 +44,14 @@ versioni:
     autore: Andrea Auletta
     data: 14/02/2023
     cambiamenti: Aggiunte le norme per il tracciamento dei requisiti
+  v0.1.0:
+    autore: Antonio Stan
+    data: 19/02/2023
+    cambiamenti: Verifica generale del documento
+  v1.0.0:
+    autore: Enrik Rucaj
+    data: 20/02/2023
+    cambiamenti: Approvato per il rilascio
 ...
 
 # Introduzione
