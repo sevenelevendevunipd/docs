@@ -60,7 +60,11 @@ documento *Glossario* assieme alle loro definizioni.
 
 ## Rifermenti
 
-<!-- riferimenti al capitolato e alle slide-->
+### Riferimenti normativi
+
+* [Regolamento del progetto didattico](https://www.math.unipd.it/~tullio/IS-1/2022/Dispense/PD02.pdf)
+
+* [Capitolato d'appalto C5 - SmartLog](https://www.math.unipd.it/~tullio/IS-1/2022/Progetto/C5.pdf)
 
 ## Scadenze
 
@@ -152,7 +156,7 @@ Questa sezione elenca i possibili rischi in cui si potrebbe incorrere durante l�
 
 # Modello di Sviluppo
 
-Il gruppo ha deciso di lavorare adottando un approccio agile integrando il **modello Kanban** con alcuni elementi del **modello Scrum**.
+Il gruppo ha deciso di lavorare adottando un approccio agile utilizzando il **modello Scrum**.
 
 Per avere un'idea chiara dell'avanzamento nel progetto, ogni requisito prima di essere svolto viene inserito all'interno di una backlog, ciascuno con un suo grado di importanza (in base alle loro criticità).
 I requisiti più importanti vengono svolti per primi mentre quelli con minor criticità vengono svolti in seguito, in modo tale da facilitare la loro integrazione in un sistema già stabilizzato.
@@ -170,15 +174,13 @@ Il metodo di lavoro sarà quindi il seguente:
 Tenendo in considerazione le scadenze prefissate per ogni revisione e la durata di ogni sprint di 14 giorni si è deciso di suddividere lo sviluppo del progetto nelle seguenti sottosezioni:
 
 * Requirements and Technology Baseline (RTB) composta da 8 sprint:
-  * Analisi dei requisiti composta da 3 sprint.
+  * Analisi preliminare composta da 3 sprint.
   * Progettazione Technology Baseline composta da 3 sprint.
   * Proof of Concept composta da 2 sprint.
 * Product Baseline (PB) composta da 3 sprint:
-  <!--Sto tirando ad indovinare, correggere in futuro nel caso sia sbagliato-->
   * Progettazione di dettaglio dei Requisiti Obbligatori
   * Codifica dei Requisiti Obbligatori
 * Customer Acceptance (CA) composta da 2 sprint:
-  <!--Sto tirando ad indovinare, correggere in futuro nel caso sia sbagliato-->
   * Progettazione di dettaglio e Codifica dei Requisiti Opzionali <!--Due in uno dato che i requisiti opzionali sono veramente pochi-->
   * Test, Collaudo e Validazione finale
 
@@ -191,15 +193,9 @@ Questo significa che un componente del team può assumere lo stesso ruolo su doc
 I responsabili cambiano all'inizio di ogni baseline.
 La stessa suddivisione verrà applicata durante la stesura dell'architettura e l'implementazione del software.
 
-<<<<<<< HEAD
 *Alla fine del progetto didattico ogni membro del team avrà assunto almeno una volta tutti i ruoli.*
-=======
-Ad ogni nuovo sprint i ruoli precedentemente fissati possono essere cambiati. Un'eccezione alla regola ricade sul ruolo del *responsabile*, il quale essendo una figura altamente importante per la stabilità del gruppo e del progetto si preferisce mantenere la stessa persone che ricopre quel ruolo per un'istante di tempo maggiore rispetto al solito.
 
-Uno stesso ruolo può essere ricoperto contemporaneamente da più persone a eccezione del ruolo di *responsabile*.
->>>>>>> 363d5f1 ([SL-5] Fix typo)
-
-## Analisi dei requisiti
+## Analisi preliminare
 
 **Periodo:**
 
@@ -218,7 +214,7 @@ Le attività da svolgere durante questo periodo sono:
 
 ### Preventivo
 
-Nel periodo di Analisi dei Requisiti, ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
+Nel periodo di Analisi preliminare, ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
@@ -261,7 +257,7 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 
 **Periodo:**
 
-* INIZIO 19 Dicembre 2022 - Fine periodo dell'analisi dei requisiti
+* INIZIO 19 Dicembre 2022 - Fine periodo dell'analisi preliminare
 * FINE 29 Gennaio 2023 - Inizio periodo di "Proof of Concept"
 
 **Ruoli coinvolti:** Responsaile - Amministratore - Analista - Progettista - Verificatore
@@ -380,7 +376,12 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 
 Le attività da svolgere durante questo periodo sono:
 
+<<<<<<< HEAD
 * **Product Baseline:** In questa attività verrà presentata la baseline architetturale del prodotto tramite i diagrammi delle classi.
+=======
+* **Product Baseline:** In questa attività verrà presentato il pattern architetturale del prodotto tramite i diagrammi delle classi.
+* **Modifiche ai documenti**: aggiornamento dei documenti precedentemente avviati.
+>>>>>>> 7a256d0 (Aggiunti dettagli sulle attività del PB)
 
 ### Preventivo
 
@@ -436,7 +437,11 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 
 Le attività da svolgere durante questo periodo sono:
 
-<!--Inserire elenco di attività-->
+* **Codifica:** In questa attività i *programmatori* si occuperanno dello sviluppo del codice (del prodotto), seguendo tutte le nozioni prefissate nell'attività di product baseline.
+* **Test:** Verranno sviluppati in quest'attività i test di unità, integrità e sistema utili alla verifica e alla correttezza delle componenti software.
+* **Manuale Utente:** Documento riguardante le istruzioni di utilizzo del prodotto da parte di un utente.
+* **Manuale Sviluppatore:** Documento istruttivo sul funzionamento del prodotto a livello implementativo.
+* **Modifiche ai documenti**: aggiornamento dei documenti precedentemente avviati.
 
 ### Preventivo
 
@@ -444,12 +449,12 @@ Nel periodo di Codifica dei Requisiti Obbligatori, ciascun componente rivestirà
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
-| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     5      |
+| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     6      |
+| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     2      |
 | Rucaj Enrik       |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
+| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     8      |
+| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     7      |
 | Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
 | **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
 
@@ -482,13 +487,10 @@ Quadro dei costi da affrontare:
 
 Le attività da svolgere durante questo periodo sono:
 
-* **Codifica:** Viene implementata la parte di codice del prodotto relativa ai requisiti opzionali.
-
-* **Test:** Vengono scritti i test di unità e integrazione per i componenti sviluppati.
-
-* **Manuali:** aggiornamento dei documenti "Manuale Utente" e "Manuale Sviluppatore".
-
-* **Modifiche ai documenti:** aggiornamento dei documenti precedentemente avviati.
+* **Product Baseline (requisiti opzionali):** In questa attività verrà presentato il pattern architetturale del prodotto tramite i diagrammi delle classi.
+* **Codifica (requisiti opzionali):** In questa attività i *programmatori* si occuperanno dello sviluppo del codice (del prodotto), seguendo tutte le nozioni prefissate nell'attività di product baseline.
+* **Test (requisiti opzionali):** Verranno sviluppati in quest'attività i test di unità, integrità e sistema utili alla verifica e alla correttezza delle componenti software.
+* **Modifiche ai documenti**: aggiornamento dei documenti precedentemente avviati.
 
 ### Preventivo
 
@@ -543,11 +545,11 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 
 Le attività da svolgere durante questo periodo sono:
 
-* **Test:** Vengono eseguiti test di sistema per verficare che il prodotto soddisfi tutte le caratteristiche richieste (oltre ai test di unità e di integrazione)
+* **Test:** Vengono eseguiti ulteriori test mancanti per verficare che il prodotto soddisfi tutte le caratteristiche richieste.
 
-* **Collaudo:** Vengono eseguite e testate tutte le funzionalità del prodotto.
+* **Collaudo:** Vengono eseguite e collaudati tutte le funzionalità del prodotto.
 
-* **Validazione:** Viene controllato che il prodotto soddisfi tutte le richieste del cliente. Vengono eseguiti i test di validazione
+* **Validazione:** Viene controllato che il prodotto soddisfi tutte le richieste del cliente.
 
 * **Modifiche ai documenti:** aggiornamento dei documenti precedentemente avviati.
 
@@ -598,14 +600,14 @@ Nella seguente tabella viene riepilogata la suddivisone delle ore totali di lavo
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
-| Auletta Andrea    |    2     |    -    |   -    |      4      |      3       |    5    |     14     |
-| Brunello Mattia   |    -     |    4    |   -    |      6      |      3       |    -    |     13     |
-| Cecchetto Nicola  |    2     |    -    |   -    |      4      |      6       |    3    |     15     |
-| Rucaj Enrik       |    -     |    2    |   -    |      2      |      6       |    5    |     15     |
-| Stan Antonio      |    2     |    -    |   -    |      4      |      -       |    5    |     11     |
-| Vitagliano Davide |    -     |    2    |   -    |      5      |      4       |    2    |     13     |
-| Zanellato Augusto |    2     |    -    |   -    |      -      |      10      |    -    |     12     |
-| **Totale**        |  **8**   |  **8**  | **-**  |    **25**   |    **32**    |  **20** |   **93**   |
+| Auletta Andrea    |    2     |    -    |   -    |      4      |      3       |    5    |     95     |
+| Brunello Mattia   |    -     |    4    |   -    |      6      |      3       |    -    |     95     |
+| Cecchetto Nicola  |    2     |    -    |   -    |      4      |      6       |    3    |     95     |
+| Rucaj Enrik       |    -     |    2    |   -    |      2      |      6       |    5    |     95     |
+| Stan Antonio      |    2     |    -    |   -    |      4      |      -       |    5    |     95     |
+| Vitagliano Davide |    -     |    2    |   -    |      5      |      4       |    2    |     95     |
+| Zanellato Augusto |    2     |    -    |   -    |      -      |      10      |    -    |     95     |
+| **Totale**        |  **8**   |  **8**  | **-**  |    **25**   |    **32**    |  **20** |   **665**  |
 
 # Consuntivo di periodo
 
@@ -613,7 +615,7 @@ In questa sezione vengono esposti i costi e gli orari effettivi sostenuti dal gr
 Infine viene presentato un bilancio tra il consultivo e il preventivo di un determinato periodo (viene riportato a fianco dei nuovi valori).
 Quest'ultimo risulterà positivo quando la spesa effettiva è minore del preventivo e viceversa sarà negativo quando la spesa supererà i costi preventivati.
 
-## Analisi dei requisiti
+## Analisi preliminare
 
 Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
