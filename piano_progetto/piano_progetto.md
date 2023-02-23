@@ -382,7 +382,6 @@ Le attività da svolgere durante questo periodo sono:
 
 * **Product Baseline:** In questa attività verrà presentata la baseline architetturale del prodotto tramite i diagrammi delle classi.
 
-
 ### Preventivo
 
 Nel periodo di Progettazione di dettaglio dei Requisiti Obbligatori, ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
