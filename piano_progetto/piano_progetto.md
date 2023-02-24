@@ -156,35 +156,35 @@ Questa sezione elenca i possibili rischi in cui si potrebbe incorrere durante l�
 
 # Modello di Sviluppo
 
-Il gruppo ha deciso di lavorare adottando un approccio agile utilizzando il modello g:scrum}.
+Il gruppo ha deciso di lavorare adottando un approccio agile utilizzando il modello {g:scrum}.
 
-Per avere un'idea chiara dell'avanzamento nel progetto, ogni requisito prima di essere svolto viene inserito all'interno di una g:backlog}, ciascuno con un suo grado di importanza (in base alle loro criticità).
+Per avere un'idea chiara dell'avanzamento nel progetto, ogni requisito prima di essere svolto viene inserito all'interno di una {g:backlog}, ciascuno con un suo grado di importanza (in base alle loro criticità).
 I requisiti più importanti vengono svolti per primi mentre quelli con minor criticità vengono svolti in seguito, in modo tale da facilitare la loro integrazione in un sistema già stabilizzato.
 
 Il metodo di lavoro sarà quindi il seguente:
 
-* In ogni "g:sprint}" vengono prelevati dei requisiti dai g:backlog} in base alla loro importanza e la disponibilità temporale dei componenti del team.
-* Nello stesso "g:sprint}" vengono prefissati gli obiettivi da raggiungere entro una certa data, cercando di prevedere in anticipo i possibili rischi che potrebbero accadere;
+* In ogni "{g:sprint}" vengono prelevati dei requisiti dai {g:backlog} in base alla loro importanza e la disponibilità temporale dei componenti del team.
+* Nello stesso "{g:sprint}" vengono prefissati gli obiettivi da raggiungere entro una certa data, cercando di prevedere in anticipo i possibili rischi che potrebbero accadere;
 * Il responsabile assegna un obiettivo a uno o più redattori.
 * I verificatori controlleranno il lavoro svolto dai redattori e comunicheranno eventuali mancanze o errori;
-* Al termine del periodo dello g:sprint}, il gruppo insieme analizzerà il lavoro svolto per capire l'avanzamento del progetto ed adattarsi a eventuali modifiche per risolvere i problemi riscontrati.
+* Al termine del periodo dello {g:sprint}, il gruppo insieme analizzerà il lavoro svolto per capire l'avanzamento del progetto ed adattarsi a eventuali modifiche per risolvere i problemi riscontrati.
 
 # Pianificazione
 
-Tenendo in considerazione le scadenze prefissate per ogni revisione e la durata di ogni g:sprint} di 14 giorni si è deciso di suddividere lo sviluppo del progetto nelle seguenti sottosezioni:
+Tenendo in considerazione le scadenze prefissate per ogni revisione e la durata di ogni {g:sprint} di 14 giorni si è deciso di suddividere lo sviluppo del progetto nelle seguenti sottosezioni:
 
-* Requirements and Technology Baseline (RTB) composta da 8 g:sprint}:
-  * Analisi preliminare composta da 3 g:sprint}.
-  * Progettazione Technology Baseline composta da 3 g:sprint}.
-  * Proof of Concept composta da 2 g:sprint}.
-* Product Baseline (PB) composta da 3 g:sprint}:
+* Requirements and Technology Baseline (RTB) composta da 8 {g:sprint}:
+  * Analisi preliminare composta da 3 {g:sprint}.
+  * Progettazione Technology Baseline composta da 3 {g:sprint}.
+  * Proof of Concept composta da 2 {g:sprint}.
+* Product Baseline (PB) composta da 3 {g:sprint}:
   * Progettazione di dettaglio dei Requisiti Obbligatori
   * Codifica dei Requisiti Obbligatori
-* Customer Acceptance (CA) composta da 2 g:sprint}:
+* Customer Acceptance (CA) composta da 2 {g:sprint}:
   * Progettazione di dettaglio e Codifica dei Requisiti Opzionali <!--Due in uno dato che i requisiti opzionali sono veramente pochi-->
   * Test, Collaudo e Validazione finale
 
-*Nota: Le sottosezioni sopra citate indicano i requisiti critici importanti per il corretto sviluppo del progetto. Durante i specifici g:sprint} possono essere svolti anche requisiti meno importanti presenti nel g:backlog}.*
+*Nota: Le sottosezioni sopra citate indicano i requisiti critici importanti per il corretto sviluppo del progetto. Durante i specifici {g:sprint} possono essere svolti anche requisiti meno importanti presenti nel {g:backlog}.*
 
 **Suddivisione ruoli:**
 
@@ -542,7 +542,7 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 ## Test, Collaudo e Validazione finale
 
 **Periodo:**
-<!--Abbiamo il problema che si tratta di mezzo g:sprint} (1 settimana al posto di 2).-->
+<!--Abbiamo il problema che si tratta di mezzo {g:sprint} (1 settimana al posto di 2).-->
 
 * INIZIO 24 Aprile 2023 - Fine periodo di progettazione e codifica dei Requisiti Opzionali
 * FINE 30 Aprile 2023 - Revisione di Customer Acceptance (CA)
