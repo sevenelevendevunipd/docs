@@ -65,10 +65,10 @@ Il documento verrà aggiornato con costanza durante tutte le fasi del progetto.
 
 ### C5 - SmartLog
 
-Al giorno d'oggi vista l'espansione e l'aumento del numero delle apparecchiature per il supporto all'energia elettrica nelle infrastrutture critiche, la gestione di esse sta diventando sempre più complessa e richiede una continua analisi per l'ottimizzazione dei consumi e rivelazione degli errori. Per questo motivo i dispositivi Socomec riescono a registrare e salvare su un file di log tutti gli eventi che accadono, in modo da:
+Al giorno d'oggi vista l'espansione e l'aumento del numero delle apparecchiature per il supporto all'energia elettrica nelle infrastrutture critiche, la gestione di esse sta diventando sempre più complessa e richiede una continua analisi per l'ottimizzazione dei consumi e rivelazione degli errori. Per questo motivo i dispositivi Socomec riescono a registrare e salvare su un file di {g:log} tutti gli eventi che accadono, in modo da:
 
 * poter analizzare, trovare e risolvere eventuali problemi.
-* poter estrarre informazioni statistiche da un insieme di file di log.
+* poter estrarre informazioni statistiche da un insieme di file di {g:log}.
 
 ## Riferimenti
 
@@ -88,7 +88,7 @@ Per il processo di fornitura verranno elencati tutti gli strumenti e i documenti
 
 ### Strumenti
 
-L'unico strumento utilizzato (per la fornitura) dal team è *YouTrack*. Utilizzato sia per creare grafici di Gantt che per gestire le issues (*Vedasi la parte di Project Management in Processi di Supporto*).
+L'unico strumento utilizzato (per la fornitura) dal team è {g:youtrack}. Utilizzato sia per creare grafici di {g:gantt} che per gestire le {g:issue} (*Vedasi la parte di Project Management in Processi di Supporto*).
 
 ### Documenti
 
@@ -137,8 +137,8 @@ Per i casi d'uso vengono specificati:
 * Attori
 
 * Use Case:
-  * SmartLogViewer, identificati con **VUC**;
-  * SmartLogStatistics, identificati con **SUC**;
+  * {g:smartlogviewer}, identificati con **VUC**;
+  * {g:smartlogstatistics}, identificati con **SUC**;
   * Opzionali, identificati con **OUC**;
   * Gli identificatori vengono poi seguiti dal numero del caso d'uso.
 
@@ -162,7 +162,7 @@ I requisiti vengono tracciati mediante una tabella di quattro colonne:
   * Requisiti di vincoli, identificati con **RV**;
   * Requisiti opzionali, identificati con **RO**.
 
-  Visto che il progetto si occupa di due applicazioni distinte, ai codici dei requisiti funzionali si aggiunge all'inizio **V** se è un requisito per SmartLogViewer, oppure **S** se è un requisito per SmartLogStatistics.
+  Visto che il progetto si occupa di due applicazioni distinte, ai codici dei requisiti funzionali si aggiunge all'inizio **V** se è un requisito per {g:smartlogviewer}, oppure **S** se è un requisito per {g:smartlogstatistics}.
 
   Ogni requisito ha alla fine del codice un numero puntato.
 
@@ -180,9 +180,9 @@ Questa sezione contiene le norme per la scrittura dei documenti (e la loro strut
 
 ### Sviluppo e design
 
-La documentazione è scritta usando il *linguaggio di markup* **Markdown** nella versione supportata da [Pandoc](https://pandoc.org/). Per facilitare la stesura dei documenti sono stati sviluppati dei filtri per Pandoc che permettono l'*embedding* nei documenti di diagrammi [PlantUML](https://plantuml.com/) e che si occupano della generazione automatica del glossario in appendice ai documenti.
+La documentazione è scritta usando il *linguaggio di markup* {g:markdown} nella versione supportata da [Pandoc](https://pandoc.org/). Per facilitare la stesura dei documenti sono stati sviluppati dei filtri per {g:pandoc} che permettono l'*embedding* nei documenti di diagrammi [PlantUML](https://plantuml.com/) e che si occupano della generazione automatica del glossario in appendice ai documenti.
 
-Il processo di build dei documenti è controllato da una pipeline di {a:cicd} che controlla che i sorgenti Markdown seguendo delle linee guida di stile e formattazione usando [MarkdownLint](https://github.com/DavidAnson/markdownlint), li compila in {g:pdfa} usando Pandoc e pdfLaTeX e carica i pdf risultanti sia sul [sito del gruppo](https://sevenelevendevunipd.github.com/docs/) che come artefatto della {a:cicd}.
+Il processo di build dei documenti è controllato da una pipeline di {a:cicd} che controlla che i sorgenti {g:markdown} seguendo delle linee guida di stile e formattazione usando [MarkdownLint](https://github.com/DavidAnson/markdownlint), li compila in {g:pdfa} usando {g:pandoc} e pdfLaTeX e carica i pdf risultanti sia sul [sito del gruppo](https://sevenelevendevunipd.github.com/docs/) che come artefatto della {a:cicd}.
 
 <!-- TO DO: Definire nomenclatura documenti -->
 
@@ -259,7 +259,7 @@ In ogni documento al di fuori dei verbali interni è provvisto di un indice:
 
 ## Repository
 
-Per organizzare al meglio il lavoro, all'interno dell'organizzazione **GitHub**, abbiamo creato 1<!-- sistemare quando avremo un numero di repo finito --> repository:
+Per organizzare al meglio il lavoro, all'interno dell'organizzazione {g:github}, abbiamo creato 1<!-- sistemare quando avremo un numero di repo finito --> {g:repository}:
 
 * SevenElevenUnipd/**docs** per i documenti; quelli indispensabili saranno:
   * **verbali**: documenti di incontri interni svolti dal gruppo ed esterni svolti con i proponenti e committenti del progetto.
@@ -281,7 +281,7 @@ I branch vengono nominati in questo modo:  **SL-n-nome_branch** <!-- accentrato 
 
 ### Scopo
 
-La gestione del progetto avviene tramite **YouTrack**.
+La gestione del progetto avviene tramite {g:youtrack}.
 Questo permette di:
 
 * suddividere il lavoro totale in unità da assegnare al singolo individuo.
@@ -302,11 +302,11 @@ Ogni componente del gruppo una volta finito un'attività, prima di iniziarne una
 ## Comunicazione
 
 * Per le comunicazioni interne sono stati creati:
-  * Un gruppo Telegram per scambio di informazioni veloci;
-  * Un server Discord per riunioni interne nel caso in cui non fosse possibile trovarsi di persona.
+  * Un gruppo {g:telegram} per scambio di informazioni veloci;
+  * Un server {g:discord} per riunioni interne nel caso in cui non fosse possibile trovarsi di persona.
 * Per le comunicazioni esterne con l'azienda:
   * Gli incontri vengono fissati tramite mail (anche lo scambio asincrono di informazioni avviene tramite mail);
-  * Le video conferenze vengono effettuate tramite Teams.
+  * Le video conferenze vengono effettuate tramite {g:teams}.
 
 ## Rotazione dei ruoli
 
