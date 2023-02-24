@@ -240,7 +240,7 @@ Indica che ciascun branch di codice sia stato eseguito almeno una volta. <!--Per
 
 Strumenti utilizzati:
 
-* Python
+* g:python}
 
 ### Tabella metriche - Valori accettabili e ottimali
 
