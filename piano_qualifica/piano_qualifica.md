@@ -265,3 +265,11 @@ Strumenti utilizzati:
 
 ## Test di unit
 -->
+# Resoconto attività di verifica
+
+## verifica dei processo
+
+## verifica del prodotto
+
+### Indice di Gulpease
+
