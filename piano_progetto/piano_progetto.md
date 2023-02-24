@@ -651,7 +651,7 @@ Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 | **Totale**        |  **19**  | **30**  | **75**  |    **-**    |    **-**     | **47**  |  **171**   |
 
 Di seguito vengono riportate le variazioni dei costi:
-<!--
+
 | **Ruolo**      | **Ore** |   **Costo**   |
 | -------------- | :-----: | :-----------: |
 | Responsabile   | 19 (+1) | 570  (+30,00) |
@@ -665,8 +665,8 @@ Di seguito vengono riportate le variazioni dei costi:
 ### Motivazioni delle variazioni
 
 * **Responsabile +1**: Problema iniziale riguardante la suddivisione del lavoro;
-* **Amministratore +0**: -
-* **Analista +0**: -  
+* **Amministratore +0**: -;
+* **Analista +0**: -;
 * **Verificatore -4**: Avendo da verificare documentazione il lavoro è risultato più rapido di quanto previsto.  
 
 ### Considerazioni
