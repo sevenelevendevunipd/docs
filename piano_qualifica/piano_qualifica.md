@@ -55,7 +55,7 @@ Alcuni termini utilizzati nel documento potrebbero generare incomprensione per i
 
 ## Obiettivi
 
-Le metriche presenti devono permettere un analisi automigliorativa alla fine di ogni periodo *(guardare il documento Piano di Progetto per la suddivisione dei periodi)*, per migliorare al massimo il flusso di sviluppo nel ciclo di vita del progetto.
+Le metriche presenti devono permettere un analisi auto migliorativa alla fine di ogni periodo *(guardare il documento Piano di Progetto per la suddivisione dei periodi)*, per migliorare al massimo il flusso di sviluppo nel ciclo di vita del progetto.
 
 ## Metriche utilizzate
 
@@ -278,8 +278,53 @@ Strumenti utilizzati:
 import plotly.graph_objects as go
 
 documenti = ['NDP', 'PDP', 'PDQ', 'ADR']
-valori = ['62', '63', '62', '58']
+valori = [62, 63, 62, 58]
 
-fig = px.Figure(data=go.Bar(x=documenti, y=valori))
+fig = go.Figure(data=go.Bar(x=documenti, y=valori))
+fig.update_layout(yaxis_range=[0, 100])
+fig.show()
+```
+
+### Copertura Requisiti Obbligatori
+
+```{.plotly_python}
+import plotly.graph_objects as go
+
+x = ['AP', 'PTB', 'POC']
+y = [0, 0, 37.1]
+
+fig = go.Figure(data=go.Scatter(x=x, y=y, name='copertura requisiti obbligatori'))
+fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore accettabile')
+fig.update_layout(yaxis_range=[-2, 102])
+fig.show()
+```
+
+### Copertura Requisiti Opzionali
+
+```{.plotly_python}
+import plotly.graph_objects as go
+
+x = ['AP', 'PTB', 'POC']
+y = [0, 0, 0]
+
+fig = go.Figure(data=go.Scatter(x=x, y=y, name='copertura requisiti opzionali'))
+fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimo')
+fig.add_scatter(x=[x[0], x[-1]], y=[20, 20], line=dict(dash='dash'), name='valore accettabile')
+fig.update_layout(yaxis_range=[-2, 102])
+fig.show()
+```
+
+### Versioni Browser Supportati
+
+```{.plotly_python}
+import plotly.graph_objects as go
+
+x = ['AP', 'PTB', 'POC']
+y = [0, 0, 100]
+
+fig = go.Figure(data=go.Scatter(x=x, y=y, name='versioni browser supportati'))
+fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
+fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
+fig.update_layout(yaxis_range=[-2, 102])
 fig.show()
 ```
