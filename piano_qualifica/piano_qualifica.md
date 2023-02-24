@@ -265,3 +265,21 @@ Strumenti utilizzati:
 
 ## Test di unit
 -->
+
+# Resoconto attività di verifica
+
+## verifica dei processo
+
+## verifica del prodotto
+
+### Indice di Gulpease
+
+```{.plotly_python}
+import plotly.graph_objects as go
+
+documenti = ['NDP', 'PDP', 'PDQ', 'ADR']
+valori = ['62', '63', '62', '58']
+
+fig = px.Figure(data=go.Bar(x=documenti, y=valori))
+fig.show()
+```
