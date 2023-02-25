@@ -251,7 +251,7 @@ Strumenti utilizzati:
 | QPD_4             |      Copertura requisiti opzionali (CROP)   |       $\geq$ 20%       |         100%        |
 | QPD_5             |        Versioni browser supportate (VBS)    |        $\geq$ 80%      |         100%        |
 | QPD_6             |             Complessità ciclomatica (CC)    |        $\leq$ 2        |          1          |
-| QPD_7             |           Profondità di ereditarietà (PE)   |        $\leq$ 3        |        $\leq$ 2     |
+| QPD_7             |           Profondità di ereditarietà (PE)   |        $\leq$ 2        |          0          |
 | QPD_8             |           Righe di codice eseguibile (RCE)  |    $\leq$ 1000 righe   | $\leq$ 500 righe    |
 | QPD_9             |               Branch Coverage (BC)          |       $\geq$ 80%       |         95%         |
 
@@ -270,6 +270,91 @@ Strumenti utilizzati:
 
 ## verifica dei processo
 
+### Preventivo costo attuale & Costo attuale
+
+```{.plotly_python}
+import plotly.graph_objects as go
+
+x = ['AP', 'PTB', 'POC']
+y1 = [3245, 4965, 7315]
+y2 = [3215, 4830, 7290]
+
+fig = go.Figure(data=go.Scatter(x=x, y=y1, name='preventivo del costo attuale'))
+fig.add_scatter(x=x, y=y2, name='costo attuale')
+fig.add_scatter(x=[x[0], x[-1]], y=[13505, 13505], line=dict(dash='dash'), name='valore ottimale')
+fig.update_layout(yaxis_range=[-2, 14000])
+fig.show()
+```
+
+### Costo totale & Stima costo totale
+
+```{.plotly_python}
+import plotly.graph_objects as go
+
+x = ['AP', 'PTB', 'POC']
+y1 = [13505, 13505, 13505]
+y2 = [13475, 13370, 13480]
+
+fig = go.Figure(data=go.Scatter(x=x, y=y1, name='costo totale'))
+fig.add_scatter(x=x, y=y2, name='stima del costo totale')
+fig.add_scatter(x=[x[0], x[-1]], y=[14180, 14180], line=dict(dash='dash'), name='valore accettabile superiore')
+fig.add_scatter(x=[x[0], x[-1]], y=[12829, 12829], line=dict(dash='dash'), name='valore accettabile inferiore')
+fig.update_layout(yaxis_range=[12500, 14500])
+fig.show()
+```
+
+### Preventivo del periodo temporale attuale & Periodo temporale attuale
+
+```{.plotly_python}
+import plotly.graph_objects as go
+
+x = ['AP', 'PTB', 'POC']
+y1 = [151, 231, 356]
+y2 = [148, 223, 350]
+
+fig = go.Figure(data=go.Scatter(x=x, y=y1, name='preventivo del periodo temporale attuale'))
+fig.add_scatter(x=x, y=y2, name='periodo temporale attuale')
+fig.add_scatter(x=[x[0], x[-1]], y=[665, 665], line=dict(dash='dash'), name='valore ottimale')
+fig.update_layout(yaxis_range=[0, 700])
+fig.show()
+```
+
+### Tempo di sviluppo totale & Stima tempo di sviluppo totale
+
+```{.plotly_python}
+import plotly.graph_objects as go
+
+x = ['AP', 'PTB', 'POC']
+y1 = [665, 665, 665]
+y2 = [662, 657, 659]
+
+fig = go.Figure(data=go.Scatter(x=x, y=y1, name='tempo di sviluppo totale'))
+fig.add_scatter(x=x, y=y2, name='stima del tempo di sviluppo totale')
+fig.add_scatter(x=[x[0], x[-1]], y=[698, 698], line=dict(dash='dash'), name='valore accettabile superiore')
+fig.add_scatter(x=[x[0], x[-1]], y=[632, 632], line=dict(dash='dash'), name='valore accettabile inferiore')
+fig.update_layout(yaxis_range=[600, 700])
+fig.show()
+```
+
+### Rapporto del costo & Rapporto del periodo temporale
+
+```{.plotly_python}
+import plotly.graph_objects as go
+
+x = ['AP', 'PTB', 'POC']
+y1 = [0.9, 2.7, 0.3]
+y2 = [1.9, 3.4, 1.6]
+
+fig = go.Figure(data=go.Scatter(x=x, y=y1, name='rapporto del costo'))
+fig.add_scatter(x=x, y=y2, name='rapporto del periodo temporale')
+fig.add_scatter(x=[x[0], x[-1]], y=[0, 0], line=dict(dash='dash'), name='valore ottimale')
+fig.add_scatter(x=[x[0], x[-1]], y=[-20, -20], line=dict(dash='dash'), name='valore accettabile')
+fig.update_layout(yaxis_range=[-22, 22])
+fig.show()
+```
+
+#### Metriche soddisfate
+<!--Inserire per ultima-->
 ## verifica del prodotto
 
 ### Indice di Gulpease
