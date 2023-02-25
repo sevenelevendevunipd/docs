@@ -131,19 +131,19 @@ $$Metriche soddisfate=\frac{Numero di metriche soddisfate}{Numero di metri
 
 ### Tabella metriche - Valori accettabili e ottimali
 
-|    **Codice**     |                  **Nome**                   | **Valore accettabile**  | **Valore ottimale** |
+|    **Codice**     |                  **Nome**                   | **Valore accettabile** | **Valore ottimale** |
 | ----------------- | :-----------------------------------------: | :-------------------:  | :-----------------: |
-| QPS_1             |        Preventivo costo attuale (PCA)       |        $>$ 0           |    $\leq$ Budget    |
-| QPS_2             |              Costo attuale (CA)             |        $>$ 0           |     $\leq$ PCA      |
-| QPS_3             |          Stima costo a finire (SCF)         |       $\geq$           |    $\leq$ Budget    |
-| QPS_4             |           Stima costo totale (SCT)          |  $\leq$ Budget + 5%    |     $=$ Budget      |
-| QPS_5             |              Rapporto costo (RC)            |     $\geq$ -20%        |     $\geq$ 0%       |
-| QPS_6             | Preventivo periodo temporale attuale (PPTA) |         $>$ 0          |  $\leq$ Ore Totali  |
-| QPS_7             |        Periodo temporale attuale (PTA)      |         $>$ 0          |     $\leq$ PPTA     |
-| QPS_8             |     Stima lasso temporale a finire (SLTF)   |       $\geq$ 0         |  $\leq$ Ore Total   |
-| QPS_9             |     Stima tempo di sviluppo totale (STST)   | $\leq$ Ore Totali + 5% |    $=$ Ore Totali   |
-| QPS_10            |        Rapporto periodo temporale (RPT)     |     $\geq$ -20%        |     $\geq$ 0%       |
-| QPS_11            |            Metriche soddisfate (MS)         |      $\geq$ 80%        |      $=$ 100%       |
+| QPS_1             |        Preventivo costo attuale (PCA)       |        $> 0$           |    $\leq Budget$    |
+| QPS_2             |              Costo attuale (CA)             |        $> 0$           |     $\leq PCA$      |
+| QPS_3             |          Stima costo a finire (SCF)         |       $\geq 0$         |    $\leq Budget$    |
+| QPS_4             |           Stima costo totale (SCT)          |  $\leq Budget + 5\%$   |     $= Budget$      |
+| QPS_5             |              Rapporto costo (RC)            |     $\geq -20\%$       |     $\geq 0\%$      |
+| QPS_6             | Preventivo periodo temporale attuale (PPTA) |         $> 0$          |  $\leq Ore Totali$  |
+| QPS_7             |        Periodo temporale attuale (PTA)      |         $> 0$          |     $\leq PPTA$     |
+| QPS_8             |     Stima lasso temporale a finire (SLTF)   |       $\geq 0$         |  $\leq Ore Total$   |
+| QPS_9             |     Stima tempo di sviluppo totale (STST)   | $\leq Ore Totali + 5\%$|    $= Ore Totali$   |
+| QPS_10            |        Rapporto periodo temporale (RPT)     |     $\geq -20\%$       |     $\geq 0\%$      |
+| QPS_11            |            Metriche soddisfate (MS)         |      $\geq 80\%$       |      $= 100\%$      |
 
 # Qualità del prodotto
 
@@ -245,15 +245,11 @@ Complessità ciclomatica = E - N + 2P
 
 Indica il numero di classi diverse che ereditano tra loro, fino alla classe base.
 
-### QPD_8: Righe di codice eseguibile (RCE)
+### QPD_8 Branch Coverage (BC)
 
-Indica il numero approssimativo di righe di codice eseguibili.
+Indica che ciascun branch di codice sia stato eseguito almeno una volta.
 
-### QPD_9 Branch Coverage (BC)
-
-Indica che ciascun branch di codice sia stato eseguito almeno una volta. <!--Per branch si intende uno dei possibili path di codice che seguono una condizione decisionale* metterlo nel glossario(?) -->
-
-|    **Prodotto**   | **Valore accettabile**   | **Valore ottimale** |
+|    **Prodotto**   | **Valore accettabile**   | **Valore ottimale**|
 | ----------------- |  :-------------------:  | :-----------------: |
 | Software          |        $>$ 80%          |    $>$    95%       |
 
@@ -263,16 +259,15 @@ Strumenti utilizzati:
 
 ### Tabella metriche - Valori accettabili e ottimali
 
-|    **Codice**     |                  **Nome**                   | **Valore accettabile**  | **Valore ottimale** |
+|    **Codice**     |                  **Nome**                   | **Valore accettabile** | **Valore ottimale** |
 | ----------------- | :-----------------------------------------: | :-------------------:  | :-----------------: |
-| QPD_2             |               Errori ortografici (EO)       |       $\leq$ 8%        |           0         |
-| QPD_3             |     Copertura requisiti obbligatori (CRO)   |          100%          |         100%        |
-| QPD_4             |      Copertura requisiti opzionali (CROP)   |       $\geq$ 20%       |         100%        |
-| QPD_5             |        Versioni browser supportate (VBS)    |        $\geq$ 80%      |         100%        |
-| QPD_6             |             Complessità ciclomatica (CC)    |        $\leq$ 2        |          1          |
-| QPD_7             |           Profondità di ereditarietà (PE)   |        $\leq$ 2        |          0          |
-| QPD_8             |           Righe di codice eseguibile (RCE)  |    $\leq$ 1000 righe   | $\leq$ 500 righe    |
-| QPD_9             |               Branch Coverage (BC)          |       $\geq$ 80%       |         95%         |
+| QPD_2             |               Errori ortografici (EO)       |       $\leq 8\%$       |           0         |
+| QPD_3             |     Copertura requisiti obbligatori (CRO)   |          $100\%$       |         $100\%$     |
+| QPD_4             |      Copertura requisiti opzionali (CROP)   |       $\geq 20\%$      |         $100\%$     |
+| QPD_5             |        Versioni browser supportate (VBS)    |        $\geq 80\%$     |         $100\%$     |
+| QPD_6             |             Complessità ciclomatica (CC)    |        $\leq 2$        |          1          |
+| QPD_7             |           Profondità di ereditarietà (PE)   |        $\leq 2$        |          0          |
+| QPD_8             |               Branch Coverage (BC)          |       $\geq 80\%$      |      $\geq 95\%$    |
 
 <!--# Specifica dei test
 
@@ -373,7 +368,20 @@ fig.show()
 ```
 
 #### Metriche soddisfate
-<!--Inserire per ultima-->
+
+```{.plotly_python}
+import plotly.graph_objects as go
+
+x = ['AP', 'PTB', 'POC']
+y1 = [52.6, 52.6, 68.4]
+
+fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di branch coverage'))
+fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
+fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
+fig.update_layout(yaxis_range=[-2, 102])
+fig.show()
+```
+
 ## verifica del prodotto
 
 ### Indice di Gulpease
@@ -428,6 +436,40 @@ y = [0, 0, 100]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y, name='versioni browser supportati'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
+fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
+fig.update_layout(yaxis_range=[-2, 102])
+fig.show()
+```
+
+### Complessità ciclomatica
+
+<!--Inserire valore-->
+
+### Profondità di ereditarietà
+
+```{.plotly_python}
+import plotly.graph_objects as go
+
+x = ['AP', 'PTB', 'POC']
+y1 = [0, 0, 0]
+
+fig = go.Figure(data=go.Scatter(x=x, y=y1, name='livello di profondità di ereditarietà'))
+fig.add_scatter(x=[x[0], x[-1]], y=[0, 0], line=dict(dash='dash'), name='valore ottimale')
+fig.add_scatter(x=[x[0], x[-1]], y=[2, 2], line=dict(dash='dash'), name='valore accettabile')
+fig.update_layout(yaxis_range=[-2, 4])
+fig.show()
+```
+
+### Branch coverage
+
+```{.plotly_python}
+import plotly.graph_objects as go
+
+x = ['AP', 'PTB', 'POC']
+y1 = [0, 0, 0]
+
+fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di branch coverage'))
+fig.add_scatter(x=[x[0], x[-1]], y=[95, 95], line=dict(dash='dash'), name='valore ottimale')
 fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
 fig.update_layout(yaxis_range=[-2, 102])
 fig.show()
