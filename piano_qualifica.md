@@ -367,7 +367,7 @@ fig.update_layout(yaxis_range=[-22, 22])
 fig.show()
 ```
 
-#### Metriche soddisfate
+### Metriche soddisfate
 
 ```{.plotly_python}
 import plotly.graph_objects as go
