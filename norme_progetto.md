@@ -35,7 +35,7 @@ versioni:
   v0.0.7:
     autore: Augusto Zanellato
     data: 25/11/2022
-    cambiamenti: Aggiunto Piano di Progetto e Strumenti (in Fornitura)
+    cambiamenti: Aggiunto Piano di Progetto, Piano di Qualifica e Strumenti (in Fornitura)
   v0.0.8:
     autore: Andrea Auletta
     data: 23/12/2022
@@ -98,7 +98,10 @@ I documenti redatti in questa fase sono due: *Piano di Qualifica* e *Piano di Pr
 
 Il piano di qualifica viene redatto dal verificatore, in quanto dovrà accertarsi del funzionamento del prodotto e quindi dei vari test da effettuare.
 Il documento sarà composto dalle seguenti parti:
-<!-- portare avanti quando facciamo il piano di qualifica-->
+
+* *Qualità di processi* = vengono identificate le metriche da utilizzare per le attività di verifica riguardanti il processo di sviluppo.
+* *Qualità del prodotto* = vengono identificate le metriche da utilizzare per le attività di verifica riguardanti la qualità del prodotto.
+* *Resoconto delle attività di verifica* = visualizzazione di grafici che permettono di fare un analisi sullo svolgimento del progetto (in modo da permettere in un secondo momento, un miglioramento sulle metodologie di sviluppo).
 
 #### Piano di Progetto
 
@@ -110,12 +113,12 @@ Il documento sarà composto dalle seguenti parti:
   * Rischi organizzativi
   * Rischi dei requisiti
 * *Modello di Sviluppo*
-* *Pianificazione* = raggruppata per varie fasi in cui vi è indicato:
+* *Pianificazione* = raggruppata per vari periodi in cui vi è indicato:
   * Il periodo in cui viene svolto
   * I ruoli coinvolti
   * Le attività da svolgere
-  * Il preventivo fatto
-* *Consuntivo di periodo* = raggruppata per varie fasi in cui vi è indicato:
+  * Il preventivo calcolato
+* *Consuntivo di periodo* = raggruppato per vari periodi in cui vi è indicato:
   * Il consuntivo
   * Le motivazioni delle variazioni (se ci sono)
   * Considerazioni
@@ -259,7 +262,7 @@ In ogni documento al di fuori dei verbali interni è provvisto di un indice:
 
 ## Repository
 
-Per organizzare al meglio il lavoro, all'interno dell'organizzazione {g:github}, abbiamo creato 1<!-- sistemare quando avremo un numero di repo finito --> {g:repository}:
+Per organizzare al meglio il lavoro, all'interno dell'organizzazione {g:github}, abbiamo creato 4<!-- sistemare quando avremo un numero di repo finito --> {g:repository}:
 
 * SevenElevenUnipd/**docs** per i documenti; quelli indispensabili saranno:
   * **verbali**: documenti di incontri interni svolti dal gruppo ed esterni svolti con i proponenti e committenti del progetto.
@@ -268,6 +271,9 @@ Per organizzare al meglio il lavoro, all'interno dell'organizzazione {g:github},
   * **piano_qualifica**: documento inerente alla misurazione del raggiungimento degli obiettivi predisposti e delle iniziative di auto-miglioramento.
   * **analisi_requisiti**: documento che fissa i requisiti (espliciti ed impliciti) concordati con il proponente, che il gruppo si impegna a soddisfare.
   * **glossario**: documento che specifica ogni termine specializzato nel dominio di progetto.
+* SevenElevenUnipd/**sl-parser** ... <!--Inserire contenuto-->
+* SevenElevenUnipd/**sl-viewer-frontend** ... <!--Inserire contenuto-->
+* SevenElevenUnipd/**sl-viewer-backend** ... <!--Inserire contenuto-->
 
 ### Nomenclatura dei commit e dei branch
 
