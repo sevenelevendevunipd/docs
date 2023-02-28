@@ -260,7 +260,7 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 * INIZIO 19 Dicembre 2022 - Fine periodo dell'analisi preliminare
 * FINE 29 Gennaio 2023 - Inizio periodo di "Proof of Concept"
 
-**Ruoli coinvolti:** Responsaile - Amministratore - Analista - Progettista - Verificatore
+**Ruoli coinvolti:** Responsabile - Amministratore - Analista - Progettista - Verificatore
 
 Le attività da svolgere durante questo periodo sono:
 
@@ -317,7 +317,7 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 
 *Nota: Dopo la fine del Proof of Concept c'è un margine di 2 giorni (26 e 27 Febbraio) prima della revisione di RTB.*
 
-**Ruoli coinvolti:** Responsaile - Amministratore - Analista - Progettista - Programmatore - Verificatore
+**Ruoli coinvolti:** Responsabile - Amministratore - Analista - Progettista - Programmatore - Verificatore
 
 Le attività da svolgere durante questo periodo sono:
 
@@ -372,7 +372,7 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 * INIZIO 01 Marzo 2023 - Fine periodo di "Proof of Concept"
 * FINE 26 Marzo 2023 - Inizio periodo di codifica dei Requisiti Obbligatori
 
-**Ruoli coinvolti:** Responsaile - Amministratore - Analista - Progettista - Verificatore
+**Ruoli coinvolti:** Responsabile - Amministratore - Analista - Progettista - Verificatore
 
 Le attività da svolgere durante questo periodo sono:
 
@@ -489,7 +489,7 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 * INIZIO 10 Aprile 2023 - Fine periodo di codifica dei Requisiti Obbligatori
 * FINE 23 Aprile 2023 - Inizio periodo di Test, Collaudo e Validazione finale
 
-**Ruoli coinvolti:** Responsaile - Amministratore - Analista - Progettista - Programmatore - Verificatore
+**Ruoli coinvolti:** Responsabile - Amministratore - Analista - Progettista - Programmatore - Verificatore
 
 Le attività da svolgere durante questo periodo sono:
 
@@ -551,7 +551,7 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 
 Le attività da svolgere durante questo periodo sono:
 
-* **Test:** Vengono eseguiti ulteriori test mancanti per verficare che il prodotto soddisfi tutte le caratteristiche richieste.
+* **Test:** Vengono eseguiti ulteriori test mancanti per verificare che il prodotto soddisfi tutte le caratteristiche richieste.
 
 * **Collaudo:** Vengono eseguite e collaudati tutte le funzionalità del prodotto.
 
