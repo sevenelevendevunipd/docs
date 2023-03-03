@@ -212,25 +212,15 @@ I browser presi in considerazione sono:
 * Safari;
 * Opera;
   
-### QPD_6: Complessità ciclomatica (CC)
-
-Misura la complessità strutturale del codice. Viene calcolato il numero di blocchi di codice annidati nel flusso del programma.
-
-Complessità ciclomatica = E - N + 2P
-
-* E => Il n. dei bordi del grafico
-* N => Il numero di nodi del grafico
-* P => Il no dei componenti collegati
-
-### QPD_7: Profondità di ereditarietà (PE)
+### QPD_6: Profondità di ereditarietà (PE)
 
 Indica il numero di classi diverse che ereditano tra loro, fino alla classe base.
 
-### QPD_8: Righe di codice eseguibile (RCE)
+### QPD_7: Righe di codice eseguibile (RCE)
 
 Indica il numero approssimativo di righe di codice eseguibili.
 
-### QPD_9 Branch Coverage (BC)
+### QPD_8 Branch Coverage (BC)
 
 Indica che ciascun branch di codice sia stato eseguito almeno una volta. <!--Per branch si intende uno dei possibili path di codice che seguono una condizione decisionale* metterlo nel glossario(?) -->
 
@@ -250,10 +240,9 @@ Strumenti utilizzati:
 | QPD_3             |     Copertura requisiti obbligatori (CRO)   |          100%          |         100%        |
 | QPD_4             |      Copertura requisiti opzionali (CROP)   |       $\geq$ 20%       |         100%        |
 | QPD_5             |        Versioni browser supportate (VBS)    |        $\geq$ 80%      |         100%        |
-| QPD_6             |             Complessità ciclomatica (CC)    |        $\leq$ 2        |          1          |
-| QPD_7             |           Profondità di ereditarietà (PE)   |        $\leq$ 3        |        $\leq$ 2     |
-| QPD_8             |           Righe di codice eseguibile (RCE)  |    $\leq$ 1000 righe   | $\leq$ 500 righe    |
-| QPD_9             |               Branch Coverage (BC)          |       $\geq$ 80%       |         95%         |
+| QPD_6             |           Profondità di ereditarietà (PE)   |        $\leq$ 3        |        $\leq$ 2     |
+| QPD_7             |           Righe di codice eseguibile (RCE)  |    $\leq$ 1000 righe   | $\leq$ 500 righe    |
+| QPD_8             |               Branch Coverage (BC)          |       $\geq$ 80%       |         95%         |
 
 <!--# Specifica dei test
 
