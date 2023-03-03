@@ -230,22 +230,12 @@ I browser presi in considerazione sono:
 * Microsoft Edge;
 * Safari;
 * Opera;
-  
-### QPD_6: Complessità ciclomatica (CC)
 
-Misura la complessità strutturale del codice. Viene calcolato il numero di blocchi di codice annidati nel flusso del programma.
-
-Complessità ciclomatica = E - N + 2P
-
-* E => Il n. dei bordi del grafico
-* N => Il numero di nodi del grafico
-* P => Il no dei componenti collegati
-
-### QPD_7: Profondità di ereditarietà (PE)
+### QPD_6: Profondità di ereditarietà (PE)
 
 Indica il numero di classi diverse che ereditano tra loro, fino alla classe base.
 
-### QPD_8 Branch Coverage (BC)
+### QPD_7 Branch Coverage (BC)
 
 Indica che ciascun branch di codice sia stato eseguito almeno una volta.
 
@@ -265,9 +255,8 @@ Strumenti utilizzati:
 | QPD_3             |     Copertura requisiti obbligatori (CRO)   |          $100\%$       |         $100\%$     |
 | QPD_4             |      Copertura requisiti opzionali (CROP)   |       $\geq 20\%$      |         $100\%$     |
 | QPD_5             |        Versioni browser supportate (VBS)    |        $\geq 80\%$     |         $100\%$     |
-| QPD_6             |             Complessità ciclomatica (CC)    |        $\leq 2$        |          1          |
-| QPD_7             |           Profondità di ereditarietà (PE)   |        $\leq 2$        |          0          |
-| QPD_8             |               Branch Coverage (BC)          |       $\geq 80\%$      |      $\geq 95\%$    |
+| QPD_6             |           Profondità di ereditarietà (PE)   |        $\leq 2$        |          0          |
+| QPD_7             |               Branch Coverage (BC)          |       $\geq 80\%$      |      $\geq 95\%$    |
 
 <!--# Specifica dei test
 
@@ -440,10 +429,6 @@ fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valor
 fig.update_layout(yaxis_range=[-2, 102])
 fig.show()
 ```
-
-### Complessità ciclomatica
-
-<!--Inserire valore-->
 
 ### Profondità di ereditarietà
 
