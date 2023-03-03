@@ -1,9 +1,9 @@
 ---
 title: "Piano di qualifica"
 date: "06/12/2022"
-responsabile: "Davide Vitagliano"
+responsabile: "Nicola Cecchetto"
 redattori: ["Enrik Rucaj", "Antonio Stan"]
-verificatori: ["Andrea Auletta", "Nicola Cecchetto", "Mattia Brunello", "Augusto Zanellato"]
+verificatori: ["Andrea Auletta", "Davide Vitagliano", "Mattia Brunello", "Augusto Zanellato"]
 abstract: "Viene definito il piano di qualifica"
 docusage: "Esterno"
 toc: true
