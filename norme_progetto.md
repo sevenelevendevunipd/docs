@@ -183,7 +183,8 @@ Questa sezione contiene le norme per la scrittura dei documenti (e la loro strut
 
 ### Sviluppo e design
 
-La documentazione è scritta usando il *linguaggio di markup* {g:markdown} nella versione supportata da [Pandoc](https://pandoc.org/). Per facilitare la stesura dei documenti sono stati sviluppati dei filtri per {g:pandoc} che permettono l'*embedding* nei documenti di diagrammi [PlantUML](https://plantuml.com/) e che si occupano della generazione automatica del glossario in appendice ai documenti.
+La documentazione è scritta usando il *linguaggio di markup* {g:markdown} nella versione supportata da [Pandoc](https://pandoc.org/).
+Per facilitare la stesura dei documenti sono stati sviluppati dei filtri per {g:pandoc} che permettono l'*embedding* nei documenti di diagrammi [PlantUML](https://plantuml.com/) e che si occupano della generazione automatica del glossario in appendice ai documenti.
 
 Il processo di build dei documenti è controllato da una pipeline di {a:cicd} che controlla che i sorgenti {g:markdown} seguendo delle linee guida di stile e formattazione usando [MarkdownLint](https://github.com/DavidAnson/markdownlint), li compila in {g:pdfa} usando {g:pandoc} e pdfLaTeX e carica i pdf risultanti sia sul [sito del gruppo](https://sevenelevendevunipd.github.com/docs/) che come artefatto della {a:cicd}.
 
@@ -265,15 +266,15 @@ In ogni documento al di fuori dei verbali interni è provvisto di un indice:
 Per organizzare al meglio il lavoro, all'interno dell'organizzazione {g:github}, abbiamo creato 4<!-- sistemare quando avremo un numero di repo finito --> {g:repository}:
 
 * SevenElevenUnipd/**docs** per i documenti; quelli indispensabili saranno:
-  * **verbali**: documenti di incontri interni svolti dal gruppo ed esterni svolti con i proponenti e committenti del progetto.
+  * **verbali**: documenti d'incontri interni svolti dal gruppo ed esterni svolti con i proponenti e committenti del progetto.
   * **norme_progetto**: in cui viene aggiornato questo file, aggiungendo di volta in volta norme più adatte per il workflow del gruppo.
   * **piano_progetto**: documento di analisi sui rischi attesi e della suddivisione del lavoro totale in molteplici periodi successivi.
   * **piano_qualifica**: documento inerente alla misurazione del raggiungimento degli obiettivi predisposti e delle iniziative di auto-miglioramento.
-  * **analisi_requisiti**: documento che fissa i requisiti (espliciti ed impliciti) concordati con il proponente, che il gruppo si impegna a soddisfare.
+  * **analisi_requisiti**: documento che fissa i requisiti (espliciti e impliciti) concordati con il proponente, che il gruppo si impegna a soddisfare.
   * **glossario**: documento che specifica ogni termine specializzato nel dominio di progetto.
-* SevenElevenUnipd/**sl-parser** ... <!--Inserire contenuto-->
-* SevenElevenUnipd/**sl-viewer-frontend** ... <!--Inserire contenuto-->
-* SevenElevenUnipd/**sl-viewer-backend** ... <!--Inserire contenuto-->
+* SevenElevenUnipd/**sl-parser**: componente che traduce i file di log nel formato processabile dal {a:PoC}.
+* SevenElevenUnipd/**sl-viewer-frontend**: componente di {g:frontend} per il {a:PoC}.
+* SevenElevenUnipd/**sl-viewer-backend**: componente di {g:backend} per il {a:PoC}.
 
 ### Nomenclatura dei commit e dei branch
 
@@ -297,7 +298,7 @@ Questo permette di:
 
 ### Guidelines
 
-Ogni componente del gruppo una volta finito un'attività, prima di iniziarne una nuova deve:
+Ogni componente del gruppo una volta finito un'attività, prima d'iniziarne una nuova deve:
 
 * diventare assegnatario della nuova attività che ha intenzione di svolgere.
 * spostare lo stato di avanzamento dell'attività che sta svolgendo.
@@ -308,10 +309,10 @@ Ogni componente del gruppo una volta finito un'attività, prima di iniziarne una
 ## Comunicazione
 
 * Per le comunicazioni interne sono stati creati:
-  * Un gruppo {g:telegram} per scambio di informazioni veloci;
+  * Un gruppo {g:telegram} per scambio d'informazioni veloci;
   * Un server {g:discord} per riunioni interne nel caso in cui non fosse possibile trovarsi di persona.
 * Per le comunicazioni esterne con l'azienda:
-  * Gli incontri vengono fissati tramite mail (anche lo scambio asincrono di informazioni avviene tramite mail);
+  * Gli incontri vengono fissati tramite mail (anche lo scambio asincrono d'informazioni avviene tramite mail);
   * Le video conferenze vengono effettuate tramite {g:teams}.
 
 ## Rotazione dei ruoli
