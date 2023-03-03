@@ -74,10 +74,6 @@ teams: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
   description: Piattaforma di teleconferenze di Microsoft.
   name: Teams
   plural: null
-kanban: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
-  description: Metodologia agile di gestione del lavoro.
-  name: Kanban
-  plural: null
 scrum: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
   description: Framework agile di gestione del lavoro.
   name: Scrum
