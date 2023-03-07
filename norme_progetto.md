@@ -214,6 +214,52 @@ Ogni requisito ha alla fine del codice un numero puntato.
 #### UML
 I diagrammi {a:UML} verranno realizzati usando la versione 2 del linguaggio.
 
+### Progettazione
+
+#### Scopo
+
+L'attività di progettazione incorporerà le parti ottenute dall'*analisi dei requisiti*, specificando le funzionalità dei
+sottoinsiemi e riconducendo a una soluzione unica.
+
+#### Aspettative
+
+La progettazione ha l'obiettivo di realizzare l'architettura del prodotto software, inizialmente realizzata da un
+{a:PoC} sviluppato come una demo tecnica delle funzionalità richieste dall'*analisi dei requisiti*. In seguito
+all'{a:RTB}, verrà approfondita e descritta nell'*allegato tecnico* per la {a:PB}.
+
+#### Requirements & Technology Baseline
+
+Questa fase fissa i requisiti, concordati con il proponente, che il fornitore si impegna a soddisfare. Inoltre vengono
+motivate le tecnologie, i {g:framework} e le librerie selezionate per realizzare il prodotto.
+I documenti utili a verificare affidabilità e adeguatezza degli obiettivi sono:
+
+* *Piano di Progetto*;
+* *Piano di Qualifica*;
+* *Norme di Progetto*;
+* *Verbali* interni ed esterni.
+
+Esclusi i *verbali*, i documenti sopracitati vanno aggiornati anche nelle fasi successive.
+<!-- la parte di PB non mi sembra che abbia senso farla adesso -->
+
+## Strumenti
+
+Di seguito vengono illustrati gli strumenti e le tecnologie utilizzate durante la fase di codifica:
+
+<!-- Scrivere la lista delle tecnologie -->
+* Docker:
+* Python:
+* React:
+* Starlette:
+* SpecTree:
+* Pydantic:
+* Gunicorn:
+* Uvicorn:
+* TypeScript:
+* Apache ECharts:
+* OpenAPI-TypeScript:
+* PrimeReact:
+* PrimeFlex:
+
 # Processi di supporto
 
 ## Documentazione
