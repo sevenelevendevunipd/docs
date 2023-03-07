@@ -104,7 +104,7 @@ Le aspettative del processo di fornitura sono:
 
 ### Strumenti
 
-Lo strumento utilizzato (per la fornitura) dal team è {g:youtrack}. Utilizzato sia per creare grafici di {G:Gantt}
+L'unico strumento utilizzato (per la fornitura) dal team è {g:youtrack}. Utilizzato sia per creare grafici di {g:gantt}
 che per gestire le {g:issue} (*Vedasi la parte di Project Management in Processi di Supporto*).
 
 ### Documenti
@@ -346,7 +346,7 @@ Ogni pagina è composta da tre parti:
   * In alto a sinistra è presente il logo;
   * In alto a destra c'è il titolo del documento.
 * **Corpo**: a seconda del contenuto della pagina essa viene strutturate tramite **titoli**, **sottotitoli** e
-  **contenuti**.
+**contenuti**.
 * **Piè di pagina**:
   * In basso a destra è presente il numero della pagina.
 
