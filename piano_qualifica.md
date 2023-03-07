@@ -266,8 +266,10 @@ Strumenti utilizzati:
 
 ## Test di accettazione
 
-I test di accettazione
-
+I test di accettazione sono necessari per la verifica dei requisiti richiesti dai fornitori. Essi sono essenziali per la validazione del prodotto.
+<!--
+To do: aggiungere qualcosa in più
+-->
 ## Test di sistema Smart Log Viewer
 
 |    **Codice**       |                  **Descrizione**                   |  **Stato** |
@@ -349,11 +351,12 @@ I test di accettazione
 | TS_SRO1             |          Verificare che  l'utente possa visualizzare un grafico {g:matrice_correlazione} che mostri l'indice di correlazione tra coppie di eventi           |     NI    |
 | TS_SRO2             |            Verificare che l'utente possa esportare i file che visualizza i grafici         |     NI    |
 | TS_SRO3             |            Verificare che l'utente possa eliminare tutti i filtri applicati           |       NI    |
-
+<!--
 ## Test di integrazione
 
 ## Test di unit
-
+To do entro PB 
+-->
 # Resoconto attività di verifica
 
 ## verifica dei processo
