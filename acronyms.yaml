@@ -4,6 +4,3 @@ cicd: !!python/object:pandoc_glossary_filter.data.AcronymEntry
 csv: !!python/object:pandoc_glossary_filter.data.AcronymEntry
   long: 'Comma-Separated Values'
   name: 'csv'
-PoC: !!python/object:pandoc_glossary_filter.data.AcronymEntry
-  long: 'Proof of Concept'
-  name: 'PoC'
