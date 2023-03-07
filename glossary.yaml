@@ -130,3 +130,11 @@ python: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
   description: Linguaggio di programmazione utilizzato dal team per effettuare molteplici operazioni.
   name: Python
   plural: none
+frontend: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Il frontend è la parte di un sistema software che gestisce l'interazione con l'utente o con sistemi esterni che producono dati di ingresso.
+  name: frontend
+  plural: none
+backend: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Il backend è la parte di un sistema software che elabora i dati generati dal frontend.
+  name: backend
+  plural: none
