@@ -26,7 +26,7 @@ youtrack: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
   description: Software di issue tracking e project management usato dal team.
   name: YouTrack
   plural: null
-gantt: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+Gantt: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
   description: Grafico che visualizza dipendenze e schedulazioni di attività.
   name: Gantt
   plural: null
@@ -125,16 +125,24 @@ grafico_barre: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
 matrice_correlazione: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
   description: Grafico che mette in relazione coppie di eventi.
   name: matrice di correlazione
-  plural: none
+  plural: null
 python: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
   description: Linguaggio di programmazione utilizzato dal team per effettuare molteplici operazioni.
   name: Python
-  plural: none
+  plural: null
 frontend: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
   description: Il frontend è la parte di un sistema software che gestisce l'interazione con l'utente o con sistemi esterni che producono dati di ingresso.
   name: frontend
-  plural: none
+  plural: null
 backend: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
   description: Il backend è la parte di un sistema software che elabora i dati generati dal frontend.
   name: backend
-  plural: none
+  plural: null
+pipeline: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Un'insieme di componenti collegati in cascata tra loro.
+  name: pipeline
+  plural: null
+framework: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+  description: Un'architettura logica di supporto alla progettazione e realizzazione di un software.
+  name: framework
+  plural: null
