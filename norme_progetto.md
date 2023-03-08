@@ -248,6 +248,16 @@ Esclusi i *verbali*, i documenti sopracitati vanno aggiornati anche nelle fasi s
 
 ### Codifica
 
+#### Scopo
+
+Questa sezione contiene le norme atte alla concretizzazione della progettazione del software in un prodotto vero e 
+proprio.
+
+#### Aspettative
+
+La codifica ha l'obiettivo di realizzare un prodotto software avente le caratteristiche concordate con il proponente.
+Il codice realizzato dovrà rispettare uno stile preciso, in modo che risulti facilmente leggibile e manutenibile.
+
 #### Stile della codifica
 
 * **Indentazione:**
@@ -292,7 +302,7 @@ progetto.
 
 ### Aspettative
 
-Le aspettative nel processo di documentazione sono:
+Le aspettative del processo di documentazione sono:
 
 * Definire la struttura dei documenti;
 * Definire una convenzione comune a tutti i documenti.
@@ -317,7 +327,7 @@ Il template usato per i documenti è una versione modificata
 di [eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template), le modifiche apportate riguardano principalmente
 lo stile della prima pagina e il supporto alla generazione semi-automatica del registro delle versioni e del glossario.
 
-### Nome dei file
+#### Nome dei file
 
 La struttura del nome dei file che non sono verbali è la seguente:
 
@@ -362,7 +372,7 @@ usati all'interno del documento stesso.
 Ogni occorrenza in un documento di un termine nel glossario è indicata con una *G* al pedice (ad esempio così$_G$). Le
 occorrenze di acronimi sono invece indicate con una *A* al pedice (così$_A$).
 
-### Verbali
+#### Verbali
 
 I verbali possono essere interni o esterni:
 
@@ -371,7 +381,7 @@ I verbali possono essere interni o esterni:
 
 Vengono rinominati con la data del giorno in cui è stato effettuata la riunione (AAAAMMGG.pdf).
 
-### Registro delle versioni
+#### Registro delle versioni
 
 Il registro delle versioni viene inserito nei documenti che non sono verbali per tenere conto delle modifiche e delle
 revisioni effettuate sul documento.
@@ -437,6 +447,11 @@ Questo permette di:
 * avere una visione più semplice dello stato di avanzamento delle attività.
 * impostare le ore di lavoro di ogni persona del gruppo per poter analizzare il passo di avanzamento rispetto alle
   tempistiche prestabilite.
+
+### Aspettative
+
+Il project management ha l'obiettivo di mantenere organizzate e tracciabili le attività intraprese dai membri del 
+gruppo.
 
 ### Guidelines
 
@@ -520,13 +535,13 @@ Di seguito definiamo come abbiamo deciso di attuare il processo di validazione.
 Le aspettative nel processo di validazione sono:
 
 * Verificare che il prodotto soddisfi i requisiti riportare nel documento di analisi dei requisiti;
-* Dimostare la correttezza del fase di verifica;
+* Dimostrare la correttezza della fase di verifica;
 * Dimostrare che il prodotto soddisfa le aspettative del committente.
 
 ### Descrizione
 
 Il processo di validazione consiste nell'esaminare il prodotto sviluppato per verificare che rispetti i requisiti e le
-aspettative del committente. è poi il responabile di progetto che ha la responsabilità di controllare i risultati
+aspettative del committente. È poi il responsabile di progetto che ha la responsabilità di controllare i risultati
 decidendo se:
 
 * Accettazione del prodotto;
