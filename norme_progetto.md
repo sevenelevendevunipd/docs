@@ -422,9 +422,9 @@ Per organizzare al meglio il lavoro, all'interno dell'organizzazione {g:github},
   * **analisi_requisiti**: documento che fissa i requisiti (espliciti e impliciti) concordati con il proponente, che
     il gruppo si impegna a soddisfare.
   * **glossario**: documento che specifica ogni termine specializzato nel dominio di progetto.
-* SevenElevenUnipd/**sl-parser**: componente che traduce i file di log nel formato processabile dal {a:PoC}.
-* SevenElevenUnipd/**sl-viewer-frontend**: componente di {g:frontend} per il {a:PoC}.
-* SevenElevenUnipd/**sl-viewer-backend**: componente di {g:backend} per il {a:PoC}.
+* SevenElevenUnipd/**sl-parser**: componente che interpreta i {g:log}. È comune tra {g:smartlogviewer} e {g:smartlogstatistics}
+* SevenElevenUnipd/**sl-viewer-frontend**: componente di {g:frontend} per {g:smartlogviewer}.
+* SevenElevenUnipd/**sl-viewer-backend**: componente di {g:backend} per {g:smartlogviewer}.
 
 ### Nomenclatura dei commit e dei branch
 
