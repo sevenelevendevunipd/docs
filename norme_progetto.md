@@ -48,9 +48,13 @@ versioni:
     autore: Antonio Stan
     data: 19/02/2023
     cambiamenti: Verifica generale del documento
+  v0.1.1:
+    autore: Davide Vitagliano
+    data: 21/02/2023
+    cambiamenti: Aggiunta sezione riguardante gli strumenti e il PoC
   v1.0.0:
     autore: Enrik Rucaj
-    data: 20/02/2023
+    data: 22/02/2023
     cambiamenti: Approvato per il rilascio
 ...
 
@@ -100,7 +104,7 @@ Le aspettative del processo di fornitura sono:
 
 ### Strumenti
 
-L'unico strumento utilizzato (per la fornitura) dal team è {g:youtrack}. Utilizzato sia per creare grafici di {g:gantt}
+Lo strumento utilizzato (per la fornitura) dal team è {g:youtrack}. Utilizzato sia per creare grafici di {G:Gantt}
 che per gestire le {g:issue} (*Vedasi la parte di Project Management in Processi di Supporto*).
 
 ### Documenti
@@ -165,7 +169,7 @@ Le aspettative del processo di sviluppo sono:
 Questa sezione contiene le norme usate per la stesura del documento *Analisi dei requisiti*. Nello specifico, contiene
 la spiegazione dei codici usati per identificare i requisiti.
 
-### Aspettative
+#### Aspettative
 
 L'*analisi dei requisiti* ha l'obiettivo d'individuare i requisiti espliciti e impliciti, estrapolandoli dal capitolato,
 e di definire i casi d'uso richiesti per la realizzazione del prodotto.
@@ -242,24 +246,40 @@ I documenti utili a verificare affidabilità e adeguatezza degli obiettivi sono:
 Esclusi i *verbali*, i documenti sopracitati vanno aggiornati anche nelle fasi successive.
 <!-- la parte di PB non mi sembra che abbia senso farla adesso -->
 
-## Strumenti
+### Codifica
+
+#### Stile della codifica
+
+* **Indentazione:**
+* **Parentesi:**
+* **Metodi:**
+* **Classi:**
+* **Variabili:**
+* **Costanti:**
+* **Univocità dei nomi:**
+* **Commenti:**
+* **File:**
+
+### Strumenti
 
 Di seguito vengono illustrati gli strumenti e le tecnologie utilizzate durante la fase di codifica:
 
-<!-- Scrivere la lista delle tecnologie -->
-* Docker:
-* Python:
-* React:
-* Starlette:
-* SpecTree:
-* Pydantic:
-* Gunicorn:
-* Uvicorn:
-* TypeScript:
-* Apache ECharts:
-* OpenAPI-TypeScript:
-* PrimeReact:
-* PrimeFlex:
+* [Docker](https://www.docker.com/): crea contenitori per la compilazione ed esecuzione di applicazioni;
+* [Python](https://www.python.org/): linguaggio di programmazione;
+* [React](https://it.reactjs.org/): {g:framework} reattivo per lo sviluppo {g:frontend};
+* [Starlette](https://www.starlette.io/): {g:framework} web leggero ed asincrono basato su ASGI;
+* [SpecTree](https://github.com/0b01001001/spectree): validatore per le richieste e proposte, genera inoltre la
+  specifica OpenAPI;
+* [Pydantic](https://docs.pydantic.dev/): validatore dei tipi a run-time per Python (usato assieme a SpecTree);
+* [Gunicorn](https://gunicorn.org/): server HTTP per WSGI;
+* [Uvicorn](https://www.uvicorn.org/): server HTTP per ASGI;
+* [TypeScript](https://www.typescriptlang.org/): type checker forte e statico per JavaScript;
+* [Apache ECharts](https://echarts.apache.org/en/index.html): libreria per la creazione di grafici integrabile con
+  React;
+* [OpenAPI-TypeScript](https://www.npmjs.com/package/openapi-typescript): generazione di codice TypeScript a partire da
+  un file OpenAPI;
+* [PrimeReact](https://primereact.org/): libreria per la creazione di componenti React;
+* [PrimeFlex](https://www.primefaces.org/primeflex/): libreria per la creazione di layout CSS;
 
 # Processi di supporto
 
@@ -285,12 +305,11 @@ Per facilitare la stesura dei documenti sono stati sviluppati dei filtri per {g:
 documenti di diagrammi [PlantUML](https://plantuml.com/) e che si occupano della generazione automatica del glossario in
 appendice ai documenti.
 
-Il processo di build dei documenti è controllato da una {g:pipeline} di {a:cicd} che controlla che i sorgenti {g:markdown}
+Il processo di build dei documenti è controllato da una {g:pipeline} di {a:cicd} che controlla che i sorgenti {g:
+markdown}
 seguendo delle linee guida di stile e formattazione usando [MarkdownLint](https://github.com/DavidAnson/markdownlint),
 li compila in {g:pdfa} usando {g:pandoc} e pdfLaTeX e carica i pdf risultanti sia
 sul [sito del gruppo](https://sevenelevendevunipd.github.com/docs/) che come artefatto della {a:cicd}.
-
-<!-- TODO: Definire nomenclatura documenti -->
 
 #### Template
 
@@ -327,7 +346,7 @@ Ogni pagina è composta da tre parti:
   * In alto a sinistra è presente il logo;
   * In alto a destra c'è il titolo del documento.
 * **Corpo**: a seconda del contenuto della pagina essa viene strutturate tramite **titoli**, **sottotitoli** e
-**contenuti**.
+  **contenuti**.
 * **Piè di pagina**:
   * In basso a destra è presente il numero della pagina.
 
@@ -361,9 +380,9 @@ Il registro viene visualizzato sotto forma di tabella avente quattro colonne:
 
 * Versione: a versione del documento è definita da tre numeri "x.y.z" dove:
   * **x** (major): viene incrementato a seconda della rifinitura del documento (es: dopo aver steso una prima intera
-  versione grezza);
+    versione grezza);
   * **y** (minor): viene incrementato quando avviene una modifica che non comporta un cambiamento eccessivo. (es:
-  aggiunta di paragrafi);
+    aggiunta di paragrafi);
   * **z** (patch): viene incrementato ogni qual volta ci sia stata una modifica poco consistente.
 * Data: data di modifica o revisione;
 * Autore: chi ha effettuato le modifica o la revisione;
@@ -383,15 +402,15 @@ Per organizzare al meglio il lavoro, all'interno dell'organizzazione {g:github},
 
 * SevenElevenUnipd/**docs** per i documenti; quelli indispensabili saranno:
   * **verbali**: documenti d'incontri interni svolti dal gruppo ed esterni svolti con i proponenti e committenti del
-  progetto.
+    progetto.
   * **norme_progetto**: in cui viene aggiornato questo file, aggiungendo di volta in volta norme più adatte per il
-  workflow del gruppo.
+    workflow del gruppo.
   * **piano_progetto**: documento di analisi sui rischi attesi e della suddivisione del lavoro totale in molteplici
-  periodi successivi.
+    periodi successivi.
   * **piano_qualifica**: documento inerente alla misurazione del raggiungimento degli obiettivi predisposti e delle
-  iniziative di auto-miglioramento.
+    iniziative di auto-miglioramento.
   * **analisi_requisiti**: documento che fissa i requisiti (espliciti e impliciti) concordati con il proponente, che
-  il gruppo si impegna a soddisfare.
+    il gruppo si impegna a soddisfare.
   * **glossario**: documento che specifica ogni termine specializzato nel dominio di progetto.
 * SevenElevenUnipd/**sl-parser**: componente che traduce i file di log nel formato processabile dal {a:PoC}.
 * SevenElevenUnipd/**sl-viewer-frontend**: componente di {g:frontend} per il {a:PoC}.
@@ -427,7 +446,96 @@ Ogni componente del gruppo una volta finito un'attività, prima d'iniziarne una 
 * spostare lo stato di avanzamento dell'attività che sta svolgendo.
 * specificare le ore di lavoro ogni volta che si occupa di quella attività.
 
+## Verifica
+
+### Scopo
+
+La verifica ha come obiettivo la realizzazione di prodotti corretti.
+Questo processo prende ciò che è già stato prodotto e lo rielabora in uno stato conforme alle aspettative.
+Quindi si applicano processi di analisi e test in modo tale da rilevare la presenza di eventuali errori e correggerli.
+Di seguito definiamo come abbiamo deciso di attuare il processo di verifica.
+
+### Aspettative
+
+Le aspettative nel processo di verifica sono:
+
+* Verifica di ciascuna fase;
+* Svolgimento di una verifica attenta in modo tale da ottenere un successo in fase di validazione;
+* Cercare di automatizzare il èiù possibile le attività svolte durante il processo di verifica;
+* Rispetto degli obiettivi di copertura nel piano d i qualifica.
+
+### Descrizione
+
+* **Analisi statica:** processo di valutazione di un sistema o di una sua parte basato sul suo contenuto e
+  documentazione. Nell'analisi statica vengono effettuate ispezioni e revisioni e possono essere svolte sia su documenti
+  che sul codice
+* **Analisi dinamica:** processo di valutazione di un sistema software o di una sua parte basato sul suo comportamento
+  in esecuzione. Questo tipo di analisi viene chiamata Testing (viene svolta solamente sul codice).
+
+### Verifica della documentazione
+
+Il processo di verifica della documentazione può essere svolta tramite l'uso di strumenti automatici oppure può essere
+eseguita manualmente.
+Ci sono due diverse tecniche:
+
+* **Walkthrough:** Il verificatore fa un controllo su tutto il documento alla ricerca di eventuali errori;
+* **Inspection:** Il verificatore esegue un controllo mirato nei punti del documento dove c'è più ampia possibilità di
+  errore.
+
+### Verifica del codice
+
+* **Analisi statica:** durante la stesura e la verifica del codice si accertano che siano stati rispettati le norme di
+  programmazione scelte;
+* **Analisi dinamica:** ricerca di errori tramite l'esecuzione del software.
+
+#### Test
+
+<!-- piano di qualifica? -->
+
+## Validazione
+
+In questa sezione vengono descritte le attività che il gruppo ha deciso di svolgere per la validazione, ovvero il
+processo di verifica che viene effettuato per verificare che il prodotto sviluppato soddisfi le aspettative del
+committente.
+
+### Scopo
+
+La validazione ha come obiettivo la realizzazione di prodotti che soddisfino le aspettative del cliente.
+Questo processo prende ciò che è già stato prodotto e lo rielabora in uno stato conforme alle aspettative.
+Quindi si applicano processi di analisi e test in modo tale da rilevare la presenza di eventuali errori e correggerli.
+Di seguito definiamo come abbiamo deciso di attuare il processo di validazione.
+
+### Aspettative
+
+Le aspettative nel processo di validazione sono:
+
+* Verificare che il prodotto soddisfi i requisiti riportare nel documento di analisi dei requisiti;
+* Dimostare la correttezza del fase di verifica;
+* Dimostrare che il prodotto soddisfa le aspettative del committente.
+
+### Descrizione
+
+Il processo di validazione consiste nell'esaminare il prodotto sviluppato per verificare che rispetti i requisiti e le
+aspettative del committente. è poi il responabile di progetto che ha la responsabilità di controllare i risultati
+decidendo se:
+
+* Accettazione del prodotto;
+* Rifiuto del prodotto con richiesta di nuova verifica.
+
 # Processi organizzativi
+
+## Scopo
+
+Lo scopo di questa sezione è quello di creare delle regole per il coordinamento tra i membri del gruppo.
+
+## Aspettative
+
+Le aspettative di questa sezione sono:
+
+* Ottenere un'organizzazione efficace;
+* Way of working efficace;
+* Controllo delle spese;
+* Equa distribuzione dei ruoli.
 
 ## Comunicazione
 

@@ -26,7 +26,7 @@ youtrack: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
   description: Software di issue tracking e project management usato dal team.
   name: YouTrack
   plural: null
-gantt: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
+Gantt: !!python/object:pandoc_glossary_filter.data.GlossaryEntry
   description: Grafico che visualizza dipendenze e schedulazioni di attività.
   name: Gantt
   plural: null
