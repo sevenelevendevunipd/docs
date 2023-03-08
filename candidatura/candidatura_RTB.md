@@ -4,7 +4,7 @@ date: "8/03/2023"
 responsabile: "Nicola Cecchetto"
 redattori: ["Andrea Auletta", "Mattia Brunello", "Davide Vitagliano"]
 verificatori: ["Enrik Rucaj", "Antonio Stan", "Augusto Zanellato"]
-abstract: "Questo documento riporta la candidatore per la revisione alla Requirements & Technology Baseline"
+abstract: "Questo documento riporta la candidatura per la revisione alla Requirements & Technology Baseline"
 docusage: "Esterno"
 toc: true
 ...
@@ -22,7 +22,7 @@ Di seguito alleghiamo il link alla documentazione:\
 
 Team SevenEleven:
 
-* Auletta Andrea, maticola 2008458
+* Auletta Andrea, matricola 2008458
 * Brunello Mattia, matricola 2009096
 * Cecchetto Nicola, matricola 2009103
 * Rucaj Enrik, matricola 2016131
