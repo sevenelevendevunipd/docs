@@ -18,7 +18,7 @@ Con il presente documento, noi, membri del team SevenEleven, intendiamo comunica
 partecipare alla revisione RTB.
 
 Di seguito alleghiamo il link alla documentazione:\
-![https://sevenelevendevunipd.github.io/docs/](https://sevenelevendevunipd.github.io/docs/)
+[https://sevenelevendevunipd.github.io/docs/](https://sevenelevendevunipd.github.io/docs/)
 
 Team SevenEleven:
 
