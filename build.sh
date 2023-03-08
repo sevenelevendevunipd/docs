@@ -19,7 +19,7 @@ do
 done
 
 # Copy everything else
-for S in `find . -type f -not -path "./template*" -not -path "./.git*" -not -path "./.vscode*" -not -path "./.idea*" -not -path "./build.sh" -not -name "*.md" -not -path "./docs*" -not -path "./assets*" -not -path "./plantuml-images*" -not -name "pandoc-*.yaml" -not -name "glossary.yaml" -not -name "acronyms.yaml"`
+for S in `find . -type f -not -path "./template*" -not -path "./.git*" -not -path "./.vscode*" -not -path "./.idea*" -not -path "./build.sh" -not -name "*.md" -not -path "./docs*" -not -path "./assets*" -not -path "./plantuml-images*" -not -name "pandoc-*.yaml" -not -name "glossary.yaml" -not -name "acronyms.yaml" -not -path "./plots*"`
 do
   DESTDIR=$(echo docs/`dirname $S`)
   DESTNAME=$(echo $DESTDIR/`basename $S`)
