@@ -490,7 +490,17 @@ Ci sono due diverse tecniche:
 
 #### Test
 
-<!-- piano di qualifica? -->
+I test hanno lo scopo di far emergere eventuali errori o comportamenti inaspettati con l'esecuzione del programma.
+
+##### Classificazione Test di Sistema
+
+I test di sistema sono test che vengono eseguiti su il sistema completamente integrato di tutte le sue parti, e servono per verificare che i requisiti vengano rispettati.
+
+Questi test sono descritti nel documento *Piano di Qualifica* tramite una tabella con tre colonne:
+
+* **Codice**: identifica il test di sistema. Ogni codice ha la forma "TS_(codice del requisito)";
+* **Descrizione**: descrizione del test di sistema;
+* **Stato**: descrive lo stato del test.
 
 ## Validazione
 
