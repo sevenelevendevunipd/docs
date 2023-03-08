@@ -133,7 +133,7 @@ Il documento sarà composto dalle seguenti parti:
   * Rischi tecnologici
   * Rischi organizzativi
   * Rischi dei requisiti
-* *Modello di Sviluppo*: riguarda il metodo di lavoro da seguire per tutta la duarta del progetto 
+* *Modello di Sviluppo*: riguarda il metodo di lavoro da seguire per tutta la durata del progetto
 * *Pianificazione*: raggruppata per vari periodi in cui vi è indicato:
   * Il periodo in cui viene svolto
   * I ruoli coinvolti
@@ -212,6 +212,7 @@ Ogni requisito ha alla fine del codice un numero puntato.
 * **Fonte**: da dove viene tratto il requisito.
 
 #### UML
+
 I diagrammi {a:UML} verranno realizzati usando la versione 2 del linguaggio.
 
 ### Progettazione
