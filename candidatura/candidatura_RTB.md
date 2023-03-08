@@ -14,11 +14,11 @@ toc: true
 Egregio Prof. Tullio Vardanega,\
 Egregio Prof. Riccardo Cardin,
 
-Con il presente documento, noi, membri del team SevenEleven, intendiamo comunicarvi la nostra disponibilit� a
+Con il presente documento, noi, membri del team SevenEleven, intendiamo comunicarvi la nostra disponibilità a
 partecipare alla revisione RTB.
 
 Di seguito alleghiamo il link alla documentazione:\
-https://sevenelevendevunipd.github.io/docs/
+![https://sevenelevendevunipd.github.io/docs/](https://sevenelevendevunipd.github.io/docs/)
 
 Team SevenEleven:
 
