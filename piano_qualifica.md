@@ -267,9 +267,8 @@ Strumenti utilizzati:
 ## Test di accettazione
 
 I test di accettazione sono necessari per la verifica dei requisiti richiesti dai fornitori. Essi sono essenziali per la validazione del prodotto.
-<!--
-To do: aggiungere qualcosa in più
--->
+<!-- TODO: aggiungere qualcosa in più -->
+
 ## Test di sistema Smart Log Viewer
 
 |    **Codice**       |                  **Descrizione**                   |  **Stato** |
