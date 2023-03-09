@@ -250,7 +250,7 @@ Esclusi i *verbali*, i documenti sopracitati vanno aggiornati anche nelle fasi s
 
 #### Scopo
 
-Questa sezione contiene le norme atte alla concretizzazione della progettazione del software in un prodotto vero e 
+Questa sezione contiene le norme atte alla concretizzazione della progettazione del software in un prodotto vero e
 proprio.
 
 #### Aspettative
@@ -275,8 +275,6 @@ Il codice realizzato dovrà rispettare uno stile preciso, in modo che risulti fa
   * Python: `snake_case`
 * **Costanti:** `UPPERCASE_WITH_UNDERSCORES`
 * **Univocità dei nomi:** lo stesso nome (di classe, metodo, variabile o costante) non deve essere utilizzato con significati diversi in posti diversi;
-* **Commenti:**
-* **File:**
 
 ### Strumenti
 
@@ -458,7 +456,7 @@ Questo permette di:
 
 ### Aspettative
 
-Il project management ha l'obiettivo di mantenere organizzate e tracciabili le attività intraprese dai membri del 
+Il project management ha l'obiettivo di mantenere organizzate e tracciabili le attività intraprese dai membri del
 gruppo.
 
 ### Guidelines
