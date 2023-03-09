@@ -261,12 +261,20 @@ Il codice realizzato dovrà rispettare uno stile preciso, in modo che risulti fa
 #### Stile della codifica
 
 * **Indentazione:**
-* **Parentesi:**
+  * **2 spazi** per TypeScript;
+  * **4 spazi** per Python;
+* **Parentesi:** le parentesi graffe che delimitano i metodi in TypeScript devono essere poste nel seguente modo:
+  * Apertura: in linea con la firma;
+  * Chiusura: a capo rispetto l'ultima riga del corpo del metodo.
 * **Metodi:**
-* **Classi:**
+  * TypeScript: `lowerCamelCase`
+  * Python: `snake_case`
+* **Classi:** `UpperCamelCase`
 * **Variabili:**
-* **Costanti:**
-* **Univocità dei nomi:**
+  * TypeScript: `lowerCamelCase`
+  * Python: `snake_case`
+* **Costanti:** `UPPERCASE_WITH_UNDERSCORES`
+* **Univocità dei nomi:** lo stesso nome (di classe, metodo, variabile o costante) non deve essere utilizzato con significati diversi in posti diversi;
 * **Commenti:**
 * **File:**
 
