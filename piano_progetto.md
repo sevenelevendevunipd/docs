@@ -42,6 +42,10 @@ versioni:
     autore: Andrea Auletta
     data: 10/02/2023
     cambiamenti: verifica generale del documento
+  1.0.0:
+    autore: Augusto Zanellato
+    data: 13/02/2023
+    cambiamenti: Approvato per il rilascio
 ...
 
 # Introduzione
