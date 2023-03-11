@@ -214,7 +214,7 @@ Le attività da svolgere durante questo periodo sono:
 * **Glossario:** Documento che specifica ogni termine specializzato nel dominio di progetto. I *verificatori* concordandosi direttamente con il *responsabile* aggiungeranno termini per evitare possibili fraintendimenti con i committenti.
 * **Piano di Progetto:** L'obiettivo del documento è quello di stabilire il corretto avanzamento del progetto tramite possibili analisi sui rischi e di poter quindi rientrare nei costi/margini del preventivo fatto. Il *responsabile* è l'unico individuo del gruppo che si occupa del corretto svolgimento di questa attività.
 * **Piano di Qualifica:** Il documento serve a stabilire metodi svolti dal gruppo per poter constatare il giusto raggiungimento degli obiettivi predisposti. L'*amministratore* emana le procedure di gestione di qualità e il *verificatore* esegue tali procedure sui documenti di loro competenza.
-* **Analisi dei Requisiti:** L'obiettivo del documento è quello di fissare i requisiti (espliciti ed impliciti) concordati con il proponente. L'*analista* è colui che identifica questi requisiti.
+* **Analisi dei Requisiti:** L'obiettivo del documento è quello di fissare i requisiti (espliciti e impliciti) concordati con il proponente. L'*analista* è colui che identifica questi requisiti.
 
 ### Preventivo
 
@@ -656,7 +656,7 @@ Quest'ultimo risulterà positivo quando la spesa effettiva è minore del prevent
 Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
 | **Nome**          | **Resp** | **Amm** | **An**  | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- | :------: | :-----: | :-----: | :---------: | :----------: | :-----: | :--------: |
+| ----------------- |:--------:| :-----: | :-----: | :---------: | :----------: |:-------:|:----------:|
 | Auletta Andrea    |    -     | 5 (-1)  | 5 (+1)  |      -      |      -       |    7    |     17     |
 | Brunello Mattia   |    4     |    2    |   10    |      -      |      -       | 7 (-1)  |  23 (-1)   |
 | Cecchetto Nicola  |    1     |    -    |   10    |      -      |      -       | 5 (-1)  |  16 (-1)   |
@@ -669,7 +669,7 @@ Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 Di seguito vengono riportate le variazioni dei costi:
 
 | **Ruolo**      | **Ore** |   **Costo**   |
-| -------------- | :-----: | :-----------: |
+| -------------- |:-------:|:-------------:|
 | Responsabile   | 12 (+1) | 360  (+30,00) |
 | Amministratore |   29    |      580      |
 | Analista       |   67    |     1675      |
@@ -750,12 +750,12 @@ Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 | Stan Antonio      |    -     |    3    |   -    |      5      |      8       |  4(+1)   |     20(+1) |
 | Vitagliano Davide |    -     |    -    |   -    |      3      |      6       |    5     |     14     |
 | Zanellato Augusto |    2     |    -    |   -    |      6      |      11(+2)  |    -     |     19(+2) |
-| **Totale**        |  **7**   |  **8**  | **7**  |   **49(+2)**|    **50(+3)**|**21(+1)**| **127(+6)**|
+| **Totale**        |  **7**   |  **8**  | **7**  |   **34(+2)**|    **50(+3)**|**21(+1)**| **127(+6)**|
 
 Di seguito vengono riportate le variazioni dei costi:
 
 | **Ruolo**      | **Ore** | **Costo** |
-| -------------- | :-----: | :-------: |
+| -------------- |:-------:|:---------:|
 | Responsabile   |    7    |    210    |
 | Amministratore |    8    |    160    |
 | Analista       |    7    |    175    |
@@ -909,3 +909,53 @@ Di seguito vengono riportate le variazioni dei costi:
 ### Considerazioni
 
 #### Bilancio finale
+
+# RTB - Consuntivo e Preventivo a finire
+
+## Consuntivo di periodo
+
+Vengono riportare le ore di lavoro rendicontate dai componenti del gruppo:
+
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:|:-------:|:------:|:-----------:|:------------:|:-------:|:----------:|
+| Auletta Andrea    |    -     |    5    |   12   |     10      |      5       |   13    |     45     |
+| Brunello Mattia   |    7     |    2    |   13   |     10      |      5       |   17    |     54     |
+| Cecchetto Nicola  |    3     |    9    |   13   |      8      |      8       |    8    |     49     |
+| Rucaj Enrik       |    6     |    6    |   11   |     11      |      7       |    9    |     50     |
+| Stan Antonio      |    -     |   11    |   9    |      8      |      8       |   11    |     47     |
+| Vitagliano Davide |    -     |    6    |   14   |      6      |      6       |   13    |     45     |
+| Zanellato Augusto |    8     |    9    |   10   |      9      |      11      |   13    |     60     |
+| **Totale**        |  **24**  | **48**  | **82** |   **62**    |    **50**    | **84**  |  **350**   |
+
+Di seguito vengono riportati i costi sostenuti:
+
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- |:-------:|:---------:|
+| Responsabile   |   24    |    720    |
+| Amministratore |   48    |    960    |
+| Analista       |   82    |   2050    |
+| Progettista    |   62    |   1550    |
+| Programmatore  |   50    |    750    |
+| Verificatore   |   84    |   1260    |
+| **Totale**     | **350** | **7290**  |
+
+## Preventivo a finire
+
+Viene riportato il prospetto delle ore di lavoro dei componenti del gruppo:
+
+| **Nome**          | **Ore svolte** | **Ore mancanti** |
+| ----------------- |:--------------:|:----------------:|
+| Auletta Andrea    |       45       |        50        |
+| Brunello Mattia   |       54       |        41        |
+| Cecchetto Nicola  |       49       |        46        |
+| Rucaj Enrik       |       50       |        45        |
+| Stan Antonio      |       47       |        48        |
+| Vitagliano Davide |       45       |        50        |
+| Zanellato Augusto |       60       |        35        |
+| **Totale**        |    **350**     |     **315**      |
+
+Di seguito viene riportato il prospetto del costo del progetto:
+
+| **Costo sostenuto** | **Costo mancante** |
+|:-------------------:|:------------------:|
+|      **7290**       |      **6215**      |
