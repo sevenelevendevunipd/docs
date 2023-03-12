@@ -943,16 +943,16 @@ Di seguito vengono riportati i costi sostenuti:
 
 Viene riportato il prospetto delle ore di lavoro dei componenti del gruppo:
 
-| **Nome**          | **Ore svolte** | **Ore mancanti** |
-| ----------------- |:--------------:|:----------------:|
-| Auletta Andrea    |       45       |        50        |
-| Brunello Mattia   |       54       |        41        |
-| Cecchetto Nicola  |       49       |        46        |
-| Rucaj Enrik       |       50       |        45        |
-| Stan Antonio      |       47       |        48        |
-| Vitagliano Davide |       45       |        50        |
-| Zanellato Augusto |       60       |        35        |
-| **Totale**        |    **350**     |     **315**      |
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:|:-------:|:------:|:-----------:|:------------:|:-------:|:----------:|
+|Auletta Andrea     |    7     |    5    |   0    |     11      |      15      |   12    |     50     |
+|Brunello Mattia    |    2     |    6    |   0    |     10      |      17      |    6    |     41     |
+|Cecchetto Nicola   |    5     |    0    |   0    |     12      |      12      |   17    |     46     |
+|Rucaj Enrik        |    1     |    5    |   3    |     10      |      15      |   11    |     45     |
+|Stan Antonio       |    8     |    0    |   5    |     14      |      12      |    9    |     48     |
+| Vitagliano Davide |    9     |    1    |   0    |     15      |      15      |   10    |     50     |
+| Zanellato Augusto |    1     |    1    |   0    |     10      |      15      |    8    |     35     |
+| **Totale**        |  **33**  | **18**  | **8**  |   **82**    |   **101**    | **73**  |  **315**   |
 
 Di seguito viene riportato il prospetto del costo del progetto:
 
