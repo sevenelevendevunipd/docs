@@ -1,9 +1,9 @@
 ---
 title: "Analisi dei requisiti"
 date: "15/11/2022"
-responsabile: "Mattia Brunello"
-redattori: ["Andrea Auletta", "Nicola Cecchetto", "Davide Vitagliano"]
-verificatori: ["Antonio Stan", "Augusto Zanellato", "Enrik Rucaj"]
+responsabile: "Andrea Auletta"
+redattori: ["Antonio Stan", "Enrik Rucaj"]
+verificatori: ["Mattia Brunello", "Nicola Cecchetto","Augusto Zanellato", "Davide Vitagliano"]
 toc: true
 versioni:
   0.0.1:
