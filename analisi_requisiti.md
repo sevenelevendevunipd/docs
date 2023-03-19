@@ -98,6 +98,10 @@ versioni:
     autore: Mattia Brunello
     data: 22/02/2023
     cambiamenti: Approvazione per il rilascio
+  1.0.1:
+    autore: Enrik Rucaj
+    data: 10/03/2023
+    cambiamenti: Correzione degli errori evidenziati dal professor Cardin
 ...
 
 # Introduzione
@@ -121,12 +125,13 @@ Il progetto prevede di sviluppare due applicazioni:
 Alcuni termini potrebbero non risultare consoni al linguaggio usuale quindi questi ultimi vengono inseriti nel
 documento *Glossario*[^1] assieme alle loro definizioni.
 
-[^1]: Il glossario è in corso di stesura e risulta non completo al momento.
+[^1]: [Glossario](https://sevenelevendevunipd.github.io/docs/glossario.pdf)
 
 ## Riferimenti
 
 * [Slide sull'analisi dei requisiti tratte dalle lezioni del professor T. Vardanega](https://www.math.unipd.it/~tullio/IS-1/2022/Dispense/T06.pdf)
 * [Slide sugli Use Case tratte dalle lezioni del professor R. Cardin](https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf)
+* [Norme di progetto](https://sevenelevendevunipd.github.io/docs/norme_progetto.pdf)
 
 # Casi d'uso
 
@@ -181,7 +186,7 @@ VUC1 <.. VUC1.1 : <<extend>>
 
 ### VUC1 - Caricamento file di log
 
-* Scenario: l'utente vuole caricare un file di {g:log} da visualizzare nell'applicazione {g:smartlogviewer};
+* Scenario: l'utente vuole caricare un file (in formato .csv) di {g:log} da visualizzare nell'applicazione {g:smartlogviewer} tramite ricerca nel file system;
 * Attore: {g:tecnico};
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: il file appena caricato viene processato correttamente dall'applicazione.
@@ -227,7 +232,11 @@ Visualizzazione Firmware"
 usecase VUC2.1.5 as "VUC2.1.5
 Visualizzazione Descrizione"
 usecase VUC2.1.6 as "VUC2.1.6
-Visualizzazione Stato (ON/OFF)"
+Visualizzazione Stato"
+usecase VUC2.1.6.1 as "VUC2.1.6.1
+Visualizzazzione stato ON"
+usecase VUC2.1.6.2 as "VUC2.1.6.2
+Visualizzazzione stato OFF"
 usecase VUC2.1.7 as "VUC2.1.7
 Visualizzazione Colore Evento"
 }
@@ -237,6 +246,8 @@ y--VUC2.1.3
 y--VUC2.1.4
 y--VUC2.1.5
 y--VUC2.1.6
+VUC2.1.6<|--VUC2.1.6.1
+VUC2.1.6<|--VUC2.1.6.2
 y--VUC2.1.7
 ```
 
@@ -286,6 +297,20 @@ y--VUC2.1.7
 * Attore: {g:tecnico};
 * Precondizioni: è stato caricato correttamente un file di {g:log} [VUC1];
 * Postcondizioni: viene visualizzato lo stato della riga del {g:log};
+
+###### VUC2.1.6.1 Visualizzazione stato ON
+
+* Scenario: l'utente visualiza lo stato ON;
+* Attore: {g:tecnico};
+* Precondizioni: L'utente visualizza lo stato [VUC.1.6];
+* Postcondizioni: viene visualizzato lo stato ON;
+
+###### VUC2.1.6.1 Visualizzazione stato OFF
+
+* Scenario: l'utente visualiza lo stato OFF;
+* Attore: {g:tecnico};
+* Precondizioni: L'utente visualizza lo stato [VUC.1.6];
+* Postcondizioni: viene visualizzato lo stato OFF;
 
 ##### VUC2.1.7 - Visualizzazione colore
 
@@ -1042,7 +1067,7 @@ u--SUC7.2
 
 ## Opzionali
 
-### OUC1 - Esportazione file che visualizza tabelle e varianti grafiche
+### OUC1 - Esportazione file PDF che visualizza tabelle e varianti grafiche
 
 ```{ .plantuml caption="OUC1"}
 left to right direction
@@ -1054,7 +1079,7 @@ Esportazione file"
 :Analista:--OUC1
 ```
 
-* Scenari: l'utente esporta un file dove verranno visualizzati i grafici;
+* Scenari: l'utente esporta un file PDF dove verranno visualizzati i grafici, quest'ultimo viene salvato nella locazione desiderata;
 * Attore: {g:tecnico}, {g:analista};
 * Precondizioni: è stato selezionato almeno un file di {g:log} nell'applicazione [VUC1] o [SUC1];
 * Postcondizioni: viene esportato il file con i grafici.
@@ -1088,7 +1113,7 @@ Ricerca sequenza di eventi"
 i--OUC3
 ```
 
-* Scenari: l'utente vuole cercare una sequenza di eventi non necessariamente ordinata;
+* Scenari: l'utente vuole cercare una sequenza di eventi più o meno vicni nel tempo ma che non sono necessariamente in ordine;
 * Attore: {g:tecnico};
 * Precondizioni: viene visualizzata la tabella [VUC2];
 * Postcondizioni: vengono evidenziate le tuple con gli eventi con codice corrispondente ai parametri di ricerca o una notifica per l'utente.
@@ -1200,22 +1225,24 @@ i--OUC4
 |---------------| ----------------| ------------------- | --------- |
 | VRQ1 | {g:smartlogviewer} deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto* | Obbligatorio | Capitolato |
 | VRQ2 | Deve essere fornita una guida per sviluppatori di {g:smartlogviewer} | Obbligatorio | Capitolato |
+| VRQ3 | Deve essere fornita un manuale d'uso di {g:smartlogsviewer} | Obbligatorio | Capitolato |
 | SRQ1 | {g:smartlogstatistics} deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto* | Obbligatorio | Capitolato |
 | SRQ2 | Deve essere fornita una guida per sviluppatori di {g:smartlogstatistics} | Obbligatorio | Capitolato |
-| RQ1 | Deve essere fornita la documentazione minima richiesta anche dal corso di "Ingegneria del Software" | Obbligatorio | Capitolato |
+| SRQ3 | Deve essere fornita un manuale d'uso di {g:smartlogstatistics} | Obbligatorio | Capitolato |
+| RQ1 | Deve essere fornita la documentazione minima richiesta anche dal corso di "Ingegneria del Software": Analisi dei requisiti, Norme di progetto, Piano di progetto, Piano di qualfica, Glossario | Obbligatorio | Capitolato |
 | RQ2 | Viene richiesto l'utilizzo di un {g:repository} pubblico ({g:github}) | Obbligatorio | Capitolato |
 
 ## Vincolo
 
 | **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
 |---------------| ----------------| ------------------- | --------- |
-| VRV1 | L'interfaccia di visualizzazione di {g:smartlogviewer} deve essere di tipo web | Obbligatorio | Capitolato |
+| VRV1 | L'applicazione {g:smartlogviewer} deve essere di tipo web | Obbligatorio | Capitolato |
 | VRV2 | Richiesto {g:python} per la parte di analisi dei dati | Obbligatorio | Capitolato |
 | VRV3 | {g:smartlogviewer} deve esser compatibile con il browser Google Chrome versione 110 | Obbligatorio | Discussione con azienda |
 | VRV4 | {g:smartlogviewer} deve esser compatibile con il browser Firefox versione 110 | Obbligatorio | Discussione con azienda |
 | VRV5 | {g:smartlogviewer} deve esser compatibile con il browser Microsoft Edge versione 110 | Obbligatorio | Discussione con azienda |
 | VRV6 | {g:smartlogviewer} deve esser compatibile con il browser Opera versione 95 | Obbligatorio | Discussione con azienda |
-| SRV1 | L'interfaccia di visualizzazione di {g:smartlogstatistics} deve essere di tipo web | Obbligatorio | Capitolato |
+| SRV1 | L'applicazione {g:smartlogstatistics} deve essere di tipo web | Obbligatorio | Capitolato |
 | SRV2 | Richiesto {g:python} per la parte di analisi dei dati | Obbligatorio | Capitolato |
 | SRV3 | {g:smartlogstatistics} deve esser compatibile con il browser Google Chrome versione 110 | Obbligatorio | Discussione con azienda |
 | SRV4 | {g:smartlogstatistics} deve esser compatibile con il browser Firefox versione 110 | Obbligatorio | Discussione con azienda |
