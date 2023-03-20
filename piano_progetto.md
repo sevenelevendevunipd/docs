@@ -2,9 +2,9 @@
 title: "Piano di Progetto"
 toc: true
 date: "22/11/2022"
-responsabile: "Augusto Zanellato"
-redattori: ["Davide Vitagliano", "Enrik Rucaj", "Mattia Brunello"]
-verificatori: ["Andrea Auletta", "Nicola Cecchetto", "Antonio Stan"]
+responsabile: "Antonio Stan"
+redattori: ["Davide Vitagliano", "Nicola Cecchetto", "Mattia Brunello"]
+verificatori: ["Andrea Auletta", "Augusto Zanellato", "Enrik Rucaj"]
 versioni:
   0.0.1:
     autore: Davide Vitagliano
@@ -41,11 +41,15 @@ versioni:
   0.3.0:
     autore: Andrea Auletta
     data: 10/02/2023
-    cambiamenti: verifica generale del documento
+    cambiamenti: Verifica generale del documento
   1.0.0:
     autore: Augusto Zanellato
     data: 13/02/2023
     cambiamenti: Approvato per il rilascio
+  1.0.1:
+    autore: Mattia Brunello
+    data: 20/03/2023
+    cambiamenti: Scadenze aggiornate a RTB conclusa
 ...
 
 # Introduzione
@@ -79,6 +83,16 @@ Di seguito viene riportata la tabella con le scadenze che il gruppo Seven Eleven
 | Requirements and Technology Baseline |     RTB      | 28/02/2023 |
 | Product Baseline                     |      PB      | 09/04/2023 |
 | Customer Acceptance                  |      CA      | 30/04/2023 |
+
+## Scadenze aggiornate a RTB conclusa
+
+Di seguito viene riportata la tabella con le scadenze aggiornate che il gruppo Seven Eleven si impegna a rispettare:
+
+| **Revisione**                        | **Acronimo** |  **Data**  |
+| ------------------------------------ | :----------: | :--------: |
+| Requirements and Technology Baseline |     RTB      | 13/03/2023 |
+| Product Baseline                     |      PB      | 21/04/2023 |
+| Customer Acceptance                  |      CA      | 15/05/2023 |
 
 # Analisi dei Rischi
 
