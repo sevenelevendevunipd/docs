@@ -174,8 +174,20 @@ Sequenza di Eventi non Trovata"
 usecase VUC6 as "VUC6
 Visualizzazione Grafico"
 usecase VUC7 as "VUC7
-Modifica Visualizzazione Grafico"
+Zoom Intervallo Temporale"
+usecase VUC8 as "VUC8
+Scroll Orizzontale"
+usecase VUC9 as "VUC9
+Selezione Intervallo Temporale"
+usecase VUC9.1 as "VUC9.1
+Intervallo non corretto"
+usecase VUC10 as "VUC10
+Aggiunta Filtro Grafico"
 }
+t--VUC10
+VUC9 <.. VUC9.1 : <<extend>>
+t--VUC9
+t--VUC8
 t--VUC7
 t--VUC6
 VUC5 <.. VUC5.1 : <<extend>>
@@ -583,7 +595,9 @@ Intervallo non Corretto"
 usecase SUC2 as "SUC2
 Visualizzazione Prospetto"
 usecase SUC3 as "SUC3
-Modifica Visualizzazione Lista"
+Aggiunta Filtro Lista"
+usecase SUC4 as "SUC4
+Ordinamento per Colonna Lista"
 usecase SUC5 as "SUC5
 Visualizzazione Grafico Tempo/Occorrenze"
 usecase SUC6 as "SUC6
@@ -597,6 +611,7 @@ SUC1 <.. SUC1.1 : <<extend>>
 t--SUC1
 t--SUC2
 t--SUC3
+t--SUC4
 t--SUC5
 t--SUC6
 t--SUC7
@@ -799,7 +814,7 @@ SUC3.2 <.. SUC3.2.1 : <<extend>>
 * Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
 * Postcondizioni: la lista di occorrenza eventi mostra i dati filtrati per versione {g:firmware};
 
-#### SUC4 - Ordinamento per Colonna
+#### SUC4 - Ordinamento per Colonna Lista
 
 ```{ .plantuml caption="SUC4"}
 left to right direction
