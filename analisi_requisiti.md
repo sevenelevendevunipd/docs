@@ -1131,7 +1131,7 @@ i--OUC4
 |---------------| ----------------| ------------------- | --------- |
 | SRF1 | L'utente deve poter selezionare i {g:log} da analizzare per range di data/ora (min, max, all) | Obbligatorio | Capitolato - SUC1 |
 | SRF1.1 | Viene visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido | Obbligatorio | SUC1.1 |
-| SRF2 | L'utente visualizza un prospetto con i da analizzare | Obbligatorio | Capitolato - SUC2 |
+| SRF2 | L'utente visualizza un prospetto con i dati da analizzare | Obbligatorio | Capitolato - SUC2 |
 | SRF2.1 | Nel prospetto compare l'intervallo temporale | Obbligatorio | Capitolato - SUC2.1 |
 | SRF2.2 | Nel prospetto compare il numero di {g:log} analizzati | Obbligatorio | Capitolato - SUC2.2 |
 | SRF2.3 | Nel prospetto compare la media numero di eventi tra i {g:log} | Obbligatorio | Capitolato - SUC2.3 |
