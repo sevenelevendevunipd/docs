@@ -303,16 +303,16 @@ y--VUC2.1.7
 
 ###### VUC2.1.6.1 Visualizzazione stato ON
 
-* Scenario: l'utente visualiza lo stato ON;
+* Scenario: l'utente visualizza lo stato ON;
 * Attore: {g:tecnico};
-* Precondizioni: L'utente visualiza lo stato [VUC.1.6];
+* Precondizioni: L'utente visualizza lo stato [VUC.1.6];
 * Postcondizioni: viene visualizzato lo stato ON;
 
 ###### VUC2.1.6.1 Visualizzazione stato OFF
 
-* Scenario: l'utente visualiza lo stato OFF;
+* Scenario: l'utente visualizza lo stato OFF;
 * Attore: {g:tecnico};
-* Precondizioni: L'utente visualiza lo stato [VUC.1.6];
+* Precondizioni: L'utente visualizza lo stato [VUC.1.6];
 * Postcondizioni: viene visualizzato lo stato OFF;
 
 ##### VUC2.1.7 - Visualizzazione colore
