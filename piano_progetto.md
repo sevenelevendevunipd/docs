@@ -49,7 +49,11 @@ versioni:
   1.0.1:
     autore: Mattia Brunello
     data: 20/03/2023
-    cambiamenti: Scadenze aggiornate a RTB conclusa
+    cambiamenti: Scadenze aggiornate e aggiornamento dei rischi a RTB conclusa
+  1.0.2:
+    autore: Andrea Auletta
+    data: 21/03/2023
+    cambiamenti: Verifica dell'ultimo aggiornamento
 ...
 
 # Introduzione
@@ -171,6 +175,23 @@ Questa sezione elenca i possibili rischi in cui si potrebbe incorrere durante l�
 * RR2: Modificare l'*Analisi dei Requisiti*;
 * RR3: Insistere nel pianificare un incontro con l'azienda proponente e cercare autonomamente di capire i passi
   successivi per avanzare nel progetto.
+
+## Osservazione della realtà e riconoscimento dei rischi e innesco delle mitigazioni
+
+Visto che questo paragrafo viene scritto a RTB conclusa, la parte di quest'ultima vedrà spiegati i vari rischi in cui ci siamo imbattuti e come li abbiamo risolti.
+Mentre per i successivi scriveremo passo passo all'insorgere di ogni rischio cercando di prevedere come risolvere il problema.
+
+### Requirements and Technology Baseline
+
+* RO1 - Sessione: la sessione ha causato rallentamenti nello sviluppo del progetto in quanto ha richiesto una quantità di tempo non indifferente ad ogni membro del gruppo per lo studio, ciò nonostante, le ore svolte sono allineate con le ore preventivate per il progetto. La soluzione è stata quelli di posticipare la revisione RTB e quindi l'inizio della PB.
+
+* RI1 - Inesperienza: dopo le esercitazioni del professor Cardin ci sono state delle modifiche nell'analisi dei requisiti dovute a degli errori che abbiamo commesso durante la stesura dei casi d'uso.
+
+* Responsabile: dopo aver notato i rallentamenti, è stato scelto che il responsabile deve stimolare e controllare più frequentemente i membri del gruppo.
+
+<!-- ### Product Baseline -->
+
+<!-- ## Valutazione critica dell'efficacia delle soluzioni proposte -->
 
 # Modello di Sviluppo
 
@@ -781,6 +802,7 @@ Di seguito vengono riportate le variazioni dei costi:
 ### Motivazioni delle variazioni
 
 Sono state richieste poche ore in più rispetto a quanto preventivato a causa della nostra inesperienza nel pianificare correttamente i periodi.
+Posticipiamo comunque la revisione RTB e quindi l'inizio della PB a causa del ritardo causato dai rischi spiegati nel paragrafo §2.3.1.
 
 ### Considerazioni
 
