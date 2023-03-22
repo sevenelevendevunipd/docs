@@ -1,7 +1,7 @@
 ---
-title: "Analisi dei requisiti"
+title: "Allegato Tecnico"
 date: "15/11/2022"
-responsabile: "Antonio Stan"
+responsabile: "Nicola Checchetto"
 redattori: ["Davide Vitagliano", "Augusto Zanellato"]
 verificatori: ["Enrik Rucaj"]
 toc: true
