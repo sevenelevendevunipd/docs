@@ -1,9 +1,9 @@
 ---
 title: "Piano di qualifica"
 date: "06/12/2022"
-responsabile: "Nicola Cecchetto"
-redattori: ["Enrik Rucaj", "Antonio Stan"]
-verificatori: ["Andrea Auletta", "Davide Vitagliano", "Mattia Brunello", "Augusto Zanellato"]
+responsabile: "Andrea Auletta"
+redattori: ["Enrik Rucaj", "Davide Vitagliano"]
+verificatori: ["Nicola Cecchetto", "Antonio Stan", "Mattia Brunello", "Augusto Zanellato"]
 abstract: "Viene definito il piano di qualifica"
 docusage: "Esterno"
 toc: true
@@ -41,13 +41,17 @@ versioni:
     data: 07/02/2022
     cambiamenti: Inseriti i grafici inerenti all' attività di verifica del prodotto
   v0.2.0:
-    autore: Nicola Cecchetto
+    autore: Davide Vitagliano
     data: 09/02/2022
     cambiamenti: Verifica generale del documento
   v1.0.0:
-    autore: Davide Vitagliano
+    autore: Nicola Cecchetto
     data: 12/02/2022
     cambiamenti: Approvazione per il rilascio
+  v1.0.1:
+    autore: Davide Vitagliano
+    data: 17/03/2022
+    cambiamenti: Aggiunti indicatori quantitativi sui test e sul progresso
 ...
 
 # Introduzione
@@ -133,6 +137,17 @@ $$RPT=(1-\frac{PTA}{PPTA})*100$$
 Percentuale delle metriche di qualità (sia di processo che di prodotto) soddisfate in un determinato periodo.
 $$Metriche soddisfate=\frac{Numero di metriche soddisfate}{Numero di metriche totali}*100$$
 
+### QPS_12: Variazioni di programma (VP)
+
+Percentuale che indica il livello di progresso di un progetto. Esso indica se l'avanzamento è regolare rispetto ai limiti temporali imposti. *In caso di risultato negativo si rischia di allontanarsi dal periodo temporale preventivato*.
+
+$$VP=(1-\frac{Periodo temporale impiegato}{Periodo temporale preventivato})*100$$
+
+### QPS_13: Test soddisfati (TS)
+
+Percentuale dei test soddisfati in un determinato periodo.
+$$Test soddisfati=\frac{Numero di test soddisfati}{Numero di test totali}*100$$
+
 ### Tabella metriche - Valori accettabili e ottimali
 
 |    **Codice**     |                  **Nome**                   | **Valore accettabile** | **Valore ottimale** |
@@ -148,6 +163,8 @@ $$Metriche soddisfate=\frac{Numero di metriche soddisfate}{Numero di metri
 | QPS_9             |     Stima tempo di sviluppo totale (STST)   | $\leq Ore Totali + 5\%$|    $= Ore Totali$   |
 | QPS_10            |        Rapporto periodo temporale (RPT)     |     $\geq -20\%$       |     $\geq 0\%$      |
 | QPS_11            |            Metriche soddisfate (MS)         |      $\geq 80\%$       |      $= 100\%$      |
+| QPS_12            |          Variazioni di programma (VP)       |     $\geq -15\%$       |     $\geq 0\%$      |
+| QPS_13            |              Test soddisfati (TS)           |      $\geq 80\%$       |      $= 100\%$      |
 
 # Qualità del prodotto
 
@@ -346,7 +363,7 @@ I test di accettazione sono necessari per la verifica dei requisiti richiesti da
 | TS_SRF7.2   |   Verificare che sia presente un filtro per {g:unitsubunit}         |       NI    |
 | TS_SRF8     |  Verifica che la funzionalità di filtro per il grafico "firmware/occorrenze" funzioni correttamente          |        NI    |
 | TS_SRF8.1   |   Verificare che sia presente un filtro per {g:codice_evento}           |       NI    |
-| TS_SRF8.2   |  Verficiare che sia presente un filtro per {g:firmware}           |        NI    |
+| TS_SRF8.2   |  Verificare che sia presente un filtro per {g:firmware}           |        NI    |
 | TS_SRO1     | Verificare che  l'utente possa visualizzare un grafico {g:matrice_correlazione} che mostri l'indice di correlazione tra coppie di eventi           |     NI    |
 | TS_SRO2     |   Verificare che l'utente possa esportare i file che visualizza i grafici         |     NI    |
 | TS_SRO3     |   Verificare che l'utente possa eliminare tutti i filtri applicati           |       NI    |
@@ -455,6 +472,40 @@ fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di branch coverage'
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
 fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
 fig.update_layout(yaxis_range=[-2, 102])
+fig.show()
+```
+
+### Variazioni di programma
+
+```{.plotly_python}
+import plotly.graph_objects as go
+
+x = ['AP', 'PTB', 'POC']
+y1 = [2.43, 4.87, -11.11]
+
+fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di variazioni di programma'))
+fig.add_scatter(x=[x[0], x[-1]], y=[0, 0], line=dict(dash='dash'), name='valore ottimale')
+fig.add_scatter(x=[x[0], x[-1]], y=[-15, -15], line=dict(dash='dash'), name='valore accettabile')
+fig.update_layout(yaxis_range=[-20, 102])
+fig.update_layout(title='Percentuale di variazioni di programma', xaxis_title='Periodo temporale', yaxis_title='Percentuale di variazioni di programma')
+fig.update_layout(legend=dict(x=0.01, y=0.99, traceorder="normal", font=dict(size=12, color="black"), bgcolor="LightSteelBlue", bordercolor="Black", borderwidth=2))
+
+fig.show()
+```
+
+### Test soddisfati
+
+```{.plotly_python}
+import plotly.graph_objects as go
+
+x = ['AP', 'PTB', 'POC']
+y1 = [0, 0, 0]
+
+fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di test soddisfati'))
+fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
+fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
+fig.update_layout(yaxis_range=[-2, 102])
+
 fig.show()
 ```
 
