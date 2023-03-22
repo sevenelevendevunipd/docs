@@ -266,7 +266,7 @@ Indica che ciascun branch di codice sia stato eseguito almeno una volta.
 
 Strumenti utilizzati:
 
-* g:python}
+* {g:python}
 
 ### Tabella metriche - Valori accettabili e ottimali
 
