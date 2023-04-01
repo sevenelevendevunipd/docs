@@ -10,3 +10,4 @@ tables: true
 titlepage: true
 toc: false
 toc-own-page: true
+plot-configuration: pandoc-plot.yaml

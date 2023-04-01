@@ -104,7 +104,7 @@ jobs:
         with:
           name: docs_site
       - name: Zip docs
-        run: zip -r --exclude='*index.html' docs.zip .
+        run: zip -r --exclude='*index.html' --exclude='misc/*' docs.zip .
       - name: Create release
         run: gh release create $GITHUB_REF_NAME -t $GITHUB_REF_NAME docs.zip -R sevenelevendevunipd/docs
         env:

@@ -1,6 +1,7 @@
 filters:
   - pandoc-plantuml
   - pandoc-glossary
+  - pandoc-plot
 from: markdown
 listings: true
 template: template/eisvogel.tex

@@ -1,3 +1,18 @@
 cicd: !!python/object:pandoc_glossary_filter.data.AcronymEntry
   long: 'Continuous Integration/Continuous Delivery'
   name: 'CI/CD'
+csv: !!python/object:pandoc_glossary_filter.data.AcronymEntry
+  long: 'Comma-Separated Values'
+  name: 'csv'
+PoC: !!python/object:pandoc_glossary_filter.data.AcronymEntry
+  long: 'Proof of Concept'
+  name: 'PoC'
+UML: !!python/object:pandoc_glossary_filter.data.AcronymEntry
+  long: 'Unified Modeling Language'
+  name: 'UML'
+RTB: !!python/object:pandoc_glossary_filter.data.AcronymEntry
+  long: 'Requirements & Technology Baseline'
+  name: 'RTB'
+PB: !!python/object:pandoc_glossary_filter.data.AcronymEntry
+  long: 'Product Baseline'
+  name: 'PB'

@@ -419,4 +419,5 @@ docs/
 .idea/**/libraries
 
 plantuml-images/
+plots/
 test/
