@@ -45,4 +45,3 @@ Per il corretto funzionamento dell'applicazione è necessario disporre di una co
 <!-- L'applicazione è stata testata sui seguenti browser: -->
 
 # SmartLog Viewer
-
