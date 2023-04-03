@@ -45,3 +45,54 @@ Per il corretto funzionamento dell'applicazione è necessario disporre di una co
 <!-- L'applicazione è stata testata sui seguenti browser: -->
 
 # SmartLog Viewer
+
+## Scelta del file log da analizzare
+
+Appena aperta "SmartLog Viewer" verrà presentata questa pagina:
+
+![prima schermata: inserimento log](./imgManuale/foto1.png "")
+
+Quest'ultima è divisa in due parti:
+
+* Intestazione;
+* Corpo.
+
+### Intestazione
+
+Nell'intestazione, in alto a sinistra, è presente il logo dell'applicazione.
+In alto a destra invece c'è un pulsante che permette di poter cambiare il tema da chiaro a scuro e viceversa.
+
+### Corpo
+
+Nel corpo sono presenti tre bottoni:
+
+* Premendo il bottone **Choose** sarà possibile selezionare dal proprio archivio il file log di eventi da voler analizzare;
+* Successivamente per poter viualizzare la schermata di analisi sarà necessario cliccare sul bottone **Upload**;
+* Il bottone **Cancel** rimuove il file selezionato per poterne scegliere un altro da analizzare.
+
+## Analisi dei dati
+
+Dopo aver caricato il log si verrà reindirizzati alla seguente pagina:
+
+<!-- Inserire immagine finale di SmartLog Viewer -->
+
+La pagina di analisi è suddivisa nelle seguenti parti:
+
+* Informazioni del log;
+* Filtri;
+* Grafico tempo/evento;
+* Tabella eventi.
+
+### Informazioni del log
+
+### Filtri
+
+#### Filtro per codice
+
+#### Filtro per Firmware
+
+#### Filtro per Unit/Subunit
+
+### Grafico tempo/evento
+
+### Tabella eventi
