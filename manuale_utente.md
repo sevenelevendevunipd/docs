@@ -12,6 +12,10 @@ versioni:
     autore: Mattia Brunello
     data: 01/04/2023
     cambiamenti: Creazione del documento.
+  v0.0.2:
+    autore: Andrea Auletta
+    data: 04/04/2023
+    cambiamenti: Inizio manuale di SmartLogViewer
 ...
 
 # Introduzione
@@ -50,7 +54,7 @@ Per il corretto funzionamento dell'applicazione è necessario disporre di una co
 
 Appena aperta "SmartLog Viewer" verrà presentata questa pagina:
 
-![prima schermata: inserimento log](./imgManuale/foto1.png "")
+![prima schermata: inserimento log](./imgManuale/primaPaginaSLV.png)
 
 Quest'ultima è divisa in due parti:
 
@@ -59,14 +63,18 @@ Quest'ultima è divisa in due parti:
 
 ### Intestazione
 
-Nell'intestazione, in alto a sinistra, è presente il logo dell'applicazione.
-In alto a destra invece c'è un pulsante che permette di poter cambiare il tema da chiaro a scuro e viceversa.
+Nell'intestazione, in alto a sinistra, è presente il **logo** dell'applicazione.
+In alto a destra invece c'è un **pulsante** che permette di poter **cambiare il tema** da chiaro a scuro e viceversa.
 
 ### Corpo
 
 Nel corpo sono presenti tre bottoni:
 
-* Premendo il bottone **Choose** sarà possibile selezionare dal proprio archivio il file log di eventi da voler analizzare;
+* Premendo il bottone **Choose** sarà possibile selezionare dal proprio archivio il file log di eventi da voler analizzare.
+Dopo aver scelto il file apparirà sotto i tre bottoni come nella figura successiva.
+Premendo la **x** si eliminerà la selezione del file.
+![primo inserimento](./imgManuale/primoInserimento.png)
+
 * Successivamente per poter viualizzare la schermata di analisi sarà necessario cliccare sul bottone **Upload**;
 * Il bottone **Cancel** rimuove il file selezionato per poterne scegliere un altro da analizzare.
 
@@ -85,14 +93,55 @@ La pagina di analisi è suddivisa nelle seguenti parti:
 
 ### Informazioni del log
 
+Nella sezione delle informazioni del log (Log Informations) vengono presentate quattro informazioni:
+
+* Nome del file;
+* PC Timestamp;
+* UPS Timestamp;
+* Totale eventi avvenuti registrati nel log.
+
+![Informazioni sul log(Nome del file, PC Timestamp, UPS Timestamp, Totale eventi)](./imgManuale/logInformation.png)
+
 ### Filtri
 
 #### Filtro per codice
 
+![Filtro tramite codice](./imgManuale/filtroCodice.png)
+
+"Filter by Code" è divisa in tre principali sezioni:
+
+* Bottoni:
+  * **Select All**: Seleziona tutti i codici;
+  * **Select None**: Deseleziona tutti i codici;
+* Barra di ricerca: Tramite la barra di ricerca si potrà cercare il codice desiderato;
+* Elenco dei codici degli eventi:
+  * Sulla destra è presenta una barra di scorrimento verticale che permette di visualizzare tutti i codici presenti nel file;
+  * **Cliccando** su un codice si potrà selezionare(blu chiaro) o deselezionare(blu scuro) l'evento.
+
 #### Filtro per Firmware
+
+![Filtro tramite firmware](./imgManuale/filtroFirmware.png)
+
+Il funzionamento del filtro sul firmware è analogo a quello del filtro sul codice.
 
 #### Filtro per Unit/Subunit
 
+![Filtro unit/subunit](./imgManuale/filtroUnitSub.png)
+
+"Filter by Unit/Subunit" è suddivisa in due sezioni principali:
+
+* Bottoni: analoghi ai due filtri precedenti;
+* Elenco Unit/SubUnit:
+  * È presente una **checkbox** alla sinistra di tutte le Unit/Subunit:
+    * Cliccando la checkbox dell'unità principale si deselezioneranno sia quest'ultima che **tutte le sue sottounità**;
+    * Cliccando la checkbox della subunit si deselezionerà **solamente la subunit stessa**;
+  * Sono presenti, inoltre, alla sinistra di tutte le unità principali delle **frecce** (come quella cerchiata in figura).
+  Cliccando queste ultime sarà possibile **espandere (o nascondere)la lista delle unità** per poter vedere tutte le sue subunit.
+
 ### Grafico tempo/evento
+
+![Grafico timeline](./imgManuale/graficoTimeLine.png)
+
+Nel grafico timeline vengono visualizzati tutti gli eventi e il loro **stato di attività** analizzati nel log.
 
 ### Tabella eventi
