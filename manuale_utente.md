@@ -16,6 +16,10 @@ versioni:
     autore: Andrea Auletta
     data: 04/04/2023
     cambiamenti: Inizio manuale di SmartLogViewer
+  v0.0.3:
+    autore: Andrea Auletta
+    data: 05/04/2023
+    cambiamenti: Modificato manuale SmartLogViewer
 ...
 
 # Introduzione
@@ -86,10 +90,18 @@ Dopo aver caricato il log si verrà reindirizzati alla seguente pagina:
 
 La pagina di analisi è suddivisa nelle seguenti parti:
 
+* Intestazione;
 * Informazioni del log;
 * Filtri;
 * Grafico tempo/evento;
 * Tabella eventi.
+
+### Intestazione
+
+![intestazione pagina di analisi](./imgManuale/intestazione.png)
+
+L'unica cosa che cambia con l'intestazione della pagina precedente è la comparsa del bottone **Upload another log**.
+Cliccando su quest'ultimo si ritornerà alla schermata precedente e sarà possibile caraicare un nuovo file log.
 
 ### Informazioni del log
 
@@ -100,13 +112,13 @@ Nella sezione delle informazioni del log (Log Informations) vengono presentate q
 * UPS Timestamp;
 * Totale eventi avvenuti registrati nel log.
 
-![Informazioni sul log(Nome del file, PC Timestamp, UPS Timestamp, Totale eventi)](./imgManuale/logInformation.png)
+![Informazioni sul log(Nome del file, PC Timestamp, UPS Timestamp, Totale eventi)](./imgManuale/logInformation.png){width=50%}
 
 ### Filtri
 
 #### Filtro per codice
 
-![Filtro tramite codice](./imgManuale/filtroCodice.png)
+![Filtro tramite codice](./imgManuale/filtroCodice.png){width=50%}
 
 "Filter by Code" è divisa in tre principali sezioni:
 
@@ -120,7 +132,7 @@ Nella sezione delle informazioni del log (Log Informations) vengono presentate q
 
 #### Filtro per Firmware
 
-![Filtro tramite firmware](./imgManuale/filtroFirmware.png)
+![Filtro tramite firmware](./imgManuale/filtroFirmware.png){width=50%}
 
 Il funzionamento del filtro sul firmware è analogo a quello del filtro sul codice.
 
@@ -144,4 +156,22 @@ Il funzionamento del filtro sul firmware è analogo a quello del filtro sul codi
 
 Nel grafico timeline vengono visualizzati tutti gli eventi e il loro **stato di attività** analizzati nel log.
 
+È possibile effettuare scroll, span e zoom sul grafico.
+
+* **Scroll e span** si possono effettuare spostando rispettivamente la barra verticale e quella orizzontale;
+* Per effettuare lo **zoom (in e out)** cliccare e trascinare uno dei cerchietti verdi situati agli estremi della barra orizzontale verso destra o sinistra.
+
 ### Tabella eventi
+
+![Tabella](./imgManuale/tabella.png)
+
+La tabella presenta sette colonne.
+Cliccando sulle intestazioni delle colonne sarà possibile effettuare **l'ordinamento (crescente, decrescente, d'ingresso)** delle righe della tabella in base alla colonna desiderata.
+Nell'intestazione compare anche il numero di eventi selezionati (varia in base alle scelte effettuate nei filtri).
+In basso, invece, vengono visualizzata la paginazione della tabella: in ogni pagina di tabella vengono visualizzati dieci eventi alla volta.
+Per cambiare pagina si può:
+
+* Cliccare sulle frecce:
+  * Singola: ci si sposta di una pagina;
+  * Doppie: ci si sposta alla prima (verso sinistra) o all'ultima pagina (verso destra).
+* Cliccare sul numero attribuito alla pagina.
