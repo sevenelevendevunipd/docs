@@ -20,6 +20,10 @@ versioni:
     autore: Andrea Auletta
     data: 05/04/2023
     cambiamenti: Modificato manuale SmartLogViewer
+  v.0.0.4:
+    autore: Mattia Brunello
+    data: 21/04/2023
+    cambiamenti: completato manuale SmartLogViewer
 ...
 
 # Introduzione
@@ -149,6 +153,29 @@ Il funzionamento del filtro sul firmware è analogo a quello del filtro sul codi
     * Cliccando la checkbox della subunit si deselezionerà **solamente la subunit stessa**;
   * Sono presenti, inoltre, alla sinistra di tutte le unità principali delle **frecce** (come quella cerchiata in figura).
   Cliccando queste ultime sarà possibile **espandere (o nascondere)la lista delle unità** per poter vedere tutte le sue subunit.
+
+#### Filtro per Data
+
+![Filtro per data](./imgManuale/filtroData.png)
+
+Nel filtro per data compaiono due caselle **"Calendar"**.
+I calendari saranno impostati sulla prima e sull'ultima data presenti nell'insieme degli eventi.
+Cliccando sulle caselle sarà possibile modificare le due date per filtrare poi gli eventi presenti nel log.
+
+#### Filtro per Sequenza di eventi
+
+![filtro per sequenza di eventi](./imgManuale/filtroSeqEvento.png)
+
+Il filtro è diviso in tre sezioni:
+
+* Eventi di chiusura della sequenza:
+  * Bisognerà inserire nelle apposite caselle di testo il codice dell'evento e il valore di quest'ultimo e premere il pulsante **Add** per tener conto di quest'ultimo evento che comparirà al di sotto delle caselle.
+  * Alla sua destra sono presenti i pulsanti di "modifica" e di "eliminazione" mentre a sinistra è presente il pulsante di "ordinamento" che funziona tramite drag and drop.
+  * Sarà possibile poi inserire nuovi eventi seguendo la stessa procedura;
+* Eventi di apertura della sequenza:
+  * Il funzionamento è analogo a quello degli eventi di chiusura della sequenza;
+* Intervallo di tempo dal primo all'ultimo evento da ricercare:
+  * È presente una casella di testo dove inserire l'intervallo di tempo desideratoto.
 
 ### Grafico tempo/evento
 
