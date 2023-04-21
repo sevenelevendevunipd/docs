@@ -20,10 +20,14 @@ versioni:
     autore: Andrea Auletta
     data: 05/04/2023
     cambiamenti: Modificato manuale SmartLogViewer
-  v.0.0.4:
+  v0.0.4:
     autore: Mattia Brunello
     data: 21/04/2023
     cambiamenti: completato manuale SmartLogViewer
+  v0.1.0:
+    autore: Nicola Cecchetto
+    data: 21/04/2023
+    cambiamenti: verifica manuale SmartLogViewer
 ...
 
 # Introduzione
