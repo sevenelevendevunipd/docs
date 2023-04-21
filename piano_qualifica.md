@@ -18,40 +18,48 @@ versioni:
     cambiamenti: Inseriti gli obiettivi da raggiungere
   v0.0.3:
     autore: Enrik Rucaj
-    data: 12/01/2022
+    data: 12/01/2023
     cambiamenti: Inserite le metriche per la qualità di processo
   v0.0.4:
     autore: Antonio Stan
-    data: 16/01/2022
+    data: 16/01/2023
     cambiamenti: Inserite le metriche per la qualità di prodotto
   v0.0.5:
     autore: Antonio Stan
-    data: 20/01/2022
+    data: 20/01/2023
     cambiamenti: Inseriti i test di sistema  
   v0.1.0:
     autore: Andrea Auletta
-    data: 25/01/2022
+    data: 25/01/2023
     cambiamenti: Verifica generale del documento
   v0.1.1:
     autore: Enrik Rucaj
-    data: 07/02/2022
+    data: 07/02/2023
     cambiamenti: Inseriti i grafici inerenti all'attività di verifica dei processi
   v0.1.2:
     autore: Antonio Stan
-    data: 07/02/2022
+    data: 07/02/2023
     cambiamenti: Inseriti i grafici inerenti all' attività di verifica del prodotto
   v0.2.0:
     autore: Davide Vitagliano
-    data: 09/02/2022
+    data: 09/02/2023
     cambiamenti: Verifica generale del documento
   v1.0.0:
     autore: Nicola Cecchetto
-    data: 12/02/2022
+    data: 12/02/2023
     cambiamenti: Approvazione per il rilascio
   v1.0.1:
     autore: Davide Vitagliano
-    data: 17/03/2022
+    data: 17/03/2023
     cambiamenti: Aggiunti indicatori quantitativi sui test e sul progresso
+  v1.1.0:
+    autore: Davide Vitagliano
+    data: 20/03/2023
+    cambiamenti: Inseriti i test di integrazione
+  v1.1.1:
+    autore: Enrik Rucaj
+    data: 13/04/2023
+    cambiamenti: Inseriti i test di unità per il frontend
 ...
 
 # Introduzione
@@ -324,6 +332,27 @@ I test di accettazione sono necessari per la verifica dei requisiti richiesti da
 | TS_VRO3     | Verificare che  la colorazione per livello di nidificazione (16 Unit/16 livelli per SubUnit) funzioni correttamente          |       NI    |
 | TS_VRO4     | Verificare che l'utente possa esportare i file che visualizza i grafici           |    NI    |
 | TS_VRO5     | Verificare che l'utente possa eliminare tutti i filtri applicati           |         NI    |
+
+## Test di integrazione Smart Log Viewer
+
+<!-- inserire qualcosa quando hai capito cosa sono i moduli -->
+
+## Test di unità Smart Log Viewer
+<!-- nomenclatura: 
+          - TU_VF = test unità viewer per il frontend 
+          - NI = non implementato
+          - I = implementato -->
+
+|    **Codice**       |                  **Descrizione**            |       **Stato**     |
+| -----------------   | :-----------------------------------------: | :-----------------: |
+| TU_VF1 | Si verifica che filterableCodes venga inizializzata correttamente con eventi del log unici | I |
+| TU_VF2 | Si verifica che selectedCodes venga inizializzata con tutti i filterableCodes selezionati correttamente | I |
+| TU_VF3 | Si verifica che tutti i filterableCodes vengano reimpostati correttamente | I |
+| TU_VF4 | Si verifica che tutti i filterableCodes vengano selezionati correttamente nel caso nessuno lo fosse | I |
+| TU_VF5 | Si verifica che tutti i filterableCodes vengano deselezionati correttamente nel caso tutti fossero selezionati | I |
+| TU_VF6 | Si verifica che tutti i filterableCodes vengano deselezionati correttamente nel caso qualcuno fosse selezionato e gli altri deselezionati | I |
+| TU_VF7 | Si verifica che selectedCodes funzioni correttamente nel caso degli eventi vengano selezionati manualmente | I |
+| TU_VF8 | Si verifica che setSelection filtri correttamente (aggiorna la tabella e i grafici) | I |
 
 ## Test di sistema Smart Log Statistics
 
