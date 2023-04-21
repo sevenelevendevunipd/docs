@@ -54,6 +54,18 @@ versioni:
     autore: Andrea Auletta
     data: 21/03/2023
     cambiamenti: Verifica dell'ultimo aggiornamento
+  1.0.3:
+    autore: Davide Vitagliano
+    data: 8/04/2023
+    cambiamenti: aggiunto consuntivo progettazione requisiti obbligatori
+  1.0.4:
+    autore: Nicola Cecchetto
+    data: 23/04/2023
+    cambiamenti: aggiunto consuntivo codifica requisiti obbligatori
+  1.0.5:
+    autore: Mattia Brunello
+    data: 28/04/2023
+    cambiamenti: aggiunto consuntivo codifica test requisiti obbligatori e consuntivo preventivo a finire di periodo
 ...
 
 # Introduzione
@@ -519,14 +531,74 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 
 ```
 
+## Test, Collaudo e Validazione dei requisiti obbligatori
+
+**Periodo:**
+
+* INIZIO 14 Aprile 2023 - Fine periodo di progettazione e codifica dei Requisiti Obbligatori
+* FINE 21 Aprile 2023 - Revisione di Product Baseline (PB)
+
+**Ruoli coinvolti:** Responsabile - Amministratore - Progettista - Programmatore - Verificatore
+
+Le attività da svolgere durante questo periodo sono:
+
+* **Test:** Vengono eseguiti test per verificare che il prodotto soddisfi tutti i requisiti obbligatori.
+
+* **Collaudo:** Vengono eseguite e collaudate tutte le funzionalità del prodotto.
+
+* **Validazione:** Viene controllato che il prodotto soddisfi tutte le richieste del cliente.
+
+* **Modifiche ai documenti:** aggiornamento dei documenti precedentemente avviati.
+
+### Preventivo
+
+Nel periodo di "Test, Collaudo e Validazione dei requisiti obbligatori", ciascun componente rivestirà i ruoli secondo la seguente suddivisione:
+
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
+| Auletta Andrea    |    2     |    -    |   -    |      3      |      3       |    3    |     11     |
+| Brunello Mattia   |    -     |    1    |   -    |      4      |      3       |    -    |     8      |
+| Cecchetto Nicola  |    1     |    -    |   -    |      2      |      4       |    1    |     8      |
+| Rucaj Enrik       |    -     |    3    |   -    |      2      |      4       |    3    |     12     |
+| Stan Antonio      |    1     |    -    |   -    |      2      |      -       |    2    |      5     |
+| Vitagliano Davide |    -     |    1    |   -    |      3      |      2       |    1    |     7      |
+| Zanellato Augusto |    1     |    -    |   -    |      -      |      4       |    -    |      5     |
+| **Totale**        |  **5**   |  **5**  | **-**  |    **16**   |    **20**    |  **10** |   **56**   |
+
+In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
+
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- | :-----: | :-------: |
+| Responsabile   |    5    |    150    |
+| Amministratore |    5    |    100    |
+| Analista       |    -    |     -     |
+| Progettista    |    16   |    400    |
+| Programmatore  |    20   |    300    |
+| Verificatore   |    10   |    150    |
+| **Totale**     |  **56** |  **1100** |
+
+Quadro dei costi da affrontare:
+
+```{.plotly_python}
+import plotly.graph_objects as go
+
+labels = ['Responsabile','Amministratore', 'Progettista' , 'Programmatore', 'Verificatore']
+text = ['5h', '5h', '16h', '20h', '10h']
+values = [150, 100, 400, 300, 150]
+
+fig = go.Figure(data=[go.Pie(labels=labels, values=values, text=text)])
+fig.update_traces(textposition='inside', textinfo='percent+value+label+text', showlegend=False, insidetextorientation="horizontal")
+
+```
+
 ## Progettazione di dettaglio e Codifica dei Requisiti Opzionali
 
 **Importante:** Dato che nel nostro caso (dopo aver fatto l'analisi dei requisiti) è risultato che i requisiti opzionali fossero veramente pochi, è stato scelto di mettere insieme in un unico periodo la parte di progettazione e di codifica.
 
 **Periodo:**
 
-* INIZIO 10 Aprile 2023 - Fine periodo di codifica dei Requisiti Obbligatori
-* FINE 23 Aprile 2023 - Inizio periodo di Test, Collaudo e Validazione finale
+* INIZIO 21 Aprile 2023 - Fine periodo "Product basline"
+* FINE 5 Maggio 2023 - Fine periodo di progettazione e codifica dei Requisiti Opzionali
 
 **Ruoli coinvolti:** Responsabile - Amministratore - Analista - Progettista - Programmatore - Verificatore
 
@@ -583,8 +655,8 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 **Periodo:**
 <!--Abbiamo il problema che si tratta di mezzo {g:sprint} (1 settimana al posto di 2).-->
 
-* INIZIO 24 Aprile 2023 - Fine periodo di progettazione e codifica dei Requisiti Opzionali
-* FINE 30 Aprile 2023 - Revisione di Customer Acceptance (CA)
+* INIZIO 5 Maggio 2023 - Fine periodo di progettazione e codifica dei Requisiti Opzionali
+* FINE 12 Maggio 2023 - Revisione di Customer Acceptance (CA)
 
 **Ruoli coinvolti:** Responsabile - Amministratore - Progettista - Programmatore - Verificatore
 
@@ -604,26 +676,26 @@ Nel periodo di "Test, Collaudo e Validazione finale", ciascun componente rivesti
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
-| Auletta Andrea    |    2     |    -    |   -    |      4      |      5       |    5    |     16     |
-| Brunello Mattia   |    -     |    2    |   -    |      6      |      5       |    -    |     13     |
-| Cecchetto Nicola  |    1     |    -    |   -    |      4      |      6       |    3    |     14     |
-| Rucaj Enrik       |    -     |    5    |   -    |      2      |      6       |    4    |     17     |
-| Stan Antonio      |    2     |    -    |   -    |      4      |      -       |    3    |      9     |
-| Vitagliano Davide |    -     |    2    |   -    |      5      |      4       |    2    |     13     |
-| Zanellato Augusto |    2     |    -    |   -    |      -      |      6       |    -    |      8     |
-| **Totale**        |  **7**   |  **9**  | **-**  |    **25**   |    **32**    |  **17** |   **90**   |
+| Auletta Andrea    |    -     |    -    |   -    |      1      |      2       |    2    |     5      |
+| Brunello Mattia   |    -     |    1    |   -    |      2      |      2       |    -    |     5      |
+| Cecchetto Nicola  |    -     |    -    |   -    |      2      |      2       |    2    |     6      |
+| Rucaj Enrik       |    -     |    2    |   -    |      -      |      2       |    1    |     5      |
+| Stan Antonio      |    1     |    -    |   -    |      2      |      -       |    1    |     4      |
+| Vitagliano Davide |    -     |    1    |   -    |      2      |      2       |    1    |     6      |
+| Zanellato Augusto |    1     |    -    |   -    |      -      |      2       |    -    |     3      |
+| **Totale**        |  **2**   |  **4**  | **-**  |    **9**    |    **10**    |  **7**  |   **34**   |
 
 In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 
 | **Ruolo**      | **Ore** | **Costo** |
 | -------------- | :-----: | :-------: |
-| Responsabile   |    7    |    210    |
-| Amministratore |    9    |    180    |
+| Responsabile   |    2    |    60     |
+| Amministratore |    4    |     80    |
 | Analista       |    -    |     -     |
-| Progettista    |    25   |    625    |
-| Programmatore  |    32   |   480     |
-| Verificatore   |    17   |    255    |
-| **Totale**     |  **90** |  **1750** |
+| Progettista    |    9    |    225    |
+| Programmatore  |    10   |   180     |
+| Verificatore   |    7    |    145    |
+| **Totale**     |  **34** |  **650**  |
 
 Quadro dei costi da affrontare:
 
@@ -631,7 +703,7 @@ Quadro dei costi da affrontare:
 import plotly.graph_objects as go
 
 labels = ['Responsabile','Amministratore', 'Progettista' , 'Programmatore', 'Verificatore']
-text = ['7h', '9h', '25h', '32h', '17h']
+text = ['2h', '4h', '9h', '10h', '7h']
 values = [210, 180, 625, 480, 255]
 
 fig = go.Figure(data=[go.Pie(labels=labels, values=values, text=text)])
@@ -739,19 +811,19 @@ Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----:  | :--------: |
 | Auletta Andrea    |    -     |    -    |   3    |      5      |      -       |   2(-1)  |    10(-1)  |
 | Brunello Mattia   |    1(-1) |    -    |   3    |      5      |      -       |    5     |    14(-1)  |
-| Cecchetto Nicola  |    1     |    4    |   -    |      5      |      -       |    -     |     10      |
+| Cecchetto Nicola  |    1     |    4    |   -    |      5      |      -       |    -     |     10     |
 | Rucaj Enrik       |    1     |    -    |   -    |      4(-1)  |      -       |    4     |     9(-1)  |
 | Stan Antonio      |    -     |    3    |   -    |      3      |      -       |    3     |     9      |
 | Vitagliano Davide |    -     |    -    |   2    |      3      |      -       |   3(-1)  |     8(-1)  |
 | Zanellato Augusto |    2     |   4(-1) |   -    |      3      |      -       |    6     |    15(-1)  |
-| **Totale**        | **5(-1)**|**11(-1)**| **8**  | **28(-1)**  |    **-**     |**23(-2)**| **75(-5)** |
+| **Totale**        | **5(-1)**|**11(-1)**| **8**  | **28(-1)** |    **-**     |**23(-2)**| **75(-5)** |
 
 Di seguito vengono riportate le variazioni dei costi:
 
 | **Ruolo**      | **Ore**   | **Costo**     |
 | -------------- | :-------: | :-----------: |
 | Responsabile   |  5(-1)    |  150(-30)     |
-| Amministratore |  11(-1)    |  220(-20)     |
+| Amministratore |  11(-1)    |  220(-20)    |
 | Analista       |    8      |    200        |
 | Progettista    | 28(-1)    |  700(-25)     |
 | Programmatore  |    -      |     -         |
@@ -799,12 +871,10 @@ Di seguito vengono riportate le variazioni dei costi:
 | Verificatore   |   21(+1)|  315(+15) |
 | **Totale**     | **127** | **2460**  |
 
-### Motivazioni delle variazioni
+### Considerazioni
 
 Sono state richieste poche ore in più rispetto a quanto preventivato a causa della nostra inesperienza nel pianificare correttamente i periodi.
 Posticipiamo comunque la revisione RTB e quindi l'inizio della PB a causa del ritardo causato dai rischi spiegati nel paragrafo §2.3.1.
-
-### Considerazioni
 
 #### Bilancio finale
 
@@ -818,34 +888,42 @@ Il bilancio è negativo rispetto a quanto preventivato per questo periodo, abbia
 
 Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
-| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
-| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Rucaj Enrik       |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver**  | **Totale** |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :------: | :--------: |
+| Auletta Andrea    |    3     |    -    |   -    |      6(+1)  |      -       |    3     |    12(+1)  |
+| Brunello Mattia   |    -     |    2    |   -    |      -      |      -       |    5     |     7      |
+| Cecchetto Nicola  |    1     |    -    |   -    |      6(+2)  |      -       |    5     |    12(+2)  |
+| Rucaj Enrik       |    -     |    -    |   2    |      7      |      -       |    -     |     9      |
+| Stan Antonio      |    4(+1) |    -    |   3    |      6(+1)  |      -       |    3     |    16(+2)  |
+| Vitagliano Davide |    5     |    -    |   -    |      6(+1)  |      -       |    4(+1) |    15(+2)  |
+| Zanellato Augusto |    -     |    -    |   -    |      7      |      -       |    -     |     7      |
+| **Totale**        |**13(+1)**|  **2**  | **5**  |  **38(+5)** |    **-**     |**20(+1)**| **78(+7)** |
 
 Di seguito vengono riportate le variazioni dei costi:
 
-| **Ruolo**      | **Ore** | **Costo** |
-| -------------- | :-----: | :-------: |
-| Responsabile   |    -    |     -     |
-| Amministratore |    -    |     -     |
-| Analista       |    -    |     -     |
-| Progettista    |    -    |     -     |
-| Programmatore  |    -    |     -     |
-| Verificatore   |    -    |     -     |
-| **Totale**     |  **-**  |   **-**   |
+| **Ruolo**      | **Ore**  | **Costo** |
+| -------------- | :------: | :-------: |
+| Responsabile   |   13(+1) |  390(+30) |
+| Amministratore |    2     |    40     |
+| Analista       |    5     |    125    |
+| Progettista    | 38(+5)   | 950(+125) |
+| Programmatore  |    -     |     -     |
+| Verificatore   | 20(+1)   |  300(+15) |
+| **Totale**     |  **78**  |  **1805** |
 
 ### Motivazioni delle variazioni
 
+La progettazione dell'architettura è risultata più complessa rispetto alle nostre aspettative considerando che le due applicazioni hanno avuto meno parti in comune rispetto a quanto preventivato.
+
 ### Considerazioni
 
+Prendiamo in considerazione l'idea di spostare di una settimana in avanti tutti i successivi periodi in modo da portare la revisione della PB al 28 Aprile
+
 #### Bilancio finale
+
+| **Ore** | **Costo**  |
+| :-----: | :--------: |
+| **+7**  |**+170,00** |
 
 ## Codifica dei Requisiti Obbligatori
 
@@ -853,34 +931,76 @@ Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
-| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Rucaj Enrik       |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
+| Auletta Andrea    |    3     |    -    |   -    |      -      |      5(-1)   |  4(+1)  |     12     |
+| Brunello Mattia   |    -     |    2    |   -    |      -      |      7       |    -    |     9      |
+| Cecchetto Nicola  |    2     |    -    |   -    |      -      |      -       |  4(-1)  |     7      |
+| Rucaj Enrik       |    -     |    -    |   -    |      -      |      6(+1)   |    4    |     9      |
+| Stan Antonio      |    3     |    -    |   -    |      -      |      7       |    2    |     12     |
+| Vitagliano Davide |    2     |    -    |   -    |      -      |      5       |    4    |     11     |
+| Zanellato Augusto |    -     |    -    |   -    |      -      |      5       |    -    |     5      |
+| **Totale**        |  **10**  |  **2**  | **-**  |    **-**    |    **35**    |  **18** |   **65**   |
 
 Di seguito vengono riportate le variazioni dei costi:
 
 | **Ruolo**      | **Ore** | **Costo** |
 | -------------- | :-----: | :-------: |
-| Responsabile   |    -    |     -     |
-| Amministratore |    -    |     -     |
+| Responsabile   |   10    |    300    |
+| Amministratore |    2    |     40    |
 | Analista       |    -    |     -     |
 | Progettista    |    -    |     -     |
-| Programmatore  |    -    |     -     |
-| Verificatore   |    -    |     -     |
-| **Totale**     |  **-**  |   **-**   |
+| Programmatore  |   35    |    525    |
+| Verificatore   |   18    |    270    |
+| **Totale**     |  **65** | **1135**  |
+
+### Considerazioni
+
+Non c'è stato alcun ritardo significativo quindi prevediamo di essere pronti per la PB il 28 Arile
+
+#### Bilancio finale
+
+| **Ore** | **Costo**  |
+| :-----: | :--------: |
+| **0**   |   **0**    |
+
+## Test, Collaudo e Validazione dei requisiti obbligatori
+
+Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
+
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver**     | **Totale** |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :---------: | :--------: |
+| Auletta Andrea    |    2     |    -    |   -    |      3      |      3       |  5(+2)      |     13(+2) |
+| Brunello Mattia   |    -     |    1    |   -    |      4      |      4(+1)   |    -        |     9(+1)  |
+| Cecchetto Nicola  |    1     |    -    |   -    |      3(+1)  |      4       |    1        |     9(+1)  |
+| Rucaj Enrik       |    -     |    2(-1)|   -    |      3(+1)  |      4       |    3        |     12     |
+| Stan Antonio      |    1     |    -    |   -    |      2      |      -       |    2        |        5   |
+| Vitagliano Davide |    -     |    1    |   -    |      3      |      4(+2)   |   3(+2)     |     11(+4) |
+| Zanellato Augusto |    1     |    -    |   -    |      -      |      4       |    -        |      5     |
+| **Totale**        |  **5**   |**4(-1)**| **-**  | **18(+2)**  |   **23(+3)** |  **14(+4)** | **64(+8)** |
+
+Di seguito vengono riportate le variazioni dei costi:
+
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- | :-----: | :-------: |
+| Responsabile   |    5    |    150    |
+| Amministratore |    4(-1)|    80(-20)|
+| Analista       |    -    |     -     |
+| Progettista    |   18(+2)|   450(+50)|
+| Programmatore  |   23(+3)|  335(+45) |
+| Verificatore   |  14(+4) |  210(+60) |
+| **Totale**     |  **64** |  **1225** |
 
 ### Motivazioni delle variazioni
+
+Ci sono state delle difficoltà al livello di separazione del lavoro: la maggior parte del gruppo si è concentrata sullo sviluppo delle applicazioni tralasciando i documenti.
 
 ### Considerazioni
 
 #### Bilancio finale
 
-## Progettazione di dettaglio e Codifica dei Requisiti Opzionali
+| **Ore** | **Costo**  |
+| :-----: | :--------: |
+| **+8**  |**+135,00** |
+<!-- ## Progettazione di dettaglio e Codifica dei Requisiti Opzionali
 
 Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
@@ -944,7 +1064,7 @@ Di seguito vengono riportate le variazioni dei costi:
 
 ### Considerazioni
 
-#### Bilancio finale
+#### Bilancio finale -->
 
 # RTB - Consuntivo e Preventivo a finire
 
@@ -995,3 +1115,54 @@ Di seguito viene riportato il prospetto del costo del progetto:
 | **Costo sostenuto** | **Costo mancante** |
 |:-------------------:|:------------------:|
 |      **7290**       |      **6215**      |
+
+# PB - Consuntivo e preventivo a finire
+
+## Consuntivo di periodo
+
+Vengono riportare le ore di lavoro rendicontate dai componenti del gruppo:
+
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver**  | **Totale** |
+| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :------: | :--------: |
+| Auletta Andrea    |    8     |    -    |   -    |      9      |      8       |   12     |    37      |
+| Brunello Mattia   |    -     |    5    |   -    |      4      |      11      |    5     |    25      |
+| Cecchetto Nicola  |    4     |    -    |   -    |      9      |      4       |   10     |    27      |
+| Rucaj Enrik       |    -     |    2    |   2    |      10     |      10      |    7     |    31      |
+| Stan Antonio      |    8     |    -    |   3    |      8      |      7       |    7     |    33      |
+| Vitagliano Davide |    7     |    1    |   -    |      9      |      9       |   11     |    37      |
+| Zanellato Augusto |    1     |    -    |   -    |      7      |      9       |    -     |    17      |
+| **Totale**        |**28**    |  **8**  | **5**  |  **56**     |    **58**    |**52**    | **207**    |
+
+
+Di seguito vengono riportati i costi sostenuti:
+
+| **Ruolo**      | **Ore** | **Costo** |
+| -------------- |:-------:|:---------:|
+| Responsabile   |   24    |    720    |
+| Amministratore |   48    |    960    |
+| Analista       |   82    |   2050    |
+| Progettista    |   62    |   1550    |
+| Programmatore  |   50    |    750    |
+| Verificatore   |   84    |   1260    |
+| **Totale**     | **350** | **7290**  |
+
+## Preventivo a finire
+
+Viene riportato il prospetto delle ore di lavoro dei componenti del gruppo:
+
+| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
+| ----------------- |:--------:|:-------:|:------:|:-----------:|:------------:|:-------:|:----------:|
+|Auletta Andrea     |    0     |    5    |   0    |     2       |      7       |   0     |     14     |
+|Brunello Mattia    |    2     |    1    |   0    |     6       |      6       |    1    |     16     |
+|Cecchetto Nicola   |    1     |    0    |   0    |     3       |      8       |   7     |     19     |
+|Rucaj Enrik        |    1     |    3    |   1    |     0       |      5       |   4     |     13     |
+|Stan Antonio       |    0     |    0    |   2    |     6       |      5       |    2    |     15     |
+| Vitagliano Davide |    2     |    0    |   0    |     6       |      6       |   0     |     14     |
+| Zanellato Augusto |    0     |    1    |   0    |     3       |      6       |    8    |     18     |
+| **Totale**        |  **6**   | **10**  | **3**  |   **26**    |   **43**     | **22**  |  **110**   |
+
+Di seguito viene riportato il prospetto del costo del progetto:
+
+| **Costo sostenuto** | **Costo mancante** |
+|:-------------------:|:------------------:|
+|      **4175**       |      **2040**      |
