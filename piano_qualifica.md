@@ -59,7 +59,11 @@ versioni:
   v1.1.1:
     autore: Enrik Rucaj
     data: 13/04/2023
-    cambiamenti: Inseriti i test di unità per il frontend
+    cambiamenti: Inseriti i test di unità per il frontend di SmartLogViewer
+  v1.1.2:
+    autore: Davide Vitagliano
+    data: 16/04/2023
+    cambiamenti: Inseriti i test di unità per il parser ed il backend di SmartLogViewer
 ...
 
 # Introduzione
@@ -340,6 +344,8 @@ I test di accettazione sono necessari per la verifica dei requisiti richiesti da
 ## Test di unità Smart Log Viewer
 <!-- nomenclatura: 
           - TU_VF = test unità viewer per il frontend 
+          - TU_VB = test unità viewer per il backend
+          - TU_P = test unità del parser
           - NI = non implementato
           - I = implementato -->
 
@@ -360,6 +366,17 @@ I test di accettazione sono necessari per la verifica dei requisiti richiesti da
 | TU_VF13 | Si verifica che la UI per il FirmwareFilter venga creata e che deselezioni tutti i firmware presenti correttamente | I |
 | TU_VF14 | Si verifica che la UI per il SubunitFilter venga creata e che selezioni tutti i subunit presenti correttamente | I |
 | TU_VF15 | Si verifica che la UI per il SubunitFilter venga creata e che deselezioni tutti i subunit presenti correttamente | I |
+| TU_VF16 | Si verifica che la UI per il DateTimeFilter venga creata e che visualizzi l'estremo temporale inferiore correttamente | I |
+| TU_VF17 | Si verifica che la UI per il DateTimeFilter venga creata e che visualizzi l'estremo temporale superiore correttamente | I |
+| TU_VF18 | Si verifica che le logEntries da filtrare vengano registrate in lista correttamente | I |
+| TU_VF19 | Si verifica che filteredEntries del LogFilteringService restituisca correttamente le logEntries filtrate | I |
+| TU_VF20 | Si verifica che setLogFile impostati correttamente il file di log selezionato | I |
+| TU_VF21 | Si verifica che removeFilters rimuovi correttamente i filtri precedentemente selezionati | I |
+| TU_VF22 | Si verifica che resetAll resetti correttamente tutti i filtri | I |
+| TU_VF23 | Si verifica che filtersUi permetta di visualizzare correttamente la UI della tipologia di filtro usata | I |
+| TU_VB1  | Si verifica che il file venga caricato correttamente | I |
+| TU_VB2  | Si verifica che il file vuoto caricato restituisca correttamente un errore | I |
+| TU_VB3  | Si verifica che il file non valido caricato restituisca correttamente un errore | I |
 
 ## Test di sistema Smart Log Statistics
 
@@ -409,6 +426,14 @@ I test di accettazione sono necessari per la verifica dei requisiti richiesti da
 ## Test di unit
 To do entro PB 
 -->
+
+## Test di unità Smart Log Parser
+
+|    **Codice**       |                  **Descrizione**            |       **Stato**     |
+| -----------------   | :-----------------------------------------: | :-----------------: |
+| TU_P1  | Si verifica che parse_log di LogFile analizzi correttamente i dati presenti nel file di log | I |
+| TU_P2  | Si verifica che parse_from_scv_row di LogEntry interpreti correttamente le entry (righe) del file di log | I |
+
 # Resoconto attività di verifica
 
 ## verifica dei processo
