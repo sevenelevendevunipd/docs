@@ -345,14 +345,21 @@ I test di accettazione sono necessari per la verifica dei requisiti richiesti da
 
 |    **Codice**       |                  **Descrizione**            |       **Stato**     |
 | -----------------   | :-----------------------------------------: | :-----------------: |
-| TU_VF1 | Si verifica che filterableCodes venga inizializzata correttamente con eventi del log unici | I |
-| TU_VF2 | Si verifica che selectedCodes venga inizializzata con tutti i filterableCodes selezionati correttamente | I |
-| TU_VF3 | Si verifica che tutti i filterableCodes vengano reimpostati correttamente | I |
-| TU_VF4 | Si verifica che tutti i filterableCodes vengano selezionati correttamente nel caso nessuno lo fosse | I |
-| TU_VF5 | Si verifica che tutti i filterableCodes vengano deselezionati correttamente nel caso tutti fossero selezionati | I |
-| TU_VF6 | Si verifica che tutti i filterableCodes vengano deselezionati correttamente nel caso qualcuno fosse selezionato e gli altri deselezionati | I |
-| TU_VF7 | Si verifica che selectedCodes funzioni correttamente nel caso degli eventi vengano selezionati manualmente | I |
-| TU_VF8 | Si verifica che setSelection filtri correttamente (aggiorna la tabella e i grafici) | I |
+| TU_VF1  | Si verifica che filterableCodes venga inizializzata correttamente con eventi del log unici | I |
+| TU_VF2  | Si verifica che selectedCodes venga inizializzata con tutti i filterableCodes selezionati correttamente | I |
+| TU_VF3  | Si verifica che tutti i filterableCodes vengano reimpostati correttamente | I |
+| TU_VF4  | Si verifica che tutti i filterableCodes vengano selezionati correttamente nel caso nessuno lo fosse | I |
+| TU_VF5  | Si verifica che tutti i filterableCodes vengano deselezionati correttamente nel caso tutti fossero selezionati | I |
+| TU_VF6  | Si verifica che tutti i filterableCodes vengano deselezionati correttamente nel caso qualcuno fosse selezionato e gli altri deselezionati | I |
+| TU_VF7  | Si verifica che selectedCodes funzioni correttamente nel caso degli eventi vengano selezionati manualmente | I |
+| TU_VF8  | Si verifica che setSelection filtri correttamente (aggiorna la tabella e i grafici) | I |
+| TU_VF9  | Si verifica che la UI per il CodeFilter venga creata e che selezioni tutti i codici presenti correttamente | I |
+| TU_VF10 | Si verifica che la UI per il CodeFilter venga creata e che deselezioni tutti i codici presenti correttamente | I |
+| TU_VF11 | Si verifica che la UI per il CodeFilter venga creata e che visualizzi tutti i codici presenti correttamente | I |
+| TU_VF12 | Si verifica che la UI per il FirmwareFilter venga creata e che selezioni tutti i firmware presenti correttamente | I |
+| TU_VF13 | Si verifica che la UI per il FirmwareFilter venga creata e che deselezioni tutti i firmware presenti correttamente | I |
+| TU_VF14 | Si verifica che la UI per il SubunitFilter venga creata e che selezioni tutti i subunit presenti correttamente | I |
+| TU_VF15 | Si verifica che la UI per il SubunitFilter venga creata e che deselezioni tutti i subunit presenti correttamente | I |
 
 ## Test di sistema Smart Log Statistics
 
