@@ -433,6 +433,33 @@ Actor <-LogViewer: done
 deactivate LogViewer
 ```
 
+## Diagrammi di Sequenza - SmartLogStatistics
+
+### Upload di un log
+
+```{ .plantuml caption="Diagramma S1"}
+@startuml
+actor User
+User -> LogUpload: LogUpload
+activate LogUpload
+LogUpload -> LogFileManagementSystem: LogUploadFile
+alt successful case
+  activate LogFileManagementSystem
+  LogFileManagementSystem -> SLBackend: ApiCall
+  activate SLBackend
+  LogFileManagementSystem <-- SLBackend: Return LogList
+  deactivate SLBackend
+  LogUpload <-- LogFileManagementSystem: Return LogList
+  deactivate LogFileManagementSystem
+  User <-- LogUpload: Done
+  deactivate LogUpload
+else some kind of failure
+  LogUpload <-- LogFileManagementSystem: Return Error
+  User <-- LogUpload: Return Error
+end
+@enduml
+```
+
 ## Diagrammi di attività
 
 ### SmartLogViewer
