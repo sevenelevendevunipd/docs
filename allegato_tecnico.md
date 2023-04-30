@@ -526,4 +526,34 @@ repeat while(Seleziona nuovo log?) is (Sì)
 stop
 ```
 
+### SmartLogStatistics
+
+```{ .plantuml caption="Diagramma S5"}
+start
+:Carica log;
+repeat
+split
+  :Schermata visualizzazione Log caricati;
+  split
+    :Carica un altro log;
+  split again
+    :Elimina un log caricato;
+  end split
+split again
+  :Schermata tabella occurrences;
+  split
+    :Ordina per colonna;
+  split again
+    :Filtra;
+  end split
+split again
+  :Schermata grafico Time/occurrences;
+split again
+  :Schermata grafico Firmware/occurrences;
+end split
+repeat while(Altre operazioni?) is (Sì)
+-> No;
+stop
+```
+
 ## Design pattern
