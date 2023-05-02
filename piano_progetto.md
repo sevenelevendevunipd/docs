@@ -1133,7 +1133,6 @@ Vengono riportare le ore di lavoro rendicontate dai componenti del gruppo:
 | Zanellato Augusto |    1     |    -    |   -    |      7      |      9       |    -     |    17      |
 | **Totale**        |**28**    |  **8**  | **5**  |  **56**     |    **58**    |**52**    | **207**    |
 
-
 Di seguito vengono riportati i costi sostenuti:
 
 | **Ruolo**      | **Ore** | **Costo** |
