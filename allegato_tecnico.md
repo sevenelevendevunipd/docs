@@ -443,7 +443,9 @@ actor User
 User -> LogUpload: LogUpload
 activate LogUpload
 LogUpload -> LogFileManagementSystem: LogUploadFile
-alt successful case
+
+alt LogNotUploaded
+
   activate LogFileManagementSystem
   LogFileManagementSystem -> SLBackend: ApiCall
   activate SLBackend
@@ -452,10 +454,134 @@ alt successful case
   LogUpload <-- LogFileManagementSystem: Return LogList
   deactivate LogFileManagementSystem
   User <-- LogUpload: Done
-  deactivate LogUpload
-else some kind of failure
+
+else Log Already Uploaded
+
   LogUpload <-- LogFileManagementSystem: Return Error
   User <-- LogUpload: Return Error
+  deactivate LogUpload
+
+end
+
+@enduml
+```
+
+### Visualizzazione Prospetto
+
+```{ .plantuml caption="Diagramma S2"}
+@startuml
+actor User
+  box "FrontEnd"
+  participant LogListView
+  participant LogFileManagementSystem
+  end box
+  
+  box "BackEnd"
+  participant LogDatabase
+  participant ElasticDB
+  end box
+  
+User -> LogListView: Visualizza Prospetto
+activate LogListView
+
+LogListView -> LogFileManagementSystem :LogOverviewData
+activate LogFileManagementSystem
+LogFileManagementSystem -> LogDatabase: LogListStore
+ 
+  
+  activate LogDatabase
+  LogDatabase -> ElasticDB: ApiCall
+  activate ElasticDB
+   alt File di Log Caricati
+  LogDatabase <-- ElasticDB: Return Data
+  
+  LogFileManagementSystem <-- LogDatabase: Intervallo Temporale
+  LogFileManagementSystem <-- LogDatabase: Numero di Log
+  LogFileManagementSystem <-- LogDatabase: Media Numero Eventi
+  LogFileManagementSystem <-- LogDatabase: Massimo Numero Eventi
+  LogFileManagementSystem <-- LogDatabase: Deviazione Standard Numero Eventi
+  LogFileManagementSystem <-- LogDatabase: Lista Occorrenze Eventi
+    else DB vuoto
+    LogDatabase <-- ElasticDB: Return EmptyData
+     deactivate ElasticDB
+    LogFileManagementSystem<-- LogDatabase:return 
+  deactivate LogDatabase
+  end
+  LogListView <-- LogFileManagementSystem: return
+  deactivate LogFileManagementSystem
+  User <-- LogListView:Done
+  deactivate LogListView
+@enduml
+```
+
+### Filtri
+
+```{ .plantuml caption="Diagramma S3"}
+@startuml
+actor User
+
+User-->View:Filtro
+
+
+
+alt 3.1 AggiuntaFiltro
+
+alt 3.1.1 Filtra per Unit/Subunit
+
+else 3.1.2 Filtra per Intervallo Temporale
+
+View-->LogListView:Filter
+LogListView-->FilterStateStore:Filter
+alt 3.1.2.1 Intervallo GIusto
+
+LogListView<--FilterStateStore:Done
+
+View<--LogListView:Done
+
+else 3.1.2.2 Intervallo Sbagliato
+
+LogListView<--FilterStateStore !! : error
+
+View<--LogListView !! : Intervalli sbagliati
+
+end
+
+
+
+else 3.1.3 Per versione Firmware
+
+LogListView-->FilterStateStore:Filter
+
+LogListView<--FilterStateStore:Done
+View<--LogListView:Done
+
+end
+
+else 3.2 Ordinamento per Colonna
+
+alt 3.2.1 Ordinamento per CodiceEvento
+
+View-->LogListView:Filter
+
+else 3.2.2 Ordinamento per Numero Occorrenze
+
+LogListView-->FilterStateStore:Filter
+
+LogListView<--FilterStateStore:Done
+
+View<--LogListView:Done
+
+else 3.2.3 Ordinamento per Firmware
+
+LogListView-->FilterStateStore:Filter
+
+LogListView<--FilterStateStore:Done
+
+View<--LogListView:Done
+
+
+
+end
 end
 @enduml
 ```
