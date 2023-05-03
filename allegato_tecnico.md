@@ -514,7 +514,7 @@ LogFileManagementSystem -> LogDatabase: LogListStore
 @enduml
 ```
 
-### Filtri
+### Filtri e Ordinamento Lista Occorrenza Eventi
 
 ```{ .plantuml caption="Diagramma S3"}
 @startuml
@@ -583,6 +583,160 @@ View<--LogListView:Done
 
 end
 end
+@enduml
+```
+
+### Retrieve dei dati dal backend per il grafico Firmware/Occorrenze
+
+```{ .plantuml caption="Diagramma S5"}
+@startuml
+actor User
+box "FrontEnd"
+participant FirmwareChartView
+participant FirmwareChartDataStore
+end box
+
+box "BackEnd"
+participant FirmwareChartParams
+end box
+
+User-->FirmwareChartView:Request
+alt 4.1 File di Log caricati
+FirmwareChartView-->FirmwareChartDataStore:Request
+activate FirmwareChartDataStore
+FirmwareChartDataStore-->FirmwareChartParams:Request
+activate FirmwareChartParams
+FirmwareChartDataStore<--FirmwareChartParams:return params
+deactivate FirmwareChartParams
+FirmwareChartView<--FirmwareChartDataStore  :return data 
+deactivate FirmwareChartDataStore
+User<--FirmwareChartView:done
+
+else 4.2 File non caricati
+FirmwareChartView-->FirmwareChartDataStore:Request
+activate FirmwareChartDataStore
+FirmwareChartDataStore-->FirmwareChartParams:Request
+activate FirmwareChartParams
+FirmwareChartDataStore<--FirmwareChartParams !! :return emptyparams
+deactivate FirmwareChartParams
+FirmwareChartView<--FirmwareChartDataStore  !!:return emptydata 
+deactivate FirmwareChartDataStore
+User<--FirmwareChartView:done
+
+
+
+end
+@enduml
+```
+
+### Retrieve dei dati dal backend per il grafico Tempo/Occorrenze
+
+```{ .plantuml caption="Diagramma S6"}
+@startuml
+actor User
+box "FrontEnd"
+participant TimeChartView
+participant TimeChartDataStore
+end box
+
+box "BackEnd"
+participant TimeChartParams
+end box
+
+User-->TimeChartView:Request
+alt 4.1 File di Log caricati
+TimeChartView-->TimeChartDataStore:Request
+activate TimeChartDataStore
+TimeChartDataStore-->TimeChartParams:Request
+activate TimeChartParams
+TimeChartDataStore<--TimeChartParams:return params
+deactivate TimeChartParams
+TimeChartView<--TimeChartDataStore  :return data 
+deactivate TimeChartDataStore
+User<--TimeChartView:done
+
+else 4.2 File non caricati
+TimeChartView-->TimeChartDataStore:Request
+activate TimeChartDataStore
+TimeChartDataStore-->TimeChartParams:Request
+activate TimeChartParams
+TimeChartDataStore<--TimeChartParams !! :return emptyparams
+deactivate TimeChartParams
+TimeChartView<--TimeChartDataStore  !!:return emptydata 
+deactivate TimeChartDataStore
+User<--TimeChartView:done
+
+
+
+end
+@enduml
+```
+
+### Filtri Grafico Firmware/Occorrenze
+
+```{ .plantuml caption="Diagramma S4"}
+@startuml
+actor User
+box "FrontEnd"
+participant FirmwareChartView
+participant FilterStateStore
+participant ChartFilterStore
+participant FirmwareChartDataStore
+end box
+
+
+
+User-->FirmwareChartView:Filter
+activate FirmwareChartView
+FirmwareChartView-->FilterStateStore:filter
+activate FilterStateStore
+FirmwareChartView-->ChartFilterStore:filter
+activate ChartFilterStore
+FilterStateStore-->FirmwareChartDataStore:filter
+activate FirmwareChartDataStore
+deactivate FilterStateStore
+ChartFilterStore-->FirmwareChartDataStore:filter
+deactivate ChartFilterStore
+FirmwareChartDataStore-> FirmwareChartDataStore:Update
+FirmwareChartView<--FirmwareChartDataStore:data
+deactivate FirmwareChartDataStore
+User<--FirmwareChartView:Done
+deactivate FirmwareChartView
+
+@enduml
+```
+
+### Filtri Grafico Tempo/Occorrenze
+
+```{ .plantuml caption="Diagramma S5"}
+@startuml
+actor User
+box "FrontEnd"
+participant TimeChartView
+participant FilterStateStore
+participant ChartFilterStore
+participant TimeChartDataStore
+end box
+
+
+
+User-->TimeChartView:Filter
+activate TimeChartView
+TimeChartView-->FilterStateStore:filter
+activate FilterStateStore
+TimeChartView-->ChartFilterStore:filter
+activate ChartFilterStore
+FilterStateStore-->TimeChartDataStore:filter
+activate TimeChartDataStore
+deactivate FilterStateStore
+ChartFilterStore-->TimeChartDataStore:filter
+deactivate ChartFilterStore
+TimeChartDataStore-> TimeChartDataStore:Update
+TimeChartView<--TimeChartDataStore:data
+deactivate TimeChartDataStore
+User<--TimeChartView:Done
+deactivate TimeChartView
+
 @enduml
 ```
 
