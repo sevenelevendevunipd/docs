@@ -4,6 +4,7 @@ date: "15/11/2022"
 responsabile: "Nicola Checchetto"
 redattori: ["Davide Vitagliano", "Augusto Zanellato"]
 verificatori: ["Enrik Rucaj"]
+docusage: "Esterno"
 toc: true
 versioni:
   0.0.1:
@@ -26,6 +27,10 @@ versioni:
     autore: Davide Vitagliano
     data: 24/4/2023
     cambiamenti: Diagarmma delle Classi di Viewer
+  0.2.0:
+    autore: Enrik Rucaj
+    data: 26/4/2023
+    cambiamenti: Diagrammi delle classi, di attività e sequenza di Statistics. Verifica generale del documento
 ...
 
 # Introduzione
@@ -349,7 +354,6 @@ node80  *-[#595959,plain]-  node34
 node80  *-[#595959,plain]-  node77
 node80  *-[#595959,plain]-  node28
 node73  *-[#595959,plain]-  node80
-node71  -[#595959,plain]->  node21
 node71  *-[#595959,plain]-  node46
 node71  *-[#595959,plain]-  node64
 @enduml
@@ -499,6 +503,7 @@ repeat while(Seleziona nuovo log?) is (Sì)
 -> No;
 stop
 ```
+
 ## Diagrammi di SmartLogStatistics
 
 ### Diagramma delle classi - SLStatistics
@@ -780,7 +785,7 @@ node36  *-[#595959,plain]-  node28
 @enduml
 ```
 
-### Diagrammi di Sequenza - SmartLogStatistics
+### Diagrammi di Sequenza - SLStatistics
 
 #### Upload di un log
 
