@@ -85,11 +85,14 @@ scopo, Mobx permette di segnare delle classi (o attributi di esse) come ”obser
 View come ”observer”. Quest’ultimi vengono automaticamente ri-renderizzati al cambiamento di un qualsiasi attributo
 observable.
 
-## Diagrammi delle classi - SmartLogViewer
+## Diagrammi SmartLogViewer
 
-```{ .plantuml caption="Class Diagram"}
+### Diagramma delle classi - SLViewer
+
+```{ .plantuml caption="Class Diagram SLViewer"}
 @startuml
 skinparam linetype polyline
+left to right direction
 class node34 as "components/LogUploader.tsx" {
   Card:
   FileUpload:
@@ -352,9 +355,9 @@ node71  *-[#595959,plain]-  node64
 @enduml
 ```
 
-## Diagrammi di sequenza - SmartLogViewer
+### Diagrammi di sequenza - SLViewer
 
-### Caricamento file di log
+#### Caricamento file di log
 
 ```{ .plantuml caption="Diagramma V1"}
 @startuml
@@ -374,7 +377,7 @@ deactivate ViewerFrontend
 @enduml
 ```
 
-### Applicazione filtro alla tabella
+#### Applicazione filtro alla tabella
 
 ```{ .plantuml caption="Diagramma V2"}
 @startuml
@@ -396,7 +399,7 @@ deactivate LogViewer
 @enduml
 ```
 
-### Visualizzazione del grafico
+#### Visualizzazione del grafico
 
 ```{ .plantuml caption="Diagramma V3"}
 @startuml
@@ -416,7 +419,7 @@ deactivate LogViewer
 @enduml
 ```
 
-### Visualizzazione della tabella
+#### Visualizzazione della tabella
 
 ```{ .plantuml caption="Diagramma V4"}
 actor Actor
@@ -433,9 +436,7 @@ Actor <-LogViewer: done
 deactivate LogViewer
 ```
 
-## Diagrammi di attività
-
-### SmartLogViewer
+### Diagrammi di attività - SLViewer
 
 ```{ .plantuml caption="Diagramma V5"}
 title SmartLogViewer
@@ -497,6 +498,286 @@ repeat while(Altre operazioni sul log?) is (Sì)
 repeat while(Seleziona nuovo log?) is (Sì)
 -> No;
 stop
+```
+## Diagrammi smartlogstatistics
+
+### Diagramma delle classi - SLStatistics
+
+```{ .plantuml caption="Class Diagram SLStatistics"}
+@startuml
+left to right direction
+skinparam linetype polyline
+class node16 as "components/BlockUIObserver.tsx" {
+  BlockUI:
+  BlockUIProps:
+  ProgressSpinner:
+  PropsWithChildren:
+  observer:
+}
+class node4 as "components/CalendarHOC.tsx" {
+  Calendar:
+  CalendarProps:
+}
+class node74 as "components/ErrorDialog.tsx" {
+  Button:
+  Dialog:
+  observer:
+}
+class node79 as "components/InfoRow.tsx" {
+  Skeleton:
+  observer:
+}
+class node57 as "components/RangePicker.tsx" {
+  CalendarHOC:
+  Card:
+  max:
+  min:
+  observer:
+  useId:
+}
+class node8 as "components/StackedBarChart.tsx" {
+  CSSProperties:
+  EChartsReact:
+  useThemeName:
+}
+class node58 as "components/ThemeSwitcher.tsx" {
+  InputSwitch:
+  ThemeProvider:
+  ThemeSwitcher:
+  createContext:
+  echarts:
+  echartsDarkTheme:
+  echartsLightTheme:
+  useContext:
+  useEffect:
+  useState:
+  useThemeName:
+}
+class node61 as "src/App.tsx" {
+  Logo:
+  MainView:
+  RootStoreProvider:
+  ThemeProvider:
+  ThemeSwitcher:
+  primeflex.css:
+  primeicons.css:
+  primereact.css:
+  theme.scss:
+}
+class node24 as "src/index.tsx" {
+  App:
+  OpenAPI:
+  React:
+  ReactDOM:
+  configure:
+}
+class node72 as "stores/ChartFilterStore.ts" {
+  ChartFilterStore:
+  ChartsService:
+  action:
+  makeObservable:
+  observable:
+  runInAction:
+}
+class node15 as "stores/FilterStateStore.ts" {
+  FilterStateStore:
+  MAX_DATE:
+  MIN_DATE:
+  action:
+  makeObservable:
+  observable:
+}
+class node70 as "stores/FirmwareChartDataStore.ts" {
+  ChartsService:
+  FirmwareChartDataStore:
+  action:
+  makeObservable:
+  observable:
+  runInAction:
+}
+class node65 as "stores/LogFrequencyStore.ts" {
+  LogAggregationAnalysisService:
+  LogFrequencyStore:
+  LogFrequency_baae32a_LogFrequencyEntry:
+  MAX_DATE:
+  MIN_DATE:
+  SelectItemOptionsType:
+  TreeCheckboxSelectionKeys:
+  TreeNode:
+  action:
+  allUnitSubunits:
+  computed:
+  hashUnitSubUnit:
+  makeObservable:
+  observable:
+  reaction:
+  runInAction:
+}
+class node78 as "stores/LogListStore.ts" {
+  ApiError:
+  LogFileManagementService:
+  LogListStore:
+  LogListStoreState:
+  MAX_DATE:
+  MIN_DATE:
+  StoredLogList_c682361_StoredLogFile:
+  action:
+  computed:
+  makeObservable:
+  observable:
+  runInAction:
+}
+interface node43 as "stores/RootStore.tsx" {
+  ChartFilterStore:
+  FilterStateStore:
+  FirmwareChartDataStore:
+  IChartFilterStore:
+  IFilterStateStore:
+  IFirmwareChartDataStore:
+  ILogFrequencyStore:
+  ILogListStore:
+  ISelectedLogsInfoStore:
+  ITimeChartDataStore:
+  LogFrequencyStore:
+  LogListStore:
+  PropsWithChildren:
+  SelectedLogsInfoStore:
+  TimeChartDataStore:
+  createContext:
+  reaction:
+  restrictRange:
+  useContext:
+  useRootStore:
+}
+class node60 as "stores/SelectedLogsInfoStore.ts" {
+  LogAggregationAnalysisService:
+  LogOverview_91de17a:
+  SelectedLogsInfoStore:
+  SelectedLogsInfoStoreState:
+  action:
+  computed:
+  makeObservable:
+  observable:
+  runInAction:
+}
+class node66 as "stores/TimeChartDataStore.ts" {
+  ChartsService:
+  TimeChartDataStore:
+  TreeCheckboxSelectionKeys:
+  action:
+  computed:
+  makeObservable:
+  observable:
+  runInAction:
+}
+class node76 as "tabs/FirmwareChartView.tsx" {
+  Card:
+  IChartFilterStore:
+  IFirmwareChartDataStore:
+  ListBox:
+  StackedBarChart:
+  observer:
+  runInAction:
+  useRootStore:
+}
+class node25 as "tabs/LogFrequencyView.tsx" {
+  Card:
+  Column:
+  ColumnFilterElementTemplateOptions:
+  DataTable:
+  ILogFrequencyStore:
+  MultiSelect:
+  RangePicker:
+  ScrollPanel:
+  Tree:
+  TreeCheckboxSelectionKeys:
+  allUnitSubunits:
+  observer:
+  useRootStore:
+}
+class node84 as "tabs/LogListView.tsx" {
+  BlockUIObserver:
+  Button:
+  Card:
+  Column:
+  ConfirmDialog:
+  DataTable:
+  ErrorDialog:
+  FileUpload:
+  IFilterStateStore:
+  ILogListStore:
+  ISelectedLogsInfoStore:
+  InfoRow:
+  LogListStoreState:
+  Message:
+  RangePicker:
+  SelectedLogsInfoStoreState:
+  Skeleton:
+  StoredLogList_c682361_StoredLogFile:
+  confirmDialog:
+  observer:
+  useRootStore:
+}
+class node28 as "tabs/TimeChartView.tsx" {
+  Card:
+  IChartFilterStore:
+  ITimeChartDataStore:
+  ListBox:
+  ScrollPanel:
+  StackedBarChart:
+  Tree:
+  TreeCheckboxSelectionKeys:
+  groupBy:
+  hashUnitSubUnit:
+  observer:
+  runInAction:
+  splitUnitSubUnitHash:
+  useRootStore:
+}
+class node36 as "views/MainView.tsx" {
+  FirmwareChartView:
+  ILogListStore:
+  ISelectedLogsInfoStore:
+  LogFrequencyView:
+  LogListView:
+  TabPanel:
+  TabView:
+  TimeChartView:
+  observer:
+  useEffect:
+  useRootStore:
+}
+node57  *-[#595959,plain]-  node4
+node61  *-[#595959,plain]-  node58
+node61  *-[#595959,plain]-  node36
+node24  *-[#595959,plain]-  node61
+node43  <|.[#595959,plain].  node72
+node43  <|.[#595959,plain].  node15
+node43  <|.[#595959,plain].  node70
+node43  <|.[#595959,plain].  node65
+node43  <|.[#595959,plain].  node78
+node43  <|.[#595959,plain].  node60
+node43  <|.[#595959,plain].  node66
+node76  *-[#595959,plain]-  node8
+node76  -[#595959,plain]->  node72
+node76  -[#595959,plain]->  node70
+node25  *-[#595959,plain]-  node57
+node25  -[#595959,plain]->  node65
+node84  *-[#595959,plain]-  node16
+node84  *-[#595959,plain]-  node74
+node84  *-[#595959,plain]-  node79
+node84  *-[#595959,plain]-  node57
+node84  -[#595959,plain]->  node15
+node84  -[#595959,plain]->  node78
+node28  *-[#595959,plain]-  node8
+node28  -[#595959,plain]->  node72
+node28  -[#595959,plain]->  node66
+node36  *-[#595959,plain]-  node43
+node36  *-[#595959,plain]-  node76
+node36  *-[#595959,plain]-  node25
+node36  *-[#595959,plain]-  node84
+node36  *-[#595959,plain]-  node28
+@enduml
 ```
 
 ## Design pattern
