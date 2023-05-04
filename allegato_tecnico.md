@@ -85,11 +85,14 @@ scopo, Mobx permette di segnare delle classi (o attributi di esse) come ”obser
 View come ”observer”. Quest’ultimi vengono automaticamente ri-renderizzati al cambiamento di un qualsiasi attributo
 observable.
 
-## Diagrammi delle classi - SmartLogViewer
+## Diagrammi SmartLogViewer
 
-```{ .plantuml caption="Class Diagram"}
+### Diagramma delle classi - SLViewer
+
+```{ .plantuml caption="Class Diagram SLViewer"}
 @startuml
 skinparam linetype polyline
+left to right orientation
 class node34 as "components/LogUploader.tsx" {
   Card:
   FileUpload:
@@ -352,9 +355,9 @@ node71  *-[#595959,plain]-  node64
 @enduml
 ```
 
-## Diagrammi di sequenza - SmartLogViewer
+### Diagrammi di sequenza - SLViewer
 
-### Caricamento file di log
+#### Caricamento file di log
 
 ```{ .plantuml caption="Diagramma V1"}
 @startuml
@@ -374,7 +377,7 @@ deactivate ViewerFrontend
 @enduml
 ```
 
-### Applicazione filtro alla tabella
+#### Applicazione filtro alla tabella
 
 ```{ .plantuml caption="Diagramma V2"}
 @startuml
@@ -396,7 +399,7 @@ deactivate LogViewer
 @enduml
 ```
 
-### Visualizzazione del grafico
+#### Visualizzazione del grafico
 
 ```{ .plantuml caption="Diagramma V3"}
 @startuml
@@ -416,7 +419,7 @@ deactivate LogViewer
 @enduml
 ```
 
-### Visualizzazione della tabella
+#### Visualizzazione della tabella
 
 ```{ .plantuml caption="Diagramma V4"}
 actor Actor
@@ -433,316 +436,7 @@ Actor <-LogViewer: done
 deactivate LogViewer
 ```
 
-## Diagrammi di Sequenza - SmartLogStatistics
-
-### Upload di un log
-
-```{ .plantuml caption="Diagramma S1"}
-@startuml
-actor User
-User -> LogUpload: LogUpload
-activate LogUpload
-LogUpload -> LogFileManagementSystem: LogUploadFile
-
-alt LogNotUploaded
-
-  activate LogFileManagementSystem
-  LogFileManagementSystem -> SLBackend: ApiCall
-  activate SLBackend
-  LogFileManagementSystem <-- SLBackend: Return LogList
-  deactivate SLBackend
-  LogUpload <-- LogFileManagementSystem: Return LogList
-  deactivate LogFileManagementSystem
-  User <-- LogUpload: Done
-
-else Log Already Uploaded
-
-  LogUpload <-- LogFileManagementSystem: Return Error
-  User <-- LogUpload: Return Error
-  deactivate LogUpload
-
-end
-
-@enduml
-```
-
-### Visualizzazione Prospetto
-
-```{ .plantuml caption="Diagramma S2"}
-@startuml
-actor User
-  box "FrontEnd"
-  participant LogListView
-  participant LogFileManagementSystem
-  end box
-  
-  box "BackEnd"
-  participant LogDatabase
-  participant ElasticDB
-  end box
-  
-User -> LogListView: Visualizza Prospetto
-activate LogListView
-
-LogListView -> LogFileManagementSystem :LogOverviewData
-activate LogFileManagementSystem
-LogFileManagementSystem -> LogDatabase: LogListStore
- 
-  
-  activate LogDatabase
-  LogDatabase -> ElasticDB: ApiCall
-  activate ElasticDB
-   alt File di Log Caricati
-  LogDatabase <-- ElasticDB: Return Data
-  
-  LogFileManagementSystem <-- LogDatabase: Intervallo Temporale
-  LogFileManagementSystem <-- LogDatabase: Numero di Log
-  LogFileManagementSystem <-- LogDatabase: Media Numero Eventi
-  LogFileManagementSystem <-- LogDatabase: Massimo Numero Eventi
-  LogFileManagementSystem <-- LogDatabase: Deviazione Standard Numero Eventi
-  LogFileManagementSystem <-- LogDatabase: Lista Occorrenze Eventi
-    else DB vuoto
-    LogDatabase <-- ElasticDB: Return EmptyData
-     deactivate ElasticDB
-    LogFileManagementSystem<-- LogDatabase:return 
-  deactivate LogDatabase
-  end
-  LogListView <-- LogFileManagementSystem: return
-  deactivate LogFileManagementSystem
-  User <-- LogListView:Done
-  deactivate LogListView
-@enduml
-```
-
-### Filtri e Ordinamento Lista Occorrenza Eventi
-
-```{ .plantuml caption="Diagramma S3"}
-@startuml
-actor User
-
-User-->View:Filtro
-
-
-
-alt 3.1 AggiuntaFiltro
-
-alt 3.1.1 Filtra per Unit/Subunit
-
-else 3.1.2 Filtra per Intervallo Temporale
-
-View-->LogListView:Filter
-LogListView-->FilterStateStore:Filter
-alt 3.1.2.1 Intervallo GIusto
-
-LogListView<--FilterStateStore:Done
-
-View<--LogListView:Done
-
-else 3.1.2.2 Intervallo Sbagliato
-
-LogListView<--FilterStateStore !! : error
-
-View<--LogListView !! : Intervalli sbagliati
-
-end
-
-
-
-else 3.1.3 Per versione Firmware
-
-LogListView-->FilterStateStore:Filter
-
-LogListView<--FilterStateStore:Done
-View<--LogListView:Done
-
-end
-
-else 3.2 Ordinamento per Colonna
-
-alt 3.2.1 Ordinamento per CodiceEvento
-
-View-->LogListView:Filter
-
-else 3.2.2 Ordinamento per Numero Occorrenze
-
-LogListView-->FilterStateStore:Filter
-
-LogListView<--FilterStateStore:Done
-
-View<--LogListView:Done
-
-else 3.2.3 Ordinamento per Firmware
-
-LogListView-->FilterStateStore:Filter
-
-LogListView<--FilterStateStore:Done
-
-View<--LogListView:Done
-
-
-
-end
-end
-@enduml
-```
-
-### Retrieve dei dati dal backend per il grafico Firmware/Occorrenze
-
-```{ .plantuml caption="Diagramma S5"}
-@startuml
-actor User
-box "FrontEnd"
-participant FirmwareChartView
-participant FirmwareChartDataStore
-end box
-
-box "BackEnd"
-participant FirmwareChartParams
-end box
-
-User-->FirmwareChartView:Request
-alt 4.1 File di Log caricati
-FirmwareChartView-->FirmwareChartDataStore:Request
-activate FirmwareChartDataStore
-FirmwareChartDataStore-->FirmwareChartParams:Request
-activate FirmwareChartParams
-FirmwareChartDataStore<--FirmwareChartParams:return params
-deactivate FirmwareChartParams
-FirmwareChartView<--FirmwareChartDataStore  :return data 
-deactivate FirmwareChartDataStore
-User<--FirmwareChartView:done
-
-else 4.2 File non caricati
-FirmwareChartView-->FirmwareChartDataStore:Request
-activate FirmwareChartDataStore
-FirmwareChartDataStore-->FirmwareChartParams:Request
-activate FirmwareChartParams
-FirmwareChartDataStore<--FirmwareChartParams !! :return emptyparams
-deactivate FirmwareChartParams
-FirmwareChartView<--FirmwareChartDataStore  !!:return emptydata 
-deactivate FirmwareChartDataStore
-User<--FirmwareChartView:done
-
-
-
-end
-@enduml
-```
-
-### Retrieve dei dati dal backend per il grafico Tempo/Occorrenze
-
-```{ .plantuml caption="Diagramma S6"}
-@startuml
-actor User
-box "FrontEnd"
-participant TimeChartView
-participant TimeChartDataStore
-end box
-
-box "BackEnd"
-participant TimeChartParams
-end box
-
-User-->TimeChartView:Request
-alt 4.1 File di Log caricati
-TimeChartView-->TimeChartDataStore:Request
-activate TimeChartDataStore
-TimeChartDataStore-->TimeChartParams:Request
-activate TimeChartParams
-TimeChartDataStore<--TimeChartParams:return params
-deactivate TimeChartParams
-TimeChartView<--TimeChartDataStore  :return data 
-deactivate TimeChartDataStore
-User<--TimeChartView:done
-
-else 4.2 File non caricati
-TimeChartView-->TimeChartDataStore:Request
-activate TimeChartDataStore
-TimeChartDataStore-->TimeChartParams:Request
-activate TimeChartParams
-TimeChartDataStore<--TimeChartParams !! :return emptyparams
-deactivate TimeChartParams
-TimeChartView<--TimeChartDataStore  !!:return emptydata 
-deactivate TimeChartDataStore
-User<--TimeChartView:done
-
-
-
-end
-@enduml
-```
-
-### Filtri Grafico Firmware/Occorrenze
-
-```{ .plantuml caption="Diagramma S4"}
-@startuml
-actor User
-box "FrontEnd"
-participant FirmwareChartView
-participant FilterStateStore
-participant ChartFilterStore
-participant FirmwareChartDataStore
-end box
-
-
-
-User-->FirmwareChartView:Filter
-activate FirmwareChartView
-FirmwareChartView-->FilterStateStore:filter
-activate FilterStateStore
-FirmwareChartView-->ChartFilterStore:filter
-activate ChartFilterStore
-FilterStateStore-->FirmwareChartDataStore:filter
-activate FirmwareChartDataStore
-deactivate FilterStateStore
-ChartFilterStore-->FirmwareChartDataStore:filter
-deactivate ChartFilterStore
-FirmwareChartDataStore-> FirmwareChartDataStore:Update
-FirmwareChartView<--FirmwareChartDataStore:data
-deactivate FirmwareChartDataStore
-User<--FirmwareChartView:Done
-deactivate FirmwareChartView
-
-@enduml
-```
-
-### Filtri Grafico Tempo/Occorrenze
-
-```{ .plantuml caption="Diagramma S5"}
-@startuml
-actor User
-box "FrontEnd"
-participant TimeChartView
-participant FilterStateStore
-participant ChartFilterStore
-participant TimeChartDataStore
-end box
-
-
-
-User-->TimeChartView:Filter
-activate TimeChartView
-TimeChartView-->FilterStateStore:filter
-activate FilterStateStore
-TimeChartView-->ChartFilterStore:filter
-activate ChartFilterStore
-FilterStateStore-->TimeChartDataStore:filter
-activate TimeChartDataStore
-deactivate FilterStateStore
-ChartFilterStore-->TimeChartDataStore:filter
-deactivate ChartFilterStore
-TimeChartDataStore-> TimeChartDataStore:Update
-TimeChartView<--TimeChartDataStore:data
-deactivate TimeChartDataStore
-User<--TimeChartView:Done
-deactivate TimeChartView
-
-@enduml
-```
-
-## Diagrammi di attività
-
-### SmartLogViewer
+### Diagramma di attività - SLViewer
 
 ```{ .plantuml caption="Diagramma V5"}
 title SmartLogViewer
@@ -805,31 +499,278 @@ repeat while(Seleziona nuovo log?) is (Sì)
 -> No;
 stop
 ```
+## Diagrammi di SmartLogStatistics
 
-### SmartLogStatistics
+### Diagramma delle classi - SLStatistics
+
+
+
+### Diagrammi di Sequenza - SmartLogStatistics
+
+#### Upload di un log
+
+```{ .plantuml caption="Diagramma S1"}
+@startuml
+actor User
+User -> LogUpload: LogUpload
+activate LogUpload
+LogUpload -> LogFileManagementSystem: LogUploadFile
+alt LogNotUploaded
+activate LogFileManagementSystem
+LogFileManagementSystem -> SLBackend: ApiCall
+activate SLBackend
+LogFileManagementSystem <-- SLBackend: Return LogList
+deactivate SLBackend
+LogUpload <-- LogFileManagementSystem: Return LogList
+deactivate LogFileManagementSystem
+User <-- LogUpload: Done
+else Log Already Uploaded
+LogUpload <-- LogFileManagementSystem: Return Error
+User <-- LogUpload: Return Error
+deactivate LogUpload
+end
+@enduml
+```
+
+#### Visualizzazione Prospetto
+
+```{ .plantuml caption="Diagramma S2"}
+@startuml
+actor User
+box "FrontEnd"
+participant LogListView
+participant LogFileManagementSystem
+end box
+box "BackEnd"
+participant LogDatabase
+participant ElasticDB
+end box
+User -> LogListView: Visualizza Prospetto
+activate LogListView
+LogListView -> LogFileManagementSystem :LogOverviewData
+activate LogFileManagementSystem
+LogFileManagementSystem -> LogDatabase: LogListStore
+activate LogDatabase
+LogDatabase -> ElasticDB: ApiCall
+activate ElasticDB
+alt File di Log Caricati
+LogDatabase <-- ElasticDB: Return Data
+LogFileManagementSystem <-- LogDatabase: Intervallo Temporale
+LogFileManagementSystem <-- LogDatabase: Numero di Log
+LogFileManagementSystem <-- LogDatabase: Media Numero Eventi
+LogFileManagementSystem <-- LogDatabase: Massimo Numero Eventi
+LogFileManagementSystem <-- LogDatabase: Deviazione Standard Numero Eventi
+LogFileManagementSystem <-- LogDatabase: Lista Occorrenze Eventi
+else DB vuoto
+LogDatabase <-- ElasticDB: Return EmptyData
+deactivate ElasticDB
+LogFileManagementSystem<-- LogDatabase:return
+deactivate LogDatabase
+end
+LogListView <-- LogFileManagementSystem: return
+deactivate LogFileManagementSystem
+User <-- LogListView:Done
+deactivate LogListView
+@enduml
+```
+
+#### Filtri e Ordinamento Lista Occorrenza Eventi
+
+```{ .plantuml caption="Diagramma S3"}
+@startuml
+actor User
+User-->View:Filtro
+alt 3.1 AggiuntaFiltro
+alt 3.1.1 Filtra per Unit/Subunit
+else 3.1.2 Filtra per Intervallo Temporale
+View-->LogListView:Filter
+LogListView-->FilterStateStore:Filter
+alt 3.1.2.1 Intervallo GIusto
+LogListView<--FilterStateStore:Done
+View<--LogListView:Done
+else 3.1.2.2 Intervallo Sbagliato
+LogListView<--FilterStateStore !! : error
+View<--LogListView !! : Intervalli sbagliati
+end
+else 3.1.3 Per versione Firmware
+LogListView-->FilterStateStore:Filter
+LogListView<--FilterStateStore:Done
+View<--LogListView:Done
+end
+else 3.2 Ordinamento per Colonna
+alt 3.2.1 Ordinamento per CodiceEvento
+View-->LogListView:Filter
+else 3.2.2 Ordinamento per Numero Occorrenze
+LogListView-->FilterStateStore:Filter
+LogListView<--FilterStateStore:Done
+View<--LogListView:Done
+else 3.2.3 Ordinamento per Firmware
+LogListView-->FilterStateStore:Filter
+LogListView<--FilterStateStore:Done
+View<--LogListView:Done
+end
+end
+@enduml
+```
+
+#### Retrieve dei dati dal backend per il grafico Firmware/Occorrenze
+
+```{ .plantuml caption="Diagramma S5"}
+@startuml
+actor User
+box "FrontEnd"
+participant FirmwareChartView
+participant FirmwareChartDataStore
+end box
+box "BackEnd"
+participant FirmwareChartParams
+end box
+User-->FirmwareChartView:Request
+alt 4.1 File di Log caricati
+FirmwareChartView-->FirmwareChartDataStore:Request
+activate FirmwareChartDataStore
+FirmwareChartDataStore-->FirmwareChartParams:Request
+activate FirmwareChartParams
+FirmwareChartDataStore<--FirmwareChartParams:return params
+deactivate FirmwareChartParams
+FirmwareChartView<--FirmwareChartDataStore  :return data
+deactivate FirmwareChartDataStore
+User<--FirmwareChartView:done
+else 4.2 File non caricati
+FirmwareChartView-->FirmwareChartDataStore:Request
+activate FirmwareChartDataStore
+FirmwareChartDataStore-->FirmwareChartParams:Request
+activate FirmwareChartParams
+FirmwareChartDataStore<--FirmwareChartParams !! :return emptyparams
+deactivate FirmwareChartParams
+FirmwareChartView<--FirmwareChartDataStore  !!:return emptydata
+deactivate FirmwareChartDataStore
+User<--FirmwareChartView:done
+end
+@enduml
+```
+
+#### Retrieve dei dati dal backend per il grafico Tempo/Occorrenze
+
+```{ .plantuml caption="Diagramma S6"}
+@startuml
+actor User
+box "FrontEnd"
+participant TimeChartView
+participant TimeChartDataStore
+end box
+box "BackEnd"
+participant TimeChartParams
+end box
+User-->TimeChartView:Request
+alt 4.1 File di Log caricati
+TimeChartView-->TimeChartDataStore:Request
+activate TimeChartDataStore
+TimeChartDataStore-->TimeChartParams:Request
+activate TimeChartParams
+TimeChartDataStore<--TimeChartParams:return params
+deactivate TimeChartParams
+TimeChartView<--TimeChartDataStore  :return data
+deactivate TimeChartDataStore
+User<--TimeChartView:done
+else 4.2 File non caricati
+TimeChartView-->TimeChartDataStore:Request
+activate TimeChartDataStore
+TimeChartDataStore-->TimeChartParams:Request
+activate TimeChartParams
+TimeChartDataStore<--TimeChartParams !! :return emptyparams
+deactivate TimeChartParams
+TimeChartView<--TimeChartDataStore  !!:return emptydata
+deactivate TimeChartDataStore
+User<--TimeChartView:done
+end
+@enduml
+```
+
+#### Filtri Grafico Firmware/Occorrenze
+
+```{ .plantuml caption="Diagramma S4"}
+@startuml
+actor User
+box "FrontEnd"
+participant FirmwareChartView
+participant FilterStateStore
+participant ChartFilterStore
+participant FirmwareChartDataStore
+end box
+User-->FirmwareChartView:Filter
+activate FirmwareChartView
+FirmwareChartView-->FilterStateStore:filter
+activate FilterStateStore
+FirmwareChartView-->ChartFilterStore:filter
+activate ChartFilterStore
+FilterStateStore-->FirmwareChartDataStore:filter
+activate FirmwareChartDataStore
+deactivate FilterStateStore
+ChartFilterStore-->FirmwareChartDataStore:filter
+deactivate ChartFilterStore
+FirmwareChartDataStore-> FirmwareChartDataStore:Update
+FirmwareChartView<--FirmwareChartDataStore:data
+deactivate FirmwareChartDataStore
+User<--FirmwareChartView:Done
+deactivate FirmwareChartView
+@enduml
+```
+
+#### Filtri Grafico Tempo/Occorrenze
+
+```{ .plantuml caption="Diagramma S5"}
+@startuml
+actor User
+box "FrontEnd"
+participant TimeChartView
+participant FilterStateStore
+participant ChartFilterStore
+participant TimeChartDataStore
+end box
+User-->TimeChartView:Filter
+activate TimeChartView
+TimeChartView-->FilterStateStore:filter
+activate FilterStateStore
+TimeChartView-->ChartFilterStore:filter
+activate ChartFilterStore
+FilterStateStore-->TimeChartDataStore:filter
+activate TimeChartDataStore
+deactivate FilterStateStore
+ChartFilterStore-->TimeChartDataStore:filter
+deactivate ChartFilterStore
+TimeChartDataStore-> TimeChartDataStore:Update
+TimeChartView<--TimeChartDataStore:data
+deactivate TimeChartDataStore
+User<--TimeChartView:Done
+deactivate TimeChartView
+@enduml
+```
+
+### Diagramma di attività - SLStatistics
 
 ```{ .plantuml caption="Diagramma S5"}
 start
 :Carica log;
 repeat
 split
-  :Schermata visualizzazione Log caricati;
-  split
-    :Carica un altro log;
-  split again
-    :Elimina un log caricato;
-  end split
+:Schermata visualizzazione Log caricati;
+split
+:Carica un altro log;
 split again
-  :Schermata tabella occurrences;
-  split
-    :Ordina per colonna;
-  split again
-    :Filtra;
-  end split
+:Elimina un log caricato;
+end split
 split again
-  :Schermata grafico Time/occurrences;
+:Schermata tabella occurrences;
+split
+:Ordina per colonna;
 split again
-  :Schermata grafico Firmware/occurrences;
+:Filtra;
+end split
+split again
+:Schermata grafico Time/occurrences;
+split again
+:Schermata grafico Firmware/occurrences;
 end split
 repeat while(Altre operazioni?) is (Sì)
 -> No;
