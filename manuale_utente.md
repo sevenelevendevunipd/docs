@@ -249,7 +249,7 @@ A lato della schermata una volta caricati dei log verranno mostrati questi due p
 
 ## Entries Frequency
 
-![Entries Frequency](/imgManuale/EntriesFrequencySLS.JPG)
+![Entries Frequency](/imgManuale/EntriesFrequencySLS.jpg)
 
 Questa schermata presenta la lista di occorrenza eventi. Questa tabella mostra il numero di eventi dati firmware e codice dell'evento.
 È possibile ordinare questa tabella secondo le tre colonne.
