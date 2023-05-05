@@ -28,6 +28,14 @@ versioni:
     autore: Nicola Cecchetto
     data: 21/04/2023
     cambiamenti: verifica manuale SmartLogViewer
+  v0.1.1:
+    autore: Enrik Rucaj
+    data: 28/04/2023
+    cambiamenti: manuale SmartLogStatistics
+  v0.2.0:
+    autore: Nicola Cecchetto
+    data: 02/05/2023
+    cambiamenti: verifica manuale SmartLogStatistics
 ...
 
 # Introduzione
@@ -206,3 +214,69 @@ Per cambiare pagina si può:
   * Singola: ci si sposta di una pagina;
   * Doppie: ci si sposta alla prima (verso sinistra) o all'ultima pagina (verso destra).
 * Cliccare sul numero attribuito alla pagina.
+
+# SmartLog Statistics
+
+## Prima apertura
+
+L'applicazione SmartLog Statistics aperta per la prima volta (quindi senza log caricati) mostrerà questa schermata:
+
+![Prima schermata](/imgManuale/primaPaginaSLS.JPG)
+
+Come è possibile notare le schede "Entrues Frequency", "Time/Occurrences Chart" e "Firmware/Occurences Chart" non sono accessibili perchè non sono stati caricati dei log.
+
+## Uploaded Log List
+
+La schermata presenta due pulsanti nella parte alta dello schermo:
+
+* Refresh, che esegue un aggiornamento dei log presenti nel sistema;
+* Upload a Log, che come suggerisce il nome permette di caricare un file di log tramite esplora risorse.
+
+![Upload di un file](/imgManuale/uploadLogSLS.jpg)
+
+Se si prova a caricare un log già nel sistema oppure un file non valido apparirà un messaggio di errore.
+
+![errore in upload](/imgManuale/erroreUploadSLS.jpg)
+
+I file di log caricati verranno visualizzati nella tabella presente in questa pagina. Questa tabella mostra nome del file, timestamp del primo ed ultimo evento in ordine cronologico e numero totale di eventi. Inoltre nella tabella è presente per ciascun file il pulsante per eliminarlo dal sistema.
+
+![pannelli laterali](/imgManuale/UploadLateraleSLS.jpg)
+
+A lato della schermata una volta caricati dei log verranno mostrati questi due pannelli:
+
+* Filter by Datetime, che permette di selezionare quali eventi visualizzare nell'applicazione attraverso un intervallo temporale.
+* Log Overview, che è un prospetto contenente il numero totale di eventi, il numero medio per file, la deviazione standard, e il numero massimo di eventi trovati in un log (con nome del log suddetto).
+
+## Entries Frequency
+
+![Entries Frequency](/imgManuale/EntriesFrequencySLS.JPG)
+
+Questa schermata presenta la lista di occorrenza eventi. Questa tabella mostra il numero di eventi dati firmware e codice dell'evento.
+È possibile ordinare questa tabella secondo le tre colonne.
+
+![selezione firmware](/imgManuale/firmware.jpg)
+
+È possibile filtrare i firmware da cui prendere gli eventi utilizzando l'apposito menù a tendina.
+
+A lato si trovano due pannelli:
+
+* Filter by Unit/Subunit, dove è possibile filtrare gli eventi selezionando unit e subunit;
+* Filter by Datetime, che applica un intervallo temporale ai dati presenti in questa pagina.
+
+## Time/Occurences Chart
+
+![Time/Occurences](/imgManuale/timeOccurences.jpg)
+
+Questa schermata mostra il grafico tempo/occorrenze.
+
+Anche qui è possibile filtrare per unit e subunit tramite apposito pannello.
+
+![Time/Occurences con 7 eventi](/imgManuale/timeOccurences2.jpg)
+
+Il grafico all'inizio mostra il numero totale di eventi. È possibile selezionare massimo 7 eventi da poter visualizzare in dettaglio.
+
+## Firmware/Occurences Chart
+
+![Firmware/Occurences](/imgManuale/FirmwareOccurences.jpg)
+
+Questa ultima pagina mostra il grafico che mette in relazione firmware e numero di eventi. L'interfaccia e le interazioni sono le stesse del grafico tempo/occorrenze descritto nella sezione precedente.
