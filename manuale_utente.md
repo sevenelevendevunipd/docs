@@ -221,7 +221,7 @@ Per cambiare pagina si può:
 
 L'applicazione SmartLog Statistics aperta per la prima volta (quindi senza log caricati) mostrerà questa schermata:
 
-![Prima schermata](/imgManuale/primaPaginaSLS.JPG)
+![Prima schermata](/imgManuale/primaPaginaSLS.jpg)
 
 Come è possibile notare le schede "Entrues Frequency", "Time/Occurrences Chart" e "Firmware/Occurences Chart" non sono accessibili perchè non sono stati caricati dei log.
 
