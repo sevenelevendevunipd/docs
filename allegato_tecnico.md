@@ -1058,3 +1058,117 @@ stop
 ```
 
 ## Design pattern
+
+# Requisiti soddisfatti
+
+## Tabella dei requisiti soddisfatti
+
+## Funzionali (SmartLogViewer)
+
+| **Requisito** | **Descrizione** | **Classificazione** | **Stato** |
+|---------------| ----------------| ------------------- | --------- |
+| VRF1 | L'utente deve poter caricare nell'applicazione un singolo file di {g:log} presente localmente | Obbligatorio |  |
+| VRF1.1 | Viene visualizzato un messaggio di errore se il file caricato non è compatibile | Obbligatorio |  |
+| VRF2 | Deve essere presente una visualizzazione in forma tabellare | Obbligatorio |  |
+| VRF2.1 | La tabella di VRF2 deve avere una colonna con intestazione "Data/ora" | Obbligatorio | |
+| VRF2.2 | La tabella di VRF2 deve avere una colonna con intestazione "Codice evento" | Obbligatorio | |
+| VRF2.3 | La tabella di VRF2 deve avere una colonna con intestazione "{g:unitsubunit}" | Obbligatorio |  |
+| VRF2.4 | La tabella di VRF2 deve avere una colonna con intestazione "Versione {g:firmware}" | Obbligatorio |  |
+| VRF2.5 | La tabella di VRF2 deve avere una colonna con intestazione "Descrizione" | Obbligatorio | |
+| VRF2.6 | La tabella di VRF2 deve avere una colonna con intestazione "Stato" (1 per ON, 0 per OFF) | Obbligatorio |  |
+| VRF2.7 | L'applicazione colora ogni riga in base al {g:codice_evento} | Obbligatorio |  |
+| VRF3 | Deve essere presente una funzione per ordinamento colonne della tabella simile a spreadsheet | Obbligatorio ||
+| VRF3.1 | Ordinamento per data/ora | Obbligatorio |  |
+| VRF3.2 | Ordinamento per {g:codice_evento} | Obbligatorio |  |
+| VRF3.3 | Ordinamento per {g:unitsubunit} | Obbligatorio | |
+| VRF3.4 | Ordinamento per {g:firmware} | Obbligatorio |  |
+| VRF4 | Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un {g:log}, con la relativa etichettatura (gli eventi devono essere ordinati ma non obbligatoriamente consecutivi l'uno all'altro) | Obbligatorio |  |
+| VRF4.1 | Viene visualizzato un messaggio d'errore se non è presente almeno un  {g:evento} inserito dall'utente per la ricerca | Obbligatorio |  |
+| VRF5 | Deve essere presente un {g:grafico_timeline} per mostrare le attivazioni degli eventi | Obbligatorio |  |
+| VRF5.1 | L'asse x del grafico rappresenta il tempo | Obbligatorio |  |
+| VRF5.2 | L'asse y del grafico contiene l'insieme degli eventi | Obbligatorio | |
+| VRF5.3 | Un rettangolo “pieno” che si sviluppa sull'asse x indica il periodo di tempo in cui l’evento (indicato sull'asse y) è ATTIVO | Obbligatorio | |
+| VRF6 | Si deve poter effettuare lo "zoom" in/out sul grafico| Obbligatorio |  |
+| VRF7 | Si deve poter effettuare lo "span" (scroll orizzontale) sul grafico | Obbligatorio |  |
+| VRF8 | Devono essere presenti funzioni di filtro per modificare la visualizzazione della tabella e del grafico | Obbligatorio |  |
+| VRF8.1 | Filtro per intervallo temporale (select) | Obbligatorio |  |
+| VRF8.1.1 | Viene visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido | Obbligatorio |  |
+| VRF8.2 | Filtro per {g:unitsubunit} | Obbligatorio |  |
+| VRF8.3 | Filtro per versione {g:firmware} | Obbligatorio |  |
+| VRF8.4 | Filtro per {g:codice_evento} | Obbligatorio | |
+| VRO1 | L'utente deve poter visualizzare altri tipi di grafici | Opzionale |  |
+| VRO2 | L'utente deve poter ricercare sequenze più o meno note con relativa etichettatura dato un limite di tempo | Opzionale |  |
+| VRO3 | Implementare la colorazione per livello di nidificazione (16 Unit/16 livelli per SubUnit) | Opzionale |  |
+| VRO4 | L'utente deve poter esportare i file che visualizza i grafici | Opzionale |  |
+| VRO5 | L'utente deve poter eliminare tutti i filtri applicati | Opzionale |  |
+
+## Funzionali (SmartLogStatistics)
+
+| **Requisito** | **Descrizione** | **Classificazione** | **Stato** |
+|---------------| ----------------| ------------------- | --------- |
+| SRF1 | L'utente deve poter selezionare i {g:log} da analizzare per range di data/ora (min, max, all) | Obbligatorio |  |
+| SRF1.1 | Viene visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido | Obbligatorio |  |
+| SRF2 | L'utente visualizza un prospetto con i da analizzare | Obbligatorio |  |
+| SRF2.1 | Nel prospetto compare l'intervallo temporale | Obbligatorio |  |
+| SRF2.2 | Nel prospetto compare il numero di {g:log} analizzati | Obbligatorio |  |
+| SRF2.3 | Nel prospetto compare la media numero di eventi tra i {g:log} | Obbligatorio |  |
+| SRF2.4 | Nel prospetto compare il massimo numero di eventi tra i {g:log} | Obbligatorio |  |
+| SRF2.5 | Nel prospetto compare la deviazione standard numero di eventi fra i {g:log} | Obbligatorio | |
+| SRF2.6 | Nel prospetto compare la lista degli eventi raggruppati per frequenza di occorrenza (0-1) | Obbligatorio |  |
+| SRF2.6.1 | Nella lista viene visualizzato il {g:codice_evento} | Obbligatorio |  |
+| SRF2.6.2 | Nella lista viene visualizzato il numero di volte che l'evento è passato dallo stato 0 allo stato 1 | Obbligatorio |  |
+| SRF2.6.3 | Nella lista viene visualizzata la versione {g:firmware} | Obbligatorio |  |
+| SRF3 | Ci deve essere la possibilità di ordinare le righe della lista in base ai suoi campi | Obbligatorio | |
+| SRF3.1 | Ordinamento della lista per {g:codice_evento} | Obbligatorio | |
+| SRF3.2 | Ordinamento della lista per numero occorrenze | Obbligatorio |  |
+| SRF3.3 | Ordinamento della lista per {g:firmware} | Obbligatorio | |
+| SRF4 | Ci devono essere delle funzioni di filtraggio | Obbligatorio | |
+| SRF4.1 | Filtro per {g:unitsubunit} | Obbligatorio | |
+| SRF4.2 | Filtro per intervallo temporale | Obbligatorio | |
+| SRF4.2.1 | Viene visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido | Obbligatorio |  |
+| SRF4.3 | Filtro per versione {g:firmware} | Obbligatorio |  |
+| SRF5 | Visualizzazione grafico "tempo/occorrenze" | Obbligatorio |  |
+| SRF5.1 | L'asse x del grafico rappresenta il tempo | Obbligatorio | |
+| SRF5.2 | L'asse y del grafico rappresenta le occorrenze | Obbligatorio | |
+| SRF5.3 | Viene visualizzata una linea per ogni  {g:evento} presente nel {g:log} | Obbligatorio |  |
+| SRF6 | Visualizzazione del grafico "firmware/occorrenze" | Obbligatorio |  |
+| SRF6.1 | L'asse x del grafico visualizza i {g:firmware} | Obbligatorio |  |
+| SRF6.2 | L'asse y del grafico rappresenta le occorrenze | Obbligatorio |  |
+| SRF6.3 | Viene visualizzata una barra per ogni {g:firmware} | Obbligatorio | |
+| SRF7 | Funzionalità di filtro per il grafico "tempo/occorrenze" | Obbligatorio |  |
+| SRF7.1 | Filtro per {g:codice_evento} | Obbligatorio |  |
+| SRF7.2 | Filtro per {g:unitsubunit} | Obbligatorio |  |
+| SRF8 | Funzionalità di filtro per il grafico "firmware/occorrenze" | Obbligatorio | |
+| SRF8.1 | Filtro per {g:codice_evento} | Obbligatorio |  |
+| SRF8.2 | Filtro per {g:firmware} | Obbligatorio |  |
+| SRO1 | L'utente deve poter visualizzare un grafico {g:matrice_correlazione} che mostri l'indice di correlazione tra coppie di eventi | Opzionale |  |
+| SRO2 | L'utente deve poter esportare i file che visualizza i grafici | Opzionale |  |
+| SRO3 | L'utente deve poter eliminare tutti i filtri applicati | Opzionale | |
+
+## Qualità
+
+| **Requisito** | **Descrizione** | **Classificazione** | **Stato** |
+|---------------| ----------------| ------------------- | --------- |
+| VRQ1 | {g:smartlogviewer} deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto* | Obbligatorio |  |
+| VRQ2 | Deve essere fornita una guida per sviluppatori di {g:smartlogviewer} | Obbligatorio |  |
+| SRQ1 | {g:smartlogstatistics} deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto* | Obbligatorio |  |
+| SRQ2 | Deve essere fornita una guida per sviluppatori di {g:smartlogstatistics} | Obbligatorio |  |
+| RQ1 | Deve essere fornita la documentazione minima richiesta anche dal corso di "Ingegneria del Software" | Obbligatorio |  |
+| RQ2 | Viene richiesto l'utilizzo di un {g:repository} pubblico ({g:github}) | Obbligatorio |  |
+
+## Vincolo
+
+| **Requisito** | **Descrizione** | **Classificazione** | **Stato** |
+|---------------| ----------------| ------------------- | --------- |
+| VRV1 | L'interfaccia di visualizzazione di {g:smartlogviewer} deve essere di tipo web | Obbligatorio |  |
+| VRV2 | Richiesto {g:python} per la parte di analisi dei dati | Obbligatorio |  |
+| VRV3 | {g:smartlogviewer} deve esser compatibile con il browser Google Chrome versione 110 | Obbligatorio |  |
+| VRV4 | {g:smartlogviewer} deve esser compatibile con il browser Firefox versione 110 | Obbligatorio |  |
+| VRV5 | {g:smartlogviewer} deve esser compatibile con il browser Microsoft Edge versione 110 | Obbligatorio |  |
+| VRV6 | {g:smartlogviewer} deve esser compatibile con il browser Opera versione 95 | Obbligatorio |  |
+| SRV1 | L'interfaccia di visualizzazione di {g:smartlogstatistics} deve essere di tipo web | Obbligatorio |  |
+| SRV2 | Richiesto {g:python} per la parte di analisi dei dati | Obbligatorio |  |
+| SRV3 | {g:smartlogstatistics} deve esser compatibile con il browser Google Chrome versione 110 | Obbligatorio | |
+| SRV4 | {g:smartlogstatistics} deve esser compatibile con il browser Firefox versione 110 | Obbligatorio | |
+| SRV5 | {g:smartlogstatistics} deve esser compatibile con il browser Microsoft Edge versione 110 | Obbligatorio |  |
+| SRV6 | {g:smartlogstatistics} deve esser compatibile con il browser Opera versione 95 | Obbligatorio |  |
