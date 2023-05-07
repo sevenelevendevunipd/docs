@@ -1,7 +1,7 @@
 ---
 title: "Allegato Tecnico"
 date: "15/11/2022"
-responsabile: "Nicola Checchetto"
+responsabile: "Nicola Cecchetto"
 redattori: ["Davide Vitagliano", "Augusto Zanellato"]
 verificatori: ["Enrik Rucaj"]
 docusage: "Esterno"
@@ -31,6 +31,14 @@ versioni:
     autore: Enrik Rucaj
     data: 26/4/2023
     cambiamenti: Diagrammi delle classi, di attività e sequenza di Statistics. Verifica generale del documento
+  0.2.1
+    autore: Davide Vitagliano
+    data: 5/5/2023
+    cambiamenti: Aggiunta tabella requisiti soddisfatti
+  0.3.0:
+    autore: Enrik Rucaj
+    data: 6/5/2023
+    cambiamenti: Verifica generale del documento
 ...
 
 # Introduzione
@@ -1083,7 +1091,6 @@ stop
 | VRF3.3 | Ordinamento per {g:unitsubunit} | Obbligatorio | Soddisfatto |
 | VRF3.4 | Ordinamento per {g:firmware} | Obbligatorio | Soddisfatto |
 | VRF4 | Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un {g:log}, con la relativa etichettatura (gli eventi devono essere ordinati ma non obbligatoriamente consecutivi l'uno all'altro) | Obbligatorio | Soddisfatto |
-| VRF4.1 | Viene visualizzato un messaggio d'errore se non è presente almeno un  {g:evento} inserito dall'utente per la ricerca | Obbligatorio |  |
 | VRF5 | Deve essere presente un {g:grafico_timeline} per mostrare le attivazioni degli eventi | Obbligatorio | Soddisfatto |
 | VRF5.1 | L'asse x del grafico rappresenta il tempo | Obbligatorio | Soddisfatto |
 | VRF5.2 | L'asse y del grafico contiene l'insieme degli eventi | Obbligatorio | Soddisfatto |
@@ -1106,7 +1113,7 @@ stop
 | **Requisito** | **Descrizione** | **Classificazione** | **Stato** |
 |---------------| ----------------| ------------------- | --------- |
 | SRF1 | L'utente deve poter selezionare i {g:log} da analizzare per range di data/ora (min, max, all) | Obbligatorio | Soddisfatto |
-| SRF2 | L'utente visualizza un prospetto con i {g:log} da analizzare | Obbligatorio | Soddisfatto |
+| SRF2 | L'utente visualizza un prospetto con i dati da analizzare | Obbligatorio | Soddisfatto |
 | SRF2.1 | Nel prospetto compare l'intervallo temporale | Obbligatorio | Soddisfatto |
 | SRF2.2 | Nel prospetto compare il numero di {g:log} analizzati | Obbligatorio | Soddisfatto |
 | SRF2.3 | Nel prospetto compare la media numero di eventi tra i {g:log} | Obbligatorio |  Soddisfatto |
