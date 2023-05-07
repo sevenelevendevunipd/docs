@@ -66,6 +66,14 @@ versioni:
     autore: Mattia Brunello
     data: 28/04/2023
     cambiamenti: aggiunto consuntivo codifica test requisiti obbligatori e consuntivo preventivo a finire di periodo
+  1.1.0:
+    autore: Andrea Auletta
+    data: 03/05/2023
+    cambiamenti: verifica generale del documento
+  2.0.0:
+    autore: Antonio Stan
+    data: 07/05/2023
+    cambiamenti: Approvato per il rilascio
 ...
 
 # Introduzione
@@ -92,23 +100,13 @@ documento *Glossario* assieme alle loro definizioni.
 
 ## Scadenze
 
-Di seguito viene riportata la tabella con le scadenze che il gruppo Seven Eleven si impegna a rispettare:
-
-| **Revisione**                        | **Acronimo** |  **Data**  |
-| ------------------------------------ | :----------: | :--------: |
-| Requirements and Technology Baseline |     RTB      | 28/02/2023 |
-| Product Baseline                     |      PB      | 09/04/2023 |
-| Customer Acceptance                  |      CA      | 30/04/2023 |
-
-## Scadenze aggiornate a RTB conclusa
-
 Di seguito viene riportata la tabella con le scadenze aggiornate che il gruppo Seven Eleven si impegna a rispettare:
 
 | **Revisione**                        | **Acronimo** |  **Data**  |
 | ------------------------------------ | :----------: | :--------: |
 | Requirements and Technology Baseline |     RTB      | 13/03/2023 |
-| Product Baseline                     |      PB      | 21/04/2023 |
-| Customer Acceptance                  |      CA      | 15/05/2023 |
+| Product Baseline                     |      PB      | 12/05/2023 |
+| Customer Acceptance                  |      CA      | Non in programma |
 
 # Analisi dei Rischi
 
@@ -201,7 +199,11 @@ Mentre per i successivi scriveremo passo passo all'insorgere di ogni rischio cer
 
 * Responsabile: dopo aver notato i rallentamenti, è stato scelto che il responsabile deve stimolare e controllare più frequentemente i membri del gruppo.
 
-<!-- ### Product Baseline -->
+### Product Baseline
+
+* RT1 - Inesperienza Tecnologica: la fase di testing ha fatto emergere alcune lacune per quanto riguarda le tecnologie da usare per effettuare i test.
+
+* RR2 - Modifica dei requisiti: entrando nella fase di progettazione e di codifica si è dovuti ricorrere alla modifica/aggiunta di alcuni requisiti. Questo è avvenuto perchè sono emersi dettagli e considerazioni che non avevamo correttamente considerato durante l'analisi.
 
 <!-- ## Valutazione critica dell'efficacia delle soluzioni proposte -->
 
@@ -231,8 +233,9 @@ Tenendo in considerazione le scadenze prefissate per ogni revisione e la durata 
 * Product Baseline (PB) composta da 3 {g:sprint}:
   * Progettazione di dettaglio dei Requisiti Obbligatori
   * Codifica dei Requisiti Obbligatori
+  * Test, Collaudo e Validazione dei Requisiti Obbligatori
 * Customer Acceptance (CA) composta da 2 {g:sprint}:
-  * Progettazione di dettaglio e Codifica dei Requisiti Opzionali <!--Due in uno dato che i requisiti opzionali sono veramente pochi-->
+  * Progettazione di dettaglio e Codifica dei Requisiti Opzionali
   * Test, Collaudo e Validazione finale
 
 *Nota: Le sottosezioni sopra citate indicano i requisiti critici importanti per il corretto sviluppo del progetto. Durante i specifici {g:sprint} possono essere svolti anche requisiti meno importanti presenti nel {g:backlog}.*
@@ -421,7 +424,7 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 **Periodo:**
 
 * INIZIO 01 Marzo 2023 - Fine periodo di "Proof of Concept"
-* FINE 26 Marzo 2023 - Inizio periodo di codifica dei Requisiti Obbligatori
+* FINE 9 Aprile 2023 - Inizio periodo di codifica dei Requisiti Obbligatori
 
 **Ruoli coinvolti:** Responsabile - Amministratore - Analista - Progettista - Verificatore
 
@@ -475,10 +478,8 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 
 **Periodo:**
 
-* INIZIO 27 Marzo 2023 - Fine periodo di progettazione di dettaglio dei Requisiti Obbligatori
-* FINE 07 Aprile 2023 - Inizio periodo di progettazione e codifica di dettaglio dei Requisiti Opzionali
-
-*Nota: Dopo la fine della codifica dei Requisiti Obbligatori c'è un margine di 2 giorni (07 e 08 Aprile) prima della revisione di PB.*
+* INIZIO 10 Aprile 2023 - Fine periodo di progettazione di dettaglio dei Requisiti Obbligatori
+* FINE 30 Aprile 2023 - Inizio periodo di progettazione e codifica di dettaglio dei Requisiti Opzionali
 
 **Ruoli coinvolti:** Responsabile - Amministratore - Programmatore - Verificatore
 
@@ -535,8 +536,8 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 
 **Periodo:**
 
-* INIZIO 14 Aprile 2023 - Fine periodo di progettazione e codifica dei Requisiti Obbligatori
-* FINE 21 Aprile 2023 - Revisione di Product Baseline (PB)
+* INIZIO 1 Maggio 2023 - Fine periodo di progettazione e codifica dei Requisiti Obbligatori
+* FINE 12 Maggio 2023 - Revisione di Product Baseline (PB)
 
 **Ruoli coinvolti:** Responsabile - Amministratore - Progettista - Programmatore - Verificatore
 
@@ -597,8 +598,8 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 
 **Periodo:**
 
-* INIZIO 21 Aprile 2023 - Fine periodo "Product basline"
-* FINE 5 Maggio 2023 - Fine periodo di progettazione e codifica dei Requisiti Opzionali
+* INIZIO 15 Maggio 2023 - Fine periodo "Product baseline"
+* FINE 28 Maggio 2023 - Fine periodo di progettazione e codifica dei Requisiti Opzionali
 
 **Ruoli coinvolti:** Responsabile - Amministratore - Analista - Progettista - Programmatore - Verificatore
 
@@ -653,10 +654,9 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 ## Test, Collaudo e Validazione finale
 
 **Periodo:**
-<!--Abbiamo il problema che si tratta di mezzo {g:sprint} (1 settimana al posto di 2).-->
 
-* INIZIO 5 Maggio 2023 - Fine periodo di progettazione e codifica dei Requisiti Opzionali
-* FINE 12 Maggio 2023 - Revisione di Customer Acceptance (CA)
+* INIZIO 29 Maggio 2023 - Fine periodo di progettazione e codifica dei Requisiti Opzionali
+* FINE 4 Giugno 2023 - Revisione di Customer Acceptance (CA)
 
 **Ruoli coinvolti:** Responsabile - Amministratore - Progettista - Programmatore - Verificatore
 
@@ -917,7 +917,7 @@ La progettazione dell'architettura è risultata più complessa rispetto alle nos
 
 ### Considerazioni
 
-Prendiamo in considerazione l'idea di spostare di una settimana in avanti tutti i successivi periodi in modo da portare la revisione della PB al 28 Aprile
+Prendiamo in considerazione l'idea di spostare di una settimana in avanti tutti i successivi periodi in modo da portare la revisione della PB al 12 Maggio
 
 #### Bilancio finale
 
@@ -954,7 +954,7 @@ Di seguito vengono riportate le variazioni dei costi:
 
 ### Considerazioni
 
-Non c'è stato alcun ritardo significativo quindi prevediamo di essere pronti per la PB il 28 Arile
+Non c'è stato alcun ritardo significativo quindi prevediamo di essere pronti per la PB il 12 Maggio
 
 #### Bilancio finale
 
