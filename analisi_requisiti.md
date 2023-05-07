@@ -102,7 +102,18 @@ versioni:
     autore: Enrik Rucaj
     data: 10/03/2023
     cambiamenti: Correzione degli errori evidenziati dal professor Cardin
-...
+  1.0.2:
+    autore: Andrea Auletta
+    data: 20/04/2023
+    cambiamenti: modifiche su alcuni requisiti
+  1.1.0
+    autore: Augusto Zanellato
+    data: 22/04/2023
+    cambiamenti: revisione modifiche
+  2.0.0
+    autore: Davide Vitagliano
+    data: 5/05/2023
+    cambiamenti: Approvazione per il rilascio
 
 # Introduzione
 
@@ -169,8 +180,6 @@ usecase VUC4 as "VUC4
 Ordinamento per Colonna"
 usecase VUC5 as "VUC5
 Ricerca Eventi Ordinati"
-usecase VUC5.1 as "VUC5.1
-Sequenza di Eventi non Trovata"
 usecase VUC6 as "VUC6
 Visualizzazione Grafico"
 usecase VUC7 as "VUC7
@@ -179,18 +188,14 @@ usecase VUC8 as "VUC8
 Scroll Orizzontale"
 usecase VUC9 as "VUC9
 Selezione Intervallo Temporale"
-usecase VUC9.1 as "VUC9.1
-Intervallo non corretto"
 usecase VUC10 as "VUC10
 Aggiunta Filtro Grafico"
 }
 t--VUC10
-VUC9 <.. VUC9.1 : <<extend>>
 t--VUC9
 t--VUC8
 t--VUC7
 t--VUC6
-VUC5 <.. VUC5.1 : <<extend>>
 t--VUC5
 t--VUC3
 t--VUC4
@@ -459,13 +464,6 @@ r-- VUC4.4
 * Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
 * Postcondizioni: vengono evidenziate le tuple con codice corrispondente ai parametri di ricerca.
 
-### VUC5.1 Sequenza di Eventi non Trovata
-
-* Scenario: almeno uno degli eventi ricercati dall'utente non è presente nel file di {g:log} e quindi l'intera sequenza di eventi non può essere trovata;
-* Attore: {g:tecnico};
-* Precondizioni: è stata visualizzata la tabella con i dati [VUC2];
-* Postcondizioni: viene comunicato all'utente che la sequenza richiesta non è presente nel file di {g:log}.
-
 ### VUC6 - Visualizzazione Grafico
 
 ```{ .plantuml caption="VUC6"}
@@ -531,13 +529,6 @@ i--VUC6.3
 * Precondizioni: è stato visualizzato il grafico [VUC6];
 * Postcondizioni: viene visualizzato il grafico con sull'asse x gli estremi temporali modificati.
 
-#### VUC9.1 - Intervallo non Corretto
-
-* Scenario: l'intervallo temporale fornito dall'utente non è valido (data d'inizio posteriore alla data di fine);
-* Attore: {g:tecnico};
-* Precondizioni: è stata visualizzato il grafico con i dati [VUC6];
-* Postcondizioni: viene visualizzato un messaggio d'errore (intervallo non corretto).
-
 #### VUC10 - Aggiunta Filtro Grafico
 
 ```{ .plantuml caption="VUC10"}
@@ -590,8 +581,6 @@ left to right direction
 package "SmartLogStatistics"{
 usecase SUC1 as "SUC1
 Caricamento Log per Intervallo Temporale"
-usecase SUC1.1 as "SUC1.1
-Intervallo non Corretto"
 usecase SUC2 as "SUC2
 Visualizzazione Prospetto"
 usecase SUC3 as "SUC3
@@ -607,7 +596,6 @@ Filtro Grafico Tempo/Occorrenze"
 usecase SUC8 as "SUC8
 Filtro Grafico Firmware/Occorrenze"
 }
-SUC1 <.. SUC1.1 : <<extend>>
 t--SUC1
 t--SUC2
 t--SUC3
@@ -624,13 +612,6 @@ t--SUC8
 * Attore: {g:analista};
 * Precondizioni: l'applicazione è operativa e funzionante;
 * Postcondizioni: i {g:log} vengono caricati correttamente nell'applicazione {g:smartlogstatistics}.
-
-### SUC1.1 - Intervallo non Corretto
-
-* Scenari: l'intervallo temporale fornito dall'utente non è valido (data d'inizio antecedente alla data di fine);
-* Attore: {g:analista};
-* Precondizioni: l'applicazione è operativa e funzionante;
-* Postcondizioni: viene notificato all'utente che le date fornite non sono valide.
 
 ### SUC2 - Visualizzazione Prospetto
 
@@ -770,15 +751,12 @@ usecase SUC3.1 as "SUC3.1
 Per unit/subunit"
 usecase SUC3.2 as "SUC3.2
 Per Intervallo Temporale"
-usecase SUC3.2.1 as "SUC3.2.1
-Intervallo non Corretto"
 usecase SUC3.3 as "SUC3.3
 Per Versione Firmware"
 }
 y--SUC3.1
 y--SUC3.2
 y--SUC3.3
-SUC3.2 <.. SUC3.2.1 : <<extend>>
 ```
 
 * Scenario: l'utente vuole aggiungere un filtro ai dati presentati nella lista di occorrenza eventi;
@@ -799,13 +777,6 @@ SUC3.2 <.. SUC3.2.1 : <<extend>>
 * Attore: {g:analista};
 * Precondizioni: è stata visualizzata la lista di occorrenza eventi [SUC2.6];
 * Postcondizioni: la lista di occorrenza eventi mostra i dati tenendo conto del nuovo intervallo temporale.
-
-##### SUC3.2.1 - Intervallo Temporale non Corretto
-
-* Scenario: l'intervallo selezionato dall'utente non è valido;
-* Attore: {g:analista};
-* Precondizioni: è stata visualizzata la lista di occorrenze eventi [SUC2.6];
-* Postcondizioni: viene mostrato un messaggio di errore.
 
 ##### SUC3.3 - Per Versione Firmware
 
@@ -864,19 +835,19 @@ r-- SUC4.3
 left to right direction
 :Tecnico: as i
 package "SUC5"{
-usecase VUC5.1 as "VUC5.1
+usecase SUC5.1 as "SUC5.1
 Visualizza tempo sull'asse x"
-usecase VUC5.2 as "VUC5.2
+usecase SUC5.2 as "SUC5.2
 Visualizza numero di occorrenze sull'asse y"
-usecase VUC5.3 as "VUC5.3
-Visualizza una linea per ogni evento"
+usecase SUC5.3 as "SUC5.3
+Visualizza barre per quantità eventi nel tempo"
 }
-i--VUC5.1
-i--VUC5.2
-i--VUC5.3
+i--SUC5.1
+i--SUC5.2
+i--SUC5.3
 ```
 
-* Scenario: l'utente vuole visualizzare un {g:grafico_linee} che mette in relazione il tempo con il numero di occorrenze degli eventi in esame;
+* Scenario: l'utente vuole visualizzare un grafico a barre che mette in relazione il tempo con il numero di occorrenze degli eventi in esame;
 * Attore: {g:analista};
 * Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
 * Postcondizioni: viene mostrato a schermo il grafico che mette in relazione il tempo (asse x) con il numero di occorrenze degli eventi in esame (asse y).
@@ -895,12 +866,12 @@ i--VUC5.3
 * Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
 * Postcondizioni: il grafico mostra sull'asse y il numero di occorrenze degli eventi.
 
-#### SUC5.3 - Visualizza una linea per ogni evento
+#### SUC5.3 - Visualizza barre che rappresentano la quantità di eventi nel tempo
 
-* Scenario: l'utente vuole visualizzare una linea per ogni  {g:evento} presente nel {g:log};
+* Scenario: l'utente vuole visualizzare barre che rappresentano la quantità di eventi nel tempo;
 * Attore: {g:analista};
 * Precondizioni: sono stati caricati dei file di {g:log} [SUC1];
-* Postcondizioni: il grafico mostra una linea per ogni  {g:evento}.
+* Postcondizioni: il grafico mostra barre che rappresentano la quantità di eventi nel tempo;
 
 ### SUC6 - Visualizzazione Grafico Firmware/Occorrenze
 
@@ -1106,7 +1077,6 @@ i--OUC4
 | VRF3.3 | Ordinamento per {g:unitsubunit} | Obbligatorio | Capitolato - VUC4.3 |
 | VRF3.4 | Ordinamento per {g:firmware} | Obbligatorio | Capitolato - VUC4.4 |
 | VRF4 | Deve essere presente una funzione di ricerca di sequenze di eventi note all’interno di un {g:log}, con la relativa etichettatura (gli eventi devono essere ordinati ma non obbligatoriamente consecutivi l'uno all'altro) | Obbligatorio | Capitolato - VUC5 |
-| VRF4.1 | Viene visualizzato un messaggio d'errore se non è presente almeno un  {g:evento} inserito dall'utente per la ricerca | Obbligatorio | VUC5.1 |
 | VRF5 | Deve essere presente un {g:grafico_timeline} per mostrare le attivazioni degli eventi | Obbligatorio | Capitolato - VUC6 |
 | VRF5.1 | L'asse x del grafico rappresenta il tempo | Obbligatorio | Capitolato - VUC6.1 |
 | VRF5.2 | L'asse y del grafico contiene l'insieme degli eventi | Obbligatorio | Capitolato - VUC6.2 |
@@ -1115,7 +1085,6 @@ i--OUC4
 | VRF7 | Si deve poter effettuare lo "span" (scroll orizzontale) sul grafico | Obbligatorio | Capitolato - VUC8 |
 | VRF8 | Devono essere presenti funzioni di filtro per modificare la visualizzazione della tabella e del grafico | Obbligatorio | Capitolato - VUC3 - VUC7 |
 | VRF8.1 | Filtro per intervallo temporale (select) | Obbligatorio | Capitolato - VUC3.1 - VUC9 |
-| VRF8.1.1 | Viene visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido | Obbligatorio | VUC3.1.1 - VUC9.1 |
 | VRF8.2 | Filtro per {g:unitsubunit} | Obbligatorio | Capitolato - VUC3.2 - VUC10.1 |
 | VRF8.3 | Filtro per versione {g:firmware} | Obbligatorio | Capitolato - VUC3.3 - VUC10.2 |
 | VRF8.4 | Filtro per {g:codice_evento} | Obbligatorio | Capitolato - VUC3.4 - VUC10.3 |
@@ -1130,7 +1099,6 @@ i--OUC4
 | **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
 |---------------| ----------------| ------------------- | --------- |
 | SRF1 | L'utente deve poter selezionare i {g:log} da analizzare per range di data/ora (min, max, all) | Obbligatorio | Capitolato - SUC1 |
-| SRF1.1 | Viene visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido | Obbligatorio | SUC1.1 |
 | SRF2 | L'utente visualizza un prospetto con i dati da analizzare | Obbligatorio | Capitolato - SUC2 |
 | SRF2.1 | Nel prospetto compare l'intervallo temporale | Obbligatorio | Capitolato - SUC2.1 |
 | SRF2.2 | Nel prospetto compare il numero di {g:log} analizzati | Obbligatorio | Capitolato - SUC2.2 |
@@ -1148,12 +1116,11 @@ i--OUC4
 | SRF4 | Ci devono essere delle funzioni di filtraggio | Obbligatorio | Capitolato - SUC3 |
 | SRF4.1 | Filtro per {g:unitsubunit} | Obbligatorio | Capitolato - SUC3.1 |
 | SRF4.2 | Filtro per intervallo temporale | Obbligatorio | Capitolato - SUC3.2 |
-| SRF4.2.1 | Viene visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido | Obbligatorio | SUC3.2.1 |
 | SRF4.3 | Filtro per versione {g:firmware} | Obbligatorio | Capitolato - SUC3.3 |
 | SRF5 | Visualizzazione grafico "tempo/occorrenze" | Obbligatorio | Capitolato - SUC5 |
 | SRF5.1 | L'asse x del grafico rappresenta il tempo | Obbligatorio | Capitolato - SUC5.1 |
 | SRF5.2 | L'asse y del grafico rappresenta le occorrenze | Obbligatorio | Capitolato - SUC5.2 |
-| SRF5.3 | Viene visualizzata una linea per ogni  {g:evento} presente nel {g:log} | Obbligatorio | Capitolato - SUC5.3 |
+| SRF5.3 | Viene visualizzata la quantità degli eventi nel tempo tramite barre verticali  | Obbligatorio | Capitolato - SUC5.3 |
 | SRF6 | Visualizzazione del grafico "firmware/occorrenze" | Obbligatorio | Capitolato - SUC6 |
 | SRF6.1 | L'asse x del grafico visualizza i {g:firmware} | Obbligatorio | Capitolato - SUC6.1 |
 | SRF6.2 | L'asse y del grafico rappresenta le occorrenze | Obbligatorio | Capitolato - SUC6.2 |
@@ -1186,13 +1153,13 @@ i--OUC4
 | **Requisito** | **Descrizione** | **Classificazione** | **Fonti** |
 |---------------| ----------------| ------------------- | --------- |
 | VRV1 | L'applicazione {g:smartlogviewer} deve essere di tipo web | Obbligatorio | Capitolato |
-| VRV2 | Richiesto {g:python} per la parte di analisi dei dati | Obbligatorio | Capitolato |
+| VRV2 | Richiesto {g:python} per la parte di analisi dei dati | Opzionale | Capitolato |
 | VRV3 | {g:smartlogviewer} deve esser compatibile con il browser Google Chrome versione 110 | Obbligatorio | Discussione con azienda |
 | VRV4 | {g:smartlogviewer} deve esser compatibile con il browser Firefox versione 110 | Obbligatorio | Discussione con azienda |
 | VRV5 | {g:smartlogviewer} deve esser compatibile con il browser Microsoft Edge versione 110 | Obbligatorio | Discussione con azienda |
 | VRV6 | {g:smartlogviewer} deve esser compatibile con il browser Opera versione 95 | Obbligatorio | Discussione con azienda |
 | SRV1 | L'applicazione {g:smartlogstatistics} deve essere di tipo web | Obbligatorio | Capitolato |
-| SRV2 | Richiesto {g:python} per la parte di analisi dei dati | Obbligatorio | Capitolato |
+| SRV2 | Richiesto {g:python} per la parte di analisi dei dati | Opzionale | Capitolato |
 | SRV3 | {g:smartlogstatistics} deve esser compatibile con il browser Google Chrome versione 110 | Obbligatorio | Discussione con azienda |
 | SRV4 | {g:smartlogstatistics} deve esser compatibile con il browser Firefox versione 110 | Obbligatorio | Discussione con azienda |
 | SRV5 | {g:smartlogstatistics} deve esser compatibile con il browser Microsoft Edge versione 110 | Obbligatorio | Discussione con azienda |
@@ -1232,7 +1199,6 @@ L'azienda non ha posto alcun vincolo prestazionale per le due applicazioni. Per 
 | VUC4.3 | VRF3.3 |
 | VUC4.4 | VRF3.4 |
 | VUC5 | VRF4 |
-| VUC5.1 | VRF4.1 |
 | VUC6 | VRF5 |
 | VUC6.1 | VRF5.1 |
 | VUC6.2 | VRF5.2 |
@@ -1241,12 +1207,10 @@ L'azienda non ha posto alcun vincolo prestazionale per le due applicazioni. Per 
 | VUC7 | VRF6 |
 | VUC8 | VRF7 |
 | VUC9 | VRF8.1 |
-| VUC9.1 | VRF8.1.1 |
 | VUC10.1 | VRF8.2 |
 | VUC10.2 | VRF8.3 |
 | VUC10.3 | VRF8.4 |
 | SUC1 | SRF1 |
-| SUC1.1 | SRF1.1 |
 | SUC2 | SRF2 |
 | SUC2.1 | SRF2.1 |
 | SUC2.2 | SRF2.2 |
@@ -1260,7 +1224,6 @@ L'azienda non ha posto alcun vincolo prestazionale per le due applicazioni. Per 
 | SUC3 | SRF4 |
 | SUC3.1 | SRF4.1 |
 | SUC3.2 | SRF4.2 |
-| SUC3.2.1 | SRF4.2.1 |
 | SUC3.3 | SRF4.3 |
 | SUC4 | SRF3 |
 | SUC4.1 | SRF3.1 |
