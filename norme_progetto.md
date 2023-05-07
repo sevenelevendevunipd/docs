@@ -592,7 +592,7 @@ Le aspettative di questa sezione sono:
 I ruoli verranno cambiati con una cadenza periodica in modo tale che ogni membro del gruppo possa ricoprire ogni tipo di
 ruolo in maniera equa e cercando di rispettare le tempistiche previste.
 
-# Standard ISO/IEC 12207ù
+# Standard ISO/IEC 12207
 
 ISO/IEC 12207 è uno standard internazionale che definisce un modello per il ciclo di vita del software, ovvero il percorso che un prodotto software segue dal suo concepimento all'eliminazione. Questo standard è stato sviluppato con l'obiettivo di aiutare le organizzazioni a gestire in modo efficace i progetti software, fornendo una struttura per la pianificazione, il monitoraggio e il controllo delle attività di sviluppo software.
 I processi sono divisi in tre categorie:
