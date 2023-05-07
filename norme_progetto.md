@@ -591,3 +591,291 @@ Le aspettative di questa sezione sono:
 
 I ruoli verranno cambiati con una cadenza periodica in modo tale che ogni membro del gruppo possa ricoprire ogni tipo di
 ruolo in maniera equa e cercando di rispettare le tempistiche previste.
+
+# Standard ISO/IEC 12207ù
+
+ISO/IEC 12207 è uno standard internazionale che definisce un modello per il ciclo di vita del software, ovvero il percorso che un prodotto software segue dal suo concepimento all'eliminazione. Questo standard è stato sviluppato con l'obiettivo di aiutare le organizzazioni a gestire in modo efficace i progetti software, fornendo una struttura per la pianificazione, il monitoraggio e il controllo delle attività di sviluppo software.
+I processi sono divisi in tre categorie:
+
+* Processi primari: attività direttamente legate allo sviluppo del software;
+* Processi di supporto: attività riguardanti la gestione dei documenti e il controllo qualità;
+* Processi organizzativi: attività che supportano l'organizzazione del progetto come la gestione delle risorse e gli aspetti manegeriali.
+
+## Processi primari
+
+### Acquisizione
+
+Questo processo riguarda l'acquisizione di software o servizi correlati. Nelle fasi iniziali del progetto, il team di progetto deve definire i requisiti di acquisizione, valutare le opzioni disponibili e scegliere il fornitore più adatto per soddisfare le esigenze del progetto.
+
+### Fornitura
+
+Questo processo riguarda la fornitura di software o servizi correlati. Il team di progetto deve definire i requisiti di fornitura, identificare i fornitori potenziali e valutare le loro offerte per scegliere il fornitore più adatto per soddisfare le esigenze del progetto.
+
+### Sviluppo
+
+Questo processo riguarda la creazione di nuovi prodotti software o la modifica di quelli esistenti. Il team di sviluppo deve definire i requisiti del software, progettare l'architettura del sistema, sviluppare il codice, testare il software e documentare il processo di sviluppo.
+
+### Esercizio
+
+Questo processo riguarda l'utilizzo del software in un ambiente operativo. Il team di progetto deve installare e configurare il software nell'ambiente operativo, fornire supporto agli utenti finali e monitorare le prestazioni del software per garantire che soddisfi le aspettative degli utenti finali.
+
+### Manutenzione
+
+Questo processo riguarda la modifica del software esistente per correggere eventuali errori o migliorare le sue prestazioni. Il team di progetto deve valutare i problemi segnalati dagli utenti finali, sviluppare una soluzione per correggere il problema, testare la soluzione e implementarla nel software esistente.
+
+## Processi di supporto
+
+### Gestione della documentazione
+
+Questo processo riguarda la produzione e la gestione della documentazione del software. Il team di progetto deve definire quali documenti sono necessari per il progetto e il loro formato. La documentazione deve essere prodotta in modo coerente e gestita in modo da garantire che sia sempre aggiornata e facilmente accessibile a tutti i membri del team di progetto.
+
+### Gestione della configurazione
+
+Questo processo riguarda la gestione delle modifiche al software e la gestione delle versioni del software. Il team di progetto deve definire una procedura per la gestione delle modifiche al software, che includa l'identificazione, la valutazione, l'approvazione e l'implementazione delle modifiche. Inoltre, il team deve definire una procedura per la gestione delle versioni del software, che includa la registrazione di tutte le versioni del software prodotte durante il ciclo di vita del progetto.
+
+### Garanzia della qualità
+
+Questo processo riguarda la definizione e l'implementazione di attività per garantire la qualità del software. Il team di progetto deve definire una procedura per la garanzia della qualità, che includa attività di verifica e validazione per garantire che il software sia conforme ai requisiti specificati e che rispetti gli standard di qualità richiesti dal progetto.
+
+### Verifica
+
+Questo processo riguarda la verifica del software durante il ciclo di vita del progetto. Il team di progetto deve definire attività di verifica per garantire che il software sia conforme ai requisiti specificati, che sia coerente con l'architettura definita e che sia corretto e affidabile.
+
+### Validazione
+
+Questo processo riguarda la validazione del software rispetto alle esigenze degli utenti finali. Il team di progetto deve definire attività di validazione per garantire che il software soddisfi le esigenze degli utenti finali e che sia facile da utilizzare.
+
+### Revisione congiunta
+
+Questo processo riguarda la validazione del software rispetto alle esigenze degli utenti finali. Il team di progetto deve definire attività di validazione per garantire che il software soddisfi le esigenze degli utenti finali e che sia facile da utilizzare.
+
+### Audit
+
+Questo processo riguarda l'analisi critica del software da parte di un auditor esterno. Il team di progetto deve definire una procedura per l'audit del software, che includa l'identificazione degli obiettivi dell'audit, la definizione delle attività di audit, l'identificazione dei criteri di valutazione e la presentazione dei risultati dell'audit.
+
+### Risoluzione dei problemi
+
+Questo processo riguarda la gestione dei problemi relativi al software. Il team di progetto deve definire una procedura per la risoluzione dei problemi, che includa la registrazione dei problemi, l'analisi delle cause e l'implementazione di azioni correttive per risolvere i problemi.
+
+### Usabilità
+
+Questo processo riguarda l'usabilità del prodotto software e consiste nella definizione dei requisiti di usabilità, la progettazione e valutazione dell'interfaccia utente, la conduzione di test di usabilità e la valutazione dei risultati dei test. Il team di progetto deve definire una procedura per l'usabilità del prodotto, che includa l'identificazione dei requisiti di usabilità, la definizione del design dell'interfaccia utente, la conduzione dei test di usabilità e la definizione delle modalità di valutazione dei risultati.
+
+### Valutazione del prodotto
+
+Questo processo riguarda la valutazione del prodotto software e consiste nella definizione dei criteri di valutazione, l'identificazione delle modalità di valutazione e la valutazione dei risultati della valutazione. Il team di progetto deve definire una procedura per la valutazione del prodotto, che includa l'identificazione dei criteri di valutazione, la definizione delle modalità di valutazione e la definizione delle responsabilità dei membri del team in relazione alla valutazione del prodotto.
+
+## Processi organizzativi
+
+### Gestione dell'organizzazione
+
+Questo processo riguarda la gestione dell'organizzazione del progetto. Il team di progetto deve definire una procedura per la gestione dell'organizzazione, che includa l'identificazione delle responsabilità dei membri del team, la definizione delle comunicazioni interne ed esterne, l'organizzazione degli incontri del team e la definizione delle modalità di gestione del rischio.
+
+### Gestione delle infrastrutture
+
+Questo processo riguarda la gestione delle infrastrutture necessarie per lo sviluppo del software. Il team di progetto deve definire una procedura per la gestione delle infrastrutture, che includa l'identificazione delle infrastrutture necessarie, la definizione delle modalità di gestione e manutenzione delle infrastrutture e la definizione delle responsabilità dei membri del team in relazione alle infrastrutture.
+
+### Miglioramento del processo organizzativo
+
+Questo processo riguarda l'identificazione di opportunità di miglioramento del processo organizzativo del progetto. Il team di progetto deve definire una procedura per il miglioramento del processo organizzativo, che includa l'identificazione delle opportunità di miglioramento, la definizione delle attività necessarie per il miglioramento e la definizione delle responsabilità dei membri del team in relazione al miglioramento del processo organizzativo.
+
+### Formazione del personale
+
+Questo processo riguarda la formazione del personale del progetto. Il team di progetto deve definire una procedura per la formazione del personale, che includa l'identificazione delle competenze necessarie per il progetto, la definizione del piano di formazione, la definizione delle modalità di formazione e la valutazione dell'efficacia del programma di formazione.
+
+# Standard ISO/IEC 9126
+
+## Modello della qualità del software
+
+Il modello della qualità del software è un framework per la valutazione della qualità del software che consiste in quattro caratteristiche principali: funzionalità, affidabilità, usabilità ed efficienza. Ogni caratteristica è divisa in sotto-caratteristiche che a loro volta sono supportate da una serie di attributi di qualità. Questo modello fornisce un approccio strutturato alla valutazione della qualità del software, che può essere utilizzato come base per la definizione di requisiti di qualità del software e per la valutazione della qualità del software prodotto.
+
+## Qualità interna
+
+La qualità interna si riferisce alla qualità del software durante lo sviluppo, prima che il prodotto finale sia rilasciato. La qualità interna è influenzata dalla struttura interna del software, dalla sua leggibilità e dalla facilità di manutenzione. La qualità interna può essere valutata attraverso la revisione del codice sorgente, la valutazione della documentazione e la misurazione di metriche specifiche.
+
+### Metriche per la qualità interna
+
+Le metriche interne sono applicabili al prodotto durante le fasi di progettazione e codifica. Sono anche chiamate "misure statiche". Esse consentono di prevedere il livello di qualità esterna ed in uso del prodotto finale, in quanto gli attributi interni influenzano quelli esterni e quelli in uso. Utilizzando le metriche interne, è possibile individuare eventuali problemi che potrebbero compromettere la qualità finale del prodotto prima che questo sia realizzato e diventi eseguibile.
+
+## Qualità esterna
+
+La qualità esterna si riferisce alla qualità del software dopo che il prodotto finale è stato rilasciato. La qualità esterna è influenzata dalla capacità del software di soddisfare i requisiti funzionali e dalle prestazioni del software in un ambiente operativo reale. La qualità esterna può essere valutata attraverso l'analisi delle prestazioni, la valutazione degli errori e dei problemi segnalati dagli utenti e l'utilizzo di metriche specifiche.
+
+### Metriche per la qualità esterna
+
+Le metriche esterne sono utilizzate per valutare il comportamento del prodotto durante la sua esecuzione, attraverso l'osservazione e l'operatività in base agli obiettivi stabiliti. Queste metriche sono scelte sulla base delle caratteristiche che il prodotto dovrà dimostrare durante il suo utilizzo e sono fondamentali per valutare la qualità del prodotto finale.
+
+## Qualità in uso
+
+La qualità in uso si riferisce alla qualità del software in un ambiente operativo reale, in base all'esperienza degli utenti che utilizzano il software. La qualità in uso può essere valutata attraverso l'analisi dell'usabilità del software, la soddisfazione degli utenti e l'utilizzo di metriche specifiche.
+
+### Metriche per la qualità in uso
+
+Le metriche per la qualità in uso sono una serie di metriche che vengono utilizzate per valutare la qualità del software in base all'esperienza degli utenti. Le metriche possono essere utilizzate per misurare l'usabilità del software, la soddisfazione degli utenti, l'efficienza e l'efficacia del software e altri fattori relativi all'esperienza dell'utente. Le metriche per la qualità in uso possono essere utilizzate per migliorare la qualità del software e per identificare le aree in cui il software deve essere migliorato.
+
+# Metriche della qualità
+
+## Metriche per la qualità del processo
+
+Per comprendere l'efficacia delle metriche scelte dal gruppo SevenEleven, è necessario prendere in considerazione i seguenti parametri:
+
+* **Budget At Completion (BAC):** è il budget preventivato per il completamento del progetto.
+* **Actual Calendar Days (ACD):** è il numero effettivo di giorni impiegati in un determinato periodo.
+* **Planned Calendar Days (PCD):** è la durata preventivata di un determinato periodo.
+* **Number of Requirements Added (NRA):** è il numero di requisiti aggiunti in un determinato periodo.
+* **Number of Requirements Changed (NRC):** è il numero di requisiti modificati in un determinato periodo.
+* **Number of Requirements Removed (NRR):** è il numero di requisiti rimossi in un determinato periodo.
+* **Total Number of Initial Requirements (TNIR):** è il numero totale dei requisiti all'inizio di un determinato periodo.
+
+Queste metriche sono state scelte dal gruppo per misurare il livello di qualità del processo, in modo da valutare l'efficacia del lavoro svolto e di conseguenza migliorare il prodotto finale.
+
+### MPC01: Earned Value (EV)
+
+Misura il valore del lavoro effettivamente completato rispetto al lavoro pianificato. Questa metrica aiuta a monitorare la progressione del lavoro e a identificare eventuali variazioni rispetto al piano.
+
+### MPC02: Actual Cost (AC)
+
+Misura il costo effettivo del lavoro completato fino a un certo punto del progetto. Questa metrica aiuta a monitorare i costi del progetto e a identificare eventuali variazioni rispetto al budget.
+
+### MPC03: Planned Value (PV)
+
+Misura il valore pianificato del lavoro che dovrebbe essere stato completato fino a un certo punto del progetto. Questa metrica aiuta a monitorare la progressione del lavoro e a identificare eventuali variazioni rispetto al piano.
+
+### MPC04: Cost Variance (CV)
+
+Misura la differenza tra il valore del lavoro effettivamente completato e il costo effettivo del lavoro completato fino a un certo punto del progetto. Questa metrica aiuta a monitorare i costi del progetto e a identificare eventuali variazioni rispetto al budget. La formula per il calcolo della CV è la seguente:
+$$CV = (\frac{EV}{AC} - 1) * 100$$
+
+### MPC05: Schedule Variance (SV)
+
+Misura la differenza tra il valore del lavoro effettivamente completato e il valore pianificato del lavoro che dovrebbe essere stato completato fino a un certo punto del progetto. Questa metrica aiuta a monitorare la progressione del lavoro e a identificare eventuali variazioni rispetto al piano.
+La formula per il calcolo della SV è la seguente:
+$$SV = (1-\frac{ACD}{PCD}) * 100$$
+
+### MPC06: Estimated At Completion (EAC)
+
+Stima il costo totale del progetto sulla base dei costi effettivi del lavoro completato fino a un certo punto del progetto. Questa metrica aiuta a monitorare i costi del progetto e a identificare eventuali variazioni rispetto al budget.
+La formula per il calcolo della EAC è la seguente:
+$$EAC=AC+ETC$$
+
+### MPC07: Estimate To Complete (ETC)
+
+Stima il costo del lavoro rimanente necessario per completare il progetto. Questa metrica aiuta a monitorare i costi del progetto e a identificare eventuali variazioni rispetto al budget.
+La formula per il calcolo della ETC è la seguente:
+$$ETC=BAC-EV$$
+
+### MPC08: Requirements Stability Index (RSI)
+
+Misura la stabilità dei requisiti del progetto durante il ciclo di vita del software. Questa metrica aiuta a monitorare i requisiti del progetto e a identificare eventuali variazioni rispetto alla loro stabilità.
+La formula per il calcolo della RSI è la seguente:
+$$RSI = (1 - \frac{NRA + NRC + NRR}{TNIR})*100$$
+
+### MPC09: Passed Test
+
+Misura la stabilità dei requisiti del progetto durante il ciclo di vita del software. Questa metrica aiuta a monitorare i requisiti del progetto e a identificare eventuali variazioni rispetto alla loro stabilità.
+La formula addottata è la seguente:
+$$Passed test=\frac{Number\ of\ passed\ test}{Total\ number\ of\ test}*100$$
+
+### MPC10: Metric Satisfied
+
+Indica il numero di metriche soddisfatte nel progetto. Questa metrica aiuta a monitorare l'efficacia del processo di sviluppo del software.
+La formula addottata è la seguente:
+$$Metric satisfied=\frac{Number\ of\ satisfied\ metric}{Total\ number\ of\ metric}*100$$
+
+### MPC11: Risks Found
+
+Indica il numero di metriche soddisfatte nel progetto. Questa metrica aiuta a monitorare l'efficacia del processo di sviluppo del software.
+
+## Metriche per la qualità del prodotto
+
+### MPD01: Indice di Gulpease
+
+L'indice di Gulpease è una metrica che indica la leggibilità di un testo, tenendo conto sia della lunghezza delle parole che della lunghezza delle frasi. Questa metrica è utilizzata per misurare la chiarezza e la comprensibilità della documentazione del prodotto software.
+La formula per il calcolo dell'indice di Gulpease è la seguente:
+$$Gulpease = 89 + \frac{300 *(numero\ delle\ frasi) - 10* (numero\ delle\ lettere)}{numero\ delle\ parole}$$
+
+### MPD02: Correttezza ortografica
+
+La correttezza ortografica è una metrica utilizzata per valutare la qualità della documentazione del prodotto software. Questa metrica indica il numero di errori ortografici presenti nella documentazione, e può essere valutata automaticamente utilizzando strumenti di correzione ortografica.
+
+### MPD03: Coperura requisiti obbligatori
+
+La copertura dei requisiti obbligatori è una metrica utilizzata per valutare il grado di soddisfacimento dei requisiti obbligatori definiti per il prodotto software. Questa metrica indica la percentuale di requisiti obbligatori che sono stati implementati e verificati con successo.
+La formula per il calcolo della copertura dei requisiti obbligatori è la seguente:
+$$CROB = \frac{ROBC}{ROB}*100$$
+dove:
+
+* **ROBC:** requisiti obbligatori coperti;
+* **ROB:** requisiti obbligatori.
+
+### MPD04: Coperura requisiti desiderabili
+
+La copertura dei requisiti desiderabili è una metrica utilizzata per valutare il grado di soddisfacimento dei requisiti desiderabili definiti per il prodotto software. Questa metrica indica la percentuale di requisiti desiderabili che sono stati implementati e verificati con successo.
+La formula per il calcolo della copertura dei requisiti desiderabili è la seguente:
+$$CRD = \frac{RDC}{RD}*100$$
+dove:
+
+* **RDC:** requisiti desiderabili coperti;
+* **RD:** requisiti desiderabili.
+
+### MPD05: Coperura requisiti opzionali
+
+La copertura dei requisiti opzionali è una metrica utilizzata per valutare il grado di soddisfacimento dei requisiti opzionali definiti per il prodotto software. Questa metrica indica la percentuale di requisiti opzionali che sono stati implementati e verificati con successo.
+La formula per il calcolo della copertura dei requisiti opzionali è la seguente:
+$$CROP = \frac{ROPC}{ROP}*100$$
+dove:
+
+* **ROPC:** requisiti opzionali coperti;
+* **ROP:** requisiti opzionali.
+
+### MPD06: Facilità di utilizzo
+
+La facilità di utilizzo è una metrica utilizzata per valutare la qualità dell'interfaccia utente del prodotto software. Questa metrica indica il grado di facilità con cui gli utenti possono utilizzare il prodotto software per svolgere le loro attività.
+
+<!-- ### MPDF08: Solidity Statement Coverage
+
+La Solidity Statement Coverage è una metrica utilizzata per valutare la qualità del codice scritto in Solidity, il linguaggio di programmazione utilizzato per implementare i contratti intelligenti sulla blockchain Ethereum. Questa metrica indica la percentuale di dichiarazioni di istruzioni in Solidity che sono state eseguite durante l'esecuzione dei test.
+
+### MPDF09: Solidity Branch Coverage
+
+Questa metrica misura la percentuale di rami di codice sorgente Solidity che sono stati eseguiti durante i test.
+
+### MPDF10: Solidity Function Coverage
+
+Questa metrica misura la percentuale di funzioni del codice sorgente Solidity che sono state eseguite durante i test.
+
+### MPDF11: Solidity Line Coverage
+
+Questa metrica misura la percentuale di linee di codice sorgente Solidity che sono state eseguite durante i test.
+
+### MPDF12: Frontend Statement Coverage
+
+Questa metrica misura la percentuale di istruzioni di codice sorgente frontend che sono state eseguite durante i test.
+
+### MPDF13: Frontend Branch Coverage
+
+Questa metrica misura la percentuale di istruzioni di codice sorgente frontend che sono state eseguite durante i test.
+
+### MPDF14: Frontend Function Coverage
+
+Questa metrica misura la percentuale di funzioni del codice sorgente frontend che sono state eseguite durante i test.
+
+### MPDF15: Frontend Line Coverage
+
+Questa metrica misura la percentuale di funzioni del codice sorgente frontend che sono state eseguite durante i test.
+
+### MPDF16: Backend Statement Coverage
+
+Questa metrica misura la percentuale di istruzioni di codice sorgente backend che sono state eseguite durante i test.
+
+### MPDF17: Backend Branch Coverage
+
+Questa metrica misura la percentuale di rami di codice sorgente backend che sono stati eseguiti durante i test.
+
+### MPDF18: Backend Function Coverage
+
+Questa metrica misura la percentuale di funzioni del codice sorgente backend che sono state eseguite durante i test.
+
+### MPDF19: Backend Line Coverage
+
+Questa metrica misura la percentuale di linee di codice sorgente backend che sono state eseguite durante i test. -->
