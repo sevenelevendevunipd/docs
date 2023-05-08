@@ -203,7 +203,7 @@ Mentre per i successivi scriveremo passo passo all'insorgere di ogni rischio cer
 
 * RT1 - Inesperienza Tecnologica: la fase di testing ha fatto emergere alcune lacune per quanto riguarda le tecnologie da usare per effettuare i test.
 
-* RR2 - Modifica dei requisiti: entrando nella fase di progettazione e di codifica si è dovuti ricorrere alla modifica/aggiunta di alcuni requisiti. Questo è avvenuto perchè sono emersi dettagli e considerazioni che non avevamo correttamente considerato durante l'analisi.
+* RR2 - Modifica dei requisiti: entrando nella fase di progettazione e di codifica si è dovuti ricorrere alla modifica/aggiunta di alcuni requisiti. Questo è avvenuto perché sono emersi dettagli e considerazioni che non avevamo correttamente considerato durante l'analisi.
 
 <!-- ## Valutazione critica dell'efficacia delle soluzioni proposte -->
 
