@@ -266,7 +266,7 @@ proprio.
 #### Aspettative
 
 La codifica ha l'obiettivo di realizzare un prodotto software avente le caratteristiche concordate con il proponente.
-Il codice realizzato dovrà rispettare uno stile preciso, in modo che risulti facilmente leggibile e manutenibile.
+Il codice realizzato dovrà rispettare uno stile preciso, in modo che risulti facilmente leggibile e mantenibile.
 
 #### Stile della codifica
 
@@ -599,7 +599,7 @@ I processi sono divisi in tre categorie:
 
 * Processi primari: attività direttamente legate allo sviluppo del software;
 * Processi di supporto: attività riguardanti la gestione dei documenti e il controllo qualità;
-* Processi organizzativi: attività che supportano l'organizzazione del progetto come la gestione delle risorse e gli aspetti manegeriali.
+* Processi organizzativi: attività che supportano l'organizzazione del progetto come la gestione delle risorse e gli aspetti manageriali.
 
 ## Processi primari
 
@@ -773,13 +773,13 @@ $$RSI = (1 - \frac{NRA + NRC + NRR}{TNIR})*100$$
 ### MPC09: Passed Test
 
 Misura la stabilità dei requisiti del progetto durante il ciclo di vita del software. Questa metrica aiuta a monitorare i requisiti del progetto e a identificare eventuali variazioni rispetto alla loro stabilità.
-La formula addottata è la seguente:
+La formula adottata è la seguente:
 $$Passed test=\frac{Number\ of\ passed\ test}{Total\ number\ of\ test}*100$$
 
 ### MPC10: Metric Satisfied
 
 Indica il numero di metriche soddisfatte nel progetto. Questa metrica aiuta a monitorare l'efficacia del processo di sviluppo del software.
-La formula addottata è la seguente:
+La formula adottata è la seguente:
 $$Metric satisfied=\frac{Number\ of\ satisfied\ metric}{Total\ number\ of\ metric}*100$$
 
 ### MPC11: Risks Found
@@ -798,7 +798,7 @@ $$Gulpease = 89 + \frac{300 *(numero\ delle\ frasi) - 10* (numero\ delle\ letter
 
 La correttezza ortografica è una metrica utilizzata per valutare la qualità della documentazione del prodotto software. Questa metrica indica il numero di errori ortografici presenti nella documentazione, e può essere valutata automaticamente utilizzando strumenti di correzione ortografica.
 
-### MPD03: Coperura requisiti obbligatori
+### MPD03: Copertura requisiti obbligatori
 
 La copertura dei requisiti obbligatori è una metrica utilizzata per valutare il grado di soddisfacimento dei requisiti obbligatori definiti per il prodotto software. Questa metrica indica la percentuale di requisiti obbligatori che sono stati implementati e verificati con successo.
 La formula per il calcolo della copertura dei requisiti obbligatori è la seguente:
@@ -808,7 +808,7 @@ dove:
 * **ROBC:** requisiti obbligatori coperti;
 * **ROB:** requisiti obbligatori.
 
-### MPD04: Coperura requisiti desiderabili
+### MPD04: Copertura requisiti desiderabili
 
 La copertura dei requisiti desiderabili è una metrica utilizzata per valutare il grado di soddisfacimento dei requisiti desiderabili definiti per il prodotto software. Questa metrica indica la percentuale di requisiti desiderabili che sono stati implementati e verificati con successo.
 La formula per il calcolo della copertura dei requisiti desiderabili è la seguente:
@@ -818,7 +818,7 @@ dove:
 * **RDC:** requisiti desiderabili coperti;
 * **RD:** requisiti desiderabili.
 
-### MPD05: Coperura requisiti opzionali
+### MPD05: Copertura requisiti opzionali
 
 La copertura dei requisiti opzionali è una metrica utilizzata per valutare il grado di soddisfacimento dei requisiti opzionali definiti per il prodotto software. Questa metrica indica la percentuale di requisiti opzionali che sono stati implementati e verificati con successo.
 La formula per il calcolo della copertura dei requisiti opzionali è la seguente:
