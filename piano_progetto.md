@@ -755,7 +755,7 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 # Consuntivo di periodo
 
 In questa sezione vengono esposti i costi e gli orari effettivi sostenuti dal gruppo Seven Eleven.
-Infine viene presentato un bilancio tra il consultivo e il preventivo di un determinato periodo (viene riportato a fianco dei nuovi valori).
+Infine viene presentato un bilancio tra il consuntivo e il preventivo di un determinato periodo (viene riportato a fianco dei nuovi valori).
 Quest'ultimo risulterà positivo quando la spesa effettiva è minore del preventivo e viceversa sarà negativo quando la spesa supererà i costi preventivati.
 
 ## Analisi preliminare
