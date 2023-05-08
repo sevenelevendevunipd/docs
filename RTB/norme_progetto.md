@@ -1,9 +1,9 @@
 ---
 title: "Norme di progetto"
 date: "03/11/2022"
-responsabile: "Davide Vitagliano"
-redattori: ["Andrea Auletta", "Enrik Rucaj", "Mattia Brunello"]
-verificatori: ["Nicola Cecchetto", "Antonio Stan", "Augusto Zanellato"]
+responsabile: "Enrik Rucaj"
+redattori: ["Andrea Auletta, Davide Vitagliano, Augusto Zanellato"]
+verificatori: ["Mattia Brunello", "Antonio Stan", "Nicola Cecchetto"]
 abstract: "Vengono definite le prime norme di progetto."
 docusage: "Interno"
 toc: true
@@ -244,17 +244,7 @@ I documenti utili a verificare affidabilità e adeguatezza degli obiettivi sono:
 * *Verbali* interni ed esterni.
 
 Esclusi i *verbali*, i documenti sopracitati vanno aggiornati anche nelle fasi successive.
-
-#### Product Baseline
-
-Questa fase illustra le linee guida architetturali del prodotto. Oltre all’evoluzione dei documenti stesi durante l'
-{a:RTB}, in questa fase risulteranno necessari:
-
-* *Allegato tecnico*;
-* *Manuale utente*;
-* *Verbali* interni ed esterni di periodo.
-<!--TODO forse non serve il manuale sviluppatore nella PB?-->
-I documenti anche in questa fase verranno mantenuti fino alla consegna del progetto.
+<!-- la parte di PB non mi sembra che abbia senso farla adesso -->
 
 ### Codifica
 

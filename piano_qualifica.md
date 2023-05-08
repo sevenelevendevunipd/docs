@@ -337,6 +337,7 @@ I test di accettazione sono necessari per la verifica dei requisiti richiesti da
 | TS_VRO4     | Verificare che l'utente possa esportare i file che visualizza i grafici           |    NI    |
 | TS_VRO5     | Verificare che l'utente possa eliminare tutti i filtri applicati           |         NI    |
 
+
 ## Test di integrazione Smart Log Viewer
 
 <!-- inserire qualcosa quando hai capito cosa sono i moduli -->
@@ -377,6 +378,7 @@ I test di accettazione sono necessari per la verifica dei requisiti richiesti da
 | TU_VB1  | Si verifica che il file venga caricato correttamente | I |
 | TU_VB2  | Si verifica che il file vuoto caricato restituisca correttamente un errore | I |
 | TU_VB3  | Si verifica che il file non valido caricato restituisca correttamente un errore | I |
+
 
 ## Test di sistema Smart Log Statistics
 
@@ -540,10 +542,8 @@ fig.show()
 
 ```{.plotly_python}
 import plotly.graph_objects as go
-
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
 y1 = [2.43, 4.87, -11.11, -9.86, 0, -14,28]
-
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di variazioni di programma'))
 fig.add_scatter(x=[x[0], x[-1]], y=[0, 0], line=dict(dash='dash'), name='valore ottimale')
 fig.add_scatter(x=[x[0], x[-1]], y=[-15, -15], line=dict(dash='dash'), name='valore accettabile')
@@ -558,10 +558,8 @@ fig.show()
 
 ```{.plotly_python}
 import plotly.graph_objects as go
-
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
 y1 = [0, 0, 0, 0]
-
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di test soddisfati'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
 fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
