@@ -587,7 +587,7 @@ fig.show()
 import plotly.graph_objects as go
 
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
-y = [0, 0, 37.1]
+y = [0, 0, 37.1, 37.1, 100, 100]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y, name='copertura requisiti obbligatori'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore accettabile')
@@ -601,7 +601,7 @@ fig.show()
 import plotly.graph_objects as go
 
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
-y = [0, 0, 0]
+y = [0, 0, 0, 0, 0, 0]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y, name='copertura requisiti opzionali'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimo')
@@ -616,7 +616,7 @@ fig.show()
 import plotly.graph_objects as go
 
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
-y = [0, 0, 100]
+y = [0, 0, 100, 100, 100, 100]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y, name='versioni browser supportati'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
