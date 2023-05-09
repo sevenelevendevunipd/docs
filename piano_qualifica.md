@@ -549,9 +549,9 @@ I test di accettazione sono necessari per la verifica dei requisiti richiesti da
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y1 = [3245, 4965, 7315]
-y2 = [3215, 4830, 7290]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y1 = [3245, 4965, 7315, 8950, 10085, 11185]
+y2 = [3215, 4830, 7290, 8925, 10060, 11185]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='preventivo del costo attuale'))
 fig.add_scatter(x=x, y=y2, name='costo attuale')
@@ -565,9 +565,9 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y1 = [13505, 13505, 13505]
-y2 = [13475, 13370, 13480]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y1 = [13505, 13505, 13505, 13505, 13505, 13505]
+y2 = [13475, 13370, 13480, 13480, 13480, 13505]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='costo totale'))
 fig.add_scatter(x=x, y=y2, name='stima del costo totale')
@@ -582,9 +582,9 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y1 = [151, 231, 356]
-y2 = [148, 223, 350]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y1 = [151, 231, 356, 421, 486, 542]
+y2 = [148, 223, 350, 428, 493, 557]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='preventivo del periodo temporale attuale'))
 fig.add_scatter(x=x, y=y2, name='periodo temporale attuale')
@@ -598,9 +598,9 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y1 = [665, 665, 665]
-y2 = [662, 657, 659]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y1 = [665, 665, 665, 665, 665, 665]
+y2 = [662, 657, 659, 672, 672, 680]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='tempo di sviluppo totale'))
 fig.add_scatter(x=x, y=y2, name='stima del tempo di sviluppo totale')
@@ -615,9 +615,9 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y1 = [0.9, 2.7, 0.3]
-y2 = [1.9, 3.4, 1.6]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y1 = [0.9, 2.7, 0.3, 0.3, 0.2, 0]
+y2 = [1.9, 3.4, 1.6, -1.7, -1.4, -2.8]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='rapporto del costo'))
 fig.add_scatter(x=x, y=y2, name='rapporto del periodo temporale')
@@ -632,7 +632,7 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
 y1 = [52.6, 52.6, 68.4]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di branch coverage'))
@@ -646,10 +646,8 @@ fig.show()
 
 ```{.plotly_python}
 import plotly.graph_objects as go
-
-x = ['AP', 'PTB', 'POC']
-y1 = [2.43, 4.87, -11.11]
-
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y1 = [2.43, 4.87, -11.11, -9.86, 0, -14,28]
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di variazioni di programma'))
 fig.add_scatter(x=[x[0], x[-1]], y=[0, 0], line=dict(dash='dash'), name='valore ottimale')
 fig.add_scatter(x=[x[0], x[-1]], y=[-15, -15], line=dict(dash='dash'), name='valore accettabile')
@@ -664,10 +662,8 @@ fig.show()
 
 ```{.plotly_python}
 import plotly.graph_objects as go
-
-x = ['AP', 'PTB', 'POC']
-y1 = [0, 0, 0]
-
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y1 = [0, 0, 0, 0]
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di test soddisfati'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
 fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
@@ -678,7 +674,7 @@ fig.show()
 
 ## verifica del prodotto
 
-### Indice di Gulpease
+### Indice di Gulpease <!-- qui -->
 
 ```{.plotly_python}
 import plotly.graph_objects as go
@@ -696,8 +692,8 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y = [0, 0, 37.1]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y = [0, 0, 37.1, 37.1, 100, 100]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y, name='copertura requisiti obbligatori'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore accettabile')
@@ -710,8 +706,8 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y = [0, 0, 0]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y = [0, 0, 0, 0, 0, 0]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y, name='copertura requisiti opzionali'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimo')
@@ -725,8 +721,8 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y = [0, 0, 100]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y = [0, 0, 100, 100, 100, 100]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y, name='versioni browser supportati'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
@@ -740,7 +736,7 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
 y1 = [0, 0, 0]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='livello di profondità di ereditarietà'))
@@ -755,7 +751,7 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
 y1 = [0, 0, 0]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di branch coverage'))
