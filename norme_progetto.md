@@ -56,6 +56,18 @@ versioni:
     autore: Enrik Rucaj
     data: 22/02/2023
     cambiamenti: Approvato per il rilascio
+  v1.0.1:
+    autore: Mattia Brunello
+    data: 20/04/2023
+    cambiamento: Aggiunti standard
+  v1.1.0:
+    autore: Anotnio Stan
+    data: 27/04/2023
+    cambiamento: verifica standard
+  v2.0.0:
+    autore: Davide Vitagliano
+    data: 2/05/2023
+    cambiamento: approvato per il rilascio
 ...
 
 # Introduzione
@@ -717,165 +729,124 @@ Le metriche per la qualità in uso sono una serie di metriche che vengono utiliz
 
 ## Metriche per la qualità del processo
 
-Per comprendere l'efficacia delle metriche scelte dal gruppo SevenEleven, è necessario prendere in considerazione i seguenti parametri:
-
-* **Budget At Completion (BAC):** è il budget preventivato per il completamento del progetto.
-* **Actual Calendar Days (ACD):** è il numero effettivo di giorni impiegati in un determinato periodo.
-* **Planned Calendar Days (PCD):** è la durata preventivata di un determinato periodo.
-* **Number of Requirements Added (NRA):** è il numero di requisiti aggiunti in un determinato periodo.
-* **Number of Requirements Changed (NRC):** è il numero di requisiti modificati in un determinato periodo.
-* **Number of Requirements Removed (NRR):** è il numero di requisiti rimossi in un determinato periodo.
-* **Total Number of Initial Requirements (TNIR):** è il numero totale dei requisiti all'inizio di un determinato periodo.
-
 Queste metriche sono state scelte dal gruppo per misurare il livello di qualità del processo, in modo da valutare l'efficacia del lavoro svolto e di conseguenza migliorare il prodotto finale.
 
-### MPC01: Earned Value (EV)
+### QPS_1: Preventivo costo attuale (PCA)
 
-Misura il valore del lavoro effettivamente completato rispetto al lavoro pianificato. Questa metrica aiuta a monitorare la progressione del lavoro e a identificare eventuali variazioni rispetto al piano.
+Somma dei costi di ogni periodo calcolato nel preventivo iniziale a partire dall'inizio del progetto fino a un determinato periodo.
 
-### MPC02: Actual Cost (AC)
+### QPS_2: Costo attuale (CA)
 
-Misura il costo effettivo del lavoro completato fino a un certo punto del progetto. Questa metrica aiuta a monitorare i costi del progetto e a identificare eventuali variazioni rispetto al budget.
+Il costo effettivo calcolato a partire dall'inizio del progetto fino a un determinato periodo.
 
-### MPC03: Planned Value (PV)
+### QPS_3: Stima costo a finire (SCF)
 
-Misura il valore pianificato del lavoro che dovrebbe essere stato completato fino a un certo punto del progetto. Questa metrica aiuta a monitorare la progressione del lavoro e a identificare eventuali variazioni rispetto al piano.
+Il costo che servirà a portare a termine il progetto a partire da un determinato periodo.
+$$SCF=Budget-PCA$$
 
-### MPC04: Cost Variance (CV)
+### QPS_4: Stima costo totale (SCT)
 
-Misura la differenza tra il valore del lavoro effettivamente completato e il costo effettivo del lavoro completato fino a un certo punto del progetto. Questa metrica aiuta a monitorare i costi del progetto e a identificare eventuali variazioni rispetto al budget. La formula per il calcolo della CV è la seguente:
-$$CV = (\frac{EV}{AC} - 1) * 100$$
+Revisione del budget totale che servirà per portare a compimento il progetto.
+$$SCT=SCF+CA$$
 
-### MPC05: Schedule Variance (SV)
+### QPS_5: Rapporto costo (RC)
 
-Misura la differenza tra il valore del lavoro effettivamente completato e il valore pianificato del lavoro che dovrebbe essere stato completato fino a un certo punto del progetto. Questa metrica aiuta a monitorare la progressione del lavoro e a identificare eventuali variazioni rispetto al piano.
-La formula per il calcolo della SV è la seguente:
-$$SV = (1-\frac{ACD}{PCD}) * 100$$
+Percentuale del rapporto tra il costo attuale (CA) e quello calcolato nel preventivo a partire dall'inizio del progetto fino a un determinato periodo. *In caso di risultato negativo si rischia di andare fuori budget*.
+$$RC=(1-\frac{CA}{PCA})*100$$
 
-### MPC06: Estimated At Completion (EAC)
+### QPS_6: Preventivo periodo temporale attuale (PPTA)
 
-Stima il costo totale del progetto sulla base dei costi effettivi del lavoro completato fino a un certo punto del progetto. Questa metrica aiuta a monitorare i costi del progetto e a identificare eventuali variazioni rispetto al budget.
-La formula per il calcolo della EAC è la seguente:
-$$EAC=AC+ETC$$
+Somma delle ore svolte in ogni periodo calcolate nel preventivo iniziale a partire dall'inizio del progetto fino a un determinato periodo.
 
-### MPC07: Estimate To Complete (ETC)
+### QPS_7: Periodo temporale attuale (PTA)
 
-Stima il costo del lavoro rimanente necessario per completare il progetto. Questa metrica aiuta a monitorare i costi del progetto e a identificare eventuali variazioni rispetto al budget.
-La formula per il calcolo della ETC è la seguente:
-$$ETC=BAC-EV$$
+Le ore effettive svolte a partire dall'inizio del progetto fino a un determinato periodo.
 
-### MPC08: Requirements Stability Index (RSI)
+### QPS_8: Stima lasso temporale a finire (SLTF)
 
-Misura la stabilità dei requisiti del progetto durante il ciclo di vita del software. Questa metrica aiuta a monitorare i requisiti del progetto e a identificare eventuali variazioni rispetto alla loro stabilità.
-La formula per il calcolo della RSI è la seguente:
-$$RSI = (1 - \frac{NRA + NRC + NRR}{TNIR})*100$$
+Il lasso di tempo che servirà a portare a termine il progetto a partire da un determinato periodo.
+$$SLTF=Tempo di sviluppo totale-PPTA$$
 
-### MPC09: Passed Test
+### QPS_9: Stima tempo di sviluppo totale (STST)
 
-Misura la stabilità dei requisiti del progetto durante il ciclo di vita del software. Questa metrica aiuta a monitorare i requisiti del progetto e a identificare eventuali variazioni rispetto alla loro stabilità.
-La formula adottata è la seguente:
-$$Passed test=\frac{Number\ of\ passed\ test}{Total\ number\ of\ test}*100$$
+Revisione del lasso temporale totale che servirà per sviluppare interamente il progetto.
+$$STST=SLTF+PTA$$
 
-### MPC10: Metric Satisfied
+### QPS_10: Rapporto periodo temporale (RPT)
 
-Indica il numero di metriche soddisfatte nel progetto. Questa metrica aiuta a monitorare l'efficacia del processo di sviluppo del software.
-La formula adottata è la seguente:
-$$Metric satisfied=\frac{Number\ of\ satisfied\ metric}{Total\ number\ of\ metric}*100$$
+Percentuale del rapporto tra il periodo temporale attuale (PTA) e quello calcolato nel preventivo a partire dall'inizio del progetto fino a un determinato periodo. *In caso di risultato negativo si rischia di andare fuori budget*.
+$$RPT=(1-\frac{PTA}{PPTA})*100$$
 
-### MPC11: Risks Found
+### QPS_11: Metriche soddisfate (MS)
 
-Indica il numero di metriche soddisfatte nel progetto. Questa metrica aiuta a monitorare l'efficacia del processo di sviluppo del software.
+Percentuale delle metriche di qualità (sia di processo che di prodotto) soddisfate in un determinato periodo.
+$$Metriche soddisfate=\frac{Numero di metriche soddisfate}{Numero di metriche totali}*100$$
 
-## Metriche per la qualità del prodotto
+## Metriche per la qualità do prodotto
 
-### MPD01: Indice di Gulpease
+La presente sezione espone le metriche selezionate dal gruppo SevenEleven
+per misurare il raggiungimento degli obiettivi di qualità del prodotto.
 
-L'indice di Gulpease è una metrica che indica la leggibilità di un testo, tenendo conto sia della lunghezza delle parole che della lunghezza delle frasi. Questa metrica è utilizzata per misurare la chiarezza e la comprensibilità della documentazione del prodotto software.
-La formula per il calcolo dell'indice di Gulpease è la seguente:
-$$Gulpease = 89 + \frac{300 *(numero\ delle\ frasi) - 10* (numero\ delle\ lettere)}{numero\ delle\ parole}$$
+### QPD_1: Indice di Gulpease (IG)
 
-### MPD02: Correttezza ortografica
+ Indice che riporta il grado di leggibilità di un testo redatto in lingua italiana . La formula adottata è la seguente:
 
-La correttezza ortografica è una metrica utilizzata per valutare la qualità della documentazione del prodotto software. Questa metrica indica il numero di errori ortografici presenti nella documentazione, e può essere valutata automaticamente utilizzando strumenti di correzione ortografica.
+$$GULP= {89+}\frac{ 300  *(n_{frasi}) - 10*(n_{lettere}) }{n_{parole}}$$
 
-### MPD03: Copertura requisiti obbligatori
+### QPD_2: Errori ortografici (EO)
 
-La copertura dei requisiti obbligatori è una metrica utilizzata per valutare il grado di soddisfacimento dei requisiti obbligatori definiti per il prodotto software. Questa metrica indica la percentuale di requisiti obbligatori che sono stati implementati e verificati con successo.
-La formula per il calcolo della copertura dei requisiti obbligatori è la seguente:
-$$CROB = \frac{ROBC}{ROB}*100$$
+Indica l'insieme di errori grammaticali presenti nella documentazione interna ed esterna.
+
+### QPD_3: Copertura requisiti obbligatori (CRO)
+
+Indice che misura in ogni istante la percentuale di requisiti obbligatori soddisfatti. La formula adottata è la seguente:
+
+$$CRO= \frac{ ROI }{RO}{*100}$$
+
 dove:
 
-* **ROBC:** requisiti obbligatori coperti;
-* **ROB:** requisiti obbligatori.
+* ROI: indica il numero di requisiti obbligatori coperti dall'implementazione;
 
-### MPD04: Copertura requisiti desiderabili
+* RO: indica il numero complessivo di requisiti obbligatori.
 
-La copertura dei requisiti desiderabili è una metrica utilizzata per valutare il grado di soddisfacimento dei requisiti desiderabili definiti per il prodotto software. Questa metrica indica la percentuale di requisiti desiderabili che sono stati implementati e verificati con successo.
-La formula per il calcolo della copertura dei requisiti desiderabili è la seguente:
-$$CRD = \frac{RDC}{RD}*100$$
+### QPD_4: Copertura requisiti opzionali (CROP)
+
+Indice che misura in ogni istante la percentuale di requisiti opzionali soddisfatti. La formula adottata è la seguente:
+
+$$CROP= \frac{ ROPC }{ROP}{*100}$$
+
 dove:
 
-* **RDC:** requisiti desiderabili coperti;
-* **RD:** requisiti desiderabili.
+* ROPC: indica il numero di requisiti opzionali accettati coperti dall'implementazione.;
+* ROP: indica il numero complessivo di requisiti opzionali accettati.
+  
+### QPD_5: Versioni browser supportate (VBS)
 
-### MPD05: Copertura requisiti opzionali
+Percentuale di versioni di browser supportate dal prodotto. Calcolabile con la seguente formula:
 
-La copertura dei requisiti opzionali è una metrica utilizzata per valutare il grado di soddisfacimento dei requisiti opzionali definiti per il prodotto software. Questa metrica indica la percentuale di requisiti opzionali che sono stati implementati e verificati con successo.
-La formula per il calcolo della copertura dei requisiti opzionali è la seguente:
-$$CROP = \frac{ROPC}{ROP}*100$$
+$$VBS= \frac{ Bsup }{Btot}{*100}$$
+
 dove:
 
-* **ROPC:** requisiti opzionali coperti;
-* **ROP:** requisiti opzionali.
+* Bsup indica il numero di browser in cui il prodotto può essere eseguito;
+* Btot indica il numero complessivo di browser presi in considerazione.
 
-### MPD06: Facilità di utilizzo
+I browser presi in considerazione sono:
 
-La facilità di utilizzo è una metrica utilizzata per valutare la qualità dell'interfaccia utente del prodotto software. Questa metrica indica il grado di facilità con cui gli utenti possono utilizzare il prodotto software per svolgere le loro attività.
+* Chrome;
+* Firefox;
+* Microsoft Edge;
+* Safari;
+* Opera;
 
-<!-- ### MPDF08: Solidity Statement Coverage
+### QPD_6: Profondità di ereditarietà (PE)
 
-La Solidity Statement Coverage è una metrica utilizzata per valutare la qualità del codice scritto in Solidity, il linguaggio di programmazione utilizzato per implementare i contratti intelligenti sulla blockchain Ethereum. Questa metrica indica la percentuale di dichiarazioni di istruzioni in Solidity che sono state eseguite durante l'esecuzione dei test.
+Indica il numero di classi diverse che ereditano tra loro, fino alla classe base.
 
-### MPDF09: Solidity Branch Coverage
+### QPD_7 Branch Coverage (BC)
 
-Questa metrica misura la percentuale di rami di codice sorgente Solidity che sono stati eseguiti durante i test.
+Indica che ciascun branch di codice sia stato eseguito almeno una volta.
 
-### MPDF10: Solidity Function Coverage
+Strumenti utilizzati:
 
-Questa metrica misura la percentuale di funzioni del codice sorgente Solidity che sono state eseguite durante i test.
-
-### MPDF11: Solidity Line Coverage
-
-Questa metrica misura la percentuale di linee di codice sorgente Solidity che sono state eseguite durante i test.
-
-### MPDF12: Frontend Statement Coverage
-
-Questa metrica misura la percentuale di istruzioni di codice sorgente frontend che sono state eseguite durante i test.
-
-### MPDF13: Frontend Branch Coverage
-
-Questa metrica misura la percentuale di istruzioni di codice sorgente frontend che sono state eseguite durante i test.
-
-### MPDF14: Frontend Function Coverage
-
-Questa metrica misura la percentuale di funzioni del codice sorgente frontend che sono state eseguite durante i test.
-
-### MPDF15: Frontend Line Coverage
-
-Questa metrica misura la percentuale di funzioni del codice sorgente frontend che sono state eseguite durante i test.
-
-### MPDF16: Backend Statement Coverage
-
-Questa metrica misura la percentuale di istruzioni di codice sorgente backend che sono state eseguite durante i test.
-
-### MPDF17: Backend Branch Coverage
-
-Questa metrica misura la percentuale di rami di codice sorgente backend che sono stati eseguiti durante i test.
-
-### MPDF18: Backend Function Coverage
-
-Questa metrica misura la percentuale di funzioni del codice sorgente backend che sono state eseguite durante i test.
-
-### MPDF19: Backend Line Coverage
-
-Questa metrica misura la percentuale di linee di codice sorgente backend che sono state eseguite durante i test. -->
+* {g:python}
