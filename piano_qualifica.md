@@ -659,11 +659,11 @@ fig.show()
 ```
 
 ### Test soddisfati
-
+<!-- test totali 190 dovrebbe essere 62, yakuza li interpreta come test passati su quelli implementati nel periodo-->
 ```{.plotly_python}
 import plotly.graph_objects as go
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
-y1 = [0, 0, 0, 0]
+y1 = [0, 0, 0, 0, 0, 100] 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di test soddisfati'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
 fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
