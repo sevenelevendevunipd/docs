@@ -31,7 +31,7 @@ versioni:
     autore: Enrik Rucaj
     data: 26/4/2023
     cambiamenti: Diagrammi delle classi, di attività e sequenza di Statistics. Verifica generale del documento
-  0.2.1
+  0.2.1:
     autore: Davide Vitagliano
     data: 5/5/2023
     cambiamenti: Aggiunta tabella requisiti soddisfatti
