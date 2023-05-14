@@ -206,7 +206,17 @@ SubunitFilteringStrategy        -[#008200,dashed]-^  LogFilteringStrategy
 ### Diagramma delle classi - SLViewer Backend
 
 ```{ .plantuml caption="Class Diagram SLViewer backend"}
-@startuml
+@startuml classes
+set namespaceSeparator none
+class "LogParserError" as sl_viewer_backend.schemas.logparsererror.LogParserError {
+errors : list[str]
+}
+class "LogParserResponse" as sl_viewer_backend.schemas.logparseresponse.LogParserResponse {
+log
+}
+class "LogUpload" as sl_viewer_backend.schemas.logupload.LogUpload {
+log
+}
 @enduml
 ```
 
@@ -574,7 +584,103 @@ RootStore *-- ITimeChartDataStore
 ### Diagramma delle classi - SLStatistics Backend
 
 ```{ .plantuml caption="Class Diagram SLStatistics backend"}
-@startuml
+@startuml classes
+left to right direction
+set namespaceSeparator none
+class "ChartFilterData" as sl_statistics_backend.models.chartfilterdata.ChartFilterData {
+codes : list[str]
+firmwares : list[str]
+subunits : list[int]
+}
+class "Config" as sl_statistics_backend.models.logoverview.LogOverview.Config {
+json_encoders : dict
+}
+class "Config" as sl_statistics_backend.models.storedlogfile.StoredLogFile.Config {
+json_encoders : dict
+}
+class "CountResponse" as sl_statistics_backend.schemas.countresponse.CountResponse {
+count : int
+}
+class "ErrorResponse" as sl_statistics_backend.schemas.errorresponse.ErrorResponse {
+errors : list[str]
+}
+class "FirmwareChartParams" as sl_statistics_backend.schemas.firmwarechartparams.FirmwareChartParams {
+selected_codes : list[str]
+selected_firmwares : list[str]
+}
+class "Histogram" as sl_statistics_backend.schemas.histogram.Histogram {
+bars : list[HistogramEntry]
+}
+class "LogDatabase" as sl_statistics_backend.log_database.LogDatabase {
+elastic
+elastic
+index_name : str
+index_name : str
+uploaded_file_list
+chart_filters(start: datetime, end: datetime) -> ChartFilterData
+close() -> None
+delete_log(log: str) -> int
+ensure_index_exists() -> None
+firmware_chart_data(start: datetime, end: datetime, firmwares: list[str], codes: list[str]) -> list[HistogramEntry]
+log_entries_frequency(start: datetime, end: datetime, subunits: list[int]) -> list[LogFrequencyEntry]
+log_overview(start: datetime, end: datetime) -> LogOverview
+time_chart_data(start: datetime, end: datetime, subunits: list[int], codes: list[str]) -> list[HistogramEntry]
+upload(log_file: LogFile) -> int
+}
+class "<color:red>LogDatabaseError</color>" as sl_statistics_backend.log_database.LogDatabaseError {
+message : str
+message : str
+}
+class "LogDelete" as sl_statistics_backend.schemas.logdelete.LogDelete {
+log : str
+}
+class "LogFrequency" as sl_statistics_backend.schemas.logfrequency.LogFrequency {
+entries : list[LogFrequencyEntry]
+}
+class "LogFrequencyEntry" as sl_statistics_backend.models.logfrequencyentry.LogFrequencyEntry {
+count : int
+event_code : str
+firmware : str
+}
+class "LogFrequencyParams" as sl_statistics_backend.schemas.logfrequencyparams.LogFrequencyParams {
+selected_subunits : list[int]
+}
+class "LogOverview" as sl_statistics_backend.models.logoverview.LogOverview {
+avg_entries : int
+entries_std_dev : int
+max_count_entry
+total_entries : int
+empty() -> 'LogOverview'
+}
+class "LogOverviewParams" as sl_statistics_backend.schemas.logoverviewparams.LogOverviewParams {
+end : datetime
+start : datetime
+}
+class "LogUpload" as sl_statistics_backend.schemas.logupload.LogUpload {
+log
+}
+class "MaxCountEntry" as sl_statistics_backend.models.logoverview.MaxCountEntry {
+entry_count : int
+filename : str
+}
+class "StoredLogFile" as sl_statistics_backend.models.storedlogfile.StoredLogFile {
+entry_count : int
+file_name : str
+first_entry_timestamp : datetime
+last_entry_timestamp : datetime
+}
+class "StoredLogList" as sl_statistics_backend.models.storedloglist.StoredLogList {
+log_files : list[StoredLogFile]
+max_timestamp : datetime
+min_timestamp : datetime
+}
+class "TimeChartParams" as sl_statistics_backend.schemas.timechartparams.TimeChartParams {
+selected_codes : list[str]
+}
+sl_statistics_backend.schemas.firmwarechartparams.FirmwareChartParams --|> sl_statistics_backend.schemas.logoverviewparams.LogOverviewParams
+sl_statistics_backend.schemas.logfrequencyparams.LogFrequencyParams --|> sl_statistics_backend.schemas.logoverviewparams.LogOverviewParams
+sl_statistics_backend.schemas.timechartparams.TimeChartParams --|> sl_statistics_backend.schemas.logfrequencyparams.LogFrequencyParams
+sl_statistics_backend.models.logoverview.MaxCountEntry --* sl_statistics_backend.models.logoverview.LogOverview : max_count_entry
 @enduml
 ```
 
