@@ -102,7 +102,7 @@ observable.
 
 ### Diagramma delle classi - SLViewer Frontend
 
-```{ .plantuml caption="Class Diagram SLViewer"}
+```{ .plantuml caption="Class Diagram SLViewer frontend"}
 @startuml
 left to right direction
 skinparam linetype ortho
@@ -203,9 +203,9 @@ SubunitFilteringStrategy        -[#008200,dashed]-^  LogFilteringStrategy
 @enduml
 ```
 
-### Diagramma delle classi - SLViewer Frontend
+### Diagramma delle classi - SLViewer Backend
 
-```{ .plantuml caption="Class Diagram SLViewer"}
+```{ .plantuml caption="Class Diagram SLViewer backend"}
 @startuml
 @enduml
 ```
@@ -391,282 +391,190 @@ stop
 
 ## Diagrammi di SmartLogStatistics
 
-### Diagramma delle classi - SLStatistics
+### Diagramma delle classi - SLStatistics Frontend
 
-```{ .plantuml caption="Class Diagram SLStatistics"}
+```{ .plantuml caption="Class Diagram SLStatistics frontend"}
 @startuml
 left to right direction
-skinparam linetype polyline
-class node16 as "components/BlockUIObserver.tsx" {
-BlockUI:
-BlockUIProps:
-ProgressSpinner:
-PropsWithChildren:
-observer:
+skinparam linetype ortho
+class ChartFilterStore {
+constructor():
+state: ChartFilterStoreState
+error: string | undefined
+selectableCodes: string[]
+selectableSubunits: number[]
+selectableFirmwares: string[]
+update(start: Date, end: Date): void
 }
-class node4 as "components/CalendarHOC.tsx" {
-Calendar:
-CalendarProps:
+class FilterStateStore {
+constructor():
+selected_min_timestamp: Date
+selected_max_timestamp: Date
+setSelectedRange(min: Date, max: Date): void
+setMinTimestamp(min: Date): void
+setMaxTimestamp(max: Date): void
 }
-class node74 as "components/ErrorDialog.tsx" {
-Button:
-Dialog:
-observer:
+class FirmwareChartDataStore {
+constructor():
+state: FirmwareChartStoreState
+error: string | undefined
+selectedCodes: string[]
+selectedFirmwares: string[]
+data: Record<string, string>[]
+update(start: Date, end: Date, allFirmwares: string[]): void
 }
-class node79 as "components/InfoRow.tsx" {
-Skeleton:
-observer:
+Interface IChartFilterStore {
+update(start: Date, end: Date): void
+state: ChartFilterStoreState
+error: string | undefined
+selectableCodes: string[]
+selectableSubunits: number[]
+selectableFirmwares: string[]
 }
-class node57 as "components/RangePicker.tsx" {
-CalendarHOC:
-Card:
-max:
-min:
-observer:
-useId:
+Interface IFilterStateStore {
+setSelectedRange(min: Date, max: Date): void
+setMinTimestamp(min: Date): void
+setMaxTimestamp(min: Date): void
+selected_min_timestamp: Date
+selected_max_timestamp: Date
 }
-class node8 as "components/StackedBarChart.tsx" {
-CSSProperties:
-EChartsReact:
-useThemeName:
+Interface IFirmwareChartDataStore {
+update(start: Date, end: Date, allFirmwares: string[]): void
+state: FirmwareChartStoreState
+error: string | undefined
+selectedCodes: string[]
+selectedFirmwares: string[]
+data: Record<string, string>[]
 }
-class node58 as "components/ThemeSwitcher.tsx" {
-InputSwitch:
-ThemeProvider:
-ThemeSwitcher:
-createContext:
-echarts:
-echartsDarkTheme:
-echartsLightTheme:
-useContext:
-useEffect:
-useState:
-useThemeName:
+Interface ILogFrequencyStore {
+setSelectedRange(min: Date, max: Date): void
+setMinTimestamp(min: Date): void
+setMaxTimestamp(min: Date): void
+setSubunitSelection(selection: TreeCheckboxSelectionKeys): void
+updateFrequencies(): void
+state: LogFrequencyStoreState
+error: string | undefined
+entryFrequencies: LogFrequency_baae32a_LogFrequencyEntry[]
+selectedMinTimestamp: Date
+selectedMaxTimestamp: Date
+selectedSubunits: TreeCheckboxSelectionKeys
+hasError: boolean
+firmwares: string[]
+firmwareFilter: SelectItemOptionsType
+selectedSubunitIds: number[]
 }
-class node61 as "src/App.tsx" {
-Logo:
-MainView:
-RootStoreProvider:
-ThemeProvider:
-ThemeSwitcher:
-primeflex.css:
-primeicons.css:
-primereact.css:
-theme.scss:
+Interface ILogListStore {
+updateLogList(): void
+uploadLogFile(log: File): void
+deleteLogFile(name: string): void
+state: LogListStoreState
+logs: StoredLogFile[]
+minTimestamp: Date
+maxTimestamp: Date
+error: string | undefined
+hasLogs: boolean
+hasError: boolean
+errorCanRetry: boolean
 }
-class node24 as "src/index.tsx" {
-App:
-OpenAPI:
-React:
-ReactDOM:
-configure:
+Interface ISelectedLogsInfoStore {
+updateOverview(start: Date, end: Date): void
+state: State
+error: string | undefined
+info: LogOverview_91de17a | undefined
+hasError: boolean
 }
-class node72 as "stores/ChartFilterStore.ts" {
-ChartFilterStore:
-ChartsService:
-action:
-makeObservable:
-observable:
-runInAction:
+Interface ITimeChartDataStore {
+update(start: Date, end: Date, allSubunits: number[]): void
+state: TimeChartStoreState
+error: string | undefined
+selectedCodes: string[]
+selectedSubUnits: TreeCheckboxSelectionKeys
+data: Record<string, string>[]
+selectedSubUnitsList: number[]
 }
-class node15 as "stores/FilterStateStore.ts" {
-FilterStateStore:
-MAX_DATE:
-MIN_DATE:
-action:
-makeObservable:
-observable:
+class LogFrequencyStore {
+constructor():
+state: LogFrequencyStoreState
+error: string | undefined
+entryFrequencies: LogFrequency_baae32a_LogFrequencyEntry[]
+selectedMinTimestamp: Date
+selectedMaxTimestamp: Date
+selectedSubunits: TreeCheckboxSelectionKeys
+setSelectedRange(min: Date, max: Date): void
+setMinTimestamp(min: Date): void
+setMaxTimestamp(max: Date): void
+setSubunitSelection(selection: TreeCheckboxSelectionKeys): void
+updateFrequencies(): void
+hasError: boolean
+firmwares: string[]
+firmwareFilter: {code: string, name: string}[]
+selectedSubunitIds: number[]
 }
-class node70 as "stores/FirmwareChartDataStore.ts" {
-ChartsService:
-FirmwareChartDataStore:
-action:
-makeObservable:
-observable:
-runInAction:
+class LogListStore {
+constructor():
+state: LogListStoreState
+logs: StoredLogFile[]
+minTimestamp: Date
+maxTimestamp: Date
+error: string | undefined
+throwError(err: string, retryable?: boolean): void
+updateLogList(): void
+uploadLogFile(log: File): void
+deleteLogFile(name: string): void
+hasLogs: boolean
+hasError: boolean
+errorCanRetry: boolean
 }
-class node65 as "stores/LogFrequencyStore.ts" {
-LogAggregationAnalysisService:
-LogFrequencyStore:
-LogFrequency_baae32a_LogFrequencyEntry:
-MAX_DATE:
-MIN_DATE:
-SelectItemOptionsType:
-TreeCheckboxSelectionKeys:
-TreeNode:
-action:
-allUnitSubunits:
-computed:
-hashUnitSubUnit:
-makeObservable:
-observable:
-reaction:
-runInAction:
+class RootStore {
+constructor(logListStore?: ILogListStore | null, filterStateStore?: IFilterStateStore | null, selectedLogsInfoStore?: ISelectedLogsInfoStore | null, logFrequencyStore?: ILogFrequencyStore | null, chartFilterStore?: IChartFilterStore | null, timeChartStore?: ITimeChartDataStore | null, firmwareChartDataStore?: IFirmwareChartDataStore | null):
+logListStore: ILogListStore
+filterStateStore: IFilterStateStore
+selectedLogsInfoStore: ISelectedLogsInfoStore
+logFrequencyStore: ILogFrequencyStore
+chartFilterStore: IChartFilterStore
+timeChartDataStore: ITimeChartDataStore
+firmwareChartDataStore: IFirmwareChartDataStore
 }
-class node78 as "stores/LogListStore.ts" {
-ApiError:
-LogFileManagementService:
-LogListStore:
-LogListStoreState:
-MAX_DATE:
-MIN_DATE:
-StoredLogList_c682361_StoredLogFile:
-action:
-computed:
-makeObservable:
-observable:
-runInAction:
+class SelectedLogsInfoStore {
+constructor():
+state: State
+error: string | undefined
+info: LogOverview_91de17a | undefined
+updateOverview(start: Date, end: Date): void
+hasError: boolean
 }
-interface node43 as "stores/RootStore.tsx" {
-ChartFilterStore:
-FilterStateStore:
-FirmwareChartDataStore:
-IChartFilterStore:
-IFilterStateStore:
-IFirmwareChartDataStore:
-ILogFrequencyStore:
-ILogListStore:
-ISelectedLogsInfoStore:
-ITimeChartDataStore:
-LogFrequencyStore:
-LogListStore:
-PropsWithChildren:
-SelectedLogsInfoStore:
-TimeChartDataStore:
-createContext:
-reaction:
-restrictRange:
-useContext:
-useRootStore:
+class TimeChartDataStore {
+constructor():
+state: TimeChartStoreState
+error: string | undefined
+selectedCodes: string[]
+selectedSubUnits: TreeCheckboxSelectionKeys
+data: Record<string, string>[]
+update(start: Date, end: Date, allSubunits: number[]): void
+selectedSubUnitsList: number[]
 }
-class node60 as "stores/SelectedLogsInfoStore.ts" {
-LogAggregationAnalysisService:
-LogOverview_91de17a:
-SelectedLogsInfoStore:
-SelectedLogsInfoStoreState:
-action:
-computed:
-makeObservable:
-observable:
-runInAction:
-}
-class node66 as "stores/TimeChartDataStore.ts" {
-ChartsService:
-TimeChartDataStore:
-TreeCheckboxSelectionKeys:
-action:
-computed:
-makeObservable:
-observable:
-runInAction:
-}
-class node76 as "tabs/FirmwareChartView.tsx" {
-Card:
-IChartFilterStore:
-IFirmwareChartDataStore:
-ListBox:
-StackedBarChart:
-observer:
-runInAction:
-useRootStore:
-}
-class node25 as "tabs/LogFrequencyView.tsx" {
-Card:
-Column:
-ColumnFilterElementTemplateOptions:
-DataTable:
-ILogFrequencyStore:
-MultiSelect:
-RangePicker:
-ScrollPanel:
-Tree:
-TreeCheckboxSelectionKeys:
-allUnitSubunits:
-observer:
-useRootStore:
-}
-class node84 as "tabs/LogListView.tsx" {
-BlockUIObserver:
-Button:
-Card:
-Column:
-ConfirmDialog:
-DataTable:
-ErrorDialog:
-FileUpload:
-IFilterStateStore:
-ILogListStore:
-ISelectedLogsInfoStore:
-InfoRow:
-LogListStoreState:
-Message:
-RangePicker:
-SelectedLogsInfoStoreState:
-Skeleton:
-StoredLogList_c682361_StoredLogFile:
-confirmDialog:
-observer:
-useRootStore:
-}
-class node28 as "tabs/TimeChartView.tsx" {
-Card:
-IChartFilterStore:
-ITimeChartDataStore:
-ListBox:
-ScrollPanel:
-StackedBarChart:
-Tree:
-TreeCheckboxSelectionKeys:
-groupBy:
-hashUnitSubUnit:
-observer:
-runInAction:
-splitUnitSubUnitHash:
-useRootStore:
-}
-class node36 as "views/MainView.tsx" {
-FirmwareChartView:
-ILogListStore:
-ISelectedLogsInfoStore:
-LogFrequencyView:
-LogListView:
-TabPanel:
-TabView:
-TimeChartView:
-observer:
-useEffect:
-useRootStore:
-}
-node57  *-[#595959,plain]-  node4
-node61  *-[#595959,plain]-  node58
-node61  *-[#595959,plain]-  node36
-node24  *-[#595959,plain]-  node61
-node43  <|.[#595959,plain].  node72
-node43  <|.[#595959,plain].  node15
-node43  <|.[#595959,plain].  node70
-node43  <|.[#595959,plain].  node65
-node43  <|.[#595959,plain].  node78
-node43  <|.[#595959,plain].  node60
-node43  <|.[#595959,plain].  node66
-node76  *-[#595959,plain]-  node8
-node76  -[#595959,plain]->  node72
-node76  -[#595959,plain]->  node70
-node25  *-[#595959,plain]-  node57
-node25  -[#595959,plain]->  node65
-node84  *-[#595959,plain]-  node16
-node84  *-[#595959,plain]-  node74
-node84  *-[#595959,plain]-  node79
-node84  *-[#595959,plain]-  node57
-node84  -[#595959,plain]->  node15
-node84  -[#595959,plain]->  node78
-node28  *-[#595959,plain]-  node8
-node28  -[#595959,plain]->  node72
-node28  -[#595959,plain]->  node66
-node36  *-[#595959,plain]-  node43
-node36  *-[#595959,plain]-  node76
-node36  *-[#595959,plain]-  node25
-node36  *-[#595959,plain]-  node84
-node36  *-[#595959,plain]-  node28
+
+ChartFilterStore         -[#008200,dashed]-^  IChartFilterStore
+FilterStateStore         -[#008200,dashed]-^  IFilterStateStore
+FirmwareChartDataStore   -[#008200,dashed]-^  IFirmwareChartDataStore
+LogFrequencyStore        -[#008200,dashed]-^  ILogFrequencyStore
+LogListStore             -[#008200,dashed]-^  ILogListStore
+SelectedLogsInfoStore    -[#008200,dashed]-^  ISelectedLogsInfoStore
+TimeChartDataStore       -[#008200,dashed]-^  ITimeChartDataStore
+RootStore *-- IChartFilterStore
+RootStore *-- IFilterStateStore
+RootStore *-- IFirmwareChartDataStore
+RootStore *-- ILogFrequencyStore
+RootStore *-- ILogListStore
+RootStore *-- ISelectedLogsInfoStore
+RootStore *-- ITimeChartDataStore
+@enduml
+```
+
+### Diagramma delle classi - SLStatistics Backend
+
+```{ .plantuml caption="Class Diagram SLStatistics backend"}
+@startuml
 @enduml
 ```
 
