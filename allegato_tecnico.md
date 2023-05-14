@@ -374,18 +374,32 @@ node71  *-[#595959,plain]-  node64
 ```{ .plantuml caption="Diagramma V1"}
 @startuml
 actor Actor
-Actor -> ViewerFrontend: RequestUpload
-activate ViewerFrontend
-ViewerFrontend ->ViewerBackend: UploadFile
-activate ViewerBackend
-ViewerBackend -> LogParser: ParseFile
+box "FrontEnd"
+participant View
+participant LogUploader
+end box
+box "BackEnd"
+participant LogParser
+participant LogUpload
+end box
+Actor -> View: RequestUpload
+activate View
+View -> LogUploader:RequestUpload
+activate LogUploader
+LogUploader->LogParser :ParseUpload
 activate LogParser
-ViewerBackend <-- LogParser: return ParsedFile
+
+LogParser->LogUpload : RequestUpload
+LogParser<--LogUpload: getResponse
+LogUploader<--LogParser:return ParsedFile
 deactivate LogParser
-ViewerFrontend <-- ViewerBackend: return LogResponse
-deactivate ViewerBackend
-Actor <- ViewerFrontend:done
-deactivate ViewerFrontend
+View <--LogUploader: return LogData
+deactivate LogUploader
+View->View:Update
+activate View
+Actor<--View:Done
+deactivate View
+deactivate View
 @enduml
 ```
 
@@ -394,18 +408,33 @@ deactivate ViewerFrontend
 ```{ .plantuml caption="Diagramma V2"}
 @startuml
 actor Actor
+box "FrontEnd"
+participant LogViewer
+participant LogFilteringService
+collections  FilterView
+collections FilterViewModel
+collections LogFilteringStrategy
+end box
 Actor -> LogViewer: Set Filter
 activate LogViewer
-LogViewer ->FilterUI: Message
-activate FilterUI
-FilterUI -> LogFilteringService: Message
+LogViewer ->LogFilteringService: FilterType
 activate LogFilteringService
+LogFilteringService -> FilterView: Message
+activate FilterView
+FilterView -> FilterViewModel: Message
+activate FilterViewModel
+FilterViewModel -> LogFilteringStrategy: Filter
+deactivate FilterViewModel
+activate LogFilteringStrategy
+FilterView <--LogFilteringStrategy:return selectedFilter
+deactivate LogFilteringStrategy
 LogViewer <-- LogFilteringService: return
+LogFilteringService <-- FilterView: aply filter
 deactivate LogFilteringService
-deactivate FilterUI
+deactivate FilterView
 LogViewer -> LogViewer: Update
 activate LogViewer
-Actor <- LogViewer: Done
+Actor <-- LogViewer: Done
 deactivate LogViewer
 deactivate LogViewer
 @enduml
@@ -416,6 +445,11 @@ deactivate LogViewer
 ```{ .plantuml caption="Diagramma V3"}
 @startuml
 actor Actor
+box "FrontEnd"
+participant LogViewer
+participant LogData
+participant Timeline
+end box
 Actor -> LogViewer: ViewChart
 activate LogViewer
 LogViewer ->LogData: ViewChart
@@ -426,7 +460,7 @@ deactivate LogData
 activate Timeline
 LogViewer <-- Timeline: return 
 deactivate Timeline
-Actor <- LogViewer: Done
+Actor <-- LogViewer: Done
 deactivate LogViewer
 @enduml
 ```
