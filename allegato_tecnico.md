@@ -100,270 +100,113 @@ observable.
 
 ## Diagrammi di SmartLogViewer
 
-### Diagramma delle classi - SLViewer
+### Diagramma delle classi - SLViewer Frontend
 
 ```{ .plantuml caption="Class Diagram SLViewer"}
 @startuml
-skinparam linetype polyline
 left to right direction
-class node34 as "components/LogUploader.tsx" {
-  Card:
-  FileUpload:
-  FileUploadHandlerEvent:
-  LogParserResponse_4dfe1dd_LogFile:
-  LogParsingError:
-  ProgressSpinner:
-  Toast:
-  useLogParsingService:
-  useRef:
-  useState:
+skinparam linetype ortho
+class CodeFilteringStrategy {
+constructor(logFile: LogFile):
+filterableCodes: string[]
+selectedCodes: string[]
+filter(entries: LogEntry[]): LogEntry[]
+reset(): void
+selectAll(): void
+selectNone(): void
+setSelection(selection: string[]): void
+filterSet: Set<string>
 }
-class node77 as "components/LogViewer.tsx" {
-  CodeFilterUi:
-  CodeFilteringStrategy:
-  DateTimeFilterUi:
-  DateTimeFilteringStrategy:
-  EventSequenceFilterUi:
-  EventSequenceFilteringStrategy:
-  FilterUi:
-  FirmwareFilterUi:
-  FirmwareFilteringStrategy:
-  LogData:
-  LogInfo:
-  LogParserResponse_4dfe1dd_LogFile:
-  SubunitFilterUi:
-  SubunitFilteringStrategy:
-  useEffect:
-  useLogFilteringService:
-  useState:
+class ConcreteLogFilteringService {
+constructor():
+registeredFilters: LogFilteringStrategy[]
+filterUIs: JSX.Element[]
+logFile: LogFile | null
+register(filter: LogFilteringStrategy, ui: JSX.Element): void
+setLogFile(logFile: LogFile): void
+removeFilters(): void
+resetAll(): void
+filteredEntries: LogEntry[]
+filtersUi: JSX.Element[]
 }
-class node28 as "components/ThemeSwitcher.tsx" {
-  InputSwitch:
-  PropsWithChildren:
-  ThemeContext:
-  ThemeProvider:
-  ThemeSwitcher:
-  createContext:
-  echarts:
-  echartsDarkTheme:
-  echartsLightTheme:
-  useContext:
-  useEffect:
-  useState:
+class DateTimeFilteringStrategy {
+constructor(logFile: LogFile):
+minTimestamp: Date
+maxTimestamp: Date
+minSelectedTimestamp: Date
+maxSelectedTimestamp: Date
+filter(entries: LogEntry[]): LogEntry[]
+setSelected(min: Date, max: Date): void
+reset(): void
 }
-class node12 as "filter/CodeFilterUi.tsx" {
-  Button:
-  Card:
-  CodeFilterUi:
-  CodeFilteringStrategy:
-  ListBox:
-  observer:
+class EventSequenceFilteringStrategy {
+constructor(logFile: LogFile):
+minEvent: string[]
+maxEvent: string[]
+filterableCodes: string[]
+insertingFirst: SearchEntry
+insertingLast: SearchEntry
+firstValues: SearchEntry[]
+lastValues: SearchEntry[]
+selectedFirst: SearchEntry[]
+selectedLast: SearchEntry[]
+time: number
+filterSubSequence(entries: LogEntry[], first: SearchEntry[], last: SearchEntry[], range: number): LogEntry[]
+filter(entries: LogEntry[]): LogEntry[]
+reset(): void
+setTime(t?: number | null): void
+getInserting(isFirst: boolean): SearchEntry
+addItem(isFirst: boolean): void
+editItem(e: DataTableRowEditCompleteEvent, isFirst: boolean): void
+reorderItems(e: DataTableRowReorderEvent<SearchEntry[]>, isFirst: boolean): void
+deleteItem(index: number, isFirst: boolean): void
 }
-class node39 as "filter/DateTimeFilterUI.tsx" {
-  Calendar:
-  Card:
-  DateTimeFilterUi:
-  DateTimeFilteringStrategy:
-  max:
-  min:
-  observer:
+class FirmwareFilteringStrategy {
+constructor(logFile: LogFile):
+filterableFirmwares: string[]
+selectedFirmwares: string[]
+filter(entries: LogEntry[]): LogEntry[]
+reset(): void
+selectAll(): void
+selectNone(): void
+setSelection(selection: string[]): void
+filterSet: Set<string>
 }
-class node14 as "filter/EventSequenceFilterUi.tsx" {
-  Button:
-  Card:
-  Column:
-  ColumnEditorOptions:
-  DataTable:
-  EventSequenceFilterUi:
-  EventSequenceFilteringStrategy:
-  InputNumber:
-  InputText:
-  observer:
+Interface ILogFilteringService {
+register(filter: LogFilteringStrategy, ui: JSX.Element): void
+resetAll(): void
+setLogFile(logFile: LogFile): void
+removeFilters(): void
+filteredEntries: LogEntry[]
+filtersUi: JSX.Element[]
 }
-class node25 as "filter/FirmwareFilterUi.tsx" {
-  Button:
-  Card:
-  FirmwareFilterUi:
-  FirmwareFilteringStrategy:
-  ListBox:
-  observer:
+Interface LogFilteringStrategy {
+filter(entries: LogEntry[]): LogEntry[]
+reset(): void
 }
-class node1 as "filter/SubunitFilterUi.tsx" {
-  Button:
-  Card:
-  SubunitFilterUi:
-  SubunitFilteringStrategy:
-  Tree:
-  TreeCheckboxSelectionKeys:
-  TreeExpandedKeysType:
-  observer:
-  useEffect:
-  useState:
+class SubunitFilteringStrategy {
+constructor(logFile: LogFile):
+subunitTree: TreeNode[]
+selectedSubunits: TreeCheckboxSelectionKeys
+filter(entries: LogEntry[]): LogEntry[]
+reset(): void
+selectAll(): void
+selectNone(): void
+filterSet: Set<number>
 }
-class node82 as "filters/CodeFilter.tsx" {
-  CodeFilteringStrategy:
-  LogFilteringStrategy:
-  LogParserResponse_4dfe1dd_LogEntry:
-  LogParserResponse_4dfe1dd_LogFile:
-  action:
-  computed:
-  makeObservable:
-  observable:
-}
-class node30 as "filters/DateTimeFilter.tsx" {
-  DateTimeFilteringStrategy:
-  LogFilteringStrategy:
-  LogParserResponse_4dfe1dd_LogEntry:
-  LogParserResponse_4dfe1dd_LogFile:
-  action:
-  makeObservable:
-  observable:
-}
-class node72 as "filters/EventSequenceFilter.tsx" {
-  DataTableRowEditCompleteEvent:
-  DataTableRowReorderEvent:
-  EventSequenceFilteringStrategy:
-  LogFilteringStrategy:
-  LogParserResponse_4dfe1dd_LogEntry:
-  LogParserResponse_4dfe1dd_LogFile:
-  action:
-  makeObservable:
-  observable:
-}
-class node31 as "filters/FirmwareFilter.tsx" {
-  FirmwareFilteringStrategy:
-  LogFilteringStrategy:
-  LogParserResponse_4dfe1dd_LogEntry:
-  LogParserResponse_4dfe1dd_LogFile:
-  action:
-  computed:
-  makeObservable:
-  observable:
-}
-class node76 as "filters/SubunitFilter.tsx" {
-  LogFilteringStrategy:
-  LogParserResponse_4dfe1dd_LogEntry:
-  LogParserResponse_4dfe1dd_LogFile:
-  SubunitFilteringStrategy:
-  TreeCheckboxSelectionKeys:
-  TreeNode:
-  action:
-  computed:
-  makeObservable:
-  observable:
-}
-Interface node21 as "services/LogFilteringService.tsx" {
-  FilterUi:
-  ILogFilteringService:
-  LogFilteringStrategy:
-  LogParserResponse_4dfe1dd_LogEntry:
-  LogParserResponse_4dfe1dd_LogFile:
-  PropsWithChildren:
-  action:
-  computed:
-  createContext:
-  makeObservable:
-  observable:
-  observer:
-  useContext:
-  useLogFilteringService:
-}
-class node4 as "services/LogParsingService.tsx" {
-  ApiError:
-  DefaultService:
-  LogParserError_581e5e4:
-  LogParserResponse_4dfe1dd:
-  LogParsingError:
-  PropsWithChildren:
-  ValidationError_6a07bef:
-  createContext:
-  useContext:
-  useLogParsingService:
-}
+CodeFilteringStrategy           -[#008200,dashed]-^  LogFilteringStrategy
+ConcreteLogFilteringService     -[#008200,dashed]-^  ILogFilteringService
+DateTimeFilteringStrategy       -[#008200,dashed]-^  LogFilteringStrategy
+EventSequenceFilteringStrategy  -[#008200,dashed]-^  LogFilteringStrategy
+FirmwareFilteringStrategy       -[#008200,dashed]-^  LogFilteringStrategy
+SubunitFilteringStrategy        -[#008200,dashed]-^  LogFilteringStrategy
+@enduml
+```
 
-class node80 as "src/App.tsx" {
-  Button:
-  LogFilteringService:
-  LogParserResponse_4dfe1dd_LogFile:
-  LogParsingService:
-  LogUploader:
-  LogViewer:
-  Logo:
-  ThemeProvider:
-  ThemeSwitcher:
-  primeflex.css:
-  primeicons.css:
-  primereact.css:
-  theme.scss:
-  useState:
-}
-class node73 as "src/index.tsx" {
-  App:
-  OpenAPI:
-  React:
-  ReactDOM:
-  configure:
-}
-class node71 as "viewer/LogData.tsx" {
-  Card:
-  ILogFilteringService:
-  LogData:
-  LogTable:
-  Timeline:
-  observer:
-  useLogFilteringService:
-}
-class node75 as "viewer/LogInfo.tsx" {
-  Card:
-  LogParserResponse_4dfe1dd_LogFile:
-}
-class node46 as "viewer/LogTable.tsx" {
-  Column:
-  DataTable:
-  ILogFilteringService:
-  LogTable:
-  observer:
-  useLogFilteringService:
-}
-class node64 as "viewer/Timeline.tsx" {
-  CustomSeriesOption:
-  CustomSeriesRenderItem:
-  CustomSeriesRenderItemParams:
-  LogParserResponse_4dfe1dd_LogEntry:
-  ReactECharts:
-  ThemeContext:
-  Timeline:
-  chunk:
-  echarts:
-  groupBy:
-  useContext:
-  useMemo:
-}
-node34  -[#595959,plain]->  node4
-node77  *-[#595959,plain]-  node12
-node77  *-[#595959,plain]-  node39
-node77  *-[#595959,plain]-  node14
-node77  *-[#595959,plain]-  node25
-node77  *-[#595959,plain]-  node1
-node77  *-[#595959,plain]-  node21
-node77  *-[#595959,plain]-  node71
-node77  *-[#595959,plain]-  node75
-node12  -[#595959,plain]->  node82
-node39  -[#595959,plain]->  node30
-node14  -[#595959,plain]->  node72
-node25  -[#595959,plain]->  node31
-node1   -[#595959,plain]->  node76
-node82  .[#595959,plain]-|>  node21
-node30  .[#595959,plain]-|>  node21
-node72  .[#595959,plain]-|>  node21
-node31  .[#595959,plain]-|>  node21
-node76  .[#595959,plain]-|>  node21
-node80  *-[#595959,plain]-  node34
-node80  *-[#595959,plain]-  node77
-node80  *-[#595959,plain]-  node28
-node73  *-[#595959,plain]-  node80
-node71  *-[#595959,plain]-  node46
-node71  *-[#595959,plain]-  node64
+### Diagramma delle classi - SLViewer Frontend
+
+```{ .plantuml caption="Class Diagram SLViewer"}
+@startuml
 @enduml
 ```
 
