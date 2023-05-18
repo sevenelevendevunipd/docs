@@ -843,9 +843,9 @@ I browser presi in considerazione sono:
 
 Indica il numero di classi diverse che ereditano tra loro, fino alla classe base.
 
-### QPD_7 Branch Coverage (BC)
+### QPD_7 Statement Coverage (SC)
 
-Indica che ciascun branch di codice sia stato eseguito almeno una volta.
+Indica che ciascun istruzione del codice sia stata eseguita almeno una volta.
 
 Strumenti utilizzati:
 
