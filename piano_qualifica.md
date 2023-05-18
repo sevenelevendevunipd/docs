@@ -280,9 +280,9 @@ I browser presi in considerazione sono:
 
 Indica il numero di classi diverse che ereditano tra loro, fino alla classe base.
 
-### QPD_7 Branch Coverage (BC)
+### QPD_7 Statement Coverage (SC)
 
-Indica che ciascun branch di codice sia stato eseguito almeno una volta.
+Indica che ciascun istruzione del codice sia stata eseguita almeno una volta.
 
 |    **Prodotto**   | **Valore accettabile**   | **Valore ottimale**|
 | ----------------- |  :-------------------:  | :-----------------: |
@@ -301,7 +301,7 @@ Strumenti utilizzati:
 | QPD_4             |      Copertura requisiti opzionali (CROP)   |       $\geq 20\%$      |         $100\%$     |
 | QPD_5             |        Versioni browser supportate (VBS)    |        $\geq 80\%$     |         $100\%$     |
 | QPD_6             |           Profondità di ereditarietà (PE)   |        $\leq 2$        |          0          |
-| QPD_7             |               Branch Coverage (BC)          |       $\geq 80\%$      |      $\geq 95\%$    |
+| QPD_7             |               Statement Coverage (SC)       |       $\geq 80\%$      |      $\geq 95\%$    |
 
 # Specifica dei test
 
@@ -633,9 +633,9 @@ fig.show()
 import plotly.graph_objects as go
 
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
-y1 = [52.6, 52.6, 68.4]
+y1 = [38.4, 38.4, 69.2 ,  69.2, 77 , 84.6]
 
-fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di branch coverage'))
+fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale delle metriche soddisfatte'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
 fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
 fig.update_layout(yaxis_range=[-2, 102])
@@ -746,17 +746,26 @@ fig.update_layout(yaxis_range=[-2, 4])
 fig.show()
 ```
 
-### Branch coverage
+### Statement coverage
 
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
-y1 = [0, 0, 0]
+software = ['FEV', 'BEV', 'FES', 'BES']
+valori = [82.18, 100, 80.95, 91]
 
-fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di branch coverage'))
-fig.add_scatter(x=[x[0], x[-1]], y=[95, 95], line=dict(dash='dash'), name='valore ottimale')
-fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
-fig.update_layout(yaxis_range=[-2, 102])
+fig = go.Figure(data=go.Bar(x=software, y=valori))
+fig.update_layout(yaxis_range=[0, 100])
+fig.add_scatter(x=[software[0], software[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
+fig.add_scatter(x=[software[0], software[-1]], y=[95, 95], line=dict(dash='dash'), name='valore ottimale')
+
+fig.show()
+
+
 fig.show()
 ```
+
+* FEV: Frontend SmartlogViewer;
+* BEV: Backend SmartlogViewer;
+* FES: Frontend SmartlogStatistics;
+* BES: Backend SmartlogStatistics.
