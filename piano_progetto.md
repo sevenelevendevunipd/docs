@@ -72,7 +72,7 @@ versioni:
     cambiamenti: verifica generale del documento
   2.0.0:
     autore: Antonio Stan
-    data: 07/05/2023
+    data: 19/05/2023
     cambiamenti: Approvato per il rilascio
 ...
 
@@ -105,7 +105,7 @@ Di seguito viene riportata la tabella con le scadenze aggiornate che il gruppo S
 | **Revisione**                        | **Acronimo** |  **Data**  |
 | ------------------------------------ | :----------: | :--------: |
 | Requirements and Technology Baseline |     RTB      | 13/03/2023 |
-| Product Baseline                     |      PB      | 12/05/2023 |
+| Product Baseline                     |      PB      | 19/05/2023 |
 | Customer Acceptance                  |      CA      | Non in programma |
 
 # Analisi dei Rischi
@@ -156,8 +156,7 @@ Questa sezione elenca i possibili rischi in cui si potrebbe incorrere durante l�
 
 #### RR1 - Incomprensione dei requisiti
 
-* Descrizione: difficoltà nella comprensione dei requisiti che può portare a un grave rallentamento nell'avanzamento
-  del progetto;
+* Descrizione: difficoltà nella comprensione dei requisiti che può portare a un grave rallentamento nell'avanzamento del progetto;
 * Identificazione: l'azienda proponente dovrà comunicare al gruppo l'adeguatezza del lavoro svolto.
 
 #### RR2 - Modifica dei requisiti
@@ -173,14 +172,12 @@ Questa sezione elenca i possibili rischi in cui si potrebbe incorrere durante l�
 
 ## Mitigazione Rischi
 
-* RT1: I membri del gruppo devono imparare a usare le tecnologie sconosciute;
+* RT1: I membri del gruppo devono imparare a usare le tecnologie sconosciute, avvalendosi di risorse online come guide o forum;
 * RO1: Il **responsabile** deve riorganizzare il lavoro per coprire il più possibile i vuoti;
 * RO2: Deve essere organizzata una nuova divisione del lavoro più equa;
-* RO3: Il **responsabile** deve ridistribuire le attività di lavoro in modo da ridurre il più possibile i costi in
-  eccesso;
-* RI1: Ogni membro del gruppo deve adoperarsi per limitare il più possibile le lacune;
-* RI2: Il **responsabile** dovrà mediare tra le parti per trovare un punto d'incontro o far scegliere alla maggioranza
-  dei membri del gruppo;
+* RO3: Il **responsabile** deve ridistribuire le attività di lavoro in modo da ridurre il più possibile i costi in eccesso;
+* RI1: Ogni membro del gruppo deve adoperarsi per limitare il più possibile le lacune, cercando di imparare da solo, farsi aiutare dai propri colleghi o dai professori del corso di studi;
+* RI2: Il **responsabile** dovrà mediare tra le parti per trovare un punto d'incontro o far scegliere alla maggioranza dei membri del gruppo;
 * RR1: Non iniziare la progettazione finché tutti i membri del gruppo non hanno chiari i requisiti;
 * RR2: Modificare l'*Analisi dei Requisiti*;
 * RR3: Insistere nel pianificare un incontro con l'azienda proponente e cercare autonomamente di capire i passi
@@ -188,24 +185,21 @@ Questa sezione elenca i possibili rischi in cui si potrebbe incorrere durante l�
 
 ## Osservazione della realtà e riconoscimento dei rischi e innesco delle mitigazioni
 
-Visto che questo paragrafo viene scritto a RTB conclusa, la parte di quest'ultima vedrà spiegati i vari rischi in cui ci siamo imbattuti e come li abbiamo risolti.
-Mentre per i successivi scriveremo passo passo all'insorgere di ogni rischio cercando di prevedere come risolvere il problema.
-
 ### Requirements and Technology Baseline
 
-* RO1 - Sessione: la sessione ha causato rallentamenti nello sviluppo del progetto in quanto ha richiesto una quantità di tempo non indifferente ad ogni membro del gruppo per lo studio, ciò nonostante, le ore svolte sono allineate con le ore preventivate per il progetto. La soluzione è stata quelli di posticipare la revisione RTB e quindi l'inizio della PB.
+* RO1 - Sessione: la sessione ha causato rallentamenti nello sviluppo del progetto in quanto ha richiesto una quantità di tempo non indifferente ad ogni membro del gruppo per lo studio, ciò nonostante, le ore svolte sono allineate con le ore preventivate per il progetto. La soluzione è stata quelli di posticipare la revisione RTB e quindi l'inizio della PB. Putroppo la conflittualità di tempistiche era talmente grande che la soluzione proposta di avvisare con largo anticipo non è bastata per scongiurare questo rischio, con effetto finale il ritardo riscontrato.
 
-* RI1 - Inesperienza: dopo le esercitazioni del professor Cardin ci sono state delle modifiche nell'analisi dei requisiti dovute a degli errori che abbiamo commesso durante la stesura dei casi d'uso.
+* RI1 - Inesperienza: dopo le esercitazioni del professor Cardin ci sono state delle modifiche nell'analisi dei requisiti dovute a degli errori che abbiamo commesso durante la stesura dei casi d'uso. Qui la soluzione proposta di chiedere aiuto ai professori ha funzionato senza conseguenze negative.
 
-* Responsabile: dopo aver notato i rallentamenti, è stato scelto che il responsabile deve stimolare e controllare più frequentemente i membri del gruppo.
+* Responsabile: dopo aver notato i rallentamenti, è stato scelto che il responsabile deve stimolare e controllare più frequentemente i membri del gruppo. La soluzione proposta ha funzionato in quanto nei successivi sprint i vari responsabili si sono dimostrati più attivi nel coinvolgimento di tutti i componenti del gruppo.
 
 ### Product Baseline
 
-* RT1 - Inesperienza Tecnologica: la fase di testing ha fatto emergere alcune lacune per quanto riguarda le tecnologie da usare per effettuare i test.
+* RT1 - Inesperienza Tecnologica: la fase di testing ha fatto emergere alcune lacune per quanto riguarda le tecnologie da usare per effettuare i test. La soluzione proposta di avvalersi di risorse online per imparare al meglio le tecnologie da usare si è rivelata efficace e non ha portato ritardi.
 
-* RR2 - Modifica dei requisiti: entrando nella fase di progettazione e di codifica si è dovuti ricorrere alla modifica/aggiunta di alcuni requisiti. Questo è avvenuto perché sono emersi dettagli e considerazioni che non avevamo correttamente considerato durante l'analisi.
+* RR2 - Modifica dei requisiti: entrando nella fase di progettazione e di codifica si è dovuti ricorrere alla modifica/aggiunta di alcuni requisiti. Questo è avvenuto perché sono emersi dettagli e considerazioni che non avevamo correttamente considerato durante l'analisi. La soluzione proposta di modificare l'analisi dei requisiti è stata unita ad una riunione extra per discutere tutti insieme della modifica e sugli effetti che avrebbe potuto avere.
 
-<!-- ## Valutazione critica dell'efficacia delle soluzioni proposte -->
+* Documentazione / RI2: è stato riscontrato uno stato di incompletezza o poca cura di alcuni documenti poco prima della revisione PB. Questo ha portato ad una completa revisione di tutti i documenti per adeguarli allo stato di avanzamento del progetto, causando un ritardo considerevole e creando malumori nel gruppo. Le conflittualità interne sono state rapidamente risolte grazie al senso di responsabilità di ogni componente del gruppo, assumendosi ognuno le proprie colpe e rimboccandosi le maniche.
 
 # Modello di Sviluppo
 
@@ -537,7 +531,7 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 **Periodo:**
 
 * INIZIO 1 Maggio 2023 - Fine periodo di progettazione e codifica dei Requisiti Obbligatori
-* FINE 12 Maggio 2023 - Revisione di Product Baseline (PB)
+* FINE 19 Maggio 2023 - Revisione di Product Baseline (PB)
 
 **Ruoli coinvolti:** Responsabile - Amministratore - Progettista - Programmatore - Verificatore
 
@@ -917,7 +911,7 @@ La progettazione dell'architettura è risultata più complessa rispetto alle nos
 
 ### Considerazioni
 
-Prendiamo in considerazione l'idea di spostare di una settimana in avanti tutti i successivi periodi in modo da portare la revisione della PB al 12 Maggio
+Prendiamo in considerazione l'idea di spostare di una settimana in avanti tutti i successivi periodi.
 
 #### Bilancio finale
 
@@ -954,7 +948,7 @@ Di seguito vengono riportate le variazioni dei costi:
 
 ### Considerazioni
 
-Non c'è stato alcun ritardo significativo quindi prevediamo di essere pronti per la PB il 12 Maggio
+Non c'è stato alcun ritardo significativo quindi prevediamo di essere pronti per la PB nei tempi stabiliti.
 
 #### Bilancio finale
 
@@ -991,7 +985,7 @@ Di seguito vengono riportate le variazioni dei costi:
 
 ### Motivazioni delle variazioni
 
-Ci sono state delle difficoltà al livello di separazione del lavoro: la maggior parte del gruppo si è concentrata sullo sviluppo delle applicazioni tralasciando i documenti.
+Ci sono state delle difficoltà al livello di separazione del lavoro: la maggior parte del gruppo si è concentrata sullo sviluppo delle applicazioni tralasciando i documenti. Questo ha portato purtroppo ad un ritardo di una settimana rispetto a quanto preventivato per effettuare le correzioni e le modifiche opportune a tutti i documenti.
 
 ### Considerazioni
 
