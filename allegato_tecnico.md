@@ -335,70 +335,6 @@ Actor <-LogViewer: done
 deactivate LogViewer
 ```
 
-### Diagramma di attività - SLViewer
-
-```{ .plantuml caption="Diagramma V5"}
-title SmartLogViewer
-start
-repeat
-repeat
-while (Scelto un log?)  is (No)
-note right
-  "Scegliere" un log significa scegliere un file di log da esplora risorse
-end note
-  :Scegli Log;
-endwhile (Sì)
-repeat while(Elimina log?) is (Sì)
--> No;
-:Carica log;
-note right
-  "Caricare" un log significa aprirlo nell`applicazione
-end note
-repeat
-  split
-    split
-      :Filtro per Codice Evento;
-    split again
-      :Filtro per Firmware;
-    split again
-      :Filtro per Unit/Subunit;
-    end split
-  split again
-    split
-      :Ordina per Timestamp;
-    split again
-      :Ordina per Unit;
-    split again
-      :Ordina per Subunit;
-    split again
-      :Ordina per Firmware;
-    split again
-      :Ordina per Codice;
-    split again
-      :Ordina per Descrizione;
-    split again
-      :Ordina per Value;
-    end split
-  split again
-    split
-      :Scroll del grafico;
-    split again
-      :Zoom in del grafico;
-    split again
-      :Zoom out del grafico;
-    split again
-      :Span del grafico;
-    end split
-  split again
-  :Ricerca sequenza eventi;
-  end split
-repeat while(Altre operazioni sul log?) is (Sì)
--> No;
-repeat while(Seleziona nuovo log?) is (Sì)
--> No;
-stop
-```
-
 ## Diagrammi di SmartLogStatistics
 
 ### Diagramma delle classi - SLStatistics Frontend
@@ -924,36 +860,6 @@ deactivate TimeChartDataStore
 User<--TimeChartView:Done
 deactivate TimeChartView
 @enduml
-```
-
-### Diagramma di attività - SLStatistics
-
-```{ .plantuml caption="Diagramma S5"}
-start
-:Carica log;
-repeat
-split
-:Schermata visualizzazione Log caricati;
-split
-:Carica un altro log;
-split again
-:Elimina un log caricato;
-end split
-split again
-:Schermata tabella occurrences;
-split
-:Ordina per colonna;
-split again
-:Filtra;
-end split
-split again
-:Schermata grafico Time/occurrences;
-split again
-:Schermata grafico Firmware/occurrences;
-end split
-repeat while(Altre operazioni?) is (Sì)
--> No;
-stop
 ```
 
 ## Design pattern
