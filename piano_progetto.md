@@ -266,26 +266,26 @@ Nel periodo di Analisi preliminare, ciascun componente rivestirà i ruoli second
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
-| Auletta Andrea    |    -     |    6    |   4    |      -      |      -       |    7    |     17     |
+| Auletta Andrea    |    -     |    5    |   4    |      -      |      -       |    7    |     16     |
 | Brunello Mattia   |    4     |    2    |   10   |      -      |      -       |    8    |     24     |
 | Cecchetto Nicola  |    1     |    -    |   10   |      -      |      -       |    6    |     17     |
 | Rucaj Enrik       |    3     |    6    |   12   |      -      |      -       |    5    |     26     |
 | Stan Antonio      |    -     |    5    |    9   |      -      |      -       |    4    |     18     |
 | Vitagliano Davide |    -     |    5    |   12   |      -      |      -       |    5    |     22     |
 | Zanellato Augusto |    3     |    5    |   10   |      -      |      -       |    9    |     27     |
-| **Totale**        |  **11**  | **29**  | **67** |    **-**    |    **-**     | **44**  |  **151**   |
+| **Totale**        |  **11**  | **28**  | **67** |    **-**    |    **-**     | **44**  |  **150**   |
 
 In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 
 | **Ruolo**      | **Ore** | **Costo** |
 | -------------- | :-----: | :-------: |
 | Responsabile   |   11    |    330    |
-| Amministratore |   29    |    580    |
+| Amministratore |   28    |    560    |
 | Analista       |   67    |   1675    |
 | Progettista    |    -    |     -     |
 | Programmatore  |    -    |     -     |
 | Verificatore   |   44    |    660    |
-| **Totale**     | **151** | **3245**  |
+| **Totale**     | **150** | **3225**  |
 
 Quadro dei costi da affrontare:
 
@@ -293,8 +293,8 @@ Quadro dei costi da affrontare:
 import plotly.graph_objects as go
 
 labels = ['Responsabile','Amministratore','Analista','Verificatore']
-text = ['11h', '29h', '67h', '44h']
-values = [330, 580, 1675, 660]
+text = ['11h', '28h', '67h', '44h']
+values = [330, 560, 1675, 660]
 
 fig = go.Figure(data=[go.Pie(labels=labels, values=values, text=text)])
 fig.update_traces(textposition='inside', textinfo='percent+value+label+text', showlegend=False, insidetextorientation="horizontal")
@@ -397,7 +397,7 @@ In questo periodo i costi da affrontare per ogni ruolo sono i seguenti:
 | Progettista    |   32    |    800    |
 | Programmatore  |   47    |    705    |
 | Verificatore   |   20    |    300    |
-| **Totale**     | **125** | **2350**  |
+| **Totale**     | **121** | **2350**  |
 
 Quadro dei costi da affrontare:
 
@@ -962,14 +962,14 @@ Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver**     | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :---------: | :--------: |
-| Auletta Andrea    |    2     |    -    |   -    |      3      |      3       |  5(+2)      |     13(+2) |
-| Brunello Mattia   |    -     |    1    |   -    |      4      |      4(+1)   |    -        |     9(+1)  |
-| Cecchetto Nicola  |    1     |    -    |   -    |      3(+1)  |      4       |    1        |     9(+1)  |
-| Rucaj Enrik       |    -     |    2(-1)|   -    |      3(+1)  |      4       |    3        |     12     |
-| Stan Antonio      |    1     |    -    |   -    |      2      |      -       |    2        |        5   |
-| Vitagliano Davide |    -     |    1    |   -    |      3      |      4(+2)   |   3(+2)     |     11(+4) |
-| Zanellato Augusto |    1     |    -    |   -    |      -      |      4       |    -        |      5     |
-| **Totale**        |  **5**   |**4(-1)**| **-**  | **18(+2)**  |   **23(+3)** |  **14(+4)** | **64(+8)** |
+| Auletta Andrea    |    2     |    -    |   -    |      3      |      3       |  7(+4)      |     15(+4) |
+| Brunello Mattia   |    -     |    1    |   -    |      4      |      4(+1)   |    2(+2)    |    11(+3)  |
+| Cecchetto Nicola  |    1     |    -    |   -    |      3(+1)  |      4       |    3(+2)    |    11(+3)  |
+| Rucaj Enrik       |    -     |    2(-1)|   -    |      3(+1)  |      4       |    5(+2)    | 14(+2)     |
+| Stan Antonio      |    1     |    -    |   -    |      2      |      -       |    4(+2)    |     7(+2)  |
+| Vitagliano Davide |    -     |    1    |   -    |      3      |      4(+2)   |   5(+4)     |     13(+6) |
+| Zanellato Augusto |    1     |    -    |   -    |      -      |      4       |    2(+2)    |   7(+2)    |
+| **Totale**        |  **5**   |**4(-1)**| **-**  | **18(+2)**  |   **23(+3)** | **28(+18)** |**78(+22)** |
 
 Di seguito vengono riportate le variazioni dei costi:
 
@@ -979,9 +979,9 @@ Di seguito vengono riportate le variazioni dei costi:
 | Amministratore |    4(-1)|    80(-20)|
 | Analista       |    -    |     -     |
 | Progettista    |   18(+2)|   450(+50)|
-| Programmatore  |   23(+3)|  335(+45) |
-| Verificatore   |  14(+4) |  210(+60) |
-| **Totale**     |  **64** |  **1225** |
+| Programmatore  |   23(+3)|  345(+45) |
+| Verificatore   |  28(+18)| 420(+270) |
+| **Totale**     |  **64** |  **1445** |
 
 ### Motivazioni delle variazioni
 
@@ -993,7 +993,7 @@ Ci sono state delle difficoltà al livello di separazione del lavoro: la maggior
 
 | **Ore** | **Costo**  |
 | :-----: | :--------: |
-| **+8**  |**+135,00** |
+| **+22** |**+345,00** |
 <!-- ## Progettazione di dettaglio e Codifica dei Requisiti Opzionali
 
 Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
@@ -1118,26 +1118,26 @@ Vengono riportare le ore di lavoro rendicontate dai componenti del gruppo:
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver**  | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :------: | :--------: |
-| Auletta Andrea    |    8     |    -    |   -    |      9      |      8       |   12     |    37      |
-| Brunello Mattia   |    -     |    5    |   -    |      4      |      11      |    5     |    25      |
-| Cecchetto Nicola  |    4     |    -    |   -    |      9      |      4       |   10     |    27      |
-| Rucaj Enrik       |    -     |    2    |   2    |      10     |      10      |    7     |    31      |
-| Stan Antonio      |    8     |    -    |   3    |      8      |      7       |    7     |    33      |
-| Vitagliano Davide |    7     |    1    |   -    |      9      |      9       |   11     |    37      |
-| Zanellato Augusto |    1     |    -    |   -    |      7      |      9       |    -     |    17      |
-| **Totale**        |**28**    |  **8**  | **5**  |  **56**     |    **58**    |**52**    | **207**    |
+| Auletta Andrea    |    8     |    -    |   -    |      9      |      8       |   14     |    39      |
+| Brunello Mattia   |    -     |    5    |   -    |      4      |      11      |    7     |    27      |
+| Cecchetto Nicola  |    4     |    -    |   -    |      9      |      4       |   12     |    29      |
+| Rucaj Enrik       |    -     |    2    |   2    |      10     |      10      |    9     |    33      |
+| Stan Antonio      |    8     |    -    |   3    |      8      |      7       |    9     |    35      |
+| Vitagliano Davide |    7     |    1    |   -    |      9      |      9       |   13     |    39      |
+| Zanellato Augusto |    1     |    -    |   -    |      7      |      9       |    2     |    19      |
+| **Totale**        |**28**    |  **8**  | **5**  |  **56**     |    **58**    |**66**    | **221**    |
 
 Di seguito vengono riportati i costi sostenuti:
 
 | **Ruolo**      | **Ore** | **Costo** |
 | -------------- |:-------:|:---------:|
-| Responsabile   |   24    |    720    |
-| Amministratore |   48    |    960    |
-| Analista       |   82    |   2050    |
-| Progettista    |   62    |   1550    |
-| Programmatore  |   50    |    750    |
-| Verificatore   |   84    |   1260    |
-| **Totale**     | **350** | **7290**  |
+| Responsabile   |   28    |    840    |
+| Amministratore |   8     |    160    |
+| Analista       |   8     |   200     |
+| Progettista    |   56    |   1400    |
+| Programmatore  |   58    |    870    |
+| Verificatore   |   66    |   990     |
+| **Totale**     | **221** | **4460**  |
 
 ## Preventivo a finire
 
@@ -1145,17 +1145,17 @@ Viene riportato il prospetto delle ore di lavoro dei componenti del gruppo:
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
 | ----------------- |:--------:|:-------:|:------:|:-----------:|:------------:|:-------:|:----------:|
-|Auletta Andrea     |    0     |    5    |   0    |     2       |      7       |   0     |     14     |
-|Brunello Mattia    |    2     |    1    |   0    |     6       |      6       |    1    |     16     |
-|Cecchetto Nicola   |    1     |    0    |   0    |     3       |      8       |   7     |     19     |
-|Rucaj Enrik        |    1     |    3    |   1    |     0       |      5       |   4     |     13     |
-|Stan Antonio       |    0     |    0    |   2    |     6       |      5       |    2    |     15     |
-| Vitagliano Davide |    2     |    0    |   0    |     6       |      6       |   0     |     14     |
-| Zanellato Augusto |    0     |    1    |   0    |     3       |      6       |    8    |     18     |
-| **Totale**        |  **6**   | **10**  | **3**  |   **26**    |   **43**     | **22**  |  **110**   |
+|Auletta Andrea     |    0     |    5    |   0    |     2       |      5       |   0     |     12     |
+|Brunello Mattia    |    2     |    1    |   0    |     6       |      4       |    1    |     14     |
+|Cecchetto Nicola   |    1     |    0    |   0    |     3       |      8       |   5     |     17     |
+|Rucaj Enrik        |    1     |    3    |   1    |     0       |      5       |   2     |     12     |
+|Stan Antonio       |    0     |    0    |   2    |     6       |      3       |    2    |     13     |
+| Vitagliano Davide |    2     |    0    |   0    |     6       |      4       |   0     |     12     |
+| Zanellato Augusto |    0     |    1    |   0    |     3       |      6       |    2    |     12     |
+| **Totale**        |  **6**   | **10**  | **3**  |   **26**    |   **35**     | **12**  |  **92**   |
 
 Di seguito viene riportato il prospetto del costo del progetto:
 
 | **Costo sostenuto** | **Costo mancante** |
 |:-------------------:|:------------------:|
-|      **4175**       |      **2040**      |
+|      **4460**       |      **1755**      |
