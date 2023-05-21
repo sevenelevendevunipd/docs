@@ -1101,9 +1101,9 @@ Sono stati usati i seguenti design pattern:
 
 | **Requisito** | **Descrizione** | **Classificazione** | **Stato** |
 |---------------| ----------------| ------------------- | --------- |
-| VRQ1 | {g:smartlogviewer} deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto* | Obbligatorio |  Soddisfatto  |
+| VRQ1 | {g:smartlogviewer} deve essere sviluppato seguendo le regole descritte nel documento _Norme di progetto_ | Obbligatorio |  Soddisfatto  |
 | VRQ2 | Deve essere fornita una guida per sviluppatori di {g:smartlogviewer} | Obbligatorio |  Soddisfatto  |
-| SRQ1 | {g:smartlogstatistics} deve essere sviluppato seguendo le regole descritte nel documento *Norme di progetto* | Obbligatorio |  Soddisfatto  |
+| SRQ1 | {g:smartlogstatistics} deve essere sviluppato seguendo le regole descritte nel documento _Norme di progetto_ | Obbligatorio |  Soddisfatto  |
 | SRQ2 | Deve essere fornita una guida per sviluppatori di {g:smartlogstatistics} | Obbligatorio |  Soddisfatto  |
 | RQ1 | Deve essere fornita la documentazione minima richiesta anche dal corso di "Ingegneria del Software" | Obbligatorio |  Soddisfatto  |
 | RQ2 | Viene richiesto l'utilizzo di un {g:repository} pubblico ({g:github}) | Obbligatorio |  Soddisfatto  |
