@@ -1,8 +1,8 @@
 ---
 title: "Allegato Tecnico"
-date: "15/11/2022"
-responsabile: "Nicola Cecchetto"
-redattori: ["Davide Vitagliano", "Augusto Zanellato"]
+date: "21/05/2023"
+responsabile: "Augusto Zanellato"
+redattori: ["Davide Vitagliano", "Nicola Cecchetto"]
 verificatori: ["Enrik Rucaj"]
 docusage: "Esterno"
 toc: true
@@ -26,7 +26,7 @@ versioni:
   0.1.1:
     autore: Davide Vitagliano
     data: 24/4/2023
-    cambiamenti: Diagarmma delle Classi di Viewer
+    cambiamenti: Diagramma delle Classi di Viewer
   0.2.0:
     autore: Enrik Rucaj
     data: 26/4/2023
@@ -39,6 +39,10 @@ versioni:
     autore: Enrik Rucaj
     data: 6/5/2023
     cambiamenti: Verifica generale del documento
+  1.0.0:
+    autore: Augusto Zanellato
+    data: 21/05/2023
+    cambiamenti: Verifica finale e approvazione per il rilascio
 ...
 
 # Introduzione
@@ -71,10 +75,10 @@ Il progetto prevede di sviluppare due applicazioni:
 
 ## Descrizione generale
 
-Il pattern architetturale scelto dal gruppo per sviluppare le due applicazioni è il Model-View-ViewModel. Il seguente
-pattern è tra i più diffusi nello sviluppo delle web application e permette di scrivere codice facilmente mantenibile e
+Il pattern architetturale scelto dal gruppo per sviluppare il frontend delle due applicazioni è il Model-View-ViewModel.
+MVVM è tra i più diffusi pattern nello sviluppo delle web application e permette di scrivere codice facilmente mantenibile e
 riusabile; questo è possibile grazie al forte disaccoppiamento che sussiste tra logica di presentazione e di business.
-Inoltre l’MVVM è risultato il più adatto per essere utilizzato con React, libreria impiegata per lo sviluppo dell’UI e
+Inoltre MVVM è risultato il pattern più adatto per essere utilizzato con React, libreria impiegata per lo sviluppo dell’UI e
 che renderizza le componenti in base al loro stato interno.
 
 * Model: questa porzione ricopre la logica di business dell’applicazione;
@@ -83,20 +87,36 @@ che renderizza le componenti in base al loro stato interno.
   contiene la logica strettamente legata alla sua visualizzazione e necessaria al mantenimento del proprio stato
   interno.
 
-Il passaggio dei dati dal Model alle varie componenti grafiche avviene attraverso l’utilizzo di un Context React, al
-quale viene passato un’istanza del ViewModel. L’utilizzo di un Context React ci permette di accedere al valore corrente
-del ViewModel in qualsiasi porzione della View, senza doverlo passare di componente in componente attraverso le props (
-ossia gli argomenti dei componenti che compongono la vista). Nella radice dell’applicazione viene infatti creata
-un’istanza del ViewModel, che viene passata a un Context.Provider, che fa da contenitore per tutta la View. All’interno
-di tale contenitore ogni componente può utilizzare un hook per accedere al Context React e utilizzare il valore più
-recente del ViewModel. È stato scelto di utilizzare un Context React per il passaggio dei dati in quanto la nostra
-applicazione è molto profonda e non risultava conveniente passare i dati per molti componenti rischiando, nel peggiore
-dei casi, di doverli utilizzare nell’ultimo della gerarchia. Per poter fare in modo che una componente della View si
-renderizzi non solo al cambiamento del suo stato interno ma anche al cambiamento dei dati nel Model, abbiamo utilizzato
-la libreria Mobx. Questa ci permette d'implementare l’observer pattern, non supportato di default da React. A tale
-scopo, Mobx permette di segnare delle classi (o attributi di esse) come ”observable” e di costruire dei componenti della
-View come ”observer”. Quest’ultimi vengono automaticamente ri-renderizzati al cambiamento di un qualsiasi attributo
-observable.
+Il passaggio dei dati dal Model alle varie componenti grafiche avviene attraverso l’utilizzo di un `Context` di React, al
+quale viene passato un’istanza del Model. L’utilizzo di un `Context` ci permette di accedere al valore corrente
+del Model in qualsiasi porzione dell'albero dei componenti, senza doverlo passare di componente in componente attraverso
+le properties (ossia gli argomenti dei componenti che compongono la vista).
+Nella radice dell’applicazione viene infatti creata un’istanza del Model, che viene passata a un `Context.Provider`, che
+fa da contenitore per tutta l'applicazione. All’interno di tale contenitore ogni componente può utilizzare un hook per
+accedere al `Context` e utilizzare il valore più recente del Model. È stato scelto di utilizzare un `Context`
+per il passaggio dei dati in quanto la nostra applicazione è molto profonda e non risultava conveniente passare i dati
+per molti componenti esplicitamente, rischiando, nel peggiore dei casi, di doverli utilizzare nell’ultimo della gerarchia.
+
+Per poter fare in modo che una componente della View si renderizzi non solo al cambiamento del suo stato interno ma anche
+al cambiamento dei dati nel Model, abbiamo utilizzato la libreria di _State Management_ [Mobx](https://mobx.js.org), la
+quale ci permette d'implementare facilmente l’observer pattern al fine di ridurre la gestione manuale degli `useState`.
+A tale scopo, Mobx permette di segnare delle classi (o attributi di esse) come _observable_ e di costruire dei componenti
+della View come _observer_. Quest’ultimi vengono automaticamente ri-renderizzati al cambiamento di un qualsiasi attributo
+observable. Permette inoltre di definire delle _reaction_, le quali permettono, ad esempio, di aggiornare dei dati dal
+server ogni qual volta un campo di una classe venga modificato.
+
+Per semplificare la comunicazione tra frontend e backend abbiamo scelto di usare la tecnologia [OpenAPI](https://www.openapis.org/)
+sia per fornire una documentazione delle _API_ utile allo sviluppo che per autogenerare la libreria TypeScript usata dal
+frontend per comunicare col backend.
+
+Per la parte di analisi dei dati di {g:smartlogstatistics} è stato scelto dal gruppo l'uso di parte della piattaforma
+[Elastic](https://elastic.co).
+Nello specifico abbiamo scelto di usare solo ElasticSearch in quanto l'applicazione non richiede _ingest real-time_ dei log
+(LogStash) e le visualizzazioni offerte da Kibana non sono sufficienti a soddisfare le necessità dell'applicazione.
+È stato scelto l'uso di ElasticSearch come database in quanto è estremamente portato a lavorare con file di log ed effettuare
+operazioni sugli stessi oltre ad essere molto scalabile orizzontalmente.
+
+Nello sviluppo dei backend, data la loro semplicità, non sono stati scelti pattern architetturali di rilevo, ma sono comunque stati seguiti i principi _SOLID_.
 
 ## Diagrammi di SmartLogViewer
 
@@ -107,92 +127,87 @@ observable.
 left to right direction
 skinparam linetype ortho
 class CodeFilteringStrategy {
-constructor(logFile: LogFile):
-filterableCodes: string[]
-selectedCodes: string[]
-filter(entries: LogEntry[]): LogEntry[]
-reset(): void
-selectAll(): void
-selectNone(): void
-setSelection(selection: string[]): void
-filterSet: Set<string>
+  constructor(logFile: LogFile):
+  filterableCodes: string[]
+  selectedCodes: string[]
+  filter(entries: LogEntry[]): LogEntry[]
+  reset(): void
+  selectAll(): void
+  selectNone(): void
+  setSelection(selection: string[]): void
+  filterSet: Set<string>
 }
 class ConcreteLogFilteringService {
-constructor():
-registeredFilters: LogFilteringStrategy[]
-filterUIs: JSX.Element[]
-logFile: LogFile | null
-register(filter: LogFilteringStrategy, ui: JSX.Element): void
-setLogFile(logFile: LogFile): void
-removeFilters(): void
-resetAll(): void
-filteredEntries: LogEntry[]
-filtersUi: JSX.Element[]
+  constructor():
+  registeredFilters: LogFilteringStrategy[]
+  filterUIs: JSX.Element[]
+  logFile: LogFile | null
+  register(filter: LogFilteringStrategy, ui: JSX.Element): void
+  setLogFile(logFile: LogFile): void
+  removeFilters(): void
+  resetAll(): void
+  filteredEntries: LogEntry[]
+  filtersUi: JSX.Element[]
 }
 class DateTimeFilteringStrategy {
-constructor(logFile: LogFile):
-minTimestamp: Date
-maxTimestamp: Date
-minSelectedTimestamp: Date
-maxSelectedTimestamp: Date
-filter(entries: LogEntry[]): LogEntry[]
-setSelected(min: Date, max: Date): void
-reset(): void
+  constructor(logFile: LogFile):
+  minTimestamp: Date
+  maxTimestamp: Date
+  minSelectedTimestamp: Date
+  maxSelectedTimestamp: Date
+  filter(entries: LogEntry[]): LogEntry[]
+  setSelected(min: Date, max: Date): void
+  reset(): void
 }
 class EventSequenceFilteringStrategy {
-constructor(logFile: LogFile):
-minEvent: string[]
-maxEvent: string[]
-filterableCodes: string[]
-insertingFirst: SearchEntry
-insertingLast: SearchEntry
-firstValues: SearchEntry[]
-lastValues: SearchEntry[]
-selectedFirst: SearchEntry[]
-selectedLast: SearchEntry[]
-time: number
-filterSubSequence(entries: LogEntry[], first: SearchEntry[], last: SearchEntry[], range: number): LogEntry[]
-filter(entries: LogEntry[]): LogEntry[]
-reset(): void
-setTime(t?: number | null): void
-getInserting(isFirst: boolean): SearchEntry
-addItem(isFirst: boolean): void
-editItem(e: DataTableRowEditCompleteEvent, isFirst: boolean): void
-reorderItems(e: DataTableRowReorderEvent<SearchEntry[]>, isFirst: boolean): void
-deleteItem(index: number, isFirst: boolean): void
+  constructor(logFile: LogFile):
+  minEvent, maxEvent: string[]
+  filterableCodes: string[]
+  insertingFirst, insertingLast: SearchEntry
+  firstValues, lastValues, selectedFirst, selectedLast: SearchEntry[]
+  time: number
+  filterSubSequence(...): LogEntry[]
+  filter(entries: LogEntry[]): LogEntry[]
+  reset(): void
+  setTime(t?: number | null): void
+  getInserting(isFirst: boolean): SearchEntry
+  addItem(isFirst: boolean): void
+  editItem(e: DataTableRowEditCompleteEvent, isFirst: boolean): void
+  reorderItems(e: Event<SearchEntry[]>, isFirst: boolean): void
+  deleteItem(index: number, isFirst: boolean): void
 }
 class FirmwareFilteringStrategy {
-constructor(logFile: LogFile):
-filterableFirmwares: string[]
-selectedFirmwares: string[]
-filter(entries: LogEntry[]): LogEntry[]
-reset(): void
-selectAll(): void
-selectNone(): void
-setSelection(selection: string[]): void
-filterSet: Set<string>
+  constructor(logFile: LogFile):
+  filterableFirmwares: string[]
+  selectedFirmwares: string[]
+  filter(entries: LogEntry[]): LogEntry[]
+  reset(): void
+  selectAll(): void
+  selectNone(): void
+  setSelection(selection: string[]): void
+  filterSet: Set<string>
 }
 Interface ILogFilteringService {
-register(filter: LogFilteringStrategy, ui: JSX.Element): void
-resetAll(): void
-setLogFile(logFile: LogFile): void
-removeFilters(): void
-filteredEntries: LogEntry[]
-filtersUi: JSX.Element[]
+  register(filter: LogFilteringStrategy, ui: JSX.Element): void
+  resetAll(): void
+  setLogFile(logFile: LogFile): void
+  removeFilters(): void
+  filteredEntries: LogEntry[]
+  filtersUi: JSX.Element[]
 }
 Interface LogFilteringStrategy {
-filter(entries: LogEntry[]): LogEntry[]
-reset(): void
+  filter(entries: LogEntry[]): LogEntry[]
+  reset(): void
 }
 class SubunitFilteringStrategy {
-constructor(logFile: LogFile):
-subunitTree: TreeNode[]
-selectedSubunits: TreeCheckboxSelectionKeys
-filter(entries: LogEntry[]): LogEntry[]
-reset(): void
-selectAll(): void
-selectNone(): void
-filterSet: Set<number>
+  constructor(logFile: LogFile):
+  subunitTree: TreeNode[]
+  selectedSubunits: TreeCheckboxSelectionKeys
+  filter(entries: LogEntry[]): LogEntry[]
+  reset(): void
+  selectAll(): void
+  selectNone(): void
+  filterSet: Set<number>
 }
 CodeFilteringStrategy           -[#008200,dashed]-^  LogFilteringStrategy
 ConcreteLogFilteringService     -[#008200,dashed]-^  ILogFilteringService
@@ -206,17 +221,39 @@ SubunitFilteringStrategy        -[#008200,dashed]-^  LogFilteringStrategy
 ### Diagramma delle classi - SLViewer Backend
 
 ```{ .plantuml caption="Class Diagram SLViewer backend"}
-@startuml classes
+@startuml
 set namespaceSeparator none
-class "LogParserError" as sl_viewer_backend.schemas.logparsererror.LogParserError {
-errors : list[str]
+left to right direction
+skinparam linetype ortho
+
+class "pydantic.BaseModel" as BaseModel
+
+class LogFile {
+  filename: str
+  pc_datetime: datetime
+  ups_datetime: datetime
+  units_subunits: dict[int, Unit]
+  log_entries: list[LogEntry]
+  {static} LogFile parse_log(filename: str, log_contents: str)
 }
-class "LogParserResponse" as sl_viewer_backend.schemas.logparseresponse.LogParserResponse {
-log
+
+class LogParserError {
+  errors : list[str]
 }
-class "LogUpload" as sl_viewer_backend.schemas.logupload.LogUpload {
-log
+
+class LogParserResponse {
+  log: LogFile
 }
+class LogUpload {
+  log: File
+}
+
+
+LogFile -u-|> BaseModel
+LogUpload --|> BaseModel
+LogParserError --|> BaseModel
+LogParserResponse --|> BaseModel
+LogParserResponse o-- LogFile
 @enduml
 ```
 
@@ -228,31 +265,48 @@ log
 @startuml
 actor Actor
 box "FrontEnd"
-participant View
+participant App
 participant LogUploader
+participant LogParsingService
 end box
 box "BackEnd"
-participant LogParser
-participant LogUpload
+participant analyze_log
+participant LogFile
 end box
-Actor -> View: RequestUpload
-activate View
-View -> LogUploader:RequestUpload
-activate LogUploader
-LogUploader->LogParser :ParseUpload
-activate LogParser
 
-LogParser->LogUpload : RequestUpload
-LogParser<--LogUpload: getResponse
-LogUploader<--LogParser:return ParsedFile
-deactivate LogParser
-View <--LogUploader: return LogData
+Actor -> App: Upload file
+activate App
+
+App -> LogUploader: dispatch event
+activate LogUploader
+
+LogUploader -> LogParsingService: async parse()
+activate LogParsingService
+
+LogParsingService -> analyze_log: api call
+activate analyze_log
+
+analyze_log -> LogFile: parse_log
+activate LogFile
+
+analyze_log <-- LogFile: return LogFile
+deactivate  LogFile
+
+LogParsingService <-- analyze_log: LogParserResponse
+deactivate analyze_log
+
+LogUploader <-- LogParsingService: return LogFile
+deactivate LogParsingService
+
+App <-- LogUploader: return LogFile
 deactivate LogUploader
-View->View:Update
-activate View
-Actor<--View:Done
-deactivate View
-deactivate View
+
+App -> App:Update UI
+activate App
+
+Actor <-- App:Done
+deactivate App
+deactivate App
 @enduml
 ```
 
@@ -263,32 +317,33 @@ deactivate View
 actor Actor
 box "FrontEnd"
 participant LogViewer
-participant LogFilteringService
 collections  FilterView
 collections FilterViewModel
 collections LogFilteringStrategy
+participant LogFilteringService
 end box
-Actor -> LogViewer: Set Filter
+Actor -> LogViewer: Update Filter
 activate LogViewer
-LogViewer ->LogFilteringService: FilterType
-activate LogFilteringService
-LogFilteringService -> FilterView: Message
+LogViewer -> FilterView: Update Filter
 activate FilterView
-FilterView -> FilterViewModel: Message
+FilterView -> FilterViewModel: Dispatch Event
 activate FilterViewModel
-FilterViewModel -> LogFilteringStrategy: Filter
-deactivate FilterViewModel
+FilterViewModel -> LogFilteringStrategy: Update Filter Model
 activate LogFilteringStrategy
-FilterView <--LogFilteringStrategy:return selectedFilter
+LogFilteringStrategy --> LogFilteringService: Filter Model Update reaction
+activate LogFilteringService
+FilterViewModel <-- LogFilteringStrategy: Filter Model Update reaction
 deactivate LogFilteringStrategy
-LogViewer <-- LogFilteringService: return
-LogFilteringService <-- FilterView: aply filter
-deactivate LogFilteringService
+FilterView <-- FilterViewModel: Filter View Model Update
+deactivate FilterViewModel
+LogViewer <-- FilterView: Filter UI Update
 deactivate FilterView
-LogViewer -> LogViewer: Update
-activate LogViewer
-Actor <-- LogViewer: Done
+Actor <- LogViewer: Filter Update Feedback
 deactivate LogViewer
+LogViewer <-- LogFilteringService: UI update
+deactivate LogFilteringService
+activate LogViewer
+Actor <- LogViewer: Filtered data updated
 deactivate LogViewer
 @enduml
 ```
@@ -305,14 +360,15 @@ participant Timeline
 end box
 Actor -> LogViewer: ViewChart
 activate LogViewer
-LogViewer ->LogData: ViewChart
+LogViewer ->LogData: render component
 activate LogData
 
-LogData -> Timeline: ViewChart
-deactivate LogData
+LogData -> Timeline: render component
 activate Timeline
-LogViewer <-- Timeline: return 
+LogData <-- Timeline: return
 deactivate Timeline
+LogViewer <-- LogData: return
+deactivate LogData
 Actor <-- LogViewer: Done
 deactivate LogViewer
 @enduml
@@ -321,18 +377,21 @@ deactivate LogViewer
 #### Visualizzazione della tabella
 
 ```{ .plantuml caption="Diagramma V4"}
+@startuml
 actor Actor
 Actor -> LogViewer: ViewTable
 activate LogViewer
-LogViewer ->LogData: ViewTable
+LogViewer ->LogData: render component
 activate LogData
-LogData -> LogTable: ViewTable
-deactivate LogData
+LogData -> LogTable: render component
 activate LogTable
-LogViewer <-- LogTable: return
+LogData <-- LogTable: return
 deactivate LogTable
+LogViewer <-- LogData: return
+deactivate LogData
 Actor <-LogViewer: done
 deactivate LogViewer
+@enduml
 ```
 
 ## Diagrammi di SmartLogStatistics
@@ -472,7 +531,7 @@ hasError: boolean
 errorCanRetry: boolean
 }
 class RootStore {
-constructor(logListStore?: ILogListStore | null, filterStateStore?: IFilterStateStore | null, selectedLogsInfoStore?: ISelectedLogsInfoStore | null, logFrequencyStore?: ILogFrequencyStore | null, chartFilterStore?: IChartFilterStore | null, timeChartStore?: ITimeChartDataStore | null, firmwareChartDataStore?: IFirmwareChartDataStore | null):
+constructor(...stores):
 logListStore: ILogListStore
 filterStateStore: IFilterStateStore
 selectedLogsInfoStore: ISelectedLogsInfoStore
@@ -520,103 +579,144 @@ RootStore *-- ITimeChartDataStore
 ### Diagramma delle classi - SLStatistics Backend
 
 ```{ .plantuml caption="Class Diagram SLStatistics backend"}
-@startuml classes
+@startuml
 left to right direction
 set namespaceSeparator none
-class "ChartFilterData" as sl_statistics_backend.models.chartfilterdata.ChartFilterData {
-codes : list[str]
-firmwares : list[str]
-subunits : list[int]
+hide <<type>> circle
+hide <<type>> methods
+
+class "pydantic.BaseModel" as BaseModel
+
+class LogFile {
+  filename: str
+  pc_datetime: datetime
+  ups_datetime: datetime
+  units_subunits: dict[int, Unit]
+  log_entries: list[LogEntry]
+  {static} LogFile parse_log(filename: str, log_contents: str)
 }
-class "Config" as sl_statistics_backend.models.logoverview.LogOverview.Config {
-json_encoders : dict
+LogFile --|> BaseModel
+
+class ChartFilterData {
+  codes : list[str]
+  firmwares : list[str]
+  subunits : list[int]
 }
-class "Config" as sl_statistics_backend.models.storedlogfile.StoredLogFile.Config {
-json_encoders : dict
+ChartFilterData --|> BaseModel
+
+class CountResponse {
+  count : int
 }
-class "CountResponse" as sl_statistics_backend.schemas.countresponse.CountResponse {
-count : int
+CountResponse --|> BaseModel
+
+class ErrorResponse {
+  errors : list[str]
 }
-class "ErrorResponse" as sl_statistics_backend.schemas.errorresponse.ErrorResponse {
-errors : list[str]
+ErrorResponse --|> BaseModel
+
+class FirmwareChartParams {
+  selected_codes : list[str]
+  selected_firmwares : list[str]
 }
-class "FirmwareChartParams" as sl_statistics_backend.schemas.firmwarechartparams.FirmwareChartParams {
-selected_codes : list[str]
-selected_firmwares : list[str]
+FirmwareChartParams --|> LogOverviewParams
+
+
+class HistogramEntry <<type>> {
+  dict[str, str]
 }
-class "Histogram" as sl_statistics_backend.schemas.histogram.Histogram {
-bars : list[HistogramEntry]
+
+class Histogram {
+  bars : list[HistogramEntry]
 }
-class "LogDatabase" as sl_statistics_backend.log_database.LogDatabase {
-elastic
-elastic
-index_name : str
-index_name : str
-uploaded_file_list
-chart_filters(start: datetime, end: datetime) -> ChartFilterData
-close() -> None
-delete_log(log: str) -> int
-ensure_index_exists() -> None
-firmware_chart_data(start: datetime, end: datetime, firmwares: list[str], codes: list[str]) -> list[HistogramEntry]
-log_entries_frequency(start: datetime, end: datetime, subunits: list[int]) -> list[LogFrequencyEntry]
-log_overview(start: datetime, end: datetime) -> LogOverview
-time_chart_data(start: datetime, end: datetime, subunits: list[int], codes: list[str]) -> list[HistogramEntry]
-upload(log_file: LogFile) -> int
+HistogramEntry --* Histogram
+Histogram --|> BaseModel
+
+class LogDatabase {
+  elastic: elastic.AsyncElasticSearch
+  index_name : str
+  uploaded_file_list() -> list[str]
+  chart_filters(start: datetime, end: datetime) -> ChartFilterData
+  close() -> None
+  delete_log(log: str) -> int
+  ensure_index_exists() -> None
+  firmware_chart_data(start: datetime, end: datetime, firmwares: list[str], codes: list[str]) -> list[HistogramEntry]
+  log_entries_frequency(start: datetime, end: datetime, subunits: list[int]) -> list[LogFrequencyEntry]
+  log_overview(start: datetime, end: datetime) -> LogOverview
+  time_chart_data(start: datetime, end: datetime, subunits: list[int], codes: list[str]) -> list[HistogramEntry]
+  upload(log_file: LogFile) -> int
 }
-class "<color:red>LogDatabaseError</color>" as sl_statistics_backend.log_database.LogDatabaseError {
-message : str
-message : str
+
+class LogDelete {
+  log : str
 }
-class "LogDelete" as sl_statistics_backend.schemas.logdelete.LogDelete {
-log : str
+LogDelete --|> BaseModel
+
+class LogFrequency {
+  entries : list[LogFrequencyEntry]
 }
-class "LogFrequency" as sl_statistics_backend.schemas.logfrequency.LogFrequency {
-entries : list[LogFrequencyEntry]
+LogFrequency --|> BaseModel
+
+class LogFrequencyEntry {
+  count : int
+  event_code : str
+  firmware : str
 }
-class "LogFrequencyEntry" as sl_statistics_backend.models.logfrequencyentry.LogFrequencyEntry {
-count : int
-event_code : str
-firmware : str
+LogFrequencyEntry --* LogFrequency
+LogFrequencyEntry --|> BaseModel
+
+class LogFrequencyParams {
+  selected_subunits : list[int]
 }
-class "LogFrequencyParams" as sl_statistics_backend.schemas.logfrequencyparams.LogFrequencyParams {
-selected_subunits : list[int]
+LogFrequencyParams --|> LogOverviewParams
+
+class MaxCountEntry {
+  entry_count : int
+  filename : str
 }
-class "LogOverview" as sl_statistics_backend.models.logoverview.LogOverview {
-avg_entries : int
-entries_std_dev : int
-max_count_entry
-total_entries : int
-empty() -> 'LogOverview'
+MaxCountEntry --|> BaseModel
+
+class LogOverview {
+  avg_entries : int
+  entries_std_dev : int
+  max_count_entry: MaxCountEntry
+  total_entries : int
+  empty() -> LogOverview
 }
-class "LogOverviewParams" as sl_statistics_backend.schemas.logoverviewparams.LogOverviewParams {
-end : datetime
-start : datetime
+MaxCountEntry --* LogOverview
+LogOverview --|> BaseModel
+
+class LogOverviewParams {
+  end : datetime
+  start : datetime
 }
-class "LogUpload" as sl_statistics_backend.schemas.logupload.LogUpload {
-log
+LogOverviewParams --|> BaseModel
+
+class LogUpload {
+  log: str
 }
-class "MaxCountEntry" as sl_statistics_backend.models.logoverview.MaxCountEntry {
-entry_count : int
-filename : str
+LogUpload --|> BaseModel
+
+class StoredLogFile {
+  entry_count : int
+  file_name : str
+  first_entry_timestamp : datetime
+  last_entry_timestamp : datetime
 }
-class "StoredLogFile" as sl_statistics_backend.models.storedlogfile.StoredLogFile {
-entry_count : int
-file_name : str
-first_entry_timestamp : datetime
-last_entry_timestamp : datetime
+StoredLogFile --|> BaseModel
+
+class StoredLogList {
+  log_files : list[StoredLogFile]
+  max_timestamp : datetime
+  min_timestamp : datetime
 }
-class "StoredLogList" as sl_statistics_backend.models.storedloglist.StoredLogList {
-log_files : list[StoredLogFile]
-max_timestamp : datetime
-min_timestamp : datetime
+StoredLogFile --* StoredLogList
+StoredLogList --|> BaseModel
+
+class TimeChartParams {
+  selected_codes : list[str]
 }
-class "TimeChartParams" as sl_statistics_backend.schemas.timechartparams.TimeChartParams {
-selected_codes : list[str]
-}
-sl_statistics_backend.schemas.firmwarechartparams.FirmwareChartParams --|> sl_statistics_backend.schemas.logoverviewparams.LogOverviewParams
-sl_statistics_backend.schemas.logfrequencyparams.LogFrequencyParams --|> sl_statistics_backend.schemas.logoverviewparams.LogOverviewParams
-sl_statistics_backend.schemas.timechartparams.TimeChartParams --|> sl_statistics_backend.schemas.logfrequencyparams.LogFrequencyParams
-sl_statistics_backend.models.logoverview.MaxCountEntry --* sl_statistics_backend.models.logoverview.LogOverview : max_count_entry
+TimeChartParams --|> LogFrequencyParams
+
 @enduml
 ```
 
@@ -627,22 +727,65 @@ sl_statistics_backend.models.logoverview.MaxCountEntry --* sl_statistics_backend
 ```{ .plantuml caption="Diagramma S1"}
 @startuml
 actor User
-User -> LogUpload: LogUpload
-activate LogUpload
-LogUpload -> LogFileManagementSystem: LogUploadFile
-alt LogNotUploaded
-activate LogFileManagementSystem
-LogFileManagementSystem -> SLBackend: ApiCall
-activate SLBackend
-LogFileManagementSystem <-- SLBackend: Return LogList
-deactivate SLBackend
-LogUpload <-- LogFileManagementSystem: Return LogList
-deactivate LogFileManagementSystem
-User <-- LogUpload: Done
+
+box Frontend
+participant LogListView
+participant LogListViewModel
+participant LogListStore
+end box
+
+box Backend
+participant upload_log
+participant LogDatabase
+end box
+
+participant ElasticSearch
+
+User -> LogListView: upload log
+activate LogListView
+LogListView -> LogListViewModel: logUploadHandler
+activate LogListViewModel
+LogListViewModel -> LogListStore: uploadLogFile
+activate LogListStore
+LogListStore -> upload_log: api call
+activate upload_log
+upload_log -> LogDatabase: upload
+activate LogDatabase
+LogDatabase -> ElasticSearch: check if already present
+
+alt LogUploadedSuccessfully
+  
+  activate ElasticSearch
+  LogDatabase <-- ElasticSearch: not present
+  deactivate ElasticSearch
+  upload_log <-- LogDatabase: return
+  deactivate LogDatabase
+  LogListStore <-- upload_log: 200 OK
+  deactivate upload_log
+  LogListViewModel <-- LogListStore: return
+  deactivate LogListStore
+  LogListView <-- LogListViewModel: return
+  deactivate LogListViewModel
+  User <-- LogListView: Done
 else Log Already Uploaded
-LogUpload <-- LogFileManagementSystem: Return Error
-User <-- LogUpload: Return Error
-deactivate LogUpload
+  activate ElasticSearch
+  activate LogDatabase
+  activate upload_log
+  activate LogListStore
+  activate LogListViewModel
+  
+  LogDatabase <-- ElasticSearch: already present
+  deactivate ElasticSearch
+  upload_log <-- LogDatabase: LogDatabaseError
+  deactivate LogDatabase
+  LogListStore <-- upload_log: 400 Bad Request
+  deactivate upload_log
+  LogListViewModel <-- LogListStore: return
+  deactivate LogListStore
+  LogListView <-- LogListViewModel: return
+  deactivate LogListViewModel
+  User <-- LogListView: Show error
+  deactivate LogListView
 end
 @enduml
 ```
@@ -652,39 +795,54 @@ end
 ```{ .plantuml caption="Diagramma S2"}
 @startuml
 actor User
-box "FrontEnd"
+
+box Frontend
 participant LogListView
-participant LogFileManagementSystem
+participant LogListViewModel
+participant SelectedLogsInfoStore
 end box
-box "BackEnd"
+
+box Backend
+participant selected_logs_overview
 participant LogDatabase
-participant ElasticDB
 end box
-User -> LogListView: Visualizza Prospetto
+
+participant ElasticSearch
+
+User -> LogListView: Show log overview
 activate LogListView
-LogListView -> LogFileManagementSystem :LogOverviewData
-activate LogFileManagementSystem
-LogFileManagementSystem -> LogDatabase: LogListStore
+LogListView -> LogListViewModel: updateOverview
+deactivate LogListView
+activate LogListViewModel
+LogListViewModel -> SelectedLogsInfoStore: updateOverview
+deactivate LogListViewModel
+activate SelectedLogsInfoStore
+SelectedLogsInfoStore -> selected_logs_overview: api call
+activate selected_logs_overview
+selected_logs_overview -> LogDatabase: log_overview
 activate LogDatabase
-LogDatabase -> ElasticDB: ApiCall
-activate ElasticDB
+LogDatabase -> ElasticSearch: Query data
+activate ElasticSearch
+LogDatabase <-- ElasticSearch: Return data
+deactivate ElasticSearch
 alt File di Log Caricati
-LogDatabase <-- ElasticDB: Return Data
-LogFileManagementSystem <-- LogDatabase: Intervallo Temporale
-LogFileManagementSystem <-- LogDatabase: Numero di Log
-LogFileManagementSystem <-- LogDatabase: Media Numero Eventi
-LogFileManagementSystem <-- LogDatabase: Massimo Numero Eventi
-LogFileManagementSystem <-- LogDatabase: Deviazione Standard Numero Eventi
-LogFileManagementSystem <-- LogDatabase: Lista Occorrenze Eventi
+selected_logs_overview <-- LogDatabase: entry count
+selected_logs_overview <-- LogDatabase: average entry count
+selected_logs_overview <-- LogDatabase: max entry count
+selected_logs_overview <-- LogDatabase: entry count stdDev
 else DB vuoto
-LogDatabase <-- ElasticDB: Return EmptyData
-deactivate ElasticDB
-LogFileManagementSystem<-- LogDatabase:return
-deactivate LogDatabase
+selected_logs_overview <-- LogDatabase: Return EmptyData
 end
-LogListView <-- LogFileManagementSystem: return
-deactivate LogFileManagementSystem
-User <-- LogListView:Done
+deactivate LogDatabase
+SelectedLogsInfoStore <-- selected_logs_overview: 200 OK
+deactivate selected_logs_overview
+LogListViewModel <-- SelectedLogsInfoStore: reaction
+deactivate SelectedLogsInfoStore
+activate LogListViewModel
+LogListView <-- LogListViewModel: reaction
+deactivate LogListViewModel
+activate LogListView
+User <-- LogListView: log overview updated
 deactivate LogListView
 @enduml
 ```
@@ -694,175 +852,168 @@ deactivate LogListView
 ```{ .plantuml caption="Diagramma S3"}
 @startuml
 actor User
-User-->View:Filtro
-alt 3.1 AggiuntaFiltro
-alt 3.1.1 Filtra per Unit/Subunit
-else 3.1.2 Filtra per Intervallo Temporale
-View-->LogListView:Filter
-LogListView-->FilterStateStore:Filter
-alt 3.1.2.1 Intervallo GIusto
-LogListView<--FilterStateStore:Done
-View<--LogListView:Done
-else 3.1.2.2 Intervallo Sbagliato
-LogListView<--FilterStateStore !! : error
-View<--LogListView !! : Intervalli sbagliati
+
+box Frontend
+participant LogFrequencyView
+participant LogFrequencyViewModel
+participant LogFrequencyStore
+end box
+
+box Backend
+participant log_frequency
+participant LogDatabase
+end box
+
+participant ElasticSearch
+
+User -> LogFrequencyView:Filter
+alt 3.1 Add Filter
+  alt Needs DB query
+    alt 3.1.1 Filtra per Unit/Subunit
+      LogFrequencyView -> LogFrequencyViewModel: onSubunitSelectionChange
+      LogFrequencyViewModel -> LogFrequencyStore: setSubunitSelection
+    else 3.1.2 Filtra per Intervallo Temporale
+      LogFrequencyView -> LogFrequencyViewModel: onMinSelectionChange\nonMaxSelectionChange
+      LogFrequencyViewModel -> LogFrequencyStore: setMinTimestamp\nsetMinTimestamp
+    end
+    LogFrequencyStore <-- LogFrequencyStore: //reaction//\nupdateFrequencies 
+    LogFrequencyStore -> log_frequency: api call
+    activate log_frequency
+    log_frequency -> LogDatabase: log_entries_frequency
+    activate LogDatabase
+    LogDatabase -> ElasticSearch: query
+    activate ElasticSearch
+    LogDatabase <-- ElasticSearch: query response
+    deactivate ElasticSearch
+    log_frequency <-- LogDatabase: return
+    deactivate LogDatabase
+    LogFrequencyStore <-- log_frequency: 200 OK
+    deactivate log_frequency
+    LogFrequencyViewModel <-- LogFrequencyStore: //reaction//
+    LogFrequencyView <-- LogFrequencyViewModel: //reaction//
+  else Can be performed locally
+    group 3.1.3 Per versione Firmware
+      LogFrequencyView-->LogFrequencyView:Done
+      note left: handled by PrimeReact DataTable
+    end
+  end
+else 3.2 Sort by Column
+  LogFrequencyView-->LogFrequencyView:Done
+  note left: handled by PrimeReact DataTable
 end
-else 3.1.3 Per versione Firmware
-LogListView-->FilterStateStore:Filter
-LogListView<--FilterStateStore:Done
-View<--LogListView:Done
-end
-else 3.2 Ordinamento per Colonna
-alt 3.2.1 Ordinamento per CodiceEvento
-View-->LogListView:Filter
-else 3.2.2 Ordinamento per Numero Occorrenze
-LogListView-->FilterStateStore:Filter
-LogListView<--FilterStateStore:Done
-View<--LogListView:Done
-else 3.2.3 Ordinamento per Firmware
-LogListView-->FilterStateStore:Filter
-LogListView<--FilterStateStore:Done
-View<--LogListView:Done
-end
-end
+User <-- LogFrequencyView: UI update
 @enduml
 ```
 
-#### Retrieve dei dati dal backend per il grafico Firmware/Occorrenze
+#### Visualizzazione del grafico Firmware/Occorrenze
 
 ```{ .plantuml caption="Diagramma S5"}
 @startuml
 actor User
 box "FrontEnd"
 participant FirmwareChartView
+participant FirmwareChartViewModel
 participant FirmwareChartDataStore
 end box
 box "BackEnd"
-participant FirmwareChartParams
+participant firmware_chart
+participant LogDatabase
 end box
-User-->FirmwareChartView:Request
-alt 4.1 File di Log caricati
-FirmwareChartView-->FirmwareChartDataStore:Request
-activate FirmwareChartDataStore
-FirmwareChartDataStore-->FirmwareChartParams:Request
-activate FirmwareChartParams
-FirmwareChartDataStore<--FirmwareChartParams:return params
-deactivate FirmwareChartParams
-FirmwareChartView<--FirmwareChartDataStore  :return data
-deactivate FirmwareChartDataStore
-User<--FirmwareChartView:done
-else 4.2 File non caricati
-FirmwareChartView-->FirmwareChartDataStore:Request
-activate FirmwareChartDataStore
-FirmwareChartDataStore-->FirmwareChartParams:Request
-activate FirmwareChartParams
-FirmwareChartDataStore<--FirmwareChartParams !! :return emptyparams
-deactivate FirmwareChartParams
-FirmwareChartView<--FirmwareChartDataStore  !!:return emptydata
-deactivate FirmwareChartDataStore
-User<--FirmwareChartView:done
+participant ElasticSearch
+
+User --> FirmwareChartView: update filters
+
+alt
+else Update selected codes
+FirmwareChartView -> FirmwareChartViewModel: onCodeSelectionChange
+FirmwareChartViewModel --> FirmwareChartDataStore: setSelectedCodes
+else Update selected firmwares
+FirmwareChartView -> FirmwareChartViewModel: onFirmwareSelectionChange
+FirmwareChartViewModel -> FirmwareChartDataStore: setSelectedFirmwares
 end
+
+FirmwareChartDataStore <-- FirmwareChartDataStore: //reaction//\nupdate
+activate FirmwareChartDataStore
+FirmwareChartDataStore -> firmware_chart: api call
+activate firmware_chart
+firmware_chart -> LogDatabase: firmware_chart_data
+activate LogDatabase
+LogDatabase -> ElasticSearch: query
+activate ElasticSearch
+LogDatabase <-- ElasticSearch: query response
+deactivate ElasticSearch
+firmware_chart <-- LogDatabase: return
+deactivate LogDatabase
+FirmwareChartDataStore <-- firmware_chart: 200 OK
+deactivate firmware_chart
+FirmwareChartViewModel <-- FirmwareChartDataStore: //reaction//
+deactivate FirmwareChartDataStore
+FirmwareChartView <-- FirmwareChartViewModel: //reaction//
+
+User <-- FirmwareChartView: UI Update
+
 @enduml
 ```
 
-#### Retrieve dei dati dal backend per il grafico Tempo/Occorrenze
+#### Visualizzazione del grafico Tempo/Occorrenze
 
 ```{ .plantuml caption="Diagramma S6"}
 @startuml
 actor User
 box "FrontEnd"
 participant TimeChartView
+participant TimeChartViewModel
 participant TimeChartDataStore
 end box
 box "BackEnd"
-participant TimeChartParams
+participant time_chart
+participant LogDatabase
 end box
-User-->TimeChartView:Request
-alt 4.1 File di Log caricati
-TimeChartView-->TimeChartDataStore:Request
-activate TimeChartDataStore
-TimeChartDataStore-->TimeChartParams:Request
-activate TimeChartParams
-TimeChartDataStore<--TimeChartParams:return params
-deactivate TimeChartParams
-TimeChartView<--TimeChartDataStore  :return data
-deactivate TimeChartDataStore
-User<--TimeChartView:done
-else 4.2 File non caricati
-TimeChartView-->TimeChartDataStore:Request
-activate TimeChartDataStore
-TimeChartDataStore-->TimeChartParams:Request
-activate TimeChartParams
-TimeChartDataStore<--TimeChartParams !! :return emptyparams
-deactivate TimeChartParams
-TimeChartView<--TimeChartDataStore  !!:return emptydata
-deactivate TimeChartDataStore
-User<--TimeChartView:done
+participant ElasticSearch
+
+User --> TimeChartView: update filters
+
+alt
+else Update selected codes
+TimeChartView -> TimeChartViewModel: onCodeSelectionChange
+TimeChartViewModel --> TimeChartDataStore: setSelectedCodes
+else Update selected subunits
+TimeChartView -> TimeChartViewModel: onSubunitSelectionChange
+TimeChartViewModel -> TimeChartDataStore: setSelectedSubunits
 end
-@enduml
-```
 
-#### Filtri Grafico Firmware/Occorrenze
-
-```{ .plantuml caption="Diagramma S4"}
-@startuml
-actor User
-box "FrontEnd"
-participant FirmwareChartView
-participant FilterStateStore
-participant ChartFilterStore
-participant FirmwareChartDataStore
-end box
-User-->FirmwareChartView:Filter
-activate FirmwareChartView
-FirmwareChartView-->FilterStateStore:filter
-activate FilterStateStore
-FirmwareChartView-->ChartFilterStore:filter
-activate ChartFilterStore
-FilterStateStore-->FirmwareChartDataStore:filter
-activate FirmwareChartDataStore
-deactivate FilterStateStore
-ChartFilterStore-->FirmwareChartDataStore:filter
-deactivate ChartFilterStore
-FirmwareChartDataStore-> FirmwareChartDataStore:Update
-FirmwareChartView<--FirmwareChartDataStore:data
-deactivate FirmwareChartDataStore
-User<--FirmwareChartView:Done
-deactivate FirmwareChartView
-@enduml
-```
-
-#### Filtri Grafico Tempo/Occorrenze
-
-```{ .plantuml caption="Diagramma S5"}
-@startuml
-actor User
-box "FrontEnd"
-participant TimeChartView
-participant FilterStateStore
-participant ChartFilterStore
-participant TimeChartDataStore
-end box
-User-->TimeChartView:Filter
-activate TimeChartView
-TimeChartView-->FilterStateStore:filter
-activate FilterStateStore
-TimeChartView-->ChartFilterStore:filter
-activate ChartFilterStore
-FilterStateStore-->TimeChartDataStore:filter
+TimeChartDataStore <-- TimeChartDataStore: //reaction//\nupdate
 activate TimeChartDataStore
-deactivate FilterStateStore
-ChartFilterStore-->TimeChartDataStore:filter
-deactivate ChartFilterStore
-TimeChartDataStore-> TimeChartDataStore:Update
-TimeChartView<--TimeChartDataStore:data
+TimeChartDataStore -> time_chart: api call
+activate time_chart
+time_chart -> LogDatabase: time_chart_data
+activate LogDatabase
+LogDatabase -> ElasticSearch: query
+activate ElasticSearch
+LogDatabase <-- ElasticSearch: query response
+deactivate ElasticSearch
+time_chart <-- LogDatabase: return
+deactivate LogDatabase
+TimeChartDataStore <-- time_chart: 200 OK
+deactivate time_chart
+TimeChartViewModel <-- TimeChartDataStore: //reaction//
 deactivate TimeChartDataStore
-User<--TimeChartView:Done
-deactivate TimeChartView
+TimeChartView <-- TimeChartViewModel: //reaction//
+
+User <-- TimeChartView: UI Update
+
 @enduml
 ```
 
 ## Design pattern
+
+Sono stati usati i seguenti design pattern:
+
+* **Context/Provider pattern**: è un design pattern simile al singleton ma che a sua differenza è _scoped_ nell'albero dei componenti, quindi in caso di necessità è facile passare da 1 a n istanze dell'oggetto;
+* **Observer pattern**: è un design pattern utile a semplificare l'osservazione dello stato da parte di un componente tipica delle interfacce grafiche;
+* **Reactive Store Pattern**: usato per aggiornare automaticamente gli store che dipendono da altri store per i loro dati;
+* **Service Layer pattern**: usato per separare logicamente i servizi che compongono l'applicazione;
+* **Higher Order Functions (HOF)**: utilizzato per ridurre la duplicazione di codice usando funzioni che ritornano callback con comportamento diverso in base agli argomenti.
 
 # Requisiti soddisfatti
 
