@@ -43,6 +43,10 @@ versioni:
     autore: Augusto Zanellato
     data: 21/05/2023
     cambiamenti: Verifica finale e approvazione per il rilascio
+  1.1.0:
+    autore: Augusto Zanellato
+    data: 04/06/2023
+    cambiamenti: Aggiornamento architettura backend
 ...
 
 # Introduzione
@@ -116,7 +120,7 @@ Nello specifico abbiamo scelto di usare solo ElasticSearch in quanto l'applicazi
 È stato scelto l'uso di ElasticSearch come database in quanto è estremamente portato a lavorare con file di log ed effettuare
 operazioni sugli stessi oltre ad essere molto scalabile orizzontalmente.
 
-Nello sviluppo dei backend, data la loro semplicità, non sono stati scelti pattern architetturali di rilevo, ma sono comunque stati seguiti i principi _SOLID_.
+Nello sviluppo dei backend è stata adottato il pattern architetturale _Layered Architecture_, sono inoltre stati seguiti i principi _SOLID_ e {a:dry}.
 
 ## Diagrammi di SmartLogViewer
 
@@ -226,26 +230,32 @@ set namespaceSeparator none
 left to right direction
 skinparam linetype ortho
 
-class "pydantic.BaseModel" as BaseModel
-
-class LogFile {
-  filename: str
-  pc_datetime: datetime
-  ups_datetime: datetime
-  units_subunits: dict[int, Unit]
-  log_entries: list[LogEntry]
-  {static} LogFile parse_log(filename: str, log_contents: str)
+package "pydantic" {
+  class "BaseModel" as BaseModel
 }
 
-class LogParserError {
-  errors : list[str]
+package "sl_parser" {
+  class LogFile {
+    filename: str
+    pc_datetime: datetime
+    ups_datetime: datetime
+    units_subunits: dict[int, Unit]
+    log_entries: list[LogEntry]
+    {static} LogFile parse_log(filename: str, log_contents: str)
+  }
 }
 
-class LogParserResponse {
-  log: LogFile
-}
-class LogUpload {
-  log: File
+package "sl_viewer_backend" {
+  class LogParserError {
+    errors : list[str]
+  }
+  
+  class LogParserResponse {
+    log: LogFile
+  }
+  class LogUpload {
+    log: File
+  }
 }
 
 
@@ -263,6 +273,7 @@ LogParserResponse o-- LogFile
 
 ```{ .plantuml caption="Diagramma V1"}
 @startuml
+!pragma teoz true
 actor Actor
 box "FrontEnd"
 participant App
@@ -270,8 +281,18 @@ participant LogUploader
 participant LogParsingService
 end box
 box "BackEnd"
-participant analyze_log
-participant LogFile
+box "api"
+participant parse_log
+end box
+box "service"
+participant parse_log_file
+end box
+box "validation"
+participant validate_log_file
+end box
+box "sl_parser"
+participant LogFile.parse_log
+end box
 end box
 
 Actor -> App: Upload file
@@ -283,17 +304,29 @@ activate LogUploader
 LogUploader -> LogParsingService: async parse()
 activate LogParsingService
 
-LogParsingService -> analyze_log: api call
-activate analyze_log
+LogParsingService -> parse_log: api call
+activate parse_log
 
-analyze_log -> LogFile: parse_log
-activate LogFile
+parse_log -> parse_log_file: uploaded data
+activate parse_log_file
 
-analyze_log <-- LogFile: return LogFile
-deactivate  LogFile
+parse_log_file -> validate_log_file: uploaded data
+activate validate_log_file
 
-LogParsingService <-- analyze_log: LogParserResponse
-deactivate analyze_log
+parse_log_file <-- validate_log_file
+deactivate validate_log_file
+
+parse_log_file -> LogFile.parse_log: log file
+activate LogFile.parse_log
+
+parse_log_file <-- LogFile.parse_log: return LogFile
+deactivate LogFile.parse_log
+
+parse_log <-- parse_log_file: return LogFile
+deactivate parse_log_file
+
+LogParsingService <-- parse_log: LogParserResponse
+deactivate parse_log
 
 LogUploader <-- LogParsingService: return LogFile
 deactivate LogParsingService
@@ -726,6 +759,7 @@ TimeChartParams --|> LogFrequencyParams
 
 ```{ .plantuml caption="Diagramma S1"}
 @startuml
+!pragma teoz true
 actor User
 
 box Frontend
@@ -735,8 +769,18 @@ participant LogListStore
 end box
 
 box Backend
+box api
 participant upload_log
+end box
+box service
+participant log_management_service
+end box
+box data
 participant LogDatabase
+end box
+end box
+box sl_parser
+participant LogFile.parse_log
 end box
 
 participant ElasticSearch
@@ -749,17 +793,29 @@ LogListViewModel -> LogListStore: uploadLogFile
 activate LogListStore
 LogListStore -> upload_log: api call
 activate upload_log
-upload_log -> LogDatabase: upload
+upload_log -> log_management_service: async upload_log
+activate log_management_service
+log_management_service -> LogFile.parse_log: log data
+activate LogFile.parse_log
+log_management_service <-- LogFile.parse_log: return LogFile
+deactivate LogFile.parse_log
+log_management_service -> LogDatabase: upload
 activate LogDatabase
 LogDatabase -> ElasticSearch: check if already present
+activate ElasticSearch
 
-alt LogUploadedSuccessfully
+alt Log Uploaded Successfully
   
-  activate ElasticSearch
   LogDatabase <-- ElasticSearch: not present
   deactivate ElasticSearch
-  upload_log <-- LogDatabase: return
+  LogDatabase -> ElasticSearch: upload log file
+  activate ElasticSearch
+  LogDatabase <-- ElasticSearch: upload ok
+  deactivate ElasticSearch
+  log_management_service <-- LogDatabase: return
   deactivate LogDatabase
+  upload_log <-- log_management_service: return
+  deactivate log_management_service
   LogListStore <-- upload_log: 200 OK
   deactivate upload_log
   LogListViewModel <-- LogListStore: return
@@ -794,6 +850,7 @@ end
 
 ```{ .plantuml caption="Diagramma S2"}
 @startuml
+!pragma teoz true
 actor User
 
 box Frontend
@@ -803,8 +860,15 @@ participant SelectedLogsInfoStore
 end box
 
 box Backend
+box api
 participant selected_logs_overview
+end box
+box service
+participant log_aggregation_service
+end box
+box data
 participant LogDatabase
+end box
 end box
 
 participant ElasticSearch
@@ -819,21 +883,25 @@ deactivate LogListViewModel
 activate SelectedLogsInfoStore
 SelectedLogsInfoStore -> selected_logs_overview: api call
 activate selected_logs_overview
-selected_logs_overview -> LogDatabase: log_overview
+selected_logs_overview -> log_aggregation_service: selected_logs_overview
+activate log_aggregation_service
+log_aggregation_service -> LogDatabase: log_overview
 activate LogDatabase
 LogDatabase -> ElasticSearch: Query data
 activate ElasticSearch
 LogDatabase <-- ElasticSearch: Return data
 deactivate ElasticSearch
 alt File di Log Caricati
-selected_logs_overview <-- LogDatabase: entry count
-selected_logs_overview <-- LogDatabase: average entry count
-selected_logs_overview <-- LogDatabase: max entry count
-selected_logs_overview <-- LogDatabase: entry count stdDev
+log_aggregation_service <-- LogDatabase: entry count
+log_aggregation_service <-- LogDatabase: average entry count
+log_aggregation_service <-- LogDatabase: max entry count
+log_aggregation_service <-- LogDatabase: entry count stdDev
 else DB vuoto
-selected_logs_overview <-- LogDatabase: Return EmptyData
+log_aggregation_service <-- LogDatabase: Return EmptyData
 end
 deactivate LogDatabase
+selected_logs_overview <-- log_aggregation_service: return LogOverview
+deactivate log_aggregation_service
 SelectedLogsInfoStore <-- selected_logs_overview: 200 OK
 deactivate selected_logs_overview
 LogListViewModel <-- SelectedLogsInfoStore: reaction
@@ -851,6 +919,7 @@ deactivate LogListView
 
 ```{ .plantuml caption="Diagramma S3"}
 @startuml
+!pragma teoz true
 actor User
 
 box Frontend
@@ -860,8 +929,15 @@ participant LogFrequencyStore
 end box
 
 box Backend
+box api
 participant log_frequency
+end box
+box service
+participant log_aggregation_service
+end box
+box data
 participant LogDatabase
+end box
 end box
 
 participant ElasticSearch
@@ -879,14 +955,18 @@ alt 3.1 Add Filter
     LogFrequencyStore <-- LogFrequencyStore: //reaction//\nupdateFrequencies 
     LogFrequencyStore -> log_frequency: api call
     activate log_frequency
-    log_frequency -> LogDatabase: log_entries_frequency
+    log_frequency -> log_aggregation_service: log_frequency_analysis
+    activate log_aggregation_service
+    log_aggregation_service -> LogDatabase: log_entries_frequency
     activate LogDatabase
     LogDatabase -> ElasticSearch: query
     activate ElasticSearch
     LogDatabase <-- ElasticSearch: query response
     deactivate ElasticSearch
-    log_frequency <-- LogDatabase: return
+    log_aggregation_service <-- LogDatabase: return
     deactivate LogDatabase
+    log_frequency <-- log_aggregation_service: return
+    deactivate log_aggregation_service
     LogFrequencyStore <-- log_frequency: 200 OK
     deactivate log_frequency
     LogFrequencyViewModel <-- LogFrequencyStore: //reaction//
@@ -909,15 +989,24 @@ User <-- LogFrequencyView: UI update
 
 ```{ .plantuml caption="Diagramma S5"}
 @startuml
+!pragma teoz true
 actor User
 box "FrontEnd"
 participant FirmwareChartView
 participant FirmwareChartViewModel
 participant FirmwareChartDataStore
 end box
-box "BackEnd"
+
+box Backend
+box api
 participant firmware_chart
+end box
+box service
+participant chart_service
+end box
+box data
 participant LogDatabase
+end box
 end box
 participant ElasticSearch
 
@@ -936,14 +1025,18 @@ FirmwareChartDataStore <-- FirmwareChartDataStore: //reaction//\nupdate
 activate FirmwareChartDataStore
 FirmwareChartDataStore -> firmware_chart: api call
 activate firmware_chart
-firmware_chart -> LogDatabase: firmware_chart_data
+firmware_chart -> chart_service: get_firmware_chart_data
+activate chart_service
+chart_service -> LogDatabase: firmware_chart_data
 activate LogDatabase
 LogDatabase -> ElasticSearch: query
 activate ElasticSearch
 LogDatabase <-- ElasticSearch: query response
 deactivate ElasticSearch
-firmware_chart <-- LogDatabase: return
+chart_service <-- LogDatabase: return
 deactivate LogDatabase
+firmware_chart <-- chart_service: return
+deactivate chart_service
 FirmwareChartDataStore <-- firmware_chart: 200 OK
 deactivate firmware_chart
 FirmwareChartViewModel <-- FirmwareChartDataStore: //reaction//
@@ -959,15 +1052,24 @@ User <-- FirmwareChartView: UI Update
 
 ```{ .plantuml caption="Diagramma S6"}
 @startuml
+!pragma teoz true
 actor User
 box "FrontEnd"
 participant TimeChartView
 participant TimeChartViewModel
 participant TimeChartDataStore
 end box
-box "BackEnd"
+
+box Backend
+box api
 participant time_chart
+end box
+box service
+participant chart_service
+end box
+box data
 participant LogDatabase
+end box
 end box
 participant ElasticSearch
 
@@ -986,14 +1088,18 @@ TimeChartDataStore <-- TimeChartDataStore: //reaction//\nupdate
 activate TimeChartDataStore
 TimeChartDataStore -> time_chart: api call
 activate time_chart
-time_chart -> LogDatabase: time_chart_data
+time_chart -> chart_service: get_time_chart_data
+activate chart_service
+chart_service -> LogDatabase: time_chart_data
 activate LogDatabase
 LogDatabase -> ElasticSearch: query
 activate ElasticSearch
 LogDatabase <-- ElasticSearch: query response
 deactivate ElasticSearch
-time_chart <-- LogDatabase: return
+chart_service <-- LogDatabase: return
 deactivate LogDatabase
+time_chart <-- chart_service: return
+deactivate chart_service
 TimeChartDataStore <-- time_chart: 200 OK
 deactivate time_chart
 TimeChartViewModel <-- TimeChartDataStore: //reaction//
@@ -1009,6 +1115,7 @@ User <-- TimeChartView: UI Update
 
 Sono stati usati i seguenti design pattern:
 
+* **Layered Architecture**: usato nello sviluppo dei backend, è stato usato per separare a livello logico le funzioni di presentazione dei dati, business logic ed eventuale validazione o persistenza dei dati;
 * **Context/Provider pattern**: è un design pattern simile al singleton ma che a sua differenza è _scoped_ nell'albero dei componenti, quindi in caso di necessità è facile passare da 1 a n istanze dell'oggetto;
 * **Observer pattern**: è un design pattern utile a semplificare l'osservazione dello stato da parte di un componente tipica delle interfacce grafiche;
 * **Reactive Store Pattern**: usato per aggiornare automaticamente gli store che dipendono da altri store per i loro dati;
@@ -1019,7 +1126,7 @@ Sono stati usati i seguenti design pattern:
 
 ## Tabella dei requisiti soddisfatti
 
-## Funzionali (SmartLogViewer)
+### Funzionali (SmartLogViewer)
 
 | **Requisito** | **Descrizione** | **Classificazione** | **Stato** |
 |---------------| ----------------| ------------------- | --------- |
@@ -1056,7 +1163,7 @@ Sono stati usati i seguenti design pattern:
 | VRO4 | L'utente deve poter esportare i file che visualizza i grafici | Opzionale | non soddisfatto |
 | VRO5 | L'utente deve poter eliminare tutti i filtri applicati | Opzionale | non soddisfatto |
 
-## Funzionali (SmartLogStatistics)
+### Funzionali (SmartLogStatistics)
 
 | **Requisito** | **Descrizione** | **Classificazione** | **Stato** |
 |---------------| ----------------| ------------------- | --------- |
@@ -1097,7 +1204,7 @@ Sono stati usati i seguenti design pattern:
 | SRO2 | L'utente deve poter esportare i file che visualizza i grafici | Opzionale | non soddisfatto  |
 | SRO3 | L'utente deve poter eliminare tutti i filtri applicati | Opzionale | non soddisfatto |
 
-## Qualità
+### Qualità
 
 | **Requisito** | **Descrizione** | **Classificazione** | **Stato** |
 |---------------| ----------------| ------------------- | --------- |
@@ -1108,7 +1215,7 @@ Sono stati usati i seguenti design pattern:
 | RQ1 | Deve essere fornita la documentazione minima richiesta anche dal corso di "Ingegneria del Software" | Obbligatorio |  Soddisfatto  |
 | RQ2 | Viene richiesto l'utilizzo di un {g:repository} pubblico ({g:github}) | Obbligatorio |  Soddisfatto  |
 
-## Vincolo
+### Vincolo
 
 | **Requisito** | **Descrizione** | **Classificazione** | **Stato** |
 |---------------| ----------------| ------------------- | --------- |
