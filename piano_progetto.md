@@ -74,6 +74,19 @@ versioni:
     autore: Antonio Stan
     data: 19/05/2023
     cambiamenti: Approvato per il rilascio
+  2.0.1:
+    autore: Davide Vitagliano
+    data: 5/06/2023
+    cambiamenti: modifiche valori orari dopo aver fatto modifiche per primo colloqui PB con il Professor Cardin
+  2.0.2:
+    autore: Enrik Rucaj
+    data: 6/06/2023
+    cambiamenti: verifica degli aggiornamenti
+  3.0.0:
+    autore: Antonio Stan
+    data: 6/06/2023
+    cambiamenti: Approvato per il rilascio
+
 ...
 
 # Introduzione
@@ -592,9 +605,6 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 
 **Periodo:**
 
-* INIZIO 15 Maggio 2023 - Fine periodo "Product baseline"
-* FINE 28 Maggio 2023 - Fine periodo di progettazione e codifica dei Requisiti Opzionali
-
 **Ruoli coinvolti:** Responsabile - Amministratore - Analista - Progettista - Programmatore - Verificatore
 
 Le attività da svolgere durante questo periodo sono:
@@ -648,9 +658,6 @@ fig.update_traces(textposition='inside', textinfo='percent+value+label+text', sh
 ## Test, Collaudo e Validazione finale
 
 **Periodo:**
-
-* INIZIO 29 Maggio 2023 - Fine periodo di progettazione e codifica dei Requisiti Opzionali
-* FINE 4 Giugno 2023 - Revisione di Customer Acceptance (CA)
 
 **Ruoli coinvolti:** Responsabile - Amministratore - Progettista - Programmatore - Verificatore
 
@@ -1126,7 +1133,6 @@ Vengono riportare le ore di lavoro rendicontate dai componenti del gruppo:
 | Vitagliano Davide |    7     |    1    |   -    |      9      |      12       |   18     |    47      |
 | Zanellato Augusto |    1     |    -    |   4    |      10      |      18       |    7     |    40      |
 | **Totale**        |**28**    |  **9**  | **10**  |  **68**     |    **82**    |**91**    | **288**    |
-
 
 Di seguito vengono riportati i costi sostenuti:
 
