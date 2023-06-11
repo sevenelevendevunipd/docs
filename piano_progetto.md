@@ -884,26 +884,26 @@ Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver**  | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :------: | :--------: |
-| Auletta Andrea    |    3     |    -    |   -    |      6(+1)  |      -       |    3     |    12(+1)  |
-| Brunello Mattia   |    -     |    2    |   -    |      -      |      -       |    5     |     7      |
-| Cecchetto Nicola  |    1     |    -    |   -    |      6(+2)  |      -       |    5     |    12(+2)  |
-| Rucaj Enrik       |    -     |    -    |   2    |      7      |      -       |    -     |     9      |
-| Stan Antonio      |    4(+1) |    -    |   3    |      6(+1)  |      -       |    3     |    16(+2)  |
-| Vitagliano Davide |    5     |    -    |   -    |      6(+1)  |      -       |    4(+1) |    15(+2)  |
-| Zanellato Augusto |    -     |    -    |   -    |      7      |      -       |    -     |     7      |
-| **Totale**        |**13(+1)**|  **2**  | **5**  |  **38(+5)** |    **-**     |**20(+1)**| **78(+7)** |
+| Auletta Andrea    |    3     |    -    |   -    |      8(+3)  |      -       |   5(+2)  |    16(+5)  |
+| Brunello Mattia   |    -     |  3(+1)  |   -    |      -      |      -       |    5     |    8(+1)   |
+| Cecchetto Nicola  |    1     |    -    |   -    |      8(+4)  |      -       |    5     |    14(+4)  |
+| Rucaj Enrik       |    -     |    -    | 3(+1)  |      7      |      -       |    -     |   10(+1)   |
+| Stan Antonio      |    4(+1) |    -    |   3    |      6(+1)  |      -       |   4(+1)  |    17(+3)  |
+| Vitagliano Davide |    5     |    -    |   -    |      6(+1)  |      -       |    6(+3) |    17(+4)  |
+| Zanellato Augusto |    -     |    -    | 4(+4)  |   10(+3)    |      -       |    -     |   14(+7)   |
+| **Totale**        |**13(+1)**|  **3(+1)**  | **10(+5)**  |  **45(+12)** |    **-**     |**25(+6)**| **96(+25)** |
 
 Di seguito vengono riportate le variazioni dei costi:
 
 | **Ruolo**      | **Ore**  | **Costo** |
 | -------------- | :------: | :-------: |
 | Responsabile   |   13(+1) |  390(+30) |
-| Amministratore |    2     |    40     |
-| Analista       |    5     |    125    |
-| Progettista    | 38(+5)   | 950(+125) |
+| Amministratore |   3(+1)     |    60(+20)     |
+| Analista       | 10(+5)     |    250(+125)    |
+| Progettista    | 45(+12)   | 1125(+300) |
 | Programmatore  |    -     |     -     |
-| Verificatore   | 20(+1)   |  300(+15) |
-| **Totale**     |  **78**  |  **1805** |
+| Verificatore   | 25(+6)   |  375(+90) |
+| **Totale**     |  **96**  |  **2200** |
 
 ### Motivazioni delle variazioni
 
@@ -917,7 +917,7 @@ Prendiamo in considerazione l'idea di spostare di una settimana in avanti tutti 
 
 | **Ore** | **Costo**  |
 | :-----: | :--------: |
-| **+7**  |**+170,00** |
+| **+25**  |**+565,00** |
 
 ## Codifica dei Requisiti Obbligatori
 
@@ -925,14 +925,14 @@ Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
-| Auletta Andrea    |    3     |    -    |   -    |      -      |      5(-1)   |  4(+1)  |     12     |
-| Brunello Mattia   |    -     |    2    |   -    |      -      |      7       |    -    |     9      |
-| Cecchetto Nicola  |    2     |    -    |   -    |      -      |      -       |  4(-1)  |     7      |
-| Rucaj Enrik       |    -     |    -    |   -    |      -      |      6(+1)   |    4    |     9      |
-| Stan Antonio      |    3     |    -    |   -    |      -      |      7       |    2    |     12     |
-| Vitagliano Davide |    2     |    -    |   -    |      -      |      5       |    4    |     11     |
-| Zanellato Augusto |    -     |    -    |   -    |      -      |      5       |    -    |     5      |
-| **Totale**        |  **10**  |  **2**  | **-**  |    **-**    |    **35**    |  **18** |   **65**   |
+| Auletta Andrea    |    3     |    -    |   -    |      -      |      7(+1)       |  4(+1)  |     14(+2)     |
+| Brunello Mattia   |    -     |    2    |   -    |      -      |      7       |    3(+3)    |     12(+3)      |
+| Cecchetto Nicola  |    2     |    -    |   -    |      -      |      4(+4)    |  4(-1)  |    10 (+3)     |
+| Rucaj Enrik       |    -     |    -    |   -    |      -      |      7(+2)   |    6(+2)    |     13(+4)      |
+| Stan Antonio      |    3     |    -    |   -    |      -      |      8(+1)       |    4(+2)    |     15(+3)     |
+| Vitagliano Davide |    2     |    -    |   -    |      -      |      6(+1)       |    5(+1)    |     13(+2)     |
+| Zanellato Augusto |    -     |    -    |   -    |      -      |     12(+7)       |    -    |     12(+7)     |
+| **Totale**        |  **10**  |  **2**  | **-**  |    **-**    |    **51(+16)**    |  **26(+8)** |   **89(+24)**   |
 
 Di seguito vengono riportate le variazioni dei costi:
 
@@ -942,9 +942,9 @@ Di seguito vengono riportate le variazioni dei costi:
 | Amministratore |    2    |     40    |
 | Analista       |    -    |     -     |
 | Progettista    |    -    |     -     |
-| Programmatore  |   35    |    525    |
-| Verificatore   |   18    |    270    |
-| **Totale**     |  **65** | **1135**  |
+| Programmatore  |   51(+16)    |    765(+240)    |
+| Verificatore   |   26(+8)    |    390(+120)    |
+| **Totale**     |  **89** | **1495**  |
 
 ### Considerazioni
 
@@ -954,7 +954,7 @@ Non c'è stato alcun ritardo significativo quindi prevediamo di essere pronti pe
 
 | **Ore** | **Costo**  |
 | :-----: | :--------: |
-| **0**   |   **0**    |
+| **+24**   |   **+360**    |
 
 ## Test, Collaudo e Validazione dei requisiti obbligatori
 
@@ -962,14 +962,14 @@ Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver**     | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :---------: | :--------: |
-| Auletta Andrea    |    2     |    -    |   -    |      3      |      3       |  7(+4)      |     15(+4) |
-| Brunello Mattia   |    -     |    1    |   -    |      4      |      4(+1)   |    2(+2)    |    11(+3)  |
-| Cecchetto Nicola  |    1     |    -    |   -    |      3(+1)  |      4       |    3(+2)    |    11(+3)  |
-| Rucaj Enrik       |    -     |    2(-1)|   -    |      3(+1)  |      4       |    5(+2)    | 14(+2)     |
-| Stan Antonio      |    1     |    -    |   -    |      2      |      -       |    4(+2)    |     7(+2)  |
-| Vitagliano Davide |    -     |    1    |   -    |      3      |      4(+2)   |   5(+4)     |     13(+6) |
-| Zanellato Augusto |    1     |    -    |   -    |      -      |      4       |    2(+2)    |   7(+2)    |
-| **Totale**        |  **5**   |**4(-1)**| **-**  | **18(+2)**  |   **23(+3)** | **28(+18)** |**78(+22)** |
+| Auletta Andrea    |    2     |    -    |   -    |      3      |      5(+2)       |  7(+4)      |     17(+6) |
+| Brunello Mattia   |    -     |    1    |   -    |      5(+1)      |      6(+3)   |    4(+4)    |    16(+8)  |
+| Cecchetto Nicola  |    1     |    -    |   -    |      4(+2)  |      4       |    6(+5)    |    15(+7)  |
+| Rucaj Enrik       |    -     |    2(-1)|   -    |      5(+3)  |      4       |    5(+2)    | 16(+4)     |
+| Stan Antonio      |    1     |    -    |   -    |      3(+1)      |      -       |    4(+2)    |     8(+3)  |
+| Vitagliano Davide |    -     |    1    |   -    |      3      |      6(+4)   |   7(+6)     |     17(+10) |
+| Zanellato Augusto |    1     |    -    |   -    |      -      |      6(+2)       |    7(+7)    |   7(+9)    |
+| **Totale**        |  **5**   |**4(-1)**| **-**  | **23(+7)**  |   **31(+11)** | **40(+30)** |**103(+47)** |
 
 Di seguito vengono riportate le variazioni dei costi:
 
@@ -978,10 +978,10 @@ Di seguito vengono riportate le variazioni dei costi:
 | Responsabile   |    5    |    150    |
 | Amministratore |    4(-1)|    80(-20)|
 | Analista       |    -    |     -     |
-| Progettista    |   18(+2)|   450(+50)|
-| Programmatore  |   23(+3)|  345(+45) |
-| Verificatore   |  28(+18)| 420(+270) |
-| **Totale**     |  **64** |  **1445** |
+| Progettista    |   23(+7)|   575(+175)|
+| Programmatore  |   31(+11)|  465(+165) |
+| Verificatore   |  40(+30)| 600(+450) |
+| **Totale**     |  **103** |  **1870** |
 
 ### Motivazioni delle variazioni
 
@@ -993,7 +993,7 @@ Ci sono state delle difficoltà al livello di separazione del lavoro: la maggior
 
 | **Ore** | **Costo**  |
 | :-----: | :--------: |
-| **+22** |**+345,00** |
+| **+47** |**+770,00** |
 <!-- ## Progettazione di dettaglio e Codifica dei Requisiti Opzionali
 
 Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
@@ -1118,44 +1118,43 @@ Vengono riportare le ore di lavoro rendicontate dai componenti del gruppo:
 
 | **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver**  | **Totale** |
 | ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :------: | :--------: |
-| Auletta Andrea    |    8     |    -    |   -    |      9      |      8       |   14     |    39      |
-| Brunello Mattia   |    -     |    5    |   -    |      4      |      11      |    7     |    27      |
-| Cecchetto Nicola  |    4     |    -    |   -    |      9      |      4       |   12     |    29      |
-| Rucaj Enrik       |    -     |    2    |   2    |      10     |      10      |    9     |    33      |
-| Stan Antonio      |    8     |    -    |   3    |      8      |      7       |    9     |    35      |
-| Vitagliano Davide |    7     |    1    |   -    |      9      |      9       |   13     |    39      |
-| Zanellato Augusto |    1     |    -    |   -    |      7      |      9       |    2     |    19      |
-| **Totale**        |**28**    |  **8**  | **5**  |  **56**     |    **58**    |**66**    | **221**    |
+| Auletta Andrea    |    8     |    -    |   -    |      11      |      12       |   16     |    47      |
+| Brunello Mattia   |    -     |    6    |   -    |      5      |      13      |    12     |    36      |
+| Cecchetto Nicola  |    4     |    -    |   -    |      12      |      8       |   15     |    39      |
+| Rucaj Enrik       |    -     |    2    |   3    |      12     |      11      |    11    |    39      |
+| Stan Antonio      |    8     |    -    |   3    |      9      |      8       |    12     |    40      |
+| Vitagliano Davide |    7     |    1    |   -    |      9      |      12       |   18     |    47      |
+| Zanellato Augusto |    1     |    -    |   4    |      10      |      18       |    7     |    40      |
+| **Totale**        |**28**    |  **9**  | **10**  |  **68**     |    **82**    |**91**    | **288**    |
+
 
 Di seguito vengono riportati i costi sostenuti:
 
 | **Ruolo**      | **Ore** | **Costo** |
 | -------------- |:-------:|:---------:|
 | Responsabile   |   28    |    840    |
-| Amministratore |   8     |    160    |
-| Analista       |   8     |   200     |
-| Progettista    |   56    |   1400    |
-| Programmatore  |   58    |    870    |
-| Verificatore   |   66    |   990     |
-| **Totale**     | **221** | **4460**  |
+| Amministratore |   9     |    180    |
+| Analista       |   10     |   250     |
+| Progettista    |   68    |   1700    |
+| Programmatore  |   82    |    1230    |
+| Verificatore   |   91    |   1365     |
+| **Totale**     | **288** | **5565**  |
 
-## Preventivo a finire
+# Ore affrontate per ogni membro
 
-Viene riportato il prospetto delle ore di lavoro dei componenti del gruppo:
-
-| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- |:--------:|:-------:|:------:|:-----------:|:------------:|:-------:|:----------:|
-|Auletta Andrea     |    0     |    5    |   0    |     2       |      5       |   0     |     12     |
-|Brunello Mattia    |    2     |    1    |   0    |     6       |      4       |    1    |     14     |
-|Cecchetto Nicola   |    1     |    0    |   0    |     3       |      8       |   5     |     17     |
-|Rucaj Enrik        |    1     |    3    |   1    |     0       |      5       |   2     |     12     |
-|Stan Antonio       |    0     |    0    |   2    |     6       |      3       |    2    |     13     |
-| Vitagliano Davide |    2     |    0    |   0    |     6       |      4       |   0     |     12     |
-| Zanellato Augusto |    0     |    1    |   0    |     3       |      6       |    2    |     12     |
-| **Totale**        |  **6**   | **10**  | **3**  |   **26**    |   **35**     | **12**  |  **92**   |
+| **Nome**          | **Ore** |
+| ----------------- | :------: |
+| Auletta Andrea    |   92     |
+| Brunello Mattia   |   90     |
+| Cecchetto Nicola  |   88     |
+| Rucaj Enrik       |   89     |
+| Stan Antonio      |   87     |
+| Vitagliano Davide |   92     |
+| Zanellato Augusto |  100     |
+| **Totale**        |**28**    |
 
 Di seguito viene riportato il prospetto del costo del progetto:
 
 | **Costo sostenuto** | **Costo mancante** |
 |:-------------------:|:------------------:|
-|      **4460**       |      **1755**      |
+|      **12855**       |      **650**      |
