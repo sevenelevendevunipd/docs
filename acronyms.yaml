@@ -16,3 +16,6 @@ RTB: !!python/object:pandoc_glossary_filter.data.AcronymEntry
 PB: !!python/object:pandoc_glossary_filter.data.AcronymEntry
   long: 'Product Baseline'
   name: 'PB'
+dry: !!python/object:pandoc_glossary_filter.data.AcronymEntry
+  long: "Don't Repeat Yourself"
+  name: 'DRY'
