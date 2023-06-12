@@ -200,7 +200,7 @@ Questa sezione elenca i possibili rischi in cui si potrebbe incorrere durante l�
 
 ### Requirements and Technology Baseline
 
-* RO1 - Sessione: la sessione ha causato rallentamenti nello sviluppo del progetto in quanto ha richiesto una quantità di tempo non indifferente ad ogni membro del gruppo per lo studio, ciò nonostante, le ore svolte sono allineate con le ore preventivate per il progetto. La soluzione è stata quelli di posticipare la revisione RTB e quindi l'inizio della PB. Putroppo la conflittualità di tempistiche era talmente grande che la soluzione proposta di avvisare con largo anticipo non è bastata per scongiurare questo rischio, con effetto finale il ritardo riscontrato.
+* RO1 - Sessione: la sessione ha causato rallentamenti nello sviluppo del progetto in quanto ha richiesto una quantità di tempo non indifferente ad ogni membro del gruppo per lo studio, ciò nonostante, le ore svolte sono allineate con le ore preventivate per il progetto. La soluzione è stata quelli di posticipare la revisione RTB e quindi l'inizio della PB. Purtroppo la conflittualità di tempistiche era talmente grande che la soluzione proposta di avvisare con largo anticipo non è bastata per scongiurare questo rischio, con effetto finale il ritardo riscontrato.
 
 * RI1 - Inesperienza: dopo le esercitazioni del professor Cardin ci sono state delle modifiche nell'analisi dei requisiti dovute a degli errori che abbiamo commesso durante la stesura dei casi d'uso. Qui la soluzione proposta di chiedere aiuto ai professori ha funzionato senza conseguenze negative.
 
