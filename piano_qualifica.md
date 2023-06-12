@@ -550,8 +550,8 @@ I test di accettazione sono necessari per la verifica dei requisiti richiesti da
 import plotly.graph_objects as go
 
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
-y1 = [3245, 4965, 7315, 8950, 10085, 11185]
-y2 = [3215, 4830, 7290, 8925, 10060, 11185]
+y1 = [3225, 4945, 7295, 8930, 10065, 11165]
+y2 = [3215, 4830, 7290, 9490, 10985, 12480]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='preventivo del costo attuale'))
 fig.add_scatter(x=x, y=y2, name='costo attuale')
@@ -567,7 +567,7 @@ import plotly.graph_objects as go
 
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
 y1 = [13505, 13505, 13505, 13505, 13505, 13505]
-y2 = [13475, 13370, 13480, 13480, 13480, 13505]
+y2 = [13495, 13390, 13500, 14065, 14425, 14820]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='costo totale'))
 fig.add_scatter(x=x, y=y2, name='stima del costo totale')
@@ -583,8 +583,8 @@ fig.show()
 import plotly.graph_objects as go
 
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
-y1 = [151, 231, 356, 421, 486, 542]
-y2 = [148, 223, 350, 428, 493, 557]
+y1 = [150, 230, 351, 422, 487, 543]
+y2 = [148, 223, 350, 446, 535, 638]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='preventivo del periodo temporale attuale'))
 fig.add_scatter(x=x, y=y2, name='periodo temporale attuale')
@@ -600,7 +600,7 @@ import plotly.graph_objects as go
 
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
 y1 = [665, 665, 665, 665, 665, 665]
-y2 = [662, 657, 659, 672, 672, 680]
+y2 = [663, 658, 664, 689, 713, 760]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='tempo di sviluppo totale'))
 fig.add_scatter(x=x, y=y2, name='stima del tempo di sviluppo totale')
@@ -616,8 +616,8 @@ fig.show()
 import plotly.graph_objects as go
 
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
-y1 = [0.9, 2.7, 0.3, 0.3, 0.2, 0]
-y2 = [1.9, 3.4, 1.6, -1.7, -1.4, -2.8]
+y1 = [0.3, 2.3, 0.1, -6.3, -9.1, -11.8]
+y2 = [1.3, 3.0, 0.3, -5.7, -9.9, -17.5]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='rapporto del costo'))
 fig.add_scatter(x=x, y=y2, name='rapporto del periodo temporale')
@@ -633,7 +633,7 @@ fig.show()
 import plotly.graph_objects as go
 
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
-y1 = [38.4, 38.4, 69.2 ,  69.2, 77 , 84.6]
+y1 = [38.4, 38.4, 69.2,  69.2, 77 , 84.6]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale delle metriche soddisfatte'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
@@ -647,7 +647,7 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
-y1 = [2.43, 4.87, -11.11, -9.86, 0, -14,28]
+y1 = [1.3, 6.3, -5, -35.2, -36.9, -83.9]
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di variazioni di programma'))
 fig.add_scatter(x=[x[0], x[-1]], y=[0, 0], line=dict(dash='dash'), name='valore ottimale')
 fig.add_scatter(x=[x[0], x[-1]], y=[-15, -15], line=dict(dash='dash'), name='valore accettabile')
