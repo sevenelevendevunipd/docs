@@ -450,6 +450,8 @@ Per organizzare al meglio il lavoro, all'interno dell'organizzazione {g:github},
   * **analisi_requisiti**: documento che fissa i requisiti (espliciti e impliciti) concordati con il proponente, che
     il gruppo si impegna a soddisfare.
   * **glossario**: documento che specifica ogni termine specializzato nel dominio di progetto.
+  * **manuale utente**: documento che descrive le modalità di utilizzo del prodotto.
+  * **allegato tecnico**: documento che descrive le tecnologie utilizzate per lo sviluppo del prodotto.
 * SevenElevenUnipd/**sl-parser**: componente che interpreta i {g:log}. È comune tra {g:smartlogviewer} e {g:smartlogstatistics}
 * SevenElevenUnipd/**sl-viewer-frontend**: componente di {g:frontend} per {g:smartlogviewer}.
 * SevenElevenUnipd/**sl-viewer-backend**: componente di {g:backend} per {g:smartlogviewer}.
