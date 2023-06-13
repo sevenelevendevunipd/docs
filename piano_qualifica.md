@@ -573,7 +573,7 @@ fig = go.Figure(data=go.Scatter(x=x, y=y1, name='costo totale'))
 fig.add_scatter(x=x, y=y2, name='stima del costo totale')
 fig.add_scatter(x=[x[0], x[-1]], y=[14180, 14180], line=dict(dash='dash'), name='valore accettabile superiore')
 fig.add_scatter(x=[x[0], x[-1]], y=[12829, 12829], line=dict(dash='dash'), name='valore accettabile inferiore')
-fig.update_layout(yaxis_range=[12500, 14500])
+fig.update_layout(yaxis_range=[12000, 15000])
 fig.show()
 ```
 
@@ -606,7 +606,7 @@ fig = go.Figure(data=go.Scatter(x=x, y=y1, name='tempo di sviluppo totale'))
 fig.add_scatter(x=x, y=y2, name='stima del tempo di sviluppo totale')
 fig.add_scatter(x=[x[0], x[-1]], y=[698, 698], line=dict(dash='dash'), name='valore accettabile superiore')
 fig.add_scatter(x=[x[0], x[-1]], y=[632, 632], line=dict(dash='dash'), name='valore accettabile inferiore')
-fig.update_layout(yaxis_range=[600, 700])
+fig.update_layout(yaxis_range=[600, 800])
 fig.show()
 ```
 
@@ -633,7 +633,7 @@ fig.show()
 import plotly.graph_objects as go
 
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
-y1 = [38.4, 38.4, 69.2,  69.2, 77 , 84.6]
+y1 = [58.3, 58.3, 66.7,  58.3, 50 , 66.7]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale delle metriche soddisfatte'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
@@ -651,7 +651,7 @@ y1 = [1.3, 6.3, -5, -35.2, -36.9, -83.9]
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di variazioni di programma'))
 fig.add_scatter(x=[x[0], x[-1]], y=[0, 0], line=dict(dash='dash'), name='valore ottimale')
 fig.add_scatter(x=[x[0], x[-1]], y=[-15, -15], line=dict(dash='dash'), name='valore accettabile')
-fig.update_layout(yaxis_range=[-20, 102])
+fig.update_layout(yaxis_range=[-90, 50])
 fig.update_layout(title='Percentuale di variazioni di programma', xaxis_title='Periodo temporale', yaxis_title='Percentuale di variazioni di programma')
 fig.update_layout(legend=dict(x=0.01, y=0.99, traceorder="normal", font=dict(size=12, color="black"), bgcolor="LightSteelBlue", bordercolor="Black", borderwidth=2))
 
@@ -679,8 +679,8 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-documenti = ['NDP', 'PDP', 'PDQ', 'ADR']
-valori = [62, 47.8, 44.9, 58]
+documenti = ['NDP', 'PDP', 'PDQ', 'ADR','AT','MU']
+valori = [62, 47.8, 44.9, 58, 31.9, 47.3 ]
 
 fig = go.Figure(data=go.Bar(x=documenti, y=valori))
 fig.update_layout(yaxis_range=[0, 100])
