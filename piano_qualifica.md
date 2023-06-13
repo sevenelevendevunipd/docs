@@ -659,7 +659,7 @@ fig.show()
 ```
 
 ### Test soddisfati
-<!-- test totali 190 dovrebbe essere 62, yakuza li interpreta come test passati su quelli implementati nel periodo-->
+
 ```{.plotly_python}
 import plotly.graph_objects as go
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
