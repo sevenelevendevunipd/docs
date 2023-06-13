@@ -672,7 +672,7 @@ fig.update_layout(yaxis_range=[-2, 102])
 fig.show()
 ```
 
-## verifica del prodotto
+## Verifica del prodotto
 
 ### Indice di Gulpease <!-- qui -->
 
@@ -680,7 +680,7 @@ fig.show()
 import plotly.graph_objects as go
 
 documenti = ['NDP', 'PDP', 'PDQ', 'ADR']
-valori = [62, 63, 62, 58]
+valori = [62, 47.8, 44.9, 58]
 
 fig = go.Figure(data=go.Bar(x=documenti, y=valori))
 fig.update_layout(yaxis_range=[0, 100])
@@ -737,7 +737,7 @@ fig.show()
 import plotly.graph_objects as go
 
 x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
-y1 = [0, 0, 0]
+y1 = [0, 0, 1, 2, 2, 2]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='livello di profondità di ereditarietà'))
 fig.add_scatter(x=[x[0], x[-1]], y=[0, 0], line=dict(dash='dash'), name='valore ottimale')
