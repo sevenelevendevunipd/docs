@@ -106,11 +106,11 @@ versioni:
     autore: Andrea Auletta
     data: 20/04/2023
     cambiamenti: modifiche su alcuni requisiti
-  1.1.0
+  1.1.0:
     autore: Augusto Zanellato
     data: 22/04/2023
     cambiamenti: revisione modifiche
-  2.0.0
+  2.0.0:
     autore: Davide Vitagliano
     data: 5/05/2023
     cambiamenti: Approvazione per il rilascio
