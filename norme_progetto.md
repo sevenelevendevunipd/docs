@@ -460,7 +460,7 @@ i seguenti {g:repository}:
 
 ### Nomenclatura dei commit e dei branch
 
-I branch vengono nominati in questo modo:  **SL-n-nome_branch** 
+I branch vengono nominati in questo modo:  **SL-n-nome_branch**
 
 * SL: SmartLog;
 * n: numero auto incrementale;
