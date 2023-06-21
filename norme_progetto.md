@@ -59,15 +59,15 @@ versioni:
   v1.0.1:
     autore: Mattia Brunello
     data: 20/04/2023
-    cambiamento: Aggiunti standard
+    cambiamenti: Aggiunti standard
   v1.1.0:
     autore: Antonio Stan
     data: 27/04/2023
-    cambiamento: Verifica standard
+    cambiamenti: Verifica standard
   v2.0.0:
     autore: Davide Vitagliano
     data: 2/05/2023
-    cambiamento: Approvato per il rilascio
+    cambiamenti: Approvato per il rilascio
 ...
 
 # Introduzione
