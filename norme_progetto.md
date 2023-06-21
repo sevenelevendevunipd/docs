@@ -537,6 +537,20 @@ Ci sono due diverse tecniche:
 
 I test hanno lo scopo di far emergere eventuali errori o comportamenti inaspettati con l'esecuzione del programma.
 
+##### Classificazione Test di Unità
+
+I test di unità vanno a testare parti del software e vanno descritti durante la progettazione di dettaglio.
+
+I test di unità presenti nel documento *Piano di Qualifica* sono identificati da dei codici, descritti qui:
+
+* TU_VF = test unità viewer per il frontend
+* TU_VB = test unità viewer per il backend
+* TU_SF = test unità statistics per il frontend
+* TU_SB = test unità statistics per il backend
+* TU_P = test unità del parser
+* NI = non implementato
+* I = implementato
+
 ##### Classificazione Test di Sistema
 
 I test di sistema sono test che vengono eseguiti su il sistema completamente integrato di tutte le sue parti, e servono per verificare che i requisiti vengano rispettati.
