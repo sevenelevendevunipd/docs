@@ -1,9 +1,9 @@
 ---
 title: "Piano di qualifica"
 date: "06/12/2022"
-responsabile: "Andrea Auletta"
-redattori: ["Enrik Rucaj", "Davide Vitagliano"]
-verificatori: ["Nicola Cecchetto", "Antonio Stan", "Mattia Brunello", "Augusto Zanellato"]
+responsabile: "Nicola Cecchetto"
+redattori: ["Enrik Rucaj", "Antonio Stan"]
+verificatori: ["Andrea Auletta", "Davide Vitagliano", "Mattia Brunello", "Augusto Zanellato"]
 abstract: "Viene definito il piano di qualifica"
 docusage: "Esterno"
 toc: true
@@ -41,17 +41,13 @@ versioni:
     data: 07/02/2022
     cambiamenti: Inseriti i grafici inerenti all' attività di verifica del prodotto
   v0.2.0:
-    autore: Davide Vitagliano
+    autore: Nicola Cecchetto
     data: 09/02/2022
     cambiamenti: Verifica generale del documento
   v1.0.0:
-    autore: Nicola Cecchetto
+    autore: Davide Vitagliano
     data: 12/02/2022
     cambiamenti: Approvazione per il rilascio
-  v1.0.1:
-    autore: Davide Vitagliano
-    data: 17/03/2022
-    cambiamenti: Aggiunti indicatori quantitativi sui test e sul progresso
 ...
 
 # Introduzione
@@ -137,17 +133,6 @@ $$RPT=(1-\frac{PTA}{PPTA})*100$$
 Percentuale delle metriche di qualità (sia di processo che di prodotto) soddisfate in un determinato periodo.
 $$Metriche soddisfate=\frac{Numero di metriche soddisfate}{Numero di metriche totali}*100$$
 
-### QPS_12: Variazioni di programma (VP)
-
-Percentuale che indica il livello di progresso di un progetto. Esso indica se l'avanzamento è regolare rispetto ai limiti temporali imposti. *In caso di risultato negativo si rischia di allontanarsi dal periodo temporale preventivato*.
-
-$$VP=(1-\frac{Periodo temporale impiegato}{Periodo temporale preventivato})*100$$
-
-### QPS_13: Test soddisfati (TS)
-
-Percentuale dei test soddisfati in un determinato periodo.
-$$Test soddisfati=\frac{Numero di test soddisfati}{Numero di test totali}*100$$
-
 ### Tabella metriche - Valori accettabili e ottimali
 
 |    **Codice**     |                  **Nome**                   | **Valore accettabile** | **Valore ottimale** |
@@ -163,8 +148,6 @@ $$Test soddisfati=\frac{Numero di test soddisfati}{Numero di test totali}
 | QPS_9             |     Stima tempo di sviluppo totale (STST)   | $\leq Ore Totali + 5\%$|    $= Ore Totali$   |
 | QPS_10            |        Rapporto periodo temporale (RPT)     |     $\geq -20\%$       |     $\geq 0\%$      |
 | QPS_11            |            Metriche soddisfate (MS)         |      $\geq 80\%$       |      $= 100\%$      |
-| QPS_12            |          Variazioni di programma (VP)       |     $\geq -15\%$       |     $\geq 0\%$      |
-| QPS_13            |              Test soddisfati (TS)           |      $\geq 80\%$       |      $= 100\%$      |
 
 # Qualità del prodotto
 
@@ -266,7 +249,7 @@ Indica che ciascun branch di codice sia stato eseguito almeno una volta.
 
 Strumenti utilizzati:
 
-* {g:python}
+* g:python}
 
 ### Tabella metriche - Valori accettabili e ottimali
 
@@ -290,83 +273,83 @@ I test di accettazione sono necessari per la verifica dei requisiti richiesti da
 
 |    **Codice**       |                  **Descrizione**                   |  **Stato** |
 | -----------------   | :-----------------------------------------: | :-----------------: |
-| TS_VRF1     | Verificare che l'utente possa caricare nell'applicazione un singolo file di {g:log} presente localmente|      NI        |
-| TS_VRF1.1   | Verificare che venga visualizzato un messaggio di errore se il file caricato non è compatibile   |          NI     |
-| TS_VRF2     | Verificare che sia presente una visualizzazione in forma tabellare   |         NI     |
-| TS_VRF2.1   | Verificare che la tabella di VRF2 abbia una colonna con intestazione "Data/ora"    |            NI     |
-| TS_VRF2.2   | Verificare che la tabella di VRF2 abbia una colonna con intestazione "Codice evento"   |             NI          |
-| TS_VRF2.3   | Verificare che la tabella di VRF2 abbia una colonna con intestazione "{g:unitsubunit}"           |         NI    |
-| TS_VRF2.4   | Verificare che la tabella di VRF2 abbia una colonna con intestazione "Versione {g:firmware}   |           NI     |
-| TS_VRF2.5   | Verificare che la tabella di VRF2 abbia una colonna con intestazione "Descrizione"  |     NI     |
-| TS_VRF2.6   | Verificare che la tabella di VRF2 abbia una colonna con intestazione "Stato" (1 per ON, 0 per OFF)   |      NI          |
-| TS_VRF2.7   | Verificare che l'applicazione colori correttamente ogni riga in base al {g:codice_evento}           |       NI    |
-| TS_VRF3     | Verificare che sia presente una funzione per ordinamento colonne della tabella simile a spreadsheet           |       NI    |
-| TS_VRF3.1   | Verificare che sia presente una funzionalità di ordinamento per data/ora|       NI    |
-| TS_VRF3.2   | Verificare che sia presente una funzionalità di ordinamento per {g:codice_evento}           |    NI    |
-| TS_VRF3.3   | Verificare che sia presente una funzionalità di ordinamento per {g:unitsubunit}           |        NI    |
-| TS_VRF3.4   | Verificare che sia presente una funzionalità di ordinamento per {g:firmware}           |     NI    |
-| TS_VRF4     | Verificare che la funzione di ricerca di sequenze di eventi funzioni correttamente            |       NI    |
-| TS_VRF4.1   | Verificare che alla mancanza di un evento inserito dall'utente per la funzionalità di ricerca di sequenze di eventi, venga visualizzato un messaggio d'errore|    NI    |
-| TS_VRF5     | Verificare che sia presente un {g:grafico_timeline} per mostrare le attivazioni degli eventi           |    NI    |
-| TS_VRF5.1   | Verificare che l'asse x del grafico rappresenti il tempo           |       NI    |
-| TS_VRF5.2   | Verificare che l'asse y del grafico contenga l'insieme degli eventi           |     NI    |
-| TS_VRF5.3   | Verificare che i rettangoli “pieni” nel grafico indichino correttamente il periodo di tempo in cui l’evento (indicato sull'asse y) è ATTIVO           |      NI    |
-| TS_VRF6     | Verificare che si possa effettuare lo "zoom" in/out sul grafico           |      NI    |
-| TS_VRF7     | Verificare che si possa effettuare lo "span" (scroll orizzontale) sul grafico           |       NI    |
-| TS_VRF8     | Verificare che siano presenti le funzioni di filtro per modificare la visualizzazione della tabella e del grafico           |     NI    |
-| TS_VRF8.1   | Verificare che sia implementato il filtro per intervallo temporale (select)           |       NI    |
-| TS_VRF8.1.1 | Verificare che venga visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido           |      NI    |
-| TS_VRF8.2   | Verificare che sia implementato il filtro per {g:unitsubunit}           |          NI    |
-| TS_VRF8.3   | Verificare che sia implementato il filtro per versione {g:firmware} |     NI    |
-| TS_VRF8.4   | Verificare che sia implementato il filtro per {g:codice_evento}          |       NI    |
-| TS_VRO1     | Verificare che l'utente possa visualizzare altri tipi di grafici           |       NI    |
-| TS_VRO2     | Verificare che L'utente possa ricercare sequenze più o meno note con relativa etichettatura dato un limite di tempo |     NI    |
-| TS_VRO3     | Verificare che  la colorazione per livello di nidificazione (16 Unit/16 livelli per SubUnit) funzioni correttamente          |       NI    |
-| TS_VRO4     | Verificare che l'utente possa esportare i file che visualizza i grafici           |    NI    |
-| TS_VRO5     | Verificare che l'utente possa eliminare tutti i filtri applicati           |         NI    |
+| TS_VRF1             |            Verificare che l'utente possa caricare nell'applicazione un singolo file di {g:log} presente localmente|      NI        |
+| TS_VRF1.1           |            Verificare che venga visualizzato un messaggio di errore se il file caricato non è compatibile   |          NI     |
+| TS_VRF2             |            Verificare che sia presente una visualizzazione in forma tabellare   |         NI     |
+| TS_VRF2.1           |            Verificare che la tabella di VRF2 abbia una colonna con intestazione "Data/ora"    |            NI     |
+| TS_VRF2.2           |            Verificare che la tabella di VRF2 abbia una colonna con intestazione "Codice evento"   |             NI          |
+| TS_VRF2.3           |            Verificare che la tabella di VRF2 abbia una colonna con intestazione "{g:unitsubunit}"           |         NI    |
+| TS_VRF2.4           |            Verificare che la tabella di VRF2 abbia una colonna con intestazione "Versione {g:firmware}   |           NI     |
+| TS_VRF2.5           |            Verificare che la tabella di VRF2 abbia una colonna con intestazione "Descrizione"  |     NI     |
+| TS_VRF2.6           |            Verificare che la tabella di VRF2 abbia una colonna con intestazione "Stato" (1 per ON, 0 per OFF)   |      NI          |
+| TS_VRF2.7           |            Verificare che l'applicazione colori correttamente ogni riga in base al {g:codice_evento}           |       NI    |
+| TS_VRF3             |            Verificare che sia presente una funzione per ordinamento colonne della tabella simile a spreadsheet           |       NI    |
+| TS_VRF3.1           |            Verificare che sia presente una funzionalità di ordinamento per data/ora|       NI    |
+| TS_VRF3.2           |            Verificare che sia presente una funzionalità di ordinamento per {g:codice_evento}           |    NI    |
+| TS_VRF3.3           |            Verificare che sia presente una funzionalità di ordinamento per {g:unitsubunit}           |        NI    |
+| TS_VRF3.4           |            Verificare che sia presente una funzionalità di ordinamento per {g:firmware}           |     NI    |
+| TS_VRF4             |            Verificare che la funzione di ricerca di sequenze di eventi funzioni correttamente            |       NI    |
+| TS_VRF4.1           |            Verificare che alla mancanza di un evento inserito dall'utente per la funzionalità di ricerca di sequenze di eventi, venga visualizzato un messaggio d'errore|    NI    |
+| TS_VRF5             |            Verificare che sia presente un {g:grafico_timeline} per mostrare le attivazioni degli eventi           |    NI    |
+| TS_VRF5.1           |            Verificare che l'asse x del grafico rappresenti il tempo           |       NI    |
+| TS_VRF5.2           |            Verificare che l'asse y del grafico contenga l'insieme degli eventi           |     NI    |
+| TS_VRF5.3           |            Verificare che i rettangoli “pieni” nel grafico indichino correttamente il periodo di tempo in cui l’evento (indicato sull'asse y) è ATTIVO           |      NI    |
+| TS_VRF6             |            Verificare che si possa effettuare lo "zoom" in/out sul grafico           |      NI    |
+| TS_VRF7             |            Verificare che si possa effettuare lo "span" (scroll orizzontale) sul grafico           |       NI    |
+| TS_VRF8             |            Verificare che siano presenti le funzioni di filtro per modificare la visualizzazione della tabella e del grafico           |     NI    |
+| TS_VRF8.1           |            Verificare che sia implementato il filtro per intervallo temporale (select)           |       NI    |
+| TS_VRF8.1.1         |            Verificare che venga visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido           |      NI    |
+| TS_VRF8.2           |            Verificare che sia implementato il filtro per {g:unitsubunit}           |          NI    |
+| TS_VRF8.3           |            Verificare che sia implementato il filtro per versione {g:firmware} |     NI    |
+| TS_VRF8.4           |            Verificare che sia implementato il filtro per {g:codice_evento}          |       NI    |
+| TS_VRO1             |            Verificare che l'utente possa visualizzare altri tipi di grafici           |       NI    |
+| TS_VRO2             |            Verificare che L'utente possa ricercare sequenze più o meno note con relativa etichettatura dato un limite di tempo |     NI    |
+| TS_VRO3             |            Verificare che  la colorazione per livello di nidificazione (16 Unit/16 livelli per SubUnit) funzioni correttamente          |       NI    |
+| TS_VRO4             |            Verificare che l'utente possa esportare i file che visualizza i grafici           |    NI    |
+| TS_VRO5             |            Verificare che l'utente possa eliminare tutti i filtri applicati           |         NI    |
 
 ## Test di sistema Smart Log Statistics
 
 |    **Codice**       |                  **Descrizione**                   |  **Stato** |
 | -----------------   | :-----------------------------------------: | :-----------------: |
-| TS_SRF1     |  Verifica che l'utente possa selezionare i {g:log} da analizzare per range di data/ora (min, max, all)|       NI        |
-| TS_SRF1.1   | Verificare che venga visualizzato un messaggio di errore se l'intervallo temporale selezionato non è valido   |        NI     |
-| TS_SRF2     |   Verificare che l'utente visualizzi un prospetto con i dati analizzare   |         NI     |
-| TS_SRF2.1   |  Verificare che nel prospetto compaia l'intervallo temporale |       NI     |
-| TS_SRF2.2   |    Verificare che nel prospetto compaia il numero di {g:log} analizzati |        NI          |
-| TS_SRF2.3   |  Verificare che nel prospetto compaia la media numero di eventi tra i {g:log}          |      NI    |
-| TS_SRF2.4   |  Verificare che nel prospetto compaia il massimo numero di eventi tra i {g:log}   |          NI     |
-| TS_SRF2.5   |   Verificare che nel prospetto compaia la deviazione standard numero di eventi fra i {g:log}  |      NI     |
-| TS_SRF2.6   |   Verificare che nel prospetto compaia la lista degli eventi raggruppati per frequenza di occorrenza (0-1)   |    NI          |
-| TS_SRF2.6.1 |  Verificare che nella lista venga visualizzato il {g:codice_evento}          |      NI    |
-| TS_SRF2.6.2 |   Verificare che nella lista venga visualizzato il numero di volte che l'evento è passato dallo stato 0 allo stato 1           |       NI    |
-| TS_SRF2.6.3 |  Verificare che nella lista venga visualizzata la versione {g:firmware} |       NI    |
-| TS_SRF3     |   Verificare che sia presente la funzionalità di ordinare le righe della lista in base ai suoi campi           |          NI    |
-| TS_SRF3.1   |   Verificare che sia implementato l'ordinamento della lista per {g:codice_evento} |     NI    |
-| TS_SRF3.2   |   Verificare che sia presente una funzionalità di ordinamento della lista per numero occorrenze |    NI    |
-| TS_SRF3.3   |    Verificare che sia presente una funzionalità di ordinamento della lista per {g:firmware}|   NI    |
-| TS_SRF4     |   Verificare che siano presenti delle funzioni di filtraggio|     NI    |
-| TS_SRF4.1   |   Verificare che sia presente un filtro per {g:unitsubunit}          |    NI    |
-| TS_SRF4.2   |  Verificare che sia presente un filtro per intervallo temporale           |    NI    |
-| TS_SRF4.2.1 |  Verificare che venga visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido          |       NI    |
-| TS_SRF4.3   |   Verificare che sia presente un filtro per versione {g:firmware}          |    NI    |
-| TS_SRF5     |   Verificare che venga visualizzato il grafico "tempo/occorrenze"           |         NI    |
-| TS_SRF5.1   |   Verificare che l'asse x del grafico rappresenti il tempo|     NI    |
-| TS_SRF5.2   |  Verificare che l'asse y del grafico rappresenti le occorrenze|        NI    |
-| TS_SRF5.3   |   Verificare che venga visualizzata una linea per ogni {g:evento} presente nel {g:log}    |       NI    |
-| TS_SRF6     | Verificare che venga visualizzato correttamente il grafico "firmware/occorrenze"          |       NI    |
-| TS_SRF6.1   |   Verificare che l'asse x del grafico visualizzi i {g:firmware}           |         NI    |
-| TS_SRF6.2   |  Verificare che l'asse y del grafico rappresenti le occorrenze|        NI    |
-| TS_SRF6.3   |   Verificare che venga visualizzata una barra per ogni {g:firmware}          |     NI    |
-| TS_SRF7     |  Verificare che la funzionalità di filtro per il grafico "tempo/occorrenze" funzioni correttamente |     NI    |
-| TS_SRF7.1   |   Verificare che sia presente un filtro per {g:codice_evento} |     NI    |
-| TS_SRF7.2   |   Verificare che sia presente un filtro per {g:unitsubunit}         |       NI    |
-| TS_SRF8     |  Verifica che la funzionalità di filtro per il grafico "firmware/occorrenze" funzioni correttamente          |        NI    |
-| TS_SRF8.1   |   Verificare che sia presente un filtro per {g:codice_evento}           |       NI    |
-| TS_SRF8.2   |  Verificare che sia presente un filtro per {g:firmware}           |        NI    |
-| TS_SRO1     | Verificare che  l'utente possa visualizzare un grafico {g:matrice_correlazione} che mostri l'indice di correlazione tra coppie di eventi           |     NI    |
-| TS_SRO2     |   Verificare che l'utente possa esportare i file che visualizza i grafici         |     NI    |
-| TS_SRO3     |   Verificare che l'utente possa eliminare tutti i filtri applicati           |       NI    |
+| TS_SRF1             |           Verifica che l'utente possa selezionare i {g:log} da analizzare per range di data/ora (min, max, all)|       NI        |
+| TS_SRF1.1           |          Verificare che venga visualizzato un messaggio di errore se l'intervallo temporale selezionato non è valido   |        NI     |
+| TS_SRF2             |            Verificare che l'utente visualizzi un prospetto con i dati analizzare   |         NI     |
+| TS_SRF2.1           |           Verificare che nel prospetto compaia l'intervallo temporale |       NI     |
+| TS_SRF2.2           |             Verificare che nel prospetto compaia il numero di {g:log} analizzati |        NI          |
+| TS_SRF2.3           |           Verificare che nel prospetto compaia la media numero di eventi tra i {g:log}          |      NI    |
+| TS_SRF2.4           |           Verificare che nel prospetto compaia il massimo numero di eventi tra i {g:log}   |          NI     |
+| TS_SRF2.5           |            Verificare che nel prospetto compaia la deviazione standard numero di eventi fra i {g:log}  |      NI     |
+| TS_SRF2.6           |            Verificare che nel prospetto compaia la lista degli eventi raggruppati per frequenza di occorrenza (0-1)   |    NI          |
+| TS_SRF2.6.1         |           Verificare che nella lista venga visualizzato il {g:codice_evento}          |      NI    |
+| TS_SRF2.6.2         |            Verificare che nella lista venga visualizzato il numero di volte che l'evento è passato dallo stato 0 allo stato 1           |       NI    |
+| TS_SRF2.6.3         |           Verificare che nella lista venga visualizzata la versione {g:firmware} |       NI    |
+| TS_SRF3             |            Verificare che sia prasente la funzionalità di ordinare le righe della lista in base ai suoi campi           |          NI    |
+| TS_SRF3.1           |            Verificare che sia implementato l'ordinamento della lista per {g:codice_evento} |     NI    |
+| TS_SRF3.2           |            Verificare che sia presente una funzionalità di ordinamento della lista per numero occorrenze |    NI    |
+| TS_SRF3.3           |             Verificare che sia presente una funzionalità di ordinamento della lista per {g:firmware}|   NI    |
+| TS_SRF4             |            Verificare che siano presenti delle funzioni di filtraggio|     NI    |
+| TS_SRF4.1           |            Verificare che sia presente un filtro per {g:unitsubunit}          |    NI    |
+| TS_SRF4.2           |           Verificare che sia presente un filtro per intervallo temporale           |    NI    |
+| TS_SRF4.2.1         |           Verificare che venga visualizzato un messaggio d'errore se l'intervallo temporale selezionato non è valido          |       NI    |
+| TS_SRF4.3           |            Verificare che sia presente un filtro per versione {g:firmware}          |    NI    |
+| TS_SRF5             |            Verificare che venga visualizzato il grafico "tempo/occorrenze"           |         NI    |
+| TS_SRF5.1           |            Verificare che l'asse x del grafico rappresenti il tempo|     NI    |
+| TS_SRF5.2           |           Verificare che l'asse y del grafico rappresenti le occorrenze|        NI    |
+| TS_SRF5.3           |            Verificare che venga visualizzata una linea per ogni {g:evento} presente nel {g:log}    |       NI    |
+| TS_SRF6             |          Verificare che venga visualizzato correttamente il grafico "firmware/occorrenze"          |       NI    |
+| TS_SRF6.1           |            Verificare che l'asse x del grafico visualizzi i {g:firmware}           |         NI    |
+| TS_SRF6.2           |           Verificare che l'asse y del grafico rappresenti le occorrenze|        NI    |
+| TS_SRF6.3           |            Verificare che venga visualizzata una barra per ogni {g:firmware}          |     NI    |
+| TS_SRF7             |           Verificare che la funzionalità di filtro per il grafico "tempo/occorrenze" funzioni correttamente |     NI    |
+| TS_SRF7.1           |            Verificare che sia presente un filtro per {g:codice_evento} |     NI    |
+| TS_SRF7.2           |            Verificare che sia presente un filtro per {g:unitsubunit}         |       NI    |
+| TS_SRF8             |           Verifica che la funzionalità di filtro per il grafico "firmware/occorrenze" funzioni correttamente          |        NI    |
+| TS_SRF8.1           |            Verificare che sia presente un filtro per {g:codice_evento}           |       NI    |
+| TS_SRF8.2           |           Verficiare che sia presente un filtro per {g:firmware}           |        NI    |
+| TS_SRO1             |          Verificare che  l'utente possa visualizzare un grafico {g:matrice_correlazione} che mostri l'indice di correlazione tra coppie di eventi           |     NI    |
+| TS_SRO2             |            Verificare che l'utente possa esportare i file che visualizza i grafici         |     NI    |
+| TS_SRO3             |            Verificare che l'utente possa eliminare tutti i filtri applicati           |       NI    |
 <!--
 ## Test di integrazione
 
@@ -472,40 +455,6 @@ fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di branch coverage'
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
 fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
 fig.update_layout(yaxis_range=[-2, 102])
-fig.show()
-```
-
-### Variazioni di programma
-
-```{.plotly_python}
-import plotly.graph_objects as go
-
-x = ['AP', 'PTB', 'POC']
-y1 = [2.43, 4.87, -11.11]
-
-fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di variazioni di programma'))
-fig.add_scatter(x=[x[0], x[-1]], y=[0, 0], line=dict(dash='dash'), name='valore ottimale')
-fig.add_scatter(x=[x[0], x[-1]], y=[-15, -15], line=dict(dash='dash'), name='valore accettabile')
-fig.update_layout(yaxis_range=[-20, 102])
-fig.update_layout(title='Percentuale di variazioni di programma', xaxis_title='Periodo temporale', yaxis_title='Percentuale di variazioni di programma')
-fig.update_layout(legend=dict(x=0.01, y=0.99, traceorder="normal", font=dict(size=12, color="black"), bgcolor="LightSteelBlue", bordercolor="Black", borderwidth=2))
-
-fig.show()
-```
-
-### Test soddisfati
-
-```{.plotly_python}
-import plotly.graph_objects as go
-
-x = ['AP', 'PTB', 'POC']
-y1 = [0, 0, 0]
-
-fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di test soddisfati'))
-fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
-fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
-fig.update_layout(yaxis_range=[-2, 102])
-
 fig.show()
 ```
 
