@@ -265,7 +265,7 @@ Questa fase illustra le linee guida architetturali del prodotto. Oltre all’evo
 * *Specifica tecnica*;
 * *Manuale utente*;
 * *Verbali* interni ed esterni di periodo.
-<!--TODO forse non serve il manuale sviluppatore nella PB?-->
+
 I documenti anche in questa fase verranno mantenuti fino alla consegna del progetto.
 
 ### Codifica
@@ -436,7 +436,7 @@ In ogni documento al di fuori dei verbali interni è provvisto di un indice:
 ## Repository
 
 Per organizzare al meglio il lavoro, all'interno dell'organizzazione {g:github}, abbiamo creato
-4<!-- sistemare quando avremo un numero di repo finito --> {g:repository}:
+i seguenti {g:repository}:
 
 * SevenElevenUnipd/**docs** per i documenti; quelli indispensabili saranno:
   * **verbali**: documenti d'incontri interni svolti dal gruppo ed esterni svolti con i proponenti e committenti del
@@ -455,10 +455,12 @@ Per organizzare al meglio il lavoro, all'interno dell'organizzazione {g:github},
 * SevenElevenUnipd/**sl-parser**: componente che interpreta i {g:log}. È comune tra {g:smartlogviewer} e {g:smartlogstatistics}
 * SevenElevenUnipd/**sl-viewer-frontend**: componente di {g:frontend} per {g:smartlogviewer}.
 * SevenElevenUnipd/**sl-viewer-backend**: componente di {g:backend} per {g:smartlogviewer}.
+* SevenElevenUnipd/**sl-statistics-frontend**: componente di {g:frontend} per {g:smartlogstatistics}.
+* SevenElevenUnipd/**sl-statistics-backend**: componente di {g:backend} per {g:smartlogstatistics}.
 
 ### Nomenclatura dei commit e dei branch
 
-I branch vengono nominati in questo modo:  **SL-n-nome_branch** <!-- accentrato sotto?-->
+I branch vengono nominati in questo modo:  **SL-n-nome_branch** 
 
 * SL: SmartLog;
 * n: numero auto incrementale;
