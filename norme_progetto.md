@@ -242,7 +242,7 @@ sottoinsiemi e riconducendo a una soluzione unica.
 
 La progettazione ha l'obiettivo di realizzare l'architettura del prodotto software, inizialmente realizzata da un
 {a:PoC} sviluppato come una demo tecnica delle funzionalità richieste dall'*analisi dei requisiti*. In seguito
-all'{a:RTB}, verrà approfondita e descritta nell'*allegato tecnico* per la {a:PB}.
+all'{a:RTB}, verrà approfondita e descritta nella *Specifica tecnica* per la {a:PB}.
 
 #### Requirements & Technology Baseline
 
@@ -262,7 +262,7 @@ Esclusi i *verbali*, i documenti sopracitati vanno aggiornati anche nelle fasi s
 Questa fase illustra le linee guida architetturali del prodotto. Oltre all’evoluzione dei documenti stesi durante l'
 {a:RTB}, in questa fase risulteranno necessari:
 
-* *Allegato tecnico*;
+* *Specifica tecnica*;
 * *Manuale utente*;
 * *Verbali* interni ed esterni di periodo.
 <!--TODO forse non serve il manuale sviluppatore nella PB?-->
@@ -451,7 +451,7 @@ Per organizzare al meglio il lavoro, all'interno dell'organizzazione {g:github},
     il gruppo si impegna a soddisfare.
   * **glossario**: documento che specifica ogni termine specializzato nel dominio di progetto.
   * **manuale utente**: documento che descrive le modalità di utilizzo del prodotto.
-  * **allegato tecnico**: documento che descrive le tecnologie utilizzate per lo sviluppo del prodotto.
+  * **Specifica tecnica**: documento che descrive le tecnologie utilizzate per lo sviluppo del prodotto.
 * SevenElevenUnipd/**sl-parser**: componente che interpreta i {g:log}. È comune tra {g:smartlogviewer} e {g:smartlogstatistics}
 * SevenElevenUnipd/**sl-viewer-frontend**: componente di {g:frontend} per {g:smartlogviewer}.
 * SevenElevenUnipd/**sl-viewer-backend**: componente di {g:backend} per {g:smartlogviewer}.
