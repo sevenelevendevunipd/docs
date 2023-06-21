@@ -955,7 +955,7 @@ Di seguito vengono riportate le variazioni dei costi:
 
 ### Considerazioni
 
-Non c'è stato alcun ritardo significativo quindi prevediamo di essere pronti per la PB nei tempi stabiliti.
+Le ore di programmazione sono state maggiori rispetto a quanto preventivato in quanto la progettazione dell'architettura del backend ha richiesto delle modifiche successivamente all'incontro con il professor. Cardin.
 
 #### Bilancio finale
 
@@ -993,6 +993,7 @@ Di seguito vengono riportate le variazioni dei costi:
 ### Motivazioni delle variazioni
 
 Ci sono state delle difficoltà al livello di separazione del lavoro: la maggior parte del gruppo si è concentrata sullo sviluppo delle applicazioni tralasciando i documenti. Questo ha portato purtroppo ad un ritardo di una settimana rispetto a quanto preventivato per effettuare le correzioni e le modifiche opportune a tutti i documenti.
+Inoltre è stato necessario del lavoro aggiuntivo per testare le modifiche effettuate al backend successive al colloquio con il professor. Cardin.
 
 ### Considerazioni
 
@@ -1001,71 +1002,6 @@ Ci sono state delle difficoltà al livello di separazione del lavoro: la maggior
 | **Ore** | **Costo**  |
 | :-----: | :--------: |
 | **+47** |**+770,00** |
-<!-- ## Progettazione di dettaglio e Codifica dei Requisiti Opzionali
-
-Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
-
-| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
-| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Rucaj Enrik       |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
-
-Di seguito vengono riportate le variazioni dei costi:
-
-| **Ruolo**      | **Ore** | **Costo** |
-| -------------- | :-----: | :-------: |
-| Responsabile   |    -    |     -     |
-| Amministratore |    -    |     -     |
-| Analista       |    -    |     -     |
-| Progettista    |    -    |     -     |
-| Programmatore  |    -    |     -     |
-| Verificatore   |    -    |     -     |
-| **Totale**     |  **-**  |   **-**   |
-
-### Motivazioni delle variazioni
-
-### Considerazioni
-
-#### Bilancio finale
-
-## Test, Collaudo e Validazione finale
-
-Vengono riportare le ore effettive di lavoro svolte dai componenti del gruppo:
-
-| **Nome**          | **Resp** | **Amm** | **An** | **Progett** | **Programm** | **Ver** | **Totale** |
-| ----------------- | :------: | :-----: | :----: | :---------: | :----------: | :-----: | :--------: |
-| Auletta Andrea    |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Brunello Mattia   |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Cecchetto Nicola  |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Rucaj Enrik       |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Stan Antonio      |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Vitagliano Davide |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| Zanellato Augusto |    -     |    -    |   -    |      -      |      -       |    -    |     -      |
-| **Totale**        |  **-**   |  **-**  | **-**  |    **-**    |    **-**     |  **-**  |   **-**    |
-
-Di seguito vengono riportate le variazioni dei costi:
-
-| **Ruolo**      | **Ore** | **Costo** |
-| -------------- | :-----: | :-------: |
-| Responsabile   |    -    |     -     |
-| Amministratore |    -    |     -     |
-| Analista       |    -    |     -     |
-| Progettista    |    -    |     -     |
-| Programmatore  |    -    |     -     |
-| Verificatore   |    -    |     -     |
-| **Totale**     |  **-**  |   **-**   |
-
-### Motivazioni delle variazioni
-
-### Considerazioni
-
-#### Bilancio finale -->
 
 # RTB - Consuntivo e Preventivo a finire
 
