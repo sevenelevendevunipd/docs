@@ -18,40 +18,76 @@ versioni:
     cambiamenti: Inseriti gli obiettivi da raggiungere
   v0.0.3:
     autore: Enrik Rucaj
-    data: 12/01/2022
+    data: 12/01/2023
     cambiamenti: Inserite le metriche per la qualità di processo
   v0.0.4:
     autore: Antonio Stan
-    data: 16/01/2022
+    data: 16/01/2023
     cambiamenti: Inserite le metriche per la qualità di prodotto
   v0.0.5:
     autore: Antonio Stan
-    data: 20/01/2022
+    data: 20/01/2023
     cambiamenti: Inseriti i test di sistema  
   v0.1.0:
     autore: Andrea Auletta
-    data: 25/01/2022
+    data: 25/01/2023
     cambiamenti: Verifica generale del documento
   v0.1.1:
     autore: Enrik Rucaj
-    data: 07/02/2022
+    data: 07/02/2023
     cambiamenti: Inseriti i grafici inerenti all'attività di verifica dei processi
   v0.1.2:
     autore: Antonio Stan
-    data: 07/02/2022
+    data: 07/02/2023
     cambiamenti: Inseriti i grafici inerenti all' attività di verifica del prodotto
   v0.2.0:
     autore: Davide Vitagliano
-    data: 09/02/2022
+    data: 09/02/2023
     cambiamenti: Verifica generale del documento
   v1.0.0:
     autore: Nicola Cecchetto
-    data: 12/02/2022
+    data: 12/02/2023
     cambiamenti: Approvazione per il rilascio
   v1.0.1:
     autore: Davide Vitagliano
-    data: 17/03/2022
+    data: 17/03/2023
     cambiamenti: Aggiunti indicatori quantitativi sui test e sul progresso
+  v1.1.0:
+    autore: Davide Vitagliano
+    data: 20/03/2023
+    cambiamenti: Inseriti i test di integrazione
+  v1.1.1:
+    autore: Enrik Rucaj
+    data: 13/04/2023
+    cambiamenti: Inseriti i test di unità per il frontend di SmartLogViewer
+  v1.1.2:
+    autore: Davide Vitagliano
+    data: 16/04/2023
+    cambiamenti: Inseriti i test di unità per il parser ed il backend di SmartLogViewer
+  v1.1.3:
+    autore: Davide Vitagliano
+    data: 25/04/2023
+    cambiamenti: Inseriti i test di unità per il frontend di SmartLogStatistics
+  v1.1.4:
+    autore: Enrik Rucaj
+    data: 28/04/2023
+    cambiamenti: Inseriti i test di unità per il backend di SmartLogStatistics
+  v1.2.0:
+    autore: Mattia Brunello
+    data: 29/04/2023
+    cambiamenti: Verifica generale del documento
+  v1.2.1:
+    autore: Davide Vitagliano
+    data: 04/06/2023
+    cambiamenti: Modifiche post colloquio con professor Cardin
+  v1.3.0:
+    autore: Nicola Cecchetto
+    data: 07/06/2023
+    cambiamenti: Verifica generale del documento
+  v2.0.0:
+    autore: Andrea Auletta
+    data: 08/06/2023
+    cambiamenti: Approvazione per il rilascio
 ...
 
 # Introduzione
@@ -256,9 +292,9 @@ I browser presi in considerazione sono:
 
 Indica il numero di classi diverse che ereditano tra loro, fino alla classe base.
 
-### QPD_7 Branch Coverage (BC)
+### QPD_7 Statement Coverage (SC)
 
-Indica che ciascun branch di codice sia stato eseguito almeno una volta.
+Indica che ciascun istruzione del codice sia stata eseguita almeno una volta.
 
 |    **Prodotto**   | **Valore accettabile**   | **Valore ottimale**|
 | ----------------- |  :-------------------:  | :-----------------: |
@@ -277,7 +313,7 @@ Strumenti utilizzati:
 | QPD_4             |      Copertura requisiti opzionali (CROP)   |       $\geq 20\%$      |         $100\%$     |
 | QPD_5             |        Versioni browser supportate (VBS)    |        $\geq 80\%$     |         $100\%$     |
 | QPD_6             |           Profondità di ereditarietà (PE)   |        $\leq 2$        |          0          |
-| QPD_7             |               Branch Coverage (BC)          |       $\geq 80\%$      |      $\geq 95\%$    |
+| QPD_7             |               Statement Coverage (SC)       |       $\geq 80\%$      |      $\geq 95\%$    |
 
 # Specifica dei test
 
@@ -325,6 +361,89 @@ I test di accettazione sono necessari per la verifica dei requisiti richiesti da
 | TS_VRO4     | Verificare che l'utente possa esportare i file che visualizza i grafici           |    NI    |
 | TS_VRO5     | Verificare che l'utente possa eliminare tutti i filtri applicati           |         NI    |
 
+## Test di integrazione Smart Log Viewer
+
+|    **Codice**       |                  **Descrizione**            |       **Stato**     |
+| -----------------   | :-----------------------------------------: | :-----------------: |
+| TI_VRF1  | Verificare che il collegamento tra il frontend e il backend avvenga correttamente | NI |
+<!-- inserire qualcosa quando hai capito cosa sono i moduli -->
+
+## Test di unità Smart Log Viewer
+<!-- nomenclatura: 
+          - TU_VF = test unità viewer per il frontend 
+          - TU_VB = test unità viewer per il backend
+          - TU_SF = test unità statistics per il frontend 
+          - TU_SB = test unità statistics per il backend 
+          - TU_P = test unità del parser
+          - NI = non implementato
+          - I = implementato -->
+
+|    **Codice**       |                  **Descrizione**            |       **Stato**     |
+| -----------------   | :-----------------------------------------: | :-----------------: |
+| TU_VF1  | Si verifica che filterableCodes di codeFilter venga inizializzata correttamente con eventi del log unici | I |
+| TU_VF2  | Si verifica che selectedCodes di codeFilter venga inizializzata con tutti i filterableCodes selezionati correttamente | I |
+| TU_VF3  | Si verifica che tutti i filterableCodes di codeFilter vengano reimpostati correttamente | I |
+| TU_VF4  | Si verifica che tutti i filterableCodes di codeFilter vengano selezionati correttamente nel caso nessuno lo fosse | I |
+| TU_VF5  | Si verifica che tutti i filterableCodes di codeFilter vengano deselezionati correttamente nel caso tutti fossero selezionati | I |
+| TU_VF6  | Si verifica che tutti i filterableCodes di codeFilter vengano deselezionati correttamente nel caso qualcuno fosse selezionato e gli altri deselezionati | I |
+| TU_VF7  | Si verifica che selectedCodes di codeFilter funzioni correttamente nel caso degli eventi vengano selezionati manualmente | I |
+| TU_VF8  | Si verifica che setSelection di codeFilter filtri correttamente (aggiorna la tabella e i grafici) | I |
+| TU_VF9  | Si verifica che filterableCodes di firmwareFilter venga inizializzata correttamente con eventi del log unici | I |
+| TU_VF10  | Si verifica che selectedCodes di firmwareFilter venga inizializzata con tutti i filterableCodes selezionati correttamente | I |
+| TU_VF11  | Si verifica che tutti i filterableCodes di firmwareFilter vengano reimpostati correttamente | I |
+| TU_VF12  | Si verifica che tutti i filterableCodes di firmwareFilter vengano selezionati correttamente nel caso nessuno lo fosse | I |
+| TU_VF13  | Si verifica che tutti i filterableCodes di firmwareFilter vengano deselezionati correttamente nel caso tutti fossero selezionati | I |
+| TU_VF14  | Si verifica che tutti i filterableCodes di firmwareFilter vengano deselezionati correttamente nel caso qualcuno fosse selezionato e gli altri deselezionati | I |
+| TU_VF15  | Si verifica che selectedCodes di firmwareFilter funzioni correttamente nel caso degli eventi vengano selezionati manualmente | I |
+| TU_VF16  | Si verifica che setSelection di firmwareFilter filtri correttamente (aggiorna la tabella e i grafici) | I |
+| TU_VF17  | Si verifica che minTimeStamp di dateTimeFilter venga inizializzato correttamente con il timeStamp minore tra tutte le entry del log | I |
+| TU_VF18  | Si verifica che maxTimeStamp di dateTimeFilter venga inizializzato correttamente con il timeStamp maggiore tra tutte le entry del log | I |
+| TU_VF19  | Si verifica che minSelectedTimestamp di dateTimeFilter venga inizializzato correttamente con minTimeStamp | I |
+| TU_VF20  | Si verifica che maxSelectedTimestamp di dateTimeFilter venga inizializzato correttamente con maxTimeStamp | I |
+| TU_VF21  | Si verifica che selezionando correttamente minTimeStamp e maxTimeStamp siano visibili tutte le entry del log | I |
+| TU_VF22  | Si verifica che selezionando le entry da visualizzare, minTimeStamp e maxTimeStamp siano impostati correttamente | I |
+| TU_VF23  | Si verifica che impostando minTimeStamp e maxTimeStamp le entry vengano filtrate correttamente | I |
+| TU_VF24  | Si verifica che filterableCodes di EventSequenceFilter venga inizializzato correttamente con le entry code del log unici | I |
+| TU_VF25  | Si verifica che selectedCodes di EventSequenceFilter venga inizializzato correttamente con tutti i filterableCodes selezionati | I |
+| TU_VF26  | Si verifica che chiamando filterSubSequence venga restituito correttamente un array di log entry che contiene la sotto sequenza inserita | I |
+| TU_VF27  | Si verifica che nel caso non venga inserita una sotto sequenza vengano restituiti correttamente tutte le log entry | I |
+| TU_VF28  | Si verifica che nel caso non sia presente un "match" della sotto sequenza inserita, venga restituita correttamente un array vuoto | I |
+| TU_VF29  | Si verifica che il filtro di EventSequenceFilter restituisca correttamente la prima e l'ultima log entry inserita | I |
+| TU_VF30  | Si verifica che il filtro di EventSequenceFilter venga resettato correttamente | I |
+| TU_VF31  | Si verifica che il tempo di EventSequenceFilter venga impostato correttamente | I |
+| TU_VF32  | Si verifica che il tempo di EventSequenceFilter venga impostato correttamente a 0 nel caso sia vuoto | I |
+| TU_VF33  | Si verifica che nel caso il metodo getInserting di EventSequenceFilter sia vero (true), venga restituito correttamente il campo insertingFirst | I |
+| TU_VF34  | Si verifica che venga inserito correttamente un elemento (codice, valore) della sotto sequenza nel campo firstValues di eventSequenceFilteringStrategy | I |
+| TU_VF35  | Si verifica che venga inserito correttamente un elemento (codice, valore) della sotto sequenza nel campo lastValues di eventSequenceFilteringStrategy | I |
+| TU_VF36  | Si verifica che un elemento (codice, valore) della sotto sequenza inserita sia modificabile correttamente | I |
+| TU_VF37  | Si verifica che gli elementi (codice, valore) della sotto sequenza nel campo firstValues siano ordinabili correttamente | I |
+| TU_VF38  | Si verifica che gli elementi (codice, valore) della sotto sequenza nel campo lastValues siano ordinabili correttamente | I |
+| TU_VF39  | Si verifica che un elemento (codice, valore) della sotto sequenza nel campo firstValues sia eliminabile correttamente | I |
+| TU_VF40  | Si verifica che un elemento (codice, valore) della sotto sequenza nel campo lastValues sia eliminabile correttamente | I |
+| TU_VF41  | Si verifica che la UI per il CodeFilter venga creata e che selezioni tutti i codici presenti correttamente | I |
+| TU_VF42 | Si verifica che la UI per il CodeFilter venga creata e che deselezioni tutti i codici presenti correttamente | I |
+| TU_VF43 | Si verifica che la UI per il CodeFilter venga creata e che visualizzi tutti i codici presenti correttamente | I |
+| TU_VF44 | Si verifica che la UI per il FirmwareFilter venga creata e che selezioni tutti i firmware presenti correttamente | I |
+| TU_VF45 | Si verifica che la UI per il FirmwareFilter venga creata e che deselezioni tutti i firmware presenti correttamente | I |
+| TU_VF46 | Si verifica che la UI per il SubunitFilter venga creata e che selezioni tutti i subunit presenti correttamente | I |
+| TU_VF47 | Si verifica che la UI per il SubunitFilter venga creata e che deselezioni tutti i subunit presenti correttamente | I |
+| TU_VF48 | Si verifica che la UI per il DateTimeFilter venga creata e che visualizzi l'estremo temporale inferiore correttamente | I |
+| TU_VF49 | Si verifica che la UI per il DateTimeFilter venga creata e che visualizzi l'estremo temporale superiore correttamente | I |
+| TU_VF50 | Si verifica che la UI per la EventSequenceFilter venga creata e che visualizzi il pulsante Add cliccandolo correttamente | I |
+| TU_VF51 | Si verifica che la UI per la EventSequenceFilter venga creata e che l'input sia inserito correttamente | I |
+| TU_VF52 | Si verifica che LogTable venga renderizzata correttamente | I |
+| TU_VF53 | Si verifica che TimeLine (grafico) venga renderizzata correttamente | I |
+| TU_VF54 | Si verifica che nel caso nel TimeLine l'ultima entry del log presente sia ON ne aggiunga una fittizia OFF correttamente, e viceversa | I |
+| TU_VF55 | Si verifica che le logEntries da filtrare in logFilteringService vengano registrate in lista correttamente | I |
+| TU_VF56 | Si verifica che filteredEntries del LogFilteringService restituisca correttamente le logEntries filtrate | I |
+| TU_VF57 | Si verifica che setLogFile di logFilteringService impostati correttamente il file di log selezionato | I |
+| TU_VF58 | Si verifica che removeFilters di logFilteringService rimuovi correttamente i filtri precedentemente selezionati | I |
+| TU_VF59 | Si verifica che resetAll di logFilteringService resetti correttamente tutti i filtri | I |
+| TU_VF60 | Si verifica che filtersUi di logFilteringService permetta di visualizzare correttamente la UI della tipologia di filtro usata | I |
+| TU_VB1  | Si verifica che il file venga caricato correttamente | I |
+| TU_VB2  | Si verifica che il file vuoto caricato restituisca correttamente un errore | I |
+| TU_VB3  | Si verifica che il file non valido caricato restituisca correttamente un errore | I |
+
 ## Test di sistema Smart Log Statistics
 
 |    **Codice**       |                  **Descrizione**                   |  **Stato** |
@@ -367,12 +486,80 @@ I test di accettazione sono necessari per la verifica dei requisiti richiesti da
 | TS_SRO1     | Verificare che  l'utente possa visualizzare un grafico {g:matrice_correlazione} che mostri l'indice di correlazione tra coppie di eventi           |     NI    |
 | TS_SRO2     |   Verificare che l'utente possa esportare i file che visualizza i grafici         |     NI    |
 | TS_SRO3     |   Verificare che l'utente possa eliminare tutti i filtri applicati           |       NI    |
-<!--
-## Test di integrazione
 
-## Test di unit
-To do entro PB 
--->
+## Test di integrazione Smart Log Statistics
+
+|    **Codice**       |                  **Descrizione**            |       **Stato**     |
+| -----------------   | :-----------------------------------------: | :-----------------: |
+| TI_VRF1  | Verificare che il collegamento tra il frontend e il backend avvenga correttamente | NI |
+| TI_VRF2  | Verificare che il collegamento tra il backend e Starlette avvenga correttamente | NI |
+
+## Test di unità Smart Log Statistics
+
+|    **Codice**       |                  **Descrizione**            |       **Stato**     |
+| -----------------   | :-----------------------------------------: | :-----------------: |
+| TU_SF1  | Si verifica che BlockUIObserver renderizzi correttamente lo stato di caricamento (progress spinner) | I |
+| TU_SF2  | Si verifica che BlockUIObserver renderizzi correttamente i figli nel caso in cui non ci sia un caricamento in corso | I |
+| TU_SF3  | Si verifica che ErrorDialog venga renderizzato e che il pulsante di "Retry" in esso funzioni correttamente | I |
+| TU_SF4  | Si verifica che ErrorDialog venga renderizzato e che il pulsante di "Close" in esso funzioni correttamente | I |
+| TU_SF5  | Si verifica che ErrorDialog venga renderizzato e che il pulsante di "Close" in esso funzioni correttamente | I |
+| TU_SF6  | Si verifica che ErrorDialog venga renderizzato correttamente e che non sia visibile in caso non ci sia un errore nel sistema | I |
+| TU_SF7  | Si verifica che InfoRow renderizzi correttamente una componente di tipo skeleton nel caso il contenuto non sia definito | I |
+| TU_SF8  | Si verifica che StackedBarChart renderizzi correttamente un messaggio nel caso il dataset sia vuoto | I |
+| TU_SF9  | Si verifica che StackedBarChart renderizzi correttamente un grafico a barre con i dati del dataset | I |
+| TU_SF10  | Si verifica che il tab FirmwareChartView venga renderizzato correttamente | I |
+| TU_SF11  | Si verifica che il tab LogFrequencyView venga renderizzato correttamente | I |
+| TU_SF12  | Si verifica che il tab TimeChartView venga renderizzato correttamente | I |
+| TU_SF13  | Si verifica che il metodo update di ChartFilterStore elabori i dati correttamente | I |
+| TU_SF14  | Si verifica che il metodo update di ChartFilterStore gestisca gli errori correttamente | I |
+| TU_SF15  | Si verifica che in FilterStateStore venga impostato correttamente il range selezionato | I |
+| TU_SF16  | Si verifica che in FilterStateStore venga impostato correttamente il timeStamp minimo | I |
+| TU_SF17  | Si verifica che in FilterStateStore venga impostato correttamente il timeStamp massimo | I |
+| TU_SF18  | Si verifica che in FilterStateStore venga impostato correttamente il timeStamp massimo | I |
+| TU_SF19  | Si verifica che il metodo update di FirmwareChartDataStore esegua l'aggiornamento correttamente nel caso tutti i firmware siano selezionati/presenti | I |
+| TU_SF20  | Si verifica che il metodo update di FirmwareChartDataStore esegua l'aggiornamento correttamente nel caso ci siano solo alcuni firmware selezionati | I |
+| TU_SF21  | Si verifica che il metodo update di FirmwareChartDataStore gestisca gli errori correttamente | I |
+| TU_SF22  | Si verifica che LogFrequencyStore sia stato inizializzato correttamente con i valori predefiniti | I |
+| TU_SF23  | Si verifica che il metodo setSelectedRange di LogFrequencyStore aggiorni correttamente l'intervallo temporale selezionato | I |
+| TU_SF24  | Si verifica che il metodo setMinTimestamp di LogFrequencyStore aggiorni correttamente il timeStamp minimo selezionato | I |
+| TU_SF25  | Si verifica che il metodo setMaxTimestamp di LogFrequencyStore aggiorni correttamente il timeStamp massimo selezionato | I |
+| TU_SF26  | Si verifica che il metodo setSubunitSelection di LogFrequencyStore aggiorni correttamente le subunit selezionate | I |
+| TU_SF27  | Si verifica che il metodo updateFrequencies di LogFrequencyStore aggiorni correttamente la frequenza delle entry dei file di log | I |
+| TU_SF28  | Si verifica che il metodo updateFrequencies di LogFrequencyStore gestisca correttamente gli errori | I |
+| TU_SF29  | Si verifica che il metodo updateLogList di LogListStore esegua l'aggiornamento correttamente | I |
+| TU_SF30  | Si verifica che il metodo updateLogList di LogListStore gestisca correttamente le ApiErrors | I |
+| TU_SF31  | Si verifica che il metodo updateLogList di LogListStore gestisca correttamente i TypeErrors | I |
+| TU_SF32  | Si verifica che il metodo updateLogList di LogListStore gestisca correttamente errori generali | I |
+| TU_SF33  | Si verifica che il metodo updateOverview di SelectedLogInfoStore esegua l'aggiornamento correttamente | I |
+| TU_SF34  | Si verifica che il metodo updateOverview di SelectedLogInfoStore gestisca correttamente gli errori | I |
+| TU_SF35  | Si verifica che il metodo update di TimeChartDataStore esegua l'aggiornamento correttamente | I |
+| TU_SF36  | Si verifica che il metodo update di TimeChartDataStore gestisca correttamente gli errori | I |
+| TU_SB1  | Si verifica che il metodo upload di LogDatabase funzioni correttamente | I |
+| TU_SB2  | Si verifica che il metodo upload di LogDatabase gestisca l'errore LogDatabaseError correttamente | I |
+| TU_SB3  | Si verifica che il metodo _composite_paginate di LogDatabase funzioni correttamente | I |
+| TU_SB4  | Si verifica che il metodo close di LogDatabase funzioni correttamente | I |
+| TU_SB5  | Si verifica che il metodo delete_log di LogDatabase funzioni correttamente | I |
+| TU_SB6  | Si verifica che il metodo log_overview di LogDatabase elabori correttamente le informazioni sui log che sono stati passati | I |
+| TU_SB7  | Si verifica che il metodo log_entries_frequency di LogDatabase elabori correttamente le informazioni sulla frequenza delle entries dei file di log | I |
+| TU_SB8  | Si verifica che il metodo chart_filters di LogDatabase elabori correttamente le informazioni sui log che sono stati passati | I |
+| TU_SB9  | Si verifica che il metodo time_chart_data di LogDatabase elabori correttamente le informazioni sui log che sono stati passati | I |
+| TU_SB10  | Si verifica che il metodo firmware_chart_data di LogDatabase elabori correttamente le informazioni sui log che sono stati passati | I |
+| TU_SB11  | Si verifica che il metodo ensure_index_exists di LogDatabase crei correttamente un indice di AsynchElasticSearch nel caso non esista | I |
+| TU_SB12  | Si verifica che il metodo upload_log nell'innit carichi correttamente un file di log | I |
+| TU_SB13  | Si verifica che il metodo upload_log nell'innit gestisca correttamente gli errori inerenti a file di tipo invalido | I |
+| TU_SB14  | Si verifica che il metodo upload_log nell'innit gestisca correttamente gli errori inerenti all'esecuzione del parse del file di log | I |
+| TU_SB15  | Si verifica che il metodo upload_log nell'innit gestisca correttamente gli errori inerenti a file di log duplicati | I |
+| TU_SB16  | Si verifica che il metodo upload_log nell'innit gestisca correttamente gli errori inerenti a file di log già presenti nel database | I |
+| TU_SB17  | Si verifica che il metodo upload_log nell'innit gestisca correttamente i TypeErrors | I |
+| TU_SB18  | Si verifica che il metodo list_logs nell'innit restituisca correttamente una lista dei file di log caricati | I |
+
+## Test di unità Smart Log Parser
+
+|    **Codice**       |                  **Descrizione**            |       **Stato**     |
+| -----------------   | :-----------------------------------------: | :-----------------: |
+| TU_P1  | Si verifica che parse_log di LogFile analizzi correttamente i dati presenti nel file di log | I |
+| TU_P2  | Si verifica che parse_from_csv_row di LogEntry interpreti correttamente le entry (righe) del file di log | I |
+
 # Resoconto attività di verifica
 
 ## verifica dei processo
@@ -382,9 +569,9 @@ To do entro PB
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y1 = [3245, 4965, 7315]
-y2 = [3215, 4830, 7290]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y1 = [3225, 4945, 7295, 8930, 10065, 11165]
+y2 = [3215, 4830, 7290, 9490, 10985, 12480]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='preventivo del costo attuale'))
 fig.add_scatter(x=x, y=y2, name='costo attuale')
@@ -398,15 +585,15 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y1 = [13505, 13505, 13505]
-y2 = [13475, 13370, 13480]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y1 = [13505, 13505, 13505, 13505, 13505, 13505]
+y2 = [13495, 13390, 13500, 14065, 14425, 14820]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='costo totale'))
 fig.add_scatter(x=x, y=y2, name='stima del costo totale')
 fig.add_scatter(x=[x[0], x[-1]], y=[14180, 14180], line=dict(dash='dash'), name='valore accettabile superiore')
 fig.add_scatter(x=[x[0], x[-1]], y=[12829, 12829], line=dict(dash='dash'), name='valore accettabile inferiore')
-fig.update_layout(yaxis_range=[12500, 14500])
+fig.update_layout(yaxis_range=[12000, 15000])
 fig.show()
 ```
 
@@ -415,9 +602,9 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y1 = [151, 231, 356]
-y2 = [148, 223, 350]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y1 = [150, 230, 351, 422, 487, 543]
+y2 = [148, 223, 350, 446, 535, 638]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='preventivo del periodo temporale attuale'))
 fig.add_scatter(x=x, y=y2, name='periodo temporale attuale')
@@ -431,15 +618,15 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y1 = [665, 665, 665]
-y2 = [662, 657, 659]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y1 = [665, 665, 665, 665, 665, 665]
+y2 = [663, 658, 664, 689, 713, 760]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='tempo di sviluppo totale'))
 fig.add_scatter(x=x, y=y2, name='stima del tempo di sviluppo totale')
 fig.add_scatter(x=[x[0], x[-1]], y=[698, 698], line=dict(dash='dash'), name='valore accettabile superiore')
 fig.add_scatter(x=[x[0], x[-1]], y=[632, 632], line=dict(dash='dash'), name='valore accettabile inferiore')
-fig.update_layout(yaxis_range=[600, 700])
+fig.update_layout(yaxis_range=[600, 800])
 fig.show()
 ```
 
@@ -448,9 +635,9 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y1 = [0.9, 2.7, 0.3]
-y2 = [1.9, 3.4, 1.6]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y1 = [0.3, 2.3, 0.1, -6.3, -9.1, -11.8]
+y2 = [1.3, 3.0, 0.3, -5.7, -9.9, -17.5]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='rapporto del costo'))
 fig.add_scatter(x=x, y=y2, name='rapporto del periodo temporale')
@@ -465,10 +652,10 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y1 = [52.6, 52.6, 68.4]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y1 = [58.3, 58.3, 66.7,  58.3, 50 , 66.7]
 
-fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di branch coverage'))
+fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale delle metriche soddisfatte'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
 fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
 fig.update_layout(yaxis_range=[-2, 102])
@@ -479,14 +666,12 @@ fig.show()
 
 ```{.plotly_python}
 import plotly.graph_objects as go
-
-x = ['AP', 'PTB', 'POC']
-y1 = [2.43, 4.87, -11.11]
-
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y1 = [1.3, 6.3, -5, -35.2, -36.9, -83.9]
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di variazioni di programma'))
 fig.add_scatter(x=[x[0], x[-1]], y=[0, 0], line=dict(dash='dash'), name='valore ottimale')
 fig.add_scatter(x=[x[0], x[-1]], y=[-15, -15], line=dict(dash='dash'), name='valore accettabile')
-fig.update_layout(yaxis_range=[-20, 102])
+fig.update_layout(yaxis_range=[-90, 50])
 fig.update_layout(title='Percentuale di variazioni di programma', xaxis_title='Periodo temporale', yaxis_title='Percentuale di variazioni di programma')
 fig.update_layout(legend=dict(x=0.01, y=0.99, traceorder="normal", font=dict(size=12, color="black"), bgcolor="LightSteelBlue", bordercolor="Black", borderwidth=2))
 
@@ -497,10 +682,8 @@ fig.show()
 
 ```{.plotly_python}
 import plotly.graph_objects as go
-
-x = ['AP', 'PTB', 'POC']
-y1 = [0, 0, 0]
-
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y1 = [0, 0, 0, 0, 0, 100] 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di test soddisfati'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
 fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
@@ -509,15 +692,15 @@ fig.update_layout(yaxis_range=[-2, 102])
 fig.show()
 ```
 
-## verifica del prodotto
+## Verifica del prodotto
 
-### Indice di Gulpease
+### Indice di Gulpease <!-- qui -->
 
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-documenti = ['NDP', 'PDP', 'PDQ', 'ADR']
-valori = [62, 63, 62, 58]
+documenti = ['NDP', 'PDP', 'PDQ', 'ADR','AT','MU']
+valori = [62, 47.8, 44.9, 58, 31.9, 47.3 ]
 
 fig = go.Figure(data=go.Bar(x=documenti, y=valori))
 fig.update_layout(yaxis_range=[0, 100])
@@ -529,8 +712,8 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y = [0, 0, 37.1]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y = [0, 0, 37.1, 37.1, 100, 100]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y, name='copertura requisiti obbligatori'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore accettabile')
@@ -543,8 +726,8 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y = [0, 0, 0]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y = [0, 0, 0, 0, 0, 0]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y, name='copertura requisiti opzionali'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimo')
@@ -558,8 +741,8 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y = [0, 0, 100]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y = [0, 0, 100, 100, 100, 100]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y, name='versioni browser supportati'))
 fig.add_scatter(x=[x[0], x[-1]], y=[100, 100], line=dict(dash='dash'), name='valore ottimale')
@@ -573,8 +756,8 @@ fig.show()
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y1 = [0, 0, 0]
+x = ['AP', 'PTB', 'POC', 'PDRO', 'CRO', 'TCVRO']
+y1 = [0, 0, 1, 2, 2, 2]
 
 fig = go.Figure(data=go.Scatter(x=x, y=y1, name='livello di profondità di ereditarietà'))
 fig.add_scatter(x=[x[0], x[-1]], y=[0, 0], line=dict(dash='dash'), name='valore ottimale')
@@ -583,17 +766,26 @@ fig.update_layout(yaxis_range=[-2, 4])
 fig.show()
 ```
 
-### Branch coverage
+### Statement coverage
 
 ```{.plotly_python}
 import plotly.graph_objects as go
 
-x = ['AP', 'PTB', 'POC']
-y1 = [0, 0, 0]
+software = ['FEV', 'BEV', 'FES', 'BES']
+valori = [82.18, 100, 80.95, 91]
 
-fig = go.Figure(data=go.Scatter(x=x, y=y1, name='percentuale di branch coverage'))
-fig.add_scatter(x=[x[0], x[-1]], y=[95, 95], line=dict(dash='dash'), name='valore ottimale')
-fig.add_scatter(x=[x[0], x[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
-fig.update_layout(yaxis_range=[-2, 102])
+fig = go.Figure(data=go.Bar(x=software, y=valori))
+fig.update_layout(yaxis_range=[0, 100])
+fig.add_scatter(x=[software[0], software[-1]], y=[80, 80], line=dict(dash='dash'), name='valore accettabile')
+fig.add_scatter(x=[software[0], software[-1]], y=[95, 95], line=dict(dash='dash'), name='valore ottimale')
+
+fig.show()
+
+
 fig.show()
 ```
+
+* FEV: Frontend SmartlogViewer;
+* BEV: Backend SmartlogViewer;
+* FES: Frontend SmartlogStatistics;
+* BES: Backend SmartlogStatistics.
