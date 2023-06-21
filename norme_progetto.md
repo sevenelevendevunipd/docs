@@ -61,13 +61,13 @@ versioni:
     data: 20/04/2023
     cambiamento: Aggiunti standard
   v1.1.0:
-    autore: Anotnio Stan
+    autore: Antonio Stan
     data: 27/04/2023
-    cambiamento: verifica standard
+    cambiamento: Verifica standard
   v2.0.0:
     autore: Davide Vitagliano
     data: 2/05/2023
-    cambiamento: approvato per il rilascio
+    cambiamento: Approvato per il rilascio
 ...
 
 # Introduzione
