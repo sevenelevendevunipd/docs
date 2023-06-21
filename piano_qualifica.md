@@ -363,6 +363,9 @@ I test di accettazione sono necessari per la verifica dei requisiti richiesti da
 
 ## Test di integrazione Smart Log Viewer
 
+|    **Codice**       |                  **Descrizione**            |       **Stato**     |
+| -----------------   | :-----------------------------------------: | :-----------------: |
+| TI_VRF1  | Verificare che il collegamento tra il frontend e il backend avvenga correttamente | NI |
 <!-- inserire qualcosa quando hai capito cosa sono i moduli -->
 
 ## Test di unità Smart Log Viewer
@@ -485,6 +488,11 @@ I test di accettazione sono necessari per la verifica dei requisiti richiesti da
 | TS_SRO3     |   Verificare che l'utente possa eliminare tutti i filtri applicati           |       NI    |
 
 ## Test di integrazione Smart Log Statistics
+
+|    **Codice**       |                  **Descrizione**            |       **Stato**     |
+| -----------------   | :-----------------------------------------: | :-----------------: |
+| TI_VRF1  | Verificare che il collegamento tra il frontend e il backend avvenga correttamente | NI |
+| TI_VRF2  | Verificare che il collegamento tra il backend e Starlette avvenga correttamente | NI |
 
 ## Test di unità Smart Log Statistics
 
