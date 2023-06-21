@@ -12,7 +12,7 @@ versioni:
     data: 20/3/2023
     cambiamenti: Prima stesura
   0.0.2:
-    autore: Augusto Zanellato
+    autore: Enrik Rucaj
     data: 2/4/2023
     cambiamenti: Diagramma di attività Viewer
   0.0.3:
@@ -44,9 +44,13 @@ versioni:
     data: 21/05/2023
     cambiamenti: Verifica finale e approvazione per il rilascio
   1.1.0:
-    autore: Augusto Zanellato
+    autore: Enrik Rucaj
     data: 04/06/2023
     cambiamenti: Aggiornamento architettura backend
+  2.0.0:
+    autore: Augusto Zanellato
+    data: 05/06/2023
+    cambiamenti: Approvazione per il rilascio
 ...
 
 # Introduzione
