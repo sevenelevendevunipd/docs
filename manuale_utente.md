@@ -36,6 +36,10 @@ versioni:
     autore: Nicola Cecchetto
     data: 02/05/2023
     cambiamenti: verifica manuale SmartLogStatistics
+  v1.0.0:
+    autore: Antonio Stan
+    data: 06/06/2023
+    cambiamenti: Approvazione per il rilascio
 ...
 
 # Introduzione
