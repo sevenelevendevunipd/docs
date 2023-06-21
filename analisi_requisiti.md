@@ -114,6 +114,7 @@ versioni:
     autore: Davide Vitagliano
     data: 5/05/2023
     cambiamenti: Approvazione per il rilascio
+...
 
 # Introduzione
 
