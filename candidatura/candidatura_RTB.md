@@ -1,9 +1,9 @@
 ---
 title: "Candidatura RTB"
-date: "8/03/2023"
+date: "21/06/2023"
 responsabile: "Nicola Cecchetto"
-redattori: ["Andrea Auletta", "Mattia Brunello", "Davide Vitagliano"]
-verificatori: ["Enrik Rucaj", "Antonio Stan", "Augusto Zanellato"]
+redattori: ["Andrea Auletta"]
+verificatori: ["Enrik Rucaj"]
 abstract: "Questo documento riporta la candidatura per la revisione alla Requirements & Technology Baseline"
 docusage: "Esterno"
 toc: true
@@ -14,8 +14,7 @@ toc: true
 Egregio Prof. Tullio Vardanega,\
 Egregio Prof. Riccardo Cardin,
 
-Con il presente documento, noi, membri del team SevenEleven, intendiamo comunicarvi la nostra disponibilità a
-partecipare alla revisione RTB.
+Con il presente documento, noi, membri del team SevenEleven, intendiamo comunicarvi la nostra disponibilità a partecipare alla revisione RTB e che non effettueremo la revisione CA.
 
 Di seguito alleghiamo il link alla documentazione:\
 [https://sevenelevendevunipd.github.io/docs/](https://sevenelevendevunipd.github.io/docs/)
