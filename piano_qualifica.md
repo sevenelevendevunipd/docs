@@ -76,6 +76,18 @@ versioni:
     autore: Mattia Brunello
     data: 29/04/2023
     cambiamenti: Verifica generale del documento
+  v1.2.1:
+    autore: Davide Vitagliano
+    data: 04/06/2023
+    cambiamenti: Modifiche post colloquio con professor Cardin
+  v1.3.0:
+    autore: Nicola Cecchetto
+    data: 07/06/2023
+    cambiamenti: Verifica generale del documento
+  v2.0.0:
+    autore: Andrea Auletta
+    data: 08/06/2023
+    cambiamenti: Approvazione per il rilascio
 ...
 
 # Introduzione
