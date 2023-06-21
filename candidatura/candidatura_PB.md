@@ -1,20 +1,21 @@
 ---
-title: "Candidatura RTB"
+title: "Candidatura PB"
 date: "21/06/2023"
 responsabile: "Nicola Cecchetto"
-redattori: ["Andrea Auletta"]
-verificatori: ["Enrik Rucaj"]
-abstract: "Questo documento riporta la candidatura per la revisione alla Requirements & Technology Baseline"
+redattori: ["Andrea Auletta", "Mattia Brunello", "Davide Vitagliano"]
+verificatori: ["Enrik Rucaj", "Antonio Stan", "Augusto Zanellato"]
+abstract: "Questo documento riporta la candidatura per la revisione alla Product Baseline"
 docusage: "Esterno"
 toc: true
 ...
 
-# Candidatura per la revisione RTB
+# Candidatura per la revisione PB
 
 Egregio Prof. Tullio Vardanega,\
 Egregio Prof. Riccardo Cardin,
 
-Con il presente documento, noi, membri del team SevenEleven, intendiamo comunicarvi la nostra disponibilità a partecipare alla revisione RTB e che non effettueremo la revisione CA.
+Con il presente documento, noi, membri del team SevenEleven, intendiamo comunicarvi la nostra disponibilità a
+partecipare alla revisione PB.
 
 Di seguito alleghiamo il link alla documentazione:\
 [https://sevenelevendevunipd.github.io/docs/](https://sevenelevendevunipd.github.io/docs/)
