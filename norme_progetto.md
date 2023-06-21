@@ -56,6 +56,18 @@ versioni:
     autore: Enrik Rucaj
     data: 22/02/2023
     cambiamenti: Approvato per il rilascio
+  v1.0.1:
+    autore: Mattia Brunello
+    data: 20/04/2023
+    cambiamenti: Aggiunti standard
+  v1.1.0:
+    autore: Antonio Stan
+    data: 27/04/2023
+    cambiamenti: Verifica standard
+  v2.0.0:
+    autore: Davide Vitagliano
+    data: 2/05/2023
+    cambiamenti: Approvato per il rilascio
 ...
 
 # Introduzione
@@ -230,7 +242,7 @@ sottoinsiemi e riconducendo a una soluzione unica.
 
 La progettazione ha l'obiettivo di realizzare l'architettura del prodotto software, inizialmente realizzata da un
 {a:PoC} sviluppato come una demo tecnica delle funzionalità richieste dall'*analisi dei requisiti*. In seguito
-all'{a:RTB}, verrà approfondita e descritta nell'*allegato tecnico* per la {a:PB}.
+all'{a:RTB}, verrà approfondita e descritta nella *Specifica tecnica* per la {a:PB}.
 
 #### Requirements & Technology Baseline
 
@@ -250,10 +262,10 @@ Esclusi i *verbali*, i documenti sopracitati vanno aggiornati anche nelle fasi s
 Questa fase illustra le linee guida architetturali del prodotto. Oltre all’evoluzione dei documenti stesi durante l'
 {a:RTB}, in questa fase risulteranno necessari:
 
-* *Allegato tecnico*;
+* *Specifica tecnica*;
 * *Manuale utente*;
 * *Verbali* interni ed esterni di periodo.
-<!--TODO forse non serve il manuale sviluppatore nella PB?-->
+
 I documenti anche in questa fase verranno mantenuti fino alla consegna del progetto.
 
 ### Codifica
@@ -266,7 +278,7 @@ proprio.
 #### Aspettative
 
 La codifica ha l'obiettivo di realizzare un prodotto software avente le caratteristiche concordate con il proponente.
-Il codice realizzato dovrà rispettare uno stile preciso, in modo che risulti facilmente leggibile e manutenibile.
+Il codice realizzato dovrà rispettare uno stile preciso, in modo che risulti facilmente leggibile e mantenibile.
 
 #### Stile della codifica
 
@@ -424,7 +436,7 @@ In ogni documento al di fuori dei verbali interni è provvisto di un indice:
 ## Repository
 
 Per organizzare al meglio il lavoro, all'interno dell'organizzazione {g:github}, abbiamo creato
-4<!-- sistemare quando avremo un numero di repo finito --> {g:repository}:
+i seguenti {g:repository}:
 
 * SevenElevenUnipd/**docs** per i documenti; quelli indispensabili saranno:
   * **verbali**: documenti d'incontri interni svolti dal gruppo ed esterni svolti con i proponenti e committenti del
@@ -438,13 +450,17 @@ Per organizzare al meglio il lavoro, all'interno dell'organizzazione {g:github},
   * **analisi_requisiti**: documento che fissa i requisiti (espliciti e impliciti) concordati con il proponente, che
     il gruppo si impegna a soddisfare.
   * **glossario**: documento che specifica ogni termine specializzato nel dominio di progetto.
+  * **manuale utente**: documento che descrive le modalità di utilizzo del prodotto.
+  * **Specifica tecnica**: documento che descrive le tecnologie utilizzate per lo sviluppo del prodotto.
 * SevenElevenUnipd/**sl-parser**: componente che interpreta i {g:log}. È comune tra {g:smartlogviewer} e {g:smartlogstatistics}
 * SevenElevenUnipd/**sl-viewer-frontend**: componente di {g:frontend} per {g:smartlogviewer}.
 * SevenElevenUnipd/**sl-viewer-backend**: componente di {g:backend} per {g:smartlogviewer}.
+* SevenElevenUnipd/**sl-statistics-frontend**: componente di {g:frontend} per {g:smartlogstatistics}.
+* SevenElevenUnipd/**sl-statistics-backend**: componente di {g:backend} per {g:smartlogstatistics}.
 
 ### Nomenclatura dei commit e dei branch
 
-I branch vengono nominati in questo modo:  **SL-n-nome_branch** <!-- accentrato sotto?-->
+I branch vengono nominati in questo modo:  **SL-n-nome_branch**
 
 * SL: SmartLog;
 * n: numero auto incrementale;
@@ -523,6 +539,20 @@ Ci sono due diverse tecniche:
 
 I test hanno lo scopo di far emergere eventuali errori o comportamenti inaspettati con l'esecuzione del programma.
 
+##### Classificazione Test di Unità
+
+I test di unità vanno a testare parti del software e vanno descritti durante la progettazione di dettaglio.
+
+I test di unità presenti nel documento *Piano di Qualifica* sono identificati da dei codici, descritti qui:
+
+* TU_VF = test unità viewer per il frontend
+* TU_VB = test unità viewer per il backend
+* TU_SF = test unità statistics per il frontend
+* TU_SB = test unità statistics per il backend
+* TU_P = test unità del parser
+* NI = non implementato
+* I = implementato
+
 ##### Classificazione Test di Sistema
 
 I test di sistema sono test che vengono eseguiti su il sistema completamente integrato di tutte le sue parti, e servono per verificare che i requisiti vengano rispettati.
@@ -591,3 +621,250 @@ Le aspettative di questa sezione sono:
 
 I ruoli verranno cambiati con una cadenza periodica in modo tale che ogni membro del gruppo possa ricoprire ogni tipo di
 ruolo in maniera equa e cercando di rispettare le tempistiche previste.
+
+# Standard ISO/IEC 12207
+
+ISO/IEC 12207 è uno standard internazionale che definisce un modello per il ciclo di vita del software, ovvero il percorso che un prodotto software segue dal suo concepimento all'eliminazione. Questo standard è stato sviluppato con l'obiettivo di aiutare le organizzazioni a gestire in modo efficace i progetti software, fornendo una struttura per la pianificazione, il monitoraggio e il controllo delle attività di sviluppo software.
+I processi sono divisi in tre categorie:
+
+* Processi primari: attività direttamente legate allo sviluppo del software;
+* Processi di supporto: attività riguardanti la gestione dei documenti e il controllo qualità;
+* Processi organizzativi: attività che supportano l'organizzazione del progetto come la gestione delle risorse e gli aspetti manageriali.
+
+## Processi primari
+
+### Acquisizione
+
+Questo processo riguarda l'acquisizione di software o servizi correlati. Nelle fasi iniziali del progetto, il team di progetto deve definire i requisiti di acquisizione, valutare le opzioni disponibili e scegliere il fornitore più adatto per soddisfare le esigenze del progetto.
+
+### Fornitura
+
+Questo processo riguarda la fornitura di software o servizi correlati. Il team di progetto deve definire i requisiti di fornitura, identificare i fornitori potenziali e valutare le loro offerte per scegliere il fornitore più adatto per soddisfare le esigenze del progetto.
+
+### Sviluppo
+
+Questo processo riguarda la creazione di nuovi prodotti software o la modifica di quelli esistenti. Il team di sviluppo deve definire i requisiti del software, progettare l'architettura del sistema, sviluppare il codice, testare il software e documentare il processo di sviluppo.
+
+### Esercizio
+
+Questo processo riguarda l'utilizzo del software in un ambiente operativo. Il team di progetto deve installare e configurare il software nell'ambiente operativo, fornire supporto agli utenti finali e monitorare le prestazioni del software per garantire che soddisfi le aspettative degli utenti finali.
+
+### Manutenzione
+
+Questo processo riguarda la modifica del software esistente per correggere eventuali errori o migliorare le sue prestazioni. Il team di progetto deve valutare i problemi segnalati dagli utenti finali, sviluppare una soluzione per correggere il problema, testare la soluzione e implementarla nel software esistente.
+
+## Processi di supporto
+
+### Gestione della documentazione
+
+Questo processo riguarda la produzione e la gestione della documentazione del software. Il team di progetto deve definire quali documenti sono necessari per il progetto e il loro formato. La documentazione deve essere prodotta in modo coerente e gestita in modo da garantire che sia sempre aggiornata e facilmente accessibile a tutti i membri del team di progetto.
+
+### Gestione della configurazione
+
+Questo processo riguarda la gestione delle modifiche al software e la gestione delle versioni del software. Il team di progetto deve definire una procedura per la gestione delle modifiche al software, che includa l'identificazione, la valutazione, l'approvazione e l'implementazione delle modifiche. Inoltre, il team deve definire una procedura per la gestione delle versioni del software, che includa la registrazione di tutte le versioni del software prodotte durante il ciclo di vita del progetto.
+
+### Garanzia della qualità
+
+Questo processo riguarda la definizione e l'implementazione di attività per garantire la qualità del software. Il team di progetto deve definire una procedura per la garanzia della qualità, che includa attività di verifica e validazione per garantire che il software sia conforme ai requisiti specificati e che rispetti gli standard di qualità richiesti dal progetto.
+
+### Verifica
+
+Questo processo riguarda la verifica del software durante il ciclo di vita del progetto. Il team di progetto deve definire attività di verifica per garantire che il software sia conforme ai requisiti specificati, che sia coerente con l'architettura definita e che sia corretto e affidabile.
+
+### Validazione
+
+Questo processo riguarda la validazione del software rispetto alle esigenze degli utenti finali. Il team di progetto deve definire attività di validazione per garantire che il software soddisfi le esigenze degli utenti finali e che sia facile da utilizzare.
+
+### Revisione congiunta
+
+Questo processo riguarda la validazione del software rispetto alle esigenze degli utenti finali. Il team di progetto deve definire attività di validazione per garantire che il software soddisfi le esigenze degli utenti finali e che sia facile da utilizzare.
+
+### Audit
+
+Questo processo riguarda l'analisi critica del software da parte di un auditor esterno. Il team di progetto deve definire una procedura per l'audit del software, che includa l'identificazione degli obiettivi dell'audit, la definizione delle attività di audit, l'identificazione dei criteri di valutazione e la presentazione dei risultati dell'audit.
+
+### Risoluzione dei problemi
+
+Questo processo riguarda la gestione dei problemi relativi al software. Il team di progetto deve definire una procedura per la risoluzione dei problemi, che includa la registrazione dei problemi, l'analisi delle cause e l'implementazione di azioni correttive per risolvere i problemi.
+
+### Usabilità
+
+Questo processo riguarda l'usabilità del prodotto software e consiste nella definizione dei requisiti di usabilità, la progettazione e valutazione dell'interfaccia utente, la conduzione di test di usabilità e la valutazione dei risultati dei test. Il team di progetto deve definire una procedura per l'usabilità del prodotto, che includa l'identificazione dei requisiti di usabilità, la definizione del design dell'interfaccia utente, la conduzione dei test di usabilità e la definizione delle modalità di valutazione dei risultati.
+
+### Valutazione del prodotto
+
+Questo processo riguarda la valutazione del prodotto software e consiste nella definizione dei criteri di valutazione, l'identificazione delle modalità di valutazione e la valutazione dei risultati della valutazione. Il team di progetto deve definire una procedura per la valutazione del prodotto, che includa l'identificazione dei criteri di valutazione, la definizione delle modalità di valutazione e la definizione delle responsabilità dei membri del team in relazione alla valutazione del prodotto.
+
+## Processi organizzativi
+
+### Gestione dell'organizzazione
+
+Questo processo riguarda la gestione dell'organizzazione del progetto. Il team di progetto deve definire una procedura per la gestione dell'organizzazione, che includa l'identificazione delle responsabilità dei membri del team, la definizione delle comunicazioni interne ed esterne, l'organizzazione degli incontri del team e la definizione delle modalità di gestione del rischio.
+
+### Gestione delle infrastrutture
+
+Questo processo riguarda la gestione delle infrastrutture necessarie per lo sviluppo del software. Il team di progetto deve definire una procedura per la gestione delle infrastrutture, che includa l'identificazione delle infrastrutture necessarie, la definizione delle modalità di gestione e manutenzione delle infrastrutture e la definizione delle responsabilità dei membri del team in relazione alle infrastrutture.
+
+### Miglioramento del processo organizzativo
+
+Questo processo riguarda l'identificazione di opportunità di miglioramento del processo organizzativo del progetto. Il team di progetto deve definire una procedura per il miglioramento del processo organizzativo, che includa l'identificazione delle opportunità di miglioramento, la definizione delle attività necessarie per il miglioramento e la definizione delle responsabilità dei membri del team in relazione al miglioramento del processo organizzativo.
+
+### Formazione del personale
+
+Questo processo riguarda la formazione del personale del progetto. Il team di progetto deve definire una procedura per la formazione del personale, che includa l'identificazione delle competenze necessarie per il progetto, la definizione del piano di formazione, la definizione delle modalità di formazione e la valutazione dell'efficacia del programma di formazione.
+
+# Standard ISO/IEC 9126
+
+## Modello della qualità del software
+
+Il modello della qualità del software è un framework per la valutazione della qualità del software che consiste in quattro caratteristiche principali: funzionalità, affidabilità, usabilità ed efficienza. Ogni caratteristica è divisa in sotto-caratteristiche che a loro volta sono supportate da una serie di attributi di qualità. Questo modello fornisce un approccio strutturato alla valutazione della qualità del software, che può essere utilizzato come base per la definizione di requisiti di qualità del software e per la valutazione della qualità del software prodotto.
+
+## Qualità interna
+
+La qualità interna si riferisce alla qualità del software durante lo sviluppo, prima che il prodotto finale sia rilasciato. La qualità interna è influenzata dalla struttura interna del software, dalla sua leggibilità e dalla facilità di manutenzione. La qualità interna può essere valutata attraverso la revisione del codice sorgente, la valutazione della documentazione e la misurazione di metriche specifiche.
+
+### Metriche per la qualità interna
+
+Le metriche interne sono applicabili al prodotto durante le fasi di progettazione e codifica. Sono anche chiamate "misure statiche". Esse consentono di prevedere il livello di qualità esterna ed in uso del prodotto finale, in quanto gli attributi interni influenzano quelli esterni e quelli in uso. Utilizzando le metriche interne, è possibile individuare eventuali problemi che potrebbero compromettere la qualità finale del prodotto prima che questo sia realizzato e diventi eseguibile.
+
+## Qualità esterna
+
+La qualità esterna si riferisce alla qualità del software dopo che il prodotto finale è stato rilasciato. La qualità esterna è influenzata dalla capacità del software di soddisfare i requisiti funzionali e dalle prestazioni del software in un ambiente operativo reale. La qualità esterna può essere valutata attraverso l'analisi delle prestazioni, la valutazione degli errori e dei problemi segnalati dagli utenti e l'utilizzo di metriche specifiche.
+
+### Metriche per la qualità esterna
+
+Le metriche esterne sono utilizzate per valutare il comportamento del prodotto durante la sua esecuzione, attraverso l'osservazione e l'operatività in base agli obiettivi stabiliti. Queste metriche sono scelte sulla base delle caratteristiche che il prodotto dovrà dimostrare durante il suo utilizzo e sono fondamentali per valutare la qualità del prodotto finale.
+
+## Qualità in uso
+
+La qualità in uso si riferisce alla qualità del software in un ambiente operativo reale, in base all'esperienza degli utenti che utilizzano il software. La qualità in uso può essere valutata attraverso l'analisi dell'usabilità del software, la soddisfazione degli utenti e l'utilizzo di metriche specifiche.
+
+### Metriche per la qualità in uso
+
+Le metriche per la qualità in uso sono una serie di metriche che vengono utilizzate per valutare la qualità del software in base all'esperienza degli utenti. Le metriche possono essere utilizzate per misurare l'usabilità del software, la soddisfazione degli utenti, l'efficienza e l'efficacia del software e altri fattori relativi all'esperienza dell'utente. Le metriche per la qualità in uso possono essere utilizzate per migliorare la qualità del software e per identificare le aree in cui il software deve essere migliorato.
+
+# Metriche della qualità
+
+## Metriche per la qualità del processo
+
+Queste metriche sono state scelte dal gruppo per misurare il livello di qualità del processo, in modo da valutare l'efficacia del lavoro svolto e di conseguenza migliorare il prodotto finale.
+
+### QPS_1: Preventivo costo attuale (PCA)
+
+Somma dei costi di ogni periodo calcolato nel preventivo iniziale a partire dall'inizio del progetto fino a un determinato periodo.
+
+### QPS_2: Costo attuale (CA)
+
+Il costo effettivo calcolato a partire dall'inizio del progetto fino a un determinato periodo.
+
+### QPS_3: Stima costo a finire (SCF)
+
+Il costo che servirà a portare a termine il progetto a partire da un determinato periodo.
+$$SCF=Budget-PCA$$
+
+### QPS_4: Stima costo totale (SCT)
+
+Revisione del budget totale che servirà per portare a compimento il progetto.
+$$SCT=SCF+CA$$
+
+### QPS_5: Rapporto costo (RC)
+
+Percentuale del rapporto tra il costo attuale (CA) e quello calcolato nel preventivo a partire dall'inizio del progetto fino a un determinato periodo. *In caso di risultato negativo si rischia di andare fuori budget*.
+$$RC=(1-\frac{CA}{PCA})*100$$
+
+### QPS_6: Preventivo periodo temporale attuale (PPTA)
+
+Somma delle ore svolte in ogni periodo calcolate nel preventivo iniziale a partire dall'inizio del progetto fino a un determinato periodo.
+
+### QPS_7: Periodo temporale attuale (PTA)
+
+Le ore effettive svolte a partire dall'inizio del progetto fino a un determinato periodo.
+
+### QPS_8: Stima lasso temporale a finire (SLTF)
+
+Il lasso di tempo che servirà a portare a termine il progetto a partire da un determinato periodo.
+$$SLTF=Tempo di sviluppo totale-PPTA$$
+
+### QPS_9: Stima tempo di sviluppo totale (STST)
+
+Revisione del lasso temporale totale che servirà per sviluppare interamente il progetto.
+$$STST=SLTF+PTA$$
+
+### QPS_10: Rapporto periodo temporale (RPT)
+
+Percentuale del rapporto tra il periodo temporale attuale (PTA) e quello calcolato nel preventivo a partire dall'inizio del progetto fino a un determinato periodo. *In caso di risultato negativo si rischia di andare fuori budget*.
+$$RPT=(1-\frac{PTA}{PPTA})*100$$
+
+### QPS_11: Metriche soddisfate (MS)
+
+Percentuale delle metriche di qualità (sia di processo che di prodotto) soddisfate in un determinato periodo.
+$$Metriche soddisfate=\frac{Numero di metriche soddisfate}{Numero di metriche totali}*100$$
+
+## Metriche per la qualità do prodotto
+
+La presente sezione espone le metriche selezionate dal gruppo SevenEleven
+per misurare il raggiungimento degli obiettivi di qualità del prodotto.
+
+### QPD_1: Indice di Gulpease (IG)
+
+ Indice che riporta il grado di leggibilità di un testo redatto in lingua italiana . La formula adottata è la seguente:
+
+$$GULP= {89+}\frac{ 300  *(n_{frasi}) - 10*(n_{lettere}) }{n_{parole}}$$
+
+### QPD_2: Errori ortografici (EO)
+
+Indica l'insieme di errori grammaticali presenti nella documentazione interna ed esterna.
+
+### QPD_3: Copertura requisiti obbligatori (CRO)
+
+Indice che misura in ogni istante la percentuale di requisiti obbligatori soddisfatti. La formula adottata è la seguente:
+
+$$CRO= \frac{ ROI }{RO}{*100}$$
+
+dove:
+
+* ROI: indica il numero di requisiti obbligatori coperti dall'implementazione;
+
+* RO: indica il numero complessivo di requisiti obbligatori.
+
+### QPD_4: Copertura requisiti opzionali (CROP)
+
+Indice che misura in ogni istante la percentuale di requisiti opzionali soddisfatti. La formula adottata è la seguente:
+
+$$CROP= \frac{ ROPC }{ROP}{*100}$$
+
+dove:
+
+* ROPC: indica il numero di requisiti opzionali accettati coperti dall'implementazione.;
+* ROP: indica il numero complessivo di requisiti opzionali accettati.
+  
+### QPD_5: Versioni browser supportate (VBS)
+
+Percentuale di versioni di browser supportate dal prodotto. Calcolabile con la seguente formula:
+
+$$VBS= \frac{ Bsup }{Btot}{*100}$$
+
+dove:
+
+* Bsup indica il numero di browser in cui il prodotto può essere eseguito;
+* Btot indica il numero complessivo di browser presi in considerazione.
+
+I browser presi in considerazione sono:
+
+* Chrome;
+* Firefox;
+* Microsoft Edge;
+* Safari;
+* Opera;
+
+### QPD_6: Profondità di ereditarietà (PE)
+
+Indica il numero di classi diverse che ereditano tra loro, fino alla classe base.
+
+### QPD_7 Statement Coverage (SC)
+
+Indica che ciascun istruzione del codice sia stata eseguita almeno una volta.
+
+Strumenti utilizzati:
+
+* {g:python}
