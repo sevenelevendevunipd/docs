@@ -7,6 +7,7 @@ verificatori: ["Enrik Rucaj", "Antonio Stan", "Augusto Zanellato"]
 abstract: "Questo documento riporta la candidatura per la revisione alla Product Baseline"
 docusage: "Esterno"
 toc: true
+no-version: true
 ...
 
 # Candidatura per la revisione PB
