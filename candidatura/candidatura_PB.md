@@ -7,6 +7,15 @@ verificatori: ["Enrik Rucaj", "Antonio Stan", "Augusto Zanellato"]
 abstract: "Questo documento riporta la candidatura per la revisione alla Product Baseline"
 docusage: "Esterno"
 toc: true
+versioni:
+  v0.0.1:
+    autore: Mattia Brunello
+    data: 20/06/2023
+    cambiamenti: Stesura del documento.
+  v0.0.2:
+    autore: Augusto Zanellato
+    data: 21/06/2023
+    cambiamenti: Verificata per il rilascio.
 ...
 
 # Candidatura per la revisione PB
