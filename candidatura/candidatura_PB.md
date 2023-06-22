@@ -26,6 +26,11 @@ Il gruppo decide quindi di non effettuare la revisione CA per mancanza di fondi 
 
 Inoltre, la data di consegna preventivata era entro il 30/04/2023, ma a causa di difficoltà incontrate durante lo sviluppo del progetto, il refactoring del backend di entrambe le applicazioni successivamente al colloquio con il Professor. Cardin e il ritardo nella risposta dell'MVP da parte del proponente, il gruppo ha deciso di posticipare la consegna al 22/06/2023.
 
+Di seguito riportiamo la conferma dell'MVP da parte del proponente:
+
+![alt](../assets/richiestaMVP.png)
+![alt](../assets/confermaMVP.png)
+
 Team SevenEleven:
 
 * Auletta Andrea, matricola 2008458
