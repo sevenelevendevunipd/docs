@@ -1093,10 +1093,10 @@ Di seguito vengono riportati i costi sostenuti:
 | Stan Antonio      |   87     |
 | Vitagliano Davide |   92     |
 | Zanellato Augusto |  100     |
-| **Totale**        |**28**    |
+| **Totale**        |**638**    |
 
 Di seguito viene riportato il prospetto del costo del progetto:
 
 | **Costo sostenuto** | **Costo mancante** |
 |:-------------------:|:------------------:|
-|      **12855**       |      **650**      |
+|      **12480**       |      **1025**      |
