@@ -28,9 +28,9 @@ Inoltre, la data di consegna preventivata era entro il 30/04/2023, ma a causa di
 
 Di seguito riportiamo la conferma dell'MVP da parte del proponente:
 
-![alt](./imgManuale/richiestaMVP.png)
+![Email di richiesta MVP](/imgManuale/richiestaMVP.png)
 
-![alt](./imgManuale/confermaMVP.png)
+![Email di risposta MVP](/imgManuale/confermaMVP.png)
 
 Team SevenEleven:
 
